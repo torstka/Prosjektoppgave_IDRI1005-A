@@ -1,0 +1,2 @@
+C:\Users\Torstein\AppData\Local\Temporary Projects\TestDoc\bin\Debug\TestDoc.exe.config
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
