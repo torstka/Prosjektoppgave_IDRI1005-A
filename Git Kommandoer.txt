@@ -1,0 +1,29 @@
+Git Commands
+
+En liste over git commands
+
+cd [mappenavn]: går inn i en mappe med GitTerminal. For å kunne bruke "git pull" eller "git push" må terminalen være inne i git-mappen.
+
+git status: gir en oversikt over endringer du har gjort i git-mappen som ikke har blitt sendt til skyen enda
+
+git add: legger til en endring du har gjort i git-mappen. Før du bruker "git commit" må du legge til de endringene du vil oppdatere. bruk "git add ." for å legge til alle endringene du har gjort, ellers bruker du "git add [filename]"
+
+git commit -m[melding]: Når endringene er lagt til, skriver du "git commit -m" og så en melding hvor du beskriver endringene du har gjort.
+
+git push: Den siste commanden du bruker når du vil laste opp en endring. Når du skriver git push laster du opp endringene du har gjort til skyen sammen med meldingen du skrev med "git commit"
+
+git pull: Laster ned siste oppdatering fra skyen til datamaskinen. NB: Dette MÅ gjøres for du bruker "git push".
+
+PS: Enkelte ganger klarer ikke git å merge automatisk hvis du har gjort endringer på git-mappen og du bruker commanden "git pull". I et slikt tilfelle må du merge manuellt (bare gå inn i filene og sett sammen de linjene som kjæsjer). Forhåpentligvis skjer ikke dette ofte.
+
+COMMANDREKKEFØLGE FOR OPPSTART AV GIT:
+
+Steg 1: cd[mappenavn], naviger til git-mappen.
+
+Steg 2: git pull
+
+Steg 3: git add [filename] eller "git add ." (Når du skal laste opp endringer)
+
+Steg 4: git commit -m [melding]
+
+Steg 5: git push
