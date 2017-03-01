@@ -19,7 +19,7 @@ Public Class Form1
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         TextBox3.PasswordChar = "*"
     End Sub
-
+    Private tilkobling As MySqlConnection
 
     'Login knapp lagrer server, database, brukernavn og passord til globale variabler
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
@@ -51,6 +51,7 @@ Public Class Form1
         Finally
             conn.Dispose()
         End Try
+
     End Sub
 
     'Cancel knapp avslutter programmet
@@ -163,5 +164,9 @@ Public Class Form1
         Me.Hide()
 
 
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+        TextBox2.PasswordChar = "*"
     End Sub
 End Class
