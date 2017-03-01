@@ -1,0 +1,17 @@
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\bin\Debug\VBDatabase.exe
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\bin\Debug\VBDatabase.pdb
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\bin\Debug\VBDatabase.xml
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\obj\Debug\VBDatabase.Form1.resources
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\obj\Debug\VBDatabase.Resources.resources
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\obj\Debug\VBDatabase.vbproj.GenerateResource.Cache
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\obj\Debug\VBDatabase.exe
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\obj\Debug\VBDatabase.xml
+C:\Documents and Settings\atlen\My Documents\Visual Studio 2008\Projects\VBDatabase\VBDatabase\obj\Debug\VBDatabase.pdb
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Database\VBDatabase\VBDatabase\obj\Debug\VBDatabase.exe
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Database\VBDatabase\VBDatabase\obj\Debug\VBDatabase.xml
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Database\VBDatabase\VBDatabase\obj\Debug\VBDatabase.pdb
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Database\VBDatabase\VBDatabase\obj\Debug\VBDatabase.vbprojResolveAssemblyReference.cache
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Database\VBDatabase\VBDatabase\obj\Debug\VBDatabase.Form1.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Database\VBDatabase\VBDatabase\obj\Debug\VBDatabase.Resources.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Database\VBDatabase\VBDatabase\obj\Debug\VBDatabase.vbproj.GenerateResource.Cache

@@ -45,7 +45,7 @@ Public Class Form1
             connectionOK = True 'Forbindelsen godkjennes
             conn.Close()
         Catch myerror As MySqlException
-            MessageBox.Show("Error connecting to database" &
+            MessageBox.Show("Error connecting to database" & _
                 myerror.Message)
             connectionOK = False 'Forbindelsen godkjennes ikke
         Finally
@@ -115,15 +115,15 @@ Public Class Form1
             Dim myAdapter As New MySqlDataAdapter
 
 
-            Dim kommando As New MySqlCommand(sql, conn)
+            myCommand.Connection = conn
+            myCommand.CommandText = sql
 
-            Dim da As New MySqlDataAdapter
-            da.SelectCommand = kommando
-            da.Fill(myData)
+            myAdapter.SelectCommand = myCommand
+            myAdapter.Fill(myData)
 
             conn.Close()
         Catch myerror As MySqlException
-            MessageBox.Show("Error connecting to database" &
+            MessageBox.Show("Error connecting to database" & _
                 myerror.Message)
         Finally
             conn.Dispose()
@@ -154,7 +154,4 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-
-    End Sub
 End Class
