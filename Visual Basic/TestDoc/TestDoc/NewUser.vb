@@ -32,4 +32,12 @@ Public Class NewUser
         Me.Hide()
 
     End Sub
+
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+        TextBox2.PasswordChar = "*"
+    End Sub
+
+    Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
+        TextBox6.PasswordChar = "*"
+    End Sub
 End Class
