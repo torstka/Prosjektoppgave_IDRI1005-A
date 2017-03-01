@@ -36,6 +36,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button8 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -110,7 +111,7 @@ Partial Class Form1
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(66, 207)
+        Me.Button6.Location = New System.Drawing.Point(66, 220)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(153, 23)
         Me.Button6.TabIndex = 8
@@ -127,7 +128,7 @@ Partial Class Form1
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(66, 236)
+        Me.Button7.Location = New System.Drawing.Point(66, 249)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(153, 23)
         Me.Button7.TabIndex = 10
@@ -161,11 +162,21 @@ Partial Class Form1
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Passord"
         '
+        'Button8
+        '
+        Me.Button8.Location = New System.Drawing.Point(76, 184)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(124, 23)
+        Me.Button8.TabIndex = 14
+        Me.Button8.Text = "Registrer ny bruker"
+        Me.Button8.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(654, 345)
+        Me.ClientSize = New System.Drawing.Size(572, 345)
+        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -201,4 +212,5 @@ Partial Class Form1
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button8 As Button
 End Class
