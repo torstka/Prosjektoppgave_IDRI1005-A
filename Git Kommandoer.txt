@@ -27,3 +27,6 @@ Steg 3: git add [filename] eller "git add ." (Når du skal laste opp endringer)
 Steg 4: git commit -m [melding]
 
 Steg 5: git push
+
+
+test
