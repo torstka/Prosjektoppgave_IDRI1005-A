@@ -40,4 +40,5 @@ Public Class NewUser
     Private Sub TextBox6_TextChanged(sender As Object, e As EventArgs) Handles TextBox6.TextChanged
         TextBox6.PasswordChar = "*"
     End Sub
+    'git testing blablablablabla
 End Class
