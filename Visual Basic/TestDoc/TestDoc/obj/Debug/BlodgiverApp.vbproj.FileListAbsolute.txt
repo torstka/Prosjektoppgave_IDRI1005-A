@@ -28,3 +28,7 @@ C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basi
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb

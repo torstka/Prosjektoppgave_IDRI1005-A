@@ -37,6 +37,7 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -187,11 +188,21 @@ Partial Class Form1
         Me.Button8.Text = "Registrer ny bruker"
         Me.Button8.UseVisualStyleBackColor = True
         '
+        'Button9
+        '
+        Me.Button9.Location = New System.Drawing.Point(156, 462)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(75, 23)
+        Me.Button9.TabIndex = 15
+        Me.Button9.Text = "Button9"
+        Me.Button9.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(858, 531)
+        Me.Controls.Add(Me.Button9)
         Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -230,4 +241,5 @@ Partial Class Form1
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Button8 As Button
+    Friend WithEvents Button9 As Button
 End Class
