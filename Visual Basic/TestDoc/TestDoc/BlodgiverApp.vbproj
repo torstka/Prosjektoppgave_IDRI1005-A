@@ -95,6 +95,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Logged_In.Designer.vb">
+      <DependentUpon>Logged_In.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Logged_In.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyPage.Designer.vb">
+      <DependentUpon>MyPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MyPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="NewUser.Designer.vb">
       <DependentUpon>NewUser.vb</DependentUpon>
     </Compile>
@@ -112,6 +124,12 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Logged_In.resx">
+      <DependentUpon>Logged_In.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyPage.resx">
+      <DependentUpon>MyPage.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewUser.resx">
       <DependentUpon>NewUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +145,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bloddrape.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

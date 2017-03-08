@@ -46,14 +46,14 @@ Partial Class Logged_In
         Me.Button2.Text = "Min Side"
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'MyPage
+        'Logged_In
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1142, 549)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Name = "MyPage"
+        Me.Name = "Logged_In"
         Me.Text = "MyPage"
         Me.ResumeLayout(False)
 
