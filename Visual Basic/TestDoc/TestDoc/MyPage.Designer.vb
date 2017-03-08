@@ -25,12 +25,13 @@ Partial Class MyPage
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(155, 106)
+        Me.Button1.Location = New System.Drawing.Point(156, 222)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(219, 179)
         Me.Button1.TabIndex = 0
@@ -40,7 +41,7 @@ Partial Class MyPage
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(464, 106)
+        Me.Button2.Location = New System.Drawing.Point(457, 222)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(217, 179)
         Me.Button2.TabIndex = 1
@@ -50,28 +51,41 @@ Partial Class MyPage
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(764, 106)
+        Me.Button3.Location = New System.Drawing.Point(765, 222)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(214, 179)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Informasjon om blodgiving"
         Me.Button3.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Imprint MT Shadow", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(468, 32)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(183, 38)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "MIN SIDE"
+        '
         'MyPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1115, 550)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "MyPage"
         Me.Text = "MyPage"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Label1 As Label
 End Class
