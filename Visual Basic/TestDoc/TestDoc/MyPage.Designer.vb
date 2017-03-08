@@ -29,6 +29,8 @@ Partial Class MyPage
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -84,7 +86,7 @@ Partial Class MyPage
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(826, 64)
+        Me.Label2.Location = New System.Drawing.Point(54, 32)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(101, 20)
         Me.Label2.TabIndex = 5
@@ -93,17 +95,38 @@ Partial Class MyPage
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(830, 88)
+        Me.Label3.Location = New System.Drawing.Point(54, 61)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(57, 20)
+        Me.Label3.Size = New System.Drawing.Size(220, 80)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Label3"
+        Me.Label3.Text = "NAVN -Forsøke å få " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "denne til å kjøre sql " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mot DB slik at navn basert på " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "pers" &
+    "onnummer returneres her"
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(58, 144)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(123, 31)
+        Me.Button5.TabIndex = 7
+        Me.Button5.Text = "Tilbake"
+        Me.Button5.UseVisualStyleBackColor = True
+        '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(959, 12)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(144, 40)
+        Me.Button6.TabIndex = 8
+        Me.Button6.Text = "Logg ut"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'MyPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1115, 550)
+        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button4)
@@ -125,4 +148,6 @@ Partial Class MyPage
     Friend WithEvents Button4 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
 End Class

@@ -24,6 +24,8 @@ Partial Class Logged_In
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -46,19 +48,43 @@ Partial Class Logged_In
         Me.Button2.Text = "Min Side"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(391, 40)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(233, 32)
+        Me.Label1.TabIndex = 2
+        Me.Label1.Text = "Velkommen inn!"
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(848, 26)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(144, 46)
+        Me.Button3.TabIndex = 3
+        Me.Button3.Text = "Logg ut"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Logged_In
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1004, 531)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Name = "Logged_In"
         Me.Text = "Logged_In"
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button3 As Button
 End Class

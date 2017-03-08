@@ -22,4 +22,12 @@
         'PersonInfo.Show() ' forma som legger inn personalia som er lik den ved førstegangs registrering
         'for det er vel kun de data man tenker at bruker skal kunne endre???
     End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+    End Sub
 End Class
