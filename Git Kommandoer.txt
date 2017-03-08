@@ -28,4 +28,8 @@ Steg 4: git commit -m [melding]
 
 Steg 5: git push
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 10719a91df708a94ff6ccc16adc748a25a92b7ff
 test
