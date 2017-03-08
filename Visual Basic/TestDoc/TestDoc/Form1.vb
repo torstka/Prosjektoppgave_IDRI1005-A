@@ -2,7 +2,7 @@
 Imports System.Data
 
 Public Class Form1
-
+    'killroy was here
     'Kan være lurt å lagre server, database, brukernavn og passord som globale variabler
     'Dette gjør at vi kan gjenbruke denne informasjonen så lenge programmet kjører
     Private server As String
