@@ -9,6 +9,7 @@
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Hide()
 
     End Sub
 
@@ -17,6 +18,8 @@
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
+        Me.Hide()
+        'PersonInfo.Show() ' forma som legger inn personalia som er lik den ved førstegangs registrering
+        'for det er vel kun de data man tenker at bruker skal kunne endre???
     End Sub
 End Class
