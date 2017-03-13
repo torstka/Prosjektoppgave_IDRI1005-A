@@ -1,5 +1,5 @@
 Imports MySql.Data.MySqlClient
-
+'sss
 Public Class Form1
     Private tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
