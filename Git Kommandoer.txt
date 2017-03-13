@@ -28,6 +28,8 @@ Steg 4: git commit -m [melding]
 
 Steg 5: git push
 
+
+Leni test
 <<<<<<< HEAD
 
 =======
