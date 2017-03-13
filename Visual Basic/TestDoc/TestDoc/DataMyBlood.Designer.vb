@@ -24,6 +24,7 @@ Partial Class DataMyBlood
     Private Sub InitializeComponent()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Button1
@@ -32,26 +33,36 @@ Partial Class DataMyBlood
         Me.Button1.Location = New System.Drawing.Point(105, 258)
         Me.Button1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(396, 217)
+        Me.Button1.Size = New System.Drawing.Size(288, 191)
         Me.Button1.TabIndex = 0
         Me.Button1.Text = "Kalender for ny time"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(596, 258)
+        Me.Button2.Location = New System.Drawing.Point(476, 258)
         Me.Button2.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(428, 217)
+        Me.Button2.Size = New System.Drawing.Size(306, 191)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Blodtype, siste tapping og blodverdier"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(851, 258)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(312, 191)
+        Me.Button3.TabIndex = 2
+        Me.Button3.Text = "Spørre skjema"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'DataMyBlood
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1912, 777)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Font = New System.Drawing.Font("Imprint MT Shadow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -64,4 +75,5 @@ Partial Class DataMyBlood
 
     Friend WithEvents Button1 As Button
     Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
 End Class
