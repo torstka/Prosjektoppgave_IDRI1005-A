@@ -9,8 +9,8 @@ Public Class NewUser
 
     Private tilkobling As MySqlConnection
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim Etternavn = txtLastname.Text
         Dim Fornavn = txtFirstname.Text
+        Dim Etternavn = txtLastname.Text
         Dim Personnummer = txtPersonnr.Text
         Dim Adresse = txtAdress.Text
         Dim Postnummer = txtPostnr
@@ -22,8 +22,8 @@ Public Class NewUser
         Dim sqlSporring = "insert into Users (Etternavn, Fornavn, Personnummer, Adresse, Postnummer, Telefon, Epost, Passord) values (@Etternavn, @Fornavn, @Personnummer, @Adresse, @Postnummer, @Epost, @Telefon, @Passord)"
         Dim sql As New MySqlCommand(sqlSporring, tilkobling)
 
-        sql.Parameters.AddWithValue("@Etternavn", Etternavn)
         sql.Parameters.AddWithValue("@Fornavn", Fornavn)
+        sql.Parameters.AddWithValue("@Etternavn", Etternavn)
         sql.Parameters.AddWithValue("@Personnummer", Personnummer)
         sql.Parameters.AddWithValue("@Adresse", Adresse)
         sql.Parameters.AddWithValue("@Postnummer", Postnummer)
@@ -33,7 +33,10 @@ Public Class NewUser
 
         sql.ExecuteNonQuery()
 
-        MsgBox("Bruker er opprettet! " & sql.LastInsertedId)
+        MsgBox("Registrering vellykket")
+        Me.Close()
+        Form1.Show()
+
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
