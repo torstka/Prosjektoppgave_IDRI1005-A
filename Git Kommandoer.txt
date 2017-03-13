@@ -26,7 +26,9 @@ Steg 3: git add [filename] eller "git add ." (Når du skal laste opp endringer)
 
 Steg 4: git commit -m [melding]
 
-Steg 5: git push
+Steg 5: git pull
+
+Steg 6: Git push
 
 <<<<<<< HEAD
 
