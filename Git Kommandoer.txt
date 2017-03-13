@@ -30,6 +30,8 @@ Steg 5: git pull
 
 Steg 6: Git push
 
+
+Leni test
 <<<<<<< HEAD
 
 =======

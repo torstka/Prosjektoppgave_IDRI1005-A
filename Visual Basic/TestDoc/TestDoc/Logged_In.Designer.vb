@@ -35,7 +35,7 @@ Partial Class Logged_In
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(315, 170)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Spørre Skjema"
+        Me.Button1.Text = "Spørreskjema"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
