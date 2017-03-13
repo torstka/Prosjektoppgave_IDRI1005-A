@@ -8,6 +8,7 @@ Public Class NewUser
     End Sub
 
     Private tilkobling As MySqlConnection
+
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim Fornavn = txtFirstname.Text
         Dim Etternavn = txtLastname.Text
@@ -32,8 +33,8 @@ Public Class NewUser
         sql.Parameters.AddWithValue("@Passord", Passord)
 
         sql.ExecuteNonQuery()
-
         MsgBox("Registrering vellykket")
+
         Me.Close()
         Form1.Show()
 
