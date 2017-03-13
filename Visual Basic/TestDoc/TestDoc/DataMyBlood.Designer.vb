@@ -32,7 +32,7 @@ Partial Class DataMyBlood
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Imprint MT Shadow", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(33, 273)
+        Me.Button1.Location = New System.Drawing.Point(40, 225)
         Me.Button1.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(288, 191)
@@ -42,7 +42,7 @@ Partial Class DataMyBlood
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(401, 273)
+        Me.Button2.Location = New System.Drawing.Point(369, 225)
         Me.Button2.Margin = New System.Windows.Forms.Padding(5, 4, 5, 4)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(306, 191)
@@ -52,7 +52,7 @@ Partial Class DataMyBlood
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(779, 273)
+        Me.Button3.Location = New System.Drawing.Point(706, 225)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(312, 191)
         Me.Button3.TabIndex = 2
@@ -63,7 +63,7 @@ Partial Class DataMyBlood
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(497, 54)
+        Me.Label1.Location = New System.Drawing.Point(462, 49)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(139, 33)
         Me.Label1.TabIndex = 3
@@ -71,7 +71,7 @@ Partial Class DataMyBlood
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(940, 25)
+        Me.Button4.Location = New System.Drawing.Point(867, 38)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(151, 44)
         Me.Button4.TabIndex = 4
@@ -82,7 +82,7 @@ Partial Class DataMyBlood
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(16.0!, 28.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1165, 777)
+        Me.ClientSize = New System.Drawing.Size(1062, 513)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button3)
