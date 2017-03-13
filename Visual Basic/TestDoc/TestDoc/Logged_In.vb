@@ -15,6 +15,7 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Hide() 'forma lukkes og man kommer tilbake til forma "form1". 
+        Form1.Show()
     End Sub
 End Class
 
