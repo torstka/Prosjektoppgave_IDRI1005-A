@@ -26,27 +26,24 @@ Partial Class Logged_In
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(91, 103)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button1.Location = New System.Drawing.Point(136, 158)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(210, 110)
+        Me.Button1.Size = New System.Drawing.Size(315, 170)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Spørreskjema"
+        Me.Button1.Text = "Spørre Skjema"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(375, 103)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button2.Location = New System.Drawing.Point(562, 158)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(219, 110)
+        Me.Button2.Size = New System.Drawing.Size(329, 170)
         Me.Button2.TabIndex = 1
         Me.Button2.Text = "Min Side"
         Me.Button2.UseVisualStyleBackColor = True
@@ -55,42 +52,30 @@ Partial Class Logged_In
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(261, 26)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(391, 40)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(162, 24)
+        Me.Label1.Size = New System.Drawing.Size(233, 32)
         Me.Label1.TabIndex = 2
         Me.Label1.Text = "Velkommen inn!"
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(565, 17)
-        Me.Button3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button3.Location = New System.Drawing.Point(848, 26)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(96, 30)
+        Me.Button3.Size = New System.Drawing.Size(144, 46)
         Me.Button3.TabIndex = 3
         Me.Button3.Text = "Logg ut"
         Me.Button3.UseVisualStyleBackColor = True
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(401, 285)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 20)
-        Me.TextBox1.TabIndex = 4
-        Me.TextBox1.Text = "Torstein Test"
-        '
         'Logged_In
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(685, 345)
-        Me.Controls.Add(Me.TextBox1)
+        Me.ClientSize = New System.Drawing.Size(1004, 531)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "Logged_In"
         Me.Text = "Logged_In"
         Me.ResumeLayout(False)
@@ -102,5 +87,4 @@ Partial Class Logged_In
     Friend WithEvents Button2 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Button3 As Button
-    Friend WithEvents TextBox1 As TextBox
 End Class

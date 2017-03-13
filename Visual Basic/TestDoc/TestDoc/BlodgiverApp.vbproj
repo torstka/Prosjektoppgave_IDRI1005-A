@@ -73,13 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\..\..\..\..\OneDrive\VB Ovinger\Blodgiverprosjektet\DataMyBlood.Designer.vb">
+    <Compile Include="DataMyBlood.Designer.vb">
       <DependentUpon>DataMyBlood.vb</DependentUpon>
-      <Link>DataMyBlood.Designer.vb</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\OneDrive\VB Ovinger\Blodgiverprosjektet\DataMyBlood.vb">
+    <Compile Include="DataMyBlood.vb">
       <SubType>Form</SubType>
-      <Link>DataMyBlood.vb</Link>
     </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
@@ -88,13 +86,11 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\OneDrive\VB Ovinger\Blodgiverprosjektet\Logged_In.Designer.vb">
+    <Compile Include="Logged_In.Designer.vb">
       <DependentUpon>Logged_In.vb</DependentUpon>
-      <Link>Logged_In.Designer.vb</Link>
     </Compile>
-    <Compile Include="..\..\..\..\..\..\OneDrive\VB Ovinger\Blodgiverprosjektet\Logged_In.vb">
+    <Compile Include="Logged_In.vb">
       <SubType>Form</SubType>
-      <Link>Logged_In.vb</Link>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -125,16 +121,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\..\..\..\..\..\OneDrive\VB Ovinger\Blodgiverprosjektet\DataMyBlood.resx">
+    <EmbeddedResource Include="DataMyBlood.resx">
       <DependentUpon>DataMyBlood.vb</DependentUpon>
-      <Link>DataMyBlood.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\..\..\..\..\..\OneDrive\VB Ovinger\Blodgiverprosjektet\Logged_In.resx">
+    <EmbeddedResource Include="Logged_In.resx">
       <DependentUpon>Logged_In.vb</DependentUpon>
-      <Link>Logged_In.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
