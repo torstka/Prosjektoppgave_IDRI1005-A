@@ -10,9 +10,9 @@ Public Class NewUser
     Private tilkobling As MySqlConnection
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim Etternavn = txtLastname.Text
-        Dim Fornavn = txtFirstname
+        Dim Fornavn = txtFirstname.Text
         Dim Personnummer = txtPersonnr.Text
-        Dim Adresse = txtAdress
+        Dim Adresse = txtAdress.Text
         Dim Postnummer = txtPostnr
         Dim Telefon = txtPostnr.Text
         Dim Epost = txtEmail.Text

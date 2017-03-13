@@ -62,3 +62,6 @@ C:\Users\Torstein\Desktop\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDo
 C:\Users\Torstein\Desktop\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
 C:\Users\Torstein\Desktop\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
 C:\Users\Torstein\Desktop\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Logged_In.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
