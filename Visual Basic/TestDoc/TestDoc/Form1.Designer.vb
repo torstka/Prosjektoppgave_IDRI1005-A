@@ -31,6 +31,7 @@ Partial Class Form1
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtPersonnr = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -108,11 +109,21 @@ Partial Class Form1
         Me.TextBox1.Size = New System.Drawing.Size(100, 20)
         Me.TextBox1.TabIndex = 39
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(23, 299)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 40
+        Me.Button1.Text = "kortspill?"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(551, 334)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btbRegistrer)
@@ -138,4 +149,5 @@ Partial Class Form1
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents txtPersonnr As TextBox
     Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents Button1 As Button
 End Class
