@@ -25,10 +25,10 @@ Partial Class EmployeeLogIn
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btnCancel = New System.Windows.Forms.Button()
         Me.btbLogin = New System.Windows.Forms.Button()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtAnsattnr = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -61,22 +61,12 @@ Partial Class EmployeeLogIn
         Me.Label2.TabIndex = 43
         Me.Label2.Text = "Ansattnummer"
         '
-        'btnCancel
-        '
-        Me.btnCancel.Location = New System.Drawing.Point(513, 370)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(6)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(138, 42)
-        Me.btnCancel.TabIndex = 42
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = True
-        '
         'btbLogin
         '
         Me.btbLogin.Location = New System.Drawing.Point(341, 370)
         Me.btbLogin.Margin = New System.Windows.Forms.Padding(6)
         Me.btbLogin.Name = "btbLogin"
-        Me.btbLogin.Size = New System.Drawing.Size(138, 42)
+        Me.btbLogin.Size = New System.Drawing.Size(311, 42)
         Me.btbLogin.TabIndex = 41
         Me.btbLogin.Text = "Login"
         Me.btbLogin.UseVisualStyleBackColor = True
@@ -97,15 +87,24 @@ Partial Class EmployeeLogIn
         Me.txtAnsattnr.Size = New System.Drawing.Size(164, 29)
         Me.txtAnsattnr.TabIndex = 39
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(99, 43)
+        Me.Button1.TabIndex = 47
+        Me.Button1.Text = "Bruker"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'EmployeeLogIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1000, 628)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.btbLogin)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtAnsattnr)
@@ -119,8 +118,8 @@ Partial Class EmployeeLogIn
     Friend WithEvents Label1 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnCancel As Button
     Friend WithEvents btbLogin As Button
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents txtAnsattnr As TextBox
+    Friend WithEvents Button1 As Button
 End Class

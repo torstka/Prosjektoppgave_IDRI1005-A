@@ -2,7 +2,7 @@
 
 Public Class EmployeeLogIn
 
-    Private tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
+    Private tilkobling As MySqlConnection
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         tilkobling.Close()
@@ -10,11 +10,8 @@ Public Class EmployeeLogIn
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
         tilkobling.Open()
-    End Sub
-
-    Private Sub btCancel_Click(sender As Object, e As EventArgs)
-        Application.Exit()
     End Sub
 
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
@@ -25,21 +22,24 @@ Public Class EmployeeLogIn
 
         Dim sql As New MySqlCommand(sqlSporring, tilkobling)
 
-        sql.Parameters.AddWithValue("@personnummer", ansattNr)
+        sql.Parameters.AddWithValue("@ansattnr", ansattNr)
         sql.Parameters.AddWithValue("@passord", password)
 
         Dim leser = sql.ExecuteReader()
         If leser.HasRows Then
-            Me.Hide()
-            Logged_In.Show()
+            MsgBox("Du er logget inn")
         Else
             MsgBox("Innlogging misslykket")
         End If
         leser.Close()
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         Application.Exit()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        Form1.Show()
+    End Sub
 End Class

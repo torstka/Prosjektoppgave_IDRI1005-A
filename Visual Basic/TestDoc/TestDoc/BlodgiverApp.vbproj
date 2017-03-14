@@ -85,6 +85,12 @@
     <Compile Include="EmployeeLogIn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmployeePage.Designer.vb">
+      <DependentUpon>EmployeePage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeePage.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeLogIn.resx">
       <DependentUpon>EmployeeLogIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeePage.resx">
+      <DependentUpon>EmployeePage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
