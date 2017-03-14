@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class NewUser
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -48,7 +48,7 @@ Partial Class NewUser
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(144, 84)
+        Me.Label1.Location = New System.Drawing.Point(596, 85)
         Me.Label1.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(101, 25)
@@ -57,16 +57,17 @@ Partial Class NewUser
         '
         'txtLastname
         '
-        Me.txtLastname.Location = New System.Drawing.Point(257, 80)
+        Me.txtLastname.Location = New System.Drawing.Point(717, 79)
         Me.txtLastname.Margin = New System.Windows.Forms.Padding(6)
         Me.txtLastname.Name = "txtLastname"
-        Me.txtLastname.Size = New System.Drawing.Size(230, 29)
+        Me.txtLastname.Size = New System.Drawing.Size(239, 29)
         Me.txtLastname.TabIndex = 19
+        Me.txtLastname.Tag = "Fyll inn ditt etternavn"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(614, 84)
+        Me.Label2.Location = New System.Drawing.Point(152, 85)
         Me.Label2.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(90, 25)
@@ -75,16 +76,17 @@ Partial Class NewUser
         '
         'txtFirstname
         '
-        Me.txtFirstname.Location = New System.Drawing.Point(710, 85)
+        Me.txtFirstname.Location = New System.Drawing.Point(255, 79)
         Me.txtFirstname.Margin = New System.Windows.Forms.Padding(6)
         Me.txtFirstname.Name = "txtFirstname"
-        Me.txtFirstname.Size = New System.Drawing.Size(238, 29)
+        Me.txtFirstname.Size = New System.Drawing.Size(230, 29)
         Me.txtFirstname.TabIndex = 21
+        Me.txtFirstname.Tag = "Fyll inn ditt fornavn"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(10, 160)
+        Me.Label5.Location = New System.Drawing.Point(9, 161)
         Me.Label5.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(232, 25)
@@ -93,16 +95,17 @@ Partial Class NewUser
         '
         'txtPersonnr
         '
-        Me.txtPersonnr.Location = New System.Drawing.Point(254, 156)
+        Me.txtPersonnr.Location = New System.Drawing.Point(255, 157)
         Me.txtPersonnr.Margin = New System.Windows.Forms.Padding(6)
         Me.txtPersonnr.Name = "txtPersonnr"
         Me.txtPersonnr.Size = New System.Drawing.Size(230, 29)
         Me.txtPersonnr.TabIndex = 25
+        Me.txtPersonnr.Tag = "Fyll inn ditt personnummer (11)"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(111, 230)
+        Me.Label7.Location = New System.Drawing.Point(112, 231)
         Me.Label7.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(131, 25)
@@ -112,7 +115,7 @@ Partial Class NewUser
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(195, 229)
+        Me.Label3.Location = New System.Drawing.Point(194, 229)
         Me.Label3.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(0, 25)
@@ -120,16 +123,17 @@ Partial Class NewUser
         '
         'txtAdress
         '
-        Me.txtAdress.Location = New System.Drawing.Point(254, 226)
+        Me.txtAdress.Location = New System.Drawing.Point(255, 225)
         Me.txtAdress.Margin = New System.Windows.Forms.Padding(6)
         Me.txtAdress.Name = "txtAdress"
         Me.txtAdress.Size = New System.Drawing.Size(230, 29)
         Me.txtAdress.TabIndex = 29
+        Me.txtAdress.Tag = "Fyll inn din adresse"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(582, 230)
+        Me.Label8.Location = New System.Drawing.Point(581, 231)
         Me.Label8.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(122, 25)
@@ -138,24 +142,25 @@ Partial Class NewUser
         '
         'txtPostnr
         '
-        Me.txtPostnr.Location = New System.Drawing.Point(716, 227)
+        Me.txtPostnr.Location = New System.Drawing.Point(717, 227)
         Me.txtPostnr.Margin = New System.Windows.Forms.Padding(6)
         Me.txtPostnr.Name = "txtPostnr"
-        Me.txtPostnr.Size = New System.Drawing.Size(238, 29)
+        Me.txtPostnr.Size = New System.Drawing.Size(239, 29)
         Me.txtPostnr.TabIndex = 32
+        Me.txtPostnr.Tag = "Fyll inn ditt postnummer"
         '
         'txtConfirmPassword
         '
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(716, 374)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(717, 375)
         Me.txtConfirmPassword.Margin = New System.Windows.Forms.Padding(6)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
-        Me.txtConfirmPassword.Size = New System.Drawing.Size(238, 29)
+        Me.txtConfirmPassword.Size = New System.Drawing.Size(239, 29)
         Me.txtConfirmPassword.TabIndex = 42
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(554, 374)
+        Me.Label10.Location = New System.Drawing.Point(554, 375)
         Me.Label10.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(150, 25)
@@ -164,24 +169,26 @@ Partial Class NewUser
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(254, 374)
+        Me.txtPassword.Location = New System.Drawing.Point(255, 375)
         Me.txtPassword.Margin = New System.Windows.Forms.Padding(6)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(230, 29)
         Me.txtPassword.TabIndex = 40
+        Me.txtPassword.Tag = "Fyll inn ditt passord"
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(716, 298)
+        Me.txtEmail.Location = New System.Drawing.Point(717, 297)
         Me.txtEmail.Margin = New System.Windows.Forms.Padding(6)
         Me.txtEmail.Name = "txtEmail"
-        Me.txtEmail.Size = New System.Drawing.Size(238, 29)
+        Me.txtEmail.Size = New System.Drawing.Size(239, 29)
         Me.txtEmail.TabIndex = 39
+        Me.txtEmail.Tag = "Fyll inn din epostadresse"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(569, 298)
+        Me.Label9.Location = New System.Drawing.Point(568, 297)
         Me.Label9.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(132, 25)
@@ -200,16 +207,18 @@ Partial Class NewUser
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(254, 299)
+        Me.txtPhone.Location = New System.Drawing.Point(255, 299)
         Me.txtPhone.Margin = New System.Windows.Forms.Padding(6)
+        Me.txtPhone.MaxLength = 8
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(230, 29)
         Me.txtPhone.TabIndex = 36
+        Me.txtPhone.Tag = "Fyll inn dit telefonnummer"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(164, 303)
+        Me.Label4.Location = New System.Drawing.Point(163, 303)
         Me.Label4.Margin = New System.Windows.Forms.Padding(6, 0, 6, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(78, 25)
@@ -228,10 +237,10 @@ Partial Class NewUser
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(351, 495)
+        Me.Button1.Location = New System.Drawing.Point(350, 495)
         Me.Button1.Margin = New System.Windows.Forms.Padding(6)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(148, 42)
+        Me.Button1.Size = New System.Drawing.Size(149, 42)
         Me.Button1.TabIndex = 43
         Me.Button1.Text = "Registrer"
         Me.Button1.UseVisualStyleBackColor = True
@@ -262,7 +271,7 @@ Partial Class NewUser
         Me.Controls.Add(Me.txtFirstname)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtLastname)
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "NewUser"
         Me.Text = "NewUser"
         Me.ResumeLayout(False)

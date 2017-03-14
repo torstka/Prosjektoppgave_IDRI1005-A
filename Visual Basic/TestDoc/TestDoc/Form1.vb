@@ -17,8 +17,9 @@ Public Class Form1
     End Sub
 
     Private Sub btnRegistrer_Click(sender As Object, e As EventArgs) Handles btbRegistrer.Click
-        NewUser.Show()
         Me.Hide()
+        NewUser.Show()
+
     End Sub
 
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
