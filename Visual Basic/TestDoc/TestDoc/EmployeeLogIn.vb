@@ -1,6 +1,7 @@
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 
-Public Class Form1
+Public Class EmployeeLogIn
+
     Private tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -16,21 +17,15 @@ Public Class Form1
         Application.Exit()
     End Sub
 
-    Private Sub btnRegistrer_Click(sender As Object, e As EventArgs) Handles btbRegistrer.Click
-        Me.Hide()
-        NewUser.Show()
-
-    End Sub
-
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
-        Dim personnr = txtPersonnr.Text
+        Dim ansattNr = txtAnsattnr.Text
         Dim password = txtPassword.Text
-        Dim sqlSporring = "select * from Users where Personnummer=@personnummer " &
-                          "and Passord=@passord"
+        Dim sqlSporring = "select * from Employees where Ansattnr=@ansattnr " &
+                      "and Passord=@passord"
 
         Dim sql As New MySqlCommand(sqlSporring, tilkobling)
 
-        sql.Parameters.AddWithValue("@personnummer", personnr)
+        sql.Parameters.AddWithValue("@personnummer", ansattNr)
         sql.Parameters.AddWithValue("@passord", password)
 
         Dim leser = sql.ExecuteReader()
@@ -47,8 +42,4 @@ Public Class Form1
         Application.Exit()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Me.Hide()
-        EmployeeLogIn.Show()
-    End Sub
 End Class

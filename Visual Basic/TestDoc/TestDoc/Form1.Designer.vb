@@ -30,6 +30,7 @@ Partial Class Form1
         Me.btbLogin = New System.Windows.Forms.Button()
         Me.txtPassword = New System.Windows.Forms.TextBox()
         Me.txtPersonnr = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -45,7 +46,7 @@ Partial Class Form1
         'btbRegistrer
         '
         Me.btbRegistrer.Location = New System.Drawing.Point(343, 402)
-        Me.btbRegistrer.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btbRegistrer.Margin = New System.Windows.Forms.Padding(6)
         Me.btbRegistrer.Name = "btbRegistrer"
         Me.btbRegistrer.Size = New System.Drawing.Size(312, 42)
         Me.btbRegistrer.TabIndex = 37
@@ -75,7 +76,7 @@ Partial Class Form1
         'btnCancel
         '
         Me.btnCancel.Location = New System.Drawing.Point(515, 349)
-        Me.btnCancel.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(6)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(138, 42)
         Me.btnCancel.TabIndex = 34
@@ -85,7 +86,7 @@ Partial Class Form1
         'btbLogin
         '
         Me.btbLogin.Location = New System.Drawing.Point(343, 349)
-        Me.btbLogin.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.btbLogin.Margin = New System.Windows.Forms.Padding(6)
         Me.btbLogin.Name = "btbLogin"
         Me.btbLogin.Size = New System.Drawing.Size(138, 42)
         Me.btbLogin.TabIndex = 33
@@ -95,7 +96,7 @@ Partial Class Form1
         'txtPassword
         '
         Me.txtPassword.Location = New System.Drawing.Point(490, 281)
-        Me.txtPassword.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(6)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(164, 29)
         Me.txtPassword.TabIndex = 32
@@ -103,16 +104,26 @@ Partial Class Form1
         'txtPersonnr
         '
         Me.txtPersonnr.Location = New System.Drawing.Point(490, 207)
-        Me.txtPersonnr.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.txtPersonnr.Margin = New System.Windows.Forms.Padding(6)
         Me.txtPersonnr.Name = "txtPersonnr"
         Me.txtPersonnr.Size = New System.Drawing.Size(164, 29)
         Me.txtPersonnr.TabIndex = 31
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(12, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(99, 59)
+        Me.Button1.TabIndex = 39
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1010, 617)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btbRegistrer)
         Me.Controls.Add(Me.Label3)
@@ -121,7 +132,7 @@ Partial Class Form1
         Me.Controls.Add(Me.btbLogin)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtPersonnr)
-        Me.Margin = New System.Windows.Forms.Padding(6, 6, 6, 6)
+        Me.Margin = New System.Windows.Forms.Padding(6)
         Me.Name = "Form1"
         Me.Text = "Form1"
         Me.ResumeLayout(False)
@@ -137,4 +148,5 @@ Partial Class Form1
     Friend WithEvents btbLogin As Button
     Friend WithEvents txtPassword As TextBox
     Friend WithEvents txtPersonnr As TextBox
+    Friend WithEvents Button1 As Button
 End Class

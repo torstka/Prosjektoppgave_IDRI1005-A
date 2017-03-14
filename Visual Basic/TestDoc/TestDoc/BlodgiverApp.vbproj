@@ -79,6 +79,12 @@
     <Compile Include="DataMyBlood.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmployeeLogIn.Designer.vb">
+      <DependentUpon>EmployeeLogIn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeLogIn.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DataMyBlood.resx">
       <DependentUpon>DataMyBlood.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeLogIn.resx">
+      <DependentUpon>EmployeeLogIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
