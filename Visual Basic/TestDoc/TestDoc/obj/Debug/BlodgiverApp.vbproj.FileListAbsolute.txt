@@ -82,3 +82,7 @@ C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\Te
 \\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
 \\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
 \\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
