@@ -73,6 +73,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bloodgiver.vb" />
     <Compile Include="DataMyBlood.Designer.vb">
       <DependentUpon>DataMyBlood.vb</DependentUpon>
     </Compile>
