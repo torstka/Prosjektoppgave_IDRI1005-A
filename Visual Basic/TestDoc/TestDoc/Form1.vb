@@ -1,6 +1,8 @@
 Imports MySql.Data.MySqlClient
 
 Public Class Form1
+
+    Public personNr As Integer
     Private tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -23,7 +25,7 @@ Public Class Form1
     End Sub
 
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
-        Dim personnr = txtPersonnr.Text
+        personNr = txtPersonnr.Text
         Dim password = txtPassword.Text
         Dim sqlSporring = "select * from Users where Personnummer=@personnummer " &
                           "and Passord=@passord"

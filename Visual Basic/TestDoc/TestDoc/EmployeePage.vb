@@ -3,4 +3,8 @@
         Me.Close()
         EmployeeLogIn.Show()
     End Sub
+
+    Private Sub EmployeePage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Label1.Text = "Ansattnummer: " & EmployeeLogIn.ansattNr
+    End Sub
 End Class

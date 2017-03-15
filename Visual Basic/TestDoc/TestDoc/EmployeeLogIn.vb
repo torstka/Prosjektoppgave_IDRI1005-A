@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class EmployeeLogIn
-
+    Public ansattNr As Integer
     Private tilkobling As MySqlConnection
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -15,7 +15,7 @@ Public Class EmployeeLogIn
     End Sub
 
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
-        Dim ansattNr = txtAnsattnr.Text
+        ansattNr = txtAnsattnr.Text
         Dim password = txtPassword.Text
         Dim sqlSporring = "select * from Employees where Ansattnr=@ansattnr " &
                       "and Passord=@passord"
@@ -27,9 +27,10 @@ Public Class EmployeeLogIn
 
         Dim leser = sql.ExecuteReader()
         If leser.HasRows Then
-            MsgBox("Du er logget inn")
+            Me.Hide()
+            EmployeePage.Show()
         Else
-            MsgBox("Innlogging misslykket")
+            MsgBox("Innlogging feilet! Prøv igjen.", MsgBoxStyle.Critical, "ERROR")
         End If
         leser.Close()
     End Sub
