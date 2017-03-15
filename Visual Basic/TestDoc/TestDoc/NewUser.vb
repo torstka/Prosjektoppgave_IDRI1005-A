@@ -14,7 +14,7 @@ Public Class NewUser
         Dim Etternavn = txtLastname.Text
         Dim Personnummer = txtPersonnr.Text
         Dim Adresse = txtAdress.Text
-        Dim Postnummer = txtPostnr.Text
+        Dim Postnummer = txtPostnr
         Dim Telefon = txtPostnr.Text
         Dim Epost = txtEmail.Text
         Dim Passord = txtPassword.Text
