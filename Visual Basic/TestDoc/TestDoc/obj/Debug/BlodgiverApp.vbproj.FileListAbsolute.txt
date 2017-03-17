@@ -142,3 +142,5 @@ C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\T
 C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
 C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
 >>>>>>> master
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation1.resources

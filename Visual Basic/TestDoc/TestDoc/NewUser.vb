@@ -2,108 +2,141 @@
 Imports MySql.Data.MySqlClient
 Public Class NewUser
     Private Sub NewUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Oppkobling mot databasen
         tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
         tilkobling.Open()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        'Knapp som klarerer skjema og går tilbake til "form1"
+        txtFirstname.Clear()
+        txtLastname.Clear()
+        txtPersonnr.Clear()
+        txtAdress.Clear()
+        txtPostnr.Clear()
+        txtPhone.Clear()
+        txtEmail.Clear()
+        txtPassword.Clear()
+        RegError.Clear()
         Form1.Show()
         Me.Hide()
 
     End Sub
     Private Function ValidFornavn() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Fornavn = txtFirstname.Text
         If Fornavn.Length = 0 Then
-            Me.ErrorProvider1.SetError(txtFirstname, "Please enter your name")
+            Me.RegError.SetError(txtFirstname, "Vennligst fyll ut fornavn")
             Return False
+            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun bokstaver)
         ElseIf Not Regex.IsMatch(Fornavn, "^[\p{L} ]+$") Then
-            Me.ErrorProvider1.SetError(txtFirstname, "First name can only contain letters")
+            Me.RegError.SetError(txtFirstname, "Fornavn kan bare inneholde bokstaver")
             Return False
         Else
-            Me.ErrorProvider1.SetError(txtFirstname, "")
+            'Om betingelser er møtt, gå videre
+            Me.RegError.SetError(txtFirstname, "")
             Return True
         End If
     End Function
     Private Function ValidEtternavn() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Etternavn = txtLastname.Text
         If Etternavn.Length = 0 Then
-            Me.ErrorProvider1.SetError(txtLastname, "Please enter your last name")
+            Me.RegError.SetError(txtLastname, "Vennligst fyll ut etternavn")
             Return False
+            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (bokstaver)
         ElseIf Not Regex.IsMatch(Etternavn, "^[\p{L} ]+$") Then
-            Me.ErrorProvider1.SetError(txtLastname, "Last name can only contain digits")
+            Me.RegError.SetError(txtLastname, "Etternavn kan bare inneholde bokstaver")
             Return False
         Else
-            Me.ErrorProvider1.SetError(txtLastname, "")
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(txtLastname, "")
             Return True
         End If
     End Function
     Private Function ValidPersnr() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
         Dim persnr = txtPersonnr.Text
         If persnr.Length = 0 Then
-            Me.ErrorProvider1.SetError(txtPersonnr, "Please enter birthnumber")
+            Me.RegError.SetError(txtPersonnr, "Vennligst fyll ut personnummer")
             Return False
+            'Validerer at tekstboksen inneholder ett bestemt antall tegn (11 tegn)
         ElseIf Not persnr.Length = 11 Then
-            Me.ErrorProvider1.SetError(txtPersonnr, "Birth number must be 11 characters long")
+            Me.RegError.SetError(txtPersonnr, "Personnummer må bestå av 11 tall")
             Return False
+            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun tall)
         ElseIf Not Regex.IsMatch(persnr, "^[0-9]+$") Then
-            Me.ErrorProvider1.SetError(txtPersonnr, "Birth number can only contain digits")
+            Me.RegError.SetError(txtPersonnr, "Personnummer kan bare bestå av tall")
             Return False
         Else
-            Me.ErrorProvider1.SetError(txtPersonnr, "")
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(txtPersonnr, "")
             Return True
         End If
     End Function
     Private Function ValidAdresse() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Adresse = txtAdress.Text
         If Adresse.Length = 0 Then
-            Me.ErrorProvider1.SetError(txtAdress, "Please enter your address")
+            Me.RegError.SetError(txtAdress, "Vennligst fyll ut adresse")
             Return False
         Else
-            Me.ErrorProvider1.SetError(txtAdress, "")
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(txtAdress, "")
             Return True
         End If
     End Function
     Private Function ValidTelefon() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
         Dim telefonnr = txtPhone.Text
         If telefonnr.Length = 0 Then
-            Me.ErrorProvider1.SetError(txtPhone, "Please enter phone number")
+            Me.RegError.SetError(txtPhone, "Vennligst fyll ut telefonnummer")
             Return False
+            'Validerer at tekstboksen inneholder ett bestemt antall tegn (8 tegn)
         ElseIf Not telefonnr.Length = 8 Then
-            Me.ErrorProvider1.SetError(txtPhone, "Phone number must be 8 characters long")
+            Me.RegError.SetError(txtPhone, "Telefonnummer må bestå av 8 Tall")
             Return False
+            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun tall)
         ElseIf Not Regex.IsMatch(telefonnr, "^[0-9]+$") Then
-            Me.ErrorProvider1.SetError(txtPhone, "Phone number can only contain digits")
+            Me.RegError.SetError(txtPhone, "Telefonnummer kan bare bestå av tall")
             Return False
         Else
-            Me.ErrorProvider1.SetError(txtPhone, "")
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(txtPhone, "")
             Return True
         End If
     End Function
     Private Function ValidPostnr() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Postnr = txtPostnr.Text
         If Postnr.Length = 0 Then
-            Me.ErrorProvider1.SetError(txtPostnr, "Please enter post number")
+            Me.RegError.SetError(txtPostnr, "Vennligst fyll ut postnummer")
             Return False
+            'Validerer at tekstboksen inneholder ett bestemt antall tegn (4 tegn)
         ElseIf Not Postnr.Length = 4 Then
-            Me.ErrorProvider1.SetError(txtPostnr, "Post number must be 4 characters long")
+            Me.RegError.SetError(txtPostnr, "Postnummer må bestå av 4 tall")
             Return False
+            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun tall)
         ElseIf Not Regex.IsMatch(Postnr, "^[0-9]+$") Then
-            Me.ErrorProvider1.SetError(txtPostnr, "Post number can only contain digits")
+            Me.RegError.SetError(txtPostnr, "Postnummer Kan Bare Bestå Av Tall")
             Return False
         Else
-            Me.ErrorProvider1.SetError(txtPostnr, "")
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(txtPostnr, "")
             Return True
         End If
     End Function
 
     Private Function ValidEmail() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
         Dim epost = txtEmail.Text
         If epost.Length = 0 Then
-            Me.ErrorProvider1.SetError(txtEmail, "Please enter email address")
+            Me.RegError.SetError(txtEmail, "Vennligst fyll ut E-Post")
             Return False
         End If
-        Dim errorMessage = "E-mail address must be valid e-mail address format." + ControlChars.Cr +
-            "For example 'someone@example.com' "
-        Me.ErrorProvider1.SetError(txtEmail, errorMessage)
+        'Validerer at tekstboksen inneholder riktige tegn ("@" og "." i riktig rekkefølge og riktig antall tegn(Ikke mer enn et "@" og "."))
+        Dim errorMessage = "E-Post adresse må være av gyldig format" + ControlChars.Cr +
+            "Eksempel 'olanordmann@eksempel.no' "
+        Me.RegError.SetError(txtEmail, errorMessage)
         Dim indexAt1 = epost.IndexOf("@")
         Dim indexAt2 = epost.LastIndexOf("@")
         If indexAt1 < 1 Or Not indexAt1 = indexAt2 Then
@@ -114,28 +147,34 @@ Public Class NewUser
         If indexDot1 <= indexAt1 + 1 Or Not indexDot2 = indexDot1 Or indexDot1 = epost.Length - 1 Then
             Return False
         End If
-        Me.ErrorProvider1.SetError(txtEmail, "")
+        'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+        Me.RegError.SetError(txtEmail, "")
         Return True
     End Function
     Private Function ConfirmPass() As Boolean
+        'Validerer at innholdet i "passord" og "bekreft passord" tekstboksene er identiske
         If Not txtPassword.Text.Equals(txtConfirmPassword.Text) Then
-            Me.ErrorProvider1.SetError(txtConfirmPassword, "Passwords do not match")
+            Me.RegError.SetError(txtConfirmPassword, "Passordene må være like")
             Return False
         Else
-            Me.ErrorProvider1.SetError(txtConfirmPassword, "")
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(txtConfirmPassword, "")
             Return True
         End If
     End Function
     Private Function ValidPass() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Pass = txtPassword.Text
         If Pass.Length = 0 Then
-            Me.ErrorProvider1.SetError(txtPassword, "Please enter a password")
+            Me.RegError.SetError(txtPassword, "Vennligst Fyll ut et Passord")
             Return False
+            'Validerer at tekstboksen inneholder minst 8 tegn
         ElseIf Pass.Length < 8 Then
-            Me.ErrorProvider1.SetError(txtPassword, "Password must be atleast 8 characters long")
+            Me.RegError.SetError(txtPassword, "Passord Må Bestå Av Minst 8 Tegn")
             Return False
         Else
-            Me.ErrorProvider1.SetError(txtPassword, "")
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(txtPassword, "")
             Return True
         End If
     End Function
@@ -143,6 +182,7 @@ Public Class NewUser
     Private tilkobling As MySqlConnection
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'Deklarerer tekstboksene
         Dim Fornavn = txtFirstname.Text
         Dim Etternavn = txtLastname.Text
         Dim Personnummer = txtPersonnr.Text
@@ -152,26 +192,27 @@ Public Class NewUser
         Dim Epost = txtEmail.Text
         Dim Passord = txtPassword.Text
 
+        'Validerer at alle tekstboksene er utfylt riktig
         If Not ValidFornavn() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtFirstname))
+            MsgBox(Me.RegError.GetError(txtFirstname))
         ElseIf Not ValidEtternavn() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtLastname))
+            MsgBox(Me.RegError.GetError(txtLastname))
         ElseIf Not ValidPersnr() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtPersonnr))
+            MsgBox(Me.RegError.GetError(txtPersonnr))
         ElseIf Not ValidAdresse() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtAdress))
+            MsgBox(Me.RegError.GetError(txtAdress))
         ElseIf Not ValidTelefon() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtPhone))
+            MsgBox(Me.RegError.GetError(txtPhone))
         ElseIf Not ValidPostnr() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtPostnr))
+            MsgBox(Me.RegError.GetError(txtPostnr))
         ElseIf Not ValidEmail() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtEmail))
+            MsgBox(Me.RegError.GetError(txtEmail))
         ElseIf Not ValidPass() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtPassword))
+            MsgBox(Me.RegError.GetError(txtPassword))
         ElseIf Not ConfirmPass() Then
-            MsgBox(Me.ErrorProvider1.GetError(txtConfirmPassword))
+            MsgBox(Me.RegError.GetError(txtConfirmPassword))
         Else
-
+            'Om valideringen er godkjent ("return true" på alle funksjonene), utfør sql spørring mot database
             Dim sqlSporring = "insert into Users (Etternavn, Fornavn, Personnummer, Adresse, Postnummer, Epost, Telefon, Passord) values (@Etternavn, @Fornavn, @Personnummer, @Adresse, @Postnummer, @Epost, @Telefon, @Passord)"
             Dim sql As New MySqlCommand(sqlSporring, tilkobling)
 
@@ -186,7 +227,7 @@ Public Class NewUser
             sql.Parameters.AddWithValue("@Passord", Passord)
 
             sql.ExecuteNonQuery()
-            MsgBox("Registrering vellykket")
+            MsgBox("Registrering vellykket!")
 
             Me.Close()
             Form1.Show()
