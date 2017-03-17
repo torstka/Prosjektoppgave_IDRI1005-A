@@ -4,13 +4,19 @@
         DataMyBlood.Show()
     End Sub
 
+<<<<<<< HEAD
     Private Sub Button2_Click(sender As Object, e As EventArgs) 
 
+=======
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.Hide()
+        'Calender.show()
+>>>>>>> master
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Hide()
-
+        BloodInformation.show()
     End Sub
 
     Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
@@ -24,10 +30,12 @@
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-
+        Me.Hide()
+        Form1.Show()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.Hide()
+        'QuestionForm1.show()
     End Sub
 End Class

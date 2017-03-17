@@ -73,6 +73,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BloodInformation.Designer.vb">
+      <DependentUpon>BloodInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BloodInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BloodInformation1.Designer.vb">
+      <DependentUpon>BloodInformation1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="BloodInformation1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DataMyBlood.Designer.vb">
       <DependentUpon>DataMyBlood.vb</DependentUpon>
     </Compile>
@@ -133,6 +145,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BloodInformation.resx">
+      <DependentUpon>BloodInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BloodInformation1.resx">
+      <DependentUpon>BloodInformation1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DataMyBlood.resx">
       <DependentUpon>DataMyBlood.vb</DependentUpon>
     </EmbeddedResource>

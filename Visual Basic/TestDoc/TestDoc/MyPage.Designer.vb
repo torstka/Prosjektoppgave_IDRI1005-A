@@ -28,34 +28,59 @@ Partial Class MyPage
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
+<<<<<<< HEAD
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
+=======
+        Me.Button7 = New System.Windows.Forms.Button()
+>>>>>>> master
         Me.SuspendLayout()
         '
         'Button1
         '
+<<<<<<< HEAD
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(700, 257)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Button1.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(319, 222)
+>>>>>>> master
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(268, 214)
+        Me.Button1.Size = New System.Drawing.Size(219, 178)
         Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Min Blod data"
+        Me.Button1.Text = "Min Bloddata"
         Me.Button1.UseVisualStyleBackColor = True
         '
+<<<<<<< HEAD
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button3.Location = New System.Drawing.Point(339, 257)
         Me.Button3.Margin = New System.Windows.Forms.Padding(4)
+=======
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(601, 222)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(218, 178)
+        Me.Button2.TabIndex = 1
+        Me.Button2.Text = "Ny time!"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(864, 222)
+>>>>>>> master
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(262, 214)
+        Me.Button3.Size = New System.Drawing.Size(214, 178)
         Me.Button3.TabIndex = 2
         Me.Button3.Text = "Informasjon om blodgiving"
         Me.Button3.UseVisualStyleBackColor = True
@@ -64,20 +89,24 @@ Partial Class MyPage
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(572, 39)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(468, 32)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(194, 44)
+        Me.Label1.Size = New System.Drawing.Size(165, 37)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "MIN SIDE"
         '
         'Button4
         '
+<<<<<<< HEAD
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.Location = New System.Drawing.Point(493, 526)
         Me.Button4.Margin = New System.Windows.Forms.Padding(4)
+=======
+        Me.Button4.Font = New System.Drawing.Font("Imprint MT Shadow", 11.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button4.Location = New System.Drawing.Point(403, 438)
+>>>>>>> master
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(380, 70)
+        Me.Button4.Size = New System.Drawing.Size(311, 58)
         Me.Button4.TabIndex = 4
         Me.Button4.Text = "Endre Personopplysninger"
         Me.Button4.UseVisualStyleBackColor = True
@@ -85,24 +114,23 @@ Partial Class MyPage
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(66, 39)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(54, 32)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(127, 25)
+        Me.Label2.Size = New System.Drawing.Size(101, 20)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Velkommen :"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(66, 74)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(54, 62)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(269, 100)
+        Me.Label3.Size = New System.Drawing.Size(220, 80)
         Me.Label3.TabIndex = 6
         Me.Label3.Text = "NAVN -Forsøke å få " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "denne til å kjøre sql " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "mot DB slik at navn basert på " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "pers" &
     "onnummer returneres her"
         '
+<<<<<<< HEAD
         'Button5
         '
         Me.Button5.Location = New System.Drawing.Point(72, 174)
@@ -117,12 +145,18 @@ Partial Class MyPage
         '
         Me.Button6.Location = New System.Drawing.Point(1172, 15)
         Me.Button6.Margin = New System.Windows.Forms.Padding(4)
+=======
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(959, 12)
+>>>>>>> master
         Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(176, 48)
+        Me.Button6.Size = New System.Drawing.Size(144, 40)
         Me.Button6.TabIndex = 8
         Me.Button6.Text = "Logg ut"
         Me.Button6.UseVisualStyleBackColor = True
         '
+<<<<<<< HEAD
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -168,22 +202,40 @@ Partial Class MyPage
         Me.Label7.Size = New System.Drawing.Size(112, 25)
         Me.Label7.TabIndex = 14
         Me.Label7.Text = "Bestill Time"
+=======
+        'Button7
+        '
+        Me.Button7.Font = New System.Drawing.Font("Imprint MT Shadow", 14.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Location = New System.Drawing.Point(45, 222)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(219, 178)
+        Me.Button7.TabIndex = 9
+        Me.Button7.Text = "Spørreskjema"
+        Me.Button7.UseVisualStyleBackColor = True
+>>>>>>> master
         '
         'MyPage
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 24.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+<<<<<<< HEAD
         Me.ClientSize = New System.Drawing.Size(1362, 659)
         Me.Controls.Add(Me.GroupBox1)
+=======
+        Me.ClientSize = New System.Drawing.Size(1114, 549)
+        Me.Controls.Add(Me.Button7)
+>>>>>>> master
         Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button1)
+<<<<<<< HEAD
         Me.Margin = New System.Windows.Forms.Padding(4)
+=======
+>>>>>>> master
         Me.Name = "MyPage"
         Me.Text = "MyPage"
         Me.GroupBox1.ResumeLayout(False)
@@ -199,6 +251,7 @@ Partial Class MyPage
     Friend WithEvents Button4 As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
+<<<<<<< HEAD
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents GroupBox1 As GroupBox
@@ -206,4 +259,8 @@ Partial Class MyPage
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents DateTimePicker2 As DateTimePicker
+=======
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
+>>>>>>> master
 End Class
