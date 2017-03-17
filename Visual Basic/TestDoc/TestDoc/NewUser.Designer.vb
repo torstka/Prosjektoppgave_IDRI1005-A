@@ -44,9 +44,11 @@ Partial Class NewUser
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.RegError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        CType(Me.RegError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -69,11 +71,11 @@ Partial Class NewUser
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(83, 46)
+        Me.Label2.Location = New System.Drawing.Point(72, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Fornavn:"
+        Me.Label2.Text = "First name:"
         '
         'txtFirstname
         '
@@ -88,9 +90,9 @@ Partial Class NewUser
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(5, 87)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(123, 13)
+        Me.Label5.Size = New System.Drawing.Size(126, 13)
         Me.Label5.TabIndex = 26
-        Me.Label5.Text = "Personnummer (11 siffer)"
+        Me.Label5.Text = "Personnummer (11 siffer):"
         '
         'txtPersonnr
         '
@@ -103,11 +105,11 @@ Partial Class NewUser
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(61, 125)
+        Me.Label7.Location = New System.Drawing.Point(58, 125)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(71, 13)
+        Me.Label7.Size = New System.Drawing.Size(74, 13)
         Me.Label7.TabIndex = 31
-        Me.Label7.Text = "Privatadresse"
+        Me.Label7.Text = "Privatadresse:"
         '
         'Label3
         '
@@ -128,7 +130,7 @@ Partial Class NewUser
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(317, 125)
+        Me.Label8.Location = New System.Drawing.Point(317, 86)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 13)
         Me.Label8.TabIndex = 33
@@ -136,7 +138,7 @@ Partial Class NewUser
         '
         'txtPostnr
         '
-        Me.txtPostnr.Location = New System.Drawing.Point(391, 123)
+        Me.txtPostnr.Location = New System.Drawing.Point(391, 84)
         Me.txtPostnr.Name = "txtPostnr"
         Me.txtPostnr.Size = New System.Drawing.Size(132, 20)
         Me.txtPostnr.TabIndex = 32
@@ -144,7 +146,7 @@ Partial Class NewUser
         '
         'txtConfirmPassword
         '
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(391, 203)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(391, 164)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.Size = New System.Drawing.Size(132, 20)
         Me.txtConfirmPassword.TabIndex = 42
@@ -152,7 +154,7 @@ Partial Class NewUser
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(302, 203)
+        Me.Label10.Location = New System.Drawing.Point(302, 164)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(82, 13)
         Me.Label10.TabIndex = 41
@@ -168,7 +170,7 @@ Partial Class NewUser
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(391, 161)
+        Me.txtEmail.Location = New System.Drawing.Point(391, 122)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(132, 20)
         Me.txtEmail.TabIndex = 39
@@ -177,7 +179,7 @@ Partial Class NewUser
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(310, 161)
+        Me.Label9.Location = New System.Drawing.Point(310, 122)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 13)
         Me.Label9.TabIndex = 38
@@ -186,11 +188,11 @@ Partial Class NewUser
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(86, 205)
+        Me.Label6.Location = New System.Drawing.Point(83, 205)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(45, 13)
+        Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 37
-        Me.Label6.Text = "Passord"
+        Me.Label6.Text = "Passord:"
         '
         'txtPhone
         '
@@ -204,11 +206,11 @@ Partial Class NewUser
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(89, 164)
+        Me.Label4.Location = New System.Drawing.Point(85, 164)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 13)
+        Me.Label4.Size = New System.Drawing.Size(46, 13)
         Me.Label4.TabIndex = 35
-        Me.Label4.Text = "Telefon"
+        Me.Label4.Text = "Telefon:"
         '
         'Button2
         '
@@ -228,24 +230,48 @@ Partial Class NewUser
         Me.Button1.Text = "Registrer"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'RegError
+        '
+        Me.RegError.ContainerControl = Me
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(54, 284)
+        Me.Label11.Location = New System.Drawing.Point(348, 210)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(45, 13)
+        Me.Label11.Size = New System.Drawing.Size(34, 13)
         Me.Label11.TabIndex = 45
-        Me.Label11.Text = "Label11"
+        Me.Label11.Text = "Kjønn"
         '
-        'ErrorProvider1
+        'RadioButton1
         '
-        Me.ErrorProvider1.ContainerControl = Me
+        Me.RadioButton1.AutoSize = True
+        Me.RadioButton1.Location = New System.Drawing.Point(396, 209)
+        Me.RadioButton1.Name = "RadioButton1"
+        Me.RadioButton1.Size = New System.Drawing.Size(52, 17)
+        Me.RadioButton1.TabIndex = 46
+        Me.RadioButton1.TabStop = True
+        Me.RadioButton1.Text = "Mann"
+        Me.RadioButton1.UseVisualStyleBackColor = True
+        '
+        'RadioButton2
+        '
+        Me.RadioButton2.AutoSize = True
+        Me.RadioButton2.Location = New System.Drawing.Point(462, 210)
+        Me.RadioButton2.Name = "RadioButton2"
+        Me.RadioButton2.Size = New System.Drawing.Size(58, 17)
+        Me.RadioButton2.TabIndex = 47
+        Me.RadioButton2.TabStop = True
+        Me.RadioButton2.Text = "Kvinne"
+        Me.RadioButton2.UseVisualStyleBackColor = True
         '
         'NewUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(551, 336)
+        Me.Controls.Add(Me.RadioButton2)
+        Me.Controls.Add(Me.RadioButton1)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -270,7 +296,7 @@ Partial Class NewUser
         Me.Controls.Add(Me.txtLastname)
         Me.Name = "NewUser"
         Me.Text = "NewUser"
-        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RegError, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -297,6 +323,8 @@ Partial Class NewUser
     Friend WithEvents Label4 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents RegError As ErrorProvider
+    Friend WithEvents RadioButton2 As RadioButton
+    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Label11 As Label
-    Friend WithEvents ErrorProvider1 As ErrorProvider
 End Class
