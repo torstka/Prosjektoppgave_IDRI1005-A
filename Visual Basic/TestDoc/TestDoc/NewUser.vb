@@ -117,7 +117,7 @@ Public Class NewUser
             Return False
             'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun tall)
         ElseIf Not Regex.IsMatch(Postnr, "^[0-9]+$") Then
-            Me.RegError.SetError(txtPostnr, "Postnummer Kan Bare Bestå Av Tall")
+            Me.RegError.SetError(txtPostnr, "Postnummer kan bare bestå av tall")
             Return False
         Else
             'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
@@ -166,15 +166,30 @@ Public Class NewUser
         'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Pass = txtPassword.Text
         If Pass.Length = 0 Then
-            Me.RegError.SetError(txtPassword, "Vennligst Fyll ut et Passord")
+            Me.RegError.SetError(txtPassword, "Vennligst fyll ut et passord")
             Return False
             'Validerer at tekstboksen inneholder minst 8 tegn
         ElseIf Pass.Length < 8 Then
-            Me.RegError.SetError(txtPassword, "Passord Må Bestå Av Minst 8 Tegn")
+            Me.RegError.SetError(txtPassword, "Passord må bestå av minst 8 Tegn")
             Return False
         Else
             'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
             Me.RegError.SetError(txtPassword, "")
+            Return True
+        End If
+    End Function
+    Private Function ValidKjønn() As Boolean
+        'Validerer at du ikke har krysset av for begge kjønn
+        If Mbox.Checked And Fbox.Checked Then
+            Me.RegError.SetError(Fbox, "Du kan bare velge et kjønn")
+            Return False
+            'Validerer at minst en av checkboksene er krysset av
+        ElseIf Mbox.Checked = False And Fbox.Checked = False Then
+            Me.RegError.SetError(Fbox, "Vennligst velg et kjønn")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(Fbox, "")
             Return True
         End If
     End Function
@@ -191,6 +206,9 @@ Public Class NewUser
         Dim Telefon = txtPhone.Text
         Dim Epost = txtEmail.Text
         Dim Passord = txtPassword.Text
+        Dim Mann = Mbox.Text
+        Dim Kvinne = Fbox.Text
+
 
         'Validerer at alle tekstboksene er utfylt riktig
         If Not ValidFornavn() Then
@@ -199,21 +217,25 @@ Public Class NewUser
             MsgBox(Me.RegError.GetError(txtLastname))
         ElseIf Not ValidPersnr() Then
             MsgBox(Me.RegError.GetError(txtPersonnr))
-        ElseIf Not ValidAdresse() Then
-            MsgBox(Me.RegError.GetError(txtAdress))
-        ElseIf Not ValidTelefon() Then
-            MsgBox(Me.RegError.GetError(txtPhone))
         ElseIf Not ValidPostnr() Then
             MsgBox(Me.RegError.GetError(txtPostnr))
+        ElseIf Not ValidAdresse() Then
+            MsgBox(Me.RegError.GetError(txtAdress))
         ElseIf Not ValidEmail() Then
             MsgBox(Me.RegError.GetError(txtEmail))
         ElseIf Not ValidPass() Then
             MsgBox(Me.RegError.GetError(txtPassword))
         ElseIf Not ConfirmPass() Then
             MsgBox(Me.RegError.GetError(txtConfirmPassword))
-        Else
-            'Om valideringen er godkjent ("return true" på alle funksjonene), utfør sql spørring mot database
-            Dim sqlSporring = "insert into Users (Etternavn, Fornavn, Personnummer, Adresse, Postnummer, Epost, Telefon, Passord) values (@Etternavn, @Fornavn, @Personnummer, @Adresse, @Postnummer, @Epost, @Telefon, @Passord)"
+        ElseIf Not ValidTelefon() Then
+            MsgBox(Me.RegError.GetError(txtPhone))
+        ElseIf Not ValidKjønn() Then
+            MsgBox(Me.RegError.GetError(Fbox))
+            Else
+
+
+                'Om valideringen er godkjent ("return true" på alle funksjonene), utfør sql spørring mot database
+                Dim sqlSporring = "insert into Users (Etternavn, Fornavn, Personnummer, Adresse, Postnummer, Epost, Telefon, Passord, Kjønn) values (@Etternavn, @Fornavn, @Personnummer, @Adresse, @Postnummer, @Epost, @Telefon, @Passord, @Kjønn)"
             Dim sql As New MySqlCommand(sqlSporring, tilkobling)
 
 
@@ -225,7 +247,11 @@ Public Class NewUser
             sql.Parameters.AddWithValue("@Telefon", Telefon)
             sql.Parameters.AddWithValue("@Epost", Epost)
             sql.Parameters.AddWithValue("@Passord", Passord)
-
+            If Mbox.Checked Then
+                sql.Parameters.AddWithValue("@Kjønn", Mann)
+            ElseIf Fbox.Checked Then
+                sql.Parameters.AddWithValue("@Kjønn", Kvinne)
+            End If
             sql.ExecuteNonQuery()
             MsgBox("Registrering vellykket!")
 

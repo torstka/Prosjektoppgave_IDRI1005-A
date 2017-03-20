@@ -46,8 +46,8 @@ Partial Class NewUser
         Me.Button1 = New System.Windows.Forms.Button()
         Me.RegError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
+        Me.Mbox = New System.Windows.Forms.CheckBox()
+        Me.Fbox = New System.Windows.Forms.CheckBox()
         CType(Me.RegError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -65,7 +65,7 @@ Partial Class NewUser
         Me.txtLastname.Location = New System.Drawing.Point(391, 43)
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.Size = New System.Drawing.Size(132, 20)
-        Me.txtLastname.TabIndex = 19
+        Me.txtLastname.TabIndex = 2
         Me.txtLastname.Tag = "Fyll inn ditt etternavn"
         '
         'Label2
@@ -82,7 +82,7 @@ Partial Class NewUser
         Me.txtFirstname.Location = New System.Drawing.Point(139, 43)
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.Size = New System.Drawing.Size(127, 20)
-        Me.txtFirstname.TabIndex = 21
+        Me.txtFirstname.TabIndex = 1
         Me.txtFirstname.Tag = "Fyll inn ditt fornavn"
         '
         'Label5
@@ -99,7 +99,7 @@ Partial Class NewUser
         Me.txtPersonnr.Location = New System.Drawing.Point(139, 85)
         Me.txtPersonnr.Name = "txtPersonnr"
         Me.txtPersonnr.Size = New System.Drawing.Size(127, 20)
-        Me.txtPersonnr.TabIndex = 25
+        Me.txtPersonnr.TabIndex = 3
         Me.txtPersonnr.Tag = "Fyll inn ditt personnummer (11)"
         '
         'Label7
@@ -124,7 +124,7 @@ Partial Class NewUser
         Me.txtAdress.Location = New System.Drawing.Point(139, 122)
         Me.txtAdress.Name = "txtAdress"
         Me.txtAdress.Size = New System.Drawing.Size(127, 20)
-        Me.txtAdress.TabIndex = 29
+        Me.txtAdress.TabIndex = 5
         Me.txtAdress.Tag = "Fyll inn din adresse"
         '
         'Label8
@@ -141,15 +141,16 @@ Partial Class NewUser
         Me.txtPostnr.Location = New System.Drawing.Point(391, 84)
         Me.txtPostnr.Name = "txtPostnr"
         Me.txtPostnr.Size = New System.Drawing.Size(132, 20)
-        Me.txtPostnr.TabIndex = 32
+        Me.txtPostnr.TabIndex = 4
         Me.txtPostnr.Tag = "Fyll inn ditt postnummer"
         '
         'txtConfirmPassword
         '
         Me.txtConfirmPassword.Location = New System.Drawing.Point(391, 164)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
+        Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(132, 20)
-        Me.txtConfirmPassword.TabIndex = 42
+        Me.txtConfirmPassword.TabIndex = 8
         '
         'Label10
         '
@@ -162,10 +163,11 @@ Partial Class NewUser
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(139, 203)
+        Me.txtPassword.Location = New System.Drawing.Point(139, 164)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(127, 20)
-        Me.txtPassword.TabIndex = 40
+        Me.txtPassword.TabIndex = 7
         Me.txtPassword.Tag = "Fyll inn ditt passord"
         '
         'txtEmail
@@ -173,7 +175,7 @@ Partial Class NewUser
         Me.txtEmail.Location = New System.Drawing.Point(391, 122)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(132, 20)
-        Me.txtEmail.TabIndex = 39
+        Me.txtEmail.TabIndex = 6
         Me.txtEmail.Tag = "Fyll inn din epostadresse"
         '
         'Label9
@@ -188,7 +190,7 @@ Partial Class NewUser
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(83, 205)
+        Me.Label6.Location = New System.Drawing.Point(83, 166)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 37
@@ -196,17 +198,17 @@ Partial Class NewUser
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(139, 162)
+        Me.txtPhone.Location = New System.Drawing.Point(139, 203)
         Me.txtPhone.MaxLength = 8
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(127, 20)
-        Me.txtPhone.TabIndex = 36
+        Me.txtPhone.TabIndex = 9
         Me.txtPhone.Tag = "Fyll inn dit telefonnummer"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(85, 164)
+        Me.Label4.Location = New System.Drawing.Point(85, 205)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(46, 13)
         Me.Label4.TabIndex = 35
@@ -243,35 +245,33 @@ Partial Class NewUser
         Me.Label11.TabIndex = 45
         Me.Label11.Text = "Kjønn"
         '
-        'RadioButton1
+        'Mbox
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(396, 209)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(52, 17)
-        Me.RadioButton1.TabIndex = 46
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Mann"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.Mbox.AutoSize = True
+        Me.Mbox.Location = New System.Drawing.Point(403, 210)
+        Me.Mbox.Name = "Mbox"
+        Me.Mbox.Size = New System.Drawing.Size(53, 17)
+        Me.Mbox.TabIndex = 10
+        Me.Mbox.Text = "Mann"
+        Me.Mbox.UseVisualStyleBackColor = True
         '
-        'RadioButton2
+        'Fbox
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(462, 210)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(58, 17)
-        Me.RadioButton2.TabIndex = 47
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Kvinne"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.Fbox.AutoSize = True
+        Me.Fbox.Location = New System.Drawing.Point(464, 210)
+        Me.Fbox.Name = "Fbox"
+        Me.Fbox.Size = New System.Drawing.Size(59, 17)
+        Me.Fbox.TabIndex = 11
+        Me.Fbox.Text = "Kvinne"
+        Me.Fbox.UseVisualStyleBackColor = True
         '
         'NewUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(551, 336)
-        Me.Controls.Add(Me.RadioButton2)
-        Me.Controls.Add(Me.RadioButton1)
+        Me.Controls.Add(Me.Fbox)
+        Me.Controls.Add(Me.Mbox)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -324,7 +324,7 @@ Partial Class NewUser
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
     Friend WithEvents RegError As ErrorProvider
-    Friend WithEvents RadioButton2 As RadioButton
-    Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents Label11 As Label
+    Friend WithEvents Fbox As CheckBox
+    Friend WithEvents Mbox As CheckBox
 End Class
