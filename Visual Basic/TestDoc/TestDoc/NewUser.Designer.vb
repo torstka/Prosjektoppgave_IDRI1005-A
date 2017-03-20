@@ -22,6 +22,7 @@ Partial Class NewUser
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtLastname = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -43,7 +44,11 @@ Partial Class NewUser
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.RegError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Mbox = New System.Windows.Forms.CheckBox()
+        Me.Fbox = New System.Windows.Forms.CheckBox()
+        CType(Me.RegError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -60,24 +65,24 @@ Partial Class NewUser
         Me.txtLastname.Location = New System.Drawing.Point(391, 43)
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.Size = New System.Drawing.Size(132, 20)
-        Me.txtLastname.TabIndex = 19
+        Me.txtLastname.TabIndex = 2
         Me.txtLastname.Tag = "Fyll inn ditt etternavn"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(83, 46)
+        Me.Label2.Location = New System.Drawing.Point(72, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 13)
+        Me.Label2.Size = New System.Drawing.Size(58, 13)
         Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Fornavn:"
+        Me.Label2.Text = "First name:"
         '
         'txtFirstname
         '
         Me.txtFirstname.Location = New System.Drawing.Point(139, 43)
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.Size = New System.Drawing.Size(127, 20)
-        Me.txtFirstname.TabIndex = 21
+        Me.txtFirstname.TabIndex = 1
         Me.txtFirstname.Tag = "Fyll inn ditt fornavn"
         '
         'Label5
@@ -85,26 +90,26 @@ Partial Class NewUser
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(5, 87)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(123, 13)
+        Me.Label5.Size = New System.Drawing.Size(126, 13)
         Me.Label5.TabIndex = 26
-        Me.Label5.Text = "Personnummer (11 siffer)"
+        Me.Label5.Text = "Personnummer (11 siffer):"
         '
         'txtPersonnr
         '
         Me.txtPersonnr.Location = New System.Drawing.Point(139, 85)
         Me.txtPersonnr.Name = "txtPersonnr"
         Me.txtPersonnr.Size = New System.Drawing.Size(127, 20)
-        Me.txtPersonnr.TabIndex = 25
+        Me.txtPersonnr.TabIndex = 3
         Me.txtPersonnr.Tag = "Fyll inn ditt personnummer (11)"
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(61, 125)
+        Me.Label7.Location = New System.Drawing.Point(58, 125)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(71, 13)
+        Me.Label7.Size = New System.Drawing.Size(74, 13)
         Me.Label7.TabIndex = 31
-        Me.Label7.Text = "Privatadresse"
+        Me.Label7.Text = "Privatadresse:"
         '
         'Label3
         '
@@ -119,13 +124,13 @@ Partial Class NewUser
         Me.txtAdress.Location = New System.Drawing.Point(139, 122)
         Me.txtAdress.Name = "txtAdress"
         Me.txtAdress.Size = New System.Drawing.Size(127, 20)
-        Me.txtAdress.TabIndex = 29
+        Me.txtAdress.TabIndex = 5
         Me.txtAdress.Tag = "Fyll inn din adresse"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(317, 125)
+        Me.Label8.Location = New System.Drawing.Point(317, 86)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(65, 13)
         Me.Label8.TabIndex = 33
@@ -133,23 +138,24 @@ Partial Class NewUser
         '
         'txtPostnr
         '
-        Me.txtPostnr.Location = New System.Drawing.Point(391, 123)
+        Me.txtPostnr.Location = New System.Drawing.Point(391, 84)
         Me.txtPostnr.Name = "txtPostnr"
         Me.txtPostnr.Size = New System.Drawing.Size(132, 20)
-        Me.txtPostnr.TabIndex = 32
+        Me.txtPostnr.TabIndex = 4
         Me.txtPostnr.Tag = "Fyll inn ditt postnummer"
         '
         'txtConfirmPassword
         '
-        Me.txtConfirmPassword.Location = New System.Drawing.Point(391, 203)
+        Me.txtConfirmPassword.Location = New System.Drawing.Point(391, 164)
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
+        Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(132, 20)
-        Me.txtConfirmPassword.TabIndex = 42
+        Me.txtConfirmPassword.TabIndex = 8
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(302, 203)
+        Me.Label10.Location = New System.Drawing.Point(302, 164)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(82, 13)
         Me.Label10.TabIndex = 41
@@ -157,24 +163,25 @@ Partial Class NewUser
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(139, 203)
+        Me.txtPassword.Location = New System.Drawing.Point(139, 164)
         Me.txtPassword.Name = "txtPassword"
+        Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(127, 20)
-        Me.txtPassword.TabIndex = 40
+        Me.txtPassword.TabIndex = 7
         Me.txtPassword.Tag = "Fyll inn ditt passord"
         '
         'txtEmail
         '
-        Me.txtEmail.Location = New System.Drawing.Point(391, 161)
+        Me.txtEmail.Location = New System.Drawing.Point(391, 122)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(132, 20)
-        Me.txtEmail.TabIndex = 39
+        Me.txtEmail.TabIndex = 6
         Me.txtEmail.Tag = "Fyll inn din epostadresse"
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(310, 161)
+        Me.Label9.Location = New System.Drawing.Point(310, 122)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(71, 13)
         Me.Label9.TabIndex = 38
@@ -183,29 +190,29 @@ Partial Class NewUser
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(86, 205)
+        Me.Label6.Location = New System.Drawing.Point(83, 166)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(45, 13)
+        Me.Label6.Size = New System.Drawing.Size(48, 13)
         Me.Label6.TabIndex = 37
-        Me.Label6.Text = "Passord"
+        Me.Label6.Text = "Passord:"
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(139, 162)
+        Me.txtPhone.Location = New System.Drawing.Point(139, 203)
         Me.txtPhone.MaxLength = 8
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(127, 20)
-        Me.txtPhone.TabIndex = 36
+        Me.txtPhone.TabIndex = 9
         Me.txtPhone.Tag = "Fyll inn dit telefonnummer"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(89, 164)
+        Me.Label4.Location = New System.Drawing.Point(85, 205)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(43, 13)
+        Me.Label4.Size = New System.Drawing.Size(46, 13)
         Me.Label4.TabIndex = 35
-        Me.Label4.Text = "Telefon"
+        Me.Label4.Text = "Telefon:"
         '
         'Button2
         '
@@ -225,20 +232,46 @@ Partial Class NewUser
         Me.Button1.Text = "Registrer"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'RegError
+        '
+        Me.RegError.ContainerControl = Me
+        '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(54, 284)
+        Me.Label11.Location = New System.Drawing.Point(348, 210)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(45, 13)
+        Me.Label11.Size = New System.Drawing.Size(34, 13)
         Me.Label11.TabIndex = 45
-        Me.Label11.Text = "Label11"
+        Me.Label11.Text = "Kjønn"
+        '
+        'Mbox
+        '
+        Me.Mbox.AutoSize = True
+        Me.Mbox.Location = New System.Drawing.Point(403, 210)
+        Me.Mbox.Name = "Mbox"
+        Me.Mbox.Size = New System.Drawing.Size(53, 17)
+        Me.Mbox.TabIndex = 10
+        Me.Mbox.Text = "Mann"
+        Me.Mbox.UseVisualStyleBackColor = True
+        '
+        'Fbox
+        '
+        Me.Fbox.AutoSize = True
+        Me.Fbox.Location = New System.Drawing.Point(464, 210)
+        Me.Fbox.Name = "Fbox"
+        Me.Fbox.Size = New System.Drawing.Size(59, 17)
+        Me.Fbox.TabIndex = 11
+        Me.Fbox.Text = "Kvinne"
+        Me.Fbox.UseVisualStyleBackColor = True
         '
         'NewUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(551, 336)
+        Me.Controls.Add(Me.Fbox)
+        Me.Controls.Add(Me.Mbox)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
@@ -263,6 +296,7 @@ Partial Class NewUser
         Me.Controls.Add(Me.txtLastname)
         Me.Name = "NewUser"
         Me.Text = "NewUser"
+        CType(Me.RegError, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -289,5 +323,8 @@ Partial Class NewUser
     Friend WithEvents Label4 As Label
     Friend WithEvents Button2 As Button
     Friend WithEvents Button1 As Button
+    Friend WithEvents RegError As ErrorProvider
     Friend WithEvents Label11 As Label
+    Friend WithEvents Fbox As CheckBox
+    Friend WithEvents Mbox As CheckBox
 End Class
