@@ -17,6 +17,8 @@ Public Class NewUser
         txtEmail.Clear()
         txtPassword.Clear()
         RegError.Clear()
+        Mbox.Checked = False
+        Fbox.Checked = False
         Form1.Show()
         Me.Hide()
 
@@ -231,11 +233,11 @@ Public Class NewUser
             MsgBox(Me.RegError.GetError(txtPhone))
         ElseIf Not ValidKjønn() Then
             MsgBox(Me.RegError.GetError(Fbox))
-            Else
+        Else
 
 
-                'Om valideringen er godkjent ("return true" på alle funksjonene), utfør sql spørring mot database
-                Dim sqlSporring = "insert into Users (Etternavn, Fornavn, Personnummer, Adresse, Postnummer, Epost, Telefon, Passord, Kjønn) values (@Etternavn, @Fornavn, @Personnummer, @Adresse, @Postnummer, @Epost, @Telefon, @Passord, @Kjønn)"
+            'Om valideringen er godkjent ("return true" på alle funksjonene), utfør sql spørring mot database
+            Dim sqlSporring = "insert into Users (Etternavn, Fornavn, Personnummer, Adresse, Postnummer, Epost, Telefon, Passord, Kjønn) values (@Etternavn, @Fornavn, @Personnummer, @Adresse, @Postnummer, @Epost, @Telefon, @Passord, @Kjønn)"
             Dim sql As New MySqlCommand(sqlSporring, tilkobling)
 
 
@@ -261,5 +263,4 @@ Public Class NewUser
         End If
 
     End Sub
-
 End Class

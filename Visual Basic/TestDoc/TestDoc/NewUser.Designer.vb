@@ -71,11 +71,11 @@ Partial Class NewUser
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(72, 46)
+        Me.Label2.Location = New System.Drawing.Point(82, 46)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(58, 13)
+        Me.Label2.Size = New System.Drawing.Size(49, 13)
         Me.Label2.TabIndex = 22
-        Me.Label2.Text = "First name:"
+        Me.Label2.Text = "Fornavn:"
         '
         'txtFirstname
         '
@@ -130,11 +130,11 @@ Partial Class NewUser
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(317, 86)
+        Me.Label8.Location = New System.Drawing.Point(313, 87)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(65, 13)
+        Me.Label8.Size = New System.Drawing.Size(68, 13)
         Me.Label8.TabIndex = 33
-        Me.Label8.Text = "Postnummer"
+        Me.Label8.Text = "Postnummer:"
         '
         'txtPostnr
         '
@@ -155,11 +155,11 @@ Partial Class NewUser
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(302, 164)
+        Me.Label10.Location = New System.Drawing.Point(297, 167)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(82, 13)
+        Me.Label10.Size = New System.Drawing.Size(85, 13)
         Me.Label10.TabIndex = 41
-        Me.Label10.Text = "Bekreft Passord"
+        Me.Label10.Text = "Bekreft Passord:"
         '
         'txtPassword
         '
@@ -181,11 +181,11 @@ Partial Class NewUser
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(310, 122)
+        Me.Label9.Location = New System.Drawing.Point(308, 125)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(71, 13)
+        Me.Label9.Size = New System.Drawing.Size(74, 13)
         Me.Label9.TabIndex = 38
-        Me.Label9.Text = "Epostadresse"
+        Me.Label9.Text = "Epostadresse:"
         '
         'Label6
         '
@@ -239,16 +239,16 @@ Partial Class NewUser
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(348, 210)
+        Me.Label11.Location = New System.Drawing.Point(344, 210)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(34, 13)
+        Me.Label11.Size = New System.Drawing.Size(37, 13)
         Me.Label11.TabIndex = 45
-        Me.Label11.Text = "Kjønn"
+        Me.Label11.Text = "Kjønn:"
         '
         'Mbox
         '
         Me.Mbox.AutoSize = True
-        Me.Mbox.Location = New System.Drawing.Point(403, 210)
+        Me.Mbox.Location = New System.Drawing.Point(400, 209)
         Me.Mbox.Name = "Mbox"
         Me.Mbox.Size = New System.Drawing.Size(53, 17)
         Me.Mbox.TabIndex = 10
@@ -258,7 +258,7 @@ Partial Class NewUser
         'Fbox
         '
         Me.Fbox.AutoSize = True
-        Me.Fbox.Location = New System.Drawing.Point(464, 210)
+        Me.Fbox.Location = New System.Drawing.Point(464, 209)
         Me.Fbox.Name = "Fbox"
         Me.Fbox.Size = New System.Drawing.Size(59, 17)
         Me.Fbox.TabIndex = 11

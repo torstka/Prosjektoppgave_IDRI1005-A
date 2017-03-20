@@ -11,3 +11,7 @@ C:\Users\Regine\Documents\2.Semester\Objektorientert programmering\Test\Test\obj
 C:\Users\Regine\Documents\2.Semester\Objektorientert programmering\Test\Test\obj\Debug\Test.exe
 C:\Users\Regine\Documents\2.Semester\Objektorientert programmering\Test\Test\obj\Debug\Test.xml
 C:\Users\Regine\Documents\2.Semester\Objektorientert programmering\Test\Test\obj\Debug\Test.pdb
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Test\Test\bin\Debug\Test.exe.config
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Test\Test\obj\Debug\Test.exe
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Test\Test\obj\Debug\Test.xml
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\Test\Test\obj\Debug\Test.pdb
