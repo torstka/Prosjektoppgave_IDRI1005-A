@@ -103,17 +103,10 @@
     <Compile Include="EmployeePage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.vb">
-      <SubType>Form</SubType>
+    <Compile Include="LogIn.Designer.vb">
+      <DependentUpon>LogIn.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Logged_In.Designer.vb">
-      <DependentUpon>Logged_In.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Logged_In.vb">
+    <Compile Include="LogIn.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -143,6 +136,18 @@
     <Compile Include="NewUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Storage.Designer.vb">
+      <DependentUpon>Storage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Storage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserInformation.Designer.vb">
+      <DependentUpon>UserInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BloodInformation.resx">
@@ -160,11 +165,8 @@
     <EmbeddedResource Include="EmployeePage.resx">
       <DependentUpon>EmployeePage.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Logged_In.resx">
-      <DependentUpon>Logged_In.vb</DependentUpon>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -177,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewUser.resx">
       <DependentUpon>NewUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage.resx">
+      <DependentUpon>Storage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInformation.resx">
+      <DependentUpon>UserInformation.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

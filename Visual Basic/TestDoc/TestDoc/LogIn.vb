@@ -1,6 +1,6 @@
-Imports MySql.Data.MySqlClient
-
-Public Class Form1
+﻿Imports MySql.Data.MySqlClient
+Public Class LogIn
+    Public personnr As String
     Private tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
@@ -23,7 +23,7 @@ Public Class Form1
     End Sub
 
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
-        Dim personnr = txtPersonnr.Text
+        personnr = txtPersonnr.Text
         Dim password = txtPassword.Text
         Dim sqlSporring = "select * from Users where Personnummer=@personnummer " &
                           "and Passord=@passord"
@@ -36,11 +36,12 @@ Public Class Form1
         Dim leser = sql.ExecuteReader()
         If leser.HasRows Then
             Me.Hide()
-            Logged_In.Show()
+            MyPage.ShowDialog()
         Else
             MsgBox("Innlogging misslykket")
         End If
         leser.Close()
+
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click

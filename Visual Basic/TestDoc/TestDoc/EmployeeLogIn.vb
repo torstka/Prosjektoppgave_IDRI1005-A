@@ -2,16 +2,16 @@
 
 Public Class EmployeeLogIn
 
-    Private tilkobling As MySqlConnection
+    Private connection As MySqlConnection
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        tilkobling.Close()
-        tilkobling.Dispose()
+        connection.Close()
+        connection.Dispose()
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
-        tilkobling.Open()
+        connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
+        connection.Open()
     End Sub
 
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
@@ -20,7 +20,7 @@ Public Class EmployeeLogIn
         Dim sqlSporring = "select * from Employees where Ansattnr=@ansattnr " &
                       "and Passord=@passord"
 
-        Dim sql As New MySqlCommand(sqlSporring, tilkobling)
+        Dim sql As New MySqlCommand(sqlSporring, connection)
 
         sql.Parameters.AddWithValue("@ansattnr", ansattNr)
         sql.Parameters.AddWithValue("@passord", password)
@@ -40,6 +40,6 @@ Public Class EmployeeLogIn
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Close()
-        Form1.Show()
+        LogIn.Show()
     End Sub
 End Class
