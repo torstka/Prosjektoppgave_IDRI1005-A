@@ -1,16 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class LogIn
-    Public personnr As String
-    Private tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
-
-    Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        tilkobling.Close()
-        tilkobling.Dispose()
-    End Sub
-
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        tilkobling.Open()
-    End Sub
+    Public ssn As String
+    Dim connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
     Private Sub btCancel_Click(sender As Object, e As EventArgs)
         Application.Exit()
@@ -19,29 +10,28 @@ Public Class LogIn
     Private Sub btnRegistrer_Click(sender As Object, e As EventArgs) Handles btbRegistrer.Click
         Me.Hide()
         NewUser.Show()
-
     End Sub
 
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
-        personnr = txtPersonnr.Text
+        ssn = txtPersonnr.Text
         Dim password = txtPassword.Text
-        Dim sqlSporring = "select * from Users where Personnummer=@personnummer " &
-                          "and Passord=@passord"
+        connection.open()
+        Dim query = "select * from User where ss_number=@ssNumber " &
+                          "and password=@password"
 
-        Dim sql As New MySqlCommand(sqlSporring, tilkobling)
+        Dim command As New MySqlCommand(query, connection)
 
-        sql.Parameters.AddWithValue("@personnummer", personnr)
-        sql.Parameters.AddWithValue("@passord", password)
+        command.Parameters.AddWithValue("@ssNumber", ssn)
+        command.Parameters.AddWithValue("@password", password)
 
-        Dim leser = sql.ExecuteReader()
-        If leser.HasRows Then
+        Dim reader = command.ExecuteReader()
+        If reader.HasRows Then
             Me.Hide()
             MyPage.ShowDialog()
         Else
             MsgBox("Innlogging misslykket")
         End If
-        leser.Close()
-
+        reader.Close()
     End Sub
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
@@ -51,5 +41,10 @@ Public Class LogIn
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Me.Hide()
         EmployeeLogIn.Show()
+    End Sub
+
+    Private Sub LogIn_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        connection.Close()
+        connection.Dispose()
     End Sub
 End Class

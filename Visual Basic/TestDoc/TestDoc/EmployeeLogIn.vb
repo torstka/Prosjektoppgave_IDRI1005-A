@@ -1,35 +1,32 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class EmployeeLogIn
-
-    Private connection As MySqlConnection
+    Dim connection As New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
     Private Sub Form1_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         connection.Close()
         connection.Dispose()
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
-        connection.Open()
-    End Sub
-
     Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
-        Dim ansattNr = txtAnsattnr.Text
+        Dim employeeNr = txtAnsattnr.Text
         Dim password = txtPassword.Text
-        Dim sqlSporring = "select * from Employees where Ansattnr=@ansattnr " &
-                      "and Passord=@passord"
+
+        connection.Open()
+        Dim sqlSporring = "select * from Employee where employee_number=@employeeNr " &
+                      "and password=@password"
 
         Dim sql As New MySqlCommand(sqlSporring, connection)
 
-        sql.Parameters.AddWithValue("@ansattnr", ansattNr)
-        sql.Parameters.AddWithValue("@passord", password)
+        sql.Parameters.AddWithValue("@employeeNr", employeeNr)
+        sql.Parameters.AddWithValue("@password", password)
 
         Dim leser = sql.ExecuteReader()
         If leser.HasRows Then
-            MsgBox("Du er logget inn")
+            Me.Hide()
+            EmployeePage.Show()
         Else
-            MsgBox("Innlogging misslykket")
+            MsgBox("Feil brukernavn eller passord", MsgBoxStyle.Critical, "Innlogging misslykket")
         End If
         leser.Close()
     End Sub

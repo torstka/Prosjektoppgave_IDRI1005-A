@@ -23,7 +23,7 @@ Public Class Storage
         todaysdate = Today
 
         Try
-            Dim sqlString = "INSERT INTO Orders (Department, OrderDate, OrderInfo) VALUES (@Department, @OrderDate, @OrderInfo)"
+            Dim sqlString = "INSERT INTO Order_Request (department, date, info) VALUES (@Department, @OrderDate, @OrderInfo)"
             Dim sql As New MySqlCommand(sqlString, tilkobling)
 
             sql.Parameters.AddWithValue("@Department", department)

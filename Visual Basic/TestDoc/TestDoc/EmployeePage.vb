@@ -12,9 +12,6 @@ Public Class EmployeePage
 
         conn = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
-        'Database er her samme som brukernavn
-
-
         'Tester oppkoblingen
         Try
             conn.Open()
@@ -62,9 +59,10 @@ Public Class EmployeePage
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
         If connectionOK Then
-            Query("DELETE * FROM Orders WHERE Id > 0")
+            Query("DELETE FROM Order_Request")
+            MsgBox("Bestillinger slettet", MsgBoxStyle.Information, "Slettet")
         Else
-            MessageBox.Show("Connection is not OK - Login properly")
+            MessageBox.Show("Tilkobling misslykket")
         End If
     End Sub
 
@@ -78,7 +76,7 @@ Public Class EmployeePage
         If connectionOK Then
 
             Dim myData As New DataTable
-            myData = Query("SELECT * from Orders")
+            myData = Query("SELECT * from Order_Request")
 
             'En tabell består av mange rader, og DataRow kan inneholde en rad
             Dim temprad As DataRow
@@ -92,13 +90,13 @@ Public Class EmployeePage
 
             For Each temprad In myData.Rows
                 'Hver rad har felter, som vi kan hente ut vha navnet og hermetegn
-                department = temprad("Department")
-                orderDate = temprad("OrderDate")
-                orderInfo = temprad("OrderInfo")
+                department = temprad("department")
+                orderDate = temprad("date")
+                orderInfo = temprad("info")
                 ListBox1.Items.Add("Avdeling: " & department & "    Dato: " & orderDate & "    Info: " & orderInfo) 'utskriften
             Next temprad
         Else
-            MessageBox.Show("Connection is not OK - Login properly")
+            MessageBox.Show("Tilkobling misslykket")
         End If
 
         If ListBox1.Items.Count < 1 Then
@@ -110,4 +108,5 @@ Public Class EmployeePage
         Me.Hide()
         UserInformation.Show()
     End Sub
+
 End Class

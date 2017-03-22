@@ -1,49 +1,75 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class UserInformation
 
-    Private connection As MySqlConnection
+    Dim connection As MySqlConnection
+    Dim command As MySqlCommand
 
     Private Sub UserInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        load_table()
+    End Sub
+
+    Private Sub load_table()
         connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
-        Dim reader As MySqlDataReader
+        Dim SDA As New MySqlDataAdapter
+        Dim table As New DataTable
+        Dim bSource As New BindingSource
+
         Try
             connection.Open()
-            Dim query = "SELECT * from Users"
-            Dim command As New MySqlCommand(query, connection)
-            reader = command.ExecuteReader
-            While reader.Read
-                Dim SSN = reader.GetString("Personnummer")
-                ListBox1.Items.Add(SSN)
-            End While
+            Dim query As String = "SELECT ss_number, lastname, firstname, blood_type FROM User"
+            command = New MySqlCommand(query, connection)
+            SDA.SelectCommand = command
+            SDA.Fill(table)
+            bSource.DataSource = table
+            DataGridView1.DataSource = bSource
+            SDA.Update(table)
+
             connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
             connection.Dispose()
+
         End Try
     End Sub
 
-    Private Sub ListBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ListBox1.SelectedIndexChanged
+    Private Sub btnLoadTable_Click(sender As Object, e As EventArgs) Handles btnLoadTable.Click
         connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
-        Dim reader As MySqlDataReader
+        Dim SDA As New MySqlDataAdapter
+        Dim table As New DataTable
+        Dim bSource As New BindingSource
 
         Try
             connection.Open()
-            Dim query As String = "select Fornavn, Etternavn, Personnummer from Users where personnummer = '" & ListBox1.Text & "'"
-            Dim command As New MySqlCommand(query, connection)
-            reader = command.ExecuteReader
+            Dim query As String = "SELECT ss_number, lastname, firstname, blood_type FROM User"
+            command = New MySqlCommand(query, connection)
+            SDA.SelectCommand = command
+            SDA.Fill(table)
+            bSource.DataSource = table
+            DataGridView1.DataSource = bSource
+            SDA.Update(table)
 
-            While reader.Read
-                txtFirstname.Text = reader.GetString("Fornavn")
-                txtLastname.Text = reader.GetString("Etternavn")
-                txtSSN.Text = reader.GetString("Personnummer")
-            End While
             connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
             connection.Dispose()
+
         End Try
     End Sub
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+        If e.RowIndex >= 0 Then
+            Dim row As DataGridViewRow
+            row = Me.DataGridView1.Rows(e.RowIndex)
+
+            txtFirstname.Text = row.Cells("firstname").Value.ToString
+            txtLastname.Text = row.Cells("lastname").Value.ToString
+            txtSSN.Text = row.Cells("ss_number").Value.ToString
+            txtBloodType.Text = row.Cells("blood_type").Value.ToString
+        End If
+
+    End Sub
 End Class

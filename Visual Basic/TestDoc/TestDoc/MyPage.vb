@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class MyPage
     Private tilkobling As MySqlConnection
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         Me.Hide()
         DataMyBlood.Show()
     End Sub
@@ -14,10 +14,6 @@ Public Class MyPage
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Hide()
         BloodInformation.Show()
-    End Sub
-
-    Private Sub Label3_Click(sender As Object, e As EventArgs)
-
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -37,11 +33,11 @@ Public Class MyPage
     End Sub
 
     Private Sub MyPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim ssn = LogIn.personnr
+        Dim ssn = LogIn.ssn
         tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
         tilkobling.Open()
 
-        Dim sqlSporring = "SELECT * from Users where Personnummer = """ & ssn & """"
+        Dim sqlSporring = "SELECT * from User where ss_number = """ & ssn & """"
         Dim sql As New MySqlCommand(sqlSporring, tilkobling)
 
 
@@ -56,12 +52,12 @@ Public Class MyPage
         Dim postnummer = ""
 
         While leser.Read()
-            fornavn &= leser("Fornavn") & " "
-            etternavn &= leser("Etternavn") & " "
-            telefon &= leser("Telefon") & " "
-            epost &= leser("Epost") & " "
-            adresse &= leser("Adresse") & " "
-            postnummer &= leser("Postnummer") & " "
+            fornavn &= leser("firstname") & " "
+            etternavn &= leser("lastname") & " "
+            telefon &= leser("phone") & " "
+            epost &= leser("e_mail") & " "
+            adresse &= leser("address") & " "
+            postnummer &= leser("zip_code") & " "
 
 
         End While

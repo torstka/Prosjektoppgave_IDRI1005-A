@@ -200,16 +200,16 @@ Public Class NewUser
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'Deklarerer tekstboksene
-        Dim Fornavn = txtFirstname.Text
-        Dim Etternavn = txtLastname.Text
-        Dim Personnummer = txtPersonnr.Text
-        Dim Adresse = txtAdress.Text
-        Dim Postnummer = txtPostnr.Text
-        Dim Telefon = txtPhone.Text
-        Dim Epost = txtEmail.Text
-        Dim Passord = txtPassword.Text
-        Dim Mann = Mbox.Text
-        Dim Kvinne = Fbox.Text
+        Dim firstname = txtFirstname.Text
+        Dim lastname = txtLastname.Text
+        Dim ssNumber = txtPersonnr.Text
+        Dim address = txtAdress.Text
+        Dim zipCode = txtPostnr.Text
+        Dim phone = txtPhone.Text
+        Dim email = txtEmail.Text
+        Dim password = txtPassword.Text
+        Dim male = Mbox.Text
+        Dim female = Fbox.Text
 
 
         'Validerer at alle tekstboksene er utfylt riktig
@@ -237,24 +237,24 @@ Public Class NewUser
 
 
             'Om valideringen er godkjent ("return true" på alle funksjonene), utfør sql spørring mot database
-            Dim sqlSporring = "insert into Users (Etternavn, Fornavn, Personnummer, Adresse, Postnummer, Epost, Telefon, Passord, Kjønn) values (@Etternavn, @Fornavn, @Personnummer, @Adresse, @Postnummer, @Epost, @Telefon, @Passord, @Kjønn)"
-            Dim sql As New MySqlCommand(sqlSporring, tilkobling)
+            Dim query = "insert into User (ss_number, firstname, lastname, phone, e_mail, address, zip_code, password, gender) values (@ssnumber, @firstname, @lastname, @phone, @email, @address, @zipcode, @password, @gender)"
+            Dim command As New MySqlCommand(query, tilkobling)
 
 
-            sql.Parameters.AddWithValue("@Fornavn", Fornavn)
-            sql.Parameters.AddWithValue("@Etternavn", Etternavn)
-            sql.Parameters.AddWithValue("@Personnummer", Personnummer)
-            sql.Parameters.AddWithValue("@Adresse", Adresse)
-            sql.Parameters.AddWithValue("@Postnummer", Postnummer)
-            sql.Parameters.AddWithValue("@Telefon", Telefon)
-            sql.Parameters.AddWithValue("@Epost", Epost)
-            sql.Parameters.AddWithValue("@Passord", Passord)
+            command.Parameters.AddWithValue("@ssnumber", ssNumber)
+            command.Parameters.AddWithValue("@firstname", firstname)
+            command.Parameters.AddWithValue("@lastname", lastname)
+            command.Parameters.AddWithValue("@address", address)
+            command.Parameters.AddWithValue("@zipcode", zipCode)
+            command.Parameters.AddWithValue("@phone", phone)
+            command.Parameters.AddWithValue("@email", email)
+            command.Parameters.AddWithValue("@password", password)
             If Mbox.Checked Then
-                sql.Parameters.AddWithValue("@Kjønn", Mann)
+                command.Parameters.AddWithValue("@gender", male)
             ElseIf Fbox.Checked Then
-                sql.Parameters.AddWithValue("@Kjønn", Kvinne)
+                command.Parameters.AddWithValue("@gender", female)
             End If
-            sql.ExecuteNonQuery()
+            command.ExecuteNonQuery()
             MsgBox("Registrering vellykket!")
 
             Me.Close()
