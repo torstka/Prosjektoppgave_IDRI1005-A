@@ -19,7 +19,7 @@ Public Class NewUser
         RegError.Clear()
         Mbox.Checked = False
         Fbox.Checked = False
-        Form1.Show()
+        LogIn.Show()
         Me.Hide()
 
     End Sub
@@ -258,7 +258,7 @@ Public Class NewUser
             MsgBox("Registrering vellykket!")
 
             Me.Close()
-            Form1.Show()
+            LogIn.Show()
 
         End If
 
