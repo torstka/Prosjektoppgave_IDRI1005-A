@@ -22,7 +22,7 @@ Partial Class UserInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnUpdate = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtBloodType = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -33,18 +33,19 @@ Partial Class UserInformation
         Me.txtFirstname = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.btnLoadTable = New System.Windows.Forms.Button()
+        Me.txtSearch = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Button1
+        'btnUpdate
         '
-        Me.Button1.Location = New System.Drawing.Point(33, 384)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(136, 40)
-        Me.Button1.TabIndex = 19
-        Me.Button1.Text = "Oppdater"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnUpdate.Location = New System.Drawing.Point(33, 384)
+        Me.btnUpdate.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnUpdate.Name = "btnUpdate"
+        Me.btnUpdate.Size = New System.Drawing.Size(136, 40)
+        Me.btnUpdate.TabIndex = 19
+        Me.btnUpdate.Text = "Oppdater"
+        Me.btnUpdate.UseVisualStyleBackColor = True
         '
         'Label4
         '
@@ -59,7 +60,7 @@ Partial Class UserInformation
         'txtBloodType
         '
         Me.txtBloodType.Location = New System.Drawing.Point(38, 250)
-        Me.txtBloodType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtBloodType.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBloodType.Name = "txtBloodType"
         Me.txtBloodType.Size = New System.Drawing.Size(137, 26)
         Me.txtBloodType.TabIndex = 17
@@ -77,7 +78,7 @@ Partial Class UserInformation
         'txtSSN
         '
         Me.txtSSN.Location = New System.Drawing.Point(38, 175)
-        Me.txtSSN.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtSSN.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSSN.Name = "txtSSN"
         Me.txtSSN.Size = New System.Drawing.Size(137, 26)
         Me.txtSSN.TabIndex = 15
@@ -95,7 +96,7 @@ Partial Class UserInformation
         'txtLastname
         '
         Me.txtLastname.Location = New System.Drawing.Point(38, 102)
-        Me.txtLastname.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtLastname.Margin = New System.Windows.Forms.Padding(2)
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.Size = New System.Drawing.Size(137, 26)
         Me.txtLastname.TabIndex = 13
@@ -113,7 +114,7 @@ Partial Class UserInformation
         'txtFirstname
         '
         Me.txtFirstname.Location = New System.Drawing.Point(33, 34)
-        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.Size = New System.Drawing.Size(137, 26)
         Me.txtFirstname.TabIndex = 11
@@ -121,7 +122,7 @@ Partial Class UserInformation
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(223, 12)
+        Me.DataGridView1.Location = New System.Drawing.Point(223, 72)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 28
         Me.DataGridView1.Size = New System.Drawing.Size(673, 394)
@@ -129,21 +130,29 @@ Partial Class UserInformation
         '
         'btnLoadTable
         '
-        Me.btnLoadTable.Location = New System.Drawing.Point(641, 412)
+        Me.btnLoadTable.Location = New System.Drawing.Point(641, 472)
         Me.btnLoadTable.Name = "btnLoadTable"
         Me.btnLoadTable.Size = New System.Drawing.Size(255, 41)
         Me.btnLoadTable.TabIndex = 21
         Me.btnLoadTable.Text = "Oppdater Tabell"
         Me.btnLoadTable.UseVisualStyleBackColor = True
         '
+        'txtSearch
+        '
+        Me.txtSearch.Location = New System.Drawing.Point(767, 23)
+        Me.txtSearch.Name = "txtSearch"
+        Me.txtSearch.Size = New System.Drawing.Size(100, 26)
+        Me.txtSearch.TabIndex = 22
+        '
         'UserInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(908, 556)
+        Me.Controls.Add(Me.txtSearch)
         Me.Controls.Add(Me.btnLoadTable)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnUpdate)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.txtBloodType)
         Me.Controls.Add(Me.Label3)
@@ -152,7 +161,7 @@ Partial Class UserInformation
         Me.Controls.Add(Me.txtLastname)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstname)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "UserInformation"
         Me.Text = "UserInformation"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -161,7 +170,7 @@ Partial Class UserInformation
 
     End Sub
 
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnUpdate As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents txtBloodType As TextBox
     Friend WithEvents Label3 As Label
@@ -172,4 +181,5 @@ Partial Class UserInformation
     Friend WithEvents txtFirstname As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents btnLoadTable As Button
+    Friend WithEvents txtSearch As TextBox
 End Class
