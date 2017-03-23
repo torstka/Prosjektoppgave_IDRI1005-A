@@ -34,17 +34,17 @@ Partial Class EmployeePage
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(734, 332)
+        Me.Button2.Location = New System.Drawing.Point(433, 387)
         Me.Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(115, 72)
+        Me.Button2.Size = New System.Drawing.Size(253, 131)
         Me.Button2.TabIndex = 15
-        Me.Button2.Text = "Button2"
+        Me.Button2.Text = "Se brukerinformasjon"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(233, 322)
+        Me.Button4.Location = New System.Drawing.Point(233, 275)
         Me.Button4.Margin = New System.Windows.Forms.Padding(2)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(241, 59)
@@ -55,11 +55,11 @@ Partial Class EmployeePage
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(11, 76)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(5, 22)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(134, 29)
+        Me.Label2.Size = New System.Drawing.Size(157, 32)
         Me.Label2.TabIndex = 13
         Me.Label2.Text = "Bestillinger"
         '
@@ -67,10 +67,10 @@ Partial Class EmployeePage
         '
         Me.ListBox1.FormattingEnabled = True
         Me.ListBox1.ItemHeight = 20
-        Me.ListBox1.Location = New System.Drawing.Point(10, 113)
+        Me.ListBox1.Location = New System.Drawing.Point(11, 67)
         Me.ListBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(840, 204)
+        Me.ListBox1.Size = New System.Drawing.Size(839, 204)
         Me.ListBox1.TabIndex = 12
         '
         'Label1
@@ -84,17 +84,17 @@ Partial Class EmployeePage
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(749, 75)
+        Me.Button3.Location = New System.Drawing.Point(733, 11)
         Me.Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(101, 33)
+        Me.Button3.Size = New System.Drawing.Size(117, 43)
         Me.Button3.TabIndex = 10
         Me.Button3.Text = "Logg Ut"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'btnShowOrders
         '
-        Me.btnShowOrders.Location = New System.Drawing.Point(10, 322)
+        Me.btnShowOrders.Location = New System.Drawing.Point(10, 275)
         Me.btnShowOrders.Margin = New System.Windows.Forms.Padding(2)
         Me.btnShowOrders.Name = "btnShowOrders"
         Me.btnShowOrders.Size = New System.Drawing.Size(219, 59)
@@ -104,10 +104,10 @@ Partial Class EmployeePage
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(10, 407)
+        Me.Button1.Location = New System.Drawing.Point(166, 387)
         Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(263, 85)
+        Me.Button1.Size = New System.Drawing.Size(263, 131)
         Me.Button1.TabIndex = 8
         Me.Button1.Text = "Administrer lager"
         Me.Button1.UseVisualStyleBackColor = True

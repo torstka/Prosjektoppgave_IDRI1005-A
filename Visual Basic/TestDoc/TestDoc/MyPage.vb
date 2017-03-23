@@ -50,6 +50,7 @@ Public Class MyPage
         Dim epost = ""
         Dim adresse = ""
         Dim postnummer = ""
+        Dim blodtype = ""
 
         While leser.Read()
             fornavn &= leser("firstname") & " "
@@ -58,7 +59,7 @@ Public Class MyPage
             epost &= leser("e_mail") & " "
             adresse &= leser("address") & " "
             postnummer &= leser("zip_code") & " "
-
+            blodtype &= leser("blood_type") & " "
 
         End While
         ListBox1.Items.Add("Fornavn:        " & fornavn)
@@ -68,7 +69,9 @@ Public Class MyPage
         ListBox1.Items.Add("Adresse:        " & adresse)
         ListBox1.Items.Add("Telefon:        " & telefon)
         ListBox1.Items.Add("Epost:          " & epost)
+        ListBox1.Items.Add("")
         ListBox1.Items.Add("----------Blodinfo----------")
+        ListBox1.Items.Add("Blodtype:       " & blodtype)
         'hent ut informasjon om blodtype
 
         leser.Close()

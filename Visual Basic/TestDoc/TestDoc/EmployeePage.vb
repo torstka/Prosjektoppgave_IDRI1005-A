@@ -58,12 +58,14 @@ Public Class EmployeePage
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
-        If connectionOK Then
+        If connectionOK And ListBox1.Items.Count >= 1 Then
             Query("DELETE FROM Order_Request")
             MsgBox("Bestillinger slettet", MsgBoxStyle.Information, "Slettet")
         Else
-            MessageBox.Show("Tilkobling misslykket")
+            MsgBox("Det finnes ingen bestillinger som kan slettes", MsgBoxStyle.Information, "STATUS")
         End If
+        ListBox1.Items.Clear()
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

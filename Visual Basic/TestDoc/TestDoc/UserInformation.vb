@@ -36,26 +36,28 @@ Public Class UserInformation
     End Sub
 
     'Private Sub btnLoadTable_Click(sender As Object, e As EventArgs) Handles btnLoadTable.Click
-    '   connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
+
+
+    'connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
     'Dim SDA As New MySqlDataAdapter
     'Dim table As New DataTable
-    'Dim bSource As New BindingSource
+    '        'Dim bSource As New BindingSource
 
     'Try
-    '       connection.Open()
+    'connection.Open()
     'Dim query As String = "SELECT ss_number as 'Personnummer',lastname as 'Etternavn',firstname as 'Fornavn',blood_type as'Blodtype' FROM User"
-    '       command = New MySqlCommand(query, connection)
-    '      SDA.SelectCommand = command
-    '     SDA.Fill(table)
-    '    bSource.DataSource = table
-    '   DataGridView1.DataSource = bSource
-    '  SDA.Update(table)
-    '
-    '       connection.Close()
+    'command = New MySqlCommand(query, connection)
+    'SDA.SelectCommand = command
+    'SDA.Fill(table)
+    'bSource.DataSource = table
+    'DataGridView1.DataSource = bSource
+    'SDA.Update(table)
+
+    'connection.Close()
     'Catch ex As Exception
-    '       MessageBox.Show(ex.Message)
+    'MessageBox.Show(ex.Message)
     'Finally
-    '       connection.Dispose()
+    'connection.Dispose()
 
     'End Try
     'End Sub
@@ -77,7 +79,7 @@ Public Class UserInformation
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
 
         Dim DV As New DataView(table)
-        DV.RowFilter = String.Format("blood_type Like '%{0}%'", txtSearch.Text)
+        DV.RowFilter = String.Format("Blodtype Like '%{0}%'", txtSearch.Text)
         DataGridView1.DataSource = DV
 
     End Sub
@@ -89,7 +91,7 @@ Public Class UserInformation
         'bruker try catch for å fange eventuelle feil ved spørringen
         Try
             connection.Open()
-            Dim query As String = "update User set (ss_number='" & txtSSN.Text & "',firstname= '" & txtFirstname.Text & "',lastname='" & txtLastname.Text & "',blood_type='" & txtBloodType.Text & "')"
+            Dim query As String = "UPDATE User SET blood_type = '" & txtBloodType.Text & "' WHERE ss_number = '" & txtSSN.Text & "'"
             command = New MySqlCommand(query, connection)
             reader = command.ExecuteReader
 
@@ -100,6 +102,11 @@ Public Class UserInformation
         Finally
             connection.Dispose()
         End Try
+        table.Clear()
         load_table()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        MsgBox("En innkalling til " & txtFirstname.Text & " " & txtLastname.Text & " med fødselsnummer " & txtSSN.Text & " er nå sendt.", MsgBoxStyle.Information, "Innkalling Godkjent")
     End Sub
 End Class
