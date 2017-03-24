@@ -6,8 +6,12 @@ Public Class UserInformation
     Dim table As New DataTable
 
     Private Sub UserInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        GroupBox1.Hide()
         load_table()
+        Button2.Hide()
+        Button3.Hide()
+        Button6.Hide()
+
     End Sub
 
     Private Sub load_table()
@@ -74,6 +78,36 @@ Public Class UserInformation
             txtBloodType.Text = row.Cells("Blodtype").Value.ToString
         End If
 
+        Dim reader As MySqlDataReader
+        connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
+
+        Try
+            connection.Open()
+            Dim query As String = "select hb, iron_value FROM Blood_Data where ss_number = '" & txtSSN.Text & "'"
+            command = New MySqlCommand(query, connection)
+            reader = command.ExecuteReader
+
+            Dim hb As String = ""
+            Dim ironValue As String = ""
+
+            While reader.Read()
+                hb &= reader("hb") & " "
+                ironValue = reader("iron_value") & " "
+
+            End While
+
+
+            txtHB.Text = hb
+            txtIron.Text = ironValue
+
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+
+
     End Sub
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
@@ -88,6 +122,7 @@ Public Class UserInformation
         connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
         Dim reader As MySqlDataReader 'deklarerer leseren
 
+
         'bruker try catch for å fange eventuelle feil ved spørringen
         Try
             connection.Open()
@@ -95,7 +130,8 @@ Public Class UserInformation
             command = New MySqlCommand(query, connection)
             reader = command.ExecuteReader
 
-            MessageBox.Show("Data oppdatert")
+
+            MessageBox.Show("Blodtype registrert")
             connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -108,5 +144,70 @@ Public Class UserInformation
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         MsgBox("En innkalling til " & txtFirstname.Text & " " & txtLastname.Text & " med fødselsnummer " & txtSSN.Text & " er nå sendt.", MsgBoxStyle.Information, "Innkalling Godkjent")
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim reader As MySqlDataReader
+        connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
+
+        Try
+            connection.Open()
+            Dim query As String = "Insert INTO Blood_Data VALUES (' ', (select ss_number from User where ss_number = '" & txtSSN.Text & "'), '" & txtHB.Text & "', '" & txtIron.Text & "', '" & txtLastDrain.Text & "')"
+            command = New MySqlCommand(query, connection)
+            reader = command.ExecuteReader
+            MessageBox.Show("Data lagret")
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+
+    End Sub
+
+
+
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim reader As MySqlDataReader
+        connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
+
+        Try
+            connection.Open()
+            Dim query As String = "UPDATE Blood_Data SET hb= '" & txtHB.Text & "', iron_value='" & txtIron.Text & "' WHERE ss_number = '" & txtSSN.Text & "'"
+            command = New MySqlCommand(query, connection)
+            reader = command.ExecuteReader
+            MessageBox.Show("Data lagret")
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        GroupBox1.Show()
+        Button5.Enabled = False
+        Button2.Show()
+        Button6.Show()
+
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        GroupBox1.Show()
+        Button4.Enabled = False
+        Button3.Show()
+        Button6.Show()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        GroupBox1.Hide()
+        Button3.Hide()
+        Button2.Hide()
+        Button4.Enabled = True
+        Button5.Enabled = True
+        Button6.Hide()
     End Sub
 End Class
