@@ -210,4 +210,9 @@ Public Class UserInformation
         Button5.Enabled = True
         Button6.Hide()
     End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.Hide()
+        EmployeePage.Show()
+    End Sub
 End Class

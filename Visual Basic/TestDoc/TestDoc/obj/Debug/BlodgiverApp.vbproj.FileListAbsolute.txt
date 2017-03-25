@@ -164,3 +164,21 @@ C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\Te
 \\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
 \\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
 \\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation1.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.LogIn.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.ChangeUserInfo.resources

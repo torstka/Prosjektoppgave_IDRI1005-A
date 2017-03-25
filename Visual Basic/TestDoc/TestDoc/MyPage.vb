@@ -21,7 +21,7 @@ Public Class MyPage
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Me.Hide()
-        'PersonInfo.Show() ' forma som legger inn personalia som er lik den ved førstegangs registrering
+        ChangeUserInfo.Show() ' forma som legger inn personalia som er lik den ved førstegangs registrering
         'for det er vel kun de data man tenker at bruker skal kunne endre???
     End Sub
 
@@ -68,31 +68,31 @@ Public Class MyPage
             blodtype &= reader("blood_type") & " "
         End While
 
-        reader2 = command2.ExecuteReader
-        Dim hb As Double = ""
-        Dim ironValue As Integer = ""
-        Dim lastDrain As String = ""
+        'reader2 = command2.ExecuteReader
+        'Dim hb As Double = ""
+        'Dim ironValue As Integer = ""
+        'Dim lastDrain As String = ""
 
-        While reader2.Read()
-            hb &= reader2("hb") & " "
-            ironValue &= reader2("iron_value") & " "
-            lastDrain &= reader2("last_drain") & " "
-        End While
+        'While reader2.Read()
+        '    hb &= reader2("hb") & " "
+        '    ironValue &= reader2("iron_value") & " "
+        '    lastDrain &= reader2("last_drain") & " "
+        'End While
 
-        ListBox1.Items.Add("Fornavn:        " & fornavn)
-        ListBox1.Items.Add("Etternavn:      " & etternavn)
-        ListBox1.Items.Add("Personnummer:   " & ssn)
-        ListBox1.Items.Add("")
-        ListBox1.Items.Add("Adresse:        " & adresse)
-        ListBox1.Items.Add("Telefon:        " & telefon)
-        ListBox1.Items.Add("Epost:          " & epost)
-        ListBox1.Items.Add("")
-        ListBox1.Items.Add("----------Blodinfo----------")
-        ListBox1.Items.Add("Blodtype:       " & blodtype)
-        ListBox1.Items.Add("Hemoglobin (hb):        " & hb)
-        ListBox1.Items.Add("Jernverdier:            " & ironValue)
-        ListBox1.Items.Add("")
-        ListBox1.Items.Add("Siste tapping:          " & lastDrain)
+        'ListBox1.Items.Add("Fornavn:        " & fornavn)
+        'ListBox1.Items.Add("Etternavn:      " & etternavn)
+        'ListBox1.Items.Add("Personnummer:   " & ssn)
+        'ListBox1.Items.Add("")
+        'ListBox1.Items.Add("Adresse:        " & adresse)
+        'ListBox1.Items.Add("Telefon:        " & telefon)
+        'ListBox1.Items.Add("Epost:          " & epost)
+        'ListBox1.Items.Add("")
+        'ListBox1.Items.Add("----------Blodinfo----------")
+        'ListBox1.Items.Add("Blodtype:       " & blodtype)
+        'ListBox1.Items.Add("Hemoglobin (hb):        " & hb)
+        'ListBox1.Items.Add("Jernverdier:            " & ironValue)
+        'ListBox1.Items.Add("")
+        'ListBox1.Items.Add("Siste tapping:          " & lastDrain)
 
         'hent ut informasjon om blodtype
 

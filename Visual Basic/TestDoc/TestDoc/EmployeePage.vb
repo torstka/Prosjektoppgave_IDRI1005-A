@@ -2,7 +2,7 @@
 Public Class EmployeePage
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Me.Close()
-        EmployeeLogIn.Show()
+        LogIn.Show()
     End Sub
     Private conn As MySqlConnection
     Private connectionOK As Boolean = False
