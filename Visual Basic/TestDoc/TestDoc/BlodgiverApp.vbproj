@@ -79,12 +79,6 @@
     <Compile Include="BloodInformation.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BloodInformation1.Designer.vb">
-      <DependentUpon>BloodInformation1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BloodInformation1.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="ChangeUserInfo.Designer.vb">
       <DependentUpon>ChangeUserInfo.vb</DependentUpon>
     </Compile>
@@ -158,9 +152,6 @@
   <ItemGroup>
     <EmbeddedResource Include="BloodInformation.resx">
       <DependentUpon>BloodInformation.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BloodInformation1.resx">
-      <DependentUpon>BloodInformation1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeUserInfo.resx">
       <DependentUpon>ChangeUserInfo.vb</DependentUpon>

@@ -117,4 +117,34 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Label8.Text" xml:space="preserve">
+    <value>5.    Personer som har hjerte-, lever- eller lungesykdom, eller har hatt blødningstendens, alvorlige allergiske reaksjoner eller kreft (med unntak noen steder:
+       Basalcellecarcinom og celleforandringer på livmorhalsen)</value>
+  </data>
+  <data name="Label9.Text" xml:space="preserve">
+    <value>6.    Menn som har eller har hatt sex med menn. Kvinner som har eller har hatt seksuell kontakt med menn som har hatt sex med menn, får minimum 6 måneders karantene
+       etter siste seksuelle kontakt.</value>
+  </data>
+  <data name="Label10.Text" xml:space="preserve">
+    <value>7.    Personer som bruker eller har brukt dopingmidler eller narkotiske midler som sprøyter. Personer som har eller har hatt seksuell kontakt med person som bruker eller har 
+       brukt dopingmidler eller narkotiske midler som sprøyter, får minimum 6 måneders karantene etter siste seksuelle kontakt.
+
+</value>
+  </data>
+  <data name="Label11.Text" xml:space="preserve">
+    <value>8.    Prostituerte og tidligere prostituerte. Personer som har eller har hatt seksuell kontakt med prostituerte og tidligere prostituerte får minimum 6 måneders karantene
+       etter siste seksuelle kontakt.</value>
+  </data>
+  <data name="Label12.Text" xml:space="preserve">
+    <value>9.    Personer som har oppholdt seg sammenhengende i minst 6 måneder. i land der malaria er endemisk, dvs. har stor utbredelse. Unntak kan gjøres dersom godkjent
+       malariatest er negativ, men bruken av testen er uavklart.</value>
+  </data>
+  <data name="Label14.Text" xml:space="preserve">
+    <value>11.    Personer født i, bodd mer enn 1 år i eller har fått blodoverføring i Amerika syd for USA, pga T. cruzi-virus. Noen steder godkjennes blodgivere herfra ved negativ test
+         og etter 6 måneder i Norge.</value>
+  </data>
+  <data name="Label16.Text" xml:space="preserve">
+    <value>13.    Hvis man har partner fra et land med høyere forekomst av Hepatitt C, får man karantene i 5 år etter at samlivet startet, eller må vente til 6 måneder etter at samlivet eventuelt
+         er opphørt.</value>
+  </data>
 </root>

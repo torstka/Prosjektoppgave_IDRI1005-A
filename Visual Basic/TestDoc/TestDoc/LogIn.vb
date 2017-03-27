@@ -41,6 +41,7 @@ Public Class LogIn
     End Function
     'Funksjon for å logge inn som Ansatt/admin/ledelse
     Private Function Adminlogin() As Boolean
+
         Dim employeeNr = txtPersonnr.Text
         Dim password = txtPassword.Text
 
@@ -66,17 +67,17 @@ Public Class LogIn
 
         leser.Close()
         connection.close
+        Return True
 
     End Function
 
     'Funksjon for å logge inn som "bruker"
     Private Function Userlogin()
-        Dim employeeNr = txtPersonnr.Text
-        Dim txtp = txtPersonnr.Text
-        connection.open
-        ssn = txtPersonnr.Text
+
+        Dim ssn = txtPersonnr.Text
         Dim password = txtPassword.Text
 
+        connection.open
         Dim query = "select * from User where ss_number=@ssNumber " &
                               "and password=@password"
 
@@ -88,7 +89,8 @@ Public Class LogIn
         Dim reader = command.ExecuteReader()
         If reader.HasRows Then
             Me.Hide()
-            MyPage.ShowDialog()
+            MyPage.Show()
+            MyPage.Label3.Text = ssn
             txtPassword.Clear()
             txtPersonnr.Clear()
         Else
@@ -97,7 +99,7 @@ Public Class LogIn
 
         connection.Close()
         reader.Close()
-
+        Return True
     End Function
 
     Private Sub btnRegistrer_Click(sender As Object, e As EventArgs) Handles btbRegistrer.Click

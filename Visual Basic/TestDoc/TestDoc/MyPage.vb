@@ -21,7 +21,8 @@ Public Class MyPage
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Me.Hide()
-        ChangeUserInfo.Show() ' forma som legger inn personalia som er lik den ved førstegangs registrering
+        ChangeUserInfo.Show()
+        ChangeUserInfo.Label7.Text = Me.Label3.Text ' forma som legger inn personalia som er lik den ved førstegangs registrering
         'for det er vel kun de data man tenker at bruker skal kunne endre???
     End Sub
 

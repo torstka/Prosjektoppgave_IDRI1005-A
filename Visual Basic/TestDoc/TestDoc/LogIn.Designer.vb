@@ -95,7 +95,7 @@ Partial Class LogIn
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(91, 20)
         Me.txtPassword.TabIndex = 41
-        Me.txtPassword.Text = "markus123"
+        Me.txtPassword.Text = "12345678"
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'txtPersonnr
@@ -104,7 +104,7 @@ Partial Class LogIn
         Me.txtPersonnr.Name = "txtPersonnr"
         Me.txtPersonnr.Size = New System.Drawing.Size(91, 20)
         Me.txtPersonnr.TabIndex = 40
-        Me.txtPersonnr.Text = "11111111111"
+        Me.txtPersonnr.Text = "22222222222"
         '
         'loginerror
         '
@@ -123,7 +123,7 @@ Partial Class LogIn
         Me.Controls.Add(Me.btbLogin)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtPersonnr)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "LogIn"
         Me.Text = "LogIn"
         CType(Me.loginerror, System.ComponentModel.ISupportInitialize).EndInit()
