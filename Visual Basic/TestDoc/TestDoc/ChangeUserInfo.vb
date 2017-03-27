@@ -4,7 +4,7 @@ Public Class ChangeUserInfo
     Dim connection As MySqlConnection
     Dim COMMAND As MySqlCommand
     Private Sub ChangeUserInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim personid = Label7.Text
+
         Dim connString As String = "Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N"
         Dim sqlQuery As String = "SELECT e_mail, phone, address, password FROM User WHERE ss_number='" & MyPage.Label3.Text & "'"
         Using sqlConn As New MySqlConnection(connString)
@@ -13,7 +13,6 @@ Public Class ChangeUserInfo
                     .Connection = sqlConn
                     .CommandText = sqlQuery
                     .CommandType = CommandType.Text
-                    .Parameters.AddWithValue("ss_number", Label7.Text)
                 End With
                 Try
                     sqlConn.Open()
@@ -23,6 +22,7 @@ Public Class ChangeUserInfo
                         txtphone.Text = sqlReader("phone")
                         txtaddress.Text = sqlReader("address")
                         txtpassword.Text = sqlReader("password")
+                        txtconfirmpassword.Text = txtpassword.Text
                     End While
                 Catch ex As MySqlException
                     ' add your exception here '

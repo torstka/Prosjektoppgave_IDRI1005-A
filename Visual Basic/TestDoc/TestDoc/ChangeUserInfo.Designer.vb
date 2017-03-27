@@ -48,7 +48,7 @@ Partial Class ChangeUserInfo
         Me.Button1.Location = New System.Drawing.Point(216, 304)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 0
+        Me.Button1.TabIndex = 7
         Me.Button1.Text = "Avbryt"
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -57,7 +57,7 @@ Partial Class ChangeUserInfo
         Me.txtemail.Location = New System.Drawing.Point(180, 74)
         Me.txtemail.Name = "txtemail"
         Me.txtemail.Size = New System.Drawing.Size(137, 20)
-        Me.txtemail.TabIndex = 2
+        Me.txtemail.TabIndex = 1
         '
         'txtaddress
         '
@@ -71,7 +71,7 @@ Partial Class ChangeUserInfo
         Me.txtphone.Location = New System.Drawing.Point(181, 120)
         Me.txtphone.Name = "txtphone"
         Me.txtphone.Size = New System.Drawing.Size(137, 20)
-        Me.txtphone.TabIndex = 4
+        Me.txtphone.TabIndex = 2
         '
         'Button3
         '
@@ -113,8 +113,10 @@ Partial Class ChangeUserInfo
         '
         Me.txtpassword.Location = New System.Drawing.Point(180, 202)
         Me.txtpassword.Name = "txtpassword"
+        Me.txtpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtpassword.Size = New System.Drawing.Size(137, 20)
-        Me.txtpassword.TabIndex = 11
+        Me.txtpassword.TabIndex = 4
+        Me.txtpassword.UseSystemPasswordChar = True
         '
         'Label5
         '
@@ -138,8 +140,10 @@ Partial Class ChangeUserInfo
         '
         Me.txtconfirmpassword.Location = New System.Drawing.Point(181, 250)
         Me.txtconfirmpassword.Name = "txtconfirmpassword"
+        Me.txtconfirmpassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtconfirmpassword.Size = New System.Drawing.Size(136, 20)
-        Me.txtconfirmpassword.TabIndex = 14
+        Me.txtconfirmpassword.TabIndex = 5
+        Me.txtconfirmpassword.UseSystemPasswordChar = True
         '
         'Label1
         '
