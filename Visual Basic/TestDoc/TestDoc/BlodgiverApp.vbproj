@@ -150,6 +150,12 @@
     <Compile Include="UserInformation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserPage.Designer.vb">
+      <DependentUpon>UserPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BloodInformation.resx">
@@ -187,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserInformation.resx">
       <DependentUpon>UserInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserPage.resx">
+      <DependentUpon>UserPage.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -186,3 +186,7 @@ C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A-master\Visual Basic\T
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A-master\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A-master\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A-master\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Prosjektoppgave_IDRI1005-A - Master Kopi\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Prosjektoppgave_IDRI1005-A - Master Kopi\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Prosjektoppgave_IDRI1005-A - Master Kopi\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Prosjektoppgave_IDRI1005-A - Master Kopi\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
