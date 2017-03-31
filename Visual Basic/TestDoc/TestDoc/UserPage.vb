@@ -38,6 +38,7 @@ Public Class UserPage
             da2.Fill(intern2)
             da3.SelectCommand = sqltype
             da3.Fill(intern3)
+
             Dim sqlEditInfo As New MySqlCommand("SELECT e_mail, phone, address, password, firstname, lastname FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", tilkobling)
             da4.SelectCommand = sqlEditInfo
             da4.Fill(intern4)
