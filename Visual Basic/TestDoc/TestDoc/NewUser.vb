@@ -236,26 +236,9 @@ Public Class NewUser
         Else
 
 
-            'Om valideringen er godkjent ("return true" på alle funksjonene), utfør sql spørring mot database
-            Dim query = "insert into User (ss_number, firstname, lastname, phone, e_mail, address, zip_code, password, gender) values (@ssnumber, @firstname, @lastname, @phone, @email, @address, @zipcode, @password, @gender)"
-            Dim command As New MySqlCommand(query, tilkobling)
+            Dim newUser As New User
 
-
-            command.Parameters.AddWithValue("@ssnumber", ssNumber)
-            command.Parameters.AddWithValue("@firstname", firstname)
-            command.Parameters.AddWithValue("@lastname", lastname)
-            command.Parameters.AddWithValue("@address", address)
-            command.Parameters.AddWithValue("@zipcode", zipCode)
-            command.Parameters.AddWithValue("@phone", phone)
-            command.Parameters.AddWithValue("@email", email)
-            command.Parameters.AddWithValue("@password", password)
-            If Mbox.Checked Then
-                command.Parameters.AddWithValue("@gender", male)
-            ElseIf Fbox.Checked Then
-                command.Parameters.AddWithValue("@gender", female)
-            End If
-            command.ExecuteNonQuery()
-            MsgBox("Registrering vellykket!")
+            newUser.add(ssNumber, firstname, lastname, address, zipCode, phone, email, password, male, female)
 
             Me.Close()
             LogIn.Show()
