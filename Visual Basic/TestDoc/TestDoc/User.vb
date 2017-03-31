@@ -9,6 +9,8 @@ Public Class User
     Dim dtable As New DataTable
     Dim reader As MySqlDataReader
 
+    Public ssNumber = LogIn.txtPersonnr.Text
+
 
     Public Sub add(ByVal ssNumber As String, ByVal firstname As String, ByVal lastname As String, ByVal address As String, ByVal zipcode As Integer, ByVal phone As String, ByVal email As String, ByVal password As String, ByVal male As String, ByVal female As String)
         Dim Mbox = NewUser.Mbox.Checked
@@ -48,7 +50,7 @@ Public Class User
 
         Try
             connection.Open()
-            Dim query As String = "UPDATE User SET firstname = @firstname,lastname = @lastname,phone = @phone, e_mail = @email, address = @address, zip_code = @zipcode, password = @password, gender = @phone where fornavn = '" & fornavn & "'"
+            Dim query As String = "UPDATE User SET firstname = @firstname,lastname = @lastname,phone = @phone, e_mail = @email, address = @address, zip_code = @zipcode, password = @password, gender = @phone where ss_number = '" & ssNumber & "'"
             cmd = New MySqlCommand(query, connection)
 
             cmd.Parameters.AddWithValue("@firstname", firstname)

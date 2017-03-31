@@ -2,7 +2,6 @@
 Imports MySql.Data.MySqlClient
 
 Public Class LogIn
-
     Public ssn As String
     Dim connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
@@ -33,7 +32,7 @@ Public Class LogIn
     Private Function Validpassinput() As Boolean
         Dim passinput = txtPassword.Text
         If passinput.Length = 0 Then
-            Me.LoginError.SetError(txtPassword, "Vennligst fyll ut passord")
+            Me.loginerror.SetError(txtPassword, "Vennligst fyll ut passord")
             Return False
         Else
             Return True
@@ -74,7 +73,7 @@ Public Class LogIn
     'Funksjon for å logge inn som "bruker"
     Private Function Userlogin()
 
-        Dim ssn = txtPersonnr.Text
+        ssn = txtPersonnr.Text
         Dim password = txtPassword.Text
 
         connection.open
@@ -112,9 +111,9 @@ Public Class LogIn
         'Kjører funksjonene for tekstboks validering og finner ut om enn logger inn som ansatt eller
         'bruker basert på antall tall som er skrivet inn
         If Not validloginput() Then
-            MsgBox(Me.LoginError.GetError(txtPersonnr))
+            MsgBox(Me.loginerror.GetError(txtPersonnr))
         ElseIf Not Validpassinput() Then
-            MsgBox(Me.LoginError.GetError(txtPassword))
+            MsgBox(Me.loginerror.GetError(txtPassword))
         ElseIf txtPersonnr.TextLength = 11 Then
             Userlogin()
         ElseIf txtPersonnr.TextLength = 4 Then
