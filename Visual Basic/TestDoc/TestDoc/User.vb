@@ -44,16 +44,21 @@ Public Class User
 
     End Sub
 
-    Public Sub update(ByVal fornavn As String, ByVal etternavn As String, ByVal telefon As String)
+    Public Sub update(ByVal firstname As String, ByVal lastname As String, ByVal phone As String, ByVal email As String, ByVal address As String, ByVal zipcode As Integer, ByVal password As String, ByVal gender As String)
 
         Try
             connection.Open()
-            Dim query As String = "UPDATE bruker SET fornavn = @firstname , etteranvn = @lastname, telefon = @telefon where fornavn = '" & fornavn & "'"
+            Dim query As String = "UPDATE User SET firstname = @firstname,lastname = @lastname,phone = @phone, e_mail = @email, address = @address, zip_code = @zipcode, password = @password, gender = @phone where fornavn = '" & fornavn & "'"
             cmd = New MySqlCommand(query, connection)
 
-            cmd.Parameters.AddWithValue("@firstname", fornavn)
-            cmd.Parameters.AddWithValue("@lastname", etternavn)
-            cmd.Parameters.AddWithValue("@phone", telefon)
+            cmd.Parameters.AddWithValue("@firstname", firstname)
+            cmd.Parameters.AddWithValue("@lastname", lastname)
+            cmd.Parameters.AddWithValue("@phone", phone)
+            cmd.Parameters.AddWithValue("@email", email)
+            cmd.Parameters.AddWithValue("@address", address)
+            cmd.Parameters.AddWithValue("@zipcode", zipcode)
+            cmd.Parameters.AddWithValue("@password", password)
+            cmd.Parameters.AddWithValue("@gender", gender)
             reader = cmd.ExecuteReader
 
             MessageBox.Show("Data oppdatert")

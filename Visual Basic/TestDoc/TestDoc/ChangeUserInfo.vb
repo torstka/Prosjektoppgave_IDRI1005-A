@@ -3,6 +3,8 @@ Imports MySql.Data.MySqlClient
 Public Class ChangeUserInfo
     Dim connection As MySqlConnection
     Dim COMMAND As MySqlCommand
+
+
     Private Sub ChangeUserInfo_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Dim connString As String = "Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N"
