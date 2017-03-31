@@ -143,6 +143,7 @@
     <Compile Include="Storage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="User.vb" />
     <Compile Include="UserInformation.Designer.vb">
       <DependentUpon>UserInformation.vb</DependentUpon>
     </Compile>
