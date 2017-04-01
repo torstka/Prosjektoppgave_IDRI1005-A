@@ -88,7 +88,7 @@ Public Class LogIn
         Dim reader = command.ExecuteReader()
         If reader.HasRows Then
             Me.Hide()
-            MyPage.Show()
+            UserPage.Show()
             MyPage.Label3.Text = ssn
             txtPassword.Clear()
             txtPersonnr.Clear()

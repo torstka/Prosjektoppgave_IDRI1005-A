@@ -8,6 +8,7 @@ Public Class User
     Dim adapter As MySqlDataAdapter
     Dim dtable As New DataTable
     Dim reader As MySqlDataReader
+    Dim rad As DataRow
 
     Public ssNumber = LogIn.txtPersonnr.Text
 
@@ -46,7 +47,7 @@ Public Class User
 
     End Sub
 
-    Public Sub update(ByVal firstname As String, ByVal lastname As String, ByVal phone As String, ByVal email As String, ByVal address As String, ByVal zipcode As Integer, ByVal password As String)
+    Public Sub update(ByVal firstname As String, ByVal lastname As String, ByVal phone As String, ByVal email As String, ByVal address As String, ByVal zipcode As String, ByVal password As String)
 
         Try
             connection.Open()
@@ -70,6 +71,36 @@ Public Class User
         Finally
             connection.Dispose()
         End Try
+    End Sub
+
+    Public Sub showData(ByVal firstname As String, ByVal lastname As String, ByVal phone As String, ByVal mail As String, ByVal address As String, ByVal zipCode As String, ByVal password As String)
+
+        Try
+            connection.Open()
+            Dim query As String = "SELECT firstname, lastname, phone, e_mail, address, zip_code, password FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
+            cmd = New MySqlCommand(query, connection)
+            adapter = New MySqlDataAdapter
+            adapter.SelectCommand = cmd
+            adapter.Fill(dtable)
+
+            For Each rad In dtable.Rows
+                firstname = (rad("firstname"))
+                lastname = (rad("lastname"))
+                phone = (rad("phone"))
+                mail = (rad("e_mail"))
+                address = (rad("address"))
+                zipCode = (rad("zip_code"))
+                password = (rad("password"))
+            Next
+
+        Catch ex As MySqlException
+            MsgBox(ex.Message)         'tilfelle det oppstår en feil
+            connection.Close()
+
+        Finally
+            connection.Dispose()  'lukke tilkoblingen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
+        End Try
+
     End Sub
 
 

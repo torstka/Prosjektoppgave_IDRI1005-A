@@ -34,9 +34,9 @@ Partial Class UserPage
         Me.lastDrain = New System.Windows.Forms.Label()
         Me.txtHb = New System.Windows.Forms.TextBox()
         Me.bloodType = New System.Windows.Forms.Label()
-        Me.ShowLogedIn = New System.Windows.Forms.Label()
+        Me.lblSSnumber = New System.Windows.Forms.Label()
         Me.btnQuest = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblFullName = New System.Windows.Forms.Label()
         Me.BookTime = New System.Windows.Forms.TabPage()
         Me.gbTime = New System.Windows.Forms.GroupBox()
         Me.lblOTime = New System.Windows.Forms.Label()
@@ -49,6 +49,8 @@ Partial Class UserPage
         Me.dtpOrder = New System.Windows.Forms.DateTimePicker()
         Me.showDate = New System.Windows.Forms.Label()
         Me.ChangeData = New System.Windows.Forms.TabPage()
+        Me.txtZipcode = New System.Windows.Forms.TextBox()
+        Me.zipcode = New System.Windows.Forms.Label()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
         Me.FName = New System.Windows.Forms.Label()
         Me.txtConPwd = New System.Windows.Forms.TextBox()
@@ -63,7 +65,7 @@ Partial Class UserPage
         Me.mail = New System.Windows.Forms.Label()
         Me.phone = New System.Windows.Forms.Label()
         Me.address = New System.Windows.Forms.Label()
-        Me.name = New System.Windows.Forms.Label()
+        Me.lastname = New System.Windows.Forms.Label()
         Me.personInfo = New System.Windows.Forms.Label()
         Me.InfoPage = New System.Windows.Forms.TabPage()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
@@ -84,8 +86,7 @@ Partial Class UserPage
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.InfoBloodDonation = New System.Windows.Forms.Label()
-        Me.txtZipcode = New System.Windows.Forms.TextBox()
-        Me.zipcode = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.DonorPage.SuspendLayout()
         Me.MyPage.SuspendLayout()
         Me.gbBlood.SuspendLayout()
@@ -112,9 +113,9 @@ Partial Class UserPage
         'MyPage
         '
         Me.MyPage.Controls.Add(Me.gbBlood)
-        Me.MyPage.Controls.Add(Me.ShowLogedIn)
+        Me.MyPage.Controls.Add(Me.lblSSnumber)
         Me.MyPage.Controls.Add(Me.btnQuest)
-        Me.MyPage.Controls.Add(Me.Label1)
+        Me.MyPage.Controls.Add(Me.lblFullName)
         Me.MyPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MyPage.Location = New System.Drawing.Point(4, 63)
         Me.MyPage.Name = "MyPage"
@@ -151,7 +152,7 @@ Partial Class UserPage
         'ironValue
         '
         Me.ironValue.AutoSize = True
-        Me.ironValue.Location = New System.Drawing.Point(50, 208)
+        Me.ironValue.Location = New System.Drawing.Point(50, 164)
         Me.ironValue.Name = "ironValue"
         Me.ironValue.Size = New System.Drawing.Size(79, 20)
         Me.ironValue.TabIndex = 8
@@ -159,7 +160,7 @@ Partial Class UserPage
         '
         'txtIronValue
         '
-        Me.txtIronValue.Location = New System.Drawing.Point(224, 193)
+        Me.txtIronValue.Location = New System.Drawing.Point(224, 149)
         Me.txtIronValue.Name = "txtIronValue"
         Me.txtIronValue.Size = New System.Drawing.Size(100, 26)
         Me.txtIronValue.TabIndex = 12
@@ -167,7 +168,7 @@ Partial Class UserPage
         'hb
         '
         Me.hb.AutoSize = True
-        Me.hb.Location = New System.Drawing.Point(50, 153)
+        Me.hb.Location = New System.Drawing.Point(50, 105)
         Me.hb.Name = "hb"
         Me.hb.Size = New System.Drawing.Size(94, 20)
         Me.hb.TabIndex = 7
@@ -175,7 +176,7 @@ Partial Class UserPage
         '
         'txtDrain
         '
-        Me.txtDrain.Location = New System.Drawing.Point(224, 93)
+        Me.txtDrain.Location = New System.Drawing.Point(224, 205)
         Me.txtDrain.Name = "txtDrain"
         Me.txtDrain.Size = New System.Drawing.Size(100, 26)
         Me.txtDrain.TabIndex = 10
@@ -183,7 +184,7 @@ Partial Class UserPage
         'lastDrain
         '
         Me.lastDrain.AutoSize = True
-        Me.lastDrain.Location = New System.Drawing.Point(50, 98)
+        Me.lastDrain.Location = New System.Drawing.Point(50, 210)
         Me.lastDrain.Name = "lastDrain"
         Me.lastDrain.Size = New System.Drawing.Size(106, 20)
         Me.lastDrain.TabIndex = 6
@@ -191,7 +192,7 @@ Partial Class UserPage
         '
         'txtHb
         '
-        Me.txtHb.Location = New System.Drawing.Point(224, 143)
+        Me.txtHb.Location = New System.Drawing.Point(224, 95)
         Me.txtHb.Name = "txtHb"
         Me.txtHb.Size = New System.Drawing.Size(100, 26)
         Me.txtHb.TabIndex = 11
@@ -205,14 +206,14 @@ Partial Class UserPage
         Me.bloodType.TabIndex = 5
         Me.bloodType.Text = "Din blodtype er:"
         '
-        'ShowLogedIn
+        'lblSSnumber
         '
-        Me.ShowLogedIn.AutoSize = True
-        Me.ShowLogedIn.Location = New System.Drawing.Point(13, 52)
-        Me.ShowLogedIn.Name = "ShowLogedIn"
-        Me.ShowLogedIn.Size = New System.Drawing.Size(133, 20)
-        Me.ShowLogedIn.TabIndex = 4
-        Me.ShowLogedIn.Text = "Navn kommer her"
+        Me.lblSSnumber.AutoSize = True
+        Me.lblSSnumber.Location = New System.Drawing.Point(13, 52)
+        Me.lblSSnumber.Name = "lblSSnumber"
+        Me.lblSSnumber.Size = New System.Drawing.Size(133, 20)
+        Me.lblSSnumber.TabIndex = 4
+        Me.lblSSnumber.Text = "Navn kommer her"
         '
         'btnQuest
         '
@@ -224,15 +225,15 @@ Partial Class UserPage
         Me.btnQuest.Text = "Spørreskjema"
         Me.btnQuest.UseVisualStyleBackColor = True
         '
-        'Label1
+        'lblFullName
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(8, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(155, 26)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Innlogget som:"
+        Me.lblFullName.AutoSize = True
+        Me.lblFullName.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFullName.Location = New System.Drawing.Point(8, 17)
+        Me.lblFullName.Name = "lblFullName"
+        Me.lblFullName.Size = New System.Drawing.Size(155, 26)
+        Me.lblFullName.TabIndex = 0
+        Me.lblFullName.Text = "Innlogget som:"
         '
         'BookTime
         '
@@ -344,6 +345,7 @@ Partial Class UserPage
         '
         'ChangeData
         '
+        Me.ChangeData.Controls.Add(Me.Label18)
         Me.ChangeData.Controls.Add(Me.txtZipcode)
         Me.ChangeData.Controls.Add(Me.zipcode)
         Me.ChangeData.Controls.Add(Me.txtFirstName)
@@ -360,7 +362,7 @@ Partial Class UserPage
         Me.ChangeData.Controls.Add(Me.mail)
         Me.ChangeData.Controls.Add(Me.phone)
         Me.ChangeData.Controls.Add(Me.address)
-        Me.ChangeData.Controls.Add(Me.name)
+        Me.ChangeData.Controls.Add(Me.lastname)
         Me.ChangeData.Controls.Add(Me.personInfo)
         Me.ChangeData.Location = New System.Drawing.Point(4, 63)
         Me.ChangeData.Name = "ChangeData"
@@ -369,6 +371,22 @@ Partial Class UserPage
         Me.ChangeData.TabIndex = 2
         Me.ChangeData.Text = "TabPage3"
         Me.ChangeData.UseVisualStyleBackColor = True
+        '
+        'txtZipcode
+        '
+        Me.txtZipcode.Location = New System.Drawing.Point(552, 193)
+        Me.txtZipcode.Name = "txtZipcode"
+        Me.txtZipcode.Size = New System.Drawing.Size(243, 26)
+        Me.txtZipcode.TabIndex = 18
+        '
+        'zipcode
+        '
+        Me.zipcode.AutoSize = True
+        Me.zipcode.Location = New System.Drawing.Point(256, 199)
+        Me.zipcode.Name = "zipcode"
+        Me.zipcode.Size = New System.Drawing.Size(84, 20)
+        Me.zipcode.TabIndex = 17
+        Me.zipcode.Text = "Postkode"
         '
         'txtFirstName
         '
@@ -482,15 +500,15 @@ Partial Class UserPage
         Me.address.TabIndex = 2
         Me.address.Text = "Adresse"
         '
-        'name
+        'lastname
         '
-        Me.name.AutoSize = True
-        Me.name.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.name.Location = New System.Drawing.Point(256, 116)
-        Me.name.Name = "name"
-        Me.name.Size = New System.Drawing.Size(87, 20)
-        Me.name.TabIndex = 1
-        Me.name.Text = "Etternavn"
+        Me.lastname.AutoSize = True
+        Me.lastname.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lastname.Location = New System.Drawing.Point(256, 116)
+        Me.lastname.Name = "lastname"
+        Me.lastname.Size = New System.Drawing.Size(87, 20)
+        Me.lastname.TabIndex = 1
+        Me.lastname.Text = "Etternavn"
         '
         'personInfo
         '
@@ -527,7 +545,7 @@ Partial Class UserPage
         Me.InfoPage.Location = New System.Drawing.Point(4, 63)
         Me.InfoPage.Name = "InfoPage"
         Me.InfoPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.InfoPage.Size = New System.Drawing.Size(1052, 393)
+        Me.InfoPage.Size = New System.Drawing.Size(1052, 485)
         Me.InfoPage.TabIndex = 3
         Me.InfoPage.Text = "TabPage4"
         Me.InfoPage.UseVisualStyleBackColor = True
@@ -703,21 +721,14 @@ Partial Class UserPage
         Me.InfoBloodDonation.TabIndex = 0
         Me.InfoBloodDonation.Text = "Informasjon om blodgiving"
         '
-        'txtZipcode
+        'Label18
         '
-        Me.txtZipcode.Location = New System.Drawing.Point(552, 193)
-        Me.txtZipcode.Name = "txtZipcode"
-        Me.txtZipcode.Size = New System.Drawing.Size(243, 26)
-        Me.txtZipcode.TabIndex = 18
-        '
-        'zipcode
-        '
-        Me.zipcode.AutoSize = True
-        Me.zipcode.Location = New System.Drawing.Point(256, 199)
-        Me.zipcode.Name = "zipcode"
-        Me.zipcode.Size = New System.Drawing.Size(84, 20)
-        Me.zipcode.TabIndex = 17
-        Me.zipcode.Text = "Postkode"
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(56, 52)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(73, 20)
+        Me.Label18.TabIndex = 19
+        Me.Label18.Text = "Label18"
         '
         'UserPage
         '
@@ -725,8 +736,7 @@ Partial Class UserPage
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1261, 758)
         Me.Controls.Add(Me.DonorPage)
-        Me.name = "UserPage"
-        Me.Text = "UserPage"
+        Me.Name = "UserPage"
         Me.DonorPage.ResumeLayout(False)
         Me.MyPage.ResumeLayout(False)
         Me.MyPage.PerformLayout()
@@ -754,9 +764,9 @@ Partial Class UserPage
     Friend WithEvents lastDrain As Label
     Friend WithEvents txtHb As TextBox
     Friend WithEvents bloodType As Label
-    Friend WithEvents ShowLogedIn As Label
+    Friend WithEvents lblSSnumber As Label
     Friend WithEvents btnQuest As Button
-    Friend WithEvents Label1 As Label
+    Friend WithEvents lblFullName As Label
     Friend WithEvents BookTime As TabPage
     Friend WithEvents gbTime As GroupBox
     Friend WithEvents lblOTime As Label
@@ -783,7 +793,7 @@ Partial Class UserPage
     Friend WithEvents mail As Label
     Friend WithEvents phone As Label
     Friend WithEvents address As Label
-    Friend WithEvents name As Label
+    Friend WithEvents lastname As Label
     Friend WithEvents personInfo As Label
     Friend WithEvents InfoPage As TabPage
     Friend WithEvents LinkLabel1 As LinkLabel
@@ -806,4 +816,5 @@ Partial Class UserPage
     Friend WithEvents InfoBloodDonation As Label
     Friend WithEvents txtZipcode As TextBox
     Friend WithEvents zipcode As Label
+    Friend WithEvents Label18 As Label
 End Class

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LogIn
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,9 @@ Partial Class LogIn
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.btbRegistrer = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -35,20 +34,12 @@ Partial Class LogIn
         CType(Me.loginerror, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(213, 52)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(59, 13)
-        Me.Label1.TabIndex = 47
-        Me.Label1.Text = "LOGG INN"
-        '
         'btbRegistrer
         '
-        Me.btbRegistrer.Location = New System.Drawing.Point(158, 198)
+        Me.btbRegistrer.Location = New System.Drawing.Point(213, 265)
+        Me.btbRegistrer.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btbRegistrer.Name = "btbRegistrer"
-        Me.btbRegistrer.Size = New System.Drawing.Size(170, 23)
+        Me.btbRegistrer.Size = New System.Drawing.Size(255, 35)
         Me.btbRegistrer.TabIndex = 46
         Me.btbRegistrer.Text = "Registrer deg"
         Me.btbRegistrer.UseVisualStyleBackColor = True
@@ -56,53 +47,59 @@ Partial Class LogIn
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(154, 134)
+        Me.Label3.Location = New System.Drawing.Point(208, 176)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(45, 13)
+        Me.Label3.Size = New System.Drawing.Size(67, 20)
         Me.Label3.TabIndex = 45
         Me.Label3.Text = "Passord"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(154, 94)
+        Me.Label2.Location = New System.Drawing.Point(206, 129)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(77, 13)
+        Me.Label2.Size = New System.Drawing.Size(117, 20)
         Me.Label2.TabIndex = 44
         Me.Label2.Text = "Personnummer"
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(252, 169)
+        Me.btnCancel.Location = New System.Drawing.Point(354, 220)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(75, 23)
+        Me.btnCancel.Size = New System.Drawing.Size(112, 35)
         Me.btnCancel.TabIndex = 43
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = True
         '
         'btbLogin
         '
-        Me.btbLogin.Location = New System.Drawing.Point(158, 169)
+        Me.btbLogin.Location = New System.Drawing.Point(212, 220)
+        Me.btbLogin.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.btbLogin.Name = "btbLogin"
-        Me.btbLogin.Size = New System.Drawing.Size(75, 23)
+        Me.btbLogin.Size = New System.Drawing.Size(112, 35)
         Me.btbLogin.TabIndex = 42
         Me.btbLogin.Text = "Login"
         Me.btbLogin.UseVisualStyleBackColor = True
         '
         'txtPassword
         '
-        Me.txtPassword.Location = New System.Drawing.Point(238, 132)
+        Me.txtPassword.Location = New System.Drawing.Point(334, 173)
+        Me.txtPassword.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtPassword.Name = "txtPassword"
-        Me.txtPassword.Size = New System.Drawing.Size(91, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(134, 26)
         Me.txtPassword.TabIndex = 41
         Me.txtPassword.Text = "12345678"
         Me.txtPassword.UseSystemPasswordChar = True
         '
         'txtPersonnr
         '
-        Me.txtPersonnr.Location = New System.Drawing.Point(238, 92)
+        Me.txtPersonnr.Location = New System.Drawing.Point(332, 126)
+        Me.txtPersonnr.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.txtPersonnr.Name = "txtPersonnr"
-        Me.txtPersonnr.Size = New System.Drawing.Size(91, 20)
+        Me.txtPersonnr.Size = New System.Drawing.Size(134, 26)
         Me.txtPersonnr.TabIndex = 40
         Me.txtPersonnr.Text = "22222222222"
         '
@@ -112,10 +109,9 @@ Partial Class LogIn
         '
         'LogIn
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(459, 295)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(688, 454)
         Me.Controls.Add(Me.btbRegistrer)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -123,7 +119,6 @@ Partial Class LogIn
         Me.Controls.Add(Me.btbLogin)
         Me.Controls.Add(Me.txtPassword)
         Me.Controls.Add(Me.txtPersonnr)
-        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "LogIn"
         Me.Text = "LogIn"
         CType(Me.loginerror, System.ComponentModel.ISupportInitialize).EndInit()
@@ -131,7 +126,6 @@ Partial Class LogIn
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Label1 As Label
     Friend WithEvents btbRegistrer As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
