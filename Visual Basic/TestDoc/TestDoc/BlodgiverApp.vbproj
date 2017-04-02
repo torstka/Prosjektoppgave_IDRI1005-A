@@ -79,6 +79,7 @@
     <Compile Include="BloodInformation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BloodStock.vb" />
     <Compile Include="ChangeUserInfo.Designer.vb">
       <DependentUpon>ChangeUserInfo.vb</DependentUpon>
     </Compile>
@@ -101,6 +102,12 @@
       <DependentUpon>EmployeePage.vb</DependentUpon>
     </Compile>
     <Compile Include="EmployeePage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EPage.Designer.vb">
+      <DependentUpon>EPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EPage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LogIn.Designer.vb">
@@ -172,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeePage.resx">
       <DependentUpon>EmployeePage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EPage.resx">
+      <DependentUpon>EPage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>

@@ -101,7 +101,7 @@ Public Class LogIn
         Return True
     End Function
 
-    Private Sub btnRegistrer_Click(sender As Object, e As EventArgs) Handles btbRegistrer.Click
+    Private Sub btnRegistrer_Click(sender As Object, e As EventArgs)
         Me.Hide()
         NewUser.Show()
     End Sub
@@ -122,7 +122,7 @@ Public Class LogIn
 
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         Application.Exit()
     End Sub
 
@@ -134,6 +134,11 @@ Public Class LogIn
     Private Sub LogIn_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         connection.Close()
         connection.Dispose()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Me.Hide()
+        NewUser.Show()
     End Sub
 
 End Class
