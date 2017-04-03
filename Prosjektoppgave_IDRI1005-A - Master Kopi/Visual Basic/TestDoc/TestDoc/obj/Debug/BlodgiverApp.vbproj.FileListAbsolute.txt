@@ -1,0 +1,192 @@
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Form1.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Logged_In.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Form1.resources
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Logged_In.resources
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+\\vmware-host\Shared Folders\Markus\Downloads\Prosjektoppgave_IDRI1005-A-master\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+C:\Users\Torstein\Desktop\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\Users\Torstein\Desktop\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\Users\Torstein\Desktop\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\Users\Torstein\Desktop\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Form1.resources
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Logged_In.resources
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Documents\1 klasse - 2\Prosjekt\BlodBank\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Form1.resources
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Logged_In.resources
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+\\vmware-host\Shared Folders\Markus\Documents\git\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Form1.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Logged_In.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation1.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Form1.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Logged_In.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+C:\Users\Leni\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.LogIn.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.LogIn.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation1.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.LogIn.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.ChangeUserInfo.resources
+C:\ProsjektOppgåve Vår 2017\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.ChangeUserInfo.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.ChangeUserInfo.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A-master\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A-master\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A-master\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A-master\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Prosjektoppgave_IDRI1005-A - Master Kopi\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe.config
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Prosjektoppgave_IDRI1005-A - Master Kopi\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Prosjektoppgave_IDRI1005-A - Master Kopi\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Prosjektoppgave_IDRI1005-A - Master Kopi\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb

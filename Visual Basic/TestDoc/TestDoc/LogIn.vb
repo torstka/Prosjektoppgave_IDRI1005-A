@@ -2,7 +2,6 @@
 Imports MySql.Data.MySqlClient
 
 Public Class LogIn
-
     Public ssn As String
     Dim connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
@@ -33,7 +32,7 @@ Public Class LogIn
     Private Function Validpassinput() As Boolean
         Dim passinput = txtPassword.Text
         If passinput.Length = 0 Then
-            Me.LoginError.SetError(txtPassword, "Vennligst fyll ut passord")
+            Me.loginerror.SetError(txtPassword, "Vennligst fyll ut passord")
             Return False
         Else
             Return True
@@ -46,7 +45,7 @@ Public Class LogIn
         Dim password = txtPassword.Text
 
         connection.Open()
-        Dim sqlSporring = "select * from Employee where employee_number=@employeeNr " &
+        Dim sqlSporring = "select * from Employee where e_number=@employeeNr " &
                       "and password=@password"
 
         Dim sql As New MySqlCommand(sqlSporring, connection)
@@ -57,7 +56,7 @@ Public Class LogIn
         Dim leser = sql.ExecuteReader()
         If leser.HasRows Then
             Me.Hide()
-            EmployeePage.Show()
+            EPage.Show()
             txtPassword.Clear()
             txtPersonnr.Clear()
 
@@ -74,7 +73,7 @@ Public Class LogIn
     'Funksjon for å logge inn som "bruker"
     Private Function Userlogin()
 
-        Dim ssn = txtPersonnr.Text
+        ssn = txtPersonnr.Text
         Dim password = txtPassword.Text
 
         connection.open
@@ -89,7 +88,7 @@ Public Class LogIn
         Dim reader = command.ExecuteReader()
         If reader.HasRows Then
             Me.Hide()
-            MyPage.Show()
+            UserPage.Show()
             MyPage.Label3.Text = ssn
             txtPassword.Clear()
             txtPersonnr.Clear()
@@ -102,7 +101,7 @@ Public Class LogIn
         Return True
     End Function
 
-    Private Sub btnRegistrer_Click(sender As Object, e As EventArgs) Handles btbRegistrer.Click
+    Private Sub btnRegistrer_Click(sender As Object, e As EventArgs)
         Me.Hide()
         NewUser.Show()
     End Sub
@@ -112,9 +111,9 @@ Public Class LogIn
         'Kjører funksjonene for tekstboks validering og finner ut om enn logger inn som ansatt eller
         'bruker basert på antall tall som er skrivet inn
         If Not validloginput() Then
-            MsgBox(Me.LoginError.GetError(txtPersonnr))
+            MsgBox(Me.loginerror.GetError(txtPersonnr))
         ElseIf Not Validpassinput() Then
-            MsgBox(Me.LoginError.GetError(txtPassword))
+            MsgBox(Me.loginerror.GetError(txtPassword))
         ElseIf txtPersonnr.TextLength = 11 Then
             Userlogin()
         ElseIf txtPersonnr.TextLength = 4 Then
@@ -123,7 +122,7 @@ Public Class LogIn
 
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         Application.Exit()
     End Sub
 
@@ -135,6 +134,11 @@ Public Class LogIn
     Private Sub LogIn_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         connection.Close()
         connection.Dispose()
+    End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Me.Hide()
+        NewUser.Show()
     End Sub
 
 End Class

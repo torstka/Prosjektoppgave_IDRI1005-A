@@ -17,8 +17,8 @@ Public Class NewUser
         txtEmail.Clear()
         txtPassword.Clear()
         RegError.Clear()
-        Mbox.Checked = False
-        Fbox.Checked = False
+        rbMale.Checked = False
+        rbFemale.Checked = False
         LogIn.Show()
         Me.Hide()
 
@@ -180,21 +180,21 @@ Public Class NewUser
             Return True
         End If
     End Function
-    Private Function ValidKjønn() As Boolean
-        'Validerer at du ikke har krysset av for begge kjønn
-        If Mbox.Checked And Fbox.Checked Then
-            Me.RegError.SetError(Fbox, "Du kan bare velge et kjønn")
-            Return False
-            'Validerer at minst en av checkboksene er krysset av
-        ElseIf Mbox.Checked = False And Fbox.Checked = False Then
-            Me.RegError.SetError(Fbox, "Vennligst velg et kjønn")
-            Return False
-        Else
-            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
-            Me.RegError.SetError(Fbox, "")
-            Return True
-        End If
-    End Function
+    'Private Function ValidKjønn() As Boolean
+    'Validerer at du ikke har krysset av for begge kjønn
+    'If Mbox.Checked And Fbox.Checked Then
+    'Me.RegError.SetError(Fbox, "Du kan bare velge et kjønn")
+    'Return False
+    'Validerer at minst en av checkboksene er krysset av
+    'ElseIf Mbox.Checked = False And Fbox.Checked = False Then
+    'Me.RegError.SetError(Fbox, "Vennligst velg et kjønn")
+    'Return False
+    'Else
+    'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+    'Me.RegError.SetError(Fbox, "")
+    'Return True
+    'End If
+    'End Function
 
     Private tilkobling As MySqlConnection
 
@@ -208,8 +208,8 @@ Public Class NewUser
         Dim phone = txtPhone.Text
         Dim email = txtEmail.Text
         Dim password = txtPassword.Text
-        Dim male = Mbox.Text
-        Dim female = Fbox.Text
+        Dim male = rbMale.Checked
+        Dim female = rbFemale.Checked
 
 
         'Validerer at alle tekstboksene er utfylt riktig
@@ -231,31 +231,11 @@ Public Class NewUser
             MsgBox(Me.RegError.GetError(txtConfirmPassword))
         ElseIf Not ValidTelefon() Then
             MsgBox(Me.RegError.GetError(txtPhone))
-        ElseIf Not ValidKjønn() Then
-            MsgBox(Me.RegError.GetError(Fbox))
         Else
 
 
-            'Om valideringen er godkjent ("return true" på alle funksjonene), utfør sql spørring mot database
-            Dim query = "insert into User (ss_number, firstname, lastname, phone, e_mail, address, zip_code, password, gender) values (@ssnumber, @firstname, @lastname, @phone, @email, @address, @zipcode, @password, @gender)"
-            Dim command As New MySqlCommand(query, tilkobling)
-
-
-            command.Parameters.AddWithValue("@ssnumber", ssNumber)
-            command.Parameters.AddWithValue("@firstname", firstname)
-            command.Parameters.AddWithValue("@lastname", lastname)
-            command.Parameters.AddWithValue("@address", address)
-            command.Parameters.AddWithValue("@zipcode", zipCode)
-            command.Parameters.AddWithValue("@phone", phone)
-            command.Parameters.AddWithValue("@email", email)
-            command.Parameters.AddWithValue("@password", password)
-            If Mbox.Checked Then
-                command.Parameters.AddWithValue("@gender", male)
-            ElseIf Fbox.Checked Then
-                command.Parameters.AddWithValue("@gender", female)
-            End If
-            command.ExecuteNonQuery()
-            MsgBox("Registrering vellykket!")
+            Dim newUser As New User
+            newUser.add(ssNumber, firstname, lastname, address, zipCode, phone, email, password, male, female)
 
             Me.Close()
             LogIn.Show()
@@ -263,4 +243,6 @@ Public Class NewUser
         End If
 
     End Sub
+
+
 End Class

@@ -79,6 +79,13 @@
     <Compile Include="BloodInformation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="BloodStock.vb" />
+    <Compile Include="Cal.Designer.vb">
+      <DependentUpon>Cal.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cal.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ChangeUserInfo.Designer.vb">
       <DependentUpon>ChangeUserInfo.vb</DependentUpon>
     </Compile>
@@ -101,6 +108,12 @@
       <DependentUpon>EmployeePage.vb</DependentUpon>
     </Compile>
     <Compile Include="EmployeePage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EPage.Designer.vb">
+      <DependentUpon>EPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EPage.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LogIn.Designer.vb">
@@ -136,22 +149,33 @@
     <Compile Include="NewUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Stock.vb" />
     <Compile Include="Storage.Designer.vb">
       <DependentUpon>Storage.vb</DependentUpon>
     </Compile>
     <Compile Include="Storage.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="User.vb" />
     <Compile Include="UserInformation.Designer.vb">
       <DependentUpon>UserInformation.vb</DependentUpon>
     </Compile>
     <Compile Include="UserInformation.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UserPage.Designer.vb">
+      <DependentUpon>UserPage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserPage.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="BloodInformation.resx">
       <DependentUpon>BloodInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cal.resx">
+      <DependentUpon>Cal.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChangeUserInfo.resx">
       <DependentUpon>ChangeUserInfo.vb</DependentUpon>
@@ -164,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeePage.resx">
       <DependentUpon>EmployeePage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EPage.resx">
+      <DependentUpon>EPage.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>
@@ -186,6 +213,9 @@
     <EmbeddedResource Include="UserInformation.resx">
       <DependentUpon>UserInformation.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserPage.resx">
+      <DependentUpon>UserPage.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -201,6 +231,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bloddrape.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogIn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LogIn2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

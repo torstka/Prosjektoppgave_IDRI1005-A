@@ -22,7 +22,7 @@ Public Class UserInformation
 
         Try
             connection.Open()
-            Dim query As String = "SELECT ss_number as 'Personnummer',lastname as 'Etternavn',firstname as 'Fornavn',blood_type as'Blodtype' FROM User"
+            Dim query As String = "SELECT ss_number as 'Personnummer',lastname as 'Etternavn',firstname as 'Fornavn', FROM User"
             command = New MySqlCommand(query, connection)
             SDA.SelectCommand = command
             SDA.Fill(table)
@@ -75,7 +75,7 @@ Public Class UserInformation
             txtFirstname.Text = row.Cells("Fornavn").Value.ToString
             txtLastname.Text = row.Cells("Etternavn").Value.ToString
             txtSSN.Text = row.Cells("Personnummer").Value.ToString
-            txtBloodType.Text = row.Cells("Blodtype").Value.ToString
+
         End If
 
         Dim reader As MySqlDataReader
@@ -83,22 +83,25 @@ Public Class UserInformation
 
         Try
             connection.Open()
-            Dim query As String = "select hb, iron_value FROM Blood_Data where ss_number = '" & txtSSN.Text & "'"
+            Dim query As String = "select blood_type, hb, iron_value FROM Blood_Data where ss_number = '" & txtSSN.Text & "'"
             command = New MySqlCommand(query, connection)
             reader = command.ExecuteReader
 
             Dim hb As String = ""
             Dim ironValue As String = ""
+            Dim bloodType As String = ""
 
             While reader.Read()
                 hb &= reader("hb") & " "
                 ironValue = reader("iron_value") & " "
+                bloodType = reader("blood_type") & " "
 
             End While
 
 
             txtHB.Text = hb
             txtIron.Text = ironValue
+            txtBloodType.Text = bloodType
 
             connection.Close()
         Catch ex As Exception
