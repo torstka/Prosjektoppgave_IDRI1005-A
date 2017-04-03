@@ -189,3 +189,5 @@ C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basi
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserPage.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Cal.resources
+\\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EPage.resources

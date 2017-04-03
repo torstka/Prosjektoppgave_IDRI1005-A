@@ -56,7 +56,7 @@ Public Class LogIn
         Dim leser = sql.ExecuteReader()
         If leser.HasRows Then
             Me.Hide()
-            EmployeePage.Show()
+            EPage.Show()
             txtPassword.Clear()
             txtPersonnr.Clear()
 

@@ -127,9 +127,10 @@ Public Class UserPage
 
         'Label18.Text = ssNumber
 
-        showData()
-        showBloodData()
         getUser()
+        showBloodData()
+
+
 
         'Dim showUser As New User
         'showUser.showData(txtFirstName.Text, txtLastName.Text, txtPhone.Text, txtMail.Text, txtAddress.Text, txtZipcode.Text, txtPwd.Text)
@@ -208,6 +209,21 @@ Public Class UserPage
         'updateUser.update(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtZipcode.Text, txtPhone.Text, txtMail.Text, txtPwd.Text)
 
         updateData()
+
+    End Sub
+
+    Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
+
+        Me.Hide()
+        LogIn.Show()
+
+    End Sub
+
+    Private Sub ChangeData_Click(sender As Object, e As EventArgs) Handles ChangeData.Click
+        showData()
+    End Sub
+
+    Private Sub MyPage_Click(sender As Object, e As EventArgs) Handles MyPage.Click
 
     End Sub
 End Class

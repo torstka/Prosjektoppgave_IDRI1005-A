@@ -49,6 +49,7 @@ Partial Class UserPage
         Me.dtpOrder = New System.Windows.Forms.DateTimePicker()
         Me.showDate = New System.Windows.Forms.Label()
         Me.ChangeData = New System.Windows.Forms.TabPage()
+        Me.Label18 = New System.Windows.Forms.Label()
         Me.txtZipcode = New System.Windows.Forms.TextBox()
         Me.zipcode = New System.Windows.Forms.Label()
         Me.txtFirstName = New System.Windows.Forms.TextBox()
@@ -86,7 +87,7 @@ Partial Class UserPage
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.InfoBloodDonation = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.btnLogOut = New System.Windows.Forms.Button()
         Me.DonorPage.SuspendLayout()
         Me.MyPage.SuspendLayout()
         Me.gbBlood.SuspendLayout()
@@ -103,7 +104,7 @@ Partial Class UserPage
         Me.DonorPage.Controls.Add(Me.ChangeData)
         Me.DonorPage.Controls.Add(Me.InfoPage)
         Me.DonorPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DonorPage.Location = New System.Drawing.Point(111, 99)
+        Me.DonorPage.Location = New System.Drawing.Point(79, 104)
         Me.DonorPage.Name = "DonorPage"
         Me.DonorPage.Padding = New System.Drawing.Point(39, 20)
         Me.DonorPage.SelectedIndex = 0
@@ -371,6 +372,15 @@ Partial Class UserPage
         Me.ChangeData.TabIndex = 2
         Me.ChangeData.Text = "TabPage3"
         Me.ChangeData.UseVisualStyleBackColor = True
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(56, 52)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(73, 20)
+        Me.Label18.TabIndex = 19
+        Me.Label18.Text = "Label18"
         '
         'txtZipcode
         '
@@ -721,20 +731,21 @@ Partial Class UserPage
         Me.InfoBloodDonation.TabIndex = 0
         Me.InfoBloodDonation.Text = "Informasjon om blodgiving"
         '
-        'Label18
+        'btnLogOut
         '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(56, 52)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(73, 20)
-        Me.Label18.TabIndex = 19
-        Me.Label18.Text = "Label18"
+        Me.btnLogOut.Location = New System.Drawing.Point(1122, 12)
+        Me.btnLogOut.Name = "btnLogOut"
+        Me.btnLogOut.Size = New System.Drawing.Size(127, 48)
+        Me.btnLogOut.TabIndex = 8
+        Me.btnLogOut.Text = "Logg Ut"
+        Me.btnLogOut.UseVisualStyleBackColor = True
         '
         'UserPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1261, 758)
+        Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.DonorPage)
         Me.Name = "UserPage"
         Me.DonorPage.ResumeLayout(False)
@@ -817,4 +828,5 @@ Partial Class UserPage
     Friend WithEvents txtZipcode As TextBox
     Friend WithEvents zipcode As Label
     Friend WithEvents Label18 As Label
+    Friend WithEvents btnLogOut As Button
 End Class

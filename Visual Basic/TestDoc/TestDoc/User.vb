@@ -14,8 +14,10 @@ Public Class User
 
 
     Public Sub add(ByVal ssNumber As String, ByVal firstname As String, ByVal lastname As String, ByVal address As String, ByVal zipcode As Integer, ByVal phone As String, ByVal email As String, ByVal password As String, ByVal male As String, ByVal female As String)
-        Dim Mbox = NewUser.Mbox.Checked
-        Dim Fbox = NewUser.Mbox.Checked
+        Dim Mbox = NewUser.rbMale.Checked
+        Dim Fbox = NewUser.rbFemale.Checked
+        male = "Male"
+        female = "Female"
 
         Try
             connection.Open()

@@ -8,15 +8,13 @@ Public Class Stock
 
 
 
-    Public Sub add()
+    Public Sub add(ByVal bloodType As String, ByVal ssNumber As String)
         Dim donationDate As String = Today.ToString("dd/MM/yyyy")
-        Dim bloodType As String = InputBox("Legg til blodtype", "Blodtype")
         Dim bloodCells As Double = InputBox("Legg til blodceller", "Blodceller")
         Dim cellsDate = Today.AddDays(35).ToString("dd/MM/yyyy")
         Dim plasma As Double = InputBox("Legg til plasma", "Plasma")
         Dim platelets As Integer = InputBox("Legg til blodplater", "Blodplater")
         Dim plateletsDate = Today.AddDays(7).ToString("dd/MM/yyyy")
-        Dim ssNumber As String = "11111111111"
 
         Try
             con.Open()

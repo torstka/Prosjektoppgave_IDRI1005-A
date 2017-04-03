@@ -39,8 +39,7 @@ Public Class Storage
 
     Private Sub btnAddDonation_Click(sender As Object, e As EventArgs) Handles btnAddDonation.Click
 
-        Dim bloodStock As New Stock
-        bloodStock.add()
+
 
     End Sub
 End Class
