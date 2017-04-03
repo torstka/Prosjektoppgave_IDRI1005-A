@@ -191,3 +191,25 @@ C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basi
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserPage.resources
 \\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Cal.resources
 \\vmware-host\Shared Folders\Markus\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EPage.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.exe
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.pdb
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\TestDoc.xml
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Cal.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.ChangeUserInfo.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EPage.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.LogIn.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestionForm.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserPage.resources
+C:\Users\Regine\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbproj.GenerateResource.Cache

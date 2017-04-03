@@ -149,6 +149,12 @@
     <Compile Include="NewUser.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="QuestionForm.Designer.vb">
+      <DependentUpon>QuestionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QuestionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Stock.vb" />
     <Compile Include="Storage.Designer.vb">
       <DependentUpon>Storage.vb</DependentUpon>
@@ -206,6 +212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewUser.resx">
       <DependentUpon>NewUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionForm.resx">
+      <DependentUpon>QuestionForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Storage.resx">
       <DependentUpon>Storage.vb</DependentUpon>

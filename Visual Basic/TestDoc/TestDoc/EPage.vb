@@ -9,7 +9,7 @@ Public Class EPage
     Dim rad As DataRow
     Dim bSource As New BindingSource
 
-    Dim todaysDate As String = Today.ToString("DD/mm/yyyy")
+    Dim todaysDate As String = Today.ToString("dd/MM/yyyy")
 
     Private Sub load_table()
 

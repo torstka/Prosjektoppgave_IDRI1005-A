@@ -73,7 +73,7 @@ Public Class UserPage
 
     Public Sub showBloodData()
         Try
-            connection.Open()
+            '  connection.Open()
             Dim query As String = "SELECT blood_type, hb, iron_value, last_drain FROM Blood_Data WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
             cmd = New MySqlCommand(query, connection)
             adapter = New MySqlDataAdapter
@@ -224,6 +224,12 @@ Public Class UserPage
     End Sub
 
     Private Sub MyPage_Click(sender As Object, e As EventArgs) Handles MyPage.Click
+
+    End Sub
+
+    Private Sub btnQuest_Click(sender As Object, e As EventArgs) Handles btnQuest.Click
+        Me.Hide()
+        QuestionForm.Show()
 
     End Sub
 End Class
