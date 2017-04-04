@@ -166,7 +166,6 @@ C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
-C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation1.resources
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
@@ -238,3 +237,8 @@ C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.exe
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.xml
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.pdb
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Cal.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EPage.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestionForm.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserPage.resources

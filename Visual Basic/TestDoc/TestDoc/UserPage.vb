@@ -18,6 +18,7 @@ Public Class UserPage
 
 
     Public Sub showData()
+
         Try
             connection.Open()
             Dim query As String = "SELECT firstname, lastname, phone, e_mail, address, zip_code, password FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
@@ -75,9 +76,6 @@ Public Class UserPage
     End Function
 
     Public Sub updateData()
-
-
-
 
         If Not ConfirmPass() Then
             MsgBox(Me.regerror.GetError(txtConPwd))

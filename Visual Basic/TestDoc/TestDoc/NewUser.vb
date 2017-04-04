@@ -5,6 +5,9 @@ Public Class NewUser
         'Oppkobling mot databasen
         tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
         tilkobling.Open()
+        Me.Size = SystemInformation.PrimaryMonitorSize
+        Regbox.Location = New Point((ClientSize.Width - Regbox.Width) \ 2,
+                             (ClientSize.Height - Regbox.Height) \ 2)
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'Knapp som klarerer skjema og går tilbake til "form1"
@@ -233,7 +236,6 @@ Public Class NewUser
             MsgBox(Me.RegError.GetError(txtPhone))
         Else
 
-
             Dim newUser As New User
             newUser.add(ssNumber, firstname, lastname, address, zipCode, phone, email, password, male, female)
 
@@ -243,6 +245,5 @@ Public Class NewUser
         End If
 
     End Sub
-
 
 End Class

@@ -22,7 +22,7 @@ Partial Class EPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.Userinformation = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnRegDonation = New System.Windows.Forms.Button()
         Me.btnAddData = New System.Windows.Forms.Button()
@@ -49,26 +49,26 @@ Partial Class EPage
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.TabControl1.SuspendLayout()
+        Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'TabControl1
+        'Userinformation
         '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabControl1.Location = New System.Drawing.Point(92, 77)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.Padding = New System.Drawing.Point(39, 20)
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1200, 700)
-        Me.TabControl1.TabIndex = 0
+        Me.Userinformation.Controls.Add(Me.TabPage1)
+        Me.Userinformation.Controls.Add(Me.TabPage2)
+        Me.Userinformation.Controls.Add(Me.TabPage3)
+        Me.Userinformation.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Userinformation.Location = New System.Drawing.Point(92, 77)
+        Me.Userinformation.Margin = New System.Windows.Forms.Padding(2)
+        Me.Userinformation.Name = "Userinformation"
+        Me.Userinformation.Padding = New System.Drawing.Point(39, 20)
+        Me.Userinformation.SelectedIndex = 0
+        Me.Userinformation.Size = New System.Drawing.Size(1200, 700)
+        Me.Userinformation.TabIndex = 0
         '
         'TabPage1
         '
@@ -81,9 +81,9 @@ Partial Class EPage
         Me.TabPage1.Controls.Add(Me.txtSearch)
         Me.TabPage1.Controls.Add(Me.DataGridView1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 74)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Size = New System.Drawing.Size(1192, 622)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
@@ -93,7 +93,7 @@ Partial Class EPage
         '
         Me.btnRegDonation.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnRegDonation.Location = New System.Drawing.Point(86, 464)
-        Me.btnRegDonation.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnRegDonation.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegDonation.Name = "btnRegDonation"
         Me.btnRegDonation.Size = New System.Drawing.Size(237, 33)
         Me.btnRegDonation.TabIndex = 60
@@ -104,7 +104,7 @@ Partial Class EPage
         '
         Me.btnAddData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnAddData.Location = New System.Drawing.Point(86, 392)
-        Me.btnAddData.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btnAddData.Margin = New System.Windows.Forms.Padding(1)
         Me.btnAddData.Name = "btnAddData"
         Me.btnAddData.Size = New System.Drawing.Size(237, 32)
         Me.btnAddData.TabIndex = 59
@@ -115,7 +115,7 @@ Partial Class EPage
         '
         Me.btnUpdateData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnUpdateData.Location = New System.Drawing.Point(86, 352)
-        Me.btnUpdateData.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.btnUpdateData.Margin = New System.Windows.Forms.Padding(1)
         Me.btnUpdateData.Name = "btnUpdateData"
         Me.btnUpdateData.Size = New System.Drawing.Size(237, 32)
         Me.btnUpdateData.TabIndex = 58
@@ -134,9 +134,9 @@ Partial Class EPage
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(86, 32)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Size = New System.Drawing.Size(237, 151)
         Me.GroupBox2.TabIndex = 57
         Me.GroupBox2.TabStop = False
@@ -146,7 +146,7 @@ Partial Class EPage
         '
         Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtPhone.Location = New System.Drawing.Point(105, 113)
-        Me.txtPhone.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(1)
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(115, 23)
         Me.txtPhone.TabIndex = 52
@@ -177,7 +177,7 @@ Partial Class EPage
         '
         Me.txtFirstname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtFirstname.Location = New System.Drawing.Point(105, 22)
-        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(1)
         Me.txtFirstname.Name = "txtFirstname"
         Me.txtFirstname.Size = New System.Drawing.Size(115, 23)
         Me.txtFirstname.TabIndex = 45
@@ -186,7 +186,7 @@ Partial Class EPage
         '
         Me.txtLastname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLastname.Location = New System.Drawing.Point(105, 50)
-        Me.txtLastname.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.txtLastname.Margin = New System.Windows.Forms.Padding(1)
         Me.txtLastname.Name = "txtLastname"
         Me.txtLastname.Size = New System.Drawing.Size(115, 23)
         Me.txtLastname.TabIndex = 47
@@ -206,7 +206,7 @@ Partial Class EPage
         '
         Me.txtSSN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSSN.Location = New System.Drawing.Point(105, 81)
-        Me.txtSSN.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.txtSSN.Margin = New System.Windows.Forms.Padding(1)
         Me.txtSSN.Name = "txtSSN"
         Me.txtSSN.Size = New System.Drawing.Size(115, 23)
         Me.txtSSN.TabIndex = 49
@@ -232,9 +232,9 @@ Partial Class EPage
         Me.GroupBox1.Controls.Add(Me.txtIron)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(86, 213)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(237, 127)
         Me.GroupBox1.TabIndex = 56
         Me.GroupBox1.TabStop = False
@@ -255,7 +255,7 @@ Partial Class EPage
         '
         Me.txtHB.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtHB.Location = New System.Drawing.Point(100, 60)
-        Me.txtHB.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.txtHB.Margin = New System.Windows.Forms.Padding(1)
         Me.txtHB.Name = "txtHB"
         Me.txtHB.Size = New System.Drawing.Size(113, 23)
         Me.txtHB.TabIndex = 27
@@ -286,7 +286,7 @@ Partial Class EPage
         '
         Me.txtBloodType.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtBloodType.Location = New System.Drawing.Point(100, 23)
-        Me.txtBloodType.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.txtBloodType.Margin = New System.Windows.Forms.Padding(1)
         Me.txtBloodType.Name = "txtBloodType"
         Me.txtBloodType.Size = New System.Drawing.Size(113, 23)
         Me.txtBloodType.TabIndex = 51
@@ -295,7 +295,7 @@ Partial Class EPage
         '
         Me.txtIron.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtIron.Location = New System.Drawing.Point(100, 94)
-        Me.txtIron.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.txtIron.Margin = New System.Windows.Forms.Padding(1)
         Me.txtIron.Name = "txtIron"
         Me.txtIron.Size = New System.Drawing.Size(113, 23)
         Me.txtIron.TabIndex = 28
@@ -304,7 +304,7 @@ Partial Class EPage
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(633, 5)
+        Me.Label5.Location = New System.Drawing.Point(627, 20)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(135, 17)
@@ -314,28 +314,27 @@ Partial Class EPage
         'txtSearch
         '
         Me.txtSearch.Location = New System.Drawing.Point(780, 4)
-        Me.txtSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSearch.Name = "txtSearch"
         Me.txtSearch.Size = New System.Drawing.Size(99, 38)
         Me.txtSearch.TabIndex = 25
         '
         'DataGridView1
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(417, 32)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DataGridView1.Location = New System.Drawing.Point(418, 82)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(471, 465)
+        Me.DataGridView1.Size = New System.Drawing.Size(616, 465)
         Me.DataGridView1.TabIndex = 21
         '
         'TabPage2
         '
         Me.TabPage2.Location = New System.Drawing.Point(4, 74)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TabPage2.Size = New System.Drawing.Size(1251, 654)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
+        Me.TabPage2.Size = New System.Drawing.Size(1192, 622)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -343,9 +342,9 @@ Partial Class EPage
         'TabPage3
         '
         Me.TabPage3.Location = New System.Drawing.Point(4, 74)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1251, 654)
+        Me.TabPage3.Size = New System.Drawing.Size(1192, 622)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -353,8 +352,8 @@ Partial Class EPage
         'Button7
         '
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button7.Location = New System.Drawing.Point(1212, 11)
-        Me.Button7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Button7.Location = New System.Drawing.Point(1168, 22)
+        Me.Button7.Margin = New System.Windows.Forms.Padding(2)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(183, 51)
         Me.Button7.TabIndex = 54
@@ -365,13 +364,13 @@ Partial Class EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1406, 813)
-        Me.Controls.Add(Me.TabControl1)
+        Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.Controls.Add(Me.Userinformation)
         Me.Controls.Add(Me.Button7)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "EPage"
         Me.Text = "EPage"
-        Me.TabControl1.ResumeLayout(False)
+        Me.Userinformation.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -383,7 +382,7 @@ Partial Class EPage
 
     End Sub
 
-    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents Userinformation As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents TabPage2 As TabPage
     Friend WithEvents TabPage3 As TabPage

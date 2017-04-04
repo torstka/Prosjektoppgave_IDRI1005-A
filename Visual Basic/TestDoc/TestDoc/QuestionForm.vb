@@ -26,6 +26,9 @@ Public Class QuestionForm
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Me.WindowState = FormWindowState.Maximized
         'HENTE UT PERSONNUMMER OG TA BORT TABPAGE 6/7 ETTERSOM HVILKET KJØNN DET ER.
+        Me.Size = SystemInformation.PrimaryMonitorSize
+        QuestionRound.Location = New Point((ClientSize.Width - QuestionRound.Width) \ 2,
+                             (ClientSize.Height - QuestionRound.Height) \ 2)
         Me.TabPage1.Text = "Runde 1"
         Me.TabPage2.Text = "Runde 2"
         Me.TabPage3.Text = "Runde 3"
@@ -301,5 +304,5 @@ Public Class QuestionForm
             QuestionRound.SelectTab(6)
         End Sub
 
-    End Class
+End Class
 

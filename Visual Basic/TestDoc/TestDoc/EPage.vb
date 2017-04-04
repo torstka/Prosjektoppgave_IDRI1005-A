@@ -135,4 +135,10 @@ Public Class EPage
         addDonation.add(txtBloodType.Text, txtSSN.Text)
 
     End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Me.Close()
+        LogIn.Show()
+
+    End Sub
 End Class

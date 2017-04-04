@@ -363,11 +363,12 @@ Partial Class QuestionForm
         Me.QuestionRound.Controls.Add(Me.TabPage6)
         Me.QuestionRound.Controls.Add(Me.TabPage7)
         Me.QuestionRound.Controls.Add(Me.TabPage8)
-        Me.QuestionRound.Font = New System.Drawing.Font("Calibri", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QuestionRound.Location = New System.Drawing.Point(368, 94)
+        Me.QuestionRound.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.QuestionRound.Location = New System.Drawing.Point(48, 54)
+        Me.QuestionRound.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.QuestionRound.Name = "QuestionRound"
         Me.QuestionRound.SelectedIndex = 0
-        Me.QuestionRound.Size = New System.Drawing.Size(981, 813)
+        Me.QuestionRound.Size = New System.Drawing.Size(654, 528)
         Me.QuestionRound.TabIndex = 121
         '
         'TabPage1
@@ -379,11 +380,12 @@ Partial Class QuestionForm
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.Controls.Add(Me.btnNext1)
-        Me.TabPage1.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage1.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabPage1.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(973, 776)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Size = New System.Drawing.Size(646, 492)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -393,17 +395,20 @@ Partial Class QuestionForm
         Me.Panel6.Controls.Add(Me.rbNei6)
         Me.Panel6.Controls.Add(Me.rbJa6)
         Me.Panel6.Controls.Add(Me.qu6)
-        Me.Panel6.Location = New System.Drawing.Point(6, 295)
+        Me.Panel6.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel6.Location = New System.Drawing.Point(4, 202)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(932, 50)
+        Me.Panel6.Size = New System.Drawing.Size(621, 32)
         Me.Panel6.TabIndex = 0
         '
         'rbNei6
         '
         Me.rbNei6.AutoSize = True
-        Me.rbNei6.Location = New System.Drawing.Point(852, 15)
+        Me.rbNei6.Location = New System.Drawing.Point(568, 10)
+        Me.rbNei6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei6.Name = "rbNei6"
-        Me.rbNei6.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei6.Size = New System.Drawing.Size(49, 23)
         Me.rbNei6.TabIndex = 6
         Me.rbNei6.Tag = "0"
         Me.rbNei6.Text = "Nei"
@@ -412,9 +417,10 @@ Partial Class QuestionForm
         'rbJa6
         '
         Me.rbJa6.AutoSize = True
-        Me.rbJa6.Location = New System.Drawing.Point(770, 15)
+        Me.rbJa6.Location = New System.Drawing.Point(513, 10)
+        Me.rbJa6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa6.Name = "rbJa6"
-        Me.rbJa6.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa6.Size = New System.Drawing.Size(40, 23)
         Me.rbJa6.TabIndex = 6
         Me.rbJa6.Tag = "1"
         Me.rbJa6.Text = "Ja"
@@ -423,9 +429,10 @@ Partial Class QuestionForm
         'qu6
         '
         Me.qu6.AllowDrop = True
-        Me.qu6.Location = New System.Drawing.Point(2, 14)
+        Me.qu6.Location = New System.Drawing.Point(1, 9)
+        Me.qu6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu6.Name = "qu6"
-        Me.qu6.Size = New System.Drawing.Size(745, 24)
+        Me.qu6.Size = New System.Drawing.Size(497, 16)
         Me.qu6.TabIndex = 0
         Me.qu6.Text = "Label2"
         '
@@ -434,17 +441,20 @@ Partial Class QuestionForm
         Me.Panel5.Controls.Add(Me.rbNei5)
         Me.Panel5.Controls.Add(Me.rbJa5)
         Me.Panel5.Controls.Add(Me.qu5)
-        Me.Panel5.Location = New System.Drawing.Point(7, 239)
+        Me.Panel5.Location = New System.Drawing.Point(5, 163)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(932, 50)
+        Me.Panel5.Size = New System.Drawing.Size(621, 32)
         Me.Panel5.TabIndex = 0
         '
         'rbNei5
         '
         Me.rbNei5.AutoSize = True
-        Me.rbNei5.Location = New System.Drawing.Point(852, 15)
+        Me.rbNei5.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei5.Location = New System.Drawing.Point(568, 10)
+        Me.rbNei5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei5.Name = "rbNei5"
-        Me.rbNei5.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei5.Size = New System.Drawing.Size(49, 23)
         Me.rbNei5.TabIndex = 5
         Me.rbNei5.Tag = "0"
         Me.rbNei5.Text = "Nei"
@@ -453,9 +463,11 @@ Partial Class QuestionForm
         'rbJa5
         '
         Me.rbJa5.AutoSize = True
-        Me.rbJa5.Location = New System.Drawing.Point(770, 15)
+        Me.rbJa5.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa5.Location = New System.Drawing.Point(513, 10)
+        Me.rbJa5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa5.Name = "rbJa5"
-        Me.rbJa5.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa5.Size = New System.Drawing.Size(40, 23)
         Me.rbJa5.TabIndex = 5
         Me.rbJa5.Tag = "1"
         Me.rbJa5.Text = "Ja"
@@ -464,9 +476,11 @@ Partial Class QuestionForm
         'qu5
         '
         Me.qu5.AllowDrop = True
-        Me.qu5.Location = New System.Drawing.Point(2, 14)
+        Me.qu5.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu5.Location = New System.Drawing.Point(1, 9)
+        Me.qu5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu5.Name = "qu5"
-        Me.qu5.Size = New System.Drawing.Size(745, 24)
+        Me.qu5.Size = New System.Drawing.Size(497, 16)
         Me.qu5.TabIndex = 0
         Me.qu5.Text = "Label2"
         '
@@ -475,17 +489,20 @@ Partial Class QuestionForm
         Me.Panel4.Controls.Add(Me.rbNei4)
         Me.Panel4.Controls.Add(Me.rbJa4)
         Me.Panel4.Controls.Add(Me.qu4)
-        Me.Panel4.Location = New System.Drawing.Point(7, 183)
+        Me.Panel4.Location = New System.Drawing.Point(5, 126)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(932, 50)
+        Me.Panel4.Size = New System.Drawing.Size(621, 32)
         Me.Panel4.TabIndex = 0
         '
         'rbNei4
         '
         Me.rbNei4.AutoSize = True
-        Me.rbNei4.Location = New System.Drawing.Point(852, 15)
+        Me.rbNei4.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei4.Location = New System.Drawing.Point(568, 10)
+        Me.rbNei4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei4.Name = "rbNei4"
-        Me.rbNei4.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei4.Size = New System.Drawing.Size(49, 23)
         Me.rbNei4.TabIndex = 4
         Me.rbNei4.Tag = "0"
         Me.rbNei4.Text = "Nei"
@@ -494,9 +511,11 @@ Partial Class QuestionForm
         'rbJa4
         '
         Me.rbJa4.AutoSize = True
-        Me.rbJa4.Location = New System.Drawing.Point(770, 15)
+        Me.rbJa4.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa4.Location = New System.Drawing.Point(513, 10)
+        Me.rbJa4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa4.Name = "rbJa4"
-        Me.rbJa4.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa4.Size = New System.Drawing.Size(40, 23)
         Me.rbJa4.TabIndex = 4
         Me.rbJa4.Tag = "1"
         Me.rbJa4.Text = "Ja"
@@ -505,9 +524,11 @@ Partial Class QuestionForm
         'qu4
         '
         Me.qu4.AllowDrop = True
-        Me.qu4.Location = New System.Drawing.Point(2, 14)
+        Me.qu4.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu4.Location = New System.Drawing.Point(1, 9)
+        Me.qu4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu4.Name = "qu4"
-        Me.qu4.Size = New System.Drawing.Size(745, 24)
+        Me.qu4.Size = New System.Drawing.Size(497, 23)
         Me.qu4.TabIndex = 0
         Me.qu4.Text = "Label2"
         '
@@ -516,17 +537,21 @@ Partial Class QuestionForm
         Me.Panel3.Controls.Add(Me.rbNei3)
         Me.Panel3.Controls.Add(Me.rbJa3)
         Me.Panel3.Controls.Add(Me.qu3)
-        Me.Panel3.Location = New System.Drawing.Point(7, 127)
+        Me.Panel3.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel3.Location = New System.Drawing.Point(5, 89)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(932, 50)
+        Me.Panel3.Size = New System.Drawing.Size(621, 44)
         Me.Panel3.TabIndex = 0
         '
         'rbNei3
         '
         Me.rbNei3.AutoSize = True
-        Me.rbNei3.Location = New System.Drawing.Point(852, 15)
+        Me.rbNei3.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei3.Location = New System.Drawing.Point(568, 10)
+        Me.rbNei3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei3.Name = "rbNei3"
-        Me.rbNei3.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei3.Size = New System.Drawing.Size(49, 23)
         Me.rbNei3.TabIndex = 3
         Me.rbNei3.Tag = "0"
         Me.rbNei3.Text = "Nei"
@@ -535,9 +560,11 @@ Partial Class QuestionForm
         'rbJa3
         '
         Me.rbJa3.AutoSize = True
-        Me.rbJa3.Location = New System.Drawing.Point(770, 15)
+        Me.rbJa3.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa3.Location = New System.Drawing.Point(513, 10)
+        Me.rbJa3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa3.Name = "rbJa3"
-        Me.rbJa3.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa3.Size = New System.Drawing.Size(40, 23)
         Me.rbJa3.TabIndex = 3
         Me.rbJa3.Tag = "1"
         Me.rbJa3.Text = "Ja"
@@ -546,9 +573,11 @@ Partial Class QuestionForm
         'qu3
         '
         Me.qu3.AllowDrop = True
-        Me.qu3.Location = New System.Drawing.Point(2, 14)
+        Me.qu3.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu3.Location = New System.Drawing.Point(1, 9)
+        Me.qu3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu3.Name = "qu3"
-        Me.qu3.Size = New System.Drawing.Size(745, 24)
+        Me.qu3.Size = New System.Drawing.Size(497, 24)
         Me.qu3.TabIndex = 0
         Me.qu3.Text = "Label2"
         '
@@ -557,17 +586,20 @@ Partial Class QuestionForm
         Me.Panel2.Controls.Add(Me.rbNei2)
         Me.Panel2.Controls.Add(Me.rbJa2)
         Me.Panel2.Controls.Add(Me.qu2)
-        Me.Panel2.Location = New System.Drawing.Point(7, 71)
+        Me.Panel2.Location = New System.Drawing.Point(5, 51)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(932, 50)
+        Me.Panel2.Size = New System.Drawing.Size(621, 32)
         Me.Panel2.TabIndex = 0
         '
         'rbNei2
         '
         Me.rbNei2.AutoSize = True
-        Me.rbNei2.Location = New System.Drawing.Point(852, 15)
+        Me.rbNei2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei2.Location = New System.Drawing.Point(568, 10)
+        Me.rbNei2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei2.Name = "rbNei2"
-        Me.rbNei2.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei2.Size = New System.Drawing.Size(49, 23)
         Me.rbNei2.TabIndex = 2
         Me.rbNei2.Tag = "0"
         Me.rbNei2.Text = "Nei"
@@ -576,9 +608,11 @@ Partial Class QuestionForm
         'rbJa2
         '
         Me.rbJa2.AutoSize = True
-        Me.rbJa2.Location = New System.Drawing.Point(770, 15)
+        Me.rbJa2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa2.Location = New System.Drawing.Point(513, 10)
+        Me.rbJa2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa2.Name = "rbJa2"
-        Me.rbJa2.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa2.Size = New System.Drawing.Size(40, 23)
         Me.rbJa2.TabIndex = 2
         Me.rbJa2.Tag = "1"
         Me.rbJa2.Text = "Ja"
@@ -587,9 +621,11 @@ Partial Class QuestionForm
         'qu2
         '
         Me.qu2.AllowDrop = True
-        Me.qu2.Location = New System.Drawing.Point(2, 14)
+        Me.qu2.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu2.Location = New System.Drawing.Point(1, 9)
+        Me.qu2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu2.Name = "qu2"
-        Me.qu2.Size = New System.Drawing.Size(745, 24)
+        Me.qu2.Size = New System.Drawing.Size(497, 27)
         Me.qu2.TabIndex = 0
         Me.qu2.Text = "qu2"
         '
@@ -598,17 +634,20 @@ Partial Class QuestionForm
         Me.Panel1.Controls.Add(Me.rbNei1)
         Me.Panel1.Controls.Add(Me.rbJa1)
         Me.Panel1.Controls.Add(Me.qu1)
-        Me.Panel1.Location = New System.Drawing.Point(7, 15)
+        Me.Panel1.Location = New System.Drawing.Point(5, 14)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(932, 50)
+        Me.Panel1.Size = New System.Drawing.Size(621, 32)
         Me.Panel1.TabIndex = 0
         '
         'rbNei1
         '
         Me.rbNei1.AutoSize = True
-        Me.rbNei1.Location = New System.Drawing.Point(852, 15)
+        Me.rbNei1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei1.Location = New System.Drawing.Point(568, 10)
+        Me.rbNei1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei1.Name = "rbNei1"
-        Me.rbNei1.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei1.Size = New System.Drawing.Size(49, 23)
         Me.rbNei1.TabIndex = 1
         Me.rbNei1.Tag = "0"
         Me.rbNei1.Text = "Nei"
@@ -617,9 +656,11 @@ Partial Class QuestionForm
         'rbJa1
         '
         Me.rbJa1.AutoSize = True
-        Me.rbJa1.Location = New System.Drawing.Point(770, 15)
+        Me.rbJa1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa1.Location = New System.Drawing.Point(513, 10)
+        Me.rbJa1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa1.Name = "rbJa1"
-        Me.rbJa1.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa1.Size = New System.Drawing.Size(40, 23)
         Me.rbJa1.TabIndex = 1
         Me.rbJa1.Tag = "1"
         Me.rbJa1.Text = "Ja"
@@ -628,17 +669,20 @@ Partial Class QuestionForm
         'qu1
         '
         Me.qu1.AllowDrop = True
-        Me.qu1.Location = New System.Drawing.Point(2, 14)
+        Me.qu1.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu1.Location = New System.Drawing.Point(1, 9)
+        Me.qu1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu1.Name = "qu1"
-        Me.qu1.Size = New System.Drawing.Size(745, 24)
+        Me.qu1.Size = New System.Drawing.Size(497, 26)
         Me.qu1.TabIndex = 0
         Me.qu1.Text = "qu1"
         '
         'btnNext1
         '
-        Me.btnNext1.Location = New System.Drawing.Point(846, 677)
+        Me.btnNext1.Location = New System.Drawing.Point(564, 440)
+        Me.btnNext1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnNext1.Name = "btnNext1"
-        Me.btnNext1.Size = New System.Drawing.Size(113, 46)
+        Me.btnNext1.Size = New System.Drawing.Size(75, 30)
         Me.btnNext1.TabIndex = 0
         Me.btnNext1.Text = "Neste"
         Me.btnNext1.UseVisualStyleBackColor = True
@@ -653,19 +697,21 @@ Partial Class QuestionForm
         Me.TabPage2.Controls.Add(Me.Panel7)
         Me.TabPage2.Controls.Add(Me.btnNext2)
         Me.TabPage2.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage2.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(965, 729)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Size = New System.Drawing.Size(646, 492)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'btnPrev2
         '
-        Me.btnPrev2.Location = New System.Drawing.Point(6, 677)
+        Me.btnPrev2.Location = New System.Drawing.Point(4, 440)
+        Me.btnPrev2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnPrev2.Name = "btnPrev2"
-        Me.btnPrev2.Size = New System.Drawing.Size(113, 46)
+        Me.btnPrev2.Size = New System.Drawing.Size(75, 30)
         Me.btnPrev2.TabIndex = 0
         Me.btnPrev2.Text = "Forrige"
         Me.btnPrev2.UseVisualStyleBackColor = True
@@ -675,18 +721,22 @@ Partial Class QuestionForm
         Me.Panel11.Controls.Add(Me.rbNei11)
         Me.Panel11.Controls.Add(Me.rbJa11)
         Me.Panel11.Controls.Add(Me.qu11)
-        Me.Panel11.Location = New System.Drawing.Point(7, 255)
+        Me.Panel11.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel11.Location = New System.Drawing.Point(5, 166)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(932, 54)
+        Me.Panel11.Size = New System.Drawing.Size(621, 35)
         Me.Panel11.TabIndex = 0
         Me.Panel11.TabStop = True
         '
         'rbNei11
         '
         Me.rbNei11.AutoSize = True
-        Me.rbNei11.Location = New System.Drawing.Point(853, 16)
+        Me.rbNei11.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei11.Location = New System.Drawing.Point(569, 10)
+        Me.rbNei11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei11.Name = "rbNei11"
-        Me.rbNei11.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei11.Size = New System.Drawing.Size(49, 23)
         Me.rbNei11.TabIndex = 11
         Me.rbNei11.Tag = "0"
         Me.rbNei11.Text = "Nei"
@@ -695,9 +745,11 @@ Partial Class QuestionForm
         'rbJa11
         '
         Me.rbJa11.AutoSize = True
-        Me.rbJa11.Location = New System.Drawing.Point(777, 16)
+        Me.rbJa11.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa11.Location = New System.Drawing.Point(518, 10)
+        Me.rbJa11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa11.Name = "rbJa11"
-        Me.rbJa11.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa11.Size = New System.Drawing.Size(40, 23)
         Me.rbJa11.TabIndex = 11
         Me.rbJa11.Tag = "1"
         Me.rbJa11.Text = "Ja"
@@ -706,9 +758,11 @@ Partial Class QuestionForm
         'qu11
         '
         Me.qu11.AllowDrop = True
-        Me.qu11.Location = New System.Drawing.Point(3, 15)
+        Me.qu11.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu11.Location = New System.Drawing.Point(2, 10)
+        Me.qu11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu11.Name = "qu11"
-        Me.qu11.Size = New System.Drawing.Size(674, 24)
+        Me.qu11.Size = New System.Drawing.Size(449, 16)
         Me.qu11.TabIndex = 1
         Me.qu11.Text = "Label6"
         '
@@ -717,18 +771,21 @@ Partial Class QuestionForm
         Me.Panel10.Controls.Add(Me.rbNei10)
         Me.Panel10.Controls.Add(Me.rbJa10)
         Me.Panel10.Controls.Add(Me.qu10)
-        Me.Panel10.Location = New System.Drawing.Point(7, 195)
+        Me.Panel10.Location = New System.Drawing.Point(5, 127)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(932, 54)
+        Me.Panel10.Size = New System.Drawing.Size(621, 35)
         Me.Panel10.TabIndex = 0
         Me.Panel10.TabStop = True
         '
         'rbNei10
         '
         Me.rbNei10.AutoSize = True
-        Me.rbNei10.Location = New System.Drawing.Point(853, 16)
+        Me.rbNei10.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei10.Location = New System.Drawing.Point(569, 10)
+        Me.rbNei10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei10.Name = "rbNei10"
-        Me.rbNei10.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei10.Size = New System.Drawing.Size(49, 23)
         Me.rbNei10.TabIndex = 10
         Me.rbNei10.Tag = "0"
         Me.rbNei10.Text = "Nei"
@@ -737,9 +794,11 @@ Partial Class QuestionForm
         'rbJa10
         '
         Me.rbJa10.AutoSize = True
-        Me.rbJa10.Location = New System.Drawing.Point(777, 16)
+        Me.rbJa10.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa10.Location = New System.Drawing.Point(518, 10)
+        Me.rbJa10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa10.Name = "rbJa10"
-        Me.rbJa10.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa10.Size = New System.Drawing.Size(40, 23)
         Me.rbJa10.TabIndex = 10
         Me.rbJa10.Tag = "1"
         Me.rbJa10.Text = "Ja"
@@ -748,9 +807,11 @@ Partial Class QuestionForm
         'qu10
         '
         Me.qu10.AllowDrop = True
-        Me.qu10.Location = New System.Drawing.Point(3, 15)
+        Me.qu10.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu10.Location = New System.Drawing.Point(2, 10)
+        Me.qu10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu10.Name = "qu10"
-        Me.qu10.Size = New System.Drawing.Size(674, 24)
+        Me.qu10.Size = New System.Drawing.Size(449, 16)
         Me.qu10.TabIndex = 1
         Me.qu10.Text = "Label5"
         '
@@ -759,18 +820,22 @@ Partial Class QuestionForm
         Me.Panel9.Controls.Add(Me.rbNei9)
         Me.Panel9.Controls.Add(Me.rbJa9)
         Me.Panel9.Controls.Add(Me.qu9)
-        Me.Panel9.Location = New System.Drawing.Point(7, 135)
+        Me.Panel9.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel9.Location = New System.Drawing.Point(5, 88)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(932, 54)
+        Me.Panel9.Size = New System.Drawing.Size(621, 35)
         Me.Panel9.TabIndex = 0
         Me.Panel9.TabStop = True
         '
         'rbNei9
         '
         Me.rbNei9.AutoSize = True
-        Me.rbNei9.Location = New System.Drawing.Point(853, 16)
+        Me.rbNei9.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei9.Location = New System.Drawing.Point(569, 10)
+        Me.rbNei9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei9.Name = "rbNei9"
-        Me.rbNei9.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei9.Size = New System.Drawing.Size(49, 23)
         Me.rbNei9.TabIndex = 9
         Me.rbNei9.Tag = "0"
         Me.rbNei9.Text = "Nei"
@@ -779,9 +844,11 @@ Partial Class QuestionForm
         'rbJa9
         '
         Me.rbJa9.AutoSize = True
-        Me.rbJa9.Location = New System.Drawing.Point(777, 16)
+        Me.rbJa9.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa9.Location = New System.Drawing.Point(518, 10)
+        Me.rbJa9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa9.Name = "rbJa9"
-        Me.rbJa9.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa9.Size = New System.Drawing.Size(40, 23)
         Me.rbJa9.TabIndex = 9
         Me.rbJa9.Tag = "1"
         Me.rbJa9.Text = "Ja"
@@ -790,9 +857,11 @@ Partial Class QuestionForm
         'qu9
         '
         Me.qu9.AllowDrop = True
-        Me.qu9.Location = New System.Drawing.Point(3, 15)
+        Me.qu9.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu9.Location = New System.Drawing.Point(2, 10)
+        Me.qu9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu9.Name = "qu9"
-        Me.qu9.Size = New System.Drawing.Size(674, 24)
+        Me.qu9.Size = New System.Drawing.Size(449, 16)
         Me.qu9.TabIndex = 1
         Me.qu9.Text = "Label4"
         '
@@ -801,18 +870,22 @@ Partial Class QuestionForm
         Me.Panel8.Controls.Add(Me.rbNei8)
         Me.Panel8.Controls.Add(Me.rbJa8)
         Me.Panel8.Controls.Add(Me.qu8)
-        Me.Panel8.Location = New System.Drawing.Point(7, 75)
+        Me.Panel8.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel8.Location = New System.Drawing.Point(5, 49)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(932, 54)
+        Me.Panel8.Size = New System.Drawing.Size(621, 35)
         Me.Panel8.TabIndex = 0
         Me.Panel8.TabStop = True
         '
         'rbNei8
         '
         Me.rbNei8.AutoSize = True
-        Me.rbNei8.Location = New System.Drawing.Point(853, 16)
+        Me.rbNei8.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei8.Location = New System.Drawing.Point(569, 10)
+        Me.rbNei8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei8.Name = "rbNei8"
-        Me.rbNei8.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei8.Size = New System.Drawing.Size(49, 23)
         Me.rbNei8.TabIndex = 8
         Me.rbNei8.Tag = "0"
         Me.rbNei8.Text = "Nei"
@@ -821,9 +894,11 @@ Partial Class QuestionForm
         'rbJa8
         '
         Me.rbJa8.AutoSize = True
-        Me.rbJa8.Location = New System.Drawing.Point(777, 16)
+        Me.rbJa8.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa8.Location = New System.Drawing.Point(518, 10)
+        Me.rbJa8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa8.Name = "rbJa8"
-        Me.rbJa8.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa8.Size = New System.Drawing.Size(40, 23)
         Me.rbJa8.TabIndex = 8
         Me.rbJa8.Tag = "1"
         Me.rbJa8.Text = "Ja"
@@ -832,9 +907,11 @@ Partial Class QuestionForm
         'qu8
         '
         Me.qu8.AllowDrop = True
-        Me.qu8.Location = New System.Drawing.Point(3, 15)
+        Me.qu8.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu8.Location = New System.Drawing.Point(2, 10)
+        Me.qu8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu8.Name = "qu8"
-        Me.qu8.Size = New System.Drawing.Size(674, 24)
+        Me.qu8.Size = New System.Drawing.Size(449, 16)
         Me.qu8.TabIndex = 1
         Me.qu8.Text = "Label3"
         '
@@ -843,18 +920,22 @@ Partial Class QuestionForm
         Me.Panel7.Controls.Add(Me.rbNei7)
         Me.Panel7.Controls.Add(Me.rbJa7)
         Me.Panel7.Controls.Add(Me.qu7)
-        Me.Panel7.Location = New System.Drawing.Point(7, 15)
+        Me.Panel7.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel7.Location = New System.Drawing.Point(5, 10)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(932, 54)
+        Me.Panel7.Size = New System.Drawing.Size(621, 35)
         Me.Panel7.TabIndex = 0
         Me.Panel7.TabStop = True
         '
         'rbNei7
         '
         Me.rbNei7.AutoSize = True
-        Me.rbNei7.Location = New System.Drawing.Point(853, 16)
+        Me.rbNei7.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbNei7.Location = New System.Drawing.Point(569, 10)
+        Me.rbNei7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei7.Name = "rbNei7"
-        Me.rbNei7.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei7.Size = New System.Drawing.Size(49, 23)
         Me.rbNei7.TabIndex = 7
         Me.rbNei7.Tag = "0"
         Me.rbNei7.Text = "Nei"
@@ -863,9 +944,11 @@ Partial Class QuestionForm
         'rbJa7
         '
         Me.rbJa7.AutoSize = True
-        Me.rbJa7.Location = New System.Drawing.Point(777, 16)
+        Me.rbJa7.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.rbJa7.Location = New System.Drawing.Point(518, 10)
+        Me.rbJa7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa7.Name = "rbJa7"
-        Me.rbJa7.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa7.Size = New System.Drawing.Size(40, 23)
         Me.rbJa7.TabIndex = 7
         Me.rbJa7.Tag = "1"
         Me.rbJa7.Text = "Ja"
@@ -874,17 +957,20 @@ Partial Class QuestionForm
         'qu7
         '
         Me.qu7.AllowDrop = True
-        Me.qu7.Location = New System.Drawing.Point(3, 15)
+        Me.qu7.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.qu7.Location = New System.Drawing.Point(2, 10)
+        Me.qu7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu7.Name = "qu7"
-        Me.qu7.Size = New System.Drawing.Size(674, 24)
+        Me.qu7.Size = New System.Drawing.Size(449, 16)
         Me.qu7.TabIndex = 1
         Me.qu7.Text = "Label2"
         '
         'btnNext2
         '
-        Me.btnNext2.Location = New System.Drawing.Point(847, 676)
+        Me.btnNext2.Location = New System.Drawing.Point(565, 439)
+        Me.btnNext2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnNext2.Name = "btnNext2"
-        Me.btnNext2.Size = New System.Drawing.Size(112, 47)
+        Me.btnNext2.Size = New System.Drawing.Size(75, 31)
         Me.btnNext2.TabIndex = 0
         Me.btnNext2.Text = "Neste"
         Me.btnNext2.UseVisualStyleBackColor = True
@@ -911,28 +997,31 @@ Partial Class QuestionForm
         Me.TabPage3.Controls.Add(Me.Panel13)
         Me.TabPage3.Controls.Add(Me.Panel12)
         Me.TabPage3.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage3.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(965, 729)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage3.Size = New System.Drawing.Size(646, 492)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'btnPrev3
         '
-        Me.btnPrev3.Location = New System.Drawing.Point(6, 677)
+        Me.btnPrev3.Location = New System.Drawing.Point(4, 449)
+        Me.btnPrev3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnPrev3.Name = "btnPrev3"
-        Me.btnPrev3.Size = New System.Drawing.Size(113, 46)
+        Me.btnPrev3.Size = New System.Drawing.Size(75, 30)
         Me.btnPrev3.TabIndex = 0
         Me.btnPrev3.Text = "Forrige"
         Me.btnPrev3.UseVisualStyleBackColor = True
         '
         'btnNext3
         '
-        Me.btnNext3.Location = New System.Drawing.Point(846, 677)
+        Me.btnNext3.Location = New System.Drawing.Point(562, 452)
+        Me.btnNext3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnNext3.Name = "btnNext3"
-        Me.btnNext3.Size = New System.Drawing.Size(113, 46)
+        Me.btnNext3.Size = New System.Drawing.Size(75, 30)
         Me.btnNext3.TabIndex = 0
         Me.btnNext3.Text = "Neste"
         Me.btnNext3.UseVisualStyleBackColor = True
@@ -942,18 +1031,21 @@ Partial Class QuestionForm
         Me.Panel28.Controls.Add(Me.rbNei28)
         Me.Panel28.Controls.Add(Me.qu28)
         Me.Panel28.Controls.Add(Me.rbJa28)
-        Me.Panel28.Location = New System.Drawing.Point(6, 598)
+        Me.Panel28.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel28.Location = New System.Drawing.Point(4, 418)
+        Me.Panel28.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(932, 35)
+        Me.Panel28.Size = New System.Drawing.Size(621, 23)
         Me.Panel28.TabIndex = 0
         Me.Panel28.TabStop = True
         '
         'rbNei28
         '
         Me.rbNei28.AutoSize = True
-        Me.rbNei28.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei28.Location = New System.Drawing.Point(568, 5)
+        Me.rbNei28.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei28.Name = "rbNei28"
-        Me.rbNei28.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei28.Size = New System.Drawing.Size(49, 23)
         Me.rbNei28.TabIndex = 28
         Me.rbNei28.Tag = "0"
         Me.rbNei28.Text = "Nei"
@@ -962,18 +1054,20 @@ Partial Class QuestionForm
         'qu28
         '
         Me.qu28.AllowDrop = True
-        Me.qu28.Location = New System.Drawing.Point(2, 8)
+        Me.qu28.Location = New System.Drawing.Point(-1, 5)
+        Me.qu28.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu28.Name = "qu28"
-        Me.qu28.Size = New System.Drawing.Size(745, 23)
+        Me.qu28.Size = New System.Drawing.Size(497, 15)
         Me.qu28.TabIndex = 0
         Me.qu28.Text = "Label23"
         '
         'rbJa28
         '
         Me.rbJa28.AutoSize = True
-        Me.rbJa28.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa28.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa28.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa28.Name = "rbJa28"
-        Me.rbJa28.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa28.Size = New System.Drawing.Size(40, 23)
         Me.rbJa28.TabIndex = 28
         Me.rbJa28.Tag = "1"
         Me.rbJa28.Text = "Ja"
@@ -984,18 +1078,21 @@ Partial Class QuestionForm
         Me.Panel27.Controls.Add(Me.rbNei27)
         Me.Panel27.Controls.Add(Me.qu27)
         Me.Panel27.Controls.Add(Me.rbJa27)
-        Me.Panel27.Location = New System.Drawing.Point(3, 561)
+        Me.Panel27.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel27.Location = New System.Drawing.Point(2, 390)
+        Me.Panel27.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(932, 35)
+        Me.Panel27.Size = New System.Drawing.Size(621, 23)
         Me.Panel27.TabIndex = 0
         Me.Panel27.TabStop = True
         '
         'rbNei27
         '
         Me.rbNei27.AutoSize = True
-        Me.rbNei27.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei27.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei27.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei27.Name = "rbNei27"
-        Me.rbNei27.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei27.Size = New System.Drawing.Size(49, 23)
         Me.rbNei27.TabIndex = 27
         Me.rbNei27.Tag = "0"
         Me.rbNei27.Text = "Nei"
@@ -1004,18 +1101,20 @@ Partial Class QuestionForm
         'qu27
         '
         Me.qu27.AllowDrop = True
-        Me.qu27.Location = New System.Drawing.Point(2, 8)
+        Me.qu27.Location = New System.Drawing.Point(1, 5)
+        Me.qu27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu27.Name = "qu27"
-        Me.qu27.Size = New System.Drawing.Size(745, 23)
+        Me.qu27.Size = New System.Drawing.Size(497, 15)
         Me.qu27.TabIndex = 0
         Me.qu27.Text = "Label22"
         '
         'rbJa27
         '
         Me.rbJa27.AutoSize = True
-        Me.rbJa27.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa27.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa27.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa27.Name = "rbJa27"
-        Me.rbJa27.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa27.Size = New System.Drawing.Size(40, 23)
         Me.rbJa27.TabIndex = 27
         Me.rbJa27.Tag = "1"
         Me.rbJa27.Text = "Ja"
@@ -1026,18 +1125,21 @@ Partial Class QuestionForm
         Me.Panel26.Controls.Add(Me.rbNei26)
         Me.Panel26.Controls.Add(Me.qu26)
         Me.Panel26.Controls.Add(Me.rbJa26)
-        Me.Panel26.Location = New System.Drawing.Point(5, 524)
+        Me.Panel26.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel26.Location = New System.Drawing.Point(3, 362)
+        Me.Panel26.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(932, 35)
+        Me.Panel26.Size = New System.Drawing.Size(621, 23)
         Me.Panel26.TabIndex = 0
         Me.Panel26.TabStop = True
         '
         'rbNei26
         '
         Me.rbNei26.AutoSize = True
-        Me.rbNei26.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei26.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei26.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei26.Name = "rbNei26"
-        Me.rbNei26.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei26.Size = New System.Drawing.Size(49, 23)
         Me.rbNei26.TabIndex = 26
         Me.rbNei26.Tag = "0"
         Me.rbNei26.Text = "Nei"
@@ -1046,18 +1148,20 @@ Partial Class QuestionForm
         'qu26
         '
         Me.qu26.AllowDrop = True
-        Me.qu26.Location = New System.Drawing.Point(2, 8)
+        Me.qu26.Location = New System.Drawing.Point(1, 5)
+        Me.qu26.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu26.Name = "qu26"
-        Me.qu26.Size = New System.Drawing.Size(745, 23)
+        Me.qu26.Size = New System.Drawing.Size(497, 15)
         Me.qu26.TabIndex = 0
         Me.qu26.Text = "Label21"
         '
         'rbJa26
         '
         Me.rbJa26.AutoSize = True
-        Me.rbJa26.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa26.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa26.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa26.Name = "rbJa26"
-        Me.rbJa26.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa26.Size = New System.Drawing.Size(40, 23)
         Me.rbJa26.TabIndex = 26
         Me.rbJa26.Tag = "1"
         Me.rbJa26.Text = "Ja"
@@ -1068,18 +1172,21 @@ Partial Class QuestionForm
         Me.Panel25.Controls.Add(Me.rbNei25)
         Me.Panel25.Controls.Add(Me.qu25)
         Me.Panel25.Controls.Add(Me.rbJa25)
-        Me.Panel25.Location = New System.Drawing.Point(6, 487)
+        Me.Panel25.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel25.Location = New System.Drawing.Point(4, 333)
+        Me.Panel25.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(932, 35)
+        Me.Panel25.Size = New System.Drawing.Size(621, 23)
         Me.Panel25.TabIndex = 0
         Me.Panel25.TabStop = True
         '
         'rbNei25
         '
         Me.rbNei25.AutoSize = True
-        Me.rbNei25.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei25.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei25.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei25.Name = "rbNei25"
-        Me.rbNei25.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei25.Size = New System.Drawing.Size(49, 23)
         Me.rbNei25.TabIndex = 25
         Me.rbNei25.Tag = "0"
         Me.rbNei25.Text = "Nei"
@@ -1088,18 +1195,20 @@ Partial Class QuestionForm
         'qu25
         '
         Me.qu25.AllowDrop = True
-        Me.qu25.Location = New System.Drawing.Point(2, 8)
+        Me.qu25.Location = New System.Drawing.Point(1, 5)
+        Me.qu25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu25.Name = "qu25"
-        Me.qu25.Size = New System.Drawing.Size(745, 23)
+        Me.qu25.Size = New System.Drawing.Size(497, 15)
         Me.qu25.TabIndex = 0
         Me.qu25.Text = "Label20"
         '
         'rbJa25
         '
         Me.rbJa25.AutoSize = True
-        Me.rbJa25.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa25.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa25.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa25.Name = "rbJa25"
-        Me.rbJa25.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa25.Size = New System.Drawing.Size(40, 23)
         Me.rbJa25.TabIndex = 25
         Me.rbJa25.Tag = "1"
         Me.rbJa25.Text = "Ja"
@@ -1110,18 +1219,21 @@ Partial Class QuestionForm
         Me.Panel24.Controls.Add(Me.rbNei24)
         Me.Panel24.Controls.Add(Me.qu24)
         Me.Panel24.Controls.Add(Me.rbJa24)
-        Me.Panel24.Location = New System.Drawing.Point(7, 450)
+        Me.Panel24.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel24.Location = New System.Drawing.Point(5, 306)
+        Me.Panel24.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(932, 35)
+        Me.Panel24.Size = New System.Drawing.Size(621, 23)
         Me.Panel24.TabIndex = 0
         Me.Panel24.TabStop = True
         '
         'rbNei24
         '
         Me.rbNei24.AutoSize = True
-        Me.rbNei24.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei24.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei24.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei24.Name = "rbNei24"
-        Me.rbNei24.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei24.Size = New System.Drawing.Size(49, 23)
         Me.rbNei24.TabIndex = 24
         Me.rbNei24.Tag = "0"
         Me.rbNei24.Text = "Nei"
@@ -1130,18 +1242,20 @@ Partial Class QuestionForm
         'qu24
         '
         Me.qu24.AllowDrop = True
-        Me.qu24.Location = New System.Drawing.Point(2, 8)
+        Me.qu24.Location = New System.Drawing.Point(1, 5)
+        Me.qu24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu24.Name = "qu24"
-        Me.qu24.Size = New System.Drawing.Size(745, 23)
+        Me.qu24.Size = New System.Drawing.Size(497, 15)
         Me.qu24.TabIndex = 0
         Me.qu24.Text = "Label19"
         '
         'rbJa24
         '
         Me.rbJa24.AutoSize = True
-        Me.rbJa24.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa24.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa24.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa24.Name = "rbJa24"
-        Me.rbJa24.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa24.Size = New System.Drawing.Size(40, 23)
         Me.rbJa24.TabIndex = 24
         Me.rbJa24.Tag = "1"
         Me.rbJa24.Text = "Ja"
@@ -1152,18 +1266,21 @@ Partial Class QuestionForm
         Me.Panel23.Controls.Add(Me.rbNei23)
         Me.Panel23.Controls.Add(Me.qu23)
         Me.Panel23.Controls.Add(Me.rbJa23)
-        Me.Panel23.Location = New System.Drawing.Point(6, 413)
+        Me.Panel23.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel23.Location = New System.Drawing.Point(5, 281)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(932, 35)
+        Me.Panel23.Size = New System.Drawing.Size(621, 23)
         Me.Panel23.TabIndex = 0
         Me.Panel23.TabStop = True
         '
         'rbNei23
         '
         Me.rbNei23.AutoSize = True
-        Me.rbNei23.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei23.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei23.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei23.Name = "rbNei23"
-        Me.rbNei23.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei23.Size = New System.Drawing.Size(49, 23)
         Me.rbNei23.TabIndex = 23
         Me.rbNei23.Tag = "0"
         Me.rbNei23.Text = "Nei"
@@ -1172,18 +1289,20 @@ Partial Class QuestionForm
         'qu23
         '
         Me.qu23.AllowDrop = True
-        Me.qu23.Location = New System.Drawing.Point(2, 8)
+        Me.qu23.Location = New System.Drawing.Point(1, 5)
+        Me.qu23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu23.Name = "qu23"
-        Me.qu23.Size = New System.Drawing.Size(745, 23)
+        Me.qu23.Size = New System.Drawing.Size(497, 15)
         Me.qu23.TabIndex = 0
         Me.qu23.Text = "Label18"
         '
         'rbJa23
         '
         Me.rbJa23.AutoSize = True
-        Me.rbJa23.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa23.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa23.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa23.Name = "rbJa23"
-        Me.rbJa23.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa23.Size = New System.Drawing.Size(40, 23)
         Me.rbJa23.TabIndex = 23
         Me.rbJa23.Tag = "1"
         Me.rbJa23.Text = "Ja"
@@ -1194,18 +1313,21 @@ Partial Class QuestionForm
         Me.Panel22.Controls.Add(Me.rbNei22)
         Me.Panel22.Controls.Add(Me.qu22)
         Me.Panel22.Controls.Add(Me.rbJa22)
-        Me.Panel22.Location = New System.Drawing.Point(6, 376)
+        Me.Panel22.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel22.Location = New System.Drawing.Point(4, 254)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(932, 35)
+        Me.Panel22.Size = New System.Drawing.Size(621, 23)
         Me.Panel22.TabIndex = 0
         Me.Panel22.TabStop = True
         '
         'rbNei22
         '
         Me.rbNei22.AutoSize = True
-        Me.rbNei22.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei22.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei22.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei22.Name = "rbNei22"
-        Me.rbNei22.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei22.Size = New System.Drawing.Size(49, 23)
         Me.rbNei22.TabIndex = 22
         Me.rbNei22.Tag = "0"
         Me.rbNei22.Text = "Nei"
@@ -1214,18 +1336,20 @@ Partial Class QuestionForm
         'qu22
         '
         Me.qu22.AllowDrop = True
-        Me.qu22.Location = New System.Drawing.Point(2, 8)
+        Me.qu22.Location = New System.Drawing.Point(1, 5)
+        Me.qu22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu22.Name = "qu22"
-        Me.qu22.Size = New System.Drawing.Size(745, 23)
+        Me.qu22.Size = New System.Drawing.Size(497, 15)
         Me.qu22.TabIndex = 0
         Me.qu22.Text = "Label17"
         '
         'rbJa22
         '
         Me.rbJa22.AutoSize = True
-        Me.rbJa22.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa22.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa22.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa22.Name = "rbJa22"
-        Me.rbJa22.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa22.Size = New System.Drawing.Size(40, 23)
         Me.rbJa22.TabIndex = 22
         Me.rbJa22.Tag = "1"
         Me.rbJa22.Text = "Ja"
@@ -1236,18 +1360,21 @@ Partial Class QuestionForm
         Me.Panel21.Controls.Add(Me.rbNei21)
         Me.Panel21.Controls.Add(Me.qu21)
         Me.Panel21.Controls.Add(Me.rbJa21)
-        Me.Panel21.Location = New System.Drawing.Point(5, 339)
+        Me.Panel21.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel21.Location = New System.Drawing.Point(3, 228)
+        Me.Panel21.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(932, 35)
+        Me.Panel21.Size = New System.Drawing.Size(621, 23)
         Me.Panel21.TabIndex = 0
         Me.Panel21.TabStop = True
         '
         'rbNei21
         '
         Me.rbNei21.AutoSize = True
-        Me.rbNei21.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei21.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei21.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei21.Name = "rbNei21"
-        Me.rbNei21.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei21.Size = New System.Drawing.Size(49, 23)
         Me.rbNei21.TabIndex = 21
         Me.rbNei21.Tag = "0"
         Me.rbNei21.Text = "Nei"
@@ -1256,18 +1383,20 @@ Partial Class QuestionForm
         'qu21
         '
         Me.qu21.AllowDrop = True
-        Me.qu21.Location = New System.Drawing.Point(2, 8)
+        Me.qu21.Location = New System.Drawing.Point(1, 5)
+        Me.qu21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu21.Name = "qu21"
-        Me.qu21.Size = New System.Drawing.Size(745, 23)
+        Me.qu21.Size = New System.Drawing.Size(497, 15)
         Me.qu21.TabIndex = 0
         Me.qu21.Text = "Label16"
         '
         'rbJa21
         '
         Me.rbJa21.AutoSize = True
-        Me.rbJa21.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa21.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa21.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa21.Name = "rbJa21"
-        Me.rbJa21.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa21.Size = New System.Drawing.Size(40, 23)
         Me.rbJa21.TabIndex = 21
         Me.rbJa21.Tag = "1"
         Me.rbJa21.Text = "Ja"
@@ -1278,18 +1407,21 @@ Partial Class QuestionForm
         Me.Panel20.Controls.Add(Me.rbNei20)
         Me.Panel20.Controls.Add(Me.qu20)
         Me.Panel20.Controls.Add(Me.rbJa20)
-        Me.Panel20.Location = New System.Drawing.Point(6, 302)
+        Me.Panel20.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel20.Location = New System.Drawing.Point(4, 202)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(932, 35)
+        Me.Panel20.Size = New System.Drawing.Size(621, 23)
         Me.Panel20.TabIndex = 0
         Me.Panel20.TabStop = True
         '
         'rbNei20
         '
         Me.rbNei20.AutoSize = True
-        Me.rbNei20.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei20.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei20.Name = "rbNei20"
-        Me.rbNei20.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei20.Size = New System.Drawing.Size(49, 23)
         Me.rbNei20.TabIndex = 20
         Me.rbNei20.Tag = "0"
         Me.rbNei20.Text = "Nei"
@@ -1298,18 +1430,20 @@ Partial Class QuestionForm
         'qu20
         '
         Me.qu20.AllowDrop = True
-        Me.qu20.Location = New System.Drawing.Point(2, 8)
+        Me.qu20.Location = New System.Drawing.Point(1, 5)
+        Me.qu20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu20.Name = "qu20"
-        Me.qu20.Size = New System.Drawing.Size(745, 23)
+        Me.qu20.Size = New System.Drawing.Size(497, 15)
         Me.qu20.TabIndex = 0
         Me.qu20.Text = "Label15"
         '
         'rbJa20
         '
         Me.rbJa20.AutoSize = True
-        Me.rbJa20.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa20.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa20.Name = "rbJa20"
-        Me.rbJa20.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa20.Size = New System.Drawing.Size(40, 23)
         Me.rbJa20.TabIndex = 20
         Me.rbJa20.Tag = "1"
         Me.rbJa20.Text = "Ja"
@@ -1320,18 +1454,21 @@ Partial Class QuestionForm
         Me.Panel19.Controls.Add(Me.rbNei19)
         Me.Panel19.Controls.Add(Me.qu19)
         Me.Panel19.Controls.Add(Me.rbJa19)
-        Me.Panel19.Location = New System.Drawing.Point(5, 265)
+        Me.Panel19.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel19.Location = New System.Drawing.Point(3, 176)
+        Me.Panel19.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(932, 35)
+        Me.Panel19.Size = New System.Drawing.Size(621, 23)
         Me.Panel19.TabIndex = 0
         Me.Panel19.TabStop = True
         '
         'rbNei19
         '
         Me.rbNei19.AutoSize = True
-        Me.rbNei19.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei19.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei19.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei19.Name = "rbNei19"
-        Me.rbNei19.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei19.Size = New System.Drawing.Size(49, 23)
         Me.rbNei19.TabIndex = 19
         Me.rbNei19.Tag = "0"
         Me.rbNei19.Text = "Nei"
@@ -1340,18 +1477,20 @@ Partial Class QuestionForm
         'qu19
         '
         Me.qu19.AllowDrop = True
-        Me.qu19.Location = New System.Drawing.Point(2, 8)
+        Me.qu19.Location = New System.Drawing.Point(1, 5)
+        Me.qu19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu19.Name = "qu19"
-        Me.qu19.Size = New System.Drawing.Size(745, 23)
+        Me.qu19.Size = New System.Drawing.Size(497, 15)
         Me.qu19.TabIndex = 0
         Me.qu19.Text = "Label14"
         '
         'rbJa19
         '
         Me.rbJa19.AutoSize = True
-        Me.rbJa19.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa19.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa19.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa19.Name = "rbJa19"
-        Me.rbJa19.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa19.Size = New System.Drawing.Size(40, 23)
         Me.rbJa19.TabIndex = 19
         Me.rbJa19.Tag = "1"
         Me.rbJa19.Text = "Ja"
@@ -1362,18 +1501,21 @@ Partial Class QuestionForm
         Me.Panel18.Controls.Add(Me.rbNei18)
         Me.Panel18.Controls.Add(Me.qu18)
         Me.Panel18.Controls.Add(Me.rbJa18)
-        Me.Panel18.Location = New System.Drawing.Point(6, 228)
+        Me.Panel18.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel18.Location = New System.Drawing.Point(4, 150)
+        Me.Panel18.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(932, 35)
+        Me.Panel18.Size = New System.Drawing.Size(621, 23)
         Me.Panel18.TabIndex = 0
         Me.Panel18.TabStop = True
         '
         'rbNei18
         '
         Me.rbNei18.AutoSize = True
-        Me.rbNei18.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei18.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei18.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei18.Name = "rbNei18"
-        Me.rbNei18.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei18.Size = New System.Drawing.Size(49, 23)
         Me.rbNei18.TabIndex = 18
         Me.rbNei18.Tag = "0"
         Me.rbNei18.Text = "Nei"
@@ -1382,18 +1524,20 @@ Partial Class QuestionForm
         'qu18
         '
         Me.qu18.AllowDrop = True
-        Me.qu18.Location = New System.Drawing.Point(2, 8)
+        Me.qu18.Location = New System.Drawing.Point(1, 5)
+        Me.qu18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu18.Name = "qu18"
-        Me.qu18.Size = New System.Drawing.Size(745, 23)
+        Me.qu18.Size = New System.Drawing.Size(497, 15)
         Me.qu18.TabIndex = 0
         Me.qu18.Text = "Label13"
         '
         'rbJa18
         '
         Me.rbJa18.AutoSize = True
-        Me.rbJa18.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa18.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa18.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa18.Name = "rbJa18"
-        Me.rbJa18.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa18.Size = New System.Drawing.Size(40, 23)
         Me.rbJa18.TabIndex = 18
         Me.rbJa18.Tag = "1"
         Me.rbJa18.Text = "Ja"
@@ -1404,18 +1548,21 @@ Partial Class QuestionForm
         Me.Panel17.Controls.Add(Me.rbNei17)
         Me.Panel17.Controls.Add(Me.qu17)
         Me.Panel17.Controls.Add(Me.rbJa17)
-        Me.Panel17.Location = New System.Drawing.Point(6, 191)
+        Me.Panel17.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel17.Location = New System.Drawing.Point(4, 126)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(932, 35)
+        Me.Panel17.Size = New System.Drawing.Size(621, 23)
         Me.Panel17.TabIndex = 0
         Me.Panel17.TabStop = True
         '
         'rbNei17
         '
         Me.rbNei17.AutoSize = True
-        Me.rbNei17.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei17.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei17.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei17.Name = "rbNei17"
-        Me.rbNei17.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei17.Size = New System.Drawing.Size(49, 23)
         Me.rbNei17.TabIndex = 17
         Me.rbNei17.Tag = "0"
         Me.rbNei17.Text = "Nei"
@@ -1424,18 +1571,20 @@ Partial Class QuestionForm
         'qu17
         '
         Me.qu17.AllowDrop = True
-        Me.qu17.Location = New System.Drawing.Point(2, 8)
+        Me.qu17.Location = New System.Drawing.Point(1, 5)
+        Me.qu17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu17.Name = "qu17"
-        Me.qu17.Size = New System.Drawing.Size(745, 23)
+        Me.qu17.Size = New System.Drawing.Size(497, 15)
         Me.qu17.TabIndex = 0
         Me.qu17.Text = "Label12"
         '
         'rbJa17
         '
         Me.rbJa17.AutoSize = True
-        Me.rbJa17.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa17.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa17.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa17.Name = "rbJa17"
-        Me.rbJa17.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa17.Size = New System.Drawing.Size(40, 23)
         Me.rbJa17.TabIndex = 17
         Me.rbJa17.Tag = "1"
         Me.rbJa17.Text = "Ja"
@@ -1446,18 +1595,21 @@ Partial Class QuestionForm
         Me.Panel16.Controls.Add(Me.rbNei16)
         Me.Panel16.Controls.Add(Me.qu16)
         Me.Panel16.Controls.Add(Me.rbJa16)
-        Me.Panel16.Location = New System.Drawing.Point(7, 154)
+        Me.Panel16.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel16.Location = New System.Drawing.Point(5, 102)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(932, 35)
+        Me.Panel16.Size = New System.Drawing.Size(621, 23)
         Me.Panel16.TabIndex = 0
         Me.Panel16.TabStop = True
         '
         'rbNei16
         '
         Me.rbNei16.AutoSize = True
-        Me.rbNei16.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei16.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei16.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei16.Name = "rbNei16"
-        Me.rbNei16.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei16.Size = New System.Drawing.Size(49, 23)
         Me.rbNei16.TabIndex = 16
         Me.rbNei16.Tag = "0"
         Me.rbNei16.Text = "Nei"
@@ -1466,18 +1618,20 @@ Partial Class QuestionForm
         'qu16
         '
         Me.qu16.AllowDrop = True
-        Me.qu16.Location = New System.Drawing.Point(2, 8)
+        Me.qu16.Location = New System.Drawing.Point(1, 5)
+        Me.qu16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu16.Name = "qu16"
-        Me.qu16.Size = New System.Drawing.Size(745, 23)
+        Me.qu16.Size = New System.Drawing.Size(497, 15)
         Me.qu16.TabIndex = 0
         Me.qu16.Text = "Label11"
         '
         'rbJa16
         '
         Me.rbJa16.AutoSize = True
-        Me.rbJa16.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa16.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa16.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa16.Name = "rbJa16"
-        Me.rbJa16.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa16.Size = New System.Drawing.Size(40, 23)
         Me.rbJa16.TabIndex = 16
         Me.rbJa16.Tag = "1"
         Me.rbJa16.Text = "Ja"
@@ -1488,18 +1642,21 @@ Partial Class QuestionForm
         Me.Panel15.Controls.Add(Me.rbNei15)
         Me.Panel15.Controls.Add(Me.qu15)
         Me.Panel15.Controls.Add(Me.rbJa15)
-        Me.Panel15.Location = New System.Drawing.Point(6, 117)
+        Me.Panel15.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel15.Location = New System.Drawing.Point(4, 76)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(932, 35)
+        Me.Panel15.Size = New System.Drawing.Size(621, 23)
         Me.Panel15.TabIndex = 0
         Me.Panel15.TabStop = True
         '
         'rbNei15
         '
         Me.rbNei15.AutoSize = True
-        Me.rbNei15.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei15.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei15.Name = "rbNei15"
-        Me.rbNei15.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei15.Size = New System.Drawing.Size(49, 23)
         Me.rbNei15.TabIndex = 15
         Me.rbNei15.Tag = "0"
         Me.rbNei15.Text = "Nei"
@@ -1508,18 +1665,20 @@ Partial Class QuestionForm
         'qu15
         '
         Me.qu15.AllowDrop = True
-        Me.qu15.Location = New System.Drawing.Point(2, 1)
+        Me.qu15.Location = New System.Drawing.Point(1, 3)
+        Me.qu15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu15.Name = "qu15"
-        Me.qu15.Size = New System.Drawing.Size(745, 34)
+        Me.qu15.Size = New System.Drawing.Size(497, 22)
         Me.qu15.TabIndex = 0
         Me.qu15.Text = "Label10"
         '
         'rbJa15
         '
         Me.rbJa15.AutoSize = True
-        Me.rbJa15.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa15.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa15.Name = "rbJa15"
-        Me.rbJa15.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa15.Size = New System.Drawing.Size(40, 23)
         Me.rbJa15.TabIndex = 15
         Me.rbJa15.Tag = "1"
         Me.rbJa15.Text = "Ja"
@@ -1530,18 +1689,21 @@ Partial Class QuestionForm
         Me.Panel14.Controls.Add(Me.rbNei14)
         Me.Panel14.Controls.Add(Me.qu14)
         Me.Panel14.Controls.Add(Me.rbJa14)
-        Me.Panel14.Location = New System.Drawing.Point(7, 80)
+        Me.Panel14.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel14.Location = New System.Drawing.Point(5, 51)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(932, 35)
+        Me.Panel14.Size = New System.Drawing.Size(621, 23)
         Me.Panel14.TabIndex = 0
         Me.Panel14.TabStop = True
         '
         'rbNei14
         '
         Me.rbNei14.AutoSize = True
-        Me.rbNei14.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei14.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei14.Name = "rbNei14"
-        Me.rbNei14.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei14.Size = New System.Drawing.Size(49, 23)
         Me.rbNei14.TabIndex = 14
         Me.rbNei14.Tag = "0"
         Me.rbNei14.Text = "Nei"
@@ -1550,18 +1712,20 @@ Partial Class QuestionForm
         'qu14
         '
         Me.qu14.AllowDrop = True
-        Me.qu14.Location = New System.Drawing.Point(2, 8)
+        Me.qu14.Location = New System.Drawing.Point(1, 5)
+        Me.qu14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu14.Name = "qu14"
-        Me.qu14.Size = New System.Drawing.Size(745, 23)
+        Me.qu14.Size = New System.Drawing.Size(497, 15)
         Me.qu14.TabIndex = 0
         Me.qu14.Text = "Label9"
         '
         'rbJa14
         '
         Me.rbJa14.AutoSize = True
-        Me.rbJa14.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa14.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa14.Name = "rbJa14"
-        Me.rbJa14.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa14.Size = New System.Drawing.Size(40, 23)
         Me.rbJa14.TabIndex = 14
         Me.rbJa14.Tag = "1"
         Me.rbJa14.Text = "Ja"
@@ -1572,18 +1736,21 @@ Partial Class QuestionForm
         Me.Panel13.Controls.Add(Me.rbNei13)
         Me.Panel13.Controls.Add(Me.qu13)
         Me.Panel13.Controls.Add(Me.rbJa13)
-        Me.Panel13.Location = New System.Drawing.Point(7, 44)
+        Me.Panel13.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel13.Location = New System.Drawing.Point(5, 27)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(932, 35)
+        Me.Panel13.Size = New System.Drawing.Size(621, 23)
         Me.Panel13.TabIndex = 0
         Me.Panel13.TabStop = True
         '
         'rbNei13
         '
         Me.rbNei13.AutoSize = True
-        Me.rbNei13.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei13.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei13.Name = "rbNei13"
-        Me.rbNei13.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei13.Size = New System.Drawing.Size(49, 23)
         Me.rbNei13.TabIndex = 13
         Me.rbNei13.Tag = "0"
         Me.rbNei13.Text = "Nei"
@@ -1592,18 +1759,20 @@ Partial Class QuestionForm
         'qu13
         '
         Me.qu13.AllowDrop = True
-        Me.qu13.Location = New System.Drawing.Point(2, 8)
+        Me.qu13.Location = New System.Drawing.Point(1, 5)
+        Me.qu13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu13.Name = "qu13"
-        Me.qu13.Size = New System.Drawing.Size(745, 23)
+        Me.qu13.Size = New System.Drawing.Size(497, 15)
         Me.qu13.TabIndex = 0
         Me.qu13.Text = "Label8"
         '
         'rbJa13
         '
         Me.rbJa13.AutoSize = True
-        Me.rbJa13.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa13.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa13.Name = "rbJa13"
-        Me.rbJa13.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa13.Size = New System.Drawing.Size(40, 23)
         Me.rbJa13.TabIndex = 13
         Me.rbJa13.Tag = "1"
         Me.rbJa13.Text = "Ja"
@@ -1614,18 +1783,21 @@ Partial Class QuestionForm
         Me.Panel12.Controls.Add(Me.rbNei12)
         Me.Panel12.Controls.Add(Me.qu12)
         Me.Panel12.Controls.Add(Me.rbJa12)
-        Me.Panel12.Location = New System.Drawing.Point(7, 7)
+        Me.Panel12.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel12.Location = New System.Drawing.Point(5, 2)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(932, 35)
+        Me.Panel12.Size = New System.Drawing.Size(621, 23)
         Me.Panel12.TabIndex = 0
         Me.Panel12.TabStop = True
         '
         'rbNei12
         '
         Me.rbNei12.AutoSize = True
-        Me.rbNei12.Location = New System.Drawing.Point(855, 8)
+        Me.rbNei12.Location = New System.Drawing.Point(570, 5)
+        Me.rbNei12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei12.Name = "rbNei12"
-        Me.rbNei12.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei12.Size = New System.Drawing.Size(49, 23)
         Me.rbNei12.TabIndex = 12
         Me.rbNei12.Tag = "0"
         Me.rbNei12.Text = "Nei"
@@ -1634,18 +1806,20 @@ Partial Class QuestionForm
         'qu12
         '
         Me.qu12.AllowDrop = True
-        Me.qu12.Location = New System.Drawing.Point(2, 8)
+        Me.qu12.Location = New System.Drawing.Point(1, 5)
+        Me.qu12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu12.Name = "qu12"
-        Me.qu12.Size = New System.Drawing.Size(745, 23)
+        Me.qu12.Size = New System.Drawing.Size(497, 15)
         Me.qu12.TabIndex = 0
         Me.qu12.Text = "Label7"
         '
         'rbJa12
         '
         Me.rbJa12.AutoSize = True
-        Me.rbJa12.Location = New System.Drawing.Point(768, 8)
+        Me.rbJa12.Location = New System.Drawing.Point(512, 5)
+        Me.rbJa12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa12.Name = "rbJa12"
-        Me.rbJa12.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa12.Size = New System.Drawing.Size(40, 23)
         Me.rbJa12.TabIndex = 12
         Me.rbJa12.Tag = "1"
         Me.rbJa12.Text = "Ja"
@@ -1657,28 +1831,31 @@ Partial Class QuestionForm
         Me.TabPage4.Controls.Add(Me.btnNext4)
         Me.TabPage4.Controls.Add(Me.Panel29)
         Me.TabPage4.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage4.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage4.Location = New System.Drawing.Point(4, 32)
+        Me.TabPage4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(965, 729)
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage4.Size = New System.Drawing.Size(646, 492)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "TabPage4"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'btnPrev4
         '
-        Me.btnPrev4.Location = New System.Drawing.Point(6, 677)
+        Me.btnPrev4.Location = New System.Drawing.Point(4, 440)
+        Me.btnPrev4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnPrev4.Name = "btnPrev4"
-        Me.btnPrev4.Size = New System.Drawing.Size(113, 46)
+        Me.btnPrev4.Size = New System.Drawing.Size(75, 30)
         Me.btnPrev4.TabIndex = 0
         Me.btnPrev4.Text = "Forrige"
         Me.btnPrev4.UseVisualStyleBackColor = True
         '
         'btnNext4
         '
-        Me.btnNext4.Location = New System.Drawing.Point(846, 677)
+        Me.btnNext4.Location = New System.Drawing.Point(564, 440)
+        Me.btnNext4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnNext4.Name = "btnNext4"
-        Me.btnNext4.Size = New System.Drawing.Size(113, 46)
+        Me.btnNext4.Size = New System.Drawing.Size(75, 30)
         Me.btnNext4.TabIndex = 0
         Me.btnNext4.Text = "Neste"
         Me.btnNext4.UseVisualStyleBackColor = True
@@ -1688,27 +1865,31 @@ Partial Class QuestionForm
         Me.Panel29.Controls.Add(Me.qu29)
         Me.Panel29.Controls.Add(Me.rbNei29)
         Me.Panel29.Controls.Add(Me.rbJa29)
-        Me.Panel29.Location = New System.Drawing.Point(6, 27)
+        Me.Panel29.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Panel29.Location = New System.Drawing.Point(4, 18)
+        Me.Panel29.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(933, 53)
+        Me.Panel29.Size = New System.Drawing.Size(622, 34)
         Me.Panel29.TabIndex = 0
         Me.Panel29.TabStop = True
         '
         'qu29
         '
         Me.qu29.AllowDrop = True
-        Me.qu29.Location = New System.Drawing.Point(4, 15)
+        Me.qu29.Location = New System.Drawing.Point(3, 2)
+        Me.qu29.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu29.Name = "qu29"
-        Me.qu29.Size = New System.Drawing.Size(757, 23)
+        Me.qu29.Size = New System.Drawing.Size(516, 32)
         Me.qu29.TabIndex = 2
         Me.qu29.Text = "Label24"
         '
         'rbNei29
         '
         Me.rbNei29.AutoSize = True
-        Me.rbNei29.Location = New System.Drawing.Point(874, 15)
+        Me.rbNei29.Location = New System.Drawing.Point(567, 9)
+        Me.rbNei29.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei29.Name = "rbNei29"
-        Me.rbNei29.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei29.Size = New System.Drawing.Size(49, 23)
         Me.rbNei29.TabIndex = 29
         Me.rbNei29.Tag = "0"
         Me.rbNei29.Text = "Nei"
@@ -1717,9 +1898,10 @@ Partial Class QuestionForm
         'rbJa29
         '
         Me.rbJa29.AutoSize = True
-        Me.rbJa29.Location = New System.Drawing.Point(785, 15)
+        Me.rbJa29.Location = New System.Drawing.Point(523, 9)
+        Me.rbJa29.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa29.Name = "rbJa29"
-        Me.rbJa29.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa29.Size = New System.Drawing.Size(40, 23)
         Me.rbJa29.TabIndex = 29
         Me.rbJa29.Tag = "1"
         Me.rbJa29.Text = "Ja"
@@ -1745,28 +1927,31 @@ Partial Class QuestionForm
         Me.TabPage5.Controls.Add(Me.Panel31)
         Me.TabPage5.Controls.Add(Me.Panel30)
         Me.TabPage5.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage5.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage5.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage5.Name = "TabPage5"
-        Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(965, 729)
+        Me.TabPage5.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage5.Size = New System.Drawing.Size(646, 500)
         Me.TabPage5.TabIndex = 4
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'btnPrev5
         '
-        Me.btnPrev5.Location = New System.Drawing.Point(6, 677)
+        Me.btnPrev5.Location = New System.Drawing.Point(4, 440)
+        Me.btnPrev5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnPrev5.Name = "btnPrev5"
-        Me.btnPrev5.Size = New System.Drawing.Size(113, 46)
+        Me.btnPrev5.Size = New System.Drawing.Size(75, 30)
         Me.btnPrev5.TabIndex = 0
         Me.btnPrev5.Text = "Forrige"
         Me.btnPrev5.UseVisualStyleBackColor = True
         '
         'btnNext5
         '
-        Me.btnNext5.Location = New System.Drawing.Point(846, 677)
+        Me.btnNext5.Location = New System.Drawing.Point(564, 440)
+        Me.btnNext5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnNext5.Name = "btnNext5"
-        Me.btnNext5.Size = New System.Drawing.Size(113, 46)
+        Me.btnNext5.Size = New System.Drawing.Size(75, 30)
         Me.btnNext5.TabIndex = 0
         Me.btnNext5.Text = "Neste"
         Me.btnNext5.UseVisualStyleBackColor = True
@@ -1776,27 +1961,30 @@ Partial Class QuestionForm
         Me.Panel44.Controls.Add(Me.qu44)
         Me.Panel44.Controls.Add(Me.rbNei44)
         Me.Panel44.Controls.Add(Me.rbJa44)
-        Me.Panel44.Location = New System.Drawing.Point(6, 552)
+        Me.Panel44.Location = New System.Drawing.Point(4, 359)
+        Me.Panel44.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel44.Name = "Panel44"
-        Me.Panel44.Size = New System.Drawing.Size(932, 38)
+        Me.Panel44.Size = New System.Drawing.Size(621, 25)
         Me.Panel44.TabIndex = 0
         Me.Panel44.TabStop = True
         '
         'qu44
         '
         Me.qu44.AllowDrop = True
-        Me.qu44.Location = New System.Drawing.Point(3, 9)
+        Me.qu44.Location = New System.Drawing.Point(2, 6)
+        Me.qu44.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu44.Name = "qu44"
-        Me.qu44.Size = New System.Drawing.Size(775, 22)
+        Me.qu44.Size = New System.Drawing.Size(517, 14)
         Me.qu44.TabIndex = 0
         Me.qu44.Text = "Label39"
         '
         'rbNei44
         '
         Me.rbNei44.AutoSize = True
-        Me.rbNei44.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei44.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei44.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei44.Name = "rbNei44"
-        Me.rbNei44.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei44.Size = New System.Drawing.Size(41, 17)
         Me.rbNei44.TabIndex = 44
         Me.rbNei44.Tag = "0"
         Me.rbNei44.Text = "Nei"
@@ -1805,9 +1993,10 @@ Partial Class QuestionForm
         'rbJa44
         '
         Me.rbJa44.AutoSize = True
-        Me.rbJa44.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa44.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa44.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa44.Name = "rbJa44"
-        Me.rbJa44.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa44.Size = New System.Drawing.Size(35, 17)
         Me.rbJa44.TabIndex = 44
         Me.rbJa44.Tag = "1"
         Me.rbJa44.Text = "Ja"
@@ -1818,27 +2007,30 @@ Partial Class QuestionForm
         Me.Panel43.Controls.Add(Me.qu43)
         Me.Panel43.Controls.Add(Me.rbNei43)
         Me.Panel43.Controls.Add(Me.rbJa43)
-        Me.Panel43.Location = New System.Drawing.Point(6, 513)
+        Me.Panel43.Location = New System.Drawing.Point(4, 333)
+        Me.Panel43.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(932, 38)
+        Me.Panel43.Size = New System.Drawing.Size(621, 25)
         Me.Panel43.TabIndex = 0
         Me.Panel43.TabStop = True
         '
         'qu43
         '
         Me.qu43.AllowDrop = True
-        Me.qu43.Location = New System.Drawing.Point(3, 9)
+        Me.qu43.Location = New System.Drawing.Point(2, 6)
+        Me.qu43.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu43.Name = "qu43"
-        Me.qu43.Size = New System.Drawing.Size(775, 22)
+        Me.qu43.Size = New System.Drawing.Size(517, 14)
         Me.qu43.TabIndex = 0
         Me.qu43.Text = "Label38"
         '
         'rbNei43
         '
         Me.rbNei43.AutoSize = True
-        Me.rbNei43.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei43.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei43.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei43.Name = "rbNei43"
-        Me.rbNei43.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei43.Size = New System.Drawing.Size(41, 17)
         Me.rbNei43.TabIndex = 43
         Me.rbNei43.Tag = "0"
         Me.rbNei43.Text = "Nei"
@@ -1847,9 +2039,10 @@ Partial Class QuestionForm
         'rbJa43
         '
         Me.rbJa43.AutoSize = True
-        Me.rbJa43.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa43.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa43.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa43.Name = "rbJa43"
-        Me.rbJa43.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa43.Size = New System.Drawing.Size(35, 17)
         Me.rbJa43.TabIndex = 43
         Me.rbJa43.Tag = "1"
         Me.rbJa43.Text = "Ja"
@@ -1860,27 +2053,30 @@ Partial Class QuestionForm
         Me.Panel42.Controls.Add(Me.qu42)
         Me.Panel42.Controls.Add(Me.rbNei42)
         Me.Panel42.Controls.Add(Me.rbJa42)
-        Me.Panel42.Location = New System.Drawing.Point(6, 474)
+        Me.Panel42.Location = New System.Drawing.Point(4, 308)
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(932, 38)
+        Me.Panel42.Size = New System.Drawing.Size(621, 25)
         Me.Panel42.TabIndex = 0
         Me.Panel42.TabStop = True
         '
         'qu42
         '
         Me.qu42.AllowDrop = True
-        Me.qu42.Location = New System.Drawing.Point(3, 9)
+        Me.qu42.Location = New System.Drawing.Point(2, 6)
+        Me.qu42.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu42.Name = "qu42"
-        Me.qu42.Size = New System.Drawing.Size(775, 22)
+        Me.qu42.Size = New System.Drawing.Size(517, 14)
         Me.qu42.TabIndex = 0
         Me.qu42.Text = "Label37"
         '
         'rbNei42
         '
         Me.rbNei42.AutoSize = True
-        Me.rbNei42.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei42.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei42.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei42.Name = "rbNei42"
-        Me.rbNei42.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei42.Size = New System.Drawing.Size(41, 17)
         Me.rbNei42.TabIndex = 42
         Me.rbNei42.Tag = "0"
         Me.rbNei42.Text = "Nei"
@@ -1889,9 +2085,10 @@ Partial Class QuestionForm
         'rbJa42
         '
         Me.rbJa42.AutoSize = True
-        Me.rbJa42.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa42.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa42.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa42.Name = "rbJa42"
-        Me.rbJa42.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa42.Size = New System.Drawing.Size(35, 17)
         Me.rbJa42.TabIndex = 42
         Me.rbJa42.Tag = "1"
         Me.rbJa42.Text = "Ja"
@@ -1902,27 +2099,30 @@ Partial Class QuestionForm
         Me.Panel41.Controls.Add(Me.qu41)
         Me.Panel41.Controls.Add(Me.rbNei41)
         Me.Panel41.Controls.Add(Me.rbJa41)
-        Me.Panel41.Location = New System.Drawing.Point(6, 435)
+        Me.Panel41.Location = New System.Drawing.Point(4, 283)
+        Me.Panel41.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(932, 38)
+        Me.Panel41.Size = New System.Drawing.Size(621, 25)
         Me.Panel41.TabIndex = 0
         Me.Panel41.TabStop = True
         '
         'qu41
         '
         Me.qu41.AllowDrop = True
-        Me.qu41.Location = New System.Drawing.Point(3, 9)
+        Me.qu41.Location = New System.Drawing.Point(2, 6)
+        Me.qu41.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu41.Name = "qu41"
-        Me.qu41.Size = New System.Drawing.Size(775, 22)
+        Me.qu41.Size = New System.Drawing.Size(517, 14)
         Me.qu41.TabIndex = 0
         Me.qu41.Text = "Label36"
         '
         'rbNei41
         '
         Me.rbNei41.AutoSize = True
-        Me.rbNei41.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei41.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei41.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei41.Name = "rbNei41"
-        Me.rbNei41.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei41.Size = New System.Drawing.Size(41, 17)
         Me.rbNei41.TabIndex = 41
         Me.rbNei41.Tag = "0"
         Me.rbNei41.Text = "Nei"
@@ -1931,9 +2131,10 @@ Partial Class QuestionForm
         'rbJa41
         '
         Me.rbJa41.AutoSize = True
-        Me.rbJa41.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa41.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa41.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa41.Name = "rbJa41"
-        Me.rbJa41.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa41.Size = New System.Drawing.Size(35, 17)
         Me.rbJa41.TabIndex = 41
         Me.rbJa41.Tag = "1"
         Me.rbJa41.Text = "Ja"
@@ -1944,27 +2145,30 @@ Partial Class QuestionForm
         Me.Panel40.Controls.Add(Me.qu40)
         Me.Panel40.Controls.Add(Me.rbNei40)
         Me.Panel40.Controls.Add(Me.rbJa40)
-        Me.Panel40.Location = New System.Drawing.Point(7, 396)
+        Me.Panel40.Location = New System.Drawing.Point(5, 257)
+        Me.Panel40.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(932, 38)
+        Me.Panel40.Size = New System.Drawing.Size(621, 25)
         Me.Panel40.TabIndex = 0
         Me.Panel40.TabStop = True
         '
         'qu40
         '
         Me.qu40.AllowDrop = True
-        Me.qu40.Location = New System.Drawing.Point(3, 9)
+        Me.qu40.Location = New System.Drawing.Point(2, 6)
+        Me.qu40.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu40.Name = "qu40"
-        Me.qu40.Size = New System.Drawing.Size(775, 22)
+        Me.qu40.Size = New System.Drawing.Size(517, 14)
         Me.qu40.TabIndex = 0
         Me.qu40.Text = "Label35"
         '
         'rbNei40
         '
         Me.rbNei40.AutoSize = True
-        Me.rbNei40.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei40.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei40.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei40.Name = "rbNei40"
-        Me.rbNei40.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei40.Size = New System.Drawing.Size(41, 17)
         Me.rbNei40.TabIndex = 40
         Me.rbNei40.Tag = "0"
         Me.rbNei40.Text = "Nei"
@@ -1973,9 +2177,10 @@ Partial Class QuestionForm
         'rbJa40
         '
         Me.rbJa40.AutoSize = True
-        Me.rbJa40.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa40.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa40.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa40.Name = "rbJa40"
-        Me.rbJa40.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa40.Size = New System.Drawing.Size(35, 17)
         Me.rbJa40.TabIndex = 40
         Me.rbJa40.Tag = "1"
         Me.rbJa40.Text = "Ja"
@@ -1986,27 +2191,30 @@ Partial Class QuestionForm
         Me.Panel39.Controls.Add(Me.qu39)
         Me.Panel39.Controls.Add(Me.rbNei39)
         Me.Panel39.Controls.Add(Me.rbJa39)
-        Me.Panel39.Location = New System.Drawing.Point(7, 357)
+        Me.Panel39.Location = New System.Drawing.Point(5, 232)
+        Me.Panel39.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(932, 38)
+        Me.Panel39.Size = New System.Drawing.Size(621, 25)
         Me.Panel39.TabIndex = 0
         Me.Panel39.TabStop = True
         '
         'qu39
         '
         Me.qu39.AllowDrop = True
-        Me.qu39.Location = New System.Drawing.Point(3, 9)
+        Me.qu39.Location = New System.Drawing.Point(2, 6)
+        Me.qu39.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu39.Name = "qu39"
-        Me.qu39.Size = New System.Drawing.Size(775, 22)
+        Me.qu39.Size = New System.Drawing.Size(517, 14)
         Me.qu39.TabIndex = 0
         Me.qu39.Text = "Label34"
         '
         'rbNei39
         '
         Me.rbNei39.AutoSize = True
-        Me.rbNei39.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei39.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei39.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei39.Name = "rbNei39"
-        Me.rbNei39.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei39.Size = New System.Drawing.Size(41, 17)
         Me.rbNei39.TabIndex = 39
         Me.rbNei39.Tag = "0"
         Me.rbNei39.Text = "Nei"
@@ -2015,9 +2223,10 @@ Partial Class QuestionForm
         'rbJa39
         '
         Me.rbJa39.AutoSize = True
-        Me.rbJa39.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa39.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa39.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa39.Name = "rbJa39"
-        Me.rbJa39.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa39.Size = New System.Drawing.Size(35, 17)
         Me.rbJa39.TabIndex = 39
         Me.rbJa39.Tag = "1"
         Me.rbJa39.Text = "Ja"
@@ -2028,27 +2237,30 @@ Partial Class QuestionForm
         Me.Panel38.Controls.Add(Me.qu38)
         Me.Panel38.Controls.Add(Me.rbNei38)
         Me.Panel38.Controls.Add(Me.rbJa38)
-        Me.Panel38.Location = New System.Drawing.Point(6, 318)
+        Me.Panel38.Location = New System.Drawing.Point(4, 207)
+        Me.Panel38.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel38.Name = "Panel38"
-        Me.Panel38.Size = New System.Drawing.Size(932, 38)
+        Me.Panel38.Size = New System.Drawing.Size(621, 25)
         Me.Panel38.TabIndex = 0
         Me.Panel38.TabStop = True
         '
         'qu38
         '
         Me.qu38.AllowDrop = True
-        Me.qu38.Location = New System.Drawing.Point(3, 9)
+        Me.qu38.Location = New System.Drawing.Point(2, 6)
+        Me.qu38.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu38.Name = "qu38"
-        Me.qu38.Size = New System.Drawing.Size(775, 22)
+        Me.qu38.Size = New System.Drawing.Size(517, 14)
         Me.qu38.TabIndex = 0
         Me.qu38.Text = "Label33"
         '
         'rbNei38
         '
         Me.rbNei38.AutoSize = True
-        Me.rbNei38.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei38.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei38.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei38.Name = "rbNei38"
-        Me.rbNei38.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei38.Size = New System.Drawing.Size(41, 17)
         Me.rbNei38.TabIndex = 38
         Me.rbNei38.Tag = "0"
         Me.rbNei38.Text = "Nei"
@@ -2057,9 +2269,10 @@ Partial Class QuestionForm
         'rbJa38
         '
         Me.rbJa38.AutoSize = True
-        Me.rbJa38.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa38.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa38.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa38.Name = "rbJa38"
-        Me.rbJa38.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa38.Size = New System.Drawing.Size(35, 17)
         Me.rbJa38.TabIndex = 38
         Me.rbJa38.Tag = "1"
         Me.rbJa38.Text = "Ja"
@@ -2070,27 +2283,30 @@ Partial Class QuestionForm
         Me.Panel37.Controls.Add(Me.qu37)
         Me.Panel37.Controls.Add(Me.rbNei37)
         Me.Panel37.Controls.Add(Me.rbJa37)
-        Me.Panel37.Location = New System.Drawing.Point(7, 279)
+        Me.Panel37.Location = New System.Drawing.Point(5, 181)
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel37.Name = "Panel37"
-        Me.Panel37.Size = New System.Drawing.Size(932, 38)
+        Me.Panel37.Size = New System.Drawing.Size(621, 25)
         Me.Panel37.TabIndex = 0
         Me.Panel37.TabStop = True
         '
         'qu37
         '
         Me.qu37.AllowDrop = True
-        Me.qu37.Location = New System.Drawing.Point(3, 9)
+        Me.qu37.Location = New System.Drawing.Point(2, 6)
+        Me.qu37.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu37.Name = "qu37"
-        Me.qu37.Size = New System.Drawing.Size(775, 22)
+        Me.qu37.Size = New System.Drawing.Size(517, 14)
         Me.qu37.TabIndex = 0
         Me.qu37.Text = "Label32"
         '
         'rbNei37
         '
         Me.rbNei37.AutoSize = True
-        Me.rbNei37.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei37.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei37.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei37.Name = "rbNei37"
-        Me.rbNei37.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei37.Size = New System.Drawing.Size(41, 17)
         Me.rbNei37.TabIndex = 37
         Me.rbNei37.Tag = "0"
         Me.rbNei37.Text = "Nei"
@@ -2099,9 +2315,10 @@ Partial Class QuestionForm
         'rbJa37
         '
         Me.rbJa37.AutoSize = True
-        Me.rbJa37.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa37.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa37.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa37.Name = "rbJa37"
-        Me.rbJa37.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa37.Size = New System.Drawing.Size(35, 17)
         Me.rbJa37.TabIndex = 37
         Me.rbJa37.Tag = "1"
         Me.rbJa37.Text = "Ja"
@@ -2112,27 +2329,30 @@ Partial Class QuestionForm
         Me.Panel36.Controls.Add(Me.qu36)
         Me.Panel36.Controls.Add(Me.rbNei36)
         Me.Panel36.Controls.Add(Me.rbJa36)
-        Me.Panel36.Location = New System.Drawing.Point(7, 240)
+        Me.Panel36.Location = New System.Drawing.Point(5, 156)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(932, 38)
+        Me.Panel36.Size = New System.Drawing.Size(621, 25)
         Me.Panel36.TabIndex = 0
         Me.Panel36.TabStop = True
         '
         'qu36
         '
         Me.qu36.AllowDrop = True
-        Me.qu36.Location = New System.Drawing.Point(3, 9)
+        Me.qu36.Location = New System.Drawing.Point(2, 6)
+        Me.qu36.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu36.Name = "qu36"
-        Me.qu36.Size = New System.Drawing.Size(775, 22)
+        Me.qu36.Size = New System.Drawing.Size(517, 14)
         Me.qu36.TabIndex = 0
         Me.qu36.Text = "Label31"
         '
         'rbNei36
         '
         Me.rbNei36.AutoSize = True
-        Me.rbNei36.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei36.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei36.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei36.Name = "rbNei36"
-        Me.rbNei36.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei36.Size = New System.Drawing.Size(41, 17)
         Me.rbNei36.TabIndex = 36
         Me.rbNei36.Tag = "0"
         Me.rbNei36.Text = "Nei"
@@ -2141,9 +2361,10 @@ Partial Class QuestionForm
         'rbJa36
         '
         Me.rbJa36.AutoSize = True
-        Me.rbJa36.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa36.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa36.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa36.Name = "rbJa36"
-        Me.rbJa36.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa36.Size = New System.Drawing.Size(35, 17)
         Me.rbJa36.TabIndex = 36
         Me.rbJa36.Tag = "1"
         Me.rbJa36.Text = "Ja"
@@ -2154,27 +2375,30 @@ Partial Class QuestionForm
         Me.Panel35.Controls.Add(Me.qu35)
         Me.Panel35.Controls.Add(Me.rbNei35)
         Me.Panel35.Controls.Add(Me.rbJa35)
-        Me.Panel35.Location = New System.Drawing.Point(7, 201)
+        Me.Panel35.Location = New System.Drawing.Point(5, 131)
+        Me.Panel35.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(932, 38)
+        Me.Panel35.Size = New System.Drawing.Size(621, 25)
         Me.Panel35.TabIndex = 0
         Me.Panel35.TabStop = True
         '
         'qu35
         '
         Me.qu35.AllowDrop = True
-        Me.qu35.Location = New System.Drawing.Point(3, 9)
+        Me.qu35.Location = New System.Drawing.Point(2, 6)
+        Me.qu35.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu35.Name = "qu35"
-        Me.qu35.Size = New System.Drawing.Size(775, 22)
+        Me.qu35.Size = New System.Drawing.Size(517, 14)
         Me.qu35.TabIndex = 0
         Me.qu35.Text = "Label30"
         '
         'rbNei35
         '
         Me.rbNei35.AutoSize = True
-        Me.rbNei35.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei35.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei35.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei35.Name = "rbNei35"
-        Me.rbNei35.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei35.Size = New System.Drawing.Size(41, 17)
         Me.rbNei35.TabIndex = 35
         Me.rbNei35.Tag = "0"
         Me.rbNei35.Text = "Nei"
@@ -2183,9 +2407,10 @@ Partial Class QuestionForm
         'rbJa35
         '
         Me.rbJa35.AutoSize = True
-        Me.rbJa35.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa35.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa35.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa35.Name = "rbJa35"
-        Me.rbJa35.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa35.Size = New System.Drawing.Size(35, 17)
         Me.rbJa35.TabIndex = 35
         Me.rbJa35.Tag = "1"
         Me.rbJa35.Text = "Ja"
@@ -2196,27 +2421,30 @@ Partial Class QuestionForm
         Me.Panel34.Controls.Add(Me.qu34)
         Me.Panel34.Controls.Add(Me.rbNei34)
         Me.Panel34.Controls.Add(Me.rbJa34)
-        Me.Panel34.Location = New System.Drawing.Point(7, 162)
+        Me.Panel34.Location = New System.Drawing.Point(5, 105)
+        Me.Panel34.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(932, 38)
+        Me.Panel34.Size = New System.Drawing.Size(621, 25)
         Me.Panel34.TabIndex = 0
         Me.Panel34.TabStop = True
         '
         'qu34
         '
         Me.qu34.AllowDrop = True
-        Me.qu34.Location = New System.Drawing.Point(3, 9)
+        Me.qu34.Location = New System.Drawing.Point(2, 6)
+        Me.qu34.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu34.Name = "qu34"
-        Me.qu34.Size = New System.Drawing.Size(775, 22)
+        Me.qu34.Size = New System.Drawing.Size(517, 14)
         Me.qu34.TabIndex = 0
         Me.qu34.Text = "Label29"
         '
         'rbNei34
         '
         Me.rbNei34.AutoSize = True
-        Me.rbNei34.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei34.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei34.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei34.Name = "rbNei34"
-        Me.rbNei34.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei34.Size = New System.Drawing.Size(41, 17)
         Me.rbNei34.TabIndex = 34
         Me.rbNei34.Tag = "0"
         Me.rbNei34.Text = "Nei"
@@ -2225,9 +2453,10 @@ Partial Class QuestionForm
         'rbJa34
         '
         Me.rbJa34.AutoSize = True
-        Me.rbJa34.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa34.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa34.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa34.Name = "rbJa34"
-        Me.rbJa34.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa34.Size = New System.Drawing.Size(35, 17)
         Me.rbJa34.TabIndex = 34
         Me.rbJa34.Tag = "1"
         Me.rbJa34.Text = "Ja"
@@ -2238,27 +2467,30 @@ Partial Class QuestionForm
         Me.Panel33.Controls.Add(Me.qu33)
         Me.Panel33.Controls.Add(Me.rbNei33)
         Me.Panel33.Controls.Add(Me.rbJa33)
-        Me.Panel33.Location = New System.Drawing.Point(7, 123)
+        Me.Panel33.Location = New System.Drawing.Point(5, 80)
+        Me.Panel33.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(932, 38)
+        Me.Panel33.Size = New System.Drawing.Size(621, 25)
         Me.Panel33.TabIndex = 0
         Me.Panel33.TabStop = True
         '
         'qu33
         '
         Me.qu33.AllowDrop = True
-        Me.qu33.Location = New System.Drawing.Point(3, 9)
+        Me.qu33.Location = New System.Drawing.Point(2, 6)
+        Me.qu33.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu33.Name = "qu33"
-        Me.qu33.Size = New System.Drawing.Size(775, 22)
+        Me.qu33.Size = New System.Drawing.Size(517, 14)
         Me.qu33.TabIndex = 0
         Me.qu33.Text = "Label28"
         '
         'rbNei33
         '
         Me.rbNei33.AutoSize = True
-        Me.rbNei33.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei33.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei33.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei33.Name = "rbNei33"
-        Me.rbNei33.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei33.Size = New System.Drawing.Size(41, 17)
         Me.rbNei33.TabIndex = 33
         Me.rbNei33.Tag = "0"
         Me.rbNei33.Text = "Nei"
@@ -2267,9 +2499,10 @@ Partial Class QuestionForm
         'rbJa33
         '
         Me.rbJa33.AutoSize = True
-        Me.rbJa33.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa33.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa33.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa33.Name = "rbJa33"
-        Me.rbJa33.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa33.Size = New System.Drawing.Size(35, 17)
         Me.rbJa33.TabIndex = 33
         Me.rbJa33.Tag = "1"
         Me.rbJa33.Text = "Ja"
@@ -2280,27 +2513,30 @@ Partial Class QuestionForm
         Me.Panel32.Controls.Add(Me.qu32)
         Me.Panel32.Controls.Add(Me.rbNei32)
         Me.Panel32.Controls.Add(Me.rbJa32)
-        Me.Panel32.Location = New System.Drawing.Point(6, 84)
+        Me.Panel32.Location = New System.Drawing.Point(4, 55)
+        Me.Panel32.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(932, 38)
+        Me.Panel32.Size = New System.Drawing.Size(621, 25)
         Me.Panel32.TabIndex = 0
         Me.Panel32.TabStop = True
         '
         'qu32
         '
         Me.qu32.AllowDrop = True
-        Me.qu32.Location = New System.Drawing.Point(3, 9)
+        Me.qu32.Location = New System.Drawing.Point(2, 6)
+        Me.qu32.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu32.Name = "qu32"
-        Me.qu32.Size = New System.Drawing.Size(775, 22)
+        Me.qu32.Size = New System.Drawing.Size(517, 14)
         Me.qu32.TabIndex = 0
         Me.qu32.Text = "Label27"
         '
         'rbNei32
         '
         Me.rbNei32.AutoSize = True
-        Me.rbNei32.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei32.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei32.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei32.Name = "rbNei32"
-        Me.rbNei32.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei32.Size = New System.Drawing.Size(41, 17)
         Me.rbNei32.TabIndex = 32
         Me.rbNei32.Tag = "0"
         Me.rbNei32.Text = "Nei"
@@ -2309,9 +2545,10 @@ Partial Class QuestionForm
         'rbJa32
         '
         Me.rbJa32.AutoSize = True
-        Me.rbJa32.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa32.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa32.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa32.Name = "rbJa32"
-        Me.rbJa32.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa32.Size = New System.Drawing.Size(35, 17)
         Me.rbJa32.TabIndex = 32
         Me.rbJa32.Tag = "1"
         Me.rbJa32.Text = "Ja"
@@ -2322,27 +2559,30 @@ Partial Class QuestionForm
         Me.Panel31.Controls.Add(Me.qu31)
         Me.Panel31.Controls.Add(Me.rbNei31)
         Me.Panel31.Controls.Add(Me.rbJa31)
-        Me.Panel31.Location = New System.Drawing.Point(7, 45)
+        Me.Panel31.Location = New System.Drawing.Point(5, 29)
+        Me.Panel31.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(932, 38)
+        Me.Panel31.Size = New System.Drawing.Size(621, 25)
         Me.Panel31.TabIndex = 0
         Me.Panel31.TabStop = True
         '
         'qu31
         '
         Me.qu31.AllowDrop = True
-        Me.qu31.Location = New System.Drawing.Point(3, 9)
+        Me.qu31.Location = New System.Drawing.Point(2, 6)
+        Me.qu31.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu31.Name = "qu31"
-        Me.qu31.Size = New System.Drawing.Size(775, 22)
+        Me.qu31.Size = New System.Drawing.Size(517, 14)
         Me.qu31.TabIndex = 0
         Me.qu31.Text = "Label26"
         '
         'rbNei31
         '
         Me.rbNei31.AutoSize = True
-        Me.rbNei31.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei31.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei31.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei31.Name = "rbNei31"
-        Me.rbNei31.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei31.Size = New System.Drawing.Size(41, 17)
         Me.rbNei31.TabIndex = 31
         Me.rbNei31.Tag = "0"
         Me.rbNei31.Text = "Nei"
@@ -2351,9 +2591,10 @@ Partial Class QuestionForm
         'rbJa31
         '
         Me.rbJa31.AutoSize = True
-        Me.rbJa31.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa31.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa31.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa31.Name = "rbJa31"
-        Me.rbJa31.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa31.Size = New System.Drawing.Size(35, 17)
         Me.rbJa31.TabIndex = 31
         Me.rbJa31.Tag = "1"
         Me.rbJa31.Text = "Ja"
@@ -2364,27 +2605,30 @@ Partial Class QuestionForm
         Me.Panel30.Controls.Add(Me.qu30)
         Me.Panel30.Controls.Add(Me.rbNei30)
         Me.Panel30.Controls.Add(Me.rbJa30)
-        Me.Panel30.Location = New System.Drawing.Point(7, 6)
+        Me.Panel30.Location = New System.Drawing.Point(5, 4)
+        Me.Panel30.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(932, 38)
+        Me.Panel30.Size = New System.Drawing.Size(621, 25)
         Me.Panel30.TabIndex = 0
         Me.Panel30.TabStop = True
         '
         'qu30
         '
         Me.qu30.AllowDrop = True
-        Me.qu30.Location = New System.Drawing.Point(3, 9)
+        Me.qu30.Location = New System.Drawing.Point(2, 6)
+        Me.qu30.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu30.Name = "qu30"
-        Me.qu30.Size = New System.Drawing.Size(775, 22)
+        Me.qu30.Size = New System.Drawing.Size(517, 14)
         Me.qu30.TabIndex = 0
         Me.qu30.Text = "Label25"
         '
         'rbNei30
         '
         Me.rbNei30.AutoSize = True
-        Me.rbNei30.Location = New System.Drawing.Point(865, 10)
+        Me.rbNei30.Location = New System.Drawing.Point(577, 6)
+        Me.rbNei30.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei30.Name = "rbNei30"
-        Me.rbNei30.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei30.Size = New System.Drawing.Size(41, 17)
         Me.rbNei30.TabIndex = 30
         Me.rbNei30.Tag = "0"
         Me.rbNei30.Text = "Nei"
@@ -2393,9 +2637,10 @@ Partial Class QuestionForm
         'rbJa30
         '
         Me.rbJa30.AutoSize = True
-        Me.rbJa30.Location = New System.Drawing.Point(784, 10)
+        Me.rbJa30.Location = New System.Drawing.Point(523, 6)
+        Me.rbJa30.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa30.Name = "rbJa30"
-        Me.rbJa30.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa30.Size = New System.Drawing.Size(35, 17)
         Me.rbJa30.TabIndex = 30
         Me.rbJa30.Tag = "1"
         Me.rbJa30.Text = "Ja"
@@ -2410,28 +2655,31 @@ Partial Class QuestionForm
         Me.TabPage6.Controls.Add(Me.Panel46)
         Me.TabPage6.Controls.Add(Me.Panel45)
         Me.TabPage6.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage6.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage6.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage6.Name = "TabPage6"
-        Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(965, 729)
+        Me.TabPage6.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage6.Size = New System.Drawing.Size(646, 500)
         Me.TabPage6.TabIndex = 5
         Me.TabPage6.Text = "TabPage6"
         Me.TabPage6.UseVisualStyleBackColor = True
         '
         'btnPrev6
         '
-        Me.btnPrev6.Location = New System.Drawing.Point(6, 677)
+        Me.btnPrev6.Location = New System.Drawing.Point(4, 440)
+        Me.btnPrev6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnPrev6.Name = "btnPrev6"
-        Me.btnPrev6.Size = New System.Drawing.Size(113, 46)
+        Me.btnPrev6.Size = New System.Drawing.Size(75, 30)
         Me.btnPrev6.TabIndex = 0
         Me.btnPrev6.Text = "Forrige"
         Me.btnPrev6.UseVisualStyleBackColor = True
         '
         'btnNext6
         '
-        Me.btnNext6.Location = New System.Drawing.Point(846, 677)
+        Me.btnNext6.Location = New System.Drawing.Point(564, 440)
+        Me.btnNext6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnNext6.Name = "btnNext6"
-        Me.btnNext6.Size = New System.Drawing.Size(113, 46)
+        Me.btnNext6.Size = New System.Drawing.Size(75, 30)
         Me.btnNext6.TabIndex = 0
         Me.btnNext6.Text = "Neste"
         Me.btnNext6.UseVisualStyleBackColor = True
@@ -2441,18 +2689,20 @@ Partial Class QuestionForm
         Me.Panel48.Controls.Add(Me.rbNei48)
         Me.Panel48.Controls.Add(Me.rbJa48)
         Me.Panel48.Controls.Add(Me.qu48)
-        Me.Panel48.Location = New System.Drawing.Point(3, 166)
+        Me.Panel48.Location = New System.Drawing.Point(2, 108)
+        Me.Panel48.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel48.Name = "Panel48"
-        Me.Panel48.Size = New System.Drawing.Size(932, 47)
+        Me.Panel48.Size = New System.Drawing.Size(621, 31)
         Me.Panel48.TabIndex = 0
         Me.Panel48.TabStop = True
         '
         'rbNei48
         '
         Me.rbNei48.AutoSize = True
-        Me.rbNei48.Location = New System.Drawing.Point(873, 10)
+        Me.rbNei48.Location = New System.Drawing.Point(582, 6)
+        Me.rbNei48.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei48.Name = "rbNei48"
-        Me.rbNei48.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei48.Size = New System.Drawing.Size(41, 17)
         Me.rbNei48.TabIndex = 48
         Me.rbNei48.Tag = "0"
         Me.rbNei48.Text = "Nei"
@@ -2461,9 +2711,10 @@ Partial Class QuestionForm
         'rbJa48
         '
         Me.rbJa48.AutoSize = True
-        Me.rbJa48.Location = New System.Drawing.Point(782, 10)
+        Me.rbJa48.Location = New System.Drawing.Point(521, 6)
+        Me.rbJa48.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa48.Name = "rbJa48"
-        Me.rbJa48.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa48.Size = New System.Drawing.Size(35, 17)
         Me.rbJa48.TabIndex = 48
         Me.rbJa48.Tag = "1"
         Me.rbJa48.Text = "Ja"
@@ -2472,9 +2723,10 @@ Partial Class QuestionForm
         'qu48
         '
         Me.qu48.AllowDrop = True
-        Me.qu48.Location = New System.Drawing.Point(4, 12)
+        Me.qu48.Location = New System.Drawing.Point(3, 8)
+        Me.qu48.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu48.Name = "qu48"
-        Me.qu48.Size = New System.Drawing.Size(759, 21)
+        Me.qu48.Size = New System.Drawing.Size(506, 14)
         Me.qu48.TabIndex = 0
         Me.qu48.Text = "Label43"
         '
@@ -2483,18 +2735,20 @@ Partial Class QuestionForm
         Me.Panel47.Controls.Add(Me.rbNei47)
         Me.Panel47.Controls.Add(Me.rbJa47)
         Me.Panel47.Controls.Add(Me.qu47)
-        Me.Panel47.Location = New System.Drawing.Point(4, 113)
+        Me.Panel47.Location = New System.Drawing.Point(3, 73)
+        Me.Panel47.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel47.Name = "Panel47"
-        Me.Panel47.Size = New System.Drawing.Size(932, 47)
+        Me.Panel47.Size = New System.Drawing.Size(621, 31)
         Me.Panel47.TabIndex = 0
         Me.Panel47.TabStop = True
         '
         'rbNei47
         '
         Me.rbNei47.AutoSize = True
-        Me.rbNei47.Location = New System.Drawing.Point(873, 10)
+        Me.rbNei47.Location = New System.Drawing.Point(582, 6)
+        Me.rbNei47.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei47.Name = "rbNei47"
-        Me.rbNei47.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei47.Size = New System.Drawing.Size(41, 17)
         Me.rbNei47.TabIndex = 47
         Me.rbNei47.Tag = "0"
         Me.rbNei47.Text = "Nei"
@@ -2503,9 +2757,10 @@ Partial Class QuestionForm
         'rbJa47
         '
         Me.rbJa47.AutoSize = True
-        Me.rbJa47.Location = New System.Drawing.Point(782, 10)
+        Me.rbJa47.Location = New System.Drawing.Point(521, 6)
+        Me.rbJa47.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa47.Name = "rbJa47"
-        Me.rbJa47.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa47.Size = New System.Drawing.Size(35, 17)
         Me.rbJa47.TabIndex = 47
         Me.rbJa47.Tag = "1"
         Me.rbJa47.Text = "Ja"
@@ -2514,9 +2769,10 @@ Partial Class QuestionForm
         'qu47
         '
         Me.qu47.AllowDrop = True
-        Me.qu47.Location = New System.Drawing.Point(4, 12)
+        Me.qu47.Location = New System.Drawing.Point(3, 8)
+        Me.qu47.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu47.Name = "qu47"
-        Me.qu47.Size = New System.Drawing.Size(759, 21)
+        Me.qu47.Size = New System.Drawing.Size(506, 14)
         Me.qu47.TabIndex = 0
         Me.qu47.Text = "Label42"
         '
@@ -2525,18 +2781,20 @@ Partial Class QuestionForm
         Me.Panel46.Controls.Add(Me.rbNei46)
         Me.Panel46.Controls.Add(Me.rbJa46)
         Me.Panel46.Controls.Add(Me.qu46)
-        Me.Panel46.Location = New System.Drawing.Point(6, 60)
+        Me.Panel46.Location = New System.Drawing.Point(4, 39)
+        Me.Panel46.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel46.Name = "Panel46"
-        Me.Panel46.Size = New System.Drawing.Size(932, 47)
+        Me.Panel46.Size = New System.Drawing.Size(621, 31)
         Me.Panel46.TabIndex = 0
         Me.Panel46.TabStop = True
         '
         'rbNei46
         '
         Me.rbNei46.AutoSize = True
-        Me.rbNei46.Location = New System.Drawing.Point(873, 10)
+        Me.rbNei46.Location = New System.Drawing.Point(582, 6)
+        Me.rbNei46.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei46.Name = "rbNei46"
-        Me.rbNei46.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei46.Size = New System.Drawing.Size(41, 17)
         Me.rbNei46.TabIndex = 46
         Me.rbNei46.Tag = "0"
         Me.rbNei46.Text = "Nei"
@@ -2545,9 +2803,10 @@ Partial Class QuestionForm
         'rbJa46
         '
         Me.rbJa46.AutoSize = True
-        Me.rbJa46.Location = New System.Drawing.Point(782, 10)
+        Me.rbJa46.Location = New System.Drawing.Point(521, 6)
+        Me.rbJa46.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa46.Name = "rbJa46"
-        Me.rbJa46.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa46.Size = New System.Drawing.Size(35, 17)
         Me.rbJa46.TabIndex = 46
         Me.rbJa46.Tag = "1"
         Me.rbJa46.Text = "Ja"
@@ -2556,9 +2815,10 @@ Partial Class QuestionForm
         'qu46
         '
         Me.qu46.AllowDrop = True
-        Me.qu46.Location = New System.Drawing.Point(4, 12)
+        Me.qu46.Location = New System.Drawing.Point(3, 8)
+        Me.qu46.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu46.Name = "qu46"
-        Me.qu46.Size = New System.Drawing.Size(759, 21)
+        Me.qu46.Size = New System.Drawing.Size(506, 14)
         Me.qu46.TabIndex = 0
         Me.qu46.Text = "Label41"
         '
@@ -2567,18 +2827,20 @@ Partial Class QuestionForm
         Me.Panel45.Controls.Add(Me.rbNei45)
         Me.Panel45.Controls.Add(Me.rbJa45)
         Me.Panel45.Controls.Add(Me.qu45)
-        Me.Panel45.Location = New System.Drawing.Point(7, 7)
+        Me.Panel45.Location = New System.Drawing.Point(5, 5)
+        Me.Panel45.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel45.Name = "Panel45"
-        Me.Panel45.Size = New System.Drawing.Size(932, 47)
+        Me.Panel45.Size = New System.Drawing.Size(621, 31)
         Me.Panel45.TabIndex = 0
         Me.Panel45.TabStop = True
         '
         'rbNei45
         '
         Me.rbNei45.AutoSize = True
-        Me.rbNei45.Location = New System.Drawing.Point(873, 10)
+        Me.rbNei45.Location = New System.Drawing.Point(582, 6)
+        Me.rbNei45.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei45.Name = "rbNei45"
-        Me.rbNei45.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei45.Size = New System.Drawing.Size(41, 17)
         Me.rbNei45.TabIndex = 45
         Me.rbNei45.Tag = "0"
         Me.rbNei45.Text = "Nei"
@@ -2587,9 +2849,10 @@ Partial Class QuestionForm
         'rbJa45
         '
         Me.rbJa45.AutoSize = True
-        Me.rbJa45.Location = New System.Drawing.Point(782, 10)
+        Me.rbJa45.Location = New System.Drawing.Point(521, 6)
+        Me.rbJa45.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa45.Name = "rbJa45"
-        Me.rbJa45.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa45.Size = New System.Drawing.Size(35, 17)
         Me.rbJa45.TabIndex = 45
         Me.rbJa45.Tag = "1"
         Me.rbJa45.Text = "Ja"
@@ -2598,9 +2861,10 @@ Partial Class QuestionForm
         'qu45
         '
         Me.qu45.AllowDrop = True
-        Me.qu45.Location = New System.Drawing.Point(4, 12)
+        Me.qu45.Location = New System.Drawing.Point(3, 8)
+        Me.qu45.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu45.Name = "qu45"
-        Me.qu45.Size = New System.Drawing.Size(759, 21)
+        Me.qu45.Size = New System.Drawing.Size(506, 14)
         Me.qu45.TabIndex = 0
         Me.qu45.Text = "Label40"
         '
@@ -2610,28 +2874,31 @@ Partial Class QuestionForm
         Me.TabPage7.Controls.Add(Me.btnNext7)
         Me.TabPage7.Controls.Add(Me.Panel49)
         Me.TabPage7.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage7.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage7.Name = "TabPage7"
-        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage7.Size = New System.Drawing.Size(965, 729)
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage7.Size = New System.Drawing.Size(646, 500)
         Me.TabPage7.TabIndex = 6
         Me.TabPage7.Text = "TabPage7"
         Me.TabPage7.UseVisualStyleBackColor = True
         '
         'btnPrev7
         '
-        Me.btnPrev7.Location = New System.Drawing.Point(7, 677)
+        Me.btnPrev7.Location = New System.Drawing.Point(5, 440)
+        Me.btnPrev7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnPrev7.Name = "btnPrev7"
-        Me.btnPrev7.Size = New System.Drawing.Size(113, 46)
+        Me.btnPrev7.Size = New System.Drawing.Size(75, 30)
         Me.btnPrev7.TabIndex = 0
         Me.btnPrev7.Text = "Forrige"
         Me.btnPrev7.UseVisualStyleBackColor = True
         '
         'btnNext7
         '
-        Me.btnNext7.Location = New System.Drawing.Point(846, 677)
+        Me.btnNext7.Location = New System.Drawing.Point(564, 440)
+        Me.btnNext7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnNext7.Name = "btnNext7"
-        Me.btnNext7.Size = New System.Drawing.Size(113, 46)
+        Me.btnNext7.Size = New System.Drawing.Size(75, 30)
         Me.btnNext7.TabIndex = 0
         Me.btnNext7.Text = "Neste"
         Me.btnNext7.UseVisualStyleBackColor = True
@@ -2641,18 +2908,20 @@ Partial Class QuestionForm
         Me.Panel49.Controls.Add(Me.rbNei49)
         Me.Panel49.Controls.Add(Me.rbJa49)
         Me.Panel49.Controls.Add(Me.qu49)
-        Me.Panel49.Location = New System.Drawing.Point(7, 15)
+        Me.Panel49.Location = New System.Drawing.Point(5, 10)
+        Me.Panel49.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel49.Name = "Panel49"
-        Me.Panel49.Size = New System.Drawing.Size(932, 48)
+        Me.Panel49.Size = New System.Drawing.Size(621, 31)
         Me.Panel49.TabIndex = 0
         Me.Panel49.TabStop = True
         '
         'rbNei49
         '
         Me.rbNei49.AutoSize = True
-        Me.rbNei49.Location = New System.Drawing.Point(861, 13)
+        Me.rbNei49.Location = New System.Drawing.Point(574, 8)
+        Me.rbNei49.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei49.Name = "rbNei49"
-        Me.rbNei49.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei49.Size = New System.Drawing.Size(41, 17)
         Me.rbNei49.TabIndex = 49
         Me.rbNei49.Tag = "0"
         Me.rbNei49.Text = "Nei"
@@ -2661,9 +2930,10 @@ Partial Class QuestionForm
         'rbJa49
         '
         Me.rbJa49.AutoSize = True
-        Me.rbJa49.Location = New System.Drawing.Point(789, 13)
+        Me.rbJa49.Location = New System.Drawing.Point(526, 8)
+        Me.rbJa49.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa49.Name = "rbJa49"
-        Me.rbJa49.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa49.Size = New System.Drawing.Size(35, 17)
         Me.rbJa49.TabIndex = 49
         Me.rbJa49.Tag = "1"
         Me.rbJa49.Text = "Ja"
@@ -2672,9 +2942,10 @@ Partial Class QuestionForm
         'qu49
         '
         Me.qu49.AllowDrop = True
-        Me.qu49.Location = New System.Drawing.Point(4, 13)
+        Me.qu49.Location = New System.Drawing.Point(3, 8)
+        Me.qu49.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu49.Name = "qu49"
-        Me.qu49.Size = New System.Drawing.Size(745, 23)
+        Me.qu49.Size = New System.Drawing.Size(497, 15)
         Me.qu49.TabIndex = 0
         Me.qu49.Text = "Label44"
         '
@@ -2693,28 +2964,31 @@ Partial Class QuestionForm
         Me.TabPage8.Controls.Add(Me.Panel51)
         Me.TabPage8.Controls.Add(Me.Panel50)
         Me.TabPage8.Font = New System.Drawing.Font("Calibri", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TabPage8.Location = New System.Drawing.Point(4, 33)
+        Me.TabPage8.Location = New System.Drawing.Point(4, 24)
+        Me.TabPage8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage8.Name = "TabPage8"
-        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage8.Size = New System.Drawing.Size(965, 729)
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage8.Size = New System.Drawing.Size(646, 500)
         Me.TabPage8.TabIndex = 7
         Me.TabPage8.Text = "TabPage8"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
         'btnPrev8
         '
-        Me.btnPrev8.Location = New System.Drawing.Point(6, 677)
+        Me.btnPrev8.Location = New System.Drawing.Point(4, 440)
+        Me.btnPrev8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnPrev8.Name = "btnPrev8"
-        Me.btnPrev8.Size = New System.Drawing.Size(113, 46)
+        Me.btnPrev8.Size = New System.Drawing.Size(75, 30)
         Me.btnPrev8.TabIndex = 0
         Me.btnPrev8.Text = "Forrige"
         Me.btnPrev8.UseVisualStyleBackColor = True
         '
         'btnFinish
         '
-        Me.btnFinish.Location = New System.Drawing.Point(846, 677)
+        Me.btnFinish.Location = New System.Drawing.Point(564, 440)
+        Me.btnFinish.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnFinish.Name = "btnFinish"
-        Me.btnFinish.Size = New System.Drawing.Size(113, 46)
+        Me.btnFinish.Size = New System.Drawing.Size(75, 30)
         Me.btnFinish.TabIndex = 0
         Me.btnFinish.Text = "Ferdig"
         Me.btnFinish.UseVisualStyleBackColor = True
@@ -2724,18 +2998,20 @@ Partial Class QuestionForm
         Me.Panel59.Controls.Add(Me.rbNei59)
         Me.Panel59.Controls.Add(Me.rbJa59)
         Me.Panel59.Controls.Add(Me.qu59)
-        Me.Panel59.Location = New System.Drawing.Point(6, 486)
+        Me.Panel59.Location = New System.Drawing.Point(4, 316)
+        Me.Panel59.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel59.Name = "Panel59"
-        Me.Panel59.Size = New System.Drawing.Size(933, 46)
+        Me.Panel59.Size = New System.Drawing.Size(622, 30)
         Me.Panel59.TabIndex = 0
         Me.Panel59.TabStop = True
         '
         'rbNei59
         '
         Me.rbNei59.AutoSize = True
-        Me.rbNei59.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei59.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei59.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei59.Name = "rbNei59"
-        Me.rbNei59.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei59.Size = New System.Drawing.Size(41, 17)
         Me.rbNei59.TabIndex = 118
         Me.rbNei59.Tag = "0"
         Me.rbNei59.Text = "Nei"
@@ -2744,9 +3020,10 @@ Partial Class QuestionForm
         'rbJa59
         '
         Me.rbJa59.AutoSize = True
-        Me.rbJa59.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa59.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa59.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa59.Name = "rbJa59"
-        Me.rbJa59.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa59.Size = New System.Drawing.Size(35, 17)
         Me.rbJa59.TabIndex = 59
         Me.rbJa59.Tag = "1"
         Me.rbJa59.Text = "Ja"
@@ -2755,9 +3032,10 @@ Partial Class QuestionForm
         'qu59
         '
         Me.qu59.AllowDrop = True
-        Me.qu59.Location = New System.Drawing.Point(6, 14)
+        Me.qu59.Location = New System.Drawing.Point(4, 9)
+        Me.qu59.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu59.Name = "qu59"
-        Me.qu59.Size = New System.Drawing.Size(780, 21)
+        Me.qu59.Size = New System.Drawing.Size(520, 14)
         Me.qu59.TabIndex = 0
         Me.qu59.Text = "Label54"
         '
@@ -2766,18 +3044,20 @@ Partial Class QuestionForm
         Me.Panel58.Controls.Add(Me.rbNei58)
         Me.Panel58.Controls.Add(Me.rbJa58)
         Me.Panel58.Controls.Add(Me.qu58)
-        Me.Panel58.Location = New System.Drawing.Point(6, 434)
+        Me.Panel58.Location = New System.Drawing.Point(4, 282)
+        Me.Panel58.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel58.Name = "Panel58"
-        Me.Panel58.Size = New System.Drawing.Size(933, 46)
+        Me.Panel58.Size = New System.Drawing.Size(622, 30)
         Me.Panel58.TabIndex = 0
         Me.Panel58.TabStop = True
         '
         'rbNei58
         '
         Me.rbNei58.AutoSize = True
-        Me.rbNei58.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei58.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei58.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei58.Name = "rbNei58"
-        Me.rbNei58.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei58.Size = New System.Drawing.Size(41, 17)
         Me.rbNei58.TabIndex = 58
         Me.rbNei58.Tag = "0"
         Me.rbNei58.Text = "Nei"
@@ -2786,9 +3066,10 @@ Partial Class QuestionForm
         'rbJa58
         '
         Me.rbJa58.AutoSize = True
-        Me.rbJa58.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa58.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa58.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa58.Name = "rbJa58"
-        Me.rbJa58.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa58.Size = New System.Drawing.Size(35, 17)
         Me.rbJa58.TabIndex = 58
         Me.rbJa58.Tag = "1"
         Me.rbJa58.Text = "Ja"
@@ -2796,9 +3077,10 @@ Partial Class QuestionForm
         '
         'qu58
         '
-        Me.qu58.Location = New System.Drawing.Point(6, 16)
+        Me.qu58.Location = New System.Drawing.Point(4, 10)
+        Me.qu58.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu58.Name = "qu58"
-        Me.qu58.Size = New System.Drawing.Size(780, 19)
+        Me.qu58.Size = New System.Drawing.Size(520, 12)
         Me.qu58.TabIndex = 0
         Me.qu58.Text = "Label53"
         '
@@ -2807,18 +3089,20 @@ Partial Class QuestionForm
         Me.Panel57.Controls.Add(Me.rbNei57)
         Me.Panel57.Controls.Add(Me.rbJa57)
         Me.Panel57.Controls.Add(Me.qu57)
-        Me.Panel57.Location = New System.Drawing.Point(6, 382)
+        Me.Panel57.Location = New System.Drawing.Point(4, 248)
+        Me.Panel57.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(933, 46)
+        Me.Panel57.Size = New System.Drawing.Size(622, 30)
         Me.Panel57.TabIndex = 0
         Me.Panel57.TabStop = True
         '
         'rbNei57
         '
         Me.rbNei57.AutoSize = True
-        Me.rbNei57.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei57.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei57.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei57.Name = "rbNei57"
-        Me.rbNei57.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei57.Size = New System.Drawing.Size(41, 17)
         Me.rbNei57.TabIndex = 57
         Me.rbNei57.Tag = "0"
         Me.rbNei57.Text = "Nei"
@@ -2827,9 +3111,10 @@ Partial Class QuestionForm
         'rbJa57
         '
         Me.rbJa57.AutoSize = True
-        Me.rbJa57.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa57.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa57.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa57.Name = "rbJa57"
-        Me.rbJa57.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa57.Size = New System.Drawing.Size(35, 17)
         Me.rbJa57.TabIndex = 57
         Me.rbJa57.Tag = "1"
         Me.rbJa57.Text = "Ja"
@@ -2838,9 +3123,10 @@ Partial Class QuestionForm
         'qu57
         '
         Me.qu57.AllowDrop = True
-        Me.qu57.Location = New System.Drawing.Point(6, 14)
+        Me.qu57.Location = New System.Drawing.Point(4, 9)
+        Me.qu57.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu57.Name = "qu57"
-        Me.qu57.Size = New System.Drawing.Size(770, 21)
+        Me.qu57.Size = New System.Drawing.Size(513, 14)
         Me.qu57.TabIndex = 0
         Me.qu57.Text = "Label52"
         '
@@ -2849,18 +3135,20 @@ Partial Class QuestionForm
         Me.Panel56.Controls.Add(Me.rbNei56)
         Me.Panel56.Controls.Add(Me.rbJa56)
         Me.Panel56.Controls.Add(Me.qu56)
-        Me.Panel56.Location = New System.Drawing.Point(6, 330)
+        Me.Panel56.Location = New System.Drawing.Point(4, 214)
+        Me.Panel56.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel56.Name = "Panel56"
-        Me.Panel56.Size = New System.Drawing.Size(933, 46)
+        Me.Panel56.Size = New System.Drawing.Size(622, 30)
         Me.Panel56.TabIndex = 0
         Me.Panel56.TabStop = True
         '
         'rbNei56
         '
         Me.rbNei56.AutoSize = True
-        Me.rbNei56.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei56.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei56.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei56.Name = "rbNei56"
-        Me.rbNei56.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei56.Size = New System.Drawing.Size(41, 17)
         Me.rbNei56.TabIndex = 56
         Me.rbNei56.Tag = "0"
         Me.rbNei56.Text = "Nei"
@@ -2869,9 +3157,10 @@ Partial Class QuestionForm
         'rbJa56
         '
         Me.rbJa56.AutoSize = True
-        Me.rbJa56.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa56.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa56.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa56.Name = "rbJa56"
-        Me.rbJa56.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa56.Size = New System.Drawing.Size(35, 17)
         Me.rbJa56.TabIndex = 56
         Me.rbJa56.Tag = "1"
         Me.rbJa56.Text = "Ja"
@@ -2880,9 +3169,10 @@ Partial Class QuestionForm
         'qu56
         '
         Me.qu56.AllowDrop = True
-        Me.qu56.Location = New System.Drawing.Point(6, 11)
+        Me.qu56.Location = New System.Drawing.Point(4, 7)
+        Me.qu56.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu56.Name = "qu56"
-        Me.qu56.Size = New System.Drawing.Size(770, 32)
+        Me.qu56.Size = New System.Drawing.Size(513, 21)
         Me.qu56.TabIndex = 0
         Me.qu56.Text = "Label51"
         '
@@ -2891,18 +3181,20 @@ Partial Class QuestionForm
         Me.Panel55.Controls.Add(Me.rbNei55)
         Me.Panel55.Controls.Add(Me.rbJa55)
         Me.Panel55.Controls.Add(Me.qu55)
-        Me.Panel55.Location = New System.Drawing.Point(6, 278)
+        Me.Panel55.Location = New System.Drawing.Point(4, 181)
+        Me.Panel55.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel55.Name = "Panel55"
-        Me.Panel55.Size = New System.Drawing.Size(933, 46)
+        Me.Panel55.Size = New System.Drawing.Size(622, 30)
         Me.Panel55.TabIndex = 0
         Me.Panel55.TabStop = True
         '
         'rbNei55
         '
         Me.rbNei55.AutoSize = True
-        Me.rbNei55.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei55.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei55.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei55.Name = "rbNei55"
-        Me.rbNei55.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei55.Size = New System.Drawing.Size(41, 17)
         Me.rbNei55.TabIndex = 55
         Me.rbNei55.Tag = "0"
         Me.rbNei55.Text = "Nei"
@@ -2911,9 +3203,10 @@ Partial Class QuestionForm
         'rbJa55
         '
         Me.rbJa55.AutoSize = True
-        Me.rbJa55.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa55.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa55.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa55.Name = "rbJa55"
-        Me.rbJa55.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa55.Size = New System.Drawing.Size(35, 17)
         Me.rbJa55.TabIndex = 55
         Me.rbJa55.Tag = "1"
         Me.rbJa55.Text = "Ja"
@@ -2922,9 +3215,10 @@ Partial Class QuestionForm
         'qu55
         '
         Me.qu55.AllowDrop = True
-        Me.qu55.Location = New System.Drawing.Point(6, 14)
+        Me.qu55.Location = New System.Drawing.Point(4, 9)
+        Me.qu55.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu55.Name = "qu55"
-        Me.qu55.Size = New System.Drawing.Size(780, 21)
+        Me.qu55.Size = New System.Drawing.Size(520, 14)
         Me.qu55.TabIndex = 0
         Me.qu55.Text = "Label50"
         '
@@ -2933,18 +3227,20 @@ Partial Class QuestionForm
         Me.Panel54.Controls.Add(Me.rbNei54)
         Me.Panel54.Controls.Add(Me.rbJa54)
         Me.Panel54.Controls.Add(Me.qu54)
-        Me.Panel54.Location = New System.Drawing.Point(6, 226)
+        Me.Panel54.Location = New System.Drawing.Point(4, 147)
+        Me.Panel54.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel54.Name = "Panel54"
-        Me.Panel54.Size = New System.Drawing.Size(933, 46)
+        Me.Panel54.Size = New System.Drawing.Size(622, 30)
         Me.Panel54.TabIndex = 0
         Me.Panel54.TabStop = True
         '
         'rbNei54
         '
         Me.rbNei54.AutoSize = True
-        Me.rbNei54.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei54.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei54.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei54.Name = "rbNei54"
-        Me.rbNei54.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei54.Size = New System.Drawing.Size(41, 17)
         Me.rbNei54.TabIndex = 54
         Me.rbNei54.Tag = "0"
         Me.rbNei54.Text = "Nei"
@@ -2953,9 +3249,10 @@ Partial Class QuestionForm
         'rbJa54
         '
         Me.rbJa54.AutoSize = True
-        Me.rbJa54.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa54.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa54.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa54.Name = "rbJa54"
-        Me.rbJa54.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa54.Size = New System.Drawing.Size(35, 17)
         Me.rbJa54.TabIndex = 54
         Me.rbJa54.Tag = "1"
         Me.rbJa54.Text = "Ja"
@@ -2964,9 +3261,10 @@ Partial Class QuestionForm
         'qu54
         '
         Me.qu54.AllowDrop = True
-        Me.qu54.Location = New System.Drawing.Point(6, 14)
+        Me.qu54.Location = New System.Drawing.Point(4, 9)
+        Me.qu54.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu54.Name = "qu54"
-        Me.qu54.Size = New System.Drawing.Size(780, 21)
+        Me.qu54.Size = New System.Drawing.Size(520, 14)
         Me.qu54.TabIndex = 0
         Me.qu54.Text = "Label49"
         '
@@ -2975,18 +3273,20 @@ Partial Class QuestionForm
         Me.Panel53.Controls.Add(Me.rbNei53)
         Me.Panel53.Controls.Add(Me.rbJa53)
         Me.Panel53.Controls.Add(Me.qu53)
-        Me.Panel53.Location = New System.Drawing.Point(6, 174)
+        Me.Panel53.Location = New System.Drawing.Point(4, 113)
+        Me.Panel53.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel53.Name = "Panel53"
-        Me.Panel53.Size = New System.Drawing.Size(933, 46)
+        Me.Panel53.Size = New System.Drawing.Size(622, 30)
         Me.Panel53.TabIndex = 0
         Me.Panel53.TabStop = True
         '
         'rbNei53
         '
         Me.rbNei53.AutoSize = True
-        Me.rbNei53.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei53.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei53.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei53.Name = "rbNei53"
-        Me.rbNei53.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei53.Size = New System.Drawing.Size(41, 17)
         Me.rbNei53.TabIndex = 53
         Me.rbNei53.Tag = "0"
         Me.rbNei53.Text = "Nei"
@@ -2995,9 +3295,10 @@ Partial Class QuestionForm
         'rbJa53
         '
         Me.rbJa53.AutoSize = True
-        Me.rbJa53.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa53.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa53.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa53.Name = "rbJa53"
-        Me.rbJa53.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa53.Size = New System.Drawing.Size(35, 17)
         Me.rbJa53.TabIndex = 53
         Me.rbJa53.Tag = "1"
         Me.rbJa53.Text = "Ja"
@@ -3006,9 +3307,10 @@ Partial Class QuestionForm
         'qu53
         '
         Me.qu53.AllowDrop = True
-        Me.qu53.Location = New System.Drawing.Point(6, 14)
+        Me.qu53.Location = New System.Drawing.Point(4, 9)
+        Me.qu53.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu53.Name = "qu53"
-        Me.qu53.Size = New System.Drawing.Size(780, 21)
+        Me.qu53.Size = New System.Drawing.Size(520, 14)
         Me.qu53.TabIndex = 0
         Me.qu53.Text = "Label48"
         '
@@ -3017,18 +3319,20 @@ Partial Class QuestionForm
         Me.Panel52.Controls.Add(Me.rbNei52)
         Me.Panel52.Controls.Add(Me.rbJa52)
         Me.Panel52.Controls.Add(Me.qu52)
-        Me.Panel52.Location = New System.Drawing.Point(6, 122)
+        Me.Panel52.Location = New System.Drawing.Point(4, 79)
+        Me.Panel52.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel52.Name = "Panel52"
-        Me.Panel52.Size = New System.Drawing.Size(933, 46)
+        Me.Panel52.Size = New System.Drawing.Size(622, 30)
         Me.Panel52.TabIndex = 0
         Me.Panel52.TabStop = True
         '
         'rbNei52
         '
         Me.rbNei52.AutoSize = True
-        Me.rbNei52.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei52.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei52.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei52.Name = "rbNei52"
-        Me.rbNei52.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei52.Size = New System.Drawing.Size(41, 17)
         Me.rbNei52.TabIndex = 52
         Me.rbNei52.Tag = "0"
         Me.rbNei52.Text = "Nei"
@@ -3037,9 +3341,10 @@ Partial Class QuestionForm
         'rbJa52
         '
         Me.rbJa52.AutoSize = True
-        Me.rbJa52.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa52.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa52.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa52.Name = "rbJa52"
-        Me.rbJa52.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa52.Size = New System.Drawing.Size(35, 17)
         Me.rbJa52.TabIndex = 52
         Me.rbJa52.Tag = "1"
         Me.rbJa52.Text = "Ja"
@@ -3048,9 +3353,10 @@ Partial Class QuestionForm
         'qu52
         '
         Me.qu52.AllowDrop = True
-        Me.qu52.Location = New System.Drawing.Point(6, 12)
+        Me.qu52.Location = New System.Drawing.Point(4, 8)
+        Me.qu52.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu52.Name = "qu52"
-        Me.qu52.Size = New System.Drawing.Size(770, 32)
+        Me.qu52.Size = New System.Drawing.Size(513, 21)
         Me.qu52.TabIndex = 0
         Me.qu52.Text = "Label47"
         '
@@ -3059,18 +3365,20 @@ Partial Class QuestionForm
         Me.Panel51.Controls.Add(Me.rbNei51)
         Me.Panel51.Controls.Add(Me.rbJa51)
         Me.Panel51.Controls.Add(Me.qu51)
-        Me.Panel51.Location = New System.Drawing.Point(6, 70)
+        Me.Panel51.Location = New System.Drawing.Point(4, 45)
+        Me.Panel51.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel51.Name = "Panel51"
-        Me.Panel51.Size = New System.Drawing.Size(933, 46)
+        Me.Panel51.Size = New System.Drawing.Size(622, 30)
         Me.Panel51.TabIndex = 0
         Me.Panel51.TabStop = True
         '
         'rbNei51
         '
         Me.rbNei51.AutoSize = True
-        Me.rbNei51.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei51.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei51.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei51.Name = "rbNei51"
-        Me.rbNei51.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei51.Size = New System.Drawing.Size(41, 17)
         Me.rbNei51.TabIndex = 51
         Me.rbNei51.Tag = "0"
         Me.rbNei51.Text = "Nei"
@@ -3079,9 +3387,10 @@ Partial Class QuestionForm
         'rbJa51
         '
         Me.rbJa51.AutoSize = True
-        Me.rbJa51.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa51.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa51.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa51.Name = "rbJa51"
-        Me.rbJa51.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa51.Size = New System.Drawing.Size(35, 17)
         Me.rbJa51.TabIndex = 51
         Me.rbJa51.Tag = "1"
         Me.rbJa51.Text = "Ja"
@@ -3090,9 +3399,10 @@ Partial Class QuestionForm
         'qu51
         '
         Me.qu51.AllowDrop = True
-        Me.qu51.Location = New System.Drawing.Point(6, 12)
+        Me.qu51.Location = New System.Drawing.Point(4, 8)
+        Me.qu51.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu51.Name = "qu51"
-        Me.qu51.Size = New System.Drawing.Size(770, 23)
+        Me.qu51.Size = New System.Drawing.Size(513, 15)
         Me.qu51.TabIndex = 0
         Me.qu51.Text = "Label46"
         '
@@ -3101,18 +3411,20 @@ Partial Class QuestionForm
         Me.Panel50.Controls.Add(Me.rbNei50)
         Me.Panel50.Controls.Add(Me.rbJa50)
         Me.Panel50.Controls.Add(Me.qu50)
-        Me.Panel50.Location = New System.Drawing.Point(6, 18)
+        Me.Panel50.Location = New System.Drawing.Point(4, 12)
+        Me.Panel50.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(933, 46)
+        Me.Panel50.Size = New System.Drawing.Size(622, 30)
         Me.Panel50.TabIndex = 0
         Me.Panel50.TabStop = True
         '
         'rbNei50
         '
         Me.rbNei50.AutoSize = True
-        Me.rbNei50.Location = New System.Drawing.Point(865, 12)
+        Me.rbNei50.Location = New System.Drawing.Point(577, 8)
+        Me.rbNei50.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbNei50.Name = "rbNei50"
-        Me.rbNei50.Size = New System.Drawing.Size(56, 23)
+        Me.rbNei50.Size = New System.Drawing.Size(41, 17)
         Me.rbNei50.TabIndex = 50
         Me.rbNei50.Tag = "0"
         Me.rbNei50.Text = "Nei"
@@ -3121,9 +3433,10 @@ Partial Class QuestionForm
         'rbJa50
         '
         Me.rbJa50.AutoSize = True
-        Me.rbJa50.Location = New System.Drawing.Point(792, 12)
+        Me.rbJa50.Location = New System.Drawing.Point(528, 8)
+        Me.rbJa50.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.rbJa50.Name = "rbJa50"
-        Me.rbJa50.Size = New System.Drawing.Size(47, 23)
+        Me.rbJa50.Size = New System.Drawing.Size(35, 17)
         Me.rbJa50.TabIndex = 50
         Me.rbJa50.Tag = "1"
         Me.rbJa50.Text = "Ja"
@@ -3132,9 +3445,10 @@ Partial Class QuestionForm
         'qu50
         '
         Me.qu50.AllowDrop = True
-        Me.qu50.Location = New System.Drawing.Point(6, 14)
+        Me.qu50.Location = New System.Drawing.Point(4, 9)
+        Me.qu50.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.qu50.Name = "qu50"
-        Me.qu50.Size = New System.Drawing.Size(770, 21)
+        Me.qu50.Size = New System.Drawing.Size(513, 14)
         Me.qu50.TabIndex = 0
         Me.qu50.Text = "Label45"
         '
@@ -3142,21 +3456,24 @@ Partial Class QuestionForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri Light", 20.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(681, 22)
+        Me.Label1.Location = New System.Drawing.Point(454, 14)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(240, 49)
+        Me.Label1.Size = New System.Drawing.Size(162, 33)
         Me.Label1.TabIndex = 122
         Me.Label1.Text = "Spørreskjema"
         '
         'QuestionForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1682, 974)
+        Me.ClientSize = New System.Drawing.Size(908, 574)
         Me.Controls.Add(Me.QuestionRound)
         Me.Controls.Add(Me.Label1)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "QuestionForm"
         Me.Text = "QuestionForm"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.QuestionRound.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)

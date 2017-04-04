@@ -39,7 +39,8 @@ Public Class User
             End If
 
             cmd.ExecuteNonQuery()
-            MsgBox("Registrering vellykket!")
+            MsgBox("En verifiseringslink er blitt sendt til epost: " & NewUser.txtEmail.Text & " for bekreftelse.", MsgBoxStyle.Information, "Verifisering")
+            MsgBox("Registrering er velykket!", MsgBoxStyle.OkOnly, "Verifisert!")
         Catch ex As Exception
             MsgBox(ex.Message)
             connection.Close()

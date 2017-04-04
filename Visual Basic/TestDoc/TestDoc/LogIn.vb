@@ -141,4 +141,9 @@ Public Class LogIn
         NewUser.Show()
     End Sub
 
+    Private Sub LogIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.Size = SystemInformation.PrimaryMonitorSize
+        GroupBox1.Location = New Point((ClientSize.Width - GroupBox1.Width) \ 2,
+                             (ClientSize.Height - GroupBox1.Height) \ 2)
+    End Sub
 End Class
