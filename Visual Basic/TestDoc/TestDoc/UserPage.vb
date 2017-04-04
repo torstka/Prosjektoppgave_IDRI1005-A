@@ -160,7 +160,7 @@ Public Class UserPage
 
 
         'DonorPage.Size = (Me.Height / 2) - (buttonMain.Height / 2)
-
+        Me.Size = SystemInformation.PrimaryMonitorSize
         DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
         Me.MyPage.Text = "Min side "

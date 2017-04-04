@@ -38,7 +38,9 @@ Public Class EPage
         txtFirstname.Enabled = False
         txtLastname.Enabled = False
         txtPhone.Enabled = False
-
+        Me.Size = SystemInformation.PrimaryMonitorSize
+        Userinformation.Location = New Point((ClientSize.Width - Userinformation.Width) \ 2,
+                             (ClientSize.Height - Userinformation.Height) \ 2)
 
 
     End Sub
