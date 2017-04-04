@@ -45,29 +45,71 @@ Public Class UserPage
         End Try
     End Sub
 
+    Public Function ConfirmPass() As Boolean
+        'Validerer at innholdet i "passord" og "bekreft passord" tekstboksene er identiske
+        If Not txtPwd.Text.Equals(txtConPwd.Text) Then
+            Me.regerror.SetError(txtConPwd, "Passordene må være like")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.regerror.SetError(txtConPwd, "")
+            Return True
+        End If
+    End Function
+
+    Private Function ValidPass() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
+        Dim Pass = txtPwd.Text
+        If Pass.Length = 0 Then
+            Me.regerror.SetError(txtPwd, "Vennligst fyll ut et passord")
+            Return False
+            'Validerer at tekstboksen inneholder minst 8 tegn
+        ElseIf Pass.Length < 8 Then
+            Me.regerror.SetError(txtPwd, "Passord må bestå av minst 8 Tegn")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.regerror.SetError(txtPwd, "")
+            Return True
+        End If
+    End Function
+
     Public Sub updateData()
-        Try
-            connection.Open()
-            Dim query As String = "UPDATE User SET firstname = @firstname,lastname = @lastname,phone = @phone, e_mail = @email, address = @address, zip_code = @zipcode, password = @password where ss_number = '" & ssNumber & "'"
-            cmd = New MySqlCommand(query, connection)
 
-            cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
-            cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
-            cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
-            cmd.Parameters.AddWithValue("@email", txtMail.Text)
-            cmd.Parameters.AddWithValue("@address", txtAddress.Text)
-            cmd.Parameters.AddWithValue("@zipcode", txtZipcode.Text)
-            cmd.Parameters.AddWithValue("@password", txtPwd.Text)
-            reader = cmd.ExecuteReader
 
-            MessageBox.Show("Data oppdatert")
 
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            connection.Close()
-        Finally
-            connection.Dispose()
-        End Try
+
+        If Not ConfirmPass() Then
+            MsgBox(Me.regerror.GetError(txtConPwd))
+        ElseIf Not ValidPass() Then
+            MsgBox(Me.regerror.GetError(txtPwd))
+        Else
+
+            Try
+                connection.Open()
+                Dim query As String = "UPDATE User SET firstname = @firstname,lastname = @lastname,phone = @phone, e_mail = @email, address = @address, zip_code = @zipcode, password = @password where ss_number = '" & ssNumber & "'"
+                cmd = New MySqlCommand(query, connection)
+
+                cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
+                cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
+                cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
+                cmd.Parameters.AddWithValue("@email", txtMail.Text)
+                cmd.Parameters.AddWithValue("@address", txtAddress.Text)
+                cmd.Parameters.AddWithValue("@zipcode", txtZipcode.Text)
+                cmd.Parameters.AddWithValue("@password", txtPwd.Text)
+
+                reader = cmd.ExecuteReader
+
+                MessageBox.Show("Data oppdatert")
+
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+                connection.Close()
+            Finally
+                connection.Dispose()
+            End Try
+        End If
+
     End Sub
 
 
@@ -119,6 +161,10 @@ Public Class UserPage
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
+        'DonorPage.Size = (Me.Height / 2) - (buttonMain.Height / 2)
+
+        DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
+
         Me.MyPage.Text = "Min side "
         Me.BookTime.Text = "Bestill time"
         Me.ChangeData.Text = "Endre personopplysninger"
@@ -127,6 +173,7 @@ Public Class UserPage
 
         'Label18.Text = ssNumber
 
+        showData()
         getUser()
         showBloodData()
 
@@ -220,7 +267,7 @@ Public Class UserPage
     End Sub
 
     Private Sub ChangeData_Click(sender As Object, e As EventArgs) Handles ChangeData.Click
-        showData()
+
     End Sub
 
     Private Sub MyPage_Click(sender As Object, e As EventArgs) Handles MyPage.Click

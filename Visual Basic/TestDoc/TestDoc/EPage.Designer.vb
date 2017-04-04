@@ -61,10 +61,13 @@ Partial Class EPage
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
-        Me.TabControl1.Location = New System.Drawing.Point(96, 80)
+        Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TabControl1.Location = New System.Drawing.Point(92, 77)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.Padding = New System.Drawing.Point(39, 20)
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1348, 821)
+        Me.TabControl1.Size = New System.Drawing.Size(1200, 700)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -77,10 +80,11 @@ Partial Class EPage
         Me.TabPage1.Controls.Add(Me.Label5)
         Me.TabPage1.Controls.Add(Me.txtSearch)
         Me.TabPage1.Controls.Add(Me.DataGridView1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 74)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1340, 788)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage1.Size = New System.Drawing.Size(1192, 622)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -88,9 +92,10 @@ Partial Class EPage
         'btnRegDonation
         '
         Me.btnRegDonation.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegDonation.Location = New System.Drawing.Point(129, 714)
+        Me.btnRegDonation.Location = New System.Drawing.Point(86, 464)
+        Me.btnRegDonation.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.btnRegDonation.Name = "btnRegDonation"
-        Me.btnRegDonation.Size = New System.Drawing.Size(355, 51)
+        Me.btnRegDonation.Size = New System.Drawing.Size(237, 33)
         Me.btnRegDonation.TabIndex = 60
         Me.btnRegDonation.Text = "Registrer donasjon"
         Me.btnRegDonation.UseVisualStyleBackColor = True
@@ -98,10 +103,10 @@ Partial Class EPage
         'btnAddData
         '
         Me.btnAddData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddData.Location = New System.Drawing.Point(129, 603)
-        Me.btnAddData.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnAddData.Location = New System.Drawing.Point(86, 392)
+        Me.btnAddData.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnAddData.Name = "btnAddData"
-        Me.btnAddData.Size = New System.Drawing.Size(355, 49)
+        Me.btnAddData.Size = New System.Drawing.Size(237, 32)
         Me.btnAddData.TabIndex = 59
         Me.btnAddData.Text = "Legg inn ny bloddata"
         Me.btnAddData.UseVisualStyleBackColor = True
@@ -109,10 +114,10 @@ Partial Class EPage
         'btnUpdateData
         '
         Me.btnUpdateData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdateData.Location = New System.Drawing.Point(129, 541)
-        Me.btnUpdateData.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnUpdateData.Location = New System.Drawing.Point(86, 352)
+        Me.btnUpdateData.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.btnUpdateData.Name = "btnUpdateData"
-        Me.btnUpdateData.Size = New System.Drawing.Size(355, 49)
+        Me.btnUpdateData.Size = New System.Drawing.Size(237, 32)
         Me.btnUpdateData.TabIndex = 58
         Me.btnUpdateData.Text = "Oppdater bloddata"
         Me.btnUpdateData.UseVisualStyleBackColor = True
@@ -128,9 +133,11 @@ Partial Class EPage
         Me.GroupBox2.Controls.Add(Me.txtSSN)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(129, 49)
+        Me.GroupBox2.Location = New System.Drawing.Point(86, 32)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(355, 232)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox2.Size = New System.Drawing.Size(237, 151)
         Me.GroupBox2.TabIndex = 57
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Brukerinfo"
@@ -138,20 +145,20 @@ Partial Class EPage
         'txtPhone
         '
         Me.txtPhone.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPhone.Location = New System.Drawing.Point(157, 174)
-        Me.txtPhone.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtPhone.Location = New System.Drawing.Point(105, 113)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Size = New System.Drawing.Size(170, 30)
+        Me.txtPhone.Size = New System.Drawing.Size(115, 23)
         Me.txtPhone.TabIndex = 52
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(5, 179)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(3, 116)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(84, 25)
+        Me.Label6.Size = New System.Drawing.Size(60, 17)
         Me.Label6.TabIndex = 51
         Me.Label6.Text = "Telefon:"
         '
@@ -159,59 +166,59 @@ Partial Class EPage
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(5, 39)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(3, 25)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(90, 25)
+        Me.Label1.Size = New System.Drawing.Size(64, 17)
         Me.Label1.TabIndex = 46
         Me.Label1.Text = "Fornavn:"
         '
         'txtFirstname
         '
         Me.txtFirstname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFirstname.Location = New System.Drawing.Point(157, 34)
-        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtFirstname.Location = New System.Drawing.Point(105, 22)
+        Me.txtFirstname.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.txtFirstname.Name = "txtFirstname"
-        Me.txtFirstname.Size = New System.Drawing.Size(170, 30)
+        Me.txtFirstname.Size = New System.Drawing.Size(115, 23)
         Me.txtFirstname.TabIndex = 45
         '
         'txtLastname
         '
         Me.txtLastname.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtLastname.Location = New System.Drawing.Point(157, 77)
-        Me.txtLastname.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtLastname.Location = New System.Drawing.Point(105, 50)
+        Me.txtLastname.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.txtLastname.Name = "txtLastname"
-        Me.txtLastname.Size = New System.Drawing.Size(170, 30)
+        Me.txtLastname.Size = New System.Drawing.Size(115, 23)
         Me.txtLastname.TabIndex = 47
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(5, 82)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(3, 53)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(101, 25)
+        Me.Label2.Size = New System.Drawing.Size(73, 17)
         Me.Label2.TabIndex = 48
         Me.Label2.Text = "Etternavn:"
         '
         'txtSSN
         '
         Me.txtSSN.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSSN.Location = New System.Drawing.Point(157, 124)
-        Me.txtSSN.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtSSN.Location = New System.Drawing.Point(105, 81)
+        Me.txtSSN.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.txtSSN.Name = "txtSSN"
-        Me.txtSSN.Size = New System.Drawing.Size(170, 30)
+        Me.txtSSN.Size = New System.Drawing.Size(115, 23)
         Me.txtSSN.TabIndex = 49
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(5, 129)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(3, 84)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(151, 25)
+        Me.Label3.Size = New System.Drawing.Size(108, 17)
         Me.Label3.TabIndex = 50
         Me.Label3.Text = "Personnummer:"
         '
@@ -224,9 +231,11 @@ Partial Class EPage
         Me.GroupBox1.Controls.Add(Me.txtBloodType)
         Me.GroupBox1.Controls.Add(Me.txtIron)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(129, 328)
+        Me.GroupBox1.Location = New System.Drawing.Point(86, 213)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(355, 195)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Size = New System.Drawing.Size(237, 127)
         Me.GroupBox1.TabIndex = 56
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bloddata"
@@ -235,30 +244,30 @@ Partial Class EPage
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(5, 97)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Location = New System.Drawing.Point(3, 63)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(122, 25)
+        Me.Label8.Size = New System.Drawing.Size(87, 17)
         Me.Label8.TabIndex = 30
         Me.Label8.Text = "Hemoglobin:"
         '
         'txtHB
         '
         Me.txtHB.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHB.Location = New System.Drawing.Point(150, 92)
-        Me.txtHB.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtHB.Location = New System.Drawing.Point(100, 60)
+        Me.txtHB.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.txtHB.Name = "txtHB"
-        Me.txtHB.Size = New System.Drawing.Size(167, 30)
+        Me.txtHB.Size = New System.Drawing.Size(113, 23)
         Me.txtHB.TabIndex = 27
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(5, 40)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(3, 26)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(94, 25)
+        Me.Label4.Size = New System.Drawing.Size(67, 17)
         Me.Label4.TabIndex = 52
         Me.Label4.Text = "Blodtype:"
         '
@@ -266,92 +275,100 @@ Partial Class EPage
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(4, 149)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(3, 97)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(116, 25)
+        Me.Label9.Size = New System.Drawing.Size(84, 17)
         Me.Label9.TabIndex = 31
         Me.Label9.Text = "Jernverdier:"
         '
         'txtBloodType
         '
         Me.txtBloodType.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBloodType.Location = New System.Drawing.Point(150, 35)
-        Me.txtBloodType.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtBloodType.Location = New System.Drawing.Point(100, 23)
+        Me.txtBloodType.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.txtBloodType.Name = "txtBloodType"
-        Me.txtBloodType.Size = New System.Drawing.Size(167, 30)
+        Me.txtBloodType.Size = New System.Drawing.Size(113, 23)
         Me.txtBloodType.TabIndex = 51
         '
         'txtIron
         '
         Me.txtIron.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIron.Location = New System.Drawing.Point(150, 144)
-        Me.txtIron.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtIron.Location = New System.Drawing.Point(100, 94)
+        Me.txtIron.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.txtIron.Name = "txtIron"
-        Me.txtIron.Size = New System.Drawing.Size(167, 30)
+        Me.txtIron.Size = New System.Drawing.Size(113, 23)
         Me.txtIron.TabIndex = 28
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(950, 7)
+        Me.Label5.Location = New System.Drawing.Point(633, 5)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(182, 25)
+        Me.Label5.Size = New System.Drawing.Size(135, 17)
         Me.Label5.TabIndex = 26
         Me.Label5.Text = "Filtrer etter blodtype"
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(1170, 6)
+        Me.txtSearch.Location = New System.Drawing.Point(780, 4)
+        Me.txtSearch.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(146, 26)
+        Me.txtSearch.Size = New System.Drawing.Size(99, 38)
         Me.txtSearch.TabIndex = 25
         '
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(625, 49)
+        Me.DataGridView1.Location = New System.Drawing.Point(417, 32)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(707, 716)
+        Me.DataGridView1.Size = New System.Drawing.Size(471, 465)
         Me.DataGridView1.TabIndex = 21
         '
         'TabPage2
         '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage2.Location = New System.Drawing.Point(4, 74)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1340, 788)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TabPage2.Size = New System.Drawing.Size(1251, 654)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'TabPage3
         '
-        Me.TabPage3.Location = New System.Drawing.Point(4, 29)
+        Me.TabPage3.Location = New System.Drawing.Point(4, 74)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1340, 788)
+        Me.TabPage3.Size = New System.Drawing.Size(1251, 654)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(1411, 12)
+        Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button7.Location = New System.Drawing.Point(1212, 11)
+        Me.Button7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(100, 35)
+        Me.Button7.Size = New System.Drawing.Size(183, 51)
         Me.Button7.TabIndex = 54
         Me.Button7.Text = "Logg Ut"
         Me.Button7.UseVisualStyleBackColor = True
         '
         'EPage
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1523, 946)
+        Me.ClientSize = New System.Drawing.Size(1406, 813)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button7)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "EPage"
         Me.Text = "EPage"
         Me.TabControl1.ResumeLayout(False)

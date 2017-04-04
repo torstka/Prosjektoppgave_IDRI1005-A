@@ -23,7 +23,7 @@ Public Class NewUser
         Me.Hide()
 
     End Sub
-    Private Function ValidFornavn() As Boolean
+    Public Function ValidFornavn() As Boolean
         'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Fornavn = txtFirstname.Text
         If Fornavn.Length = 0 Then

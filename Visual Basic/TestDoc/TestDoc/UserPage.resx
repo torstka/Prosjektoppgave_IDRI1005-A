@@ -151,4 +151,7 @@
     <value>5.    Personer som har hjerte-, lever- eller lungesykdom, eller har hatt blødningstendens, alvorlige allergiske reaksjoner eller kreft 
        (med unntak noen steder: Basalcellecarcinom og celleforandringer på livmorhalsen)</value>
   </data>
+  <metadata name="regerror.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
