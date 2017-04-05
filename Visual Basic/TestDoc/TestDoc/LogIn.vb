@@ -1,7 +1,9 @@
 ﻿Imports System.Text.RegularExpressions
 Imports MySql.Data.MySqlClient
 
+
 Public Class LogIn
+    ' Inherits System.Windows.Forms.TextBox
     Public ssn As String
     Dim connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
 
@@ -105,11 +107,39 @@ Public Class LogIn
         Me.Hide()
         NewUser.Show()
     End Sub
+    'De to følgende subene gjør det mulig for bruker å taste enter etter å ha tastet inn brukernavn for å komme til neste txbox for å skrive inn passord
+    'og når begge inndata er tastet inn er det mulig å trykke enter istedet for knappen. Hensynsmessig for bevegelsesnedsatte brukere å flytte pila
+    'for å navigere på skjermen
+    Private Sub TextBox1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPersonnr.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtPassword.Focus()
 
+        End If
+    End Sub
 
-    Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btbLogin.Click
+    Private Sub TextBox2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPassword.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnLogin.Focus()
+            e.Handled = e.SuppressKeyPress = True
+        End If
+    End Sub
+    ''denne suben fjerner ding-lyden som normalt kommer når man manipulerer entertasten
+    Const CARRIAGE_RETURN As Char = Chr(13)
+
+    Private Sub NoReturnTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+
+        If e.KeyChar = CARRIAGE_RETURN Then
+            e.Handled = True
+            System.Windows.Forms.SendKeys.Send(vbTab)
+        End If
+
+    End Sub
+
+    Private Sub btbLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         'Kjører funksjonene for tekstboks validering og finner ut om enn logger inn som ansatt eller
         'bruker basert på antall tall som er skrivet inn
+
+
         If Not validloginput() Then
             MsgBox(Me.loginerror.GetError(txtPersonnr))
         ElseIf Not Validpassinput() Then
@@ -121,6 +151,7 @@ Public Class LogIn
         End If
 
     End Sub
+
 
     Private Sub btnCancel_Click(sender As Object, e As EventArgs)
         Application.Exit()
@@ -145,5 +176,21 @@ Public Class LogIn
         Me.Size = SystemInformation.PrimaryMonitorSize
         GroupBox1.Location = New Point((ClientSize.Width - GroupBox1.Width) \ 2,
                              (ClientSize.Height - GroupBox1.Height) \ 2)
+
     End Sub
+
+    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
+
+    End Sub
+
+    Private Sub txtPassword_Enter(sender As Object, e As EventArgs) Handles txtPassword.Enter
+
+    End Sub
+
+    Private Sub btnLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles btnLogin.KeyDown
+        If e.KeyData = Keys.Enter Then
+            MyPage.Focus()  ' The Next textbox to select
+        End If
+    End Sub
+
 End Class

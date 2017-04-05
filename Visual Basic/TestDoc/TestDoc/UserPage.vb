@@ -16,6 +16,63 @@ Public Class UserPage
     Dim rad As DataRow
     Public ssNumber = LogIn.txtPersonnr.Text
 
+    Private Sub TextBox1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtFirstName.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtLastName.Focus()
+        End If
+    End Sub
+    Private Sub TextBox2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtLastName.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtAddress.Focus()
+        End If
+    End Sub
+    Private Sub TextBox3_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtAddress.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtZipcode.Focus()
+        End If
+    End Sub
+    Private Sub TextBox4_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtZipcode.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtPhone.Focus()
+        End If
+    End Sub
+    Private Sub TextBox5_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPhone.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtMail.Focus()
+        End If
+    End Sub
+    Private Sub TextBox6_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtMail.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtPwd.Focus()
+        End If
+    End Sub
+    Private Sub TextBox7_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPwd.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            txtConPwd.Focus()
+            e.Handled = e.SuppressKeyPress = True
+        End If
+    End Sub
+    Private Sub TextBox8_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtConPwd.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btnChangeData.Focus()
+            e.Handled = e.SuppressKeyPress = True
+        End If
+    End Sub
+    'denne suben fjerner ding-lyden som normalt kommer når man manipulerer entertasten
+    Const CARRIAGE_RETURN As Char = Chr(13)
+
+    Private Sub NoReturnTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+
+        If e.KeyChar = CARRIAGE_RETURN Then
+            e.Handled = True
+            System.Windows.Forms.SendKeys.Send(vbTab)
+        End If
+
+    End Sub
+
+
+
+
 
     Public Sub showData()
 
@@ -246,8 +303,6 @@ Public Class UserPage
         'tilkobling.Dispose()      'lukke tilkoblingen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
         'End Try
     End Sub
-
-
     Private Sub btnChangeData_Click(sender As Object, e As EventArgs) Handles btnChangeData.Click
 
         'Dim updateUser As New User
@@ -264,17 +319,10 @@ Public Class UserPage
 
     End Sub
 
-    Private Sub ChangeData_Click(sender As Object, e As EventArgs) Handles ChangeData.Click
-
-    End Sub
-
-    Private Sub MyPage_Click(sender As Object, e As EventArgs) Handles MyPage.Click
-
-    End Sub
-
     Private Sub btnQuest_Click(sender As Object, e As EventArgs) Handles btnQuest.Click
         Me.Hide()
         QuestionForm.Show()
 
     End Sub
+
 End Class

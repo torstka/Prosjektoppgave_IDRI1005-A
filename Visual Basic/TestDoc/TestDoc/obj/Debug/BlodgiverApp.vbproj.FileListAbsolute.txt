@@ -38,8 +38,6 @@ C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.xml
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\BlodgiverApp.vbprojResolveAssemblyReference.cache
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.DataMyBlood.resources
-C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Form1.resources
-C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Logged_In.resources
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
@@ -242,3 +240,14 @@ C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EPage.resources
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestionForm.resources
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserPage.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.BloodInformation.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Cal.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.ChangeUserInfo.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeeLogIn.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EmployeePage.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.EPage.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.LogIn.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestionForm.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
+C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserPage.resources
