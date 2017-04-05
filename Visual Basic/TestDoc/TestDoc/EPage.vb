@@ -45,6 +45,8 @@ Public Class EPage
         Userinformation.Location = New Point((ClientSize.Width - Userinformation.Width) \ 2,
                              (ClientSize.Height - Userinformation.Height) \ 2)
 
+        btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
+                             (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
 
         DataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
 
@@ -75,16 +77,16 @@ Public Class EPage
             Dim bloodType As String = ""
 
             While reader.Read()
-                hb &= reader("hb") & " "
-                ironValue = reader("iron_value") & " "
-                bloodType = reader("blood_type") & " "
+                txtHB.Text &= reader("hb") & " "
+                txtIron.Text = reader("iron_value") & " "
+                cbBloodType.Text = reader("blood_type") & " "
 
             End While
 
 
-            txtHB.Text = hb
-            txtIron.Text = ironValue
-            txtBloodType.Text = bloodType
+
+
+
 
             connection.Close()
         Catch ex As Exception
@@ -103,7 +105,7 @@ Public Class EPage
     Private Sub btnUpdateData_Click(sender As Object, e As EventArgs) Handles btnUpdateData.Click
         Try
             connection.Open()
-            Dim query As String = "UPDATE Blood_Data SET blood_type = '" & txtBloodType.Text & "', hb = '" & txtHB.Text & "', iron_value = '" & txtIron.Text & "', last_drain = '" & todaysDate & "' WHERE ss_number = '" & txtSSN.Text & "'"
+            Dim query As String = "UPDATE Blood_Data SET blood_type = '" & cbBloodType.Text & "', hb = '" & txtHB.Text & "', iron_value = '" & txtIron.Text & "', last_drain = '" & todaysDate & "' WHERE ss_number = '" & txtSSN.Text & "'"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
 
@@ -119,7 +121,7 @@ Public Class EPage
         load_table()
     End Sub
 
-    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtBloodCount.KeyPress, txtGetBloodCount.KeyPress
+    Private Sub txt_TextChanged(sender As Object, e As KeyPressEventArgs) Handles txtBloodCount.KeyPress, txtGetBloodCount.KeyPress, txtHB.KeyPress, txtIron.KeyPress
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -128,8 +130,6 @@ Public Class EPage
     End Sub
 
     Private Sub btnRegDonation_Click(sender As Object, e As EventArgs) Handles btnRegDonation.Click
-
-
 
         Dim status As String = "Valid"
 
@@ -145,15 +145,11 @@ Public Class EPage
 
         Dim addDonation As New Stock
 
-        addDonation.addStock(cbBloodPart.SelectedItem, txtBloodType.Text, txtSSN.Text, expiryDate, status)
+        addDonation.addStock(cbBloodPart.SelectedItem, cbBloodType.Text, txtSSN.Text, expiryDate, status)
 
     End Sub
 
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
-        Me.Close()
-        LogIn.Show()
 
-    End Sub
 
     Private Sub btnGetBlood_Click(sender As Object, e As EventArgs) Handles btnGetBlood.Click
         Dim todaysDate = Today.ToString("dd/MM/yyyy")
@@ -197,5 +193,8 @@ Public Class EPage
         End Try
     End Sub
 
-
+    Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Me.Close()
+        LogIn.Show()
+    End Sub
 End Class
