@@ -62,7 +62,7 @@ Partial Class EPage
         Me.Userinformation.Controls.Add(Me.TabPage2)
         Me.Userinformation.Controls.Add(Me.TabPage3)
         Me.Userinformation.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Userinformation.Location = New System.Drawing.Point(92, 77)
+        Me.Userinformation.Location = New System.Drawing.Point(90, 11)
         Me.Userinformation.Margin = New System.Windows.Forms.Padding(2)
         Me.Userinformation.Name = "Userinformation"
         Me.Userinformation.Padding = New System.Drawing.Point(39, 20)
@@ -334,7 +334,7 @@ Partial Class EPage
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(1192, 622)
+        Me.TabPage2.Size = New System.Drawing.Size(1192, 500)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
@@ -344,7 +344,7 @@ Partial Class EPage
         Me.TabPage3.Location = New System.Drawing.Point(4, 74)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1192, 622)
+        Me.TabPage3.Size = New System.Drawing.Size(1192, 500)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -370,6 +370,7 @@ Partial Class EPage
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "EPage"
         Me.Text = "EPage"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Userinformation.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()

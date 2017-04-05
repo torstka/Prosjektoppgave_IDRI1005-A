@@ -9,6 +9,15 @@ Public Class NewUser
         Regbox.Location = New Point((ClientSize.Width - Regbox.Width) \ 2,
                              (ClientSize.Height - Regbox.Height) \ 2)
     End Sub
+
+    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtPersonnr.KeyPress, txtPhone.KeyPress, txtPostnr.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         'Knapp som klarerer skjema og går tilbake til "form1"
         txtFirstname.Clear()
