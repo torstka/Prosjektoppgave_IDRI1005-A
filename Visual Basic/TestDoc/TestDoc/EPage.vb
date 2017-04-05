@@ -13,9 +13,12 @@ Public Class EPage
 
     Private Sub load_table()
 
+        DataGridView1.DefaultCellStyle.Font = New Font("Calibri", 12, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridView1.ColumnHeadersDefaultCellStyle.Font = New Font("Calibri", 14, FontStyle.Bold, GraphicsUnit.Point)
+
         Try
             connection.Open()
-            Dim query As String = "SELECT ss_number as 'Personnummer',lastname as 'Etternavn',firstname as 'Fornavn', phone as 'Telefon' FROM User"
+            Dim query As String = "SELECT a.ss_number as 'Personnummer',a.lastname as 'Etternavn',a.firstname as 'Fornavn',a.phone as 'Telefon', b.Blood_type as 'Blodtype' FROM User a INNER JOIN Blood_Data b on a.ss_number=b.ss_number"
             cmd = New MySqlCommand(query, connection)
             adapter.SelectCommand = cmd
             adapter.Fill(dtable)
@@ -41,6 +44,9 @@ Public Class EPage
         Me.Size = SystemInformation.PrimaryMonitorSize
         Userinformation.Location = New Point((ClientSize.Width - Userinformation.Width) \ 2,
                              (ClientSize.Height - Userinformation.Height) \ 2)
+
+
+        DataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
 
 
     End Sub
@@ -113,28 +119,33 @@ Public Class EPage
         load_table()
     End Sub
 
-    Private Sub btnAddData_Click(sender As Object, e As EventArgs) Handles btnAddData.Click
-
-        Try
-            connection.Open()
-            Dim query As String = "Insert INTO Blood_Data (blood_type, hb, iron_value, last_drain, ss_number) values( '" & txtBloodType.Text & "','" & txtHB.Text & "', '" & txtIron.Text & "', '" & todaysDate & "','" & txtSSN.Text & "')"
-            cmd = New MySqlCommand(query, connection)
-            reader = cmd.ExecuteReader
-            MsgBox("Data lagret", MsgBoxStyle.Information, "Lagret")
-            connection.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            connection.Dispose()
-        End Try
-
+    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtBloodCount.KeyPress, txtGetBloodCount.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
     End Sub
 
     Private Sub btnRegDonation_Click(sender As Object, e As EventArgs) Handles btnRegDonation.Click
 
+
+
+        Dim status As String = "Valid"
+
+        Dim expiryDate As String
+
+        If cbBloodPart.Text = "Blodlegemer" Then
+            expiryDate = Today.AddDays(35).ToString("dd/MM/yyyy")
+        ElseIf cbBloodPart.Text = "Blodplater" Then
+            expiryDate = Today.AddDays(7).ToString("dd/MM/yyyy")
+        Else
+            expiryDate = "Frozen"
+        End If
+
         Dim addDonation As New Stock
 
-        addDonation.add(txtBloodType.Text, txtSSN.Text)
+        addDonation.addStock(cbBloodPart.SelectedItem, txtBloodType.Text, txtSSN.Text, expiryDate, status)
 
     End Sub
 
@@ -143,4 +154,48 @@ Public Class EPage
         LogIn.Show()
 
     End Sub
+
+    Private Sub btnGetBlood_Click(sender As Object, e As EventArgs) Handles btnGetBlood.Click
+        Dim todaysDate = Today.ToString("dd/MM/yyyy")
+        ' Dim int As Integer
+        'int = Integer.Parse(txtGetBloodCount.Text)
+        Dim status = "Valid"
+
+
+        Try
+            connection.Open()
+
+
+
+
+            Dim query2 As String = "SELECT * FROM Donation_Stock where blood_info = '" & cbGetBloodInfo.SelectedItem & "' AND blood_type = '" & cbGetBloodType.SelectedItem & "' AND status = '" & status & "'"
+            cmd = New MySqlCommand(query2, connection)
+            adapter = New MySqlDataAdapter
+            adapter.SelectCommand = cmd
+            adapter.Fill(dtable)
+
+            For Each rad In dtable.Rows
+                MsgBox(rad("blood_info") & " " & rad("blood_type") & " " & rad("status"))
+                Console.WriteLine(rad("blood_info") & " " & rad("blood_type") & " " & rad("status"))
+            Next
+
+
+
+            'For i = 1 To int
+            '    Dim query As String = "DELETE FROM Donation_Stock where blood_info = '" & cbGetBloodInfo.SelectedItem & "' AND blood_type = '" & cbGetBloodType.SelectedItem & "' AND status = '" & status & "' LIMIT 1"
+            '    cmd = New MySqlCommand(query, connection)
+            '    reader = cmd.ExecuteReader
+            '    reader.Close()
+            'Next
+
+            'MsgBox("Blod hentet", MsgBoxStyle.Information, "Godkjent")
+            'connection.Close()
+        Catch ex As Exception
+            MsgBox(ex.Message & " Uttaket er ugyldig")
+        Finally
+            connection.Dispose()
+        End Try
+    End Sub
+
+
 End Class

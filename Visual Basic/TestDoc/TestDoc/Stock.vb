@@ -5,37 +5,30 @@ Public Class Stock
     Dim con As New MySqlConnection(constring)
     Dim cmd As MySqlCommand
     Dim adapter As MySqlDataAdapter
+    Dim reader As MySqlDataReader
 
 
 
-    Public Sub add(ByVal bloodType As String, ByVal ssNumber As String)
-        Dim donationDate As String = Today.ToString("dd/MM/yyyy")
-        Dim bloodCells As Double = InputBox("Legg til blodceller", "Blodceller")
-        Dim cellsDate = Today.AddDays(35).ToString("dd/MM/yyyy")
-        Dim plasma As Double = InputBox("Legg til plasma", "Plasma")
-        Dim platelets As Integer = InputBox("Legg til blodplater", "Blodplater")
-        Dim plateletsDate = Today.AddDays(7).ToString("dd/MM/yyyy")
+    Public Sub addStock(ByVal bloodPart As String, ByVal bloodType As String, ssn As String, ByVal expiryDate As String, ByVal status As String)
 
+
+        Dim donationDate As Date = Today.ToString("dd/MM/yyyy")
+        Dim test As Integer
+        test = Integer.Parse(EPage.txtBloodCount.Text)
         Try
             con.Open()
-            Dim sql As String = "INSERT INTO Donation_Stock(donation_date, blood_type, blood_cells, cells_date, plasma, platelets, platelets_date, ss_number) VALUES(@DonationDate, @BloodType, @BloodCells, @CellsDate, @Plasma, @Platelets, @PlateletsDate,@SsNumber)"
 
-            cmd = New MySqlCommand(sql, con)
+            For i = 1 To test
+                Dim query As String = "Insert INTO Donation_Stock (donation_date, blood_info, blood_type, ss_number, expiry_date, status) values('" & donationDate & "','" & bloodPart & "', '" & bloodType & "','" & ssn & "','" & expiryDate & "', '" & status & "')"
+                cmd = New MySqlCommand(query, con)
+                reader = cmd.ExecuteReader
+                reader.Close()
+            Next
 
-            cmd.Parameters.AddWithValue("@DonationDate", donationDate)
-            cmd.Parameters.AddWithValue("@BloodType", bloodType)
-            cmd.Parameters.AddWithValue("@BloodCells", bloodCells)
-            cmd.Parameters.AddWithValue("@CellsDate", cellsDate)
-            cmd.Parameters.AddWithValue("@Plasma", plasma)
-            cmd.Parameters.AddWithValue("@Platelets", platelets)
-            cmd.Parameters.AddWithValue("@PlateletsDate", plateletsDate)
-            cmd.Parameters.AddWithValue("@SsNumber", ssNumber)
-            cmd.ExecuteNonQuery()
-
-            MsgBox("Registrering vellykket", MsgBoxStyle.Information, "SUKSESS")
-        Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox("Data lagret", MsgBoxStyle.Information, "Lagret")
             con.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
         Finally
             con.Dispose()
         End Try

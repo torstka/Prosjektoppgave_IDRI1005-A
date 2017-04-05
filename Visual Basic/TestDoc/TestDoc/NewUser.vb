@@ -225,33 +225,36 @@ Public Class NewUser
 
 
         'Validerer at alle tekstboksene er utfylt riktig
-        If Not ValidFornavn() Then
-            MsgBox(Me.RegError.GetError(txtFirstname))
-        ElseIf Not ValidEtternavn() Then
-            MsgBox(Me.RegError.GetError(txtLastname))
-        ElseIf Not ValidPersnr() Then
-            MsgBox(Me.RegError.GetError(txtPersonnr))
-        ElseIf Not ValidPostnr() Then
-            MsgBox(Me.RegError.GetError(txtPostnr))
-        ElseIf Not ValidAdresse() Then
-            MsgBox(Me.RegError.GetError(txtAdress))
-        ElseIf Not ValidEmail() Then
-            MsgBox(Me.RegError.GetError(txtEmail))
-        ElseIf Not ValidPass() Then
-            MsgBox(Me.RegError.GetError(txtPassword))
-        ElseIf Not ConfirmPass() Then
-            MsgBox(Me.RegError.GetError(txtConfirmPassword))
-        ElseIf Not ValidTelefon() Then
-            MsgBox(Me.RegError.GetError(txtPhone))
-        Else
+        'If Not ValidFornavn() Then
+        '    MsgBox(Me.RegError.GetError(txtFirstname))
+        'ElseIf Not ValidEtternavn() Then
+        '    MsgBox(Me.RegError.GetError(txtLastname))
+        'ElseIf Not ValidPersnr() Then
+        '    MsgBox(Me.RegError.GetError(txtPersonnr))
+        'ElseIf Not ValidPostnr() Then
+        '    MsgBox(Me.RegError.GetError(txtPostnr))
+        'ElseIf Not ValidAdresse() Then
+        '    MsgBox(Me.RegError.GetError(txtAdress))
+        'ElseIf Not ValidEmail() Then
+        '    MsgBox(Me.RegError.GetError(txtEmail))
+        'ElseIf Not ValidPass() Then
+        '    MsgBox(Me.RegError.GetError(txtPassword))
+        'ElseIf Not ConfirmPass() Then
+        '    MsgBox(Me.RegError.GetError(txtConfirmPassword))
+        'ElseIf Not ValidTelefon() Then
+        '    MsgBox(Me.RegError.GetError(txtPhone))
+        'Else
 
-            Dim newUser As New User
+        Dim newUser As New User
             newUser.add(ssNumber, firstname, lastname, address, zipCode, phone, email, password, male, female)
 
-            Me.Close()
+        Dim addBlood As New User
+        addBlood.addBloodData(ssNumber)
+
+        Me.Close()
             LogIn.Show()
 
-        End If
+        'End If
 
     End Sub
 

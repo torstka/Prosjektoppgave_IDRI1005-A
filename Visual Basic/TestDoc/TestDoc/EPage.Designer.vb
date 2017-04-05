@@ -24,8 +24,13 @@ Partial Class EPage
     Private Sub InitializeComponent()
         Me.Userinformation = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtBloodCount = New System.Windows.Forms.TextBox()
+        Me.cbBloodPart = New System.Windows.Forms.ComboBox()
         Me.btnRegDonation = New System.Windows.Forms.Button()
-        Me.btnAddData = New System.Windows.Forms.Button()
         Me.btnUpdateData = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtPhone = New System.Windows.Forms.TextBox()
@@ -47,13 +52,24 @@ Partial Class EPage
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnGetBlood = New System.Windows.Forms.Button()
+        Me.txtGetBloodCount = New System.Windows.Forms.TextBox()
+        Me.cbGetBloodType = New System.Windows.Forms.ComboBox()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.cbGetBloodInfo = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage2.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'Userinformation
@@ -72,8 +88,7 @@ Partial Class EPage
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.btnRegDonation)
-        Me.TabPage1.Controls.Add(Me.btnAddData)
+        Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.btnUpdateData)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -89,10 +104,70 @@ Partial Class EPage
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label11)
+        Me.GroupBox3.Controls.Add(Me.btnRegDonation)
+        Me.GroupBox3.Controls.Add(Me.Label10)
+        Me.GroupBox3.Controls.Add(Me.Label7)
+        Me.GroupBox3.Controls.Add(Me.txtBloodCount)
+        Me.GroupBox3.Controls.Add(Me.cbBloodPart)
+        Me.GroupBox3.Location = New System.Drawing.Point(43, 239)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(480, 296)
+        Me.GroupBox3.TabIndex = 64
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Donasjon"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(454, 155)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(35, 31)
+        Me.Label11.TabIndex = 65
+        Me.Label11.Text = "dl"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(56, 159)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(111, 31)
+        Me.Label10.TabIndex = 64
+        Me.Label10.Text = "Mengde"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(56, 88)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(112, 31)
+        Me.Label7.TabIndex = 63
+        Me.Label7.Text = "Blodinfo"
+        '
+        'txtBloodCount
+        '
+        Me.txtBloodCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtBloodCount.Location = New System.Drawing.Point(260, 155)
+        Me.txtBloodCount.Name = "txtBloodCount"
+        Me.txtBloodCount.Size = New System.Drawing.Size(188, 35)
+        Me.txtBloodCount.TabIndex = 62
+        '
+        'cbBloodPart
+        '
+        Me.cbBloodPart.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbBloodPart.FormattingEnabled = True
+        Me.cbBloodPart.Items.AddRange(New Object() {"Blodlegemer", "Blodplater", "Blodplasma"})
+        Me.cbBloodPart.Location = New System.Drawing.Point(260, 82)
+        Me.cbBloodPart.Name = "cbBloodPart"
+        Me.cbBloodPart.Size = New System.Drawing.Size(188, 37)
+        Me.cbBloodPart.TabIndex = 61
+        '
         'btnRegDonation
         '
         Me.btnRegDonation.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegDonation.Location = New System.Drawing.Point(86, 464)
+        Me.btnRegDonation.Location = New System.Drawing.Point(184, 213)
         Me.btnRegDonation.Margin = New System.Windows.Forms.Padding(2)
         Me.btnRegDonation.Name = "btnRegDonation"
         Me.btnRegDonation.Size = New System.Drawing.Size(237, 33)
@@ -100,21 +175,10 @@ Partial Class EPage
         Me.btnRegDonation.Text = "Registrer donasjon"
         Me.btnRegDonation.UseVisualStyleBackColor = True
         '
-        'btnAddData
-        '
-        Me.btnAddData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAddData.Location = New System.Drawing.Point(86, 392)
-        Me.btnAddData.Margin = New System.Windows.Forms.Padding(1)
-        Me.btnAddData.Name = "btnAddData"
-        Me.btnAddData.Size = New System.Drawing.Size(237, 32)
-        Me.btnAddData.TabIndex = 59
-        Me.btnAddData.Text = "Legg inn ny bloddata"
-        Me.btnAddData.UseVisualStyleBackColor = True
-        '
         'btnUpdateData
         '
         Me.btnUpdateData.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdateData.Location = New System.Drawing.Point(86, 352)
+        Me.btnUpdateData.Location = New System.Drawing.Point(299, 203)
         Me.btnUpdateData.Margin = New System.Windows.Forms.Padding(1)
         Me.btnUpdateData.Name = "btnUpdateData"
         Me.btnUpdateData.Size = New System.Drawing.Size(237, 32)
@@ -133,7 +197,7 @@ Partial Class EPage
         Me.GroupBox2.Controls.Add(Me.txtSSN)
         Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(86, 32)
+        Me.GroupBox2.Location = New System.Drawing.Point(43, 30)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
@@ -231,11 +295,11 @@ Partial Class EPage
         Me.GroupBox1.Controls.Add(Me.txtBloodType)
         Me.GroupBox1.Controls.Add(Me.txtIron)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(86, 213)
+        Me.GroupBox1.Location = New System.Drawing.Point(323, 30)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(237, 127)
+        Me.GroupBox1.Size = New System.Drawing.Size(249, 151)
         Me.GroupBox1.TabIndex = 56
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bloddata"
@@ -303,48 +367,128 @@ Partial Class EPage
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(627, 20)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(769, 7)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(135, 17)
+        Me.Label5.Size = New System.Drawing.Size(229, 29)
         Me.Label5.TabIndex = 26
         Me.Label5.Text = "Filtrer etter blodtype"
         '
         'txtSearch
         '
-        Me.txtSearch.Location = New System.Drawing.Point(780, 4)
+        Me.txtSearch.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSearch.Location = New System.Drawing.Point(1002, 4)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(99, 38)
+        Me.txtSearch.Size = New System.Drawing.Size(186, 35)
         Me.txtSearch.TabIndex = 25
         '
         'DataGridView1
         '
-        Me.DataGridView1.Location = New System.Drawing.Point(418, 82)
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Location = New System.Drawing.Point(596, 48)
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(616, 465)
+        Me.DataGridView1.Size = New System.Drawing.Size(590, 570)
         Me.DataGridView1.TabIndex = 21
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 74)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
-        Me.TabPage2.Size = New System.Drawing.Size(1192, 500)
+        Me.TabPage2.Size = New System.Drawing.Size(1192, 622)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.btnGetBlood)
+        Me.GroupBox4.Controls.Add(Me.txtGetBloodCount)
+        Me.GroupBox4.Controls.Add(Me.cbGetBloodType)
+        Me.GroupBox4.Controls.Add(Me.Label14)
+        Me.GroupBox4.Controls.Add(Me.Label13)
+        Me.GroupBox4.Controls.Add(Me.Label12)
+        Me.GroupBox4.Controls.Add(Me.cbGetBloodInfo)
+        Me.GroupBox4.Location = New System.Drawing.Point(126, 43)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(497, 563)
+        Me.GroupBox4.TabIndex = 2
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Hent fra lager"
+        '
+        'btnGetBlood
+        '
+        Me.btnGetBlood.Location = New System.Drawing.Point(253, 393)
+        Me.btnGetBlood.Name = "btnGetBlood"
+        Me.btnGetBlood.Size = New System.Drawing.Size(157, 73)
+        Me.btnGetBlood.TabIndex = 6
+        Me.btnGetBlood.Text = "Hent"
+        Me.btnGetBlood.UseVisualStyleBackColor = True
+        '
+        'txtGetBloodCount
+        '
+        Me.txtGetBloodCount.Location = New System.Drawing.Point(216, 283)
+        Me.txtGetBloodCount.Name = "txtGetBloodCount"
+        Me.txtGetBloodCount.Size = New System.Drawing.Size(245, 38)
+        Me.txtGetBloodCount.TabIndex = 5
+        '
+        'cbGetBloodType
+        '
+        Me.cbGetBloodType.FormattingEnabled = True
+        Me.cbGetBloodType.Items.AddRange(New Object() {"A Rh-", "A Rh+", "B Rh-", "B Rh+", "AB Rh-", "AB Rh+", "O Rh-", "O Rh+"})
+        Me.cbGetBloodType.Location = New System.Drawing.Point(216, 181)
+        Me.cbGetBloodType.Name = "cbGetBloodType"
+        Me.cbGetBloodType.Size = New System.Drawing.Size(245, 39)
+        Me.cbGetBloodType.TabIndex = 4
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(24, 290)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(157, 31)
+        Me.Label14.TabIndex = 3
+        Me.Label14.Text = "Mengde (dl)"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(24, 189)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(120, 31)
+        Me.Label13.TabIndex = 2
+        Me.Label13.Text = "Blodtype"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(24, 107)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(112, 31)
+        Me.Label12.TabIndex = 1
+        Me.Label12.Text = "Blodinfo"
+        '
+        'cbGetBloodInfo
+        '
+        Me.cbGetBloodInfo.FormattingEnabled = True
+        Me.cbGetBloodInfo.Items.AddRange(New Object() {"Blodlegemer", "Blodplater", "Blodplasma"})
+        Me.cbGetBloodInfo.Location = New System.Drawing.Point(216, 99)
+        Me.cbGetBloodInfo.Name = "cbGetBloodInfo"
+        Me.cbGetBloodInfo.Size = New System.Drawing.Size(245, 39)
+        Me.cbGetBloodInfo.TabIndex = 0
         '
         'TabPage3
         '
         Me.TabPage3.Location = New System.Drawing.Point(4, 74)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1192, 500)
+        Me.TabPage3.Size = New System.Drawing.Size(1192, 622)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -364,7 +508,7 @@ Partial Class EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 741)
+        Me.ClientSize = New System.Drawing.Size(1447, 811)
         Me.Controls.Add(Me.Userinformation)
         Me.Controls.Add(Me.Button7)
         Me.Margin = New System.Windows.Forms.Padding(2)
@@ -374,11 +518,16 @@ Partial Class EPage
         Me.Userinformation.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage2.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -407,7 +556,20 @@ Partial Class EPage
     Friend WithEvents Label9 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents txtPhone As TextBox
-    Friend WithEvents btnAddData As Button
     Friend WithEvents btnUpdateData As Button
     Friend WithEvents btnRegDonation As Button
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents Label11 As Label
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Label7 As Label
+    Friend WithEvents txtBloodCount As TextBox
+    Friend WithEvents cbBloodPart As ComboBox
+    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents btnGetBlood As Button
+    Friend WithEvents txtGetBloodCount As TextBox
+    Friend WithEvents cbGetBloodType As ComboBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Label12 As Label
+    Friend WithEvents cbGetBloodInfo As ComboBox
 End Class
