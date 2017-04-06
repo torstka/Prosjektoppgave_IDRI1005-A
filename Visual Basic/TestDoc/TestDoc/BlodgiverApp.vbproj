@@ -98,6 +98,7 @@
     <Compile Include="DataMyBlood.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Employee.vb" />
     <Compile Include="EmployeeLogIn.Designer.vb">
       <DependentUpon>EmployeeLogIn.vb</DependentUpon>
     </Compile>

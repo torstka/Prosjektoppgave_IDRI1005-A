@@ -42,6 +42,7 @@ Partial Class EPage
         Me.txtSSN = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.cbBloodType = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.txtHB = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -51,8 +52,8 @@ Partial Class EPage
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.btnGetBlood = New System.Windows.Forms.Button()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtGetBloodCount = New System.Windows.Forms.TextBox()
         Me.cbGetBloodType = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -61,7 +62,6 @@ Partial Class EPage
         Me.cbGetBloodInfo = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.btnSignOut = New System.Windows.Forms.Button()
-        Me.cbBloodType = New System.Windows.Forms.ComboBox()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -305,6 +305,16 @@ Partial Class EPage
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bloddata"
         '
+        'cbBloodType
+        '
+        Me.cbBloodType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbBloodType.FormattingEnabled = True
+        Me.cbBloodType.Items.AddRange(New Object() {"A Rh-", "A Rh+", "B Rh-", "B Rh+", "AB Rh-", "AB Rh+", "O Rh-", "O Rh+"})
+        Me.cbBloodType.Location = New System.Drawing.Point(154, 32)
+        Me.cbBloodType.Name = "cbBloodType"
+        Me.cbBloodType.Size = New System.Drawing.Size(111, 28)
+        Me.cbBloodType.TabIndex = 66
+        '
         'Label8
         '
         Me.Label8.AutoSize = True
@@ -398,10 +408,19 @@ Partial Class EPage
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
+        'btnGetBlood
+        '
+        Me.btnGetBlood.Location = New System.Drawing.Point(216, 352)
+        Me.btnGetBlood.Name = "btnGetBlood"
+        Me.btnGetBlood.Size = New System.Drawing.Size(245, 82)
+        Me.btnGetBlood.TabIndex = 3
+        Me.btnGetBlood.Text = "Hent blod fra lager"
+        Me.btnGetBlood.UseVisualStyleBackColor = True
+        '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.btnGetBlood)
         Me.GroupBox4.Controls.Add(Me.txtGetBloodCount)
+        Me.GroupBox4.Controls.Add(Me.btnGetBlood)
         Me.GroupBox4.Controls.Add(Me.cbGetBloodType)
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.Label13)
@@ -413,15 +432,6 @@ Partial Class EPage
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Hent fra lager"
-        '
-        'btnGetBlood
-        '
-        Me.btnGetBlood.Location = New System.Drawing.Point(253, 393)
-        Me.btnGetBlood.Name = "btnGetBlood"
-        Me.btnGetBlood.Size = New System.Drawing.Size(157, 73)
-        Me.btnGetBlood.TabIndex = 6
-        Me.btnGetBlood.Text = "Hent"
-        Me.btnGetBlood.UseVisualStyleBackColor = True
         '
         'txtGetBloodCount
         '
@@ -496,16 +506,6 @@ Partial Class EPage
         Me.btnSignOut.Text = "Logg Ut"
         Me.btnSignOut.UseVisualStyleBackColor = True
         '
-        'cbBloodType
-        '
-        Me.cbBloodType.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbBloodType.FormattingEnabled = True
-        Me.cbBloodType.Items.AddRange(New Object() {"A Rh-", "A Rh+", "B Rh-", "B Rh+", "AB Rh-", "AB Rh+", "O Rh-", "O Rh+"})
-        Me.cbBloodType.Location = New System.Drawing.Point(154, 32)
-        Me.cbBloodType.Name = "cbBloodType"
-        Me.cbBloodType.Size = New System.Drawing.Size(111, 28)
-        Me.cbBloodType.TabIndex = 66
-        '
         'EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -566,7 +566,6 @@ Partial Class EPage
     Friend WithEvents txtBloodCount As TextBox
     Friend WithEvents cbBloodPart As ComboBox
     Friend WithEvents GroupBox4 As GroupBox
-    Friend WithEvents btnGetBlood As Button
     Friend WithEvents txtGetBloodCount As TextBox
     Friend WithEvents cbGetBloodType As ComboBox
     Friend WithEvents Label14 As Label
@@ -574,4 +573,5 @@ Partial Class EPage
     Friend WithEvents Label12 As Label
     Friend WithEvents cbGetBloodInfo As ComboBox
     Friend WithEvents cbBloodType As ComboBox
+    Friend WithEvents btnGetBlood As Button
 End Class
