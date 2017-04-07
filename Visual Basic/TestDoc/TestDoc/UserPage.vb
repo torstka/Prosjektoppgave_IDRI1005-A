@@ -388,9 +388,9 @@ Public Class UserPage
 
     End Sub
 
+
     Private Sub btnQuest_Click(sender As Object, e As EventArgs) Handles btnQuest.Click
-        Me.Hide()
-        QuestionForm.Show()
+        QuestForm.checkIfApproved()
 
     End Sub
 #Region "pao public var"

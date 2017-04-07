@@ -25,6 +25,13 @@ Partial Class EPage
         Me.Userinformation = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.txtPlasmaCount = New System.Windows.Forms.TextBox()
+        Me.txtCellsCount = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.txtPlateletsCount = New System.Windows.Forms.TextBox()
         Me.btnRegDonation = New System.Windows.Forms.Button()
         Me.btnUpdateData = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -59,13 +66,6 @@ Partial Class EPage
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.btnSignOut = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.txtPlasmaCount = New System.Windows.Forms.TextBox()
-        Me.txtCellsCount = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.txtPlateletsCount = New System.Windows.Forms.TextBox()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -129,6 +129,69 @@ Partial Class EPage
         Me.GroupBox3.TabIndex = 64
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Donasjon"
+        '
+        'txtPlasmaCount
+        '
+        Me.txtPlasmaCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPlasmaCount.Location = New System.Drawing.Point(431, 120)
+        Me.txtPlasmaCount.Name = "txtPlasmaCount"
+        Me.txtPlasmaCount.Size = New System.Drawing.Size(105, 32)
+        Me.txtPlasmaCount.TabIndex = 76
+        Me.txtPlasmaCount.Text = "0"
+        '
+        'txtCellsCount
+        '
+        Me.txtCellsCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtCellsCount.Location = New System.Drawing.Point(292, 120)
+        Me.txtCellsCount.Name = "txtCellsCount"
+        Me.txtCellsCount.Size = New System.Drawing.Size(105, 32)
+        Me.txtCellsCount.TabIndex = 75
+        Me.txtCellsCount.Text = "0"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(426, 77)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(93, 29)
+        Me.Label16.TabIndex = 74
+        Me.Label16.Text = "Plasma"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(287, 77)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(110, 29)
+        Me.Label15.TabIndex = 73
+        Me.Label15.Text = "Legemer"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(31, 123)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(108, 29)
+        Me.Label10.TabIndex = 72
+        Me.Label10.Text = "Mengde:"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(163, 77)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(76, 29)
+        Me.Label7.TabIndex = 71
+        Me.Label7.Text = "Plater"
+        '
+        'txtPlateletsCount
+        '
+        Me.txtPlateletsCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPlateletsCount.Location = New System.Drawing.Point(168, 120)
+        Me.txtPlateletsCount.Name = "txtPlateletsCount"
+        Me.txtPlateletsCount.Size = New System.Drawing.Size(102, 32)
+        Me.txtPlateletsCount.TabIndex = 70
+        Me.txtPlateletsCount.Text = "0"
         '
         'btnRegDonation
         '
@@ -378,9 +441,9 @@ Partial Class EPage
         '
         Me.lbShowStock.FormattingEnabled = True
         Me.lbShowStock.ItemHeight = 29
-        Me.lbShowStock.Location = New System.Drawing.Point(811, 43)
+        Me.lbShowStock.Location = New System.Drawing.Point(741, 51)
         Me.lbShowStock.Name = "lbShowStock"
-        Me.lbShowStock.Size = New System.Drawing.Size(321, 497)
+        Me.lbShowStock.Size = New System.Drawing.Size(406, 555)
         Me.lbShowStock.TabIndex = 3
         '
         'GroupBox4
@@ -465,7 +528,7 @@ Partial Class EPage
         Me.TabPage3.Location = New System.Drawing.Point(4, 79)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Size = New System.Drawing.Size(1292, 717)
+        Me.TabPage3.Size = New System.Drawing.Size(1292, 667)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -490,69 +553,6 @@ Partial Class EPage
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
-        '
-        'txtPlasmaCount
-        '
-        Me.txtPlasmaCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPlasmaCount.Location = New System.Drawing.Point(431, 120)
-        Me.txtPlasmaCount.Name = "txtPlasmaCount"
-        Me.txtPlasmaCount.Size = New System.Drawing.Size(105, 32)
-        Me.txtPlasmaCount.TabIndex = 76
-        Me.txtPlasmaCount.Text = "0"
-        '
-        'txtCellsCount
-        '
-        Me.txtCellsCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCellsCount.Location = New System.Drawing.Point(292, 120)
-        Me.txtCellsCount.Name = "txtCellsCount"
-        Me.txtCellsCount.Size = New System.Drawing.Size(105, 32)
-        Me.txtCellsCount.TabIndex = 75
-        Me.txtCellsCount.Text = "0"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(426, 77)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(93, 29)
-        Me.Label16.TabIndex = 74
-        Me.Label16.Text = "Plasma"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(287, 77)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(110, 29)
-        Me.Label15.TabIndex = 73
-        Me.Label15.Text = "Legemer"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(31, 123)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(108, 29)
-        Me.Label10.TabIndex = 72
-        Me.Label10.Text = "Mengde:"
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(163, 77)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(76, 29)
-        Me.Label7.TabIndex = 71
-        Me.Label7.Text = "Plater"
-        '
-        'txtPlateletsCount
-        '
-        Me.txtPlateletsCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPlateletsCount.Location = New System.Drawing.Point(168, 120)
-        Me.txtPlateletsCount.Name = "txtPlateletsCount"
-        Me.txtPlateletsCount.Size = New System.Drawing.Size(102, 32)
-        Me.txtPlateletsCount.TabIndex = 70
-        Me.txtPlateletsCount.Text = "0"
         '
         'EPage
         '

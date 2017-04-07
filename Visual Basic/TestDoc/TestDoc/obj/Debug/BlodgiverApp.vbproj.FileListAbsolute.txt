@@ -227,7 +227,6 @@ C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Resources.resources
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.MyPage.resources
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.NewUser.resources
-C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestionForm.resources
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Storage.resources
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserPage.resources
@@ -255,3 +254,4 @@ C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestionForm.resources
 C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Statistics.resources
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Statistics.resources
+C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestForm.resources

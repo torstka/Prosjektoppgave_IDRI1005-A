@@ -33,8 +33,10 @@ Partial Class LogIn
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.loginerror, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label3
@@ -114,6 +116,7 @@ Partial Class LogIn
         'GroupBox1
         '
         Me.GroupBox1.BackColor = System.Drawing.SystemColors.Control
+        Me.GroupBox1.Controls.Add(Me.PictureBox1)
         Me.GroupBox1.Controls.Add(Me.txtPersonnr)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.txtPassword)
@@ -123,13 +126,23 @@ Partial Class LogIn
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(74, 55)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(982, 576)
         Me.GroupBox1.TabIndex = 49
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Logg Inn"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.TestDoc.My.Resources.Resources.logo_login
+        Me.PictureBox1.Location = New System.Drawing.Point(660, 20)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(317, 76)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 49
+        Me.PictureBox1.TabStop = False
         '
         'LogIn
         '
@@ -140,13 +153,14 @@ Partial Class LogIn
         Me.ClientSize = New System.Drawing.Size(1253, 693)
         Me.Controls.Add(Me.GroupBox1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "LogIn"
         Me.Text = "Logg In"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.loginerror, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -159,4 +173,5 @@ Partial Class LogIn
     Friend WithEvents Label1 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
