@@ -39,16 +39,21 @@ Partial Class UserPage
         Me.btnQuest = New System.Windows.Forms.Button()
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.BookTime = New System.Windows.Forms.TabPage()
-        Me.gbTime = New System.Windows.Forms.GroupBox()
-        Me.lblOTime = New System.Windows.Forms.Label()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.can = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.day_p_time = New System.Windows.Forms.Label()
+        Me.btnCApp = New System.Windows.Forms.Button()
+        Me.nxtApp = New System.Windows.Forms.Label()
+        Me.Label18 = New System.Windows.Forms.Label()
+        Me.DTPOrder = New System.Windows.Forms.DateTimePicker()
+        Me.lblSSN = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txtbxTime = New System.Windows.Forms.ComboBox()
+        Me.lblNxtApp = New System.Windows.Forms.Label()
         Me.lblODate = New System.Windows.Forms.Label()
-        Me.newDonorOrder = New System.Windows.Forms.Label()
-        Me.txtClearBox = New System.Windows.Forms.Button()
-        Me.btnOrder = New System.Windows.Forms.Button()
-        Me.txtMessage = New System.Windows.Forms.TextBox()
-        Me.message = New System.Windows.Forms.Label()
-        Me.dtpOrder = New System.Windows.Forms.DateTimePicker()
-        Me.showDate = New System.Windows.Forms.Label()
+        Me.BtnOrderApp = New System.Windows.Forms.Button()
+        Me.lblOTime = New System.Windows.Forms.Label()
         Me.ChangeData = New System.Windows.Forms.TabPage()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.FName = New System.Windows.Forms.Label()
@@ -92,7 +97,7 @@ Partial Class UserPage
         Me.MyPage.SuspendLayout()
         Me.gbBlood.SuspendLayout()
         Me.BookTime.SuspendLayout()
-        Me.gbTime.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.ChangeData.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.InfoPage.SuspendLayout()
@@ -101,16 +106,21 @@ Partial Class UserPage
         '
         'DonorPage
         '
+        Me.DonorPage.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DonorPage.Controls.Add(Me.MyPage)
         Me.DonorPage.Controls.Add(Me.BookTime)
         Me.DonorPage.Controls.Add(Me.ChangeData)
         Me.DonorPage.Controls.Add(Me.InfoPage)
         Me.DonorPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DonorPage.Location = New System.Drawing.Point(255, 115)
+        Me.DonorPage.ItemSize = New System.Drawing.Size(234, 50)
+        Me.DonorPage.Location = New System.Drawing.Point(15, 42)
+        Me.DonorPage.Margin = New System.Windows.Forms.Padding(2)
         Me.DonorPage.Name = "DonorPage"
-        Me.DonorPage.Padding = New System.Drawing.Point(39, 12)
+        Me.DonorPage.Padding = New System.Drawing.Point(48, 12)
         Me.DonorPage.SelectedIndex = 0
-        Me.DonorPage.Size = New System.Drawing.Size(1794, 1078)
+        Me.DonorPage.Size = New System.Drawing.Size(1195, 701)
+        Me.DonorPage.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.DonorPage.TabIndex = 7
         '
         'MyPage
@@ -120,9 +130,11 @@ Partial Class UserPage
         Me.MyPage.Controls.Add(Me.btnQuest)
         Me.MyPage.Controls.Add(Me.lblFullName)
         Me.MyPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MyPage.Location = New System.Drawing.Point(4, 67)
+        Me.MyPage.Location = New System.Drawing.Point(4, 54)
+        Me.MyPage.Margin = New System.Windows.Forms.Padding(2)
         Me.MyPage.Name = "MyPage"
-        Me.MyPage.Size = New System.Drawing.Size(1786, 1007)
+        Me.MyPage.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.MyPage.Size = New System.Drawing.Size(1187, 643)
         Me.MyPage.TabIndex = 0
         Me.MyPage.Text = "TabPage1"
         Me.MyPage.UseVisualStyleBackColor = True
@@ -138,9 +150,11 @@ Partial Class UserPage
         Me.gbBlood.Controls.Add(Me.txtHb)
         Me.gbBlood.Controls.Add(Me.bloodType)
         Me.gbBlood.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbBlood.Location = New System.Drawing.Point(126, 218)
+        Me.gbBlood.Location = New System.Drawing.Point(84, 142)
+        Me.gbBlood.Margin = New System.Windows.Forms.Padding(2)
         Me.gbBlood.Name = "gbBlood"
-        Me.gbBlood.Size = New System.Drawing.Size(663, 509)
+        Me.gbBlood.Padding = New System.Windows.Forms.Padding(2)
+        Me.gbBlood.Size = New System.Drawing.Size(442, 331)
         Me.gbBlood.TabIndex = 13
         Me.gbBlood.TabStop = False
         Me.gbBlood.Text = "Din bloddata"
@@ -148,72 +162,80 @@ Partial Class UserPage
         'txtBtype
         '
         Me.txtBtype.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBtype.Location = New System.Drawing.Point(303, 117)
+        Me.txtBtype.Location = New System.Drawing.Point(202, 76)
+        Me.txtBtype.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBtype.Name = "txtBtype"
-        Me.txtBtype.Size = New System.Drawing.Size(262, 41)
+        Me.txtBtype.Size = New System.Drawing.Size(176, 30)
         Me.txtBtype.TabIndex = 9
         '
         'ironValue
         '
         Me.ironValue.AutoSize = True
         Me.ironValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ironValue.Location = New System.Drawing.Point(30, 302)
+        Me.ironValue.Location = New System.Drawing.Point(20, 196)
+        Me.ironValue.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.ironValue.Name = "ironValue"
-        Me.ironValue.Size = New System.Drawing.Size(147, 36)
+        Me.ironValue.Size = New System.Drawing.Size(100, 25)
         Me.ironValue.TabIndex = 8
         Me.ironValue.Text = "Jernlager:"
         '
         'txtIronValue
         '
         Me.txtIronValue.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIronValue.Location = New System.Drawing.Point(303, 294)
+        Me.txtIronValue.Location = New System.Drawing.Point(202, 191)
+        Me.txtIronValue.Margin = New System.Windows.Forms.Padding(2)
         Me.txtIronValue.Name = "txtIronValue"
-        Me.txtIronValue.Size = New System.Drawing.Size(262, 41)
+        Me.txtIronValue.Size = New System.Drawing.Size(176, 30)
         Me.txtIronValue.TabIndex = 12
         '
         'hb
         '
         Me.hb.AutoSize = True
         Me.hb.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.hb.Location = New System.Drawing.Point(30, 212)
+        Me.hb.Location = New System.Drawing.Point(20, 138)
+        Me.hb.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.hb.Name = "hb"
-        Me.hb.Size = New System.Drawing.Size(174, 36)
+        Me.hb.Size = New System.Drawing.Size(116, 25)
         Me.hb.TabIndex = 7
         Me.hb.Text = "Hemoglobin"
         '
         'txtDrain
         '
         Me.txtDrain.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDrain.Location = New System.Drawing.Point(303, 388)
+        Me.txtDrain.Location = New System.Drawing.Point(202, 252)
+        Me.txtDrain.Margin = New System.Windows.Forms.Padding(2)
         Me.txtDrain.Name = "txtDrain"
-        Me.txtDrain.Size = New System.Drawing.Size(262, 41)
+        Me.txtDrain.Size = New System.Drawing.Size(176, 30)
         Me.txtDrain.TabIndex = 10
         '
         'lastDrain
         '
         Me.lastDrain.AutoSize = True
         Me.lastDrain.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lastDrain.Location = New System.Drawing.Point(30, 395)
+        Me.lastDrain.Location = New System.Drawing.Point(20, 257)
+        Me.lastDrain.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lastDrain.Name = "lastDrain"
-        Me.lastDrain.Size = New System.Drawing.Size(196, 36)
+        Me.lastDrain.Size = New System.Drawing.Size(131, 25)
         Me.lastDrain.TabIndex = 6
         Me.lastDrain.Text = "Siste tapping:"
         '
         'txtHb
         '
         Me.txtHb.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHb.Location = New System.Drawing.Point(303, 205)
+        Me.txtHb.Location = New System.Drawing.Point(202, 133)
+        Me.txtHb.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHb.Name = "txtHb"
-        Me.txtHb.Size = New System.Drawing.Size(262, 41)
+        Me.txtHb.Size = New System.Drawing.Size(176, 30)
         Me.txtHb.TabIndex = 11
         '
         'bloodType
         '
         Me.bloodType.AutoSize = True
         Me.bloodType.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bloodType.Location = New System.Drawing.Point(30, 125)
+        Me.bloodType.Location = New System.Drawing.Point(20, 81)
+        Me.bloodType.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.bloodType.Name = "bloodType"
-        Me.bloodType.Size = New System.Drawing.Size(224, 36)
+        Me.bloodType.Size = New System.Drawing.Size(148, 25)
         Me.bloodType.TabIndex = 5
         Me.bloodType.Text = "Din blodtype er:"
         '
@@ -221,18 +243,20 @@ Partial Class UserPage
         '
         Me.lblSSnumber.AutoSize = True
         Me.lblSSnumber.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSSnumber.Location = New System.Drawing.Point(120, 115)
+        Me.lblSSnumber.Location = New System.Drawing.Point(80, 75)
+        Me.lblSSnumber.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblSSnumber.Name = "lblSSnumber"
-        Me.lblSSnumber.Size = New System.Drawing.Size(303, 40)
+        Me.lblSSnumber.Size = New System.Drawing.Size(203, 29)
         Me.lblSSnumber.TabIndex = 4
         Me.lblSSnumber.Text = "Navn kommer her"
         '
         'btnQuest
         '
         Me.btnQuest.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuest.Location = New System.Drawing.Point(894, 254)
+        Me.btnQuest.Location = New System.Drawing.Point(596, 165)
+        Me.btnQuest.Margin = New System.Windows.Forms.Padding(2)
         Me.btnQuest.Name = "btnQuest"
-        Me.btnQuest.Size = New System.Drawing.Size(726, 474)
+        Me.btnQuest.Size = New System.Drawing.Size(484, 308)
         Me.btnQuest.TabIndex = 2
         Me.btnQuest.Text = "Spørreskjema"
         Me.btnQuest.UseVisualStyleBackColor = True
@@ -241,128 +265,193 @@ Partial Class UserPage
         '
         Me.lblFullName.AutoSize = True
         Me.lblFullName.Font = New System.Drawing.Font("Microsoft Sans Serif", 22.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFullName.Location = New System.Drawing.Point(119, 32)
+        Me.lblFullName.Location = New System.Drawing.Point(79, 21)
+        Me.lblFullName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lblFullName.Name = "lblFullName"
-        Me.lblFullName.Size = New System.Drawing.Size(308, 52)
+        Me.lblFullName.Size = New System.Drawing.Size(210, 36)
         Me.lblFullName.TabIndex = 0
         Me.lblFullName.Text = "Innlogget som:"
         '
         'BookTime
         '
-        Me.BookTime.Controls.Add(Me.gbTime)
-        Me.BookTime.Location = New System.Drawing.Point(4, 67)
+        Me.BookTime.Controls.Add(Me.GroupBox3)
+        Me.BookTime.Location = New System.Drawing.Point(4, 54)
+        Me.BookTime.Margin = New System.Windows.Forms.Padding(2)
         Me.BookTime.Name = "BookTime"
-        Me.BookTime.Padding = New System.Windows.Forms.Padding(3)
-        Me.BookTime.Size = New System.Drawing.Size(1786, 1007)
+        Me.BookTime.Padding = New System.Windows.Forms.Padding(2)
+        Me.BookTime.Size = New System.Drawing.Size(1187, 643)
         Me.BookTime.TabIndex = 1
         Me.BookTime.Text = "TabPage2"
         Me.BookTime.UseVisualStyleBackColor = True
         '
-        'gbTime
+        'GroupBox3
         '
-        Me.gbTime.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.gbTime.Controls.Add(Me.lblOTime)
-        Me.gbTime.Controls.Add(Me.lblODate)
-        Me.gbTime.Controls.Add(Me.newDonorOrder)
-        Me.gbTime.Controls.Add(Me.txtClearBox)
-        Me.gbTime.Controls.Add(Me.btnOrder)
-        Me.gbTime.Controls.Add(Me.txtMessage)
-        Me.gbTime.Controls.Add(Me.message)
-        Me.gbTime.Controls.Add(Me.dtpOrder)
-        Me.gbTime.Controls.Add(Me.showDate)
-        Me.gbTime.Location = New System.Drawing.Point(70, 35)
-        Me.gbTime.Name = "gbTime"
-        Me.gbTime.Size = New System.Drawing.Size(1050, 686)
-        Me.gbTime.TabIndex = 1
-        Me.gbTime.TabStop = False
-        Me.gbTime.Text = "Bestill time"
+        Me.GroupBox3.Controls.Add(Me.can)
+        Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Controls.Add(Me.day_p_time)
+        Me.GroupBox3.Controls.Add(Me.btnCApp)
+        Me.GroupBox3.Controls.Add(Me.nxtApp)
+        Me.GroupBox3.Controls.Add(Me.Label18)
+        Me.GroupBox3.Controls.Add(Me.DTPOrder)
+        Me.GroupBox3.Controls.Add(Me.lblSSN)
+        Me.GroupBox3.Controls.Add(Me.Label19)
+        Me.GroupBox3.Controls.Add(Me.txtbxTime)
+        Me.GroupBox3.Controls.Add(Me.lblNxtApp)
+        Me.GroupBox3.Controls.Add(Me.lblODate)
+        Me.GroupBox3.Controls.Add(Me.BtnOrderApp)
+        Me.GroupBox3.Controls.Add(Me.lblOTime)
+        Me.GroupBox3.Location = New System.Drawing.Point(35, 21)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(714, 353)
+        Me.GroupBox3.TabIndex = 94
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "GroupBox3"
         '
-        'lblOTime
+        'can
         '
-        Me.lblOTime.AutoSize = True
-        Me.lblOTime.Location = New System.Drawing.Point(375, 358)
-        Me.lblOTime.Name = "lblOTime"
-        Me.lblOTime.Size = New System.Drawing.Size(28, 40)
-        Me.lblOTime.TabIndex = 8
-        Me.lblOTime.Text = " "
+        Me.can.AutoSize = True
+        Me.can.Location = New System.Drawing.Point(523, 306)
+        Me.can.Name = "can"
+        Me.can.Size = New System.Drawing.Size(140, 29)
+        Me.can.TabIndex = 74
+        Me.can.Text = "CanCancel"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(183, 158)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(146, 29)
+        Me.Label1.TabIndex = 94
+        Me.Label1.Text = "Neste time:"
+        '
+        'day_p_time
+        '
+        Me.day_p_time.AutoSize = True
+        Me.day_p_time.Location = New System.Drawing.Point(323, 277)
+        Me.day_p_time.Name = "day_p_time"
+        Me.day_p_time.Size = New System.Drawing.Size(340, 29)
+        Me.day_p_time.TabIndex = 93
+        Me.day_p_time.Text = "day + "" "" + time satt sammen"
+        '
+        'btnCApp
+        '
+        Me.btnCApp.Location = New System.Drawing.Point(14, 277)
+        Me.btnCApp.Name = "btnCApp"
+        Me.btnCApp.Size = New System.Drawing.Size(163, 50)
+        Me.btnCApp.TabIndex = 73
+        Me.btnCApp.Text = "Avbestill"
+        Me.btnCApp.UseVisualStyleBackColor = True
+        '
+        'nxtApp
+        '
+        Me.nxtApp.AutoSize = True
+        Me.nxtApp.Location = New System.Drawing.Point(323, 306)
+        Me.nxtApp.Name = "nxtApp"
+        Me.nxtApp.Size = New System.Drawing.Size(161, 29)
+        Me.nxtApp.TabIndex = 92
+        Me.nxtApp.Text = "Ikke satt opp"
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(9, 31)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(195, 29)
+        Me.Label18.TabIndex = 60
+        Me.Label18.Text = "person nummer"
+        '
+        'DTPOrder
+        '
+        Me.DTPOrder.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPOrder.CustomFormat = "yyyy/MM/dd"
+        Me.DTPOrder.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DTPOrder.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPOrder.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DTPOrder.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DTPOrder.Location = New System.Drawing.Point(14, 101)
+        Me.DTPOrder.MaxDate = New Date(3017, 12, 31, 0, 0, 0, 0)
+        Me.DTPOrder.MinDate = New Date(2017, 3, 1, 0, 0, 0, 0)
+        Me.DTPOrder.Name = "DTPOrder"
+        Me.DTPOrder.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.DTPOrder.Size = New System.Drawing.Size(192, 31)
+        Me.DTPOrder.TabIndex = 58
+        Me.DTPOrder.Value = New Date(2017, 3, 24, 0, 0, 0, 0)
+        '
+        'lblSSN
+        '
+        Me.lblSSN.AutoSize = True
+        Me.lblSSN.Location = New System.Drawing.Point(210, 31)
+        Me.lblSSN.Name = "lblSSN"
+        Me.lblSSN.Size = New System.Drawing.Size(167, 29)
+        Me.lblSSN.TabIndex = 63
+        Me.lblSSN.Text = "22119611122"
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(222, 69)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(80, 29)
+        Me.Label19.TabIndex = 68
+        Me.Label19.Text = "Time:"
+        '
+        'txtbxTime
+        '
+        Me.txtbxTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxTime.FormattingEnabled = True
+        Me.txtbxTime.Items.AddRange(New Object() {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"})
+        Me.txtbxTime.Location = New System.Drawing.Point(231, 101)
+        Me.txtbxTime.MaxDropDownItems = 12
+        Me.txtbxTime.Name = "txtbxTime"
+        Me.txtbxTime.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtbxTime.Size = New System.Drawing.Size(71, 28)
+        Me.txtbxTime.TabIndex = 69
+        Me.txtbxTime.Text = "08:00"
+        '
+        'lblNxtApp
+        '
+        Me.lblNxtApp.AutoSize = True
+        Me.lblNxtApp.Location = New System.Drawing.Point(183, 158)
+        Me.lblNxtApp.Name = "lblNxtApp"
+        Me.lblNxtApp.Size = New System.Drawing.Size(150, 29)
+        Me.lblNxtApp.TabIndex = 70
+        Me.lblNxtApp.Text = "Bestilt time:"
+        Me.lblNxtApp.Visible = False
         '
         'lblODate
         '
         Me.lblODate.AutoSize = True
-        Me.lblODate.Location = New System.Drawing.Point(296, 358)
+        Me.lblODate.Location = New System.Drawing.Point(495, 158)
         Me.lblODate.Name = "lblODate"
-        Me.lblODate.Size = New System.Drawing.Size(28, 40)
-        Me.lblODate.TabIndex = 7
-        Me.lblODate.Text = " "
+        Me.lblODate.Size = New System.Drawing.Size(0, 29)
+        Me.lblODate.TabIndex = 71
         '
-        'newDonorOrder
+        'BtnOrderApp
         '
-        Me.newDonorOrder.AutoSize = True
-        Me.newDonorOrder.Location = New System.Drawing.Point(21, 358)
-        Me.newDonorOrder.Name = "newDonorOrder"
-        Me.newDonorOrder.Size = New System.Drawing.Size(276, 40)
-        Me.newDonorOrder.TabIndex = 6
-        Me.newDonorOrder.Text = "Du har ny time:"
+        Me.BtnOrderApp.Location = New System.Drawing.Point(14, 158)
+        Me.BtnOrderApp.Name = "BtnOrderApp"
+        Me.BtnOrderApp.Size = New System.Drawing.Size(118, 67)
+        Me.BtnOrderApp.TabIndex = 62
+        Me.BtnOrderApp.Text = "Bestill Time"
+        Me.BtnOrderApp.UseVisualStyleBackColor = True
         '
-        'txtClearBox
+        'lblOTime
         '
-        Me.txtClearBox.Location = New System.Drawing.Point(789, 375)
-        Me.txtClearBox.Name = "txtClearBox"
-        Me.txtClearBox.Size = New System.Drawing.Size(166, 80)
-        Me.txtClearBox.TabIndex = 5
-        Me.txtClearBox.Text = "Tøm"
-        Me.txtClearBox.UseVisualStyleBackColor = True
-        '
-        'btnOrder
-        '
-        Me.btnOrder.Location = New System.Drawing.Point(518, 375)
-        Me.btnOrder.Name = "btnOrder"
-        Me.btnOrder.Size = New System.Drawing.Size(180, 80)
-        Me.btnOrder.TabIndex = 4
-        Me.btnOrder.Text = "Bestill"
-        Me.btnOrder.UseVisualStyleBackColor = True
-        '
-        'txtMessage
-        '
-        Me.txtMessage.Location = New System.Drawing.Point(504, 95)
-        Me.txtMessage.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtMessage.Multiline = True
-        Me.txtMessage.Name = "txtMessage"
-        Me.txtMessage.Size = New System.Drawing.Size(450, 249)
-        Me.txtMessage.TabIndex = 3
-        '
-        'message
-        '
-        Me.message.AutoSize = True
-        Me.message.Location = New System.Drawing.Point(596, 32)
-        Me.message.Name = "message"
-        Me.message.Size = New System.Drawing.Size(250, 40)
-        Me.message.TabIndex = 2
-        Me.message.Text = "Gi en beskjed"
-        '
-        'dtpOrder
-        '
-        Me.dtpOrder.Location = New System.Drawing.Point(21, 123)
-        Me.dtpOrder.Name = "dtpOrder"
-        Me.dtpOrder.Size = New System.Drawing.Size(434, 48)
-        Me.dtpOrder.TabIndex = 1
-        '
-        'showDate
-        '
-        Me.showDate.AutoSize = True
-        Me.showDate.Location = New System.Drawing.Point(26, 75)
-        Me.showDate.Name = "showDate"
-        Me.showDate.Size = New System.Drawing.Size(189, 40)
-        Me.showDate.TabIndex = 0
-        Me.showDate.Text = "Velg dato!"
+        Me.lblOTime.AutoSize = True
+        Me.lblOTime.Location = New System.Drawing.Point(349, 158)
+        Me.lblOTime.Name = "lblOTime"
+        Me.lblOTime.Size = New System.Drawing.Size(0, 29)
+        Me.lblOTime.TabIndex = 72
         '
         'ChangeData
         '
         Me.ChangeData.Controls.Add(Me.GroupBox1)
-        Me.ChangeData.Location = New System.Drawing.Point(4, 67)
+        Me.ChangeData.Location = New System.Drawing.Point(4, 54)
+        Me.ChangeData.Margin = New System.Windows.Forms.Padding(2)
         Me.ChangeData.Name = "ChangeData"
-        Me.ChangeData.Padding = New System.Windows.Forms.Padding(3)
-        Me.ChangeData.Size = New System.Drawing.Size(1786, 1007)
+        Me.ChangeData.Padding = New System.Windows.Forms.Padding(2)
+        Me.ChangeData.Size = New System.Drawing.Size(1187, 643)
         Me.ChangeData.TabIndex = 2
         Me.ChangeData.Text = "TabPage3"
         Me.ChangeData.UseVisualStyleBackColor = True
@@ -386,11 +475,9 @@ Partial Class UserPage
         Me.GroupBox1.Controls.Add(Me.mail)
         Me.GroupBox1.Controls.Add(Me.txtAddress)
         Me.GroupBox1.Controls.Add(Me.phone)
-        Me.GroupBox1.Location = New System.Drawing.Point(465, 8)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.GroupBox1.Location = New System.Drawing.Point(310, 5)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.GroupBox1.Size = New System.Drawing.Size(838, 946)
+        Me.GroupBox1.Size = New System.Drawing.Size(559, 615)
         Me.GroupBox1.TabIndex = 20
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Endre Personopplysninger"
@@ -398,50 +485,56 @@ Partial Class UserPage
         'FName
         '
         Me.FName.AutoSize = True
-        Me.FName.Location = New System.Drawing.Point(99, 86)
+        Me.FName.Location = New System.Drawing.Point(66, 56)
+        Me.FName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.FName.Name = "FName"
-        Me.FName.Size = New System.Drawing.Size(156, 40)
+        Me.FName.Size = New System.Drawing.Size(107, 29)
         Me.FName.TabIndex = 15
         Me.FName.Text = "Fornavn"
         '
         'btnChangeData
         '
-        Me.btnChangeData.Location = New System.Drawing.Point(360, 823)
+        Me.btnChangeData.Location = New System.Drawing.Point(240, 535)
+        Me.btnChangeData.Margin = New System.Windows.Forms.Padding(2)
         Me.btnChangeData.Name = "btnChangeData"
-        Me.btnChangeData.Size = New System.Drawing.Size(166, 80)
+        Me.btnChangeData.Size = New System.Drawing.Size(111, 52)
         Me.btnChangeData.TabIndex = 12
         Me.btnChangeData.Text = "Lagre"
         Me.btnChangeData.UseVisualStyleBackColor = True
         '
         'txtFirstName
         '
-        Me.txtFirstName.Location = New System.Drawing.Point(426, 78)
+        Me.txtFirstName.Location = New System.Drawing.Point(284, 51)
+        Me.txtFirstName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(318, 48)
+        Me.txtFirstName.Size = New System.Drawing.Size(213, 35)
         Me.txtFirstName.TabIndex = 16
         '
         'txtConPwd
         '
-        Me.txtConPwd.Location = New System.Drawing.Point(426, 754)
+        Me.txtConPwd.Location = New System.Drawing.Point(284, 490)
+        Me.txtConPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtConPwd.Name = "txtConPwd"
         Me.txtConPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtConPwd.Size = New System.Drawing.Size(322, 48)
+        Me.txtConPwd.Size = New System.Drawing.Size(216, 35)
         Me.txtConPwd.TabIndex = 14
         Me.txtConPwd.UseSystemPasswordChar = True
         '
         'txtZipcode
         '
-        Me.txtZipcode.Location = New System.Drawing.Point(426, 371)
+        Me.txtZipcode.Location = New System.Drawing.Point(284, 241)
+        Me.txtZipcode.Margin = New System.Windows.Forms.Padding(2)
         Me.txtZipcode.Name = "txtZipcode"
-        Me.txtZipcode.Size = New System.Drawing.Size(318, 48)
+        Me.txtZipcode.Size = New System.Drawing.Size(213, 35)
         Me.txtZipcode.TabIndex = 18
         '
         'confirmPwd
         '
         Me.confirmPwd.AutoSize = True
-        Me.confirmPwd.Location = New System.Drawing.Point(99, 763)
+        Me.confirmPwd.Location = New System.Drawing.Point(66, 496)
+        Me.confirmPwd.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.confirmPwd.Name = "confirmPwd"
-        Me.confirmPwd.Size = New System.Drawing.Size(288, 40)
+        Me.confirmPwd.Size = New System.Drawing.Size(199, 29)
         Me.confirmPwd.TabIndex = 13
         Me.confirmPwd.Text = "Bekreft Passord"
         '
@@ -449,91 +542,102 @@ Partial Class UserPage
         '
         Me.lastname.AutoSize = True
         Me.lastname.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lastname.Location = New System.Drawing.Point(99, 182)
+        Me.lastname.Location = New System.Drawing.Point(66, 118)
+        Me.lastname.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lastname.Name = "lastname"
-        Me.lastname.Size = New System.Drawing.Size(180, 40)
+        Me.lastname.Size = New System.Drawing.Size(122, 29)
         Me.lastname.TabIndex = 1
         Me.lastname.Text = "Etternavn"
         '
         'zipcode
         '
         Me.zipcode.AutoSize = True
-        Me.zipcode.Location = New System.Drawing.Point(99, 375)
+        Me.zipcode.Location = New System.Drawing.Point(66, 244)
+        Me.zipcode.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.zipcode.Name = "zipcode"
-        Me.zipcode.Size = New System.Drawing.Size(231, 40)
+        Me.zipcode.Size = New System.Drawing.Size(159, 29)
         Me.zipcode.TabIndex = 17
         Me.zipcode.Text = "Postnummer"
         '
         'txtPwd
         '
-        Me.txtPwd.Location = New System.Drawing.Point(426, 662)
+        Me.txtPwd.Location = New System.Drawing.Point(284, 430)
+        Me.txtPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPwd.Name = "txtPwd"
         Me.txtPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPwd.Size = New System.Drawing.Size(322, 48)
+        Me.txtPwd.Size = New System.Drawing.Size(216, 35)
         Me.txtPwd.TabIndex = 11
         Me.txtPwd.UseSystemPasswordChar = True
         '
         'address
         '
         Me.address.AutoSize = True
-        Me.address.Location = New System.Drawing.Point(99, 277)
+        Me.address.Location = New System.Drawing.Point(66, 180)
+        Me.address.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.address.Name = "address"
-        Me.address.Size = New System.Drawing.Size(156, 40)
+        Me.address.Size = New System.Drawing.Size(109, 29)
         Me.address.TabIndex = 2
         Me.address.Text = "Adresse"
         '
         'pwd
         '
         Me.pwd.AutoSize = True
-        Me.pwd.Location = New System.Drawing.Point(99, 671)
+        Me.pwd.Location = New System.Drawing.Point(66, 436)
+        Me.pwd.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.pwd.Name = "pwd"
-        Me.pwd.Size = New System.Drawing.Size(156, 40)
+        Me.pwd.Size = New System.Drawing.Size(109, 29)
         Me.pwd.TabIndex = 5
         Me.pwd.Text = "Passord"
         '
         'txtMail
         '
-        Me.txtMail.Location = New System.Drawing.Point(426, 566)
+        Me.txtMail.Location = New System.Drawing.Point(284, 368)
+        Me.txtMail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMail.Name = "txtMail"
-        Me.txtMail.Size = New System.Drawing.Size(322, 48)
+        Me.txtMail.Size = New System.Drawing.Size(216, 35)
         Me.txtMail.TabIndex = 10
         '
         'txtLastName
         '
-        Me.txtLastName.Location = New System.Drawing.Point(426, 175)
+        Me.txtLastName.Location = New System.Drawing.Point(284, 114)
+        Me.txtLastName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(318, 48)
+        Me.txtLastName.Size = New System.Drawing.Size(213, 35)
         Me.txtLastName.TabIndex = 7
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(426, 469)
+        Me.txtPhone.Location = New System.Drawing.Point(284, 305)
+        Me.txtPhone.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Size = New System.Drawing.Size(318, 48)
+        Me.txtPhone.Size = New System.Drawing.Size(213, 35)
         Me.txtPhone.TabIndex = 9
         '
         'mail
         '
         Me.mail.AutoSize = True
-        Me.mail.Location = New System.Drawing.Point(99, 575)
+        Me.mail.Location = New System.Drawing.Point(66, 374)
+        Me.mail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.mail.Name = "mail"
-        Me.mail.Size = New System.Drawing.Size(127, 40)
+        Me.mail.Size = New System.Drawing.Size(89, 29)
         Me.mail.TabIndex = 4
         Me.mail.Text = "E-post"
         '
         'txtAddress
         '
-        Me.txtAddress.Location = New System.Drawing.Point(426, 273)
+        Me.txtAddress.Location = New System.Drawing.Point(284, 177)
+        Me.txtAddress.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(318, 48)
+        Me.txtAddress.Size = New System.Drawing.Size(213, 35)
         Me.txtAddress.TabIndex = 8
         '
         'phone
         '
         Me.phone.AutoSize = True
-        Me.phone.Location = New System.Drawing.Point(96, 478)
+        Me.phone.Location = New System.Drawing.Point(64, 311)
+        Me.phone.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.phone.Name = "phone"
-        Me.phone.Size = New System.Drawing.Size(282, 40)
+        Me.phone.Size = New System.Drawing.Size(197, 29)
         Me.phone.TabIndex = 3
         Me.phone.Text = "Telefonnummer"
         '
@@ -558,10 +662,11 @@ Partial Class UserPage
         Me.InfoPage.Controls.Add(Me.Label4)
         Me.InfoPage.Controls.Add(Me.Label3)
         Me.InfoPage.Controls.Add(Me.Label2)
-        Me.InfoPage.Location = New System.Drawing.Point(4, 67)
+        Me.InfoPage.Location = New System.Drawing.Point(4, 54)
+        Me.InfoPage.Margin = New System.Windows.Forms.Padding(2)
         Me.InfoPage.Name = "InfoPage"
-        Me.InfoPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.InfoPage.Size = New System.Drawing.Size(1786, 1007)
+        Me.InfoPage.Padding = New System.Windows.Forms.Padding(2)
+        Me.InfoPage.Size = New System.Drawing.Size(1187, 643)
         Me.InfoPage.TabIndex = 3
         Me.InfoPage.Text = "TabPage4"
         Me.InfoPage.UseVisualStyleBackColor = True
@@ -570,9 +675,10 @@ Partial Class UserPage
         '
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(1120, 869)
+        Me.LinkLabel1.Location = New System.Drawing.Point(747, 565)
+        Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(292, 25)
+        Me.LinkLabel1.Size = New System.Drawing.Size(209, 16)
         Me.LinkLabel1.TabIndex = 17
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "https://giblod.no/default.aspx"
@@ -581,9 +687,10 @@ Partial Class UserPage
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(604, 895)
+        Me.Label17.Location = New System.Drawing.Point(403, 582)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(655, 25)
+        Me.Label17.Size = New System.Drawing.Size(475, 16)
         Me.Label17.TabIndex = 16
         Me.Label17.Text = "eller ta kontakt med de ansatte ved blodbanken for øvrige spørsmål"
         '
@@ -591,9 +698,10 @@ Partial Class UserPage
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(526, 869)
+        Me.Label16.Location = New System.Drawing.Point(351, 565)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(560, 25)
+        Me.Label16.Size = New System.Drawing.Size(402, 16)
         Me.Label16.TabIndex = 15
         Me.Label16.Text = "Vil du ha mer informasjon om blodgivning, kan du besøke"
         '
@@ -601,9 +709,10 @@ Partial Class UserPage
         '
         Me.Label15.AutoSize = True
         Me.Label15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(190, 800)
+        Me.Label15.Location = New System.Drawing.Point(127, 520)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(1194, 50)
+        Me.Label15.Size = New System.Drawing.Size(850, 32)
         Me.Label15.TabIndex = 14
         Me.Label15.Text = resources.GetString("Label15.Text")
         '
@@ -611,9 +720,10 @@ Partial Class UserPage
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(189, 734)
+        Me.Label14.Location = New System.Drawing.Point(126, 477)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(803, 50)
+        Me.Label14.Size = New System.Drawing.Size(573, 32)
         Me.Label14.TabIndex = 13
         Me.Label14.Text = "12.    Personer som har oppholdt seg i over 5 år til sammen i Afrika syd for Saha" &
     "ra " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "         (dvs. gjelder ikke Egypt, Libya, Tunis, Algerie eller Marokko)."
@@ -622,9 +732,10 @@ Partial Class UserPage
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(188, 669)
+        Me.Label13.Location = New System.Drawing.Point(125, 435)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(1317, 50)
+        Me.Label13.Size = New System.Drawing.Size(941, 32)
         Me.Label13.TabIndex = 12
         Me.Label13.Text = resources.GetString("Label13.Text")
         '
@@ -632,9 +743,10 @@ Partial Class UserPage
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(188, 605)
+        Me.Label12.Location = New System.Drawing.Point(125, 393)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(945, 50)
+        Me.Label12.Size = New System.Drawing.Size(672, 32)
         Me.Label12.TabIndex = 11
         Me.Label12.Text = "10.    Personer som har oppholdt seg i Storbritannia i over 1 år til sammen i per" &
     "ioden 1980 – 1996 " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "         eller har fått blodoverføring der etter 1980."
@@ -643,9 +755,10 @@ Partial Class UserPage
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(202, 542)
+        Me.Label11.Location = New System.Drawing.Point(135, 352)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(1263, 50)
+        Me.Label11.Size = New System.Drawing.Size(906, 32)
         Me.Label11.TabIndex = 10
         Me.Label11.Text = resources.GetString("Label11.Text")
         '
@@ -653,9 +766,10 @@ Partial Class UserPage
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(202, 452)
+        Me.Label10.Location = New System.Drawing.Point(135, 294)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(1266, 100)
+        Me.Label10.Size = New System.Drawing.Size(912, 64)
         Me.Label10.TabIndex = 9
         Me.Label10.Text = resources.GetString("Label10.Text")
         '
@@ -663,9 +777,10 @@ Partial Class UserPage
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(204, 362)
+        Me.Label9.Location = New System.Drawing.Point(136, 235)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(1342, 100)
+        Me.Label9.Size = New System.Drawing.Size(966, 64)
         Me.Label9.TabIndex = 8
         Me.Label9.Text = resources.GetString("Label9.Text")
         '
@@ -673,9 +788,10 @@ Partial Class UserPage
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(206, 298)
+        Me.Label8.Location = New System.Drawing.Point(137, 194)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(1308, 50)
+        Me.Label8.Size = New System.Drawing.Size(923, 32)
         Me.Label8.TabIndex = 7
         Me.Label8.Text = resources.GetString("Label8.Text")
         '
@@ -683,9 +799,10 @@ Partial Class UserPage
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(207, 232)
+        Me.Label7.Location = New System.Drawing.Point(138, 151)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(1246, 50)
+        Me.Label7.Size = New System.Drawing.Size(899, 32)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = resources.GetString("Label7.Text")
         '
@@ -693,9 +810,10 @@ Partial Class UserPage
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(208, 172)
+        Me.Label6.Location = New System.Drawing.Point(139, 112)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(1111, 50)
+        Me.Label6.Size = New System.Drawing.Size(798, 32)
         Me.Label6.TabIndex = 5
         Me.Label6.Text = "4.    Personer som bruker medikamenter fast. Viktige unntak er p-piller, allergim" &
     "edisin og midler mot lavt stoffskifte. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "       Utover dette er det behov for in" &
@@ -705,9 +823,10 @@ Partial Class UserPage
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(208, 134)
+        Me.Label5.Location = New System.Drawing.Point(139, 87)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(366, 25)
+        Me.Label5.Size = New System.Drawing.Size(259, 16)
         Me.Label5.TabIndex = 4
         Me.Label5.Text = "3.    Personer som veier under 50 kg."
         '
@@ -715,9 +834,10 @@ Partial Class UserPage
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(207, 94)
+        Me.Label4.Location = New System.Drawing.Point(138, 61)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(1154, 25)
+        Me.Label4.Size = New System.Drawing.Size(826, 16)
         Me.Label4.TabIndex = 3
         Me.Label4.Text = "2.    Personer under 18 år. Øvre aldersgrense for nye givere varierer, noen blodb" &
     "anker praktiserer 60 år, de fleste 65 år."
@@ -726,9 +846,10 @@ Partial Class UserPage
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(207, 54)
+        Me.Label3.Location = New System.Drawing.Point(138, 35)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(846, 25)
+        Me.Label3.Size = New System.Drawing.Size(606, 16)
         Me.Label3.TabIndex = 2
         Me.Label3.Text = "1.    Personer som ikke er friske. Avhengig av sykdom vurderes permanent utelukke" &
     "lse."
@@ -737,18 +858,21 @@ Partial Class UserPage
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(660, 0)
+        Me.Label2.Location = New System.Drawing.Point(440, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(580, 33)
+        Me.Label2.Size = New System.Drawing.Size(392, 24)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "I dag kan ikke følgende personer gi blod:"
         '
         'btnLogOut
         '
+        Me.btnLogOut.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogOut.Location = New System.Drawing.Point(1658, 21)
+        Me.btnLogOut.Location = New System.Drawing.Point(1080, 18)
+        Me.btnLogOut.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Size = New System.Drawing.Size(170, 58)
+        Me.btnLogOut.Size = New System.Drawing.Size(133, 38)
         Me.btnLogOut.TabIndex = 8
         Me.btnLogOut.Text = "Logg Ut"
         Me.btnLogOut.UseVisualStyleBackColor = True
@@ -761,11 +885,12 @@ Partial Class UserPage
         '
         Me.AcceptButton = Me.btnChangeData
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.RowHeader
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1912, 1038)
+        Me.ClientSize = New System.Drawing.Size(908, 482)
         Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.DonorPage)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "UserPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
@@ -775,8 +900,8 @@ Partial Class UserPage
         Me.gbBlood.ResumeLayout(False)
         Me.gbBlood.PerformLayout()
         Me.BookTime.ResumeLayout(False)
-        Me.gbTime.ResumeLayout(False)
-        Me.gbTime.PerformLayout()
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ChangeData.ResumeLayout(False)
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
@@ -802,16 +927,6 @@ Partial Class UserPage
     Friend WithEvents btnQuest As Button
     Friend WithEvents lblFullName As Label
     Friend WithEvents BookTime As TabPage
-    Friend WithEvents gbTime As GroupBox
-    Friend WithEvents lblOTime As Label
-    Friend WithEvents lblODate As Label
-    Friend WithEvents newDonorOrder As Label
-    Friend WithEvents txtClearBox As Button
-    Friend WithEvents btnOrder As Button
-    Friend WithEvents txtMessage As TextBox
-    Friend WithEvents message As Label
-    Friend WithEvents dtpOrder As DateTimePicker
-    Friend WithEvents showDate As Label
     Friend WithEvents ChangeData As TabPage
     Friend WithEvents txtFirstName As TextBox
     Friend WithEvents FName As Label
@@ -851,4 +966,19 @@ Partial Class UserPage
     Friend WithEvents btnLogOut As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents regerror As ErrorProvider
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents can As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents day_p_time As Label
+    Friend WithEvents btnCApp As Button
+    Friend WithEvents nxtApp As Label
+    Friend WithEvents Label18 As Label
+    Friend WithEvents DTPOrder As DateTimePicker
+    Friend WithEvents lblSSN As Label
+    Friend WithEvents Label19 As Label
+    Friend WithEvents txtbxTime As ComboBox
+    Friend WithEvents lblNxtApp As Label
+    Friend WithEvents lblODate As Label
+    Friend WithEvents BtnOrderApp As Button
+    Friend WithEvents lblOTime As Label
 End Class
