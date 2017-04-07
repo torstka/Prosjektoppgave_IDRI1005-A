@@ -252,3 +252,5 @@ C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserInformation.resources
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.UserPage.resources
 C:\Users\nind_\Documents\GitHub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Statistics.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestionForm.resources
+C:\Users\Peter A. Olaussen\Desktop\it hub\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Statistics.resources
