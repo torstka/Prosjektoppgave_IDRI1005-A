@@ -132,5 +132,28 @@ Public Class User
     'End Try
     'End Sub
 
+    Public Sub addBloodData(ByVal SSNumber As String)
+
+
+        Try
+            connection.Open()
+            Dim query As String = "INSERT INTO Blood_Data (blood_type, ss_number) VALUES (0, '" & SSNumber & "')"
+            cmd = New MySqlCommand(query, connection)
+            reader = cmd.ExecuteReader
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            connection.Close()
+        Finally
+            connection.Dispose()
+        End Try
+
+
+
+    End Sub
+
+
+
+
 
 End Class

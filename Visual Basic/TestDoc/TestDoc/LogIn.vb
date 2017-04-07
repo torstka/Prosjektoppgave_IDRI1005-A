@@ -47,8 +47,7 @@ Public Class LogIn
         Dim password = txtPassword.Text
 
         connection.Open()
-        Dim sqlSporring = "select * from Employee where e_number=@employeeNr " &
-                      "and password=@password"
+        Dim sqlSporring = "select * from Employee where e_number=@employeeNr and password=@password"
 
         Dim sql As New MySqlCommand(sqlSporring, connection)
 

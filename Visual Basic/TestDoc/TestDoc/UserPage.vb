@@ -69,11 +69,6 @@ Public Class UserPage
         End If
 
     End Sub
-
-
-
-
-
     Public Sub showData()
 
         Try
