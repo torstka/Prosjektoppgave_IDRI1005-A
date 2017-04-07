@@ -52,9 +52,9 @@ Partial Class EPage
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
-        Me.btnGetBlood = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtGetBloodCount = New System.Windows.Forms.TextBox()
+        Me.btnGetBlood = New System.Windows.Forms.Button()
         Me.cbGetBloodType = New System.Windows.Forms.ComboBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
@@ -62,6 +62,7 @@ Partial Class EPage
         Me.cbGetBloodInfo = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.btnSignOut = New System.Windows.Forms.Button()
+        Me.lbShowStock = New System.Windows.Forms.ListBox()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -398,6 +399,7 @@ Partial Class EPage
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.lbShowStock)
         Me.TabPage2.Controls.Add(Me.GroupBox4)
         Me.TabPage2.Location = New System.Drawing.Point(4, 74)
         Me.TabPage2.Margin = New System.Windows.Forms.Padding(2)
@@ -407,15 +409,6 @@ Partial Class EPage
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
-        '
-        'btnGetBlood
-        '
-        Me.btnGetBlood.Location = New System.Drawing.Point(216, 352)
-        Me.btnGetBlood.Name = "btnGetBlood"
-        Me.btnGetBlood.Size = New System.Drawing.Size(245, 82)
-        Me.btnGetBlood.TabIndex = 3
-        Me.btnGetBlood.Text = "Hent blod fra lager"
-        Me.btnGetBlood.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
@@ -439,6 +432,15 @@ Partial Class EPage
         Me.txtGetBloodCount.Name = "txtGetBloodCount"
         Me.txtGetBloodCount.Size = New System.Drawing.Size(245, 38)
         Me.txtGetBloodCount.TabIndex = 5
+        '
+        'btnGetBlood
+        '
+        Me.btnGetBlood.Location = New System.Drawing.Point(216, 352)
+        Me.btnGetBlood.Name = "btnGetBlood"
+        Me.btnGetBlood.Size = New System.Drawing.Size(245, 82)
+        Me.btnGetBlood.TabIndex = 3
+        Me.btnGetBlood.Text = "Hent blod fra lager"
+        Me.btnGetBlood.UseVisualStyleBackColor = True
         '
         'cbGetBloodType
         '
@@ -505,6 +507,15 @@ Partial Class EPage
         Me.btnSignOut.TabIndex = 54
         Me.btnSignOut.Text = "Logg Ut"
         Me.btnSignOut.UseVisualStyleBackColor = True
+        '
+        'lbShowStock
+        '
+        Me.lbShowStock.FormattingEnabled = True
+        Me.lbShowStock.ItemHeight = 31
+        Me.lbShowStock.Location = New System.Drawing.Point(811, 43)
+        Me.lbShowStock.Name = "lbShowStock"
+        Me.lbShowStock.Size = New System.Drawing.Size(321, 500)
+        Me.lbShowStock.TabIndex = 3
         '
         'EPage
         '
@@ -574,4 +585,5 @@ Partial Class EPage
     Friend WithEvents cbGetBloodInfo As ComboBox
     Friend WithEvents cbBloodType As ComboBox
     Friend WithEvents btnGetBlood As Button
+    Friend WithEvents lbShowStock As ListBox
 End Class

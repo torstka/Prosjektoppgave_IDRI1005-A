@@ -51,7 +51,7 @@ Public Class EPage
         DataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
 
         updateStock()
-
+        showStock()
 
 
 
@@ -295,7 +295,35 @@ Public Class EPage
         Finally
             connection.Dispose()
         End Try
+    End Sub
+
+
+    Private Sub showStock()
+
+        Dim dt2 As New DataTable
+        Dim query As String = "select SUM(blood_info) FROM Donation_Stock where blood_info = 'Blodplater' AND status = 'Valid'"
+
+
+        Try
+            Using cnn As New MySqlConnection(constring)
+                cnn.Open()
+                Using ad As New MySqlDataAdapter(query, cnn)
+                    ad.Fill(dt2)
+                End Using
+                cnn.Close()
+            End Using
+
+            For Each rows In dt2.Rows
+                With lbShowStock.Items
+                    .Add("Blodinfo " & rows("blood_info"))
+                End With
+            Next
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
+
 
 End Class
