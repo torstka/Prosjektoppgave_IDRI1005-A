@@ -210,9 +210,9 @@ Public Class UserPage
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
-        'DonorPage.Size = (Me.Height / 2) - (buttonMain.Height / 2)
-        'Me.Size = SystemInformation.PrimaryMonitorSize
-        'DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
+
+        Me.Size = SystemInformation.PrimaryMonitorSize
+        DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
         Me.MyPage.Text = "Min side "
         Me.BookTime.Text = "Bestill time"

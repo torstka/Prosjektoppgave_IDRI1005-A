@@ -9,30 +9,30 @@ Public Class Stock
 
 
 
-    Public Sub addStock(ByVal bloodPart As String, ByVal bloodType As String, ssn As String, ByVal expiryDate As String, ByVal status As String)
+    'Public Sub addStock(ByVal bloodPart As String, ByVal bloodType As String, ssn As String, ByVal expiryDate As String, ByVal status As String)
 
 
-        Dim donationDate As Date = Today.ToString("dd/MM/yyyy")
-        Dim test As Integer
-        test = Integer.Parse(EPage.txtBloodCount.Text)
-        Try
-            con.Open()
+    '    Dim donationDate As Date = Today.ToString("dd/MM/yyyy")
+    '    Dim test As Integer
+    '    test = Integer.Parse(EPage.txtBloodCount.Text)
+    '    Try
+    '        con.Open()
 
-            For i = 1 To test
-                Dim query As String = "Insert INTO Donation_Stock (donation_date, blood_info, blood_type, ss_number, expiry_date, status) values('" & donationDate & "','" & bloodPart & "', '" & bloodType & "','" & ssn & "','" & expiryDate & "', '" & status & "')"
-                cmd = New MySqlCommand(query, con)
-                reader = cmd.ExecuteReader
-                reader.Close()
-            Next
+    '        For i = 1 To test
+    '            Dim query As String = "Insert INTO Donation_Stock (donation_date, blood_info, blood_type, ss_number, expiry_date, status) values('" & donationDate & "','" & bloodPart & "', '" & bloodType & "','" & ssn & "','" & expiryDate & "', '" & status & "')"
+    '            cmd = New MySqlCommand(query, con)
+    '            reader = cmd.ExecuteReader
+    '            reader.Close()
+    '        Next
 
-            MsgBox("Data lagret", MsgBoxStyle.Information, "Lagret")
-            con.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-        Finally
-            con.Dispose()
-        End Try
-    End Sub
+    '        MsgBox("Data lagret", MsgBoxStyle.Information, "Lagret")
+    '        con.Close()
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.Message)
+    '    Finally
+    '        con.Dispose()
+    '    End Try
+    'End Sub
 
 
 

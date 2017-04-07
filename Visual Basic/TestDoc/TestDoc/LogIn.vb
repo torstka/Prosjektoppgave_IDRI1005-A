@@ -57,9 +57,9 @@ Public Class LogIn
         Dim leser = sql.ExecuteReader()
         If leser.HasRows Then
             Me.Hide()
-            If employeeNr > 2000 Then
+            If employeeNr >= 2000 Then
                 Statistics.Show()
-            ElseIf employeeNr > 1000 Then
+            ElseIf employeeNr >= 1000 Then
                 EPage.Show()
             End If
 

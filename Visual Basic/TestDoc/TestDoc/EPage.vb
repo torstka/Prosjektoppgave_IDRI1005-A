@@ -13,8 +13,8 @@ Public Class EPage
 
     Private Sub load_table()
 
-        DataGridView1.DefaultCellStyle.Font = New Font("Calibri", 12, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridView1.ColumnHeadersDefaultCellStyle.Font = New Font("Calibri", 14, FontStyle.Bold, GraphicsUnit.Point)
+        DataGridView1.DefaultCellStyle.Font = New Font("Calibri", 14, FontStyle.Regular, GraphicsUnit.Point)
+        DataGridView1.ColumnHeadersDefaultCellStyle.Font = New Font("Calibri", 15, FontStyle.Bold, GraphicsUnit.Point)
 
         Try
             connection.Open()
@@ -41,6 +41,7 @@ Public Class EPage
         txtFirstname.Enabled = False
         txtLastname.Enabled = False
         txtPhone.Enabled = False
+
         Me.Size = SystemInformation.PrimaryMonitorSize
         Userinformation.Location = New Point((ClientSize.Width - Userinformation.Width) \ 2,
                              (ClientSize.Height - Userinformation.Height) \ 2)
@@ -142,12 +143,19 @@ Public Class EPage
     End Sub
 
 
-    Private Sub txt_TextChanged(sender As Object, e As KeyPressEventArgs) Handles txtBloodCount.KeyPress, txtGetBloodCount.KeyPress, txtHB.KeyPress, txtIron.KeyPress
+    Private Sub txt_TextChanged(sender As Object, e As KeyPressEventArgs) Handles txtGetBloodCount.KeyPress, txtHB.KeyPress, txtIron.KeyPress
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
             End If
         End If
+    End Sub
+    Private Sub clear()
+
+        txtPlateletsCount.Clear()
+        txtCellsCount.Clear()
+        txtPlasmaCount.Clear()
+
     End Sub
 
     Private Sub btnRegDonation_Click(sender As Object, e As EventArgs) Handles btnRegDonation.Click
@@ -155,17 +163,74 @@ Public Class EPage
         Dim status As String = "Valid"
         Dim expiryDate As String
 
-        If cbBloodPart.Text = "Blodlegemer" Then
-            expiryDate = Today.AddDays(35).Date
-        ElseIf cbBloodPart.Text = "Blodplater" Then
-            expiryDate = Today.AddDays(7).Date
+        'If cbBloodPart.Text = "Blodlegemer" Then
+        '    expiryDate = Today.AddDays(35).Date
+        'ElseIf cbBloodPart.Text = "Blodplater" Then
+        '    expiryDate = Today.AddDays(7).Date
+        'Else
+        '    expiryDate = "Frozen"
+        'End If
+
+        Dim donationDate As Date = Today.ToString("dd/MM/yyyy")
+        Dim count As Integer = Integer.Parse(txtPlateletsCount.Text)
+        Dim count2 As Integer = Integer.Parse(txtCellsCount.Text)
+        Dim count3 As Integer = Integer.Parse(txtPlasmaCount.Text)
+
+
+
+        If cbBloodType.Text = "" And txtSSN.Text = "" Then
+            MsgBox("Vær vennlig å velg donor", MsgBoxStyle.Critical, "Velg donor")
+
+        ElseIf count = 0 Or count2 = 0 Or count3 = 0 Then
+            MsgBox("Du må fylle inn alle vediene!", MsgBoxStyle.Critical, "Verdier mangler!")
         Else
-            expiryDate = "Frozen"
+
+            Try
+                connection.Open()
+
+                For i = 1 To count
+                    expiryDate = Today.AddDays(7).Date
+                    Dim query As String = "Insert INTO Donation_Stock (donation_date, blood_info, blood_type, ss_number, expiry_date, status) values('" & donationDate & "','Blodplater', '" & cbBloodType.Text & "','" & txtSSN.Text & "','" & expiryDate & "', '" & status & "')"
+                    cmd = New MySqlCommand(query, connection)
+                    reader = cmd.ExecuteReader
+                    reader.Close()
+                Next
+
+
+                For i = 1 To count2
+                    expiryDate = Today.AddDays(35).Date
+                    Dim query As String = "Insert INTO Donation_Stock (donation_date, blood_info, blood_type, ss_number, expiry_date, status) values('" & donationDate & "','Blodlegemer', '" & cbBloodType.Text & "','" & txtSSN.Text & "','" & expiryDate & "', '" & status & "')"
+                    cmd = New MySqlCommand(query, connection)
+                    reader = cmd.ExecuteReader
+                    reader.Close()
+                Next
+
+
+
+                For i = 1 To count3
+                    expiryDate = "Frozen"
+                    Dim query As String = "Insert INTO Donation_Stock (donation_date, blood_info, blood_type, ss_number, expiry_date, status) values('" & donationDate & "','Blodplasma', '" & cbBloodType.Text & "','" & txtSSN.Text & "','" & expiryDate & "', '" & status & "')"
+                    cmd = New MySqlCommand(query, connection)
+                    reader = cmd.ExecuteReader
+                    reader.Close()
+                Next
+
+
+                MsgBox("Data lagret", MsgBoxStyle.Information, "Lagret")
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+            Finally
+                connection.Dispose()
+            End Try
         End If
 
-        Dim addDonation As New Stock
+        'Dim addDonation As New Stock
 
-        addDonation.addStock(cbBloodPart.SelectedItem, cbBloodType.Text, txtSSN.Text, expiryDate, status)
+        'addDonation.addStock(cbBloodPart.SelectedItem, cbBloodType.Text, txtSSN.Text, expiryDate, status)
+
+        lbShowStock.Items.Clear()
+        showStock()
 
     End Sub
 
@@ -221,6 +286,8 @@ Public Class EPage
     Private Sub btnGetBlood_Click(sender As Object, e As EventArgs) Handles btnGetBlood.Click
 
         getBlood()
+        lbShowStock.Items.Clear()
+        showStock()
 
         'If dt.Rows.Count >= int Then
         '    For i = 1 To int
@@ -300,27 +367,229 @@ Public Class EPage
 
     Private Sub showStock()
 
-        Dim dt2 As New DataTable
-        Dim query As String = "select SUM(blood_info) FROM Donation_Stock where blood_info = 'Blodplater' AND status = 'Valid'"
-
-
         Try
-            Using cnn As New MySqlConnection(constring)
-                cnn.Open()
-                Using ad As New MySqlDataAdapter(query, cnn)
-                    ad.Fill(dt2)
-                End Using
-                cnn.Close()
-            End Using
 
-            For Each rows In dt2.Rows
-                With lbShowStock.Items
-                    .Add("Blodinfo " & rows("blood_info"))
-                End With
-            Next
+#Region "Counts Variabler"
+            Dim count As Int16
+            Dim count2 As Int16
+            Dim count3 As Int16
+            Dim count4 As Int16
+            Dim count5 As Int16
+            Dim count6 As Int16
+            Dim count7 As Int16
+            Dim count8 As Int16
+            Dim count9 As Int16
+            Dim count10 As Int16
+            Dim count11 As Int16
+            Dim count12 As Int16
+            Dim count13 As Int16
+            Dim count14 As Int16
+            Dim count15 As Int16
+            Dim count16 As Int16
+            Dim count17 As Int16
+            Dim count18 As Int16
+            Dim count19 As Int16
+            Dim count20 As Int16
+            Dim count21 As Int16
+            Dim count22 As Int16
+            Dim count23 As Int16
+            Dim count24 As Int16
+            Dim count25 As Int16
+            Dim count26 As Int16
+            Dim count27 As Int16
+            Dim count28 As Int16
+            Dim count29 As Int16
+            Dim count30 As Int16
 
+#End Region
+
+#Region "Queries"
+            connection.Open()
+            Dim query As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplater' AND Blood_Type = 'A Rh+' AND Status = 'Valid'"
+            cmd = New MySqlCommand(query, connection)
+            count = cmd.ExecuteScalar
+
+            Dim query2 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodlegemer' AND Blood_Type = 'A Rh+' AND Status = 'Valid'"
+            Dim cmd2 = New MySqlCommand(query2, connection)
+            count2 = cmd2.ExecuteScalar
+
+            Dim query3 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplasma' AND Blood_Type = 'A Rh+' AND Status = 'Valid'"
+            Dim cmd3 = New MySqlCommand(query3, connection)
+            count3 = cmd3.ExecuteScalar
+
+            '--------------------
+
+            Dim query4 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplater' AND Blood_Type = 'A Rh-' AND Status = 'Valid'"
+            Dim cmd4 = New MySqlCommand(query4, connection)
+            count4 = cmd4.ExecuteScalar
+
+            Dim query5 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodlegemer' AND Blood_Type = 'A Rh-' AND Status = 'Valid'"
+            Dim cmd5 = New MySqlCommand(query5, connection)
+            count5 = cmd5.ExecuteScalar
+
+            Dim query6 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplasma' AND Blood_Type = 'A Rh-' AND Status = 'Valid'"
+            Dim cmd6 = New MySqlCommand(query6, connection)
+            count6 = cmd6.ExecuteScalar
+
+            '----------------------------
+
+            Dim query7 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplater' AND Blood_Type = 'B Rh+' AND Status = 'Valid'"
+            Dim cmd7 = New MySqlCommand(query7, connection)
+            count7 = cmd7.ExecuteScalar
+
+            Dim query8 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodlegemer' AND Blood_Type = 'B Rh+' AND Status = 'Valid'"
+            Dim cmd8 = New MySqlCommand(query8, connection)
+            count8 = cmd8.ExecuteScalar
+
+            Dim query9 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplasma' AND Blood_Type = 'B Rh+' AND Status = 'Valid'"
+            Dim cmd9 = New MySqlCommand(query9, connection)
+            count9 = cmd9.ExecuteScalar
+
+            '---------------------------
+
+            Dim query10 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplater' AND Blood_Type = 'B Rh-' AND Status = 'Valid'"
+            Dim cmd10 = New MySqlCommand(query10, connection)
+            count10 = cmd10.ExecuteScalar
+
+            Dim query11 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodlegemer' AND Blood_Type = 'B Rh-' AND Status = 'Valid'"
+            Dim cmd11 = New MySqlCommand(query11, connection)
+            count11 = cmd11.ExecuteScalar
+
+            Dim query12 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplasma' AND Blood_Type = 'B Rh-' AND Status = 'Valid'"
+            Dim cmd12 = New MySqlCommand(query12, connection)
+            count12 = cmd12.ExecuteScalar
+
+            '----------------------------------
+
+            Dim query13 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplater' AND Blood_Type = 'AB Rh+' AND Status = 'Valid'"
+            Dim cmd13 = New MySqlCommand(query13, connection)
+            count13 = cmd13.ExecuteScalar
+
+            Dim query14 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodlegemer' AND Blood_Type = 'AB Rh+' AND Status = 'Valid'"
+            Dim cmd14 = New MySqlCommand(query14, connection)
+            count14 = cmd14.ExecuteScalar
+
+            Dim query15 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplasma' AND Blood_Type = 'AB Rh+' AND Status = 'Valid'"
+            Dim cmd15 = New MySqlCommand(query15, connection)
+            count15 = cmd15.ExecuteScalar
+
+            '---------------------------
+
+            Dim query16 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplater' AND Blood_Type = 'AB Rh-' AND Status = 'Valid'"
+            Dim cmd16 = New MySqlCommand(query16, connection)
+            count16 = cmd16.ExecuteScalar
+
+            Dim query17 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodlegemer' AND Blood_Type = 'AB Rh-' AND Status = 'Valid'"
+            Dim cmd17 = New MySqlCommand(query17, connection)
+            count17 = cmd17.ExecuteScalar
+
+            Dim query18 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplasma' AND Blood_Type = 'AB Rh-' AND Status = 'Valid'"
+            Dim cmd18 = New MySqlCommand(query18, connection)
+            count18 = cmd18.ExecuteScalar
+
+            '--------------------------
+
+            Dim query19 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplater' AND Blood_Type = 'O Rh+' AND Status = 'Valid'"
+            Dim cmd19 = New MySqlCommand(query19, connection)
+            count19 = cmd19.ExecuteScalar
+
+            Dim query20 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodlegemer' AND Blood_Type = 'O Rh+' AND Status = 'Valid'"
+            Dim cmd20 = New MySqlCommand(query20, connection)
+            count20 = cmd20.ExecuteScalar
+
+            Dim query21 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplasma' AND Blood_Type = 'O Rh+' AND Status = 'Valid'"
+            Dim cmd21 = New MySqlCommand(query21, connection)
+            count21 = cmd21.ExecuteScalar
+
+            '-------------------------------
+
+            Dim query22 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplater' AND Blood_Type = 'O Rh-' AND Status = 'Valid'"
+            Dim cmd22 = New MySqlCommand(query22, connection)
+            count22 = cmd22.ExecuteScalar
+
+            Dim query23 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodlegemer' AND Blood_Type = 'O Rh-' AND Status = 'Valid'"
+            Dim cmd23 = New MySqlCommand(query23, connection)
+            count23 = cmd23.ExecuteScalar
+
+            Dim query24 As String = "select COUNT(blood_info) FROM Donation_Stock where Blood_Info = 'Blodplasma' AND Blood_Type = 'O Rh-' AND Status = 'Valid'"
+            Dim cmd24 = New MySqlCommand(query24, connection)
+            count24 = cmd24.ExecuteScalar
+
+            'Dim query25 As String = "select COUNT(blood_type) FROM Donation_Stock where Blood_Type = 'A Rh+' AND Status = 'Valid'"
+            'Dim cmd25 = New MySqlCommand(query25, connection)
+            'count25 = cmd25.ExecuteScalar
+
+            'Dim query26 As String = "select COUNT(blood_type) FROM Donation_Stock where Blood_Type = 'A Rh-' AND Status = 'Valid'"
+            'Dim cmd26 = New MySqlCommand(query26, connection)
+            'count26 = cmd26.ExecuteScalar
+
+            'Dim query27 As String = "select COUNT(blood_type) FROM Donation_Stock where Blood_Type = 'B Rh+' AND Status = 'Valid'"
+            'Dim cmd27 = New MySqlCommand(query27, connection)
+            'count27 = cmd27.ExecuteScalar
+
+            'Dim query28 As String = "select COUNT(blood_type) FROM Donation_Stock where Blood_Type = 'B Rh-' AND Status = 'Valid'"
+            'Dim cmd28 = New MySqlCommand(query28, connection)
+            'count28 = cmd28.ExecuteScalar
+
+            'Dim query29 As String = "select COUNT(blood_type) FROM Donation_Stock where Blood_Type = 'AB Rh+' AND Status = 'Valid'"
+            'Dim cmd29 = New MySqlCommand(query29, connection)
+            'count29 = cmd29.ExecuteScalar
+
+            'Dim query30 As String = "select COUNT(blood_type) FROM Donation_Stock where Blood_Type = 'AB Rh-' AND Status = 'Valid'"
+            'Dim cmd30 = New MySqlCommand(query30, connection)
+            'count30 = cmd30.ExecuteScalar
+
+
+#End Region
+
+#Region "ListBox"
+            With lbShowStock.Items
+                .Add("A Rh+")
+                .Add("Blodplater:" & vbTab & count)
+                .Add("Blodlegemer:" & vbTab & count2)
+                .Add("Blodplasma:" & vbTab & count3)
+                .Add("")
+                .Add("A Rh-")
+                .Add("Blodplater:" & vbTab & count4)
+                .Add("Blodlegemer:" & vbTab & count5)
+                .Add("Blodplasma:" & vbTab & count6)
+                .Add("")
+                .Add("B Rh+")
+                .Add("Blodplater" & vbTab & count7)
+                .Add("Blodlegemer" & vbTab & count8)
+                .Add("Blodplasma" & vbTab & count9)
+                .Add("")
+                .Add("B Rh-")
+                .Add("Blodplater" & vbTab & count10)
+                .Add("Blodlegemer" & vbTab & count11)
+                .Add("Blodplasma" & vbTab & count12)
+                .Add("")
+                .Add("AB Rh+")
+                .Add("Blodplater" & vbTab & count13)
+                .Add("Blodlegemer" & vbTab & count14)
+                .Add("Blodplasma" & vbTab & count15)
+                .Add("")
+                .Add("AB Rh-")
+                .Add("Blodplater" & vbTab & count16)
+                .Add("Blodlegemer" & vbTab & count17)
+                .Add("Blodplasma" & vbTab & count18)
+                .Add("")
+                .Add("O Rh+")
+                .Add("Blodplater" & vbTab & count19)
+                .Add("Blodlegemer" & vbTab & count20)
+                .Add("Blodplasma" & vbTab & count21)
+                .Add("")
+                .Add("O Rh-")
+                .Add("Blodplater" & vbTab & count22)
+                .Add("Blodlegemer" & vbTab & count23)
+                .Add("Blodplasma" & vbTab & count24)
+            End With
+#End Region
+            connection.Close()
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            connection.Dispose()
         End Try
 
     End Sub

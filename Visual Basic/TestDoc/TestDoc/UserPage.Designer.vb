@@ -93,6 +93,7 @@ Partial Class UserPage
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnLogOut = New System.Windows.Forms.Button()
         Me.regerror = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.DonorPage.SuspendLayout()
         Me.MyPage.SuspendLayout()
         Me.gbBlood.SuspendLayout()
@@ -102,25 +103,24 @@ Partial Class UserPage
         Me.GroupBox1.SuspendLayout()
         Me.InfoPage.SuspendLayout()
         CType(Me.regerror, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DonorPage
         '
-        Me.DonorPage.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DonorPage.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DonorPage.Controls.Add(Me.MyPage)
         Me.DonorPage.Controls.Add(Me.BookTime)
         Me.DonorPage.Controls.Add(Me.ChangeData)
         Me.DonorPage.Controls.Add(Me.InfoPage)
         Me.DonorPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DonorPage.ItemSize = New System.Drawing.Size(234, 50)
-        Me.DonorPage.Location = New System.Drawing.Point(15, 42)
+        Me.DonorPage.ItemSize = New System.Drawing.Size(205, 75)
+        Me.DonorPage.Location = New System.Drawing.Point(11, 321)
         Me.DonorPage.Margin = New System.Windows.Forms.Padding(2)
         Me.DonorPage.Name = "DonorPage"
         Me.DonorPage.Padding = New System.Drawing.Point(48, 12)
         Me.DonorPage.SelectedIndex = 0
-        Me.DonorPage.Size = New System.Drawing.Size(1195, 701)
-        Me.DonorPage.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
+        Me.DonorPage.Size = New System.Drawing.Size(850, 800)
         Me.DonorPage.TabIndex = 7
         '
         'MyPage
@@ -130,11 +130,11 @@ Partial Class UserPage
         Me.MyPage.Controls.Add(Me.btnQuest)
         Me.MyPage.Controls.Add(Me.lblFullName)
         Me.MyPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MyPage.Location = New System.Drawing.Point(4, 54)
+        Me.MyPage.Location = New System.Drawing.Point(4, 81)
         Me.MyPage.Margin = New System.Windows.Forms.Padding(2)
         Me.MyPage.Name = "MyPage"
         Me.MyPage.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MyPage.Size = New System.Drawing.Size(1187, 643)
+        Me.MyPage.Size = New System.Drawing.Size(842, 715)
         Me.MyPage.TabIndex = 0
         Me.MyPage.Text = "TabPage1"
         Me.MyPage.UseVisualStyleBackColor = True
@@ -275,11 +275,11 @@ Partial Class UserPage
         'BookTime
         '
         Me.BookTime.Controls.Add(Me.GroupBox3)
-        Me.BookTime.Location = New System.Drawing.Point(4, 54)
+        Me.BookTime.Location = New System.Drawing.Point(4, 79)
         Me.BookTime.Margin = New System.Windows.Forms.Padding(2)
         Me.BookTime.Name = "BookTime"
         Me.BookTime.Padding = New System.Windows.Forms.Padding(2)
-        Me.BookTime.Size = New System.Drawing.Size(1187, 643)
+        Me.BookTime.Size = New System.Drawing.Size(842, 717)
         Me.BookTime.TabIndex = 1
         Me.BookTime.Text = "TabPage2"
         Me.BookTime.UseVisualStyleBackColor = True
@@ -451,7 +451,7 @@ Partial Class UserPage
         Me.ChangeData.Margin = New System.Windows.Forms.Padding(2)
         Me.ChangeData.Name = "ChangeData"
         Me.ChangeData.Padding = New System.Windows.Forms.Padding(2)
-        Me.ChangeData.Size = New System.Drawing.Size(1187, 643)
+        Me.ChangeData.Size = New System.Drawing.Size(1192, 642)
         Me.ChangeData.TabIndex = 2
         Me.ChangeData.Text = "TabPage3"
         Me.ChangeData.UseVisualStyleBackColor = True
@@ -666,7 +666,7 @@ Partial Class UserPage
         Me.InfoPage.Margin = New System.Windows.Forms.Padding(2)
         Me.InfoPage.Name = "InfoPage"
         Me.InfoPage.Padding = New System.Windows.Forms.Padding(2)
-        Me.InfoPage.Size = New System.Drawing.Size(1187, 643)
+        Me.InfoPage.Size = New System.Drawing.Size(1192, 642)
         Me.InfoPage.TabIndex = 3
         Me.InfoPage.Text = "TabPage4"
         Me.InfoPage.UseVisualStyleBackColor = True
@@ -869,7 +869,7 @@ Partial Class UserPage
         '
         Me.btnLogOut.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogOut.Location = New System.Drawing.Point(1080, 18)
+        Me.btnLogOut.Location = New System.Drawing.Point(1356, 18)
         Me.btnLogOut.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(133, 38)
@@ -881,18 +881,29 @@ Partial Class UserPage
         '
         Me.regerror.ContainerControl = Me
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.TestDoc.My.Resources.Resources.logo
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(345, 90)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 9
+        Me.PictureBox1.TabStop = False
+        '
         'UserPage
         '
-        Me.AcceptButton = Me.btnChangeData
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.RowHeader
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(908, 482)
+        Me.ClientSize = New System.Drawing.Size(1184, 761)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.DonorPage)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "UserPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Tapper`n"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.DonorPage.ResumeLayout(False)
         Me.MyPage.ResumeLayout(False)
@@ -908,6 +919,7 @@ Partial Class UserPage
         Me.InfoPage.ResumeLayout(False)
         Me.InfoPage.PerformLayout()
         CType(Me.regerror, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -981,4 +993,5 @@ Partial Class UserPage
     Friend WithEvents lblODate As Label
     Friend WithEvents BtnOrderApp As Button
     Friend WithEvents lblOTime As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
