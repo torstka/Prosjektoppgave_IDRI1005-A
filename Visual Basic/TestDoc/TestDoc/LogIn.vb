@@ -58,7 +58,13 @@ Public Class LogIn
         Dim leser = sql.ExecuteReader()
         If leser.HasRows Then
             Me.Hide()
-            EPage.Show()
+            If employeeNr > 2000 Then
+                Statistics.Show()
+            ElseIf employeeNr > 1000 Then
+                EPage.Show()
+            End If
+
+            'EPage.Show()
             txtPassword.Clear()
             txtPersonnr.Clear()
 

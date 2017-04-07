@@ -101,16 +101,20 @@ Partial Class UserPage
         '
         'DonorPage
         '
+        Me.DonorPage.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DonorPage.Controls.Add(Me.MyPage)
         Me.DonorPage.Controls.Add(Me.BookTime)
         Me.DonorPage.Controls.Add(Me.ChangeData)
         Me.DonorPage.Controls.Add(Me.InfoPage)
         Me.DonorPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DonorPage.Location = New System.Drawing.Point(255, 115)
+        Me.DonorPage.ItemSize = New System.Drawing.Size(234, 50)
+        Me.DonorPage.Location = New System.Drawing.Point(22, 65)
         Me.DonorPage.Name = "DonorPage"
-        Me.DonorPage.Padding = New System.Drawing.Point(39, 12)
+        Me.DonorPage.Padding = New System.Drawing.Point(48, 12)
         Me.DonorPage.SelectedIndex = 0
-        Me.DonorPage.Size = New System.Drawing.Size(1794, 1078)
+        Me.DonorPage.Size = New System.Drawing.Size(1793, 1078)
+        Me.DonorPage.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.DonorPage.TabIndex = 7
         '
         'MyPage
@@ -120,9 +124,10 @@ Partial Class UserPage
         Me.MyPage.Controls.Add(Me.btnQuest)
         Me.MyPage.Controls.Add(Me.lblFullName)
         Me.MyPage.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MyPage.Location = New System.Drawing.Point(4, 67)
+        Me.MyPage.Location = New System.Drawing.Point(4, 54)
         Me.MyPage.Name = "MyPage"
-        Me.MyPage.Size = New System.Drawing.Size(1786, 1007)
+        Me.MyPage.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.MyPage.Size = New System.Drawing.Size(1785, 1020)
         Me.MyPage.TabIndex = 0
         Me.MyPage.Text = "TabPage1"
         Me.MyPage.UseVisualStyleBackColor = True
@@ -250,10 +255,10 @@ Partial Class UserPage
         'BookTime
         '
         Me.BookTime.Controls.Add(Me.gbTime)
-        Me.BookTime.Location = New System.Drawing.Point(4, 67)
+        Me.BookTime.Location = New System.Drawing.Point(4, 54)
         Me.BookTime.Name = "BookTime"
         Me.BookTime.Padding = New System.Windows.Forms.Padding(3)
-        Me.BookTime.Size = New System.Drawing.Size(1786, 1007)
+        Me.BookTime.Size = New System.Drawing.Size(1785, 1020)
         Me.BookTime.TabIndex = 1
         Me.BookTime.Text = "TabPage2"
         Me.BookTime.UseVisualStyleBackColor = True
@@ -359,10 +364,10 @@ Partial Class UserPage
         'ChangeData
         '
         Me.ChangeData.Controls.Add(Me.GroupBox1)
-        Me.ChangeData.Location = New System.Drawing.Point(4, 67)
+        Me.ChangeData.Location = New System.Drawing.Point(4, 54)
         Me.ChangeData.Name = "ChangeData"
         Me.ChangeData.Padding = New System.Windows.Forms.Padding(3)
-        Me.ChangeData.Size = New System.Drawing.Size(1786, 1007)
+        Me.ChangeData.Size = New System.Drawing.Size(1785, 1020)
         Me.ChangeData.TabIndex = 2
         Me.ChangeData.Text = "TabPage3"
         Me.ChangeData.UseVisualStyleBackColor = True
@@ -558,10 +563,10 @@ Partial Class UserPage
         Me.InfoPage.Controls.Add(Me.Label4)
         Me.InfoPage.Controls.Add(Me.Label3)
         Me.InfoPage.Controls.Add(Me.Label2)
-        Me.InfoPage.Location = New System.Drawing.Point(4, 67)
+        Me.InfoPage.Location = New System.Drawing.Point(4, 54)
         Me.InfoPage.Name = "InfoPage"
         Me.InfoPage.Padding = New System.Windows.Forms.Padding(3)
-        Me.InfoPage.Size = New System.Drawing.Size(1786, 1007)
+        Me.InfoPage.Size = New System.Drawing.Size(1785, 1020)
         Me.InfoPage.TabIndex = 3
         Me.InfoPage.Text = "TabPage4"
         Me.InfoPage.UseVisualStyleBackColor = True
@@ -745,10 +750,11 @@ Partial Class UserPage
         '
         'btnLogOut
         '
+        Me.btnLogOut.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogOut.Location = New System.Drawing.Point(1658, 21)
+        Me.btnLogOut.Location = New System.Drawing.Point(1620, 28)
         Me.btnLogOut.Name = "btnLogOut"
-        Me.btnLogOut.Size = New System.Drawing.Size(170, 58)
+        Me.btnLogOut.Size = New System.Drawing.Size(200, 58)
         Me.btnLogOut.TabIndex = 8
         Me.btnLogOut.Text = "Logg Ut"
         Me.btnLogOut.UseVisualStyleBackColor = True

@@ -17,8 +17,8 @@ Public Class UserPage
     Public ssNumber = LogIn.txtPersonnr.Text
 
     Private Sub TextBox1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtFirstName.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtLastName.Focus()
+        If e.KeyCode = Keys.Enter Then     'her kan man flytte med bruk av ENTER mellom textboxer, av hensyn til nedsatt bevegelighet
+            txtLastName.Focus()                 'gjelder for alle 8 følgende koder nedover
         End If
     End Sub
     Private Sub TextBox2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtLastName.KeyDown
@@ -217,8 +217,8 @@ Public Class UserPage
 
 
         'DonorPage.Size = (Me.Height / 2) - (buttonMain.Height / 2)
-        Me.Size = SystemInformation.PrimaryMonitorSize
-        DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
+        'Me.Size = SystemInformation.PrimaryMonitorSize
+        'DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
         Me.MyPage.Text = "Min side "
         Me.BookTime.Text = "Bestill time"
