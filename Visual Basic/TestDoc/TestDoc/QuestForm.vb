@@ -136,7 +136,8 @@ Public Class QuestForm
         ' Dim query As String = "SELECT (ssn, date) FROM Answer VALUES(user.ssn = answer.ssn & date & "todayDate-90Days") " Then
         ' Dim todaysDate As DateTime = Today.ToString("dd/MM/yyyy")
         Dim todaysDate90 As String = Today.AddDays(-90).ToString("dd/MM/yyyy")
-        Dim todaysDate = Today.AddDays(-90)
+        Dim threeMounthAgo = Today.AddDays(-90)
+        Dim today2 = Today.Date
 
         Try
             connection.open()
@@ -150,8 +151,10 @@ Public Class QuestForm
                 lastDrain &= reader("last_drain") & " "
             End While
 
-            If lastDrain >= todaysDate Then
+            If lastDrain >= threeMounthAgo Then
                 MsgBox("Det er kortere enn tre måneder siden sist tapping, og du må derfor vente.")
+            ElseIf lastDrain = today2 Then
+                MsgBox("Du har allerede svart på spørreskjema i dag. Vennligst vent til du blir kalt inn.")
             Else
                 UserPage.Hide()
                 Me.Show()
@@ -251,6 +254,25 @@ Public Class QuestForm
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Private Sub updateLastDrain()
+
+        Dim todaysDate = Today.Date
+
+        Try
+            connection.Open()
+            Dim query As String = "UPDATE Blood_Data SET last_drain = '" & todaysDate & "' WHERE ss_number = '" & ssn & "'"
+            comm = New MySqlCommand(query, connection)
+            reader = comm.ExecuteReader
+
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+
+    End Sub
     Private Sub SaveAnswers()
         quarantine()
         CheckAllAnswers(QuestionRound)  'Henter alle tag'ene/svarene fra CheckAllAnswers fra tabControl. 
@@ -289,6 +311,7 @@ Public Class QuestForm
     Private Sub btnFinish_Click(sender As Object, e As EventArgs) Handles btnFinish.Click
         SaveAnswers()
         UserPage.Show()
+        updateLastDrain()
     End Sub
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         quarantine()

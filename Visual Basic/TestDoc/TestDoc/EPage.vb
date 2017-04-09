@@ -127,7 +127,7 @@ Public Class EPage
 
         Try
             connection.Open()
-            Dim query As String = "UPDATE Blood_Data SET blood_type = '" & cbBloodType.Text & "', hb = '" & txtHB.Text & "', iron_value = '" & txtIron.Text & "', last_drain = '" & todaysDate & "' WHERE ss_number = '" & txtSSN.Text & "'"
+            Dim query As String = "UPDATE Blood_Data SET blood_type = '" & cbBloodType.Text & "', hb = '" & txtHB.Text & "', iron_value = '" & txtIron.Text & "' WHERE ss_number = '" & txtSSN.Text & "'"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
 
