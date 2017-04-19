@@ -136,8 +136,8 @@ Public Class QuestForm
         ' Dim query As String = "SELECT (ssn, date) FROM Answer VALUES(user.ssn = answer.ssn & date & "todayDate-90Days") " Then
         ' Dim todaysDate As DateTime = Today.ToString("dd/MM/yyyy")
         Dim todaysDate90 As String = Today.AddDays(-90).ToString("dd/MM/yyyy")
-        Dim threeMounthAgo = Today.AddDays(-90)
-        Dim today2 = Today.Date
+        Dim threeMounthAgo = Today.AddDays(-90).ToString("dd/MM/yyyy")
+        Dim today2 = Today.ToString("dd/MM/yyyy")
 
         Try
             connection.open()
