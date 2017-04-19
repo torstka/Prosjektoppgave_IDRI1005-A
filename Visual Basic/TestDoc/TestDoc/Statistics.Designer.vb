@@ -156,7 +156,7 @@ Partial Class Statistics
         Me.lblStatistics.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblStatistics.Location = New System.Drawing.Point(420, 13)
         Me.lblStatistics.Name = "lblStatistics"
-        Me.lblStatistics.Size = New System.Drawing.Size(551, 37)
+        Me.lblStatistics.Size = New System.Drawing.Size(387, 26)
         Me.lblStatistics.TabIndex = 19
         Me.lblStatistics.Text = "Ulik Statistikk hentet fra Databasen"
         '
@@ -166,14 +166,14 @@ Partial Class Statistics
         Me.lblCPie.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCPie.Location = New System.Drawing.Point(159, 84)
         Me.lblCPie.Name = "lblCPie"
-        Me.lblCPie.Size = New System.Drawing.Size(278, 25)
+        Me.lblCPie.Size = New System.Drawing.Size(211, 17)
         Me.lblCPie.TabIndex = 20
         Me.lblCPie.Text = "De 4 forskjellige blodtypene"
         '
         'btnSBType
         '
         Me.btnSBType.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSBType.Location = New System.Drawing.Point(92, 602)
+        Me.btnSBType.Location = New System.Drawing.Point(601, 655)
         Me.btnSBType.Name = "btnSBType"
         Me.btnSBType.Size = New System.Drawing.Size(358, 47)
         Me.btnSBType.TabIndex = 21
@@ -183,7 +183,7 @@ Partial Class Statistics
         'btnBTPie
         '
         Me.btnBTPie.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBTPie.Location = New System.Drawing.Point(92, 602)
+        Me.btnBTPie.Location = New System.Drawing.Point(601, 602)
         Me.btnBTPie.Name = "btnBTPie"
         Me.btnBTPie.Size = New System.Drawing.Size(358, 47)
         Me.btnBTPie.TabIndex = 22

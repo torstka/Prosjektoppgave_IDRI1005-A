@@ -4,27 +4,16 @@ Public Class MyPage
     Dim command As MySqlCommand
     Dim command2 As MySqlCommand
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Me.Hide()
-        DataMyBlood.Show()
-    End Sub
+
 
     Private Sub Button2_Click(sender As Object, e As EventArgs)
         Me.Hide()
         'Calender.show()
     End Sub
 
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        Me.Hide()
-        BloodInformation.Show()
-    End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-        Me.Hide()
-        ChangeUserInfo.Show()
-        ChangeUserInfo.Label7.Text = Me.Label3.Text ' forma som legger inn personalia som er lik den ved førstegangs registrering
-        'for det er vel kun de data man tenker at bruker skal kunne endre???
-    End Sub
+
+
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Me.Hide()

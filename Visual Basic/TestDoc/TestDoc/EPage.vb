@@ -16,9 +16,14 @@ Public Class EPage
         DataGridView1.DefaultCellStyle.Font = New Font("Calibri", 14, FontStyle.Regular, GraphicsUnit.Point)
         DataGridView1.ColumnHeadersDefaultCellStyle.Font = New Font("Calibri", 15, FontStyle.Bold, GraphicsUnit.Point)
 
+        Me.TabPage1.Text = "Brukerinformasjon"
+        Me.TabPage2.Text = "Lagerbeholdning"
+        Me.TabPage3.Text = "Statistikk"
+
+
         Try
             connection.Open()
-            Dim query As String = "SELECT a.ss_number as 'Personnummer',a.lastname as 'Etternavn',a.firstname as 'Fornavn',a.phone as 'Telefon', b.Blood_type as 'Blodtype' FROM User a INNER JOIN Blood_Data b on a.ss_number=b.ss_number"
+            Dim query As String = "SELECT TableUser.ss_number as 'Personnummer',TableUser.lastname as 'Etternavn',TableUser.firstname as 'Fornavn',TableUser.phone as 'Telefon', TableUser.quarantine as 'Karantene', TableBlood.Blood_type as 'Blodtype' FROM User TableUser INNER JOIN Blood_Data TableBlood on TableUser.ss_number=TableBlood.ss_number"
             cmd = New MySqlCommand(query, connection)
             adapter.SelectCommand = cmd
             adapter.Fill(dtable)
@@ -117,11 +122,7 @@ Public Class EPage
         DataGridView1.DataSource = DV
     End Sub
 
-    Private Sub btnUpdateData_Click(sender As Object, e As EventArgs) Handles btnUpdateData.Click
-        updateBloodData()
-        dtable.Clear()
-        load_table()
-    End Sub
+
 
     Private Sub updateBloodData()
 
@@ -283,10 +284,14 @@ Public Class EPage
     End Sub
 
     Private Sub btnGetBlood_Click(sender As Object, e As EventArgs) Handles btnGetBlood.Click
+        If cbGetBloodType.Text = "" Or cbGetBloodInfo.Text = "" Or txtGetBloodCount.Text = 0 Then
+            MsgBox("Fyll inn alle verdier", MsgBoxStyle.Critical, "Feil")
+        Else
+            getBlood()
+            lbShowStock.Items.Clear()
+            showStock()
+        End If
 
-        getBlood()
-        lbShowStock.Items.Clear()
-        showStock()
 
         'If dt.Rows.Count >= int Then
         '    For i = 1 To int
@@ -351,7 +356,7 @@ Public Class EPage
                     reader = cmd.ExecuteReader
                     reader.Close()
                 Next
-                MsgBox("Hentet fra lager:" & vbCrLf & vbCrLf & "Blodinfo: " & cbGetBloodInfo.Text & vbCrLf & "Blodtype: " & cbGetBloodType.Text & vbCrLf & "Mengde: " & int & " dl")
+                MsgBox("Hentet fra lager:" & vbCrLf & vbCrLf & "Blodinfo: " & cbGetBloodInfo.Text & vbCrLf & "Blodtype: " & cbGetBloodType.Text & vbCrLf & "Mengde: " & int & " ml")
             Else
                 MsgBox("Ikke nok på lager")
             End If
@@ -593,5 +598,63 @@ Public Class EPage
 
     End Sub
 
+    Private Sub summons()
+        MsgBox("En innkalling er nå sendt til:" & vbCrLf & "Fornavn: " & txtFirstname.Text & vbCrLf & "Etternavn: " & txtLastname.Text & vbCrLf & "Personnummer: " & txtSSN.Text)
+    End Sub
 
+    Private Sub deleteUser()
+
+        Try
+            connection.Open()
+            Dim query As String = "DELETE FROM Blood_Data where ss_number = '" & txtSSN.Text & "'"
+            cmd = New MySqlCommand(query, connection)
+            reader = cmd.ExecuteReader
+            MsgBox("Slettet bruker:" & vbCrLf & "Fornavn: " & txtFirstname.Text & vbCrLf & "Etternavn: " & txtLastname.Text & vbCrLf & "Personnummer: " & txtSSN.Text)
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+        load_table()
+    End Sub
+
+    Private Sub btnSummons_Click(sender As Object, e As EventArgs) Handles btnSummons.Click
+
+        If txtSSN.Text = "" Then
+            MsgBox("Du har ikke valg en bruker.", MsgBoxStyle.Critical, "Feil")
+        Else
+            summons()
+        End If
+    End Sub
+
+    Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
+
+        If txtSSN.Text = "" Then
+            MsgBox("Velg bruker som skal oppdateres", MsgBoxStyle.Critical, "Feil")
+        Else
+            updateBloodData()
+            dtable.Clear()
+            load_table()
+        End If
+
+    End Sub
+
+    Private Sub btnDeleteUser_Click(sender As Object, e As EventArgs) Handles btnDeleteUser.Click
+
+        If txtSSN.Text = "" Then
+            MsgBox("Velg bruker som skal slettes", MsgBoxStyle.Critical, "Feil")
+        Else
+            deleteUser()
+            dtable.Clear()
+            load_table()
+        End If
+
+    End Sub
+
+
+    Private Sub checkDonationAmount()
+
+
+    End Sub
 End Class

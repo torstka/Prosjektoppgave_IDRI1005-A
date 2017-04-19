@@ -3,8 +3,7 @@ Imports MySql.Data.MySqlClient
 Public Class NewUser
     Private Sub NewUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Oppkobling mot databasen
-        tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
-        tilkobling.Open()
+
         Me.Size = SystemInformation.PrimaryMonitorSize
         Regbox.Location = New Point((ClientSize.Width - Regbox.Width) \ 2,
                              (ClientSize.Height - Regbox.Height) \ 2)
@@ -35,7 +34,7 @@ Public Class NewUser
         Me.Hide()
 
     End Sub
-    Private Sub Totalyear(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    Private Sub Totalyear()
         Dim year As String
         Dim month As String
         Dim day As String
@@ -291,21 +290,17 @@ Public Class NewUser
         End If
 
     End Function
-    'Private Function ValidKjønn() As Boolean
-    'Validerer at du ikke har krysset av for begge kjønn
-    'If Mbox.Checked And Fbox.Checked Then
-    'Me.RegError.SetError(Fbox, "Du kan bare velge et kjønn")
-    'Return False
-    'Validerer at minst en av checkboksene er krysset av
-    'ElseIf Mbox.Checked = False And Fbox.Checked = False Then
-    'Me.RegError.SetError(Fbox, "Vennligst velg et kjønn")
-    'Return False
-    'Else
-    'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
-    'Me.RegError.SetError(Fbox, "")
-    'Return True
-    'End If
-    'End Function
+    Private Function ValidKjønn() As Boolean
+        ' Validerer at minst en av checkboksene er krysset av
+        If rbMale.Checked = False And rbFemale.Checked = False Then
+            Me.RegError.SetError(rbFemale, "Vennligst velg et kjønn")
+            Return False
+        Else
+            ' Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.RegError.SetError(rbFemale, "")
+            Return True
+        End If
+    End Function
 
     Private tilkobling As MySqlConnection
 
@@ -323,6 +318,7 @@ Public Class NewUser
         Dim female = rbFemale.Checked
         Dim DOB = TxtDoB.Text & "/" & Txtmob.Text & "/" & txtyob.Text
 
+        Totalyear()
 
         If Not ValidFornavn() Then
             MsgBox(Me.RegError.GetError(txtFirstname))
@@ -344,6 +340,8 @@ Public Class NewUser
             MsgBox(Me.RegError.GetError(txtConfirmPassword))
         ElseIf Not ValidTelefon() Then
             MsgBox(Me.RegError.GetError(txtPhone))
+        ElseIf Not ValidKjønn() Then
+            MsgBox(Me.RegError.GetError(rbFemale))
         Else
 
             Dim newUser As New User
@@ -359,7 +357,22 @@ Public Class NewUser
 
     End Sub
 
-    Private Sub Regbox_Enter(sender As Object, e As EventArgs) Handles Regbox.Enter
+    Private Sub txtFirstname_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFirstname.TextChanged, txtLastname.TextChanged, txtAdress.TextChanged
+        If txtFirstname.Text <> "" Then
+            Dim a As String = txtFirstname.Text
+            txtFirstname.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtFirstname.Select(txtFirstname.Text.Length, 0)
+        End If
+        If txtLastname.Text <> "" Then
+            Dim a As String = txtLastname.Text
+            txtLastname.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtLastname.Select(txtLastname.Text.Length, 0)
+        End If
+        If txtAdress.Text <> "" Then
+            Dim a As String = txtAdress.Text
+            txtAdress.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtAdress.Select(txtAdress.Text.Length, 0)
+        End If
 
     End Sub
 End Class

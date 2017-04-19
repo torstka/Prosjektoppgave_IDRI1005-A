@@ -74,12 +74,6 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BloodInformation.Designer.vb">
-      <DependentUpon>BloodInformation.vb</DependentUpon>
-    </Compile>
-    <Compile Include="BloodInformation.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="BloodStock.vb" />
     <Compile Include="Cal.Designer.vb">
       <DependentUpon>Cal.vb</DependentUpon>
@@ -87,25 +81,7 @@
     <Compile Include="Cal.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ChangeUserInfo.Designer.vb">
-      <DependentUpon>ChangeUserInfo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="ChangeUserInfo.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DataMyBlood.Designer.vb">
-      <DependentUpon>DataMyBlood.vb</DependentUpon>
-    </Compile>
-    <Compile Include="DataMyBlood.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Employee.vb" />
-    <Compile Include="EmployeeLogIn.Designer.vb">
-      <DependentUpon>EmployeeLogIn.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeeLogIn.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="EmployeePage.Designer.vb">
       <DependentUpon>EmployeePage.vb</DependentUpon>
     </Compile>
@@ -187,20 +163,8 @@
     <Compile Include="Validation.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="BloodInformation.resx">
-      <DependentUpon>BloodInformation.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Cal.resx">
       <DependentUpon>Cal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChangeUserInfo.resx">
-      <DependentUpon>ChangeUserInfo.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DataMyBlood.resx">
-      <DependentUpon>DataMyBlood.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeeLogIn.resx">
-      <DependentUpon>EmployeeLogIn.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeePage.resx">
       <DependentUpon>EmployeePage.vb</DependentUpon>

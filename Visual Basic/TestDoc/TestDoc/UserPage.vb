@@ -3,7 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class UserPage
 
-    'Public tilkobling = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
+    'Public connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
     'Public connection As MySqlConnection
     'Public COMMAND As MySqlCommand
 
@@ -80,13 +80,13 @@ Public Class UserPage
             adapter.Fill(dtable)
 
             For Each rad In dtable.Rows
-                txtFirstName.Text = (rad("firstname"))
-                txtLastName.Text = (rad("lastname"))
-                txtPhone.Text = (rad("phone"))
-                txtMail.Text = (rad("e_mail"))
-                txtAddress.Text = (rad("address"))
-                txtZipcode.Text = (rad("zip_code"))
-                txtPwd.Text = (rad("password"))
+                txtFirstName.Text = (rad("firstname")).ToString()
+                txtLastName.Text = (rad("lastname")).ToString()
+                txtPhone.Text = (rad("phone")).ToString()
+                txtMail.Text = (rad("e_mail")).ToString()
+                txtAddress.Text = (rad("address")).ToString()
+                txtZipcode.Text = (rad("zip_code")).ToString()
+                txtPwd.Text = (rad("password")).ToString()
             Next
 
         Catch ex As MySqlException
@@ -94,7 +94,7 @@ Public Class UserPage
             connection.Close()
 
         Finally
-            connection.Dispose()  'lukke tilkoblingen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
+            connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
         End Try
     End Sub
 
@@ -184,7 +184,7 @@ Public Class UserPage
             connection.Close()
 
         Finally
-            connection.Dispose()  'lukke tilkoblingen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
+            connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
         End Try
 
     End Sub
@@ -207,17 +207,16 @@ Public Class UserPage
 
     End Sub
 
+
+
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
+        getOrderDate()
 
         Me.Size = SystemInformation.PrimaryMonitorSize
         DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
-        Me.MyPage.Text = "Min side "
-        Me.BookTime.Text = "Bestill time"
-        Me.ChangeData.Text = "Endre personopplysninger"
-        Me.InfoPage.Text = "Informasjon Blodgiving"
+
 
 
         'Label18.Text = ssNumber
@@ -253,20 +252,20 @@ Public Class UserPage
         'Dim intern4 As New DataTable
 
         'Try
-        'tilkobling.Open()
-        'Dim sqlBloodInfo As New MySqlCommand("SELECT last_Drain, hb, iron_Value FROM Blood_Data WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", tilkobling)   'kommando med variabel til å ta imot fra DB, og tilkoblingen
+        'connection.Open()
+        'Dim sqlBloodInfo As New MySqlCommand("SELECT last_Drain, hb, iron_Value FROM Blood_Data WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", connection)   'kommando med variabel til å ta imot fra DB, og connectionen
         'da.SelectCommand = sqlBloodInfo   'da(data_adapter) velger hvilken kommando som skal kjøres og "Kommanderer" de over til interntabellen med en sqlspørring hvor alt legges i variabelen fra linja over
         'da.Fill(interntabel)          'når kommandolinje er valgt og utføres, legges data inn i den internetabellen, som igjen laster rad for rad inn i textboxene
 
-        'Dim sqltype As New MySqlCommand("SELECT blood_type FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", tilkobling)
-        'Dim sqlname As New MySqlCommand("SELECT firstname, lastname FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", tilkobling)
+        'Dim sqltype As New MySqlCommand("SELECT blood_type FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", connection)
+        'Dim sqlname As New MySqlCommand("SELECT firstname, lastname FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", connection)
 
         'da2.SelectCommand = sqlname
         'da2.Fill(intern2)
         'da3.SelectCommand = sqltype
         'da3.Fill(intern3)
 
-        'Dim sqlEditInfo As New MySqlCommand("SELECT e_mail, phone, address, password, firstname, lastname FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", tilkobling)
+        'Dim sqlEditInfo As New MySqlCommand("SELECT e_mail, phone, address, password, firstname, lastname FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", connection)
         'da4.SelectCommand = sqlEditInfo
         'da4.Fill(intern4)
 
@@ -294,7 +293,7 @@ Public Class UserPage
         'Catch ex As MySqlException
         'MsgBox(ex.Message)        'tilfelle det oppstår en feil
         'Finally
-        'tilkobling.Dispose()      'lukke tilkoblingen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
+        'connection.Dispose()      'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
         'End Try
 #Region "pao user_load"
         'dt henter ut dagens dato + 91 dager
@@ -304,23 +303,23 @@ Public Class UserPage
         Me.DTPOrder.MinDate = dt
 
         Try
-            tilkobling.Open()
-            ' MsgBox("tilkobling 2 komplett")
+            connection.Open()
+            ' MsgBox("connection 2 komplett")
             'Select OrderID, day, time From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & lblSSN.Text & ")
 
-            Dim sql As New MySqlCommand("Select OrderID, day, time From Calendar Where ss_number =" & ssNumber & " And OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & lblSSN.Text & ")", tilkobling)
+            Dim sql As New MySqlCommand("Select cal_id, day, time From Calendar Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & lblSSN.Text & ")", connection)
             Dim da As New MySqlDataAdapter
             Dim interntabell As New DataTable
 
             da.SelectCommand = sql
             ' da.Fill(interntabell)
-            tilkobling.Close()
+            connection.Close()
 
             Dim rad As DataRow
             Dim day, time, OrderID As String
             For Each rad In interntabell.Rows
 
-                OrderID = rad("OrderID")
+                OrderID = rad("cal_id")
                 day = rad("day")
                 time = rad("time")
 
@@ -331,23 +330,23 @@ Public Class UserPage
                 OIDtoSSN = OrderID
             Next rad
         Catch feilmelding As MySqlException
-            MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
+            MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
      feilmelding.Message)
 
             dot = " "
         Finally
-            tilkobling.Dispose()
+            connection.Dispose()
         End Try
         '   Try
-        '       tilkobling.Open()
+        '       connection.Open()
 
-        '       Dim sql As New MySqlCommand("Select OrderID, day, time From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & lblSSN.Text & ")", tilkobling)
+        '       Dim sql As New MySqlCommand("Select OrderID, day, time From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & lblSSN.Text & ")", connection)
         '       Dim da As New MySqlDataAdapter
         '       Dim interntabell As New DataTable
 
         '       da.SelectCommand = sql
         '       da.Fill(interntabell)
-        '       tilkobling.Close()
+        '       connection.Close()
 
         '       Dim rad As DataRow
         '       Dim day, time, OrderID As String
@@ -363,12 +362,12 @@ Public Class UserPage
         '           OIDtoSSN = OrderID
         '       Next rad
         '   Catch feilmelding As MySqlException
-        '       MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
+        '       MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
         'feilmelding.Message)
 
         '       dot = " "
         '   Finally
-        '       tilkobling.Dispose()
+        '       connection.Dispose()
         '   End Try 
 #End Region
     End Sub
@@ -394,11 +393,6 @@ Public Class UserPage
 
     End Sub
 #Region "pao public var"
-    Public tilkobling As New MySqlConnection(
-"Server=mysql.stud.iie.ntnu.no;" _
-& "Database=g_oops_03;" _
-& "Uid=g_oops_03;" _
-& "Pwd=mczmmM3N;")
     Public today_p90 As DateTime = DateTime.Now.AddDays(+90)
     Public Today As String = Date.Now.ToString("yyyy.MM.dd")
     Public dot As String = " "
@@ -421,7 +415,8 @@ Public Class UserPage
     'Nxt = short for next
 #End Region
 #Region "pao Order button and sql"
-    Private Sub BtnOrderAppointment_Click(sender As Object, e As EventArgs) Handles BtnOrderApp.Click
+
+    Private Sub BtnOrderApp_Click(sender As Object, e As EventArgs) Handles BtnOrderApp.Click
 
         Dim newDTPValue As String
         Dim DTPValue As Date
@@ -458,18 +453,18 @@ Public Class UserPage
             Try
                 '"SELECT OrderID From Calendar Where Day = '2017.10.01' And time = '08:00'"
                 '"SELECT OrderID FROM Calendar Where Day= '" & DTPOrder.Text & "' And time= '" & txtbxTime.Text & "' "
-                tilkobling.Open()
-                Dim sql As New MySqlCommand("SELECT OrderID FROM Calendar Where Day= '" & DTPOrder.Text & "' And time= '" & txtbxTime.Text & "' ", tilkobling)
+                connection.Open()
+                Dim sql As New MySqlCommand("SELECT cal_id FROM Calendar Where Day= '" & DTPOrder.Text & "' And time= '" & txtbxTime.Text & "' ", connection)
                 Dim da As New MySqlDataAdapter
                 Dim interntabell As New DataTable
 
                 da.SelectCommand = sql
                 da.Fill(interntabell)
-                tilkobling.Close()
+                connection.Close()
 
                 Dim rad As DataRow
                 For Each rad In interntabell.Rows
-                    busy = rad("OrderID")
+                    busy = rad("cal_id")
 
                 Next rad
                 'msgbox vises med 0
@@ -478,7 +473,7 @@ Public Class UserPage
                 MsgBox("Feil med variabel busy   " &
 feilmelding.Message)
             Finally
-                tilkobling.Dispose()
+                connection.Dispose()
             End Try
 
             If busy > 1 Then
@@ -488,29 +483,31 @@ feilmelding.Message)
                 MsgBox("Not busy")
 
                 Try
-                    tilkobling.Open()
+                    connection.Open()
                     Dim sporring As String
-                    sporring = "Insert Into Calendar VALUES (' ', '" & ssNumber & "', '" & DTPOrder.Text & "', '" & txtbxTime.Text & "')"
+                    sporring = "Insert Into Calendar (ss_number, day, time) VALUES ('" & ssNumber & "','" & DTPOrder.Text & "', '" & txtbxTime.Text & "')"
 
-                    Dim insertsql As New MySqlCommand(sporring, tilkobling)
+                    Dim insertsql As New MySqlCommand(sporring, connection)
                     Dim da As New MySqlDataAdapter
                     Dim interntabell As New DataTable
 
                     da.SelectCommand = insertsql
                     da.Fill(interntabell)
-                    tilkobling.Close()
+                    connection.Close()
 
                     lblODate.Text = DTPOrder.Text
                     lblOTime.Text = txtbxTime.Text
                     nxtApp.Text = DTPOrder.Text + " " + txtbxTime.Text
                 Catch feilmelding As MySqlException
-                    MsgBox("Feil ved tilkobling til databasen: bestilling " & feilmelding.Message)
+                    MsgBox("Feil ved connection til databasen: bestilling " & feilmelding.Message)
                 Finally
-                    tilkobling.Dispose()
+                    connection.Dispose()
                 End Try
             End If
         End If
+
     End Sub
+
 #End Region
 #Region "pao Cancel Order button and sql"
     Private Sub btnCApp_Click(sender As Object, e As EventArgs) Handles btnCApp.Click
@@ -526,55 +523,55 @@ feilmelding.Message)
             MsgBox("Ingen time satt opp")
         Else
             Try
-                tilkobling.Open()
-                ' MsgBox("tilkobling 2 komplett")
+                connection.Open()
+                ' MsgBox("connection 2 komplett")
                 '"Select OrderID, day, time From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar)"
                 'Select * From Calendar Where OrderID = (Select MAX(OrderID) From Calendar Where ss_number =22119611122) 
                 '"Select * From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & lblSSN.Text & ")"
-                Dim sql As New MySqlCommand("Select OrderId From Calendar Where OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & ssNumber & ") ", tilkobling)
+                Dim sql As New MySqlCommand("Select cal_id From Calendar Where cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & ssNumber & ") ", connection)
                 Dim da As New MySqlDataAdapter
                 Dim interntabell As New DataTable
 
                 da.SelectCommand = sql
                 da.Fill(interntabell)
-                tilkobling.Close()
+                connection.Close()
 
                 Dim rad As DataRow
-                Dim OrderID As String
+                Dim calID As String
                 For Each rad In interntabell.Rows
 
-                    OrderID = rad("OrderID")
+                    calID = rad("cal_id")
                     '  dot = day + " " + time
-                    cancel = OrderID
+                    cancel = calID
 
                 Next rad
             Catch feilmelding As MySqlException
-                MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
+                MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
      feilmelding.Message)
                 cancel = 0
 
             Finally
-                tilkobling.Dispose()
+                connection.Dispose()
             End Try
             If cancel > 0 Then
                 MsgBox("time avbestilles")
                 Try
-                    tilkobling.Open()
-                    ' MsgBox("tilkobling 2 komplett")
+                    connection.Open()
+                    ' MsgBox("connection 2 komplett")
 
                     'UPDATE `Calendar` SET `OrderID`='183',`ss_number`=121221229,`day`='2017-10-01',`time`='08:30' WHERE `OrderID`='183'
-                    Dim sql As New MySqlCommand("UPDATE `Calendar` SET `OrderID`='" & OIDtoSSN & "', `ss_number`='" & ssNumber & "', `day`='0000-00-00',`time`='00:00' Where OrderID ='" & OIDtoSSN & "' ", tilkobling)
+                    Dim sql As New MySqlCommand("UPDATE `Calendar` SET `cal_ID`='" & OIDtoSSN & "', `ss_number`='" & ssNumber & "', `day`='0000-00-00',`time`='00:00' Where cal_id ='" & OIDtoSSN & "' ", connection)
                     Dim da As New MySqlDataAdapter
                     Dim interntabell As New DataTable
 
                     da.SelectCommand = sql
                     da.Fill(interntabell)
-                    tilkobling.Close()
+                    connection.Close()
 
                     Dim rad As DataRow
                     Dim OrderID As String
                     For Each rad In interntabell.Rows
-                        OrderID = rad("OrderID")
+                        OrderID = rad("cal_id")
                         'day = rad("day")
                         'time = rad("time")
                         '   dot = day + " " + time
@@ -584,19 +581,40 @@ feilmelding.Message)
 
                     MsgBox("avbestilt neste time.")
                 Catch feilmelding As MySqlException
-                    MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
+                    MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
              feilmelding.Message)
                 Finally
-                    tilkobling.Dispose()
+                    connection.Dispose()
                 End Try
             Else
                 MsgBox("Ingen time å avbestille")
             End If
-
         End If
-
-
     End Sub
-#End Region
 
+
+#End Region
+    Private Sub getOrderDate()
+
+        Try
+            '  connection.Open()
+            Dim query As String = "SELECT day, time From Calendar Where cal_id = (Select MAX(cal_id)From Calendar Where ss_number = '" & ssNumber & "')"
+            cmd = New MySqlCommand(query, connection)
+            adapter = New MySqlDataAdapter
+            adapter.SelectCommand = cmd
+            adapter.Fill(dtable)
+
+            For Each rad In dtable.Rows
+                nxtApp.Text = (rad("day"))
+                lblOTime.Text = (rad("time"))
+            Next
+
+        Catch ex As MySqlException
+            MsgBox(ex.Message)         'tilfelle det oppstår en feil
+            connection.Close()
+
+        Finally
+            connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
+        End Try
+    End Sub
 End Class

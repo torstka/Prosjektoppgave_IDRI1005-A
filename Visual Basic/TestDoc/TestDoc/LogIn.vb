@@ -162,10 +162,6 @@ Public Class LogIn
         Application.Exit()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        Me.Hide()
-        EmployeeLogIn.Show()
-    End Sub
 
     Private Sub LogIn_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         connection.Close()

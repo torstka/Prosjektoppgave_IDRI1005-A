@@ -10,7 +10,7 @@ Public Class Statistics
     Dim da2 As New MySqlDataAdapter
     Dim intern2 As New DataTable
     Dim bSoursce2 As New BindingSource
-    Dim sql = New MySqlCommand("SELECT blood_type, COUNT(*) FROM Donation_Stock GROUP BY blood_type HAVING COUNT(*)>0", tilkobling)
+    Dim sql = New MySqlCommand("SELECT blood_type, COUNT(*) FROM Blood_Data GROUP BY blood_type HAVING COUNT(*)>0", tilkobling)
     Dim sql2 = New MySqlCommand("SELECT gender,COUNT(*) FROM User GROUP BY gender HAVING COUNT(*)>0 ", tilkobling)
     Public Overrides Property AutoSize As Boolean
 
@@ -88,19 +88,19 @@ Public Class Statistics
             Dim BloodcountAB As Int16 = 0
             Dim BloodcountO As Int16 = 0
 
-            Query = "SELECT COUNT(*) FROM Donation_Stock WHERE blood_type = 'A Rh+' OR blood_type = 'A Rh-'"
+            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'A Rh+' OR blood_type = 'A Rh-'"
             command = New MySqlCommand(Query, tilkobling)
             BloodcountA = Convert.ToInt16(command.ExecuteScalar)
 
-            Query = "SELECT COUNT(*) FROM Donation_Stock WHERE blood_type = 'B Rh+' OR blood_type = 'B Rh-'"
+            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'B Rh+' OR blood_type = 'B Rh-'"
             command = New MySqlCommand(Query, tilkobling)
             BloodcountB = Convert.ToInt16(command.ExecuteScalar)
 
-            Query = "SELECT COUNT(*) FROM Donation_Stock WHERE blood_type = 'AB Rh+' OR blood_type = 'AB Rh-'"
+            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'AB Rh+' OR blood_type = 'AB Rh-'"
             command = New MySqlCommand(Query, tilkobling)
             BloodcountAB = Convert.ToInt16(command.ExecuteScalar)
 
-            Query = "SELECT COUNT(*) FROM Donation_Stock WHERE blood_type = '0 Rh+' OR blood_type = '0 Rh-'"
+            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'O Rh+' OR blood_type = 'O Rh-'"
             command = New MySqlCommand(Query, tilkobling)
             BloodcountO = Convert.ToInt16(command.ExecuteScalar)
 

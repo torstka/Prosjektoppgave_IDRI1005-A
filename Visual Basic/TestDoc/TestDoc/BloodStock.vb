@@ -23,5 +23,4 @@ Public Class BloodStock
 
     End Sub
 
-
 End Class
