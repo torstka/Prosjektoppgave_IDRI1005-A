@@ -255,3 +255,4 @@ C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc
 C:\Users\wolds\Documents\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestForm.resources
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.QuestForm.resources
 C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\obj\Debug\TestDoc.Statistics.resources
+C:\A-Prosjekt\Prosjektoppgave_IDRI1005-A\Visual Basic\TestDoc\TestDoc\bin\Debug\MySql.Data.dll

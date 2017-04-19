@@ -177,7 +177,6 @@ Public Class EPage
         Dim count3 As Integer = Integer.Parse(txtPlasmaCount.Text)
 
 
-
         If cbBloodType.Text = "" And txtSSN.Text = "" Then
             MsgBox("Vær vennlig å velg donor", MsgBoxStyle.Critical, "Velg donor")
 

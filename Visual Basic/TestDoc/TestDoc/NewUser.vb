@@ -347,7 +347,7 @@ Public Class NewUser
         Else
 
             Dim newUser As New User
-            newUser.add(ssNumber, firstname, lastname, address, zipCode, phone, email, password, male, female)
+            newUser.add(ssNumber, firstname, lastname, address, zipCode, phone, email, password, male, female, DOB)
 
             Dim addBlood As New User
             addBlood.addBloodData(ssNumber)

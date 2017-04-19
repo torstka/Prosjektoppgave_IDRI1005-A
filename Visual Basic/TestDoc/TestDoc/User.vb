@@ -13,7 +13,7 @@ Public Class User
     Public ssNumber = LogIn.txtPersonnr.Text
 
 
-    Public Sub add(ByVal ssNumber As String, ByVal firstname As String, ByVal lastname As String, ByVal address As String, ByVal zipcode As Integer, ByVal phone As String, ByVal email As String, ByVal password As String, ByVal male As String, ByVal female As String)
+    Public Sub add(ByVal ssNumber As String, ByVal firstname As String, ByVal lastname As String, ByVal address As String, ByVal zipcode As Integer, ByVal phone As String, ByVal email As String, ByVal password As String, ByVal male As String, ByVal female As String, ByVal DOB As String)
         Dim Mbox = NewUser.rbMale.Checked
         Dim Fbox = NewUser.rbFemale.Checked
         male = "Male"
@@ -21,7 +21,7 @@ Public Class User
 
         Try
             connection.Open()
-            Dim query = "insert into User (ss_number, firstname, lastname, phone, e_mail, address, zip_code, password, gender) values (@ssnumber, @firstname, @lastname, @phone, @email, @address, @zipcode, @password, @gender)"
+            Dim query = "insert into User (ss_number, firstname, lastname, phone, e_mail, address, zip_code, password, gender, DOB) values (@ssnumber, @firstname, @lastname, @phone, @email, @address, @zipcode, @password, @gender, @DOB)"
             cmd = New MySqlCommand(query, connection)
 
             cmd.Parameters.AddWithValue("@ssnumber", ssNumber)
@@ -37,6 +37,7 @@ Public Class User
             ElseIf Fbox Then
                 cmd.Parameters.AddWithValue("@gender", female)
             End If
+            cmd.Parameters.AddWithValue("@DOB", DOB)
 
             cmd.ExecuteNonQuery()
             MsgBox("En verifiseringslink er blitt sendt til epost: " & NewUser.txtEmail.Text & " for bekreftelse.", MsgBoxStyle.Information, "Verifisering")
@@ -137,7 +138,7 @@ Public Class User
 
         Try
             connection.Open()
-            Dim query As String = "INSERT INTO Blood_Data (blood_type, ss_number) VALUES (0, '" & SSNumber & "')"
+            Dim query As String = "INSERT INTO Blood_Data (ss_number) VALUES ('" & SSNumber & "')"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
 
