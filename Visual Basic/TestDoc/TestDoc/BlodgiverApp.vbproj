@@ -100,6 +100,12 @@
     <Compile Include="LogIn.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="MailForm.Designer.vb">
+      <DependentUpon>MailForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MailForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -174,6 +180,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MailForm.resx">
+      <DependentUpon>MailForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

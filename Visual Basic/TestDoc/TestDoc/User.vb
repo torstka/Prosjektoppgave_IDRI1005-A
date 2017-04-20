@@ -40,8 +40,7 @@ Public Class User
             cmd.Parameters.AddWithValue("@DOB", DOB)
 
             cmd.ExecuteNonQuery()
-            MsgBox("En verifiseringslink er blitt sendt til epost: " & NewUser.txtEmail.Text & " for bekreftelse.", MsgBoxStyle.Information, "Verifisering")
-            MsgBox("Registrering er velykket!", MsgBoxStyle.OkOnly, "Verifisert!")
+            MsgBox("En bekreftelse er blitt sendt til epost: " & NewUser.txtEmail.Text, MsgBoxStyle.Information, "Registrering vellykket")
         Catch ex As Exception
             MsgBox(ex.Message)
             connection.Close()
@@ -138,7 +137,7 @@ Public Class User
 
         Try
             connection.Open()
-            Dim query As String = "INSERT INTO Blood_Data (ss_number) VALUES ('" & SSNumber & "')"
+            Dim query As String = "INSERT INTO Blood_Data (ss_number, blood_type) VALUES ('" & SSNumber & "', 'Ikke verdi')"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
 

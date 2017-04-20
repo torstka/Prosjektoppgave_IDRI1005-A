@@ -74,11 +74,12 @@ Public Class EPage
             txtPhone.Text = row.Cells("Telefon").Value.ToString
         End If
 
-
         'Dim bloodData As New Employee
         'bloodData.showBloodData(txtHB.Text, txtIron.Text, cbBloodType.Text)
 
+        getMail()
         getBloodData()
+
 
     End Sub
 
@@ -114,6 +115,31 @@ Public Class EPage
         End Try
     End Sub
 
+    Private Sub getMail()
+
+        Try
+            connection.Open()
+            Dim query As String = "select e_mail FROM User where ss_number = '" & txtSSN.Text & "'"
+            cmd = New MySqlCommand(query, connection)
+            reader = cmd.ExecuteReader
+
+            Dim email As String = ""
+
+            While reader.Read()
+                email &= reader("e_mail") & " "
+            End While
+
+            txtMail.Text = email
+
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+
+
+    End Sub
 
 
     Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
@@ -176,9 +202,12 @@ Public Class EPage
         Dim count As Integer = Integer.Parse(txtPlateletsCount.Text)
         Dim count2 As Integer = Integer.Parse(txtCellsCount.Text)
         Dim count3 As Integer = Integer.Parse(txtPlasmaCount.Text)
+        Dim sum = txtPlateletsCount.Text + +txtPlasmaCount.Text + +txtCellsCount.Text
 
+        If sum <> 500 Then
+            MsgBox("Den totale verdien må tilsammen være 500 ml")
 
-        If cbBloodType.Text = "" And txtSSN.Text = "" Then
+        ElseIf cbBloodType.Text = "" And txtSSN.Text = "" Then
             MsgBox("Vær vennlig å velg donor", MsgBoxStyle.Critical, "Velg donor")
 
         ElseIf count = 0 Or count2 = 0 Or count3 = 0 Then
@@ -368,6 +397,18 @@ Public Class EPage
         End Try
     End Sub
 
+    'Disse tre følgende kodene fjerner det som står inne i textboxene, de ansatte ska bruke for å legge inn blodverdier
+    'på respektive donorer som kommer som svar fra lab. Gjør jobben hurtig når textbox klargjøres for inntasing både
+    'med musklikk og med tab.
+    Private Sub txtPlateletsCount_Click(sender As Object, e As EventArgs) Handles txtPlateletsCount.Click
+        txtPlateletsCount.Text = ""
+    End Sub
+    Private Sub txtPlasmaCount_Click(sender As Object, e As EventArgs) Handles txtPlasmaCount.Click
+        txtPlasmaCount.Text = ""
+    End Sub
+    Private Sub txtCellsCount_Click(sender As Object, e As EventArgs) Handles txtCellsCount.Click
+        txtCellsCount.Text = ""
+    End Sub
 
     Private Sub showStock()
 
@@ -597,11 +638,6 @@ Public Class EPage
         End Try
 
     End Sub
-
-    Private Sub summons()
-        MsgBox("En innkalling er nå sendt til:" & vbCrLf & "Fornavn: " & txtFirstname.Text & vbCrLf & "Etternavn: " & txtLastname.Text & vbCrLf & "Personnummer: " & txtSSN.Text)
-    End Sub
-
     Private Sub deleteUser()
 
         Try
@@ -624,7 +660,7 @@ Public Class EPage
         If txtSSN.Text = "" Then
             MsgBox("Du har ikke valg en bruker.", MsgBoxStyle.Critical, "Feil")
         Else
-            summons()
+            MailForm.Show()
         End If
     End Sub
 

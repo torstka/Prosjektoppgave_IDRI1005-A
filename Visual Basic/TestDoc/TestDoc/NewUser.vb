@@ -1,4 +1,5 @@
 ﻿Imports System.Text.RegularExpressions
+Imports System.Net.Mail
 Imports MySql.Data.MySqlClient
 Public Class NewUser
     Private Sub NewUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -302,7 +303,6 @@ Public Class NewUser
         End If
     End Function
 
-    Private tilkobling As MySqlConnection
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'Deklarerer tekstboksene
@@ -344,6 +344,7 @@ Public Class NewUser
             MsgBox(Me.RegError.GetError(rbFemale))
         Else
 
+            Torstein()
             Dim newUser As New User
             newUser.add(ssNumber, firstname, lastname, address, zipCode, phone, email, password, male, female, DOB)
 
@@ -374,5 +375,25 @@ Public Class NewUser
             txtAdress.Select(txtAdress.Text.Length, 0)
         End If
 
+    End Sub
+
+    Private Sub Torstein()
+        Try
+            Dim mail As New MailMessage()
+            Dim SmtpServer As New SmtpClient
+            SmtpServer.Credentials = New Net.NetworkCredential("tappernas@gmail.com", "Pannekake123")
+            SmtpServer.Port = 587
+            SmtpServer.Host = "smtp.gmail.com"
+            SmtpServer.EnableSsl = True
+            '  SmtpServer.EnableSsl = True
+            mail.To.Add(txtEmail.Text)
+            mail.From = New MailAddress("tappernas@gmail.com")
+            mail.Subject = "Registrering godkjent"
+            mail.Body = "Hei!" & vbCrLf & "Takk for at du registrerte deg som blodgiver. Vi ønsker deg velkommen til å komme å fylle ut skjemaet, og gi blod 🙂" & vbCrLf & vbCrLf & "Med vennlig hilsen" & vbCrLf & "Blodbanken ved St.Olavs Hospital"
+            SmtpServer.Send(mail)
+            mail.Body = ""
+        Catch error_mail As Exception
+            MsgBox("Det skjedde dessverre en teknisk feil. Dobbelsjekk at du har fyllt inn riktig informasjon, og prøv på nytt." & error_mail.Message)
+        End Try
     End Sub
 End Class

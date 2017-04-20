@@ -1,5 +1,6 @@
 ﻿Imports System.Text.RegularExpressions
 Imports MySql.Data.MySqlClient
+Imports System.Net.Mail
 
 
 Public Class LogIn
@@ -194,4 +195,49 @@ Public Class LogIn
         End If
     End Sub
 
+    Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
+
+        Dim cmd As New MySqlCommand
+        Dim reader As MySqlDataReader
+        Dim ssn = InputBox("Skriv inn ditt personnummer", "Verifisering", "regine@gmail.com")
+
+        Try
+            connection.Open()
+            Dim query As String = "select e_mail, password FROM User where ss_number = '" & ssn & "'"
+            cmd = New MySqlCommand(query, connection)
+            reader = cmd.ExecuteReader
+
+            Dim email As String = ""
+            Dim pwd As String = ""
+
+            While reader.Read()
+                email &= reader("e_mail") & " "
+                pwd &= reader("password") & " "
+            End While
+
+
+            Dim mail As New MailMessage()
+            Dim SmtpServer As New SmtpClient
+            SmtpServer.Credentials = New Net.NetworkCredential("tappernas@gmail.com", "Pannekake123")
+            SmtpServer.Port = 587
+            SmtpServer.Host = "smtp.gmail.com"
+            SmtpServer.EnableSsl = True
+            '  SmtpServer.EnableSsl = True
+            mail.To.Add(email)
+            mail.From = New MailAddress("tappernas@gmail.com")
+            mail.Subject = "Glemt passord"
+            mail.Body = "Ditt passord er: " & pwd
+            SmtpServer.Send(mail)
+            mail.Body = ""
+
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show("Personnummeret er ikke registrert i vår database. Hvis du ikke er registrert, kan du gjøre dette på innlogginssiden.")
+        Finally
+            connection.Dispose()
+        End Try
+
+
+
+    End Sub
 End Class
