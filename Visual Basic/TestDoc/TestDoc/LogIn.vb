@@ -181,12 +181,12 @@ Public Class LogIn
 
     End Sub
 
-    Private Sub txtPassword_TextChanged(sender As Object, e As EventArgs) Handles txtPassword.TextChanged
-
-    End Sub
-
-    Private Sub txtPassword_Enter(sender As Object, e As EventArgs) Handles txtPassword.Enter
-
+    Private Sub txt_TextChanged(sender As Object, e As KeyPressEventArgs) Handles txtPersonnr.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
     End Sub
 
     Private Sub btnLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles btnLogin.KeyDown
@@ -199,23 +199,24 @@ Public Class LogIn
 
         Dim cmd As New MySqlCommand
         Dim reader As MySqlDataReader
-        Dim ssn = InputBox("Skriv inn ditt personnummer", "Verifisering", "regine@gmail.com")
+        Dim ssn = InputBox("Skriv inn ditt personnummer (11 siffer)", "Verifisering")
 
-        Try
-            connection.Open()
-            Dim query As String = "select e_mail, password FROM User where ss_number = '" & ssn & "'"
-            cmd = New MySqlCommand(query, connection)
-            reader = cmd.ExecuteReader
 
-            Dim email As String = ""
-            Dim pwd As String = ""
 
+
+        connection.Open()
+        Dim query As String = "select e_mail, password FROM User where ss_number = '" & ssn & "'"
+        cmd = New MySqlCommand(query, connection)
+        reader = cmd.ExecuteReader
+
+        Dim email As String = ""
+        Dim pwd As String = ""
+
+        If reader.HasRows Then
             While reader.Read()
                 email &= reader("e_mail") & " "
                 pwd &= reader("password") & " "
             End While
-
-
             Dim mail As New MailMessage()
             Dim SmtpServer As New SmtpClient
             SmtpServer.Credentials = New Net.NetworkCredential("tappernas@gmail.com", "Pannekake123")
@@ -229,15 +230,11 @@ Public Class LogIn
             mail.Body = "Ditt passord er: " & pwd
             SmtpServer.Send(mail)
             mail.Body = ""
+            MsgBox("Passordet er nå tilsendt på epost", MsgBoxStyle.Information, "Epost sendt")
+        ElseIf Not reader.HasRows And ssn <> "" Then
+            MsgBox("Feil personnummer. Prøv på nytt", MsgBoxStyle.Critical, "Feil personnummer")
 
-            connection.Close()
-        Catch ex As Exception
-            MessageBox.Show("Personnummeret er ikke registrert i vår database. Hvis du ikke er registrert, kan du gjøre dette på innlogginssiden.")
-        Finally
-            connection.Dispose()
-        End Try
-
-
-
+        End If
+        connection.close
     End Sub
 End Class

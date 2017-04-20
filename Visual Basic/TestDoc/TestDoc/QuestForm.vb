@@ -208,7 +208,7 @@ Public Class QuestForm
         Dim qt90d As String '= Today.ToString("dd/MM/yyyy")
         Dim qt120d As String '= Today.ToString("dd/MM/yyyy")
         Dim qt365d As String '= Today.ToString("dd/MM/yyyy")
-        Dim lifeTimequarantine As String = "Karantene livsstid"
+        Dim lifeTimequarantine As String = "Livsstid"
         Dim listQuarantine As New List(Of Object)()
 
         'Fyller karantenene fra dagens dato til karantene-datoen

@@ -10,7 +10,7 @@ Public Class Statistics
     Dim da2 As New MySqlDataAdapter
     Dim intern2 As New DataTable
     Dim bSoursce2 As New BindingSource
-    Dim sql = New MySqlCommand("SELECT blood_type, COUNT(*) FROM Blood_Data GROUP BY blood_type HAVING COUNT(*)>0", tilkobling)
+    Dim sql = New MySqlCommand("SELECT blood_type, COUNT(*) FROM Blood_Data WHERE blood_type <> 'Ikke verdi' GROUP BY blood_type HAVING COUNT(*)>0", tilkobling)
     Dim sql2 = New MySqlCommand("SELECT gender,COUNT(*) FROM User GROUP BY gender HAVING COUNT(*)>0 ", tilkobling)
     Public Overrides Property AutoSize As Boolean
 

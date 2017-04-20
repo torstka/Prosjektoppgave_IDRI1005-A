@@ -23,7 +23,7 @@ Public Class EPage
 
         Try
             connection.Open()
-            Dim query As String = "SELECT TableUser.ss_number as 'Personnummer',TableUser.lastname as 'Etternavn',TableUser.firstname as 'Fornavn',TableUser.phone as 'Telefon', TableUser.quarantine as 'Karantene', TableBlood.Blood_type as 'Blodtype' FROM User TableUser INNER JOIN Blood_Data TableBlood on TableUser.ss_number=TableBlood.ss_number"
+            Dim query As String = "SELECT TableUser.ss_number as 'Personnummer',TableUser.lastname as 'Etternavn',TableUser.firstname as 'Fornavn',TableUser.phone as 'Telefon', TableBlood.Blood_type as 'Blodtype' FROM User TableUser INNER JOIN Blood_Data TableBlood on TableUser.ss_number=TableBlood.ss_number"
             cmd = New MySqlCommand(query, connection)
             adapter.SelectCommand = cmd
             adapter.Fill(dtable)
@@ -77,8 +77,9 @@ Public Class EPage
         'Dim bloodData As New Employee
         'bloodData.showBloodData(txtHB.Text, txtIron.Text, cbBloodType.Text)
 
-        getMail()
+        getUserInfo()
         getBloodData()
+
 
 
     End Sub
@@ -115,21 +116,24 @@ Public Class EPage
         End Try
     End Sub
 
-    Private Sub getMail()
+    Private Sub getUserInfo()
 
         Try
             connection.Open()
-            Dim query As String = "select e_mail FROM User where ss_number = '" & txtSSN.Text & "'"
+            Dim query As String = "select e_mail, quarantine FROM User where ss_number = '" & txtSSN.Text & "'"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
 
             Dim email As String = ""
+            Dim quarantine As String = ""
 
             While reader.Read()
                 email &= reader("e_mail") & " "
+                quarantine &= reader("quarantine") & " "
             End While
 
             txtMail.Text = email
+            txtQuarantine.Text = quarantine
 
             connection.Close()
         Catch ex As Exception
@@ -179,13 +183,25 @@ Public Class EPage
     End Sub
     Private Sub clear()
 
-        txtPlateletsCount.Clear()
-        txtCellsCount.Clear()
-        txtPlasmaCount.Clear()
+        txtGetBloodType.Clear()
+        txtGetBloodInfo.Clear()
+        txtGetBloodCount.Clear()
+        txtDepartment.Clear()
 
     End Sub
 
     Private Sub btnRegDonation_Click(sender As Object, e As EventArgs) Handles btnRegDonation.Click
+
+        regDonation()
+
+        'Dim addDonation As New Stock
+        'addDonation.addStock(cbBloodPart.SelectedItem, cbBloodType.Text, txtSSN.Text, expiryDate, status)
+        lbShowStock.Items.Clear()
+        showStock()
+
+    End Sub
+
+    Public Sub regDonation()
 
         Dim status As String = "Valid"
         Dim expiryDate As String
@@ -199,13 +215,13 @@ Public Class EPage
         'End If
 
         Dim donationDate As Date = Today.ToString("dd/MM/yyyy")
-        Dim count As Integer = Integer.Parse(txtPlateletsCount.Text)
-        Dim count2 As Integer = Integer.Parse(txtCellsCount.Text)
-        Dim count3 As Integer = Integer.Parse(txtPlasmaCount.Text)
-        Dim sum = txtPlateletsCount.Text + +txtPlasmaCount.Text + +txtCellsCount.Text
+        Dim count As Integer = Integer.Parse(cbPlateletsCount.Text)
+        Dim count2 As Integer = Integer.Parse(cbCellsCount.Text)
+        Dim count3 As Integer = Integer.Parse(cbPlasmaCount.Text)
+        Dim sum = cbPlateletsCount.Text + +cbPlasmaCount.Text + +cbCellsCount.Text
 
-        If sum <> 500 Then
-            MsgBox("Den totale verdien må tilsammen være 500 ml")
+        If sum <> 5 Then
+            MsgBox("Donasjonen må tilsammen tilsvare 5 poser")
 
         ElseIf cbBloodType.Text = "" And txtSSN.Text = "" Then
             MsgBox("Vær vennlig å velg donor", MsgBoxStyle.Critical, "Velg donor")
@@ -254,16 +270,7 @@ Public Class EPage
             End Try
         End If
 
-        'Dim addDonation As New Stock
-
-        'addDonation.addStock(cbBloodPart.SelectedItem, cbBloodType.Text, txtSSN.Text, expiryDate, status)
-
-        lbShowStock.Items.Clear()
-        showStock()
-
     End Sub
-
-
 
     'Private Sub btnGetBlood_Click(sender As Object, e As EventArgs) Handles btnGetBlood.Click
     '    Dim todaysDate = Today.ToString("dd/MM/yyyy")
@@ -313,7 +320,7 @@ Public Class EPage
     End Sub
 
     Private Sub btnGetBlood_Click(sender As Object, e As EventArgs) Handles btnGetBlood.Click
-        If cbGetBloodType.Text = "" Or cbGetBloodInfo.Text = "" Or txtGetBloodCount.Text = 0 Then
+        If txtGetBloodType.Text = "" Or txtGetBloodInfo.Text = "" Or txtGetBloodCount.Text = 0 Then
             MsgBox("Fyll inn alle verdier", MsgBoxStyle.Critical, "Feil")
         Else
             getBlood()
@@ -366,7 +373,7 @@ Public Class EPage
 
         Try
 
-            Dim query As String = "select * FROM Donation_Stock where blood_info = '" & cbGetBloodInfo.SelectedItem & "' AND blood_type = '" & cbGetBloodType.SelectedItem & "' AND status = '" & status & "'"
+            Dim query As String = "select * FROM Donation_Stock where blood_info = '" & txtGetBloodInfo.Text & "' AND blood_type = '" & txtGetBloodType.Text & "' AND status = '" & status & "'"
             Dim dt As New DataTable
 
             Using cnn As New MySqlConnection(constring)
@@ -380,14 +387,19 @@ Public Class EPage
             connection.Open()
             If dt IsNot Nothing AndAlso dt.Rows.Count >= int Then
                 For i = 1 To int
-                    Dim query2 As String = "DELETE FROM Donation_Stock where blood_info = '" & cbGetBloodInfo.SelectedItem & "' AND blood_type = '" & cbGetBloodType.SelectedItem & "' AND status = '" & status & "' LIMIT 1"
+                    Dim query2 As String = "DELETE FROM Donation_Stock where blood_info = '" & txtGetBloodInfo.Text & "' AND blood_type = '" & txtGetBloodType.Text & "' AND status = '" & status & "' LIMIT 1"
                     cmd = New MySqlCommand(query2, connection)
                     reader = cmd.ExecuteReader
                     reader.Close()
                 Next
-                MsgBox("Hentet fra lager:" & vbCrLf & vbCrLf & "Blodinfo: " & cbGetBloodInfo.Text & vbCrLf & "Blodtype: " & cbGetBloodType.Text & vbCrLf & "Mengde: " & int & " ml")
+                MsgBox("Hentet fra lager:" & vbCrLf & vbCrLf & "Blodinfo: " & txtGetBloodInfo.Text & vbCrLf & "Blodtype: " & txtGetBloodType.Text & vbCrLf & "Mengde: " & int & " ml")
+                btnGetBlood.Visible = False
+                btnGetOrder.Visible = True
+                clear()
+
             Else
                 MsgBox("Ikke nok på lager")
+
             End If
             connection.Close()
         Catch ex As Exception
@@ -400,15 +412,7 @@ Public Class EPage
     'Disse tre følgende kodene fjerner det som står inne i textboxene, de ansatte ska bruke for å legge inn blodverdier
     'på respektive donorer som kommer som svar fra lab. Gjør jobben hurtig når textbox klargjøres for inntasing både
     'med musklikk og med tab.
-    Private Sub txtPlateletsCount_Click(sender As Object, e As EventArgs) Handles txtPlateletsCount.Click
-        txtPlateletsCount.Text = ""
-    End Sub
-    Private Sub txtPlasmaCount_Click(sender As Object, e As EventArgs) Handles txtPlasmaCount.Click
-        txtPlasmaCount.Text = ""
-    End Sub
-    Private Sub txtCellsCount_Click(sender As Object, e As EventArgs) Handles txtCellsCount.Click
-        txtCellsCount.Text = ""
-    End Sub
+
 
     Private Sub showStock()
 
@@ -590,44 +594,44 @@ Public Class EPage
 #Region "ListBox"
             With lbShowStock.Items
                 .Add("A Rh+")
-                .Add("Blodplater:" & vbTab & count)
-                .Add("Blodlegemer:" & vbTab & count2)
-                .Add("Blodplasma:" & vbTab & count3)
+                .Add("Blodplater:" & vbTab & count & " poser(100ml)")
+                .Add("Blodlegemer:" & vbTab & count2 & " poser(100ml)")
+                .Add("Blodplasma:" & vbTab & count3 & " poser(100ml)")
                 .Add("")
                 .Add("A Rh-")
-                .Add("Blodplater:" & vbTab & count4)
-                .Add("Blodlegemer:" & vbTab & count5)
-                .Add("Blodplasma:" & vbTab & count6)
+                .Add("Blodplater:" & vbTab & count4 & " poser(100ml)")
+                .Add("Blodlegemer:" & vbTab & count5 & " poser(100ml)")
+                .Add("Blodplasma:" & vbTab & count6 & " poser(100ml)")
                 .Add("")
                 .Add("B Rh+")
-                .Add("Blodplater" & vbTab & count7)
-                .Add("Blodlegemer" & vbTab & count8)
-                .Add("Blodplasma" & vbTab & count9)
+                .Add("Blodplater" & vbTab & count7 & " poser(100ml)")
+                .Add("Blodlegemer" & vbTab & count8 & " poser(100ml)")
+                .Add("Blodplasma" & vbTab & count9 & " poser(100ml)")
                 .Add("")
                 .Add("B Rh-")
-                .Add("Blodplater" & vbTab & count10)
-                .Add("Blodlegemer" & vbTab & count11)
-                .Add("Blodplasma" & vbTab & count12)
+                .Add("Blodplater" & vbTab & count10 & " poser(100ml)")
+                .Add("Blodlegemer" & vbTab & count11 & " poser(100ml)")
+                .Add("Blodplasma" & vbTab & count12 & " poser(100ml)")
                 .Add("")
                 .Add("AB Rh+")
-                .Add("Blodplater" & vbTab & count13)
-                .Add("Blodlegemer" & vbTab & count14)
-                .Add("Blodplasma" & vbTab & count15)
+                .Add("Blodplater" & vbTab & count13 & " poser(100ml)")
+                .Add("Blodlegemer" & vbTab & count14 & " poser(100ml)")
+                .Add("Blodplasma" & vbTab & count15 & " poser(100ml)")
                 .Add("")
                 .Add("AB Rh-")
-                .Add("Blodplater" & vbTab & count16)
-                .Add("Blodlegemer" & vbTab & count17)
-                .Add("Blodplasma" & vbTab & count18)
+                .Add("Blodplater" & vbTab & count16 & " poser(100ml)")
+                .Add("Blodlegemer" & vbTab & count17 & " poser(100ml)")
+                .Add("Blodplasma" & vbTab & count18 & " poser(100ml)")
                 .Add("")
                 .Add("O Rh+")
-                .Add("Blodplater" & vbTab & count19)
-                .Add("Blodlegemer" & vbTab & count20)
-                .Add("Blodplasma" & vbTab & count21)
+                .Add("Blodplater" & vbTab & count19 & " poser(100ml)")
+                .Add("Blodlegemer" & vbTab & count20 & " poser(100ml)")
+                .Add("Blodplasma" & vbTab & count21 & " poser(100ml)")
                 .Add("")
                 .Add("O Rh-")
-                .Add("Blodplater" & vbTab & count22)
-                .Add("Blodlegemer" & vbTab & count23)
-                .Add("Blodplasma" & vbTab & count24)
+                .Add("Blodplater" & vbTab & count22 & " poser(100ml)")
+                .Add("Blodlegemer" & vbTab & count23 & " poser(100ml)")
+                .Add("Blodplasma" & vbTab & count24 & " poser(100ml)")
             End With
 #End Region
             connection.Close()
@@ -657,11 +661,19 @@ Public Class EPage
 
     Private Sub btnSummons_Click(sender As Object, e As EventArgs) Handles btnSummons.Click
 
-        If txtSSN.Text = "" Then
-            MsgBox("Du har ikke valg en bruker.", MsgBoxStyle.Critical, "Feil")
-        Else
-            MailForm.Show()
-        End If
+        Dim livstid As String = "Livstid"
+
+        'If txtQuarantine.Text = livstid Then
+        '    MsgBox("Denne brukeren har en karantene på 'Livstid'")
+        'End If
+
+        'If txtSSN.Text = "" Then
+        '    MsgBox("Du har ikke valg en bruker.", MsgBoxStyle.Critical, "Feil")
+
+
+        'Else
+        '    MailForm.Show()
+        'End If
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click
@@ -693,4 +705,45 @@ Public Class EPage
 
 
     End Sub
+
+    Private Sub checkOrders()
+        Try
+            connection.Open()
+            Dim query As String = "select * FROM Orders  ORDER BY rand() LIMIT 1"
+            cmd = New MySqlCommand(query, connection)
+            reader = cmd.ExecuteReader
+
+            Dim bloodType As String = ""
+            Dim bloodInfo As String = ""
+            Dim amount As String = ""
+            Dim department As String = ""
+
+            While reader.Read()
+                bloodType &= reader("bloodType") & " "
+                bloodInfo &= reader("bloodInfo") & " "
+                amount &= reader("amount") & " "
+                department &= reader("depName") & " "
+
+            End While
+
+            txtGetBloodType.Text = bloodType
+            txtGetBloodInfo.Text = bloodInfo
+            txtGetBloodCount.Text = amount
+            txtDepartment.Text = department
+
+            connection.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+
+    End Sub
+
+    Private Sub btnGetOrder_Click(sender As Object, e As EventArgs) Handles btnGetOrder.Click
+        checkOrders()
+        btnGetOrder.Visible = False
+    End Sub
+
+
 End Class
