@@ -33,8 +33,8 @@ Partial Class LogIn
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
         CType(Me.loginerror, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,6 +78,7 @@ Partial Class LogIn
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(282, 43)
         Me.txtPassword.TabIndex = 41
+        Me.txtPassword.Text = "12345678"
         Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtPassword.UseSystemPasswordChar = True
         '
@@ -88,6 +89,7 @@ Partial Class LogIn
         Me.txtPersonnr.Name = "txtPersonnr"
         Me.txtPersonnr.Size = New System.Drawing.Size(282, 43)
         Me.txtPersonnr.TabIndex = 40
+        Me.txtPersonnr.Text = "17059212345"
         Me.txtPersonnr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'loginerror
@@ -139,6 +141,16 @@ Partial Class LogIn
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Logg Inn"
         '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.TestDoc.My.Resources.Resources.logo
+        Me.PictureBox2.Location = New System.Drawing.Point(632, 29)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(345, 90)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox2.TabIndex = 56
+        Me.PictureBox2.TabStop = False
+        '
         'LinkLabel2
         '
         Me.LinkLabel2.AutoSize = True
@@ -149,16 +161,6 @@ Partial Class LogIn
         Me.LinkLabel2.TabIndex = 50
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "Glemt passord?"
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.TestDoc.My.Resources.Resources.logo
-        Me.PictureBox2.Location = New System.Drawing.Point(632, 29)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(345, 90)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 56
-        Me.PictureBox2.TabStop = False
         '
         'LogIn
         '

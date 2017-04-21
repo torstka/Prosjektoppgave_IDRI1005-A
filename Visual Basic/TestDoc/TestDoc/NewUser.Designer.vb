@@ -46,6 +46,9 @@ Partial Class NewUser
         Me.RegBtn = New System.Windows.Forms.Button()
         Me.RegError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Regbox = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.txtmob = New System.Windows.Forms.ComboBox()
+        Me.txtdob = New System.Windows.Forms.ComboBox()
         Me.Age = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -53,10 +56,6 @@ Partial Class NewUser
         Me.rbFemale = New System.Windows.Forms.RadioButton()
         Me.rbMale = New System.Windows.Forms.RadioButton()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txtdob = New System.Windows.Forms.ComboBox()
-        Me.txtmob = New System.Windows.Forms.ComboBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         CType(Me.RegError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Regbox.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -147,7 +146,7 @@ Partial Class NewUser
         Me.txtAdress.Location = New System.Drawing.Point(385, 285)
         Me.txtAdress.Name = "txtAdress"
         Me.txtAdress.Size = New System.Drawing.Size(248, 37)
-        Me.txtAdress.TabIndex = 5
+        Me.txtAdress.TabIndex = 7
         Me.txtAdress.Tag = "Fyll inn din adresse"
         '
         'Label8
@@ -167,7 +166,7 @@ Partial Class NewUser
         Me.txtPostnr.MaxLength = 4
         Me.txtPostnr.Name = "txtPostnr"
         Me.txtPostnr.Size = New System.Drawing.Size(236, 37)
-        Me.txtPostnr.TabIndex = 4
+        Me.txtPostnr.TabIndex = 8
         Me.txtPostnr.Tag = "Fyll inn ditt postnummer"
         '
         'txtConfirmPassword
@@ -177,7 +176,7 @@ Partial Class NewUser
         Me.txtConfirmPassword.Name = "txtConfirmPassword"
         Me.txtConfirmPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtConfirmPassword.Size = New System.Drawing.Size(236, 37)
-        Me.txtConfirmPassword.TabIndex = 8
+        Me.txtConfirmPassword.TabIndex = 12
         '
         'Label10
         '
@@ -196,7 +195,7 @@ Partial Class NewUser
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
         Me.txtPassword.Size = New System.Drawing.Size(248, 37)
-        Me.txtPassword.TabIndex = 7
+        Me.txtPassword.TabIndex = 11
         Me.txtPassword.Tag = "Fyll inn ditt passord"
         '
         'txtEmail
@@ -205,7 +204,7 @@ Partial Class NewUser
         Me.txtEmail.Location = New System.Drawing.Point(385, 327)
         Me.txtEmail.Name = "txtEmail"
         Me.txtEmail.Size = New System.Drawing.Size(248, 37)
-        Me.txtEmail.TabIndex = 6
+        Me.txtEmail.TabIndex = 9
         Me.txtEmail.Tag = "Fyll inn din epostadresse"
         '
         'Label9
@@ -236,7 +235,7 @@ Partial Class NewUser
         Me.txtPhone.MaxLength = 8
         Me.txtPhone.Name = "txtPhone"
         Me.txtPhone.Size = New System.Drawing.Size(236, 37)
-        Me.txtPhone.TabIndex = 9
+        Me.txtPhone.TabIndex = 10
         Me.txtPhone.Tag = "Fyll inn dit telefonnummer"
         '
         'Label4
@@ -256,7 +255,7 @@ Partial Class NewUser
         Me.BckBtn.Location = New System.Drawing.Point(494, 539)
         Me.BckBtn.Name = "BckBtn"
         Me.BckBtn.Size = New System.Drawing.Size(148, 42)
-        Me.BckBtn.TabIndex = 44
+        Me.BckBtn.TabIndex = 16
         Me.BckBtn.Text = "Tilbake"
         Me.BckBtn.UseVisualStyleBackColor = True
         '
@@ -266,7 +265,7 @@ Partial Class NewUser
         Me.RegBtn.Location = New System.Drawing.Point(648, 539)
         Me.RegBtn.Name = "RegBtn"
         Me.RegBtn.Size = New System.Drawing.Size(147, 42)
-        Me.RegBtn.TabIndex = 43
+        Me.RegBtn.TabIndex = 15
         Me.RegBtn.Text = "Registrer"
         Me.RegBtn.UseVisualStyleBackColor = True
         '
@@ -314,6 +313,41 @@ Partial Class NewUser
         Me.Regbox.TabStop = False
         Me.Regbox.Text = "Registreringsskjema"
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.Location = New System.Drawing.Point(966, 153)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(190, 14)
+        Me.Label13.TabIndex = 64
+        Me.Label13.Text = "Rekner ut alder (Dinna blir skjult)"
+        '
+        'txtmob
+        '
+        Me.txtmob.BackColor = System.Drawing.SystemColors.ScrollBar
+        Me.txtmob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtmob.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtmob.FormattingEnabled = True
+        Me.txtmob.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
+        Me.txtmob.Location = New System.Drawing.Point(926, 243)
+        Me.txtmob.Name = "txtmob"
+        Me.txtmob.Size = New System.Drawing.Size(54, 37)
+        Me.txtmob.TabIndex = 5
+        '
+        'txtdob
+        '
+        Me.txtdob.DropDownHeight = 400
+        Me.txtdob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.txtdob.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdob.FormattingEnabled = True
+        Me.txtdob.IntegralHeight = False
+        Me.txtdob.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
+        Me.txtdob.Location = New System.Drawing.Point(857, 243)
+        Me.txtdob.Name = "txtdob"
+        Me.txtdob.Size = New System.Drawing.Size(56, 37)
+        Me.txtdob.TabIndex = 4
+        '
         'Age
         '
         Me.Age.Location = New System.Drawing.Point(907, 135)
@@ -324,7 +358,7 @@ Partial Class NewUser
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.TestDoc.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(955, 23)
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 39)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(345, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -349,7 +383,7 @@ Partial Class NewUser
         Me.txtyob.MaxLength = 4
         Me.txtyob.Name = "txtyob"
         Me.txtyob.Size = New System.Drawing.Size(100, 37)
-        Me.txtyob.TabIndex = 57
+        Me.txtyob.TabIndex = 6
         Me.txtyob.Text = "ÅÅÅÅ"
         Me.txtyob.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -361,7 +395,7 @@ Partial Class NewUser
         Me.rbFemale.Margin = New System.Windows.Forms.Padding(2)
         Me.rbFemale.Name = "rbFemale"
         Me.rbFemale.Size = New System.Drawing.Size(97, 33)
-        Me.rbFemale.TabIndex = 13
+        Me.rbFemale.TabIndex = 14
         Me.rbFemale.TabStop = True
         Me.rbFemale.Text = "Kvinne"
         Me.rbFemale.UseVisualStyleBackColor = True
@@ -374,7 +408,7 @@ Partial Class NewUser
         Me.rbMale.Margin = New System.Windows.Forms.Padding(2)
         Me.rbMale.Name = "rbMale"
         Me.rbMale.Size = New System.Drawing.Size(90, 33)
-        Me.rbMale.TabIndex = 12
+        Me.rbMale.TabIndex = 13
         Me.rbMale.TabStop = True
         Me.rbMale.Text = "Mann"
         Me.rbMale.UseVisualStyleBackColor = True
@@ -389,57 +423,11 @@ Partial Class NewUser
         Me.Label11.TabIndex = 45
         Me.Label11.Text = "Kjønn:"
         '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(42, 3)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(45, 13)
-        Me.Label12.TabIndex = 48
-        Me.Label12.Text = "Label12"
-        Me.Label12.Visible = False
-        '
-        'txtdob
-        '
-        Me.txtdob.DropDownHeight = 400
-        Me.txtdob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txtdob.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtdob.FormattingEnabled = True
-        Me.txtdob.IntegralHeight = False
-        Me.txtdob.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"})
-        Me.txtdob.Location = New System.Drawing.Point(857, 243)
-        Me.txtdob.Name = "txtdob"
-        Me.txtdob.Size = New System.Drawing.Size(56, 37)
-        Me.txtdob.TabIndex = 62
-        '
-        'txtmob
-        '
-        Me.txtmob.BackColor = System.Drawing.SystemColors.ScrollBar
-        Me.txtmob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.txtmob.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtmob.FormattingEnabled = True
-        Me.txtmob.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"})
-        Me.txtmob.Location = New System.Drawing.Point(926, 243)
-        Me.txtmob.Name = "txtmob"
-        Me.txtmob.Size = New System.Drawing.Size(54, 37)
-        Me.txtmob.TabIndex = 63
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(966, 153)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(190, 14)
-        Me.Label13.TabIndex = 64
-        Me.Label13.Text = "Rekner ut alder (Dinna blir skjult)"
-        '
         'NewUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1354, 733)
-        Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Regbox)
         Me.Controls.Add(Me.Label3)
         Me.Name = "NewUser"
@@ -482,7 +470,6 @@ Partial Class NewUser
     Friend WithEvents Label11 As Label
     Friend WithEvents Label14 As Label
     Friend WithEvents txtyob As TextBox
-    Friend WithEvents Label12 As Label
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents Age As TextBox
     Friend WithEvents txtdob As ComboBox

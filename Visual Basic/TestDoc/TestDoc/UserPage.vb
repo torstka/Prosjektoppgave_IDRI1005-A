@@ -602,8 +602,6 @@ feilmelding.Message)
         txtConPwd.Show()
     End Sub
 
-
-
 #End Region
     Private Sub getOrderDate()
 
