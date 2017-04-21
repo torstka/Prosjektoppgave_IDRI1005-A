@@ -87,6 +87,7 @@ Public Class UserPage
                 txtAddress.Text = (rad("address")).ToString()
                 txtZipcode.Text = (rad("zip_code")).ToString()
                 txtPwd.Text = (rad("password")).ToString()
+                txtConPwd.Text = txtPwd.Text
             Next
         Catch ex As MySqlException
             MsgBox(ex.Message)         'tilfelle det oppstår en feil
@@ -147,7 +148,8 @@ Public Class UserPage
                 cmd.Parameters.AddWithValue("@password", txtPwd.Text)
 
                 reader = cmd.ExecuteReader
-
+                confirmPwd.Hide()
+                txtConPwd.Hide()
                 MessageBox.Show("Data oppdatert")
                 reader.Close()
             Catch ex As Exception
@@ -205,11 +207,20 @@ Public Class UserPage
 
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+
+
         getOrderDate()
 
         Me.Size = SystemInformation.PrimaryMonitorSize
         DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
+<<<<<<< HEAD
+=======
+        txtConPwd.Hide()
+        confirmPwd.Hide()
+
+
+>>>>>>> f1d62935bd7369bd41ca5e3a47ca8452c6bff8ec
         'Label18.Text = ssNumber
 
         showData()
@@ -581,6 +592,10 @@ feilmelding.Message)
         End If
     End Sub
 
+    Private Sub txtPwd_TextChanged(sender As Object, e As EventArgs) Handles txtPwd.Click
+        confirmPwd.Show()
+        txtConPwd.Show()
+    End Sub
 
 #End Region
     Private Sub getOrderDate()

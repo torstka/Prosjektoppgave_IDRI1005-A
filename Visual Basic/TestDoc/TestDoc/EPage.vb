@@ -784,19 +784,19 @@ Public Class EPage
 
     Private Sub btnSummons_Click(sender As Object, e As EventArgs) Handles btnSummons.Click
 
-        Dim livstid As String = "Livstid"
-
-        'If txtQuarantine.Text = livstid Then
-        '    MsgBox("Denne brukeren har en karantene på 'Livstid'")
-        'End If
-
-        'If txtSSN.Text = "" Then
-        '    MsgBox("Du har ikke valg en bruker.", MsgBoxStyle.Critical, "Feil")
 
 
-        'Else
-        '    MailForm.Show()
-        'End If
+        If txtQuarantine.Text = "Livstid " Then
+            MsgBox("Denne brukeren har en karantene på 'Livstid'")
+
+
+        ElseIf txtSSN.Text = "" Then
+            MsgBox("Du har ikke valg en bruker.", MsgBoxStyle.Critical, "Feil")
+
+
+        Else
+            MailForm.Show()
+        End If
     End Sub
 
     Private Sub btnUpdate_Click(sender As Object, e As EventArgs) Handles btnUpdate.Click

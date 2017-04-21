@@ -438,6 +438,7 @@ Partial Class EPage
         '
         'cbBloodType
         '
+        Me.cbBloodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbBloodType.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbBloodType.FormattingEnabled = True
         Me.cbBloodType.Items.AddRange(New Object() {"A Rh-", "A Rh+", "B Rh-", "B Rh+", "AB Rh-", "AB Rh+", "O Rh-", "O Rh+"})
@@ -874,7 +875,7 @@ Partial Class EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1459, 855)
+        Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Userinformation)
         Me.Controls.Add(Me.btnSignOut)

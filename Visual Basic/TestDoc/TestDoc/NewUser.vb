@@ -3,14 +3,14 @@ Imports System.Net.Mail
 Imports MySql.Data.MySqlClient
 Public Class NewUser
     Private Sub NewUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Oppkobling mot databasen
-
+        'sentrering av groupbox og setter størrelsen på form til brukerens skjerm
         Me.Size = SystemInformation.PrimaryMonitorSize
         Regbox.Location = New Point((ClientSize.Width - Regbox.Width) \ 2,
                              (ClientSize.Height - Regbox.Height) \ 2)
     End Sub
 
-    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtPersonnr.KeyPress, txtPhone.KeyPress, txtPostnr.KeyPress
+    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtPersonnr.KeyPress, txtPhone.KeyPress, txtPostnr.KeyPress, txtyob.KeyPress
+        'Hindrer at bruker taster inn annet enn tal i relevante tekstbokser
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -18,61 +18,91 @@ Public Class NewUser
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BckBtn.Click
         'Knapp som klarerer skjema og går tilbake til "form1"
-        txtFirstname.Clear()
-        txtLastname.Clear()
-        txtPersonnr.Clear()
-        txtAdress.Clear()
-        txtPostnr.Clear()
-        txtPhone.Clear()
-        txtEmail.Clear()
-        txtPassword.Clear()
-        RegError.Clear()
-        rbMale.Checked = False
-        rbFemale.Checked = False
         LogIn.Show()
-        Me.Hide()
-
+        Me.Close()
     End Sub
-    Private Sub Totalyear()
+    Private Sub txtyob_TextChanged(sender As Object, e As EventArgs) Handles txtyob.Click
+        txtyob.Clear()
+    End Sub
+    Private Sub txtFirstname_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFirstname.TextChanged, txtLastname.TextChanged, txtAdress.TextChanged
+        'Gjør om første bokstav i relevante tekstbokser til Upper-Case
+        If txtFirstname.Text <> "" Then
+            Dim a As String = txtFirstname.Text
+            txtFirstname.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtFirstname.Select(txtFirstname.Text.Length, 0)
+        End If
+        If txtLastname.Text <> "" Then
+            Dim a As String = txtLastname.Text
+            txtLastname.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtLastname.Select(txtLastname.Text.Length, 0)
+        End If
+        If txtAdress.Text <> "" Then
+            Dim a As String = txtAdress.Text
+            txtAdress.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtAdress.Select(txtAdress.Text.Length, 0)
+        End If
+    End Sub
+    Private Sub Calculate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegBtn.Click
+        'Denne subben kalkulerer alder basert på hva som blir fylt inn i d relevante combo-/tekstboksene
+
         Dim year As String
         Dim month As String
         Dim day As String
-        year = txtyob.Text
-        month = Txtmob.Text
-        day = TxtDoB.Text
 
+        year = txtyob.Text 'Fødselsåret  
+        month = txtmob.Text 'Fødselsmåneden 
+        day = txtdob.Text 'Fødselsdagen
+
+        'validering av tekstbokser
 
         If Not Regex.IsMatch(year, "^[0-9]+$") Then
             Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-        ElseIf Not Regex.IsMatch(month, "^[0-9]+$") Then
+        ElseIf txtyob.Text = "" Then
             Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-        ElseIf Not Regex.IsMatch(day, "^[0-9]+$") Then
+        ElseIf txtyob.Text = "0" Or txtyob.Text = "00" Or txtyob.Text = "000" Or txtyob.Text = "0000" Then
             Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-        ElseIf Txtmob.Text = 0 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12 (Måned)")
-        ElseIf Txtmob.Text > 12 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12(Måned)")
-        ElseIf TxtDoB.Text > 31 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31(Dag)")
-        ElseIf TxtDoB.Text = 0 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31(Dag)")
-
-
+        ElseIf txtmob.Text = "" Then
+            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+        ElseIf txtdob.Text = "" Then
+            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
 
         Else
+
             Dim DOB As New DateTime(year, month, day)
-            Dim Years As Integer = DateDiff(DateInterval.Year, DOB, Now) - 1
+            Dim BDAY As New DateTime(Now.Year, month, day)
+
+            Dim Years As Integer
+            If (BDAY > Now) Then
+                Years = DateDiff(DateInterval.Year, DOB, Now) - 1
+            Else
+                Years = DateDiff(DateInterval.Year, DOB, Now)
+            End If
+
             Dim Months As Integer = DateDiff(DateInterval.Month, DOB, Now) Mod 12
             Dim days As Integer = DateDiff(DateInterval.Day, DOB, Now) Mod 30 - 10
-
-            Label12.Text = Years
-
-
+            Age.Text = Years
+            Me.RegError.Clear()
+        End If
+    End Sub
+    Private Function Totalage() As Boolean
+        'Denne subben validerer at alder er innenfor 18-65 år
+        If Age.Text = "" Then
+            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+        ElseIf Age.Text < 18 Then
+            Me.RegError.SetError(txtyob, "Du er for ung til å donere blod")
+            Return False
+        ElseIf Age.Text > 65 Then
+            Me.RegError.SetError(txtyob, "Du er for gammel til å donere blod")
+            Return False
+        Else
+            Me.RegError.Clear()
+            Return True
         End If
 
-    End Sub
+    End Function
+
     Public Function ValidFornavn() As Boolean
         'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Fornavn = txtFirstname.Text
@@ -115,10 +145,6 @@ Public Class NewUser
         ElseIf Not persnr.Length = 11 Then
             Me.RegError.SetError(txtPersonnr, "Personnummer må bestå av 11 tall")
             Return False
-            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun tall)
-        ElseIf Not Regex.IsMatch(persnr, "^[0-9]+$") Then
-            Me.RegError.SetError(txtPersonnr, "Personnummer kan bare bestå av tall")
-            Return False
         Else
             'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
             Me.RegError.SetError(txtPersonnr, "")
@@ -147,10 +173,6 @@ Public Class NewUser
         ElseIf Not telefonnr.Length = 8 Then
             Me.RegError.SetError(txtPhone, "Telefonnummer må bestå av 8 Tall")
             Return False
-            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun tall)
-        ElseIf Not Regex.IsMatch(telefonnr, "^[0-9]+$") Then
-            Me.RegError.SetError(txtPhone, "Telefonnummer kan bare bestå av tall")
-            Return False
         Else
             'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
             Me.RegError.SetError(txtPhone, "")
@@ -166,10 +188,6 @@ Public Class NewUser
             'Validerer at tekstboksen inneholder ett bestemt antall tegn (4 tegn)
         ElseIf Not Postnr.Length = 4 Then
             Me.RegError.SetError(txtPostnr, "Postnummer må bestå av 4 tall")
-            Return False
-            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun tall)
-        ElseIf Not Regex.IsMatch(Postnr, "^[0-9]+$") Then
-            Me.RegError.SetError(txtPostnr, "Postnummer kan bare bestå av tall")
             Return False
         Else
             'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
@@ -230,67 +248,7 @@ Public Class NewUser
             Return True
         End If
     End Function
-    Public Function ValidDOB() As Boolean
-        Dim DoB = TxtDoB.Text
-        Dim MoB = Txtmob.Text
-        Dim YoB = txtyob.Text
 
-        'DAG VERIFISERING
-
-        If Not Regex.IsMatch(DoB, "^[0-9]+$") Then
-            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-            Return False
-
-        ElseIf TxtDoB.Text > 31 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31")
-            Return False
-        ElseIf TxtDoB.Text = 0 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31")
-            Return False
-        Else
-            Me.RegError.SetError(txtyob, "")
-        End If
-
-        'MÅNED VERIFISERING
-
-        If Not Regex.IsMatch(MoB, "^[0-9]+$") Then
-            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-            Return False
-        ElseIf Txtmob.Text = 0 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12")
-            Return False
-
-        ElseIf Txtmob.Text > 12 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12")
-            Return False
-
-        Else
-            Me.RegError.SetError(txtyob, "")
-        End If
-
-        'ÅR VERIFISERING
-
-        If Not YoB.Length = 4 Then
-            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-            Return False
-        ElseIf Not Regex.IsMatch(YoB, "^[0-9]+$") Then
-            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-            Return False
-        ElseIf txtyob.Text < 1900 Then
-            Me.RegError.SetError(txtyob, "Minste tillatte årstal er 1900")
-            Return False
-        ElseIf Label12.Text < 18 Then
-            Me.RegError.SetError(txtyob, "Du er for ung til å donere blod")
-            Return False
-        ElseIf Label12.Text > 64 Then
-            Me.RegError.SetError(txtyob, "Du er for gammel til å donere blod")
-            Return False
-        Else
-            Me.RegError.SetError(txtyob, "")
-            Return True
-        End If
-
-    End Function
     Private Function ValidKjønn() As Boolean
         ' Validerer at minst en av checkboksene er krysset av
         If rbMale.Checked = False And rbFemale.Checked = False Then
@@ -304,7 +262,7 @@ Public Class NewUser
     End Function
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles RegBtn.Click
         'Deklarerer tekstboksene
         Dim firstname = txtFirstname.Text
         Dim lastname = txtLastname.Text
@@ -316,35 +274,36 @@ Public Class NewUser
         Dim password = txtPassword.Text
         Dim male = rbMale.Checked
         Dim female = rbFemale.Checked
-        Dim DOB = TxtDoB.Text & "/" & Txtmob.Text & "/" & txtyob.Text
+        Dim DOB = txtdob.Text & "/" & Txtmob.Text & "/" & txtyob.Text
 
-        Totalyear()
 
+        'Kjører funksjonene for validering
         If Not ValidFornavn() Then
             MsgBox(Me.RegError.GetError(txtFirstname))
         ElseIf Not ValidEtternavn() Then
             MsgBox(Me.RegError.GetError(txtLastname))
         ElseIf Not ValidPersnr() Then
             MsgBox(Me.RegError.GetError(txtPersonnr))
-        ElseIf Not ValidDOB() Then
+        ElseIf Not Totalage() Then
             MsgBox(Me.RegError.GetError(txtyob))
-        ElseIf Not ValidPostnr() Then
-            MsgBox(Me.RegError.GetError(txtPostnr))
         ElseIf Not ValidAdresse() Then
             MsgBox(Me.RegError.GetError(txtAdress))
+        ElseIf Not ValidPostnr() Then
+            MsgBox(Me.RegError.GetError(txtPostnr))
         ElseIf Not ValidEmail() Then
             MsgBox(Me.RegError.GetError(txtEmail))
+        ElseIf Not ValidTelefon() Then
+            MsgBox(Me.RegError.GetError(txtPhone))
         ElseIf Not ValidPass() Then
             MsgBox(Me.RegError.GetError(txtPassword))
         ElseIf Not ConfirmPass() Then
             MsgBox(Me.RegError.GetError(txtConfirmPassword))
-        ElseIf Not ValidTelefon() Then
-            MsgBox(Me.RegError.GetError(txtPhone))
         ElseIf Not ValidKjønn() Then
             MsgBox(Me.RegError.GetError(rbFemale))
         Else
+            ' om validering er godkjent kaller knappetrykket på "NewUser" klassen og registrerer data i databasen
 
-            Torstein()
+            NewUsermail()
             Dim newUser As New User
             newUser.add(ssNumber, firstname, lastname, address, zipCode, phone, email, password, male, female, DOB)
 
@@ -358,26 +317,8 @@ Public Class NewUser
 
     End Sub
 
-    Private Sub txtFirstname_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFirstname.TextChanged, txtLastname.TextChanged, txtAdress.TextChanged
-        If txtFirstname.Text <> "" Then
-            Dim a As String = txtFirstname.Text
-            txtFirstname.Text = (StrConv(a, VbStrConv.ProperCase))
-            txtFirstname.Select(txtFirstname.Text.Length, 0)
-        End If
-        If txtLastname.Text <> "" Then
-            Dim a As String = txtLastname.Text
-            txtLastname.Text = (StrConv(a, VbStrConv.ProperCase))
-            txtLastname.Select(txtLastname.Text.Length, 0)
-        End If
-        If txtAdress.Text <> "" Then
-            Dim a As String = txtAdress.Text
-            txtAdress.Text = (StrConv(a, VbStrConv.ProperCase))
-            txtAdress.Select(txtAdress.Text.Length, 0)
-        End If
-
-    End Sub
-
-    Private Sub Torstein()
+    Private Sub NewUsermail()
+        'Sender e-post til relevante e-postadresse som bekrefter at bruker er opprettet
         Try
             Dim mail As New MailMessage()
             Dim SmtpServer As New SmtpClient
@@ -396,4 +337,5 @@ Public Class NewUser
             MsgBox("Det skjedde dessverre en teknisk feil. Dobbelsjekk at du har fyllt inn riktig informasjon, og prøv på nytt." & error_mail.Message)
         End Try
     End Sub
+
 End Class

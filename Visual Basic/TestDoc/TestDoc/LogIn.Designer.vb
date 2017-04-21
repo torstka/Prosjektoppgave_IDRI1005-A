@@ -78,6 +78,7 @@ Partial Class LogIn
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.Size = New System.Drawing.Size(282, 43)
         Me.txtPassword.TabIndex = 41
+        Me.txtPassword.Text = "12345678"
         Me.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txtPassword.UseSystemPasswordChar = True
         '
@@ -89,6 +90,7 @@ Partial Class LogIn
         Me.txtPersonnr.Name = "txtPersonnr"
         Me.txtPersonnr.Size = New System.Drawing.Size(282, 43)
         Me.txtPersonnr.TabIndex = 40
+        Me.txtPersonnr.Text = "17059212345"
         Me.txtPersonnr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'loginerror
