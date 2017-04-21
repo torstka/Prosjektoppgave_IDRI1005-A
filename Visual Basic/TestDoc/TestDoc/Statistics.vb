@@ -16,6 +16,14 @@ Public Class Statistics
 
     Private Sub Statistics_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CBType.Hide()
+        Me.Size = SystemInformation.PrimaryMonitorSize
+        GroupBox1.Location = New Point((Me.Width - GroupBox1.Width) \ 2, (Me.Height - GroupBox1.Height) \ 2)
+
+        btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
+                             (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
+
+        btnBack.Location = New Point((ClientSize.Width - btnBack.Width) \ 2 + 800,
+                             (ClientSize.Height - btnBack.Height) \ 2 - 450)
 
         Try
             connection.Open()
@@ -148,4 +156,8 @@ Public Class Statistics
         lblCPie.Show()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnBack.Click
+        Me.Hide()
+        EPage.Show()
+    End Sub
 End Class

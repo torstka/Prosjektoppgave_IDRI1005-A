@@ -4,11 +4,13 @@ Public Class MailForm
     Dim firstname As String = EPage.txtFirstname.Text
     Dim lastname As String = EPage.txtLastname.Text
     Dim mail As String = EPage.txtMail.Text
+    Public lastDrain As DateTime = EPage.txtLastDrain.Text
     Private Sub MailForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         txtFirstname.Text = firstname
         txtLastname.Text = lastname
         txtEmail.Text = mail
+        Me.dtMail.MinDate = lastDrain.AddDays(90)
     End Sub
     Private Sub sendEmail()
         Try
@@ -22,7 +24,7 @@ Public Class MailForm
             mail.To.Add(txtEmail.Text)
             mail.From = New MailAddress("tappernas@gmail.com")
             mail.Subject = "Innkalling til blodgivning"
-            mail.Body = txtSummoning.Text
+            mail.Body = "Hei " & txtFirstname.Text & "!" & vbCrLf & vbCrLf & "Blodbanken har følgende time til deg: " & dtMail.Value & " klokken: " & cbTime.Text & vbCrLf & "Gi beskjed dersom timen ikke passer." & vbCrLf & vbCrLf & "Med vennlig hilsen" & vbCrLf & "Blodbanken ved St.Olavs Hospital"
             SmtpServer.Send(mail)
             mail.Body = ""
         Catch error_mail As Exception

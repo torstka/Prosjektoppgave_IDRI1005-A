@@ -23,20 +23,20 @@ Public Class EPage
     Public Overrides Property AutoSize As Boolean
 
     Private Sub load_table()
-        Me.TabPage1.Text = "Brukerinformasjon"
-        Me.TabPage2.Text = "Lagerbeholdning"
-        Me.TabPage3.Text = "Statistikk"
+        'Me.TabPage1.Text = "Brukerinformasjon"
+        'Me.TabPage2.Text = "Lagerbeholdning"
+        'Me.TabPage3.Text = "Statistikk"
 
     End Sub
 
-    Private Sub dgwUser()
-        dgwUsers.DefaultCellStyle.Font = New Font("Calibri", 14, FontStyle.Regular, GraphicsUnit.Point)
-        dgwUsers.ColumnHeadersDefaultCellStyle.Font = New Font("Calibri", 15, FontStyle.Bold, GraphicsUnit.Point)
+    Private Sub load_dgwUser()
+        dgwUsers.DefaultCellStyle.Font = New Font("Calibri", 15, FontStyle.Regular, GraphicsUnit.Point)
+        dgwUsers.ColumnHeadersDefaultCellStyle.Font = New Font("Calibri", 17.5, FontStyle.Bold, GraphicsUnit.Point)
 
 
         Try
             connection.Open()
-            Dim query As String = "SELECT TableUser.ss_number as 'Personnummer',TableUser.lastname as 'Etternavn',TableUser.firstname as 'Fornavn',TableUser.phone as 'Telefon', TableBlood.Blood_type as 'Blodtype' FROM User TableUser INNER JOIN Blood_Data TableBlood on TableUser.ss_number=TableBlood.ss_number"
+            Dim query As String = "SELECT TableUser.ss_number as 'Personnummer',TableUser.lastname as 'Etternavn',TableUser.firstname as 'Fornavn', TableUser.quarantine as 'Karantene', TableBlood.Blood_type as 'Blodtype' FROM User TableUser INNER JOIN Blood_Data TableBlood on TableUser.ss_number=TableBlood.ss_number"
             cmd = New MySqlCommand(query, connection)
             adapter.SelectCommand = cmd
             adapter.Fill(dtable)
@@ -54,10 +54,8 @@ Public Class EPage
     End Sub
     Private Sub EPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_table()
-        txtSSN.Enabled = False
-        txtFirstname.Enabled = False
-        txtLastname.Enabled = False
-        txtPhone.Enabled = False
+
+        Userinformation.Size = New Size(1550, 750)
 
         Me.Size = SystemInformation.PrimaryMonitorSize
         Userinformation.Location = New Point((ClientSize.Width - Userinformation.Width) \ 2,
@@ -72,122 +70,39 @@ Public Class EPage
     End Sub
 
     Private Sub TabPage3_Enter(sender As System.Object, e As System.EventArgs) Handles TabPage3.Enter
-        Statistics()
+        interntab.Clear()
+        intern2.Clear()
+        dtable.Clear()
+        'Statistics()
+        genderStats()
     End Sub
     Private Sub TabPage1_Enter(sender As System.Object, e As System.EventArgs) Handles TabPage1.Enter
-        dgwUser()
+        dtable.Clear()
+        interntab.Clear()
+        intern2.Clear()
+        load_dgwUser()
     End Sub
-    Private Sub Statistics()
-        CBType.Hide()
+
+    Private Sub genderStats()
 
         Try
             connection.Open()
-
-            da.SelectCommand = sql
-            da.Fill(interntab)
-            bSource.DataSource = interntab
-            dgvBloodType.DataSource = bSource
-            da.Update(interntab)
-
             da2.SelectCommand = sql2
             da2.Fill(intern2)
             bSoursce2.DataSource = intern2
             dgvGender.DataSource = bSoursce2
             da2.Update(intern2)
-
             connection.Close()
-        Catch ex As MySqlException
-            MessageBox.Show(ex.Message)
+        Catch ex As Exception
+
         Finally
             connection.Dispose()
-            interntab.Clear()
             intern2.Clear()
         End Try
-        Try
-            connection.Open()
-
-            Dim dr2 As MySqlDataReader
-            dr2 = sql2.ExecuteReader()
-
-            While (dr2.Read())
-                Me.CG.Series("KJØNNSFORDELING").Points.AddXY(dr2.GetString("gender"), dr2.GetInt64("COUNT(*)"))
-
-            End While
-        Catch ex As MySqlException
-            MessageBox.Show(ex.Message)
-        Finally
-            connection.Dispose()
-        End Try
-        Try
-            connection.Open()
-
-            Dim dr As MySqlDataReader
-            dr = sql.ExecuteReader()
-
-            While (dr.Read())
-                Me.CBType.Series("BLODTYPER").Points.AddXY(dr.GetString("blood_type"), dr.GetInt64("COUNT(*)"))
-            End While
-        Catch ex As MySqlException
-            MessageBox.Show(ex.Message)
-        Finally
-            connection.Dispose()
-        End Try
-        CBlodtype.Series.Clear()
-        CBlodtype.Titles.Clear()
-
-        CBlodtype.Series.Add("Blodtyper")
-
-        CBlodtype.Series("Blodtyper").ChartType = SeriesChartType.Pie ' Blir deklareret som kakediagram
-
-        CBlodtype.Series(0).LabelFormat = "{#''}"
-        CBlodtype.Series(0).IsValueShownAsLabel = True
-
-        Try
-            connection.Open()
-            Dim Query As String
-            Dim BloodcountA As Int16 = 0
-            Dim BloodcountB As Int16 = 0
-            Dim BloodcountAB As Int16 = 0
-            Dim BloodcountO As Int16 = 0
-
-            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'A Rh+' OR blood_type = 'A Rh-'"
-            command = New MySqlCommand(Query, connection)
-            BloodcountA = Convert.ToInt16(command.ExecuteScalar)
-
-            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'B Rh+' OR blood_type = 'B Rh-'"
-            command = New MySqlCommand(Query, connection)
-            BloodcountB = Convert.ToInt16(command.ExecuteScalar)
-
-            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'AB Rh+' OR blood_type = 'AB Rh-'"
-            command = New MySqlCommand(Query, connection)
-            BloodcountAB = Convert.ToInt16(command.ExecuteScalar)
-
-            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'O Rh+' OR blood_type = 'O Rh-'"
-            command = New MySqlCommand(Query, connection)
-            BloodcountO = Convert.ToInt16(command.ExecuteScalar)
-
-            If BloodcountA > (0) Then ' Sjekker om data er relevant for grafen
-                CBlodtype.Series("Blodtyper").Points.AddXY("A", BloodcountA)
-            End If
-
-            If BloodcountB > (0) Then
-                CBlodtype.Series("Blodtyper").Points.AddXY("B", BloodcountB)
-            End If
 
 
-            If BloodcountAB > (0) Then
-                CBlodtype.Series("Blodtyper").Points.AddXY("AB", BloodcountAB)
-            End If
-
-            If BloodcountO > (0) Then
-                CBlodtype.Series("Blodtyper").Points.AddXY("O", BloodcountO)
-            End If
-
-            connection.Close() ' Lukker tilkobling
-
-        Catch ex As MySqlException ' Fanger opp feil fra MySql
-        End Try
     End Sub
+
 
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgwUsers.CellContentClick
@@ -198,7 +113,6 @@ Public Class EPage
             txtFirstname.Text = row.Cells("Fornavn").Value.ToString
             txtLastname.Text = row.Cells("Etternavn").Value.ToString
             txtSSN.Text = row.Cells("Personnummer").Value.ToString
-            txtPhone.Text = row.Cells("Telefon").Value.ToString
         End If
 
         'Dim bloodData As New Employee
@@ -213,25 +127,26 @@ Public Class EPage
     Private Sub getBloodData()
         Try
             connection.Open()
-            Dim query As String = "select blood_type, hb, iron_value FROM Blood_Data where ss_number = '" & txtSSN.Text & "'"
+            Dim query As String = "select blood_type, hb, iron_value, last_drain FROM Blood_Data where ss_number = '" & txtSSN.Text & "'"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
 
             Dim hb As String = ""
             Dim ironValue As String = ""
             Dim bloodType As String = ""
+            Dim lastDrain As String = ""
 
             While reader.Read()
                 hb &= reader("hb") & " "
                 ironValue = reader("iron_value") & " "
                 bloodType = reader("blood_type") & " "
-
+                lastDrain = reader("last_drain") & " "
             End While
 
             txtHB.Text = hb
             txtIron.Text = ironValue
             cbBloodType.Text = bloodType
-
+            txtLastDrain.Text = lastDrain
 
             connection.Close()
         Catch ex As Exception
@@ -245,21 +160,24 @@ Public Class EPage
 
         Try
             connection.Open()
-            Dim query As String = "select e_mail, quarantine FROM User where ss_number = '" & txtSSN.Text & "'"
+            Dim query As String = "select phone, e_mail, quarantine FROM User where ss_number = '" & txtSSN.Text & "'"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
 
             Dim email As String = ""
             Dim quarantine As String = ""
+            Dim phone As String = " "
+
 
             While reader.Read()
                 email &= reader("e_mail") & " "
                 quarantine &= reader("quarantine") & " "
+                phone &= reader("phone") & " "
             End While
 
             txtMail.Text = email
             txtQuarantine.Text = quarantine
-
+            txtPhone.Text = phone
             connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -874,14 +792,27 @@ Public Class EPage
         lblCPie.Hide()
         CBType.Show()
         btnBTPie.Show()
+        intern2.Clear()
+        genderStats()
+
     End Sub
 
     Private Sub btnBTPie_Click(sender As Object, e As EventArgs) Handles btnBTPie.Click
         CBType.Hide()
         btnBTPie.Hide()
+
         btnSBType.Show()
         CBlodtype.Show()
         lblCPie.Show()
+        intern2.Clear()
+        genderStats()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnStatistics.Click
+        Me.Hide()
+        Statistics.Show()
+        Statistics.btnBack.Show()
+        Statistics.btnSignOut.Hide()
+
+    End Sub
 End Class

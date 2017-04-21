@@ -212,8 +212,13 @@ Public Class UserPage
 
         getOrderDate()
 
+        DonorPage.Size = New Size(1550, 750)
+
         Me.Size = SystemInformation.PrimaryMonitorSize
         DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
+
+        btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
+                             (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
 
         txtConPwd.Hide()
         confirmPwd.Hide()
@@ -595,6 +600,11 @@ feilmelding.Message)
     Private Sub txtPwd_TextChanged(sender As Object, e As EventArgs) Handles txtPwd.Click
         confirmPwd.Show()
         txtConPwd.Show()
+    End Sub
+
+    Private Sub btnSignOut_Click(sender As Object, e As EventArgs) Handles btnSignOut.Click
+        Me.Close()
+        LogIn.Show()
     End Sub
 
 

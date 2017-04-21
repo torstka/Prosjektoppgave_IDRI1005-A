@@ -96,6 +96,7 @@ Partial Class UserPage
         Me.btnQuest = New System.Windows.Forms.Button()
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.DonorPage = New System.Windows.Forms.TabControl()
+        Me.btnSignOut = New System.Windows.Forms.Button()
         CType(Me.regerror, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.InfoPage.SuspendLayout()
@@ -919,12 +920,23 @@ Partial Class UserPage
         Me.DonorPage.Size = New System.Drawing.Size(1962, 800)
         Me.DonorPage.TabIndex = 7
         '
+        'btnSignOut
+        '
+        Me.btnSignOut.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSignOut.Location = New System.Drawing.Point(939, 39)
+        Me.btnSignOut.Name = "btnSignOut"
+        Me.btnSignOut.Size = New System.Drawing.Size(183, 59)
+        Me.btnSignOut.TabIndex = 10
+        Me.btnSignOut.Text = "Logg ut"
+        Me.btnSignOut.UseVisualStyleBackColor = True
+        '
         'UserPage
         '
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.RowHeader
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1916, 953)
+        Me.Controls.Add(Me.btnSignOut)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLogOut)
         Me.Controls.Add(Me.DonorPage)
@@ -1022,4 +1034,5 @@ Partial Class UserPage
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents lblquarantine As Label
+    Friend WithEvents btnSignOut As Button
 End Class

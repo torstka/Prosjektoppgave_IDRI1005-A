@@ -101,7 +101,7 @@ Partial Class LogIn
         '
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(530, 396)
+        Me.LinkLabel1.Location = New System.Drawing.Point(516, 395)
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(140, 23)
@@ -113,7 +113,7 @@ Partial Class LogIn
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(332, 396)
+        Me.Label1.Location = New System.Drawing.Point(332, 395)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(179, 23)
@@ -145,7 +145,7 @@ Partial Class LogIn
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.TestDoc.My.Resources.Resources.logo
-        Me.PictureBox2.Location = New System.Drawing.Point(632, 29)
+        Me.PictureBox2.Location = New System.Drawing.Point(622, 41)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(345, 90)
         Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -156,7 +156,7 @@ Partial Class LogIn
         '
         Me.LinkLabel2.AutoSize = True
         Me.LinkLabel2.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.Location = New System.Drawing.Point(434, 455)
+        Me.LinkLabel2.Location = New System.Drawing.Point(427, 440)
         Me.LinkLabel2.Name = "LinkLabel2"
         Me.LinkLabel2.Size = New System.Drawing.Size(131, 23)
         Me.LinkLabel2.TabIndex = 50
