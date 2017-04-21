@@ -47,6 +47,8 @@ Partial Class EPage
         Me.txtSSN = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtQuarantine = New System.Windows.Forms.TextBox()
         Me.cbBloodType = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnUpdate = New System.Windows.Forms.Button()
@@ -75,8 +77,6 @@ Partial Class EPage
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.btnSignOut = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.txtQuarantine = New System.Windows.Forms.TextBox()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -390,8 +390,30 @@ Partial Class EPage
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bloddata"
         '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(12, 194)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(105, 26)
+        Me.Label20.TabIndex = 69
+        Me.Label20.Text = "Karantene:"
+        '
+        'txtQuarantine
+        '
+        Me.txtQuarantine.Enabled = False
+        Me.txtQuarantine.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuarantine.Location = New System.Drawing.Point(152, 191)
+        Me.txtQuarantine.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtQuarantine.Name = "txtQuarantine"
+        Me.txtQuarantine.Size = New System.Drawing.Size(130, 33)
+        Me.txtQuarantine.TabIndex = 68
+        '
         'cbBloodType
         '
+        Me.cbBloodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbBloodType.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbBloodType.FormattingEnabled = True
         Me.cbBloodType.Items.AddRange(New Object() {"A Rh-", "A Rh+", "B Rh-", "B Rh+", "AB Rh-", "AB Rh+", "O Rh-", "O Rh+"})
@@ -683,32 +705,11 @@ Partial Class EPage
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
         '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(12, 194)
-        Me.Label20.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(105, 26)
-        Me.Label20.TabIndex = 69
-        Me.Label20.Text = "Karantene:"
-        '
-        'txtQuarantine
-        '
-        Me.txtQuarantine.Enabled = False
-        Me.txtQuarantine.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuarantine.Location = New System.Drawing.Point(152, 191)
-        Me.txtQuarantine.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtQuarantine.Name = "txtQuarantine"
-        Me.txtQuarantine.Size = New System.Drawing.Size(130, 33)
-        Me.txtQuarantine.TabIndex = 68
-        '
         'EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1459, 855)
+        Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Userinformation)
         Me.Controls.Add(Me.btnSignOut)

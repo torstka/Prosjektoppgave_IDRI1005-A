@@ -10,7 +10,7 @@ Public Class NewUser
                              (ClientSize.Height - Regbox.Height) \ 2)
     End Sub
 
-    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtPersonnr.KeyPress, txtPhone.KeyPress, txtPostnr.KeyPress
+    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtPersonnr.KeyPress, txtPhone.KeyPress, txtPostnr.KeyPress, txtyob.KeyPress
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -18,7 +18,7 @@ Public Class NewUser
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BckBtn.Click
         'Knapp som klarerer skjema og går tilbake til "form1"
         txtFirstname.Clear()
         txtLastname.Clear()
@@ -35,44 +35,101 @@ Public Class NewUser
         Me.Hide()
 
     End Sub
-    Private Sub Totalyear()
+    Private Sub Calculate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegBtn.Click
+
         Dim year As String
         Dim month As String
         Dim day As String
-        year = txtyob.Text
-        month = Txtmob.Text
-        day = TxtDoB.Text
 
+        year = txtyob.Text 'Fødselsåret  
+        month = txtmob.Text 'Fødselsmåneden 
+        day = txtdob.Text 'Fødselsdagen
 
         If Not Regex.IsMatch(year, "^[0-9]+$") Then
             Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-        ElseIf Not Regex.IsMatch(month, "^[0-9]+$") Then
+        ElseIf txtyob.Text = "" Then
             Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-        ElseIf Not Regex.IsMatch(day, "^[0-9]+$") Then
+        ElseIf txtyob.Text = "0" Or txtyob.Text = "00" Or txtyob.Text = "000" Or txtyob.Text = "0000" Then
             Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-        ElseIf Txtmob.Text = 0 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12 (Måned)")
-        ElseIf Txtmob.Text > 12 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12(Måned)")
-        ElseIf TxtDoB.Text > 31 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31(Dag)")
-        ElseIf TxtDoB.Text = 0 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31(Dag)")
-
-
+        ElseIf txtmob.Text = "" Then
+            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+        ElseIf txtdob.Text = "" Then
+            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
 
         Else
+
             Dim DOB As New DateTime(year, month, day)
-            Dim Years As Integer = DateDiff(DateInterval.Year, DOB, Now) - 1
+            Dim BDAY As New DateTime(Now.Year, month, day)
+
+            Dim Years As Integer
+            If (BDAY > Now) Then
+                'The Person Birthday has not yet occured this year   
+                Years = DateDiff(DateInterval.Year, DOB, Now) - 1
+            Else
+                'The Person Birthday has occured this year   
+                Years = DateDiff(DateInterval.Year, DOB, Now)
+            End If
+
             Dim Months As Integer = DateDiff(DateInterval.Month, DOB, Now) Mod 12
             Dim days As Integer = DateDiff(DateInterval.Day, DOB, Now) Mod 30 - 10
+            Age.Text = Years
+            Me.RegError.Clear()
+        End If
+    End Sub
+    Private Function Totalage() As Boolean
 
-            Label12.Text = Years
-
-
+        If Age.Text = "" Then
+            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+        ElseIf Age.Text < 18 Then
+            Me.RegError.SetError(txtyob, "Du er for ung til å donere blod")
+            Return False
+        ElseIf Age.Text > 65 Then
+            Me.RegError.SetError(txtyob, "Du er for gammel til å donere blod")
+            Return False
+        Else
+            Me.RegError.Clear()
+            Return True
         End If
 
-    End Sub
+    End Function
+    ''Private Sub Totalyear(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
+    ''    Dim year As String
+    ''    Dim month As String
+    ''    Dim day As String
+    ''    year = txtyob.Text
+    ''    month = Txtmob.Text
+    ''    day = TxtDoB.Text
+
+
+    ''    If Not Regex.IsMatch(year, "^[0-9]+$") Then
+    ''        Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+    ''    ElseIf Not Regex.IsMatch(month, "^[0-9]+$") Then
+    ''        Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+    ''    ElseIf Not Regex.IsMatch(day, "^[0-9]+$") Then
+    ''        Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+    ''    ElseIf Txtmob.Text = 0 Then
+    ''        Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12 (Måned)")
+    ''    ElseIf Txtmob.Text > 12 Then
+    ''        Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12(Måned)")
+    ''    ElseIf TxtDoB.Text > 31 Then
+    ''        Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31(Dag)")
+    ''    ElseIf TxtDoB.Text = 0 Then
+    ''        Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31(Dag)")
+
+
+
+    ''    Else
+    ''        Dim DOB As New DateTime(year, month, day)
+    ''        Dim Years As Integer = DateDiff(DateInterval.Year, DOB, Now) - 1
+    ''        Dim Months As Integer = DateDiff(DateInterval.Month, DOB, Now) Mod 12
+    ''        Dim days As Integer = DateDiff(DateInterval.Day, DOB, Now) Mod 30 - 10
+
+    ''        Label12.Text = Years
+
+
+    ''    End If
+
+    ''End Sub
     Public Function ValidFornavn() As Boolean
         'Validerer at tekstboksen inneholder mer enn et tegn
         Dim Fornavn = txtFirstname.Text
@@ -230,67 +287,67 @@ Public Class NewUser
             Return True
         End If
     End Function
-    Public Function ValidDOB() As Boolean
-        Dim DoB = TxtDoB.Text
-        Dim MoB = Txtmob.Text
-        Dim YoB = txtyob.Text
+    ''Public Function ValidDOB() As Boolean
+    ''    Dim DoB = TxtDoB.Text
+    ''    Dim MoB = Txtmob.Text
+    ''    Dim YoB = txtyob.Text
 
-        'DAG VERIFISERING
+    ''    'DAG VERIFISERING
 
-        If Not Regex.IsMatch(DoB, "^[0-9]+$") Then
-            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-            Return False
+    ''    If Not Regex.IsMatch(DoB, "^[0-9]+$") Then
+    ''        Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+    ''        Return False
 
-        ElseIf TxtDoB.Text > 31 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31")
-            Return False
-        ElseIf TxtDoB.Text = 0 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31")
-            Return False
-        Else
-            Me.RegError.SetError(txtyob, "")
-        End If
+    ''    ElseIf TxtDoB.Text > 31 Then
+    ''        Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31")
+    ''        Return False
+    ''    ElseIf TxtDoB.Text = 0 Then
+    ''        Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-31")
+    ''        Return False
+    ''    Else
+    ''        Me.RegError.SetError(txtyob, "")
+    ''    End If
 
-        'MÅNED VERIFISERING
+    ''    'MÅNED VERIFISERING
 
-        If Not Regex.IsMatch(MoB, "^[0-9]+$") Then
-            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-            Return False
-        ElseIf Txtmob.Text = 0 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12")
-            Return False
+    ''    If Not Regex.IsMatch(MoB, "^[0-9]+$") Then
+    ''        Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+    ''        Return False
+    ''    ElseIf Txtmob.Text = 0 Then
+    ''        Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12")
+    ''        Return False
 
-        ElseIf Txtmob.Text > 12 Then
-            Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12")
-            Return False
+    ''    ElseIf Txtmob.Text > 12 Then
+    ''        Me.RegError.SetError(txtyob, "Vennligst fyll inn et tal fra 1-12")
+    ''        Return False
 
-        Else
-            Me.RegError.SetError(txtyob, "")
-        End If
+    ''    Else
+    ''        Me.RegError.SetError(txtyob, "")
+    ''    End If
 
-        'ÅR VERIFISERING
+    ''    'ÅR VERIFISERING
 
-        If Not YoB.Length = 4 Then
-            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-            Return False
-        ElseIf Not Regex.IsMatch(YoB, "^[0-9]+$") Then
-            Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
-            Return False
-        ElseIf txtyob.Text < 1900 Then
-            Me.RegError.SetError(txtyob, "Minste tillatte årstal er 1900")
-            Return False
-        ElseIf Label12.Text < 18 Then
-            Me.RegError.SetError(txtyob, "Du er for ung til å donere blod")
-            Return False
-        ElseIf Label12.Text > 64 Then
-            Me.RegError.SetError(txtyob, "Du er for gammel til å donere blod")
-            Return False
-        Else
-            Me.RegError.SetError(txtyob, "")
-            Return True
-        End If
+    ''    If Not YoB.Length = 4 Then
+    ''        Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+    ''        Return False
+    ''    ElseIf Not Regex.IsMatch(YoB, "^[0-9]+$") Then
+    ''        Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+    ''        Return False
+    ''    ElseIf txtyob.Text < 1900 Then
+    ''        Me.RegError.SetError(txtyob, "Minste tillatte årstal er 1900")
+    ''        Return False
+    ''    ElseIf Label12.Text < 18 Then
+    ''        Me.RegError.SetError(txtyob, "Du er for ung til å donere blod")
+    ''        Return False
+    ''    ElseIf Label12.Text > 64 Then
+    ''        Me.RegError.SetError(txtyob, "Du er for gammel til å donere blod")
+    ''        Return False
+    ''    Else
+    ''        Me.RegError.SetError(txtyob, "")
+    ''        Return True
+    ''    End If
 
-    End Function
+    ''End Function
     Private Function ValidKjønn() As Boolean
         ' Validerer at minst en av checkboksene er krysset av
         If rbMale.Checked = False And rbFemale.Checked = False Then
@@ -304,7 +361,7 @@ Public Class NewUser
     End Function
 
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles RegBtn.Click
         'Deklarerer tekstboksene
         Dim firstname = txtFirstname.Text
         Dim lastname = txtLastname.Text
@@ -316,18 +373,18 @@ Public Class NewUser
         Dim password = txtPassword.Text
         Dim male = rbMale.Checked
         Dim female = rbFemale.Checked
-        Dim DOB = TxtDoB.Text & "/" & Txtmob.Text & "/" & txtyob.Text
+        Dim DOB = txtdob.Text & "/" & Txtmob.Text & "/" & txtyob.Text
 
-        Totalyear()
-
-        If Not ValidFornavn() Then
+        If Not Totalage() Then
+            MsgBox(Me.RegError.GetError(txtyob))
+        ElseIf Not ValidFornavn() Then
             MsgBox(Me.RegError.GetError(txtFirstname))
         ElseIf Not ValidEtternavn() Then
             MsgBox(Me.RegError.GetError(txtLastname))
         ElseIf Not ValidPersnr() Then
             MsgBox(Me.RegError.GetError(txtPersonnr))
-        ElseIf Not ValidDOB() Then
-            MsgBox(Me.RegError.GetError(txtyob))
+            'ElseIf Not ValidDOB() Then
+            '    MsgBox(Me.RegError.GetError(txtyob))
         ElseIf Not ValidPostnr() Then
             MsgBox(Me.RegError.GetError(txtPostnr))
         ElseIf Not ValidAdresse() Then
@@ -395,5 +452,11 @@ Public Class NewUser
         Catch error_mail As Exception
             MsgBox("Det skjedde dessverre en teknisk feil. Dobbelsjekk at du har fyllt inn riktig informasjon, og prøv på nytt." & error_mail.Message)
         End Try
+    End Sub
+
+
+
+    Private Sub txtyob_TextChanged(sender As Object, e As EventArgs) Handles txtyob.Click
+        txtyob.Clear()
     End Sub
 End Class
