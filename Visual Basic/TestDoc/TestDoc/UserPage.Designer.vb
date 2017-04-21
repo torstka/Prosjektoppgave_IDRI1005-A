@@ -153,7 +153,7 @@ Partial Class UserPage
         Me.InfoPage.Margin = New System.Windows.Forms.Padding(2)
         Me.InfoPage.Name = "InfoPage"
         Me.InfoPage.Padding = New System.Windows.Forms.Padding(2)
-        Me.InfoPage.Size = New System.Drawing.Size(1954, 717)
+        Me.InfoPage.Size = New System.Drawing.Size(1542, 715)
         Me.InfoPage.TabIndex = 3
         Me.InfoPage.Text = "Kriterier for blodgivning"
         Me.InfoPage.UseVisualStyleBackColor = True
@@ -162,7 +162,7 @@ Partial Class UserPage
         '
         Me.LinkLabel1.AutoSize = True
         Me.LinkLabel1.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(1088, 594)
+        Me.LinkLabel1.Location = New System.Drawing.Point(942, 631)
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(221, 21)
@@ -174,7 +174,7 @@ Partial Class UserPage
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(739, 597)
+        Me.Label17.Location = New System.Drawing.Point(606, 633)
         Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(479, 21)
@@ -185,7 +185,7 @@ Partial Class UserPage
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(692, 594)
+        Me.Label16.Location = New System.Drawing.Point(539, 614)
         Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(410, 21)
@@ -195,8 +195,9 @@ Partial Class UserPage
         'Label15
         '
         Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Gainsboro
         Me.Label15.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(468, 549)
+        Me.Label15.Location = New System.Drawing.Point(313, 556)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(878, 42)
@@ -207,7 +208,7 @@ Partial Class UserPage
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(467, 506)
+        Me.Label14.Location = New System.Drawing.Point(313, 515)
         Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(581, 42)
@@ -218,8 +219,9 @@ Partial Class UserPage
         'Label13
         '
         Me.Label13.AutoSize = True
+        Me.Label13.BackColor = System.Drawing.Color.Gainsboro
         Me.Label13.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(466, 464)
+        Me.Label13.Location = New System.Drawing.Point(313, 470)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(950, 42)
@@ -230,7 +232,7 @@ Partial Class UserPage
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(466, 422)
+        Me.Label12.Location = New System.Drawing.Point(313, 428)
         Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(695, 42)
@@ -241,8 +243,9 @@ Partial Class UserPage
         'Label11
         '
         Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Gainsboro
         Me.Label11.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(476, 381)
+        Me.Label11.Location = New System.Drawing.Point(322, 383)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(917, 42)
@@ -253,21 +256,22 @@ Partial Class UserPage
         '
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(476, 323)
+        Me.Label10.Location = New System.Drawing.Point(323, 319)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(923, 84)
+        Me.Label10.Size = New System.Drawing.Size(923, 63)
         Me.Label10.TabIndex = 9
         Me.Label10.Text = resources.GetString("Label10.Text")
         '
         'Label9
         '
         Me.Label9.AutoSize = True
+        Me.Label9.BackColor = System.Drawing.Color.Gainsboro
         Me.Label9.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(477, 264)
+        Me.Label9.Location = New System.Drawing.Point(324, 256)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(980, 84)
+        Me.Label9.Size = New System.Drawing.Size(980, 63)
         Me.Label9.TabIndex = 8
         Me.Label9.Text = resources.GetString("Label9.Text")
         '
@@ -275,7 +279,7 @@ Partial Class UserPage
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(478, 223)
+        Me.Label8.Location = New System.Drawing.Point(325, 214)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(954, 42)
@@ -285,8 +289,9 @@ Partial Class UserPage
         'Label7
         '
         Me.Label7.AutoSize = True
+        Me.Label7.BackColor = System.Drawing.Color.Gainsboro
         Me.Label7.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(479, 180)
+        Me.Label7.Location = New System.Drawing.Point(326, 170)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(901, 42)
@@ -297,7 +302,7 @@ Partial Class UserPage
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(480, 141)
+        Me.Label6.Location = New System.Drawing.Point(327, 127)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(817, 42)
@@ -309,8 +314,9 @@ Partial Class UserPage
         'Label5
         '
         Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Gainsboro
         Me.Label5.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(480, 116)
+        Me.Label5.Location = New System.Drawing.Point(327, 104)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(264, 21)
@@ -321,7 +327,7 @@ Partial Class UserPage
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(479, 90)
+        Me.Label4.Location = New System.Drawing.Point(326, 82)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(825, 21)
@@ -332,8 +338,9 @@ Partial Class UserPage
         'Label3
         '
         Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Gainsboro
         Me.Label3.Font = New System.Drawing.Font("Calibri", 12.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(479, 64)
+        Me.Label3.Location = New System.Drawing.Point(326, 56)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(608, 21)
@@ -345,7 +352,7 @@ Partial Class UserPage
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(727, 9)
+        Me.Label2.Location = New System.Drawing.Point(574, 10)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(416, 29)
@@ -359,7 +366,7 @@ Partial Class UserPage
         Me.ChangeData.Margin = New System.Windows.Forms.Padding(2)
         Me.ChangeData.Name = "ChangeData"
         Me.ChangeData.Padding = New System.Windows.Forms.Padding(2)
-        Me.ChangeData.Size = New System.Drawing.Size(1954, 717)
+        Me.ChangeData.Size = New System.Drawing.Size(1542, 715)
         Me.ChangeData.TabIndex = 2
         Me.ChangeData.Text = "Endre personopplysninger"
         Me.ChangeData.UseVisualStyleBackColor = True
@@ -383,7 +390,8 @@ Partial Class UserPage
         Me.Changeuserinfo.Controls.Add(Me.mail)
         Me.Changeuserinfo.Controls.Add(Me.txtAddress)
         Me.Changeuserinfo.Controls.Add(Me.phone)
-        Me.Changeuserinfo.Location = New System.Drawing.Point(572, 25)
+        Me.Changeuserinfo.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Changeuserinfo.Location = New System.Drawing.Point(444, 23)
         Me.Changeuserinfo.Name = "Changeuserinfo"
         Me.Changeuserinfo.Size = New System.Drawing.Size(754, 615)
         Me.Changeuserinfo.TabIndex = 20
@@ -393,16 +401,17 @@ Partial Class UserPage
         'FName
         '
         Me.FName.AutoSize = True
+        Me.FName.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.FName.Location = New System.Drawing.Point(66, 56)
         Me.FName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.FName.Name = "FName"
-        Me.FName.Size = New System.Drawing.Size(95, 29)
+        Me.FName.Size = New System.Drawing.Size(103, 33)
         Me.FName.TabIndex = 15
         Me.FName.Text = "Fornavn"
         '
         'btnChangeData
         '
-        Me.btnChangeData.Location = New System.Drawing.Point(339, 536)
+        Me.btnChangeData.Location = New System.Drawing.Point(339, 545)
         Me.btnChangeData.Margin = New System.Windows.Forms.Padding(2)
         Me.btnChangeData.Name = "btnChangeData"
         Me.btnChangeData.Size = New System.Drawing.Size(111, 52)
@@ -415,7 +424,7 @@ Partial Class UserPage
         Me.txtFirstName.Location = New System.Drawing.Point(284, 51)
         Me.txtFirstName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtFirstName.Name = "txtFirstName"
-        Me.txtFirstName.Size = New System.Drawing.Size(317, 37)
+        Me.txtFirstName.Size = New System.Drawing.Size(317, 40)
         Me.txtFirstName.TabIndex = 16
         '
         'txtConPwd
@@ -424,7 +433,7 @@ Partial Class UserPage
         Me.txtConPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtConPwd.Name = "txtConPwd"
         Me.txtConPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtConPwd.Size = New System.Drawing.Size(320, 37)
+        Me.txtConPwd.Size = New System.Drawing.Size(320, 40)
         Me.txtConPwd.TabIndex = 14
         Me.txtConPwd.UseSystemPasswordChar = True
         '
@@ -433,37 +442,39 @@ Partial Class UserPage
         Me.txtZipcode.Location = New System.Drawing.Point(284, 241)
         Me.txtZipcode.Margin = New System.Windows.Forms.Padding(2)
         Me.txtZipcode.Name = "txtZipcode"
-        Me.txtZipcode.Size = New System.Drawing.Size(317, 37)
+        Me.txtZipcode.Size = New System.Drawing.Size(317, 40)
         Me.txtZipcode.TabIndex = 18
         '
         'confirmPwd
         '
         Me.confirmPwd.AutoSize = True
+        Me.confirmPwd.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.confirmPwd.Location = New System.Drawing.Point(66, 496)
         Me.confirmPwd.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.confirmPwd.Name = "confirmPwd"
-        Me.confirmPwd.Size = New System.Drawing.Size(171, 29)
+        Me.confirmPwd.Size = New System.Drawing.Size(185, 33)
         Me.confirmPwd.TabIndex = 13
         Me.confirmPwd.Text = "Bekreft Passord"
         '
         'lastname
         '
         Me.lastname.AutoSize = True
-        Me.lastname.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lastname.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lastname.Location = New System.Drawing.Point(66, 118)
         Me.lastname.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lastname.Name = "lastname"
-        Me.lastname.Size = New System.Drawing.Size(122, 29)
+        Me.lastname.Size = New System.Drawing.Size(120, 33)
         Me.lastname.TabIndex = 1
         Me.lastname.Text = "Etternavn"
         '
         'zipcode
         '
         Me.zipcode.AutoSize = True
+        Me.zipcode.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.zipcode.Location = New System.Drawing.Point(66, 244)
         Me.zipcode.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.zipcode.Name = "zipcode"
-        Me.zipcode.Size = New System.Drawing.Size(144, 29)
+        Me.zipcode.Size = New System.Drawing.Size(156, 33)
         Me.zipcode.TabIndex = 17
         Me.zipcode.Text = "Postnummer"
         '
@@ -473,27 +484,29 @@ Partial Class UserPage
         Me.txtPwd.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPwd.Name = "txtPwd"
         Me.txtPwd.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPwd.Size = New System.Drawing.Size(320, 37)
+        Me.txtPwd.Size = New System.Drawing.Size(320, 40)
         Me.txtPwd.TabIndex = 11
         Me.txtPwd.UseSystemPasswordChar = True
         '
         'address
         '
         Me.address.AutoSize = True
+        Me.address.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.address.Location = New System.Drawing.Point(66, 180)
         Me.address.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.address.Name = "address"
-        Me.address.Size = New System.Drawing.Size(94, 29)
+        Me.address.Size = New System.Drawing.Size(102, 33)
         Me.address.TabIndex = 2
         Me.address.Text = "Adresse"
         '
         'pwd
         '
         Me.pwd.AutoSize = True
+        Me.pwd.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.pwd.Location = New System.Drawing.Point(66, 436)
         Me.pwd.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.pwd.Name = "pwd"
-        Me.pwd.Size = New System.Drawing.Size(93, 29)
+        Me.pwd.Size = New System.Drawing.Size(100, 33)
         Me.pwd.TabIndex = 5
         Me.pwd.Text = "Passord"
         '
@@ -502,7 +515,7 @@ Partial Class UserPage
         Me.txtMail.Location = New System.Drawing.Point(284, 368)
         Me.txtMail.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMail.Name = "txtMail"
-        Me.txtMail.Size = New System.Drawing.Size(320, 37)
+        Me.txtMail.Size = New System.Drawing.Size(320, 40)
         Me.txtMail.TabIndex = 10
         '
         'txtLastName
@@ -510,7 +523,7 @@ Partial Class UserPage
         Me.txtLastName.Location = New System.Drawing.Point(284, 114)
         Me.txtLastName.Margin = New System.Windows.Forms.Padding(2)
         Me.txtLastName.Name = "txtLastName"
-        Me.txtLastName.Size = New System.Drawing.Size(317, 37)
+        Me.txtLastName.Size = New System.Drawing.Size(317, 40)
         Me.txtLastName.TabIndex = 7
         '
         'txtPhone
@@ -518,16 +531,17 @@ Partial Class UserPage
         Me.txtPhone.Location = New System.Drawing.Point(284, 305)
         Me.txtPhone.Margin = New System.Windows.Forms.Padding(2)
         Me.txtPhone.Name = "txtPhone"
-        Me.txtPhone.Size = New System.Drawing.Size(317, 37)
+        Me.txtPhone.Size = New System.Drawing.Size(317, 40)
         Me.txtPhone.TabIndex = 9
         '
         'mail
         '
         Me.mail.AutoSize = True
+        Me.mail.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mail.Location = New System.Drawing.Point(66, 374)
         Me.mail.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.mail.Name = "mail"
-        Me.mail.Size = New System.Drawing.Size(76, 29)
+        Me.mail.Size = New System.Drawing.Size(84, 33)
         Me.mail.TabIndex = 4
         Me.mail.Text = "E-post"
         '
@@ -536,16 +550,17 @@ Partial Class UserPage
         Me.txtAddress.Location = New System.Drawing.Point(284, 177)
         Me.txtAddress.Margin = New System.Windows.Forms.Padding(2)
         Me.txtAddress.Name = "txtAddress"
-        Me.txtAddress.Size = New System.Drawing.Size(317, 37)
+        Me.txtAddress.Size = New System.Drawing.Size(317, 40)
         Me.txtAddress.TabIndex = 8
         '
         'phone
         '
         Me.phone.AutoSize = True
+        Me.phone.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.phone.Location = New System.Drawing.Point(64, 311)
         Me.phone.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.phone.Name = "phone"
-        Me.phone.Size = New System.Drawing.Size(174, 29)
+        Me.phone.Size = New System.Drawing.Size(187, 33)
         Me.phone.TabIndex = 3
         Me.phone.Text = "Telefonnummer"
         '
@@ -862,7 +877,7 @@ Partial Class UserPage
         Me.DonorPage.Name = "DonorPage"
         Me.DonorPage.Padding = New System.Drawing.Point(48, 12)
         Me.DonorPage.SelectedIndex = 0
-        Me.DonorPage.Size = New System.Drawing.Size(1550, 647)
+        Me.DonorPage.Size = New System.Drawing.Size(1550, 798)
         Me.DonorPage.TabIndex = 7
         '
         'btnSignOut

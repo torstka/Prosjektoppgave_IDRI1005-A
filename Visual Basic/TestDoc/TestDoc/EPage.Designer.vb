@@ -601,7 +601,7 @@ Partial Class EPage
         Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.Label12)
         Me.GroupBox4.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(126, 43)
+        Me.GroupBox4.Location = New System.Drawing.Point(248, 30)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(1125, 589)
         Me.GroupBox4.TabIndex = 2
@@ -828,7 +828,6 @@ Partial Class EPage
         Me.txtbxSSNV.Name = "txtbxSSNV"
         Me.txtbxSSNV.Size = New System.Drawing.Size(209, 37)
         Me.txtbxSSNV.TabIndex = 95
-        Me.txtbxSSNV.Text = "11111111111"
         '
         'Label24
         '
