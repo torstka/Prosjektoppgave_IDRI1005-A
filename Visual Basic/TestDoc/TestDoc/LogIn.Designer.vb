@@ -62,7 +62,7 @@ Partial Class LogIn
         '
         'btnLogin
         '
-        Me.btnLogin.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.btnLogin.BackColor = System.Drawing.Color.LightBlue
         Me.btnLogin.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnLogin.Location = New System.Drawing.Point(405, 294)
         Me.btnLogin.Name = "btnLogin"
