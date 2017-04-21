@@ -214,13 +214,11 @@ Public Class UserPage
         Me.Size = SystemInformation.PrimaryMonitorSize
         DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
-<<<<<<< HEAD
-=======
         txtConPwd.Hide()
         confirmPwd.Hide()
 
 
->>>>>>> f1d62935bd7369bd41ca5e3a47ca8452c6bff8ec
+
         'Label18.Text = ssNumber
 
         showData()

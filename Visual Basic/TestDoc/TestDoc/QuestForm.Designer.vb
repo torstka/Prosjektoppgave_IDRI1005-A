@@ -234,6 +234,7 @@ Partial Class QuestForm
         Me.rbNei42 = New System.Windows.Forms.RadioButton()
         Me.rbJa42 = New System.Windows.Forms.RadioButton()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.lbFShow = New System.Windows.Forms.Label()
         Me.lbF8 = New System.Windows.Forms.Label()
         Me.Panel45 = New System.Windows.Forms.Panel()
         Me.rbNei45 = New System.Windows.Forms.RadioButton()
@@ -254,6 +255,7 @@ Partial Class QuestForm
         Me.btnPrev8 = New System.Windows.Forms.Button()
         Me.btnNext8 = New System.Windows.Forms.Button()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.lbMShow = New System.Windows.Forms.Label()
         Me.lbM9 = New System.Windows.Forms.Label()
         Me.Panel49 = New System.Windows.Forms.Panel()
         Me.rbNei49 = New System.Windows.Forms.RadioButton()
@@ -307,8 +309,6 @@ Partial Class QuestForm
         Me.btnPrev10 = New System.Windows.Forms.Button()
         Me.btnFinish = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.lbFShow = New System.Windows.Forms.Label()
-        Me.lbMShow = New System.Windows.Forms.Label()
         Me.QuestionRound.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -2969,6 +2969,16 @@ Partial Class QuestForm
         Me.TabPage8.Text = "TabPage8"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
+        'lbFShow
+        '
+        Me.lbFShow.AutoSize = True
+        Me.lbFShow.Font = New System.Drawing.Font("Calibri Light", 26.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbFShow.Location = New System.Drawing.Point(285, 245)
+        Me.lbFShow.Name = "lbFShow"
+        Me.lbFShow.Size = New System.Drawing.Size(471, 42)
+        Me.lbFShow.TabIndex = 134
+        Me.lbFShow.Text = "Denne siden besvares av kvinner"
+        '
         'lbF8
         '
         Me.lbF8.AutoSize = True
@@ -3207,6 +3217,16 @@ Partial Class QuestForm
         Me.TabPage9.TabIndex = 6
         Me.TabPage9.Text = "TabPage9"
         Me.TabPage9.UseVisualStyleBackColor = True
+        '
+        'lbMShow
+        '
+        Me.lbMShow.AutoSize = True
+        Me.lbMShow.Font = New System.Drawing.Font("Calibri Light", 26.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbMShow.Location = New System.Drawing.Point(285, 245)
+        Me.lbMShow.Name = "lbMShow"
+        Me.lbMShow.Size = New System.Drawing.Size(448, 42)
+        Me.lbMShow.TabIndex = 135
+        Me.lbMShow.Text = "Denne siden besvares av menn"
         '
         'lbM9
         '
@@ -3839,26 +3859,6 @@ Partial Class QuestForm
         Me.Label1.TabIndex = 123
         Me.Label1.Text = "Spørreskjema"
         '
-        'lbFShow
-        '
-        Me.lbFShow.AutoSize = True
-        Me.lbFShow.Font = New System.Drawing.Font("Calibri Light", 26.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbFShow.Location = New System.Drawing.Point(285, 245)
-        Me.lbFShow.Name = "lbFShow"
-        Me.lbFShow.Size = New System.Drawing.Size(471, 42)
-        Me.lbFShow.TabIndex = 134
-        Me.lbFShow.Text = "Denne siden besvares av kvinner"
-        '
-        'lbMShow
-        '
-        Me.lbMShow.AutoSize = True
-        Me.lbMShow.Font = New System.Drawing.Font("Calibri Light", 26.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbMShow.Location = New System.Drawing.Point(285, 245)
-        Me.lbMShow.Name = "lbMShow"
-        Me.lbMShow.Size = New System.Drawing.Size(448, 42)
-        Me.lbMShow.TabIndex = 135
-        Me.lbMShow.Text = "Denne siden besvares av menn"
-        '
         'QuestForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3868,6 +3868,7 @@ Partial Class QuestForm
         Me.Controls.Add(Me.QuestionRound)
         Me.Name = "QuestForm"
         Me.Text = "QuestForm"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.QuestionRound.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
