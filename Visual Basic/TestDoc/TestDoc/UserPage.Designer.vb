@@ -736,14 +736,16 @@ Partial Class UserPage
         'Label20
         '
         Me.Label20.AllowDrop = True
+        Me.Label20.BackColor = System.Drawing.SystemColors.Control
         Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label20.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.Location = New System.Drawing.Point(545, 166)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(343, 109)
+        Me.Label20.Size = New System.Drawing.Size(340, 109)
         Me.Label20.TabIndex = 14
-        Me.Label20.Text = "Fyll alltid ut spørreskjemaet før du gir blod." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Det må være tre måneder siden for" &
-    "rige blodgivning. <("") "
+        Me.Label20.Text = "Fyll alltid ut spørreskjemaet før du gir blod. Det må være tre måneder siden forr" &
+    "ige blodgivning."
+        Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'gbBlood
         '
@@ -884,6 +886,7 @@ Partial Class UserPage
         'btnQuest
         '
         Me.btnQuest.AllowDrop = True
+        Me.btnQuest.BackColor = System.Drawing.Color.LightBlue
         Me.btnQuest.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnQuest.Location = New System.Drawing.Point(545, 295)
         Me.btnQuest.Margin = New System.Windows.Forms.Padding(2)
@@ -891,7 +894,7 @@ Partial Class UserPage
         Me.btnQuest.Size = New System.Drawing.Size(340, 171)
         Me.btnQuest.TabIndex = 2
         Me.btnQuest.Text = "Spørreskjema"
-        Me.btnQuest.UseVisualStyleBackColor = True
+        Me.btnQuest.UseVisualStyleBackColor = False
         '
         'lblFullName
         '
