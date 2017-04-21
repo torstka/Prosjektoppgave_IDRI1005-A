@@ -152,7 +152,22 @@ Public Class User
 
     End Sub
 
+    Public Sub getUser()
 
+        connection.Open()
+        Dim query As String = "SELECT ss_number, firstname, lastname, quarantine FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
+        cmd = New MySqlCommand(query, connection)
+        adapter = New MySqlDataAdapter
+        adapter.SelectCommand = cmd
+        adapter.Fill(dtable)
+
+        For Each rad In dtable.Rows
+            UserPage.lblFullName.Text = (rad("firstname") & " " & rad("lastname"))
+            UserPage.lblSSnumber.Text = (rad("ss_number")).ToString()
+            UserPage.TextBox1.Text = (rad("quarantine")).ToString()
+        Next
+
+    End Sub
 
 
 

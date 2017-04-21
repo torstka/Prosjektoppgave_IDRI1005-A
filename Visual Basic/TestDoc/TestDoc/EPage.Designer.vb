@@ -22,17 +22,17 @@ Partial Class EPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title4 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.Userinformation = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -123,7 +123,7 @@ Partial Class EPage
         Me.Userinformation.Controls.Add(Me.TabPage3)
         Me.Userinformation.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Userinformation.ItemSize = New System.Drawing.Size(205, 75)
-        Me.Userinformation.Location = New System.Drawing.Point(96, 58)
+        Me.Userinformation.Location = New System.Drawing.Point(88, 114)
         Me.Userinformation.Margin = New System.Windows.Forms.Padding(2)
         Me.Userinformation.Name = "Userinformation"
         Me.Userinformation.Padding = New System.Drawing.Point(48, 12)
@@ -743,17 +743,17 @@ Partial Class EPage
         'CBlodtype
         '
         Me.CBlodtype.BackColor = System.Drawing.Color.LightGray
-        ChartArea4.Name = "ChartArea1"
-        Me.CBlodtype.ChartAreas.Add(ChartArea4)
-        Legend4.Name = "Legend1"
-        Me.CBlodtype.Legends.Add(Legend4)
+        ChartArea1.Name = "ChartArea1"
+        Me.CBlodtype.ChartAreas.Add(ChartArea1)
+        Legend1.Name = "Legend1"
+        Me.CBlodtype.Legends.Add(Legend1)
         Me.CBlodtype.Location = New System.Drawing.Point(77, 24)
         Me.CBlodtype.Name = "CBlodtype"
-        Series4.ChartArea = "ChartArea1"
-        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series4.Legend = "Legend1"
-        Series4.Name = "Blodtyper"
-        Me.CBlodtype.Series.Add(Series4)
+        Series1.ChartArea = "ChartArea1"
+        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series1.Legend = "Legend1"
+        Series1.Name = "Blodtyper"
+        Me.CBlodtype.Series.Add(Series1)
         Me.CBlodtype.Size = New System.Drawing.Size(528, 512)
         Me.CBlodtype.TabIndex = 29
         Me.CBlodtype.Text = "Chart1"
@@ -762,28 +762,28 @@ Partial Class EPage
         '
         Me.CBType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.CBType.BackColor = System.Drawing.Color.Silver
-        ChartArea5.Name = "ChartArea1"
-        Me.CBType.ChartAreas.Add(ChartArea5)
-        Legend5.Name = "Legend1"
-        Me.CBType.Legends.Add(Legend5)
+        ChartArea2.Name = "ChartArea1"
+        Me.CBType.ChartAreas.Add(ChartArea2)
+        Legend2.Name = "Legend1"
+        Me.CBType.Legends.Add(Legend2)
         Me.CBType.Location = New System.Drawing.Point(77, 24)
         Me.CBType.Name = "CBType"
         Me.CBType.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
-        Series5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Series5.ChartArea = "ChartArea1"
-        Series5.Color = System.Drawing.Color.Crimson
-        Series5.LabelAngle = 90
-        Series5.Legend = "Legend1"
-        Series5.Name = "BLODTYPER"
-        Series5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
-        Me.CBType.Series.Add(Series5)
+        Series2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series2.ChartArea = "ChartArea1"
+        Series2.Color = System.Drawing.Color.Crimson
+        Series2.LabelAngle = 90
+        Series2.Legend = "Legend1"
+        Series2.Name = "BLODTYPER"
+        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
+        Me.CBType.Series.Add(Series2)
         Me.CBType.Size = New System.Drawing.Size(528, 512)
         Me.CBType.TabIndex = 24
         Me.CBType.Text = "Chart1"
-        Title3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title3.Name = "Title1"
-        Title3.Text = "Blodtypene spesifisert"
-        Me.CBType.Titles.Add(Title3)
+        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title1.Name = "Title1"
+        Title1.Text = "Blodtypene spesifisert"
+        Me.CBType.Titles.Add(Title1)
         '
         'dgvGender
         '
@@ -800,25 +800,25 @@ Partial Class EPage
         Me.CG.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CG.BackColor = System.Drawing.Color.Silver
-        ChartArea6.Name = "ChartArea1"
-        Me.CG.ChartAreas.Add(ChartArea6)
-        Legend6.Name = "Legend1"
-        Me.CG.Legends.Add(Legend6)
+        ChartArea3.Name = "ChartArea1"
+        Me.CG.ChartAreas.Add(ChartArea3)
+        Legend3.Name = "Legend1"
+        Me.CG.Legends.Add(Legend3)
         Me.CG.Location = New System.Drawing.Point(631, 24)
         Me.CG.Name = "CG"
-        Series6.BorderColor = System.Drawing.Color.Yellow
-        Series6.ChartArea = "ChartArea1"
-        Series6.Color = System.Drawing.Color.DarkTurquoise
-        Series6.Legend = "Legend1"
-        Series6.Name = "KJØNNSFORDELING"
-        Me.CG.Series.Add(Series6)
+        Series3.BorderColor = System.Drawing.Color.Yellow
+        Series3.ChartArea = "ChartArea1"
+        Series3.Color = System.Drawing.Color.DarkTurquoise
+        Series3.Legend = "Legend1"
+        Series3.Name = "KJØNNSFORDELING"
+        Me.CG.Series.Add(Series3)
         Me.CG.Size = New System.Drawing.Size(560, 512)
         Me.CG.TabIndex = 25
         Me.CG.Text = "Chart1"
-        Title4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title4.Name = "Title1"
-        Title4.Text = "Fordelingen mellom Menn & Kvinner"
-        Me.CG.Titles.Add(Title4)
+        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title2.Name = "Title1"
+        Title2.Text = "Fordelingen mellom Menn & Kvinner"
+        Me.CG.Titles.Add(Title2)
         '
         'dgvBloodType
         '
@@ -875,7 +875,7 @@ Partial Class EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1354, 733)
+        Me.ClientSize = New System.Drawing.Size(1338, 844)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Userinformation)
         Me.Controls.Add(Me.btnSignOut)

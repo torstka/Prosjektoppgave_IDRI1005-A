@@ -271,7 +271,7 @@ Public Class EPage
     End Sub
 
 
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs)
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
         Dim DV As New DataView(dtable)
         DV.RowFilter = String.Format("Blodtype Like '%{0}%'", txtSearch.Text)
         dgwUsers.DataSource = DV
@@ -866,6 +866,22 @@ Public Class EPage
     Private Sub btnGetOrder_Click(sender As Object, e As EventArgs) Handles btnGetOrder.Click
         checkOrders()
         btnGetOrder.Visible = False
+    End Sub
+
+    Private Sub btnSBType_Click(sender As Object, e As EventArgs) Handles btnSBType.Click
+        CBlodtype.Hide()
+        btnSBType.Hide()
+        lblCPie.Hide()
+        CBType.Show()
+        btnBTPie.Show()
+    End Sub
+
+    Private Sub btnBTPie_Click(sender As Object, e As EventArgs) Handles btnBTPie.Click
+        CBType.Hide()
+        btnBTPie.Hide()
+        btnSBType.Show()
+        CBlodtype.Show()
+        lblCPie.Show()
     End Sub
 
 End Class

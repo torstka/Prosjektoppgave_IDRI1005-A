@@ -742,6 +742,7 @@ Partial Class QuestForm
         '
         'btnNext1
         '
+        Me.btnNext1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnNext1.Location = New System.Drawing.Point(897, 494)
         Me.btnNext1.Margin = New System.Windows.Forms.Padding(2)
         Me.btnNext1.Name = "btnNext1"

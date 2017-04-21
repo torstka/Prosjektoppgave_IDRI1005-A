@@ -90,7 +90,7 @@ Partial Class LogIn
         Me.txtPersonnr.Name = "txtPersonnr"
         Me.txtPersonnr.Size = New System.Drawing.Size(282, 43)
         Me.txtPersonnr.TabIndex = 40
-        Me.txtPersonnr.Text = "17059212345"
+        Me.txtPersonnr.Text = "17059254321"
         Me.txtPersonnr.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'loginerror

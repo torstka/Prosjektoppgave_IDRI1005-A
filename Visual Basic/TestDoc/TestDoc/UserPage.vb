@@ -189,21 +189,22 @@ Public Class UserPage
 
     End Sub
 
-    Public Sub getUser()
+    'Public Sub getUser()
 
-        connection.Open()
-        Dim query As String = "SELECT ss_number, firstname, lastname FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
-        cmd = New MySqlCommand(query, connection)
-        adapter = New MySqlDataAdapter
-        adapter.SelectCommand = cmd
-        adapter.Fill(dtable)
+    '    connection.Open()
+    '    Dim query As String = "SELECT ss_number, firstname, lastname, quarantine FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
+    '    cmd = New MySqlCommand(query, connection)
+    '    adapter = New MySqlDataAdapter
+    '    adapter.SelectCommand = cmd
+    '    adapter.Fill(dtable)
 
-        For Each rad In dtable.Rows
-            lblFullName.Text = (rad("firstname") & " " & rad("lastname"))
-            lblSSnumber.Text = (rad("ss_number")).ToString()
-        Next
+    '    For Each rad In dtable.Rows
+    '        lblFullName.Text = (rad("firstname") & " " & rad("lastname"))
+    '        lblSSnumber.Text = (rad("ss_number")).ToString()
+    '        TextBox1.Text = (rad("quarantine")).ToString()
+    '    Next
 
-    End Sub
+    'End Sub
 
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -222,7 +223,8 @@ Public Class UserPage
         'Label18.Text = ssNumber
 
         showData()
-        getUser()
+        Dim user As New User
+        user.getUser()
         showBloodData()
 
         'Dim showUser As New User
@@ -385,8 +387,8 @@ Public Class UserPage
 
     End Sub
 
-
     Private Sub btnQuest_Click(sender As Object, e As EventArgs) Handles btnQuest.Click
+
         QuestForm.checkIfApproved()
 
     End Sub
@@ -594,6 +596,7 @@ feilmelding.Message)
         confirmPwd.Show()
         txtConPwd.Show()
     End Sub
+
 
 #End Region
     Private Sub getOrderDate()

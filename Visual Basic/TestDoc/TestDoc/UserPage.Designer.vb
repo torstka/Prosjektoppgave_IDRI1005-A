@@ -82,6 +82,8 @@ Partial Class UserPage
         Me.lblOTime = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.gbBlood = New System.Windows.Forms.GroupBox()
+        Me.lblquarantine = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.txtBtype = New System.Windows.Forms.TextBox()
         Me.ironValue = New System.Windows.Forms.Label()
         Me.txtIronValue = New System.Windows.Forms.TextBox()
@@ -362,7 +364,7 @@ Partial Class UserPage
         Me.ChangeData.Margin = New System.Windows.Forms.Padding(2)
         Me.ChangeData.Name = "ChangeData"
         Me.ChangeData.Padding = New System.Windows.Forms.Padding(2)
-        Me.ChangeData.Size = New System.Drawing.Size(1392, 717)
+        Me.ChangeData.Size = New System.Drawing.Size(1954, 717)
         Me.ChangeData.TabIndex = 2
         Me.ChangeData.Text = "Endre personopplysninger"
         Me.ChangeData.UseVisualStyleBackColor = True
@@ -565,7 +567,7 @@ Partial Class UserPage
         Me.MyPage.Margin = New System.Windows.Forms.Padding(2)
         Me.MyPage.Name = "MyPage"
         Me.MyPage.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MyPage.Size = New System.Drawing.Size(1392, 717)
+        Me.MyPage.Size = New System.Drawing.Size(1954, 717)
         Me.MyPage.TabIndex = 0
         Me.MyPage.Text = "Min side"
         Me.MyPage.UseVisualStyleBackColor = True
@@ -744,6 +746,8 @@ Partial Class UserPage
         '
         'gbBlood
         '
+        Me.gbBlood.Controls.Add(Me.lblquarantine)
+        Me.gbBlood.Controls.Add(Me.TextBox1)
         Me.gbBlood.Controls.Add(Me.txtBtype)
         Me.gbBlood.Controls.Add(Me.ironValue)
         Me.gbBlood.Controls.Add(Me.txtIronValue)
@@ -757,10 +761,30 @@ Partial Class UserPage
         Me.gbBlood.Margin = New System.Windows.Forms.Padding(2)
         Me.gbBlood.Name = "gbBlood"
         Me.gbBlood.Padding = New System.Windows.Forms.Padding(2)
-        Me.gbBlood.Size = New System.Drawing.Size(442, 331)
+        Me.gbBlood.Size = New System.Drawing.Size(442, 378)
         Me.gbBlood.TabIndex = 13
         Me.gbBlood.TabStop = False
         Me.gbBlood.Text = "Mine bloddata"
+        '
+        'lblquarantine
+        '
+        Me.lblquarantine.AutoSize = True
+        Me.lblquarantine.Font = New System.Drawing.Font("Calibri", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblquarantine.Location = New System.Drawing.Point(21, 309)
+        Me.lblquarantine.Name = "lblquarantine"
+        Me.lblquarantine.Size = New System.Drawing.Size(101, 24)
+        Me.lblquarantine.TabIndex = 14
+        Me.lblquarantine.Text = "Karantene:"
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Enabled = False
+        Me.TextBox1.Font = New System.Drawing.Font("Calibri", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox1.Location = New System.Drawing.Point(202, 299)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(176, 32)
+        Me.TextBox1.TabIndex = 13
         '
         'txtBtype
         '
@@ -800,9 +824,9 @@ Partial Class UserPage
         Me.hb.Location = New System.Drawing.Point(20, 195)
         Me.hb.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.hb.Name = "hb"
-        Me.hb.Size = New System.Drawing.Size(116, 26)
+        Me.hb.Size = New System.Drawing.Size(122, 26)
         Me.hb.TabIndex = 7
-        Me.hb.Text = "Hemoglobin"
+        Me.hb.Text = "Hemoglobin:"
         '
         'txtDrain
         '
@@ -996,4 +1020,6 @@ Partial Class UserPage
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents lblquarantine As Label
 End Class
