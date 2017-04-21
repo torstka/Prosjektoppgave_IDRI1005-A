@@ -65,21 +65,15 @@ Partial Class UserPage
         Me.txtAddress = New System.Windows.Forms.TextBox()
         Me.phone = New System.Windows.Forms.Label()
         Me.MyPage = New System.Windows.Forms.TabPage()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.can = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.day_p_time = New System.Windows.Forms.Label()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.lblLastDrain = New System.Windows.Forms.Label()
+        Me.Label24 = New System.Windows.Forms.Label()
         Me.btnCApp = New System.Windows.Forms.Button()
-        Me.nxtApp = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
+        Me.lblnxtApp = New System.Windows.Forms.Label()
         Me.DTPOrder = New System.Windows.Forms.DateTimePicker()
-        Me.lblSSN = New System.Windows.Forms.Label()
-        Me.Label19 = New System.Windows.Forms.Label()
         Me.txtbxTime = New System.Windows.Forms.ComboBox()
-        Me.lblNxtApp = New System.Windows.Forms.Label()
-        Me.lblODate = New System.Windows.Forms.Label()
-        Me.BtnOrderApp = New System.Windows.Forms.Button()
-        Me.lblOTime = New System.Windows.Forms.Label()
+        Me.btnOrderApp = New System.Windows.Forms.Button()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.gbBlood = New System.Windows.Forms.GroupBox()
         Me.lblquarantine = New System.Windows.Forms.Label()
@@ -103,7 +97,7 @@ Partial Class UserPage
         Me.ChangeData.SuspendLayout()
         Me.Changeuserinfo.SuspendLayout()
         Me.MyPage.SuspendLayout()
-        Me.GroupBox3.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.gbBlood.SuspendLayout()
         Me.DonorPage.SuspendLayout()
         Me.SuspendLayout()
@@ -557,7 +551,7 @@ Partial Class UserPage
         '
         'MyPage
         '
-        Me.MyPage.Controls.Add(Me.GroupBox3)
+        Me.MyPage.Controls.Add(Me.GroupBox6)
         Me.MyPage.Controls.Add(Me.Label20)
         Me.MyPage.Controls.Add(Me.gbBlood)
         Me.MyPage.Controls.Add(Me.lblSSnumber)
@@ -573,165 +567,113 @@ Partial Class UserPage
         Me.MyPage.Text = "Min side"
         Me.MyPage.UseVisualStyleBackColor = True
         '
-        'GroupBox3
+        'GroupBox6
         '
-        Me.GroupBox3.Controls.Add(Me.can)
-        Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Controls.Add(Me.day_p_time)
-        Me.GroupBox3.Controls.Add(Me.btnCApp)
-        Me.GroupBox3.Controls.Add(Me.nxtApp)
-        Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Controls.Add(Me.DTPOrder)
-        Me.GroupBox3.Controls.Add(Me.lblSSN)
-        Me.GroupBox3.Controls.Add(Me.Label19)
-        Me.GroupBox3.Controls.Add(Me.txtbxTime)
-        Me.GroupBox3.Controls.Add(Me.lblNxtApp)
-        Me.GroupBox3.Controls.Add(Me.lblODate)
-        Me.GroupBox3.Controls.Add(Me.BtnOrderApp)
-        Me.GroupBox3.Controls.Add(Me.lblOTime)
-        Me.GroupBox3.Location = New System.Drawing.Point(947, 36)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(471, 512)
-        Me.GroupBox3.TabIndex = 95
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "GroupBox3"
+        Me.GroupBox6.Controls.Add(Me.Label23)
+        Me.GroupBox6.Controls.Add(Me.lblLastDrain)
+        Me.GroupBox6.Controls.Add(Me.Label24)
+        Me.GroupBox6.Controls.Add(Me.btnCApp)
+        Me.GroupBox6.Controls.Add(Me.lblnxtApp)
+        Me.GroupBox6.Controls.Add(Me.DTPOrder)
+        Me.GroupBox6.Controls.Add(Me.txtbxTime)
+        Me.GroupBox6.Controls.Add(Me.btnOrderApp)
+        Me.GroupBox6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox6.Location = New System.Drawing.Point(923, 15)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(567, 348)
+        Me.GroupBox6.TabIndex = 99
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Kalender"
         '
-        'can
+        'Label23
         '
-        Me.can.AutoSize = True
-        Me.can.Location = New System.Drawing.Point(184, 212)
-        Me.can.Name = "can"
-        Me.can.Size = New System.Drawing.Size(59, 13)
-        Me.can.TabIndex = 74
-        Me.can.Text = "CanCancel"
+        Me.Label23.AutoSize = True
+        Me.Label23.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(48, 45)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(118, 26)
+        Me.Label23.TabIndex = 100
+        Me.Label23.Text = "Sist tapping:"
         '
-        'Label1
+        'lblLastDrain
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(183, 158)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(60, 13)
-        Me.Label1.TabIndex = 94
-        Me.Label1.Text = "Neste time:"
+        Me.lblLastDrain.AutoSize = True
+        Me.lblLastDrain.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLastDrain.Location = New System.Drawing.Point(183, 45)
+        Me.lblLastDrain.Name = "lblLastDrain"
+        Me.lblLastDrain.Size = New System.Drawing.Size(18, 26)
+        Me.lblLastDrain.TabIndex = 99
+        Me.lblLastDrain.Text = "-"
         '
-        'day_p_time
+        'Label24
         '
-        Me.day_p_time.AutoSize = True
-        Me.day_p_time.Location = New System.Drawing.Point(25, 374)
-        Me.day_p_time.Name = "day_p_time"
-        Me.day_p_time.Size = New System.Drawing.Size(142, 13)
-        Me.day_p_time.TabIndex = 93
-        Me.day_p_time.Text = "day + "" "" + time satt sammen"
+        Me.Label24.AutoSize = True
+        Me.Label24.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(68, 167)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(111, 26)
+        Me.Label24.TabIndex = 94
+        Me.Label24.Text = "Neste time:"
         '
         'btnCApp
         '
-        Me.btnCApp.Location = New System.Drawing.Point(14, 277)
+        Me.btnCApp.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCApp.Location = New System.Drawing.Point(243, 239)
         Me.btnCApp.Name = "btnCApp"
-        Me.btnCApp.Size = New System.Drawing.Size(163, 50)
+        Me.btnCApp.Size = New System.Drawing.Size(129, 52)
         Me.btnCApp.TabIndex = 73
         Me.btnCApp.Text = "Avbestill"
         Me.btnCApp.UseVisualStyleBackColor = True
         '
-        'nxtApp
+        'lblnxtApp
         '
-        Me.nxtApp.AutoSize = True
-        Me.nxtApp.Location = New System.Drawing.Point(249, 158)
-        Me.nxtApp.Name = "nxtApp"
-        Me.nxtApp.Size = New System.Drawing.Size(69, 13)
-        Me.nxtApp.TabIndex = 92
-        Me.nxtApp.Text = "Ikke satt opp"
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(9, 31)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(79, 13)
-        Me.Label18.TabIndex = 60
-        Me.Label18.Text = "person nummer"
+        Me.lblnxtApp.AutoSize = True
+        Me.lblnxtApp.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblnxtApp.Location = New System.Drawing.Point(203, 167)
+        Me.lblnxtApp.Name = "lblnxtApp"
+        Me.lblnxtApp.Size = New System.Drawing.Size(120, 26)
+        Me.lblnxtApp.TabIndex = 92
+        Me.lblnxtApp.Text = "Ikke satt opp"
         '
         'DTPOrder
         '
         Me.DTPOrder.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPOrder.CustomFormat = "yyyy/MM/dd"
         Me.DTPOrder.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DTPOrder.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPOrder.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPOrder.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DTPOrder.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DTPOrder.Location = New System.Drawing.Point(14, 101)
+        Me.DTPOrder.Location = New System.Drawing.Point(38, 98)
         Me.DTPOrder.MaxDate = New Date(3017, 12, 31, 0, 0, 0, 0)
         Me.DTPOrder.MinDate = New Date(2017, 3, 1, 0, 0, 0, 0)
         Me.DTPOrder.Name = "DTPOrder"
         Me.DTPOrder.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.DTPOrder.Size = New System.Drawing.Size(192, 31)
+        Me.DTPOrder.Size = New System.Drawing.Size(163, 33)
         Me.DTPOrder.TabIndex = 58
         Me.DTPOrder.Value = New Date(2017, 3, 24, 0, 0, 0, 0)
         '
-        'lblSSN
-        '
-        Me.lblSSN.AutoSize = True
-        Me.lblSSN.Location = New System.Drawing.Point(210, 31)
-        Me.lblSSN.Name = "lblSSN"
-        Me.lblSSN.Size = New System.Drawing.Size(73, 13)
-        Me.lblSSN.TabIndex = 63
-        Me.lblSSN.Text = "22119611122"
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(222, 69)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(33, 13)
-        Me.Label19.TabIndex = 68
-        Me.Label19.Text = "Time:"
-        '
         'txtbxTime
         '
-        Me.txtbxTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxTime.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxTime.FormattingEnabled = True
         Me.txtbxTime.Items.AddRange(New Object() {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"})
-        Me.txtbxTime.Location = New System.Drawing.Point(231, 101)
+        Me.txtbxTime.Location = New System.Drawing.Point(222, 97)
         Me.txtbxTime.MaxDropDownItems = 12
         Me.txtbxTime.Name = "txtbxTime"
         Me.txtbxTime.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtbxTime.Size = New System.Drawing.Size(71, 28)
+        Me.txtbxTime.Size = New System.Drawing.Size(71, 34)
         Me.txtbxTime.TabIndex = 69
         Me.txtbxTime.Text = "08:00"
         '
-        'lblNxtApp
+        'btnOrderApp
         '
-        Me.lblNxtApp.AutoSize = True
-        Me.lblNxtApp.Location = New System.Drawing.Point(183, 158)
-        Me.lblNxtApp.Name = "lblNxtApp"
-        Me.lblNxtApp.Size = New System.Drawing.Size(60, 13)
-        Me.lblNxtApp.TabIndex = 70
-        Me.lblNxtApp.Text = "Bestilt time:"
-        Me.lblNxtApp.Visible = False
-        '
-        'lblODate
-        '
-        Me.lblODate.AutoSize = True
-        Me.lblODate.Location = New System.Drawing.Point(495, 158)
-        Me.lblODate.Name = "lblODate"
-        Me.lblODate.Size = New System.Drawing.Size(0, 13)
-        Me.lblODate.TabIndex = 71
-        '
-        'BtnOrderApp
-        '
-        Me.BtnOrderApp.Location = New System.Drawing.Point(14, 158)
-        Me.BtnOrderApp.Name = "BtnOrderApp"
-        Me.BtnOrderApp.Size = New System.Drawing.Size(118, 67)
-        Me.BtnOrderApp.TabIndex = 62
-        Me.BtnOrderApp.Text = "Bestill Time"
-        Me.BtnOrderApp.UseVisualStyleBackColor = True
-        '
-        'lblOTime
-        '
-        Me.lblOTime.AutoSize = True
-        Me.lblOTime.Location = New System.Drawing.Point(255, 185)
-        Me.lblOTime.Name = "lblOTime"
-        Me.lblOTime.Size = New System.Drawing.Size(0, 13)
-        Me.lblOTime.TabIndex = 72
+        Me.btnOrderApp.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOrderApp.Location = New System.Drawing.Point(34, 239)
+        Me.btnOrderApp.Name = "btnOrderApp"
+        Me.btnOrderApp.Size = New System.Drawing.Size(182, 52)
+        Me.btnOrderApp.TabIndex = 62
+        Me.btnOrderApp.Text = "Bestill Time"
+        Me.btnOrderApp.UseVisualStyleBackColor = True
         '
         'Label20
         '
@@ -954,8 +896,8 @@ Partial Class UserPage
         Me.Changeuserinfo.PerformLayout()
         Me.MyPage.ResumeLayout(False)
         Me.MyPage.PerformLayout()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.gbBlood.ResumeLayout(False)
         Me.gbBlood.PerformLayout()
         Me.DonorPage.ResumeLayout(False)
@@ -967,21 +909,6 @@ Partial Class UserPage
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents DonorPage As TabControl
     Friend WithEvents MyPage As TabPage
-    Friend WithEvents GroupBox3 As GroupBox
-    Friend WithEvents can As Label
-    Friend WithEvents Label1 As Label
-    Friend WithEvents day_p_time As Label
-    Friend WithEvents btnCApp As Button
-    Friend WithEvents nxtApp As Label
-    Friend WithEvents Label18 As Label
-    Friend WithEvents DTPOrder As DateTimePicker
-    Friend WithEvents lblSSN As Label
-    Friend WithEvents Label19 As Label
-    Friend WithEvents txtbxTime As ComboBox
-    Friend WithEvents lblNxtApp As Label
-    Friend WithEvents lblODate As Label
-    Friend WithEvents BtnOrderApp As Button
-    Friend WithEvents lblOTime As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents gbBlood As GroupBox
     Friend WithEvents txtBtype As TextBox
@@ -1035,4 +962,13 @@ Partial Class UserPage
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents lblquarantine As Label
     Friend WithEvents btnSignOut As Button
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents lblLastDrain As Label
+    Friend WithEvents Label24 As Label
+    Friend WithEvents btnCApp As Button
+    Friend WithEvents lblnxtApp As Label
+    Friend WithEvents DTPOrder As DateTimePicker
+    Friend WithEvents txtbxTime As ComboBox
+    Friend WithEvents btnOrderApp As Button
 End Class

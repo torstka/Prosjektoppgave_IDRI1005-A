@@ -22,17 +22,6 @@ Partial Class EPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.Userinformation = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -90,14 +79,20 @@ Partial Class EPage
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.lblCPie = New System.Windows.Forms.Label()
-        Me.CBlodtype = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.CBType = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.dgvGender = New System.Windows.Forms.DataGridView()
-        Me.CG = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.dgvBloodType = New System.Windows.Forms.DataGridView()
-        Me.btnSBType = New System.Windows.Forms.Button()
-        Me.btnBTPie = New System.Windows.Forms.Button()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.lblLastDrain = New System.Windows.Forms.Label()
+        Me.lblName = New System.Windows.Forms.Label()
+        Me.btnVSSN = New System.Windows.Forms.Button()
+        Me.txtbxSSNV = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.btnCApp = New System.Windows.Forms.Button()
+        Me.lblnxtApp = New System.Windows.Forms.Label()
+        Me.Label25 = New System.Windows.Forms.Label()
+        Me.DTPOrder = New System.Windows.Forms.DateTimePicker()
+        Me.txtbxTime = New System.Windows.Forms.ComboBox()
+        Me.btnOrderApp = New System.Windows.Forms.Button()
         Me.btnSignOut = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Userinformation.SuspendLayout()
@@ -110,11 +105,7 @@ Partial Class EPage
         Me.TabPage2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        CType(Me.CBlodtype, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CBType, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvGender, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.CG, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dgvBloodType, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -754,14 +745,7 @@ Partial Class EPage
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.lblCPie)
-        Me.TabPage3.Controls.Add(Me.CBlodtype)
-        Me.TabPage3.Controls.Add(Me.CBType)
-        Me.TabPage3.Controls.Add(Me.dgvGender)
-        Me.TabPage3.Controls.Add(Me.CG)
-        Me.TabPage3.Controls.Add(Me.dgvBloodType)
-        Me.TabPage3.Controls.Add(Me.btnSBType)
-        Me.TabPage3.Controls.Add(Me.btnBTPie)
+        Me.TabPage3.Controls.Add(Me.GroupBox6)
         Me.TabPage3.Location = New System.Drawing.Point(4, 79)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
@@ -770,125 +754,156 @@ Partial Class EPage
         Me.TabPage3.Text = "Statistikk"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'lblCPie
+        'GroupBox6
         '
-        Me.lblCPie.AutoSize = True
-        Me.lblCPie.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCPie.Location = New System.Drawing.Point(233, 24)
-        Me.lblCPie.Name = "lblCPie"
-        Me.lblCPie.Size = New System.Drawing.Size(215, 19)
-        Me.lblCPie.TabIndex = 30
-        Me.lblCPie.Text = "De fire forskjellige blodtypene"
+        Me.GroupBox6.Controls.Add(Me.Label22)
+        Me.GroupBox6.Controls.Add(Me.Label23)
+        Me.GroupBox6.Controls.Add(Me.lblLastDrain)
+        Me.GroupBox6.Controls.Add(Me.lblName)
+        Me.GroupBox6.Controls.Add(Me.btnVSSN)
+        Me.GroupBox6.Controls.Add(Me.txtbxSSNV)
+        Me.GroupBox6.Controls.Add(Me.Label24)
+        Me.GroupBox6.Controls.Add(Me.btnCApp)
+        Me.GroupBox6.Controls.Add(Me.lblnxtApp)
+        Me.GroupBox6.Controls.Add(Me.Label25)
+        Me.GroupBox6.Controls.Add(Me.DTPOrder)
+        Me.GroupBox6.Controls.Add(Me.txtbxTime)
+        Me.GroupBox6.Controls.Add(Me.btnOrderApp)
+        Me.GroupBox6.Location = New System.Drawing.Point(30, 26)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(567, 408)
+        Me.GroupBox6.TabIndex = 98
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Kalender"
         '
-        'CBlodtype
+        'Label22
         '
-        Me.CBlodtype.BackColor = System.Drawing.Color.LightGray
-        ChartArea1.Name = "ChartArea1"
-        Me.CBlodtype.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.CBlodtype.Legends.Add(Legend1)
-        Me.CBlodtype.Location = New System.Drawing.Point(77, 24)
-        Me.CBlodtype.Name = "CBlodtype"
-        Series1.ChartArea = "ChartArea1"
-        Series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series1.Legend = "Legend1"
-        Series1.Name = "Blodtyper"
-        Me.CBlodtype.Series.Add(Series1)
-        Me.CBlodtype.Size = New System.Drawing.Size(528, 512)
-        Me.CBlodtype.TabIndex = 29
-        Me.CBlodtype.Text = "Chart1"
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(66, 77)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(71, 29)
+        Me.Label22.TabIndex = 101
+        Me.Label22.Text = "Navn:"
         '
-        'CBType
+        'Label23
         '
-        Me.CBType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.CBType.BackColor = System.Drawing.Color.Silver
-        ChartArea2.Name = "ChartArea1"
-        Me.CBType.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.CBType.Legends.Add(Legend2)
-        Me.CBType.Location = New System.Drawing.Point(77, 24)
-        Me.CBType.Name = "CBType"
-        Me.CBType.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
-        Series2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Series2.ChartArea = "ChartArea1"
-        Series2.Color = System.Drawing.Color.Crimson
-        Series2.LabelAngle = 90
-        Series2.Legend = "Legend1"
-        Series2.Name = "BLODTYPER"
-        Series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
-        Me.CBType.Series.Add(Series2)
-        Me.CBType.Size = New System.Drawing.Size(528, 512)
-        Me.CBType.TabIndex = 24
-        Me.CBType.Text = "Chart1"
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title1.Name = "Title1"
-        Title1.Text = "Blodtypene spesifisert"
-        Me.CBType.Titles.Add(Title1)
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(66, 144)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(134, 29)
+        Me.Label23.TabIndex = 100
+        Me.Label23.Text = "Sist tapping:"
         '
-        'dgvGender
+        'lblLastDrain
         '
-        Me.dgvGender.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvGender.Location = New System.Drawing.Point(1158, 585)
-        Me.dgvGender.Name = "dgvGender"
-        Me.dgvGender.RowTemplate.Height = 28
-        Me.dgvGender.Size = New System.Drawing.Size(60, 44)
-        Me.dgvGender.TabIndex = 26
-        Me.dgvGender.Visible = False
+        Me.lblLastDrain.AutoSize = True
+        Me.lblLastDrain.Location = New System.Drawing.Point(201, 135)
+        Me.lblLastDrain.Name = "lblLastDrain"
+        Me.lblLastDrain.Size = New System.Drawing.Size(20, 29)
+        Me.lblLastDrain.TabIndex = 99
+        Me.lblLastDrain.Text = "-"
         '
-        'CG
+        'lblName
         '
-        Me.CG.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CG.BackColor = System.Drawing.Color.Silver
-        ChartArea3.Name = "ChartArea1"
-        Me.CG.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.CG.Legends.Add(Legend3)
-        Me.CG.Location = New System.Drawing.Point(631, 24)
-        Me.CG.Name = "CG"
-        Series3.BorderColor = System.Drawing.Color.Yellow
-        Series3.ChartArea = "ChartArea1"
-        Series3.Color = System.Drawing.Color.DarkTurquoise
-        Series3.Legend = "Legend1"
-        Series3.Name = "KJØNNSFORDELING"
-        Me.CG.Series.Add(Series3)
-        Me.CG.Size = New System.Drawing.Size(560, 512)
-        Me.CG.TabIndex = 25
-        Me.CG.Text = "Chart1"
-        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title2.Name = "Title1"
-        Title2.Text = "Fordelingen mellom Menn & Kvinner"
-        Me.CG.Titles.Add(Title2)
+        Me.lblName.AutoSize = True
+        Me.lblName.Location = New System.Drawing.Point(201, 77)
+        Me.lblName.Name = "lblName"
+        Me.lblName.Size = New System.Drawing.Size(20, 29)
+        Me.lblName.TabIndex = 97
+        Me.lblName.Text = "-"
         '
-        'dgvBloodType
+        'btnVSSN
         '
-        Me.dgvBloodType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvBloodType.Location = New System.Drawing.Point(1046, 542)
-        Me.dgvBloodType.Name = "dgvBloodType"
-        Me.dgvBloodType.RowTemplate.Height = 28
-        Me.dgvBloodType.Size = New System.Drawing.Size(90, 87)
-        Me.dgvBloodType.TabIndex = 23
-        Me.dgvBloodType.Visible = False
+        Me.btnVSSN.Location = New System.Drawing.Point(426, 34)
+        Me.btnVSSN.Name = "btnVSSN"
+        Me.btnVSSN.Size = New System.Drawing.Size(125, 42)
+        Me.btnVSSN.TabIndex = 96
+        Me.btnVSSN.Text = "Valider"
+        Me.btnVSSN.UseVisualStyleBackColor = True
         '
-        'btnSBType
+        'txtbxSSNV
         '
-        Me.btnSBType.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSBType.Location = New System.Drawing.Point(31, 565)
-        Me.btnSBType.Name = "btnSBType"
-        Me.btnSBType.Size = New System.Drawing.Size(358, 47)
-        Me.btnSBType.TabIndex = 27
-        Me.btnSBType.Text = "Vis blodtyper detaljert"
-        Me.btnSBType.UseVisualStyleBackColor = True
+        Me.txtbxSSNV.Location = New System.Drawing.Point(202, 38)
+        Me.txtbxSSNV.MaxLength = 11
+        Me.txtbxSSNV.Name = "txtbxSSNV"
+        Me.txtbxSSNV.Size = New System.Drawing.Size(209, 37)
+        Me.txtbxSSNV.TabIndex = 95
+        Me.txtbxSSNV.Text = "11111111111"
         '
-        'btnBTPie
+        'Label24
         '
-        Me.btnBTPie.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnBTPie.Location = New System.Drawing.Point(395, 565)
-        Me.btnBTPie.Name = "btnBTPie"
-        Me.btnBTPie.Size = New System.Drawing.Size(358, 47)
-        Me.btnBTPie.TabIndex = 28
-        Me.btnBTPie.Text = "Vis de generelle blodtypene"
-        Me.btnBTPie.UseVisualStyleBackColor = True
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(66, 277)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(125, 29)
+        Me.Label24.TabIndex = 94
+        Me.Label24.Text = "Neste time:"
+        '
+        'btnCApp
+        '
+        Me.btnCApp.Location = New System.Drawing.Point(241, 349)
+        Me.btnCApp.Name = "btnCApp"
+        Me.btnCApp.Size = New System.Drawing.Size(129, 52)
+        Me.btnCApp.TabIndex = 73
+        Me.btnCApp.Text = "Avbestill"
+        Me.btnCApp.UseVisualStyleBackColor = True
+        '
+        'lblnxtApp
+        '
+        Me.lblnxtApp.AutoSize = True
+        Me.lblnxtApp.Location = New System.Drawing.Point(201, 277)
+        Me.lblnxtApp.Name = "lblnxtApp"
+        Me.lblnxtApp.Size = New System.Drawing.Size(137, 29)
+        Me.lblnxtApp.TabIndex = 92
+        Me.lblnxtApp.Text = "Ikke satt opp"
+        '
+        'Label25
+        '
+        Me.Label25.AutoSize = True
+        Me.Label25.Location = New System.Drawing.Point(27, 41)
+        Me.Label25.Name = "Label25"
+        Me.Label25.Size = New System.Drawing.Size(169, 29)
+        Me.Label25.TabIndex = 60
+        Me.Label25.Text = "Person nummer"
+        '
+        'DTPOrder
+        '
+        Me.DTPOrder.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPOrder.CustomFormat = "yyyy/MM/dd"
+        Me.DTPOrder.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
+        Me.DTPOrder.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPOrder.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DTPOrder.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.DTPOrder.Location = New System.Drawing.Point(51, 210)
+        Me.DTPOrder.MaxDate = New Date(3017, 12, 31, 0, 0, 0, 0)
+        Me.DTPOrder.MinDate = New Date(2017, 3, 1, 0, 0, 0, 0)
+        Me.DTPOrder.Name = "DTPOrder"
+        Me.DTPOrder.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.DTPOrder.Size = New System.Drawing.Size(163, 31)
+        Me.DTPOrder.TabIndex = 58
+        Me.DTPOrder.Value = New Date(2017, 3, 24, 0, 0, 0, 0)
+        '
+        'txtbxTime
+        '
+        Me.txtbxTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxTime.FormattingEnabled = True
+        Me.txtbxTime.Items.AddRange(New Object() {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"})
+        Me.txtbxTime.Location = New System.Drawing.Point(227, 213)
+        Me.txtbxTime.MaxDropDownItems = 12
+        Me.txtbxTime.Name = "txtbxTime"
+        Me.txtbxTime.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.txtbxTime.Size = New System.Drawing.Size(71, 28)
+        Me.txtbxTime.TabIndex = 69
+        Me.txtbxTime.Text = "08:00"
+        '
+        'btnOrderApp
+        '
+        Me.btnOrderApp.Location = New System.Drawing.Point(32, 349)
+        Me.btnOrderApp.Name = "btnOrderApp"
+        Me.btnOrderApp.Size = New System.Drawing.Size(182, 52)
+        Me.btnOrderApp.TabIndex = 62
+        Me.btnOrderApp.Text = "Bestill Time"
+        Me.btnOrderApp.UseVisualStyleBackColor = True
         '
         'btnSignOut
         '
@@ -915,7 +930,7 @@ Partial Class EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1702, 849)
+        Me.ClientSize = New System.Drawing.Size(1362, 742)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Userinformation)
         Me.Controls.Add(Me.btnSignOut)
@@ -939,12 +954,8 @@ Partial Class EPage
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
-        Me.TabPage3.PerformLayout()
-        CType(Me.CBlodtype, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CBType, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvGender, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.CG, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dgvBloodType, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1006,15 +1017,21 @@ Partial Class EPage
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtSearch As TextBox
-    Friend WithEvents dgvGender As DataGridView
-    Friend WithEvents CG As DataVisualization.Charting.Chart
-    Friend WithEvents dgvBloodType As DataGridView
-    Friend WithEvents CBType As DataVisualization.Charting.Chart
-    Friend WithEvents btnSBType As Button
-    Friend WithEvents btnBTPie As Button
-    Friend WithEvents CBlodtype As DataVisualization.Charting.Chart
-    Friend WithEvents lblCPie As Label
     Friend WithEvents Label21 As Label
     Friend WithEvents txtLastDrain As TextBox
     Friend WithEvents btnStatistics As Button
+    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents Label23 As Label
+    Friend WithEvents lblLastDrain As Label
+    Friend WithEvents lblName As Label
+    Friend WithEvents btnVSSN As Button
+    Friend WithEvents txtbxSSNV As TextBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents btnCApp As Button
+    Friend WithEvents lblnxtApp As Label
+    Friend WithEvents Label25 As Label
+    Friend WithEvents DTPOrder As DateTimePicker
+    Friend WithEvents txtbxTime As ComboBox
+    Friend WithEvents btnOrderApp As Button
 End Class

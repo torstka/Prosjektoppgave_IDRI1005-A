@@ -14,7 +14,32 @@ Public Class UserPage
     Dim dtable As New DataTable
     Dim reader As MySqlDataReader
     Dim rad As DataRow
+
     Public ssNumber = LogIn.txtPersonnr.Text
+
+
+#Region "pao public var"
+    Public tilkobling As New MySqlConnection(
+"Server=mysql.stud.iie.ntnu.no;" _
+& "Database=g_oops_03;" _
+& "Uid=g_oops_03;" _
+& "Pwd=mczmmM3N;")
+    'forskjellige variabler som blir forklart her eller lengre ned i koden
+    'dags dato som må være på riktig format
+    Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
+    'dot består av Date og Time, men disse er ikke satt enda.
+    Public dot As String = " "
+    'newApp er 
+    Public newAPP As String
+    Public txtbxSSN As String
+
+    'brukes til å hente ut OrdreID som må være 0 eller over 0 for å 
+    Public busy, cancel As Integer
+    Public DTPFormat As String
+    Public verifySSN As String
+
+
+#End Region
 
     Private Sub TextBox1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtFirstName.KeyDown
         If e.KeyCode = Keys.Enter Then     'her kan man flytte med bruk av ENTER mellom textboxer, av hensyn til nedsatt bevegelighet
@@ -208,9 +233,9 @@ Public Class UserPage
 
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        verifySSNumber()
 
 
-        getOrderDate()
 
         DonorPage.Size = New Size(1550, 750)
 
@@ -300,81 +325,9 @@ Public Class UserPage
         'Finally
         'connection.Dispose()      'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
         'End Try
-#Region "pao user_load"
-        'dt henter ut dagens dato + 91 dager
-        'og DTPOrder (DayTimePicker) 
-        Dim dt = DateTime.Now.AddDays(+91)
-        Me.DTPOrder.Value = dt
-        Me.DTPOrder.MinDate = dt
 
-        Try
-            connection.Open()
-            ' MsgBox("connection 2 komplett")
-            'Select OrderID, day, time From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & lblSSN.Text & ")
 
-            Dim sql As New MySqlCommand("Select cal_id, day, time From Calendar Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & lblSSN.Text & ")", connection)
-            Dim da As New MySqlDataAdapter
-            Dim interntabell As New DataTable
 
-            da.SelectCommand = sql
-            ' da.Fill(interntabell)
-            connection.Close()
-
-            Dim rad As DataRow
-            Dim day, time, OrderID As String
-            For Each rad In interntabell.Rows
-
-                OrderID = rad("cal_id")
-                day = rad("day")
-                time = rad("time")
-
-                dot = day + " " + time
-                nxtApp.Text = dot
-                cancel = OrderID
-                can.Text = cancel
-                OIDtoSSN = OrderID
-            Next rad
-        Catch feilmelding As MySqlException
-            MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
-     feilmelding.Message)
-
-            dot = " "
-        Finally
-            connection.Dispose()
-        End Try
-        '   Try
-        '       connection.Open()
-
-        '       Dim sql As New MySqlCommand("Select OrderID, day, time From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & lblSSN.Text & ")", connection)
-        '       Dim da As New MySqlDataAdapter
-        '       Dim interntabell As New DataTable
-
-        '       da.SelectCommand = sql
-        '       da.Fill(interntabell)
-        '       connection.Close()
-
-        '       Dim rad As DataRow
-        '       Dim day, time, OrderID As String
-        '       For Each rad In interntabell.Rows
-
-        '           OrderID = rad("OrderID")
-        '           day = rad("day")
-        '           time = rad("time")
-
-        '           dot = day + " " + time
-        '           nxtApp.Text = dot
-
-        '           OIDtoSSN = OrderID
-        '       Next rad
-        '   Catch feilmelding As MySqlException
-        '       MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
-        'feilmelding.Message)
-
-        '       dot = " "
-        '   Finally
-        '       connection.Dispose()
-        '   End Try 
-#End Region
     End Sub
     Private Sub btnChangeData_Click(sender As Object, e As EventArgs) Handles btnChangeData.Click
 
@@ -397,205 +350,6 @@ Public Class UserPage
         QuestForm.checkIfApproved()
 
     End Sub
-#Region "pao public var"
-    Public today_p90 As DateTime = DateTime.Now.AddDays(+90)
-    Public Today As String = Date.Now.ToString("yyyy.MM.dd")
-    Public dot As String = " "
-    Public newAPP As String
-
-    'brukes til å hente ut OrdreID som må være 0 eller over 0 for å 
-    Public busy, cancel As Integer
-
-    Public DTPFormat As String
-    Public OIDtoSSN As String
-
-    'innlogging:   g_oops_03
-    'lbl = short for Label
-    'bx = short for Box
-    'Passord.... : mczmmM3N
-    'txt = short for Text
-    'LB = short for ListBox
-    'App = short for appointment in regards of naming, buttons, labels in the Cal.vb
-    'hist = short for history
-    'Nxt = short for next
-#End Region
-#Region "pao Order button and sql"
-
-    Private Sub BtnOrderApp_Click(sender As Object, e As EventArgs) Handles BtnOrderApp.Click
-
-        Dim newDTPValue As String
-        Dim DTPValue As Date
-        Dim nxtTapp As String
-
-        newAPP = DTPOrder.Text + " " + txtbxTime.Text
-
-        ' OldAppCheck = nxtApp.Text
-        Dim testCheck1 As Boolean
-        Dim testcheck2 As Boolean
-
-        'nxtApp.text lablen kan være et dato, "avbestilt" eller "ingen time satt opp"
-        testCheck1 = nxtApp.Text Like "Avbestilt"
-        testcheck2 = nxtApp.Text Like "Ikke satt opp"
-
-        DTPValue = Me.DTPOrder.Value
-        newDTPValue = DTPValue.ToString("yyyy.MM.dd")
-        nxtTapp = today_p90.ToString("yyyy.MM.dd")
-
-        '  Dim LastApp As String
-        ' MsgBox(newDTPValue & " /" & nxtTapp)
-        If nxtTapp < Today And dot <> newAPP Then
-            'siste bestiling er passert 
-            MsgBox("ikke gyldig time, må settes opp med over 3 måneders ventetid")
-        ElseIf dot = newAPP Then
-            MsgBox("du har allerede denne timen satt opp")
-        ElseIf testCheck1 = False And testcheck2 = False Then
-            MsgBox("time er allerede satt opp")
-        ElseIf testCheck1 = True And testcheck2 = True Then
-            MsgBox("noe gikk galt med sjekk etter tidligere oppsatt time")
-        ElseIf nxtTapp < newDTPValue Then
-            busy = 0
-
-            Try
-                '"SELECT OrderID From Calendar Where Day = '2017.10.01' And time = '08:00'"
-                '"SELECT OrderID FROM Calendar Where Day= '" & DTPOrder.Text & "' And time= '" & txtbxTime.Text & "' "
-                connection.Open()
-                Dim sql As New MySqlCommand("SELECT cal_id FROM Calendar Where Day= '" & DTPOrder.Text & "' And time= '" & txtbxTime.Text & "' ", connection)
-                Dim da As New MySqlDataAdapter
-                Dim interntabell As New DataTable
-
-                da.SelectCommand = sql
-                da.Fill(interntabell)
-                connection.Close()
-
-                Dim rad As DataRow
-                For Each rad In interntabell.Rows
-                    busy = rad("cal_id")
-
-                Next rad
-                'msgbox vises med 0
-                MsgBox(busy & " b")
-            Catch feilmelding As MySqlException
-                MsgBox("Feil med variabel busy   " &
-feilmelding.Message)
-            Finally
-                connection.Dispose()
-            End Try
-
-            If busy > 1 Then
-                MsgBox("timen er opptatt")
-
-            ElseIf busy = 0 Then
-                MsgBox("Not busy")
-
-                Try
-                    connection.Open()
-                    Dim sporring As String
-                    sporring = "Insert Into Calendar (ss_number, day, time) VALUES ('" & ssNumber & "','" & DTPOrder.Text & "', '" & txtbxTime.Text & "')"
-
-                    Dim insertsql As New MySqlCommand(sporring, connection)
-                    Dim da As New MySqlDataAdapter
-                    Dim interntabell As New DataTable
-
-                    da.SelectCommand = insertsql
-                    da.Fill(interntabell)
-                    connection.Close()
-
-                    lblODate.Text = DTPOrder.Text
-                    lblOTime.Text = txtbxTime.Text
-                    nxtApp.Text = DTPOrder.Text + " " + txtbxTime.Text
-                Catch feilmelding As MySqlException
-                    MsgBox("Feil ved connection til databasen: bestilling " & feilmelding.Message)
-                Finally
-                    connection.Dispose()
-                End Try
-            End If
-        End If
-
-    End Sub
-
-#End Region
-#Region "pao Cancel Order button and sql"
-    Private Sub btnCApp_Click(sender As Object, e As EventArgs) Handles btnCApp.Click
-        cancel = 0
-
-        Dim TCC1 As Boolean
-        '  Dim TCC2 As Boolean
-
-        'nxtApp.text lablen kan være et dato, "avbestilt" eller "ingen time satt opp"
-        TCC1 = can.Text Like "CanCancel"
-        '  testcheck2 = nxtApp.Text Like "Ingen satt opp"
-        If TCC1 = False Then
-            MsgBox("Ingen time satt opp")
-        Else
-            Try
-                connection.Open()
-                ' MsgBox("connection 2 komplett")
-                '"Select OrderID, day, time From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar)"
-                'Select * From Calendar Where OrderID = (Select MAX(OrderID) From Calendar Where ss_number =22119611122) 
-                '"Select * From Calendar Where ss_number =" & lblSSN.Text & " And OrderID = (Select MAX(OrderID) From Calendar Where ss_number =" & lblSSN.Text & ")"
-                Dim sql As New MySqlCommand("Select cal_id From Calendar Where cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & ssNumber & ") ", connection)
-                Dim da As New MySqlDataAdapter
-                Dim interntabell As New DataTable
-
-                da.SelectCommand = sql
-                da.Fill(interntabell)
-                connection.Close()
-
-                Dim rad As DataRow
-                Dim calID As String
-                For Each rad In interntabell.Rows
-
-                    calID = rad("cal_id")
-                    '  dot = day + " " + time
-                    cancel = calID
-
-                Next rad
-            Catch feilmelding As MySqlException
-                MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
-     feilmelding.Message)
-                cancel = 0
-
-            Finally
-                connection.Dispose()
-            End Try
-            If cancel > 0 Then
-                MsgBox("time avbestilles")
-                Try
-                    connection.Open()
-                    ' MsgBox("connection 2 komplett")
-
-                    'UPDATE `Calendar` SET `OrderID`='183',`ss_number`=121221229,`day`='2017-10-01',`time`='08:30' WHERE `OrderID`='183'
-                    Dim sql As New MySqlCommand("UPDATE `Calendar` SET `cal_ID`='" & OIDtoSSN & "', `ss_number`='" & ssNumber & "', `day`='0000-00-00',`time`='00:00' Where cal_id ='" & OIDtoSSN & "' ", connection)
-                    Dim da As New MySqlDataAdapter
-                    Dim interntabell As New DataTable
-
-                    da.SelectCommand = sql
-                    da.Fill(interntabell)
-                    connection.Close()
-
-                    Dim rad As DataRow
-                    Dim OrderID As String
-                    For Each rad In interntabell.Rows
-                        OrderID = rad("cal_id")
-                        'day = rad("day")
-                        'time = rad("time")
-                        '   dot = day + " " + time
-                        lblOTime.Text = "Avbestilt"
-                        nxtApp.Text = "Avbestilt"
-                    Next rad
-
-                    MsgBox("avbestilt neste time.")
-                Catch feilmelding As MySqlException
-                    MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
-             feilmelding.Message)
-                Finally
-                    connection.Dispose()
-                End Try
-            Else
-                MsgBox("Ingen time å avbestille")
-            End If
-        End If
-    End Sub
 
     Private Sub txtPwd_TextChanged(sender As Object, e As EventArgs) Handles txtPwd.Click
         confirmPwd.Show()
@@ -607,29 +361,269 @@ feilmelding.Message)
         LogIn.Show()
     End Sub
 
+    '#End Region
+
+    Private Sub verifySSNumber()
+        'setter verifySSN lik tekstboksen hvor de ansatte har tastet inn personnummeret
+        verifySSN = ssNumber
+        lblLastDrain.Text = " "
+
+            Try
+                tilkobling.Open()
+                'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
+                Dim sql As New MySqlCommand("Select last_drain From Blood_Data Where ss_number =" & ssNumber & " ", tilkobling)
+                Dim da As New MySqlDataAdapter
+                Dim interntabell As New DataTable
+                da.SelectCommand = sql
+                da.Fill(interntabell)
+                tilkobling.Close()
+
+                Dim rad As DataRow
+                'last drain lagres som datetime
+                Dim last_drain As DateTime
+                Dim LastDrainP90 As DateTime
+                For Each rad In interntabell.Rows
+
+                    last_drain = rad("last_drain")
+                    'vi plusser på 91 dager på last drain, og gjør minimumsverdien til DateTimePicker (DTPOrder) til denne variabelen
+                    'slik ungår vi at det vil være mindre enn 3 måneder mellom tappinger.
+                    LastDrainP90 = last_drain.AddDays(+91)
+                    Me.DTPOrder.MinDate = LastDrainP90
+                    lblLastDrain.Text = last_drain
+                Next rad
+            Catch feilmelding As MySqlException
+                MsgBox("Feil ved uthenting av siste tapping     " &
+             feilmelding.Message)
+            Finally
+                tilkobling.Dispose()
+            End Try
+
+            Try
+                'her tilbakestilles lblnxtApp.text i tilfellet at ansatte skifter person nummer og at deres info ikke skal være igjen.
+                lblnxtApp.Text = "Ikke satt opp"
+                tilkobling.Open()
+                'sql spørringen henter ut cal_id, time, og dag fra calenderen basert på max(cal_id) til et personnummer
+                Dim sql As New MySqlCommand("Select cal_id, day, time From Calendar Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & ssNumber & ")", tilkobling)
+                Dim da As New MySqlDataAdapter
+                Dim interntabell As New DataTable
+
+                da.SelectCommand = sql
+                da.Fill(interntabell)
+                tilkobling.Close()
+
+                Dim rad As DataRow
+                Dim day, time, cal_id As String
+                For Each rad In interntabell.Rows
+
+                    cal_id = rad("cal_id")
+                    day = rad("day")
+                    time = rad("time")
+                    'opptaderer dot (Date og Time) slik at brukeren får feedback på neste time.
+                    dot = day + " " + time
+                    'lblnxtApp er labelen som viser neste time.
+                    lblnxtApp.Text = dot
+                    cancel = cal_id
+
+                Next rad
+            Catch feilmelding As MySqlException
+                MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
+             feilmelding.Message)
+                'dot nullstilles
+                dot = " "
+            Finally
+                tilkobling.Dispose()
+            End Try
+
+    End Sub
+#Region "pao Verify Social Security Number"
 
 #End Region
-    Private Sub getOrderDate()
+    'innlogging:   g_oops_03
+    'lbl = short for Label
+    'bx = short for Box
+    'Passord.... : mczmmM3N
+    'txt = short for Text
+    'LB = short for ListBox
+    'App = short for appointment in regards of naming, buttons, labels in the Cal.vb
+    'hist = short for history
+    'Nxt = short for next
 
-        Try
-            '  connection.Open()
-            Dim query As String = "SELECT day, time From Calendar Where cal_id = (Select MAX(cal_id)From Calendar Where ss_number = '" & ssNumber & "')"
-            cmd = New MySqlCommand(query, connection)
-            adapter = New MySqlDataAdapter
-            adapter.SelectCommand = cmd
-            adapter.Fill(dtable)
+#Region "pao Order button and sql"
+    Private Sub OrderApp()
+        Dim newDTPValue As String
+        Dim DTPValue As Date
+        Dim nxtTapp As String
+        'newAAP (new appointment) består av datoen valgt i DateTimePicker (DTPOrder) og 
+        'legger sammen et mellomrom med comboboxen (txtbxTime) for å lage en ny time.
+        newAPP = DTPOrder.Text + " " + txtbxTime.Text
 
-            For Each rad In dtable.Rows
-                nxtApp.Text = (rad("day"))
-                lblOTime.Text = (rad("time"))
-            Next
+        'testcheck1 og 2 er for å sjekke om labelen lblnextAPP er avbestilt eller ikke satt opp,
+        'ettersom lblnxtApp vanligvis er "Ikke satt opp" og forandres til "avbestilt" ved avbestil knappen
+        Dim testCheck1 As Boolean
+        Dim testcheck2 As Boolean
 
-        Catch ex As MySqlException
-            MsgBox(ex.Message)         'tilfelle det oppstår en feil
-            connection.Close()
+        'nxtApp.text lablen kan være et dato, "avbestilt" eller "ingen time satt opp"
+        testCheck1 = lblnxtApp.Text Like "Avbestilt"
+        testcheck2 = lblnxtApp.Text Like "Ikke satt opp"
 
-        Finally
-            connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
-        End Try
+        'her hentes verdien til kalender DateTimePicker og omformes et annet format
+        DTPValue = Me.DTPOrder.Value
+        newDTPValue = DTPValue.ToString("yyyy.MM.dd")
+
+        nxtTapp = TodayDForm
+
+        'denne if setningen er omformet slik at de som jobber her kan sette opp time før det er godt tre måneder, i tilfellet at noen ringer inn for ny time.
+        If dot = newAPP Then
+            'her sjekkes det om man har trykket på bestillingsknappen 2 ganger og kort sagt forsøkt å sette opp samme time 2 ganger.
+            MsgBox("du har allerede denne timen satt opp")
+        ElseIf testCheck1 = False And testcheck2 = False Then
+            'her sjekkes det om lblnxtApp IKKE er "Avbestilt" og "Ikke satt opp", om en av de er satt opp er det en time satt opp.
+            MsgBox("time er allerede satt opp")
+        ElseIf testCheck1 = True And testcheck2 = True Then
+            'her sjekkes det om lblnxtApp ligner på både "avbestilt" OG "Ikke satt opp", dette skal i utgangspunktet ikke være mulig.
+            MsgBox("noe gikk galt med sjekk etter tidligere oppsatt time")
+
+        ElseIf nxtTapp < newDTPValue Then
+            'her sjekkes det at den nye timen er større enn dags dato, som betyr at timen ikke har passert.
+            'busy variabelen tilbakestilles til 0 før hver spørring
+            busy = 0
+
+            Try
+
+                tilkobling.Open()
+                'en SQL spørring som henter ut cal_id fra calenderen basert på dato og tid som er satt inn i DateTimePicker og Comboboxen
+                Dim sql As New MySqlCommand("SELECT Cal_id FROM Calendar Where Day= '" & DTPOrder.Text & "' And time= '" & txtbxTime.Text & "' ", tilkobling)
+                Dim da As New MySqlDataAdapter
+                Dim interntabell As New DataTable
+
+                da.SelectCommand = sql
+                da.Fill(interntabell)
+                tilkobling.Close()
+
+                Dim rad As DataRow
+                For Each rad In interntabell.Rows
+                    'her blir busy raden opptadert til cal_id som blir hentet ut, om det ikke er noen calender id og hente ut så forblir busy = 0
+                    busy = rad("Cal_id")
+
+                Next rad
+            Catch feilmelding As MySqlException
+                MsgBox("Feil med variabel busy   " &
+feilmelding.Message)
+            Finally
+                tilkobling.Dispose()
+            End Try
+            'her sjekkes det om busy er over 0 og siden busy er en cal_id vil if setningen ikke sette opp timene som er tatt.
+            If busy > 1 Then
+                MsgBox("timen er opptatt")
+            ElseIf busy = 0 Then
+                Try
+                    tilkobling.Open()
+                    Dim sporring As String
+                    'Insert spørring hvor cal_id er autoincrement og ikke trengs og settes inn, etterfulgt av SSN, dato og tid
+                    sporring = "Insert Into Calendar VALUES (' ', '" & ssNumber & "', '" & DTPOrder.Text & "', '" & txtbxTime.Text & "')"
+
+                    Dim insertsql As New MySqlCommand(sporring, tilkobling)
+                    Dim da As New MySqlDataAdapter
+                    Dim interntabell As New DataTable
+
+                    da.SelectCommand = insertsql
+                    da.Fill(interntabell)
+                    tilkobling.Close()
+
+                    'lblOdate og lblOtime
+                    ' lblODate.Text = DTPOrder.Text
+                    ' lblOTime.Text = txtbxTime.Text
+                    lblnxtApp.Text = DTPOrder.Text + " " + txtbxTime.Text
+                Catch feilmelding As MySqlException
+                    MsgBox("Feil ved tilkobling til databasen: bestilling " & feilmelding.Message)
+                Finally
+                    tilkobling.Dispose()
+                End Try
+            End If
+        End If
     End Sub
+    Private Sub BtnOrderApp_Click(sender As Object, e As EventArgs) Handles btnOrderApp.Click
+        OrderApp()
+    End Sub
+#End Region
+
+#Region "pao Delete Order button and sql"
+    Private Sub deleteApp()
+        'cancel blir satt tilbakestilt før hver spørring
+        'cancel er en variabel som blir opptadert til max(cal_id) til en person sitt person nummer
+        'så lenge cancel > 0 så vil denne personens oppsatte time (eller ved en feil med flere timer) alle timene bli slettet
+        cancel = 0
+
+        '= txtpaoSSN.Text
+        If verifySSN = ssNumber Then
+            txtbxSSN = verifySSN
+
+            Try
+                tilkobling.Open()
+                'select spørring som henter ut den max(cal_id) til et person nummer
+                Dim sql As New MySqlCommand("Select Cal_id From Calendar Where Cal_id = (Select MAX(Cal_id) From Calendar Where ss_number =" & ssNumber & ") ", tilkobling)
+                Dim da As New MySqlDataAdapter
+                Dim interntabell As New DataTable
+
+                da.SelectCommand = sql
+                da.Fill(interntabell)
+                tilkobling.Close()
+
+                Dim rad As DataRow
+                Dim Cal_id As String
+                For Each rad In interntabell.Rows
+
+                    Cal_id = rad("Cal_id")
+                    'cancel blir opptader til cal_id som hentes ut, ellers forblir den 0
+                    cancel = Cal_id
+
+                Next rad
+            Catch feilmelding As MySqlException
+                MsgBox("Feil ved spørring, avbestilling kanseleres: " &
+         feilmelding.Message)
+                'ved feil i spørringen så stopper vi slettingen av spørringen
+                cancel = 0
+            Finally
+                tilkobling.Dispose()
+            End Try
+            'avbestilingen går bare igjennom sålenge personnummmeret har et
+            If cancel > 0 Then
+
+                Try
+                    tilkobling.Open()
+
+                    'spørringen sletter alle timebestillinger til et personnummer, men i praksis skal det bare være en bestilling pr. person nummer.
+                    Dim sql As New MySqlCommand("Delete From `Calendar` Where `ss_number`=" & ssNumber & " ", tilkobling)
+                    Dim da As New MySqlDataAdapter
+                    Dim interntabell As New DataTable
+
+                    da.SelectCommand = sql
+                    da.Fill(interntabell)
+                    tilkobling.Close()
+
+                    Dim rad As DataRow
+                    Dim Cal_id As String
+                    For Each rad In interntabell.Rows
+                        Cal_id = rad("Cal_id")
+                    Next rad
+                    'lblnxtApp brukes som feedback til brukeren om at timen er avbestilt. 
+                    'ved neste innlogging vil det stå "Ikke satt opp" om det ikke er noen time satt opp.
+                    lblnxtApp.Text = "Avbestilt"
+
+                Catch feilmelding As MySqlException
+                    MsgBox(" kunne ikke slette time fra kalender: " &
+                 feilmelding.Message)
+                Finally
+                    tilkobling.Dispose()
+                End Try
+            Else
+                MsgBox("Ingen time å avbestille")
+            End If
+
+        End If
+    End Sub
+    Private Sub btnCApp_Click(sender As Object, e As EventArgs) Handles btnCApp.Click
+        deleteApp()
+    End Sub
+#End Region
 End Class
