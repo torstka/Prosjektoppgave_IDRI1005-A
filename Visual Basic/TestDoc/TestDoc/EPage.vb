@@ -85,7 +85,8 @@ Public Class EPage
 
         btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
                              (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
-
+        gbCalendar.Location = New Point((TabPage3.Width - gbCalendar.Width) \ 2,
+                             (TabPage3.Height - gbCalendar.Height) \ 2)
         dgwUsers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
         updateStock()
         showStock()

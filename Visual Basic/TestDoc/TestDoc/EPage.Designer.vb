@@ -79,7 +79,7 @@ Partial Class EPage
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.gbCalendar = New System.Windows.Forms.GroupBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.lblLastDrain = New System.Windows.Forms.Label()
@@ -105,7 +105,7 @@ Partial Class EPage
         Me.TabPage2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.TabPage3.SuspendLayout()
-        Me.GroupBox6.SuspendLayout()
+        Me.gbCalendar.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -745,36 +745,36 @@ Partial Class EPage
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.GroupBox6)
+        Me.TabPage3.Controls.Add(Me.gbCalendar)
         Me.TabPage3.Location = New System.Drawing.Point(4, 79)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Size = New System.Drawing.Size(1542, 667)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "Statistikk"
+        Me.TabPage3.Text = "Kalender"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'GroupBox6
+        'gbCalendar
         '
-        Me.GroupBox6.Controls.Add(Me.Label22)
-        Me.GroupBox6.Controls.Add(Me.Label23)
-        Me.GroupBox6.Controls.Add(Me.lblLastDrain)
-        Me.GroupBox6.Controls.Add(Me.lblName)
-        Me.GroupBox6.Controls.Add(Me.btnVSSN)
-        Me.GroupBox6.Controls.Add(Me.txtbxSSNV)
-        Me.GroupBox6.Controls.Add(Me.Label24)
-        Me.GroupBox6.Controls.Add(Me.btnCApp)
-        Me.GroupBox6.Controls.Add(Me.lblnxtApp)
-        Me.GroupBox6.Controls.Add(Me.Label25)
-        Me.GroupBox6.Controls.Add(Me.DTPOrder)
-        Me.GroupBox6.Controls.Add(Me.txtbxTime)
-        Me.GroupBox6.Controls.Add(Me.btnOrderApp)
-        Me.GroupBox6.Location = New System.Drawing.Point(30, 26)
-        Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(567, 408)
-        Me.GroupBox6.TabIndex = 98
-        Me.GroupBox6.TabStop = False
-        Me.GroupBox6.Text = "Kalender"
+        Me.gbCalendar.Controls.Add(Me.Label22)
+        Me.gbCalendar.Controls.Add(Me.Label23)
+        Me.gbCalendar.Controls.Add(Me.lblLastDrain)
+        Me.gbCalendar.Controls.Add(Me.lblName)
+        Me.gbCalendar.Controls.Add(Me.btnVSSN)
+        Me.gbCalendar.Controls.Add(Me.txtbxSSNV)
+        Me.gbCalendar.Controls.Add(Me.Label24)
+        Me.gbCalendar.Controls.Add(Me.btnCApp)
+        Me.gbCalendar.Controls.Add(Me.lblnxtApp)
+        Me.gbCalendar.Controls.Add(Me.Label25)
+        Me.gbCalendar.Controls.Add(Me.DTPOrder)
+        Me.gbCalendar.Controls.Add(Me.txtbxTime)
+        Me.gbCalendar.Controls.Add(Me.btnOrderApp)
+        Me.gbCalendar.Location = New System.Drawing.Point(412, 147)
+        Me.gbCalendar.Name = "gbCalendar"
+        Me.gbCalendar.Size = New System.Drawing.Size(567, 408)
+        Me.gbCalendar.TabIndex = 98
+        Me.gbCalendar.TabStop = False
+        Me.gbCalendar.Text = "Kalender"
         '
         'Label22
         '
@@ -954,8 +954,8 @@ Partial Class EPage
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
-        Me.GroupBox6.ResumeLayout(False)
-        Me.GroupBox6.PerformLayout()
+        Me.gbCalendar.ResumeLayout(False)
+        Me.gbCalendar.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1020,7 +1020,7 @@ Partial Class EPage
     Friend WithEvents Label21 As Label
     Friend WithEvents txtLastDrain As TextBox
     Friend WithEvents btnStatistics As Button
-    Friend WithEvents GroupBox6 As GroupBox
+    Friend WithEvents gbCalendar As GroupBox
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
     Friend WithEvents lblLastDrain As Label

@@ -106,7 +106,7 @@ Partial Class UserPage
         '
         Me.btnLogOut.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnLogOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogOut.Location = New System.Drawing.Point(2588, 18)
+        Me.btnLogOut.Location = New System.Drawing.Point(2343, 18)
         Me.btnLogOut.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLogOut.Name = "btnLogOut"
         Me.btnLogOut.Size = New System.Drawing.Size(133, 38)
@@ -562,7 +562,7 @@ Partial Class UserPage
         Me.MyPage.Margin = New System.Windows.Forms.Padding(2)
         Me.MyPage.Name = "MyPage"
         Me.MyPage.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.MyPage.Size = New System.Drawing.Size(1954, 717)
+        Me.MyPage.Size = New System.Drawing.Size(1542, 564)
         Me.MyPage.TabIndex = 0
         Me.MyPage.Text = "Min side"
         Me.MyPage.UseVisualStyleBackColor = True
@@ -578,9 +578,9 @@ Partial Class UserPage
         Me.GroupBox6.Controls.Add(Me.txtbxTime)
         Me.GroupBox6.Controls.Add(Me.btnOrderApp)
         Me.GroupBox6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox6.Location = New System.Drawing.Point(923, 15)
+        Me.GroupBox6.Location = New System.Drawing.Point(989, 146)
         Me.GroupBox6.Name = "GroupBox6"
-        Me.GroupBox6.Size = New System.Drawing.Size(567, 348)
+        Me.GroupBox6.Size = New System.Drawing.Size(482, 320)
         Me.GroupBox6.TabIndex = 99
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Kalender"
@@ -681,7 +681,7 @@ Partial Class UserPage
         Me.Label20.BackColor = System.Drawing.SystemColors.Control
         Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label20.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(545, 166)
+        Me.Label20.Location = New System.Drawing.Point(576, 159)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(340, 109)
         Me.Label20.TabIndex = 14
@@ -702,7 +702,7 @@ Partial Class UserPage
         Me.gbBlood.Controls.Add(Me.txtHb)
         Me.gbBlood.Controls.Add(Me.bloodType)
         Me.gbBlood.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbBlood.Location = New System.Drawing.Point(84, 142)
+        Me.gbBlood.Location = New System.Drawing.Point(85, 142)
         Me.gbBlood.Margin = New System.Windows.Forms.Padding(2)
         Me.gbBlood.Name = "gbBlood"
         Me.gbBlood.Padding = New System.Windows.Forms.Padding(2)
@@ -830,7 +830,7 @@ Partial Class UserPage
         Me.btnQuest.AllowDrop = True
         Me.btnQuest.BackColor = System.Drawing.Color.LightBlue
         Me.btnQuest.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuest.Location = New System.Drawing.Point(545, 295)
+        Me.btnQuest.Location = New System.Drawing.Point(576, 349)
         Me.btnQuest.Margin = New System.Windows.Forms.Padding(2)
         Me.btnQuest.Name = "btnQuest"
         Me.btnQuest.Size = New System.Drawing.Size(340, 171)
@@ -862,7 +862,7 @@ Partial Class UserPage
         Me.DonorPage.Name = "DonorPage"
         Me.DonorPage.Padding = New System.Drawing.Point(48, 12)
         Me.DonorPage.SelectedIndex = 0
-        Me.DonorPage.Size = New System.Drawing.Size(1962, 800)
+        Me.DonorPage.Size = New System.Drawing.Size(1550, 647)
         Me.DonorPage.TabIndex = 7
         '
         'btnSignOut
@@ -880,7 +880,7 @@ Partial Class UserPage
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.RowHeader
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1916, 953)
+        Me.ClientSize = New System.Drawing.Size(1671, 953)
         Me.Controls.Add(Me.btnSignOut)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLogOut)

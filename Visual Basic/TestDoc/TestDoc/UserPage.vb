@@ -242,8 +242,8 @@ Public Class UserPage
         Me.Size = SystemInformation.PrimaryMonitorSize
         DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
-        btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
-                             (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
+        btnSignOut.Location = New Point((UserInformation.Width - btnSignOut.Width) \ 2 + 800,
+                             (UserInformation.Height - btnSignOut.Height) \ 2 - 450)
 
         txtConPwd.Hide()
         confirmPwd.Hide()
