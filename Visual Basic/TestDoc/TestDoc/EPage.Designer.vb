@@ -22,6 +22,17 @@ Partial Class EPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title4 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
         Me.Userinformation = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -47,6 +58,8 @@ Partial Class EPage
         Me.txtSSN = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label20 = New System.Windows.Forms.Label()
+        Me.txtQuarantine = New System.Windows.Forms.TextBox()
         Me.cbBloodType = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.btnUpdate = New System.Windows.Forms.Button()
@@ -54,9 +67,10 @@ Partial Class EPage
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtIron = New System.Windows.Forms.TextBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgwUsers = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.txtDepartment = New System.Windows.Forms.TextBox()
@@ -73,18 +87,31 @@ Partial Class EPage
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.lblCPie = New System.Windows.Forms.Label()
+        Me.CBlodtype = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.CBType = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.dgvGender = New System.Windows.Forms.DataGridView()
+        Me.CG = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.dgvBloodType = New System.Windows.Forms.DataGridView()
+        Me.btnSBType = New System.Windows.Forms.Button()
+        Me.btnBTPie = New System.Windows.Forms.Button()
         Me.btnSignOut = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label20 = New System.Windows.Forms.Label()
-        Me.txtQuarantine = New System.Windows.Forms.TextBox()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox5.SuspendLayout()
+        CType(Me.dgwUsers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        CType(Me.CBlodtype, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CBType, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvGender, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CG, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvBloodType, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -110,9 +137,7 @@ Partial Class EPage
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
-        Me.TabPage1.Controls.Add(Me.Label5)
-        Me.TabPage1.Controls.Add(Me.txtSearch)
-        Me.TabPage1.Controls.Add(Me.DataGridView1)
+        Me.TabPage1.Controls.Add(Me.GroupBox5)
         Me.TabPage1.Location = New System.Drawing.Point(4, 79)
         Me.TabPage1.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Name = "TabPage1"
@@ -132,7 +157,7 @@ Partial Class EPage
         Me.GroupBox3.Controls.Add(Me.Label10)
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Controls.Add(Me.btnRegDonation)
-        Me.GroupBox3.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.Location = New System.Drawing.Point(5, 426)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(586, 236)
@@ -235,12 +260,12 @@ Partial Class EPage
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.txtSSN)
         Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(5, 48)
+        Me.GroupBox2.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Location = New System.Drawing.Point(5, 12)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(287, 326)
+        Me.GroupBox2.Size = New System.Drawing.Size(287, 362)
         Me.GroupBox2.TabIndex = 57
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Brukerinfo"
@@ -380,15 +405,36 @@ Partial Class EPage
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label9)
         Me.GroupBox1.Controls.Add(Me.txtIron)
-        Me.GroupBox1.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(304, 48)
+        Me.GroupBox1.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(304, 12)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(287, 325)
+        Me.GroupBox1.Size = New System.Drawing.Size(287, 361)
         Me.GroupBox1.TabIndex = 56
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bloddata"
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label20.Location = New System.Drawing.Point(12, 194)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(105, 26)
+        Me.Label20.TabIndex = 69
+        Me.Label20.Text = "Karantene:"
+        '
+        'txtQuarantine
+        '
+        Me.txtQuarantine.Enabled = False
+        Me.txtQuarantine.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuarantine.Location = New System.Drawing.Point(152, 191)
+        Me.txtQuarantine.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtQuarantine.Name = "txtQuarantine"
+        Me.txtQuarantine.Size = New System.Drawing.Size(130, 33)
+        Me.txtQuarantine.TabIndex = 68
         '
         'cbBloodType
         '
@@ -462,35 +508,48 @@ Partial Class EPage
         Me.txtIron.Size = New System.Drawing.Size(130, 33)
         Me.txtIron.TabIndex = 28
         '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.Label5)
+        Me.GroupBox5.Controls.Add(Me.txtSearch)
+        Me.GroupBox5.Controls.Add(Me.dgwUsers)
+        Me.GroupBox5.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.Location = New System.Drawing.Point(592, 12)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(700, 655)
+        Me.GroupBox5.TabIndex = 65
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Donorinformasjon"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(846, 12)
+        Me.Label5.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(305, 28)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(218, 29)
-        Me.Label5.TabIndex = 26
+        Me.Label5.Size = New System.Drawing.Size(210, 29)
+        Me.Label5.TabIndex = 28
         Me.Label5.Text = "Filtrer etter blodtype"
         '
         'txtSearch
         '
         Me.txtSearch.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSearch.Location = New System.Drawing.Point(1090, 9)
+        Me.txtSearch.Location = New System.Drawing.Point(519, 25)
         Me.txtSearch.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSearch.Name = "txtSearch"
-        Me.txtSearch.Size = New System.Drawing.Size(186, 37)
-        Me.txtSearch.TabIndex = 25
+        Me.txtSearch.Size = New System.Drawing.Size(166, 37)
+        Me.txtSearch.TabIndex = 27
         '
-        'DataGridView1
+        'dgwUsers
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(596, 48)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 28
-        Me.DataGridView1.Size = New System.Drawing.Size(680, 615)
-        Me.DataGridView1.TabIndex = 21
+        Me.dgwUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgwUsers.Location = New System.Drawing.Point(5, 74)
+        Me.dgwUsers.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgwUsers.Name = "dgwUsers"
+        Me.dgwUsers.RowTemplate.Height = 28
+        Me.dgwUsers.Size = New System.Drawing.Size(680, 576)
+        Me.dgwUsers.TabIndex = 21
         '
         'TabPage2
         '
@@ -654,6 +713,14 @@ Partial Class EPage
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.lblCPie)
+        Me.TabPage3.Controls.Add(Me.CBlodtype)
+        Me.TabPage3.Controls.Add(Me.CBType)
+        Me.TabPage3.Controls.Add(Me.dgvGender)
+        Me.TabPage3.Controls.Add(Me.CG)
+        Me.TabPage3.Controls.Add(Me.dgvBloodType)
+        Me.TabPage3.Controls.Add(Me.btnSBType)
+        Me.TabPage3.Controls.Add(Me.btnBTPie)
         Me.TabPage3.Location = New System.Drawing.Point(4, 79)
         Me.TabPage3.Margin = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Name = "TabPage3"
@@ -661,6 +728,126 @@ Partial Class EPage
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Statistikk"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'lblCPie
+        '
+        Me.lblCPie.AutoSize = True
+        Me.lblCPie.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCPie.Location = New System.Drawing.Point(233, 24)
+        Me.lblCPie.Name = "lblCPie"
+        Me.lblCPie.Size = New System.Drawing.Size(215, 19)
+        Me.lblCPie.TabIndex = 30
+        Me.lblCPie.Text = "De fire forskjellige blodtypene"
+        '
+        'CBlodtype
+        '
+        Me.CBlodtype.BackColor = System.Drawing.Color.LightGray
+        ChartArea4.Name = "ChartArea1"
+        Me.CBlodtype.ChartAreas.Add(ChartArea4)
+        Legend4.Name = "Legend1"
+        Me.CBlodtype.Legends.Add(Legend4)
+        Me.CBlodtype.Location = New System.Drawing.Point(77, 24)
+        Me.CBlodtype.Name = "CBlodtype"
+        Series4.ChartArea = "ChartArea1"
+        Series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series4.Legend = "Legend1"
+        Series4.Name = "Blodtyper"
+        Me.CBlodtype.Series.Add(Series4)
+        Me.CBlodtype.Size = New System.Drawing.Size(528, 512)
+        Me.CBlodtype.TabIndex = 29
+        Me.CBlodtype.Text = "Chart1"
+        '
+        'CBType
+        '
+        Me.CBType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.CBType.BackColor = System.Drawing.Color.Silver
+        ChartArea5.Name = "ChartArea1"
+        Me.CBType.ChartAreas.Add(ChartArea5)
+        Legend5.Name = "Legend1"
+        Me.CBType.Legends.Add(Legend5)
+        Me.CBType.Location = New System.Drawing.Point(77, 24)
+        Me.CBType.Name = "CBType"
+        Me.CBType.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
+        Series5.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series5.ChartArea = "ChartArea1"
+        Series5.Color = System.Drawing.Color.Crimson
+        Series5.LabelAngle = 90
+        Series5.Legend = "Legend1"
+        Series5.Name = "BLODTYPER"
+        Series5.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
+        Me.CBType.Series.Add(Series5)
+        Me.CBType.Size = New System.Drawing.Size(528, 512)
+        Me.CBType.TabIndex = 24
+        Me.CBType.Text = "Chart1"
+        Title3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title3.Name = "Title1"
+        Title3.Text = "Blodtypene spesifisert"
+        Me.CBType.Titles.Add(Title3)
+        '
+        'dgvGender
+        '
+        Me.dgvGender.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvGender.Location = New System.Drawing.Point(1158, 585)
+        Me.dgvGender.Name = "dgvGender"
+        Me.dgvGender.RowTemplate.Height = 28
+        Me.dgvGender.Size = New System.Drawing.Size(60, 44)
+        Me.dgvGender.TabIndex = 26
+        Me.dgvGender.Visible = False
+        '
+        'CG
+        '
+        Me.CG.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CG.BackColor = System.Drawing.Color.Silver
+        ChartArea6.Name = "ChartArea1"
+        Me.CG.ChartAreas.Add(ChartArea6)
+        Legend6.Name = "Legend1"
+        Me.CG.Legends.Add(Legend6)
+        Me.CG.Location = New System.Drawing.Point(631, 24)
+        Me.CG.Name = "CG"
+        Series6.BorderColor = System.Drawing.Color.Yellow
+        Series6.ChartArea = "ChartArea1"
+        Series6.Color = System.Drawing.Color.DarkTurquoise
+        Series6.Legend = "Legend1"
+        Series6.Name = "KJØNNSFORDELING"
+        Me.CG.Series.Add(Series6)
+        Me.CG.Size = New System.Drawing.Size(560, 512)
+        Me.CG.TabIndex = 25
+        Me.CG.Text = "Chart1"
+        Title4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title4.Name = "Title1"
+        Title4.Text = "Fordelingen mellom Menn & Kvinner"
+        Me.CG.Titles.Add(Title4)
+        '
+        'dgvBloodType
+        '
+        Me.dgvBloodType.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvBloodType.Location = New System.Drawing.Point(1046, 542)
+        Me.dgvBloodType.Name = "dgvBloodType"
+        Me.dgvBloodType.RowTemplate.Height = 28
+        Me.dgvBloodType.Size = New System.Drawing.Size(90, 87)
+        Me.dgvBloodType.TabIndex = 23
+        Me.dgvBloodType.Visible = False
+        '
+        'btnSBType
+        '
+        Me.btnSBType.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnSBType.Location = New System.Drawing.Point(649, 595)
+        Me.btnSBType.Name = "btnSBType"
+        Me.btnSBType.Size = New System.Drawing.Size(358, 47)
+        Me.btnSBType.TabIndex = 27
+        Me.btnSBType.Text = "Vis blodtyper detaljert"
+        Me.btnSBType.UseVisualStyleBackColor = True
+        '
+        'btnBTPie
+        '
+        Me.btnBTPie.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnBTPie.Location = New System.Drawing.Point(649, 542)
+        Me.btnBTPie.Name = "btnBTPie"
+        Me.btnBTPie.Size = New System.Drawing.Size(358, 47)
+        Me.btnBTPie.TabIndex = 28
+        Me.btnBTPie.Text = "Vis de generelle blodtypene"
+        Me.btnBTPie.UseVisualStyleBackColor = True
         '
         'btnSignOut
         '
@@ -683,27 +870,6 @@ Partial Class EPage
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
         '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(12, 194)
-        Me.Label20.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(105, 26)
-        Me.Label20.TabIndex = 69
-        Me.Label20.Text = "Karantene:"
-        '
-        'txtQuarantine
-        '
-        Me.txtQuarantine.Enabled = False
-        Me.txtQuarantine.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuarantine.Location = New System.Drawing.Point(152, 191)
-        Me.txtQuarantine.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtQuarantine.Name = "txtQuarantine"
-        Me.txtQuarantine.Size = New System.Drawing.Size(130, 33)
-        Me.txtQuarantine.TabIndex = 68
-        '
         'EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -719,17 +885,25 @@ Partial Class EPage
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.Userinformation.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        CType(Me.dgwUsers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
+        CType(Me.CBlodtype, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CBType, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvGender, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CG, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvBloodType, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -777,9 +951,7 @@ Partial Class EPage
     Friend WithEvents Label4 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents txtIron As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents txtSearch As TextBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgwUsers As DataGridView
     Friend WithEvents cbPlasmaCount As ComboBox
     Friend WithEvents cbCellsCount As ComboBox
     Friend WithEvents cbPlateletsCount As ComboBox
@@ -790,4 +962,15 @@ Partial Class EPage
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
     Friend WithEvents txtQuarantine As TextBox
+    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents txtSearch As TextBox
+    Friend WithEvents dgvGender As DataGridView
+    Friend WithEvents CG As DataVisualization.Charting.Chart
+    Friend WithEvents dgvBloodType As DataGridView
+    Friend WithEvents CBType As DataVisualization.Charting.Chart
+    Friend WithEvents btnSBType As Button
+    Friend WithEvents btnBTPie As Button
+    Friend WithEvents CBlodtype As DataVisualization.Charting.Chart
+    Friend WithEvents lblCPie As Label
 End Class

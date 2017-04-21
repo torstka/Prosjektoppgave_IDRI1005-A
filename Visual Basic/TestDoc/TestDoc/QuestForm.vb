@@ -9,17 +9,21 @@ Public Class QuestForm
     Dim reader As MySqlDataReader
     Dim ssn As String = UserPage.lblSSnumber.Text
     Private Sub QuestForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'HENTE UT PERSONNUMMER OG TA BORT TABPAGE 6/7 ETTERSOM HVILKET KJØNN DET ER.
-        Me.TabPage1.Text = "1-6"
-        Me.TabPage2.Text = "7-11"
-        Me.TabPage3.Text = "12-20"
-        Me.TabPage4.Text = "21-28"
-        Me.TabPage5.Text = "29"
-        Me.TabPage6.Text = "30-37"
-        Me.TabPage7.Text = "38-44"
-        Me.TabPage8.Text = "Kvinner"
-        Me.TabPage9.Text = "Menn"
-        Me.TabPage10.Text = "50-59"
+
+        Me.Size = SystemInformation.PrimaryMonitorSize
+        QuestionRound.Location = New Point((ClientSize.Width - QuestionRound.Width) \ 2,
+                             (ClientSize.Height - QuestionRound.Height) \ 2)
+
+        Me.TabPage1.Text = "Side 1"
+        Me.TabPage2.Text = "Side 2"
+        Me.TabPage3.Text = "Side 3"
+        Me.TabPage4.Text = "Side 4"
+        Me.TabPage5.Text = "Side 5"
+        Me.TabPage6.Text = "Side 6"
+        Me.TabPage7.Text = "Side 7"
+        Me.TabPage8.Text = "Side 8 - Kvinner"
+        Me.TabPage9.Text = "Side 9 - Menn"
+        Me.TabPage10.Text = "Side 10"
 
         checkIfApproved()
         checkGender() 'Henter ut hvilken kjønn-side som skal være aktiv/inaktiv.
@@ -74,29 +78,31 @@ Public Class QuestForm
         qu42.Text = tabell.Rows(41)(0).ToString() & " " & tabell.Rows(41)(1).ToString()
         qu43.Text = tabell.Rows(42)(0).ToString() & " " & tabell.Rows(42)(1).ToString()
         qu44.Text = tabell.Rows(43)(0).ToString() & " " & tabell.Rows(43)(1).ToString()
-        qu45.Text = tabell.Rows(44)(0).ToString() & " " & tabell.Rows(44)(1).ToString()
-        qu46.Text = tabell.Rows(45)(0).ToString() & " " & tabell.Rows(45)(1).ToString()
-        qu47.Text = tabell.Rows(46)(0).ToString() & " " & tabell.Rows(46)(1).ToString()
-        qu48.Text = tabell.Rows(47)(0).ToString() & " " & tabell.Rows(47)(1).ToString()
-        qu49.Text = tabell.Rows(48)(0).ToString() & " " & tabell.Rows(48)(1).ToString()
-        qu50.Text = tabell.Rows(49)(0).ToString() & " " & tabell.Rows(49)(1).ToString()
-        qu51.Text = tabell.Rows(50)(0).ToString() & " " & tabell.Rows(50)(1).ToString()
-        qu52.Text = tabell.Rows(51)(0).ToString() & " " & tabell.Rows(51)(1).ToString()
-        qu53.Text = tabell.Rows(52)(0).ToString() & " " & tabell.Rows(52)(1).ToString()
-        qu54.Text = tabell.Rows(53)(0).ToString() & " " & tabell.Rows(53)(1).ToString()
-        qu55.Text = tabell.Rows(54)(0).ToString() & " " & tabell.Rows(54)(1).ToString()
-        qu56.Text = tabell.Rows(55)(0).ToString() & " " & tabell.Rows(55)(1).ToString()
-        qu57.Text = tabell.Rows(56)(0).ToString() & " " & tabell.Rows(56)(1).ToString()
-        qu58.Text = tabell.Rows(57)(0).ToString() & " " & tabell.Rows(57)(1).ToString()
-        qu59.Text = tabell.Rows(58)(0).ToString() & " " & tabell.Rows(58)(1).ToString()
+        'qu45.Text = tabell.Rows(44)(0).ToString() & " " & tabell.Rows(44)(1).ToString()
+        'qu46.Text = tabell.Rows(45)(0).ToString() & " " & tabell.Rows(45)(1).ToString()
+        'qu47.Text = tabell.Rows(46)(0).ToString() & " " & tabell.Rows(46)(1).ToString()
+        'qu48.Text = tabell.Rows(47)(0).ToString() & " " & tabell.Rows(47)(1).ToString()
+        'qu49.Text = tabell.Rows(48)(0).ToString() & " " & tabell.Rows(48)(1).ToString()
+        'qu50.Text = tabell.Rows(49)(0).ToString() & " " & tabell.Rows(49)(1).ToString()
+        'qu51.Text = tabell.Rows(50)(0).ToString() & " " & tabell.Rows(50)(1).ToString()
+        'qu52.Text = tabell.Rows(51)(0).ToString() & " " & tabell.Rows(51)(1).ToString()
+        'qu53.Text = tabell.Rows(52)(0).ToString() & " " & tabell.Rows(52)(1).ToString()
+        'qu54.Text = tabell.Rows(53)(0).ToString() & " " & tabell.Rows(53)(1).ToString()
+        'qu55.Text = tabell.Rows(54)(0).ToString() & " " & tabell.Rows(54)(1).ToString()
+        'qu56.Text = tabell.Rows(55)(0).ToString() & " " & tabell.Rows(55)(1).ToString()
+        'qu57.Text = tabell.Rows(56)(0).ToString() & " " & tabell.Rows(56)(1).ToString()
+        'qu58.Text = tabell.Rows(57)(0).ToString() & " " & tabell.Rows(57)(1).ToString()
+        'qu59.Text = tabell.Rows(58)(0).ToString() & " " & tabell.Rows(58)(1).ToString()
 #End Region
-
         connection.close()
     End Sub
 
 
-
     Private Sub checkGender()
+        Dim command As New MySqlCommand("SELECT * FROM QuestForm ", connection)
+        Dim adapter As New MySqlDataAdapter(command)
+        Dim tabell As New DataTable()
+        adapter.Fill(tabell)
         Try
             connection.Open()
             Dim table As New DataTable
@@ -104,11 +110,37 @@ Public Class QuestForm
             Dim query As String = "SELECT gender FROM User WHERE ss_number = '" & ssn & "'AND gender = '" & female & "'"
             comm = New MySqlCommand(query, connection)
             reader = comm.ExecuteReader
-
+#Region "Sjekker Mann/Kvinne"
             If reader.HasRows Then
                 rbNei49.Checked = True
                 rbNei49.Enabled = False
                 rbJa49.Enabled = False
+                lbM1.Visible = False
+                lbM2.Visible = False
+                lbM3.Visible = False
+                lbM4.Visible = False
+                lbM5.Visible = False
+                lbM6.Visible = False
+                lbM7.Visible = False
+                lbM9.Visible = False
+                lbM10.Visible = False
+                lbFShow.Visible = False
+                qu49.Enabled = False
+                qu45.Text = tabell.Rows(44)(0).ToString() & " " & tabell.Rows(44)(1).ToString()
+                qu46.Text = tabell.Rows(45)(0).ToString() & " " & tabell.Rows(45)(1).ToString()
+                qu47.Text = tabell.Rows(46)(0).ToString() & " " & tabell.Rows(46)(1).ToString()
+                qu48.Text = tabell.Rows(47)(0).ToString() & " " & tabell.Rows(47)(1).ToString()
+                qu49.Text = "" & " " & tabell.Rows(48)(1).ToString()
+                qu50.Text = "49" & " " & tabell.Rows(49)(1).ToString()
+                qu51.Text = "50" & " " & tabell.Rows(50)(1).ToString()
+                qu52.Text = "51" & " " & tabell.Rows(51)(1).ToString()
+                qu53.Text = "52" & " " & tabell.Rows(52)(1).ToString()
+                qu54.Text = "53" & " " & tabell.Rows(53)(1).ToString()
+                qu55.Text = "54" & " " & tabell.Rows(54)(1).ToString()
+                qu56.Text = "55" & " " & tabell.Rows(55)(1).ToString()
+                qu57.Text = "56" & " " & tabell.Rows(56)(1).ToString()
+                qu58.Text = "57" & " " & tabell.Rows(57)(1).ToString()
+                qu59.Text = "58" & " " & tabell.Rows(58)(1).ToString()
             Else
                 rbNei45.Checked = True
                 rbNei46.Checked = True
@@ -122,19 +154,47 @@ Public Class QuestForm
                 rbNei45.Enabled = False
                 rbNei47.Enabled = False
                 rbNei48.Enabled = False
-
+                lbF1.Visible = False
+                lbF2.Visible = False
+                lbF3.Visible = False
+                lbF4.Visible = False
+                lbF5.Visible = False
+                lbF6.Visible = False
+                lbF7.Visible = False
+                lbF8.Visible = False
+                lbF10.Visible = False
+                lbMShow.Visible = False
+                qu45.Enabled = False
+                qu46.Enabled = False
+                qu47.Enabled = False
+                qu48.Enabled = False
+                qu45.Text = "" & " " & tabell.Rows(44)(1).ToString()
+                qu46.Text = "" & " " & tabell.Rows(45)(1).ToString()
+                qu47.Text = "" & " " & tabell.Rows(46)(1).ToString()
+                qu48.Text = "" & " " & tabell.Rows(47)(1).ToString()
+                qu49.Text = "45" & " " & tabell.Rows(48)(1).ToString()
+                qu50.Text = "46" & " " & tabell.Rows(49)(1).ToString()
+                qu51.Text = "47" & " " & tabell.Rows(50)(1).ToString()
+                qu52.Text = "48" & " " & tabell.Rows(51)(1).ToString()
+                qu53.Text = "49" & " " & tabell.Rows(52)(1).ToString()
+                qu54.Text = "50" & " " & tabell.Rows(53)(1).ToString()
+                qu55.Text = "51" & " " & tabell.Rows(54)(1).ToString()
+                qu56.Text = "52" & " " & tabell.Rows(55)(1).ToString()
+                qu57.Text = "53" & " " & tabell.Rows(56)(1).ToString()
+                qu58.Text = "54" & " " & tabell.Rows(57)(1).ToString()
+                qu59.Text = "55" & " " & tabell.Rows(58)(1).ToString()
             End If
+#End Region
+
             reader.Close()
             connection.close()
         Catch ex As Exception
             MsgBox(ex.Message)
-
         End Try
     End Sub
 
     Public Sub checkIfApproved()
-        ' Dim query As String = "SELECT (ssn, date) FROM Answer VALUES(user.ssn = answer.ssn & date & "todayDate-90Days") " Then
-        ' Dim todaysDate As DateTime = Today.ToString("dd/MM/yyyy")
+        connection.close()
         Dim todaysDate90 As String = Today.AddDays(-90).ToString("dd/MM/yyyy")
         Dim threeMounthAgo = Today.AddDays(-90).ToString("dd/MM/yyyy")
         Dim today2 = Today.ToString("dd/MM/yyyy")
@@ -160,15 +220,11 @@ Public Class QuestForm
                 Me.Show()
             End If
             connection.close()
-
         Catch ex As Exception
             MsgBox(ex.Message)
         Finally
             connection.dispose()
         End Try
-
-
-
 
     End Sub
     Private Sub CheckAllAnswers(ByVal tabControl As TabControl)
@@ -208,7 +264,7 @@ Public Class QuestForm
         Dim qt90d As String '= Today.ToString("dd/MM/yyyy")
         Dim qt120d As String '= Today.ToString("dd/MM/yyyy")
         Dim qt365d As String '= Today.ToString("dd/MM/yyyy")
-        Dim lifeTimequarantine As String = "Livsstid"
+        Dim lifeTimequarantine As String = "Livstid"
         Dim listQuarantine As New List(Of Object)()
 
         'Fyller karantenene fra dagens dato til karantene-datoen
@@ -219,7 +275,7 @@ Public Class QuestForm
         qt90d = todayDate.AddDays(90)
         qt120d = todayDate.AddDays(120)
         qt365d = todayDate.AddDays(365)
-
+        'Sjekker hvert spmørsmål for hvilken karantene som tilhører hva
         If rbJa32.Checked Or rbJa42.Checked Or rbJa43.Checked Or rbJa44.Checked Or rbJa34.Checked Or rbJa35.Checked Or rbJa36.Checked Or rbJa49.Checked Or rbJa51.Checked Or rbJa52.Checked Or rbJa54.Checked Or rbJa55.Checked Then
             totalQT = lifeTimequarantine
         ElseIf rbJa15.Checked Or rbJa16.Checked Or rbJa17.Checked Or rbJa18.Checked Or rbJa19.Checked Or rbJa26.Checked Or rbJa27.Checked Or rbJa28.Checked Then
@@ -231,15 +287,11 @@ Public Class QuestForm
         ElseIf rbJa11.Checked Then
             totalQT = qt24t
         ElseIf rbNei2.Checked Or rbNei3.Checked Or rbNei4.Checked Or rbJa7.Checked Or rbJa12.Checked Or rbJa13.Checked Or rbJa14.Checked Or rbJa21.Checked Or rbJa22.Checked Or rbJa24.Checked Or rbJa25.Checked Or rbJa33.Checked Or rbJa37.Checked Or rbJa38.Checked Or rbJa39.Checked Or rbJa40.Checked Or rbJa41.Checked Or rbJa47.Checked Or rbJa48.Checked Or rbJa50.Checked Or rbJa53.Checked Or rbJa56.Checked Then
-            totalQT = "Helsesjekk" 'Du har ett eller flere spm som må tas opp på helsesjekken. 
+            totalQT = "Helsesjekk"
         Else
             totalQT = "Godkjent"
         End If
-
-
         updateQuarantine()
-        Console.WriteLine(totalQT)
-
     End Sub
     Private Sub updateQuarantine()
         Try
@@ -248,7 +300,7 @@ Public Class QuestForm
             Dim comm = New MySqlCommand(query, connection)
             Dim reader As MySqlDataReader
             reader = comm.ExecuteReader
-            MsgBox("Karantenen er oppdatert")
+            MsgBox("Karantenen er oppdatert TAS BORT ")
             connection.close()
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -258,13 +310,11 @@ Public Class QuestForm
     Private Sub updateLastDrain()
 
         Dim todaysDate = Today.Date
-
         Try
             connection.Open()
             Dim query As String = "UPDATE Blood_Data SET last_drain = '" & todaysDate & "' WHERE ss_number = '" & ssn & "'"
             comm = New MySqlCommand(query, connection)
             reader = comm.ExecuteReader
-
             connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -274,22 +324,22 @@ Public Class QuestForm
 
     End Sub
     Private Sub SaveAnswers()
-        quarantine()
         CheckAllAnswers(QuestionRound)  'Henter alle tag'ene/svarene fra CheckAllAnswers fra tabControl. 
+        quarantine()
 
         Dim todayDate As String = Today.ToString("yyyy/MM/dd") 'Setter datoen for spørreskjemaet til dagens dato.
         Dim approved As String = "Approved"
         Dim notApproved As String = "Not approved"
 
         Try
-            connection.Open()
+            '  connection.Open()
             If totalQT = "Godkjent" Then
                 'Henter svarene fra ArraylistQuery og fyller databasen med disse svarene. 1=Ja, 0=Nei. Vi bruker tall for å bruke mindre plass i databasen.
                 Dim query As String = "INSERT INTO Answer(date, status, ss_number, qu1, qu2, qu3, qu4, qu5, qu6, qu7, qu8, qu9, qu10, qu11, qu12, qu13, qu14, qu15, qu16, qu17, qu18, qu19, qu20, qu21, qu22, qu23, qu24, qu25, qu26, qu27, qu28, qu29, qu30, qu31, qu32, qu33, qu34, qu35, qu36, qu37, qu38, qu39, qu40, qu41, qu42, qu43, qu44, qu45, qu46, qu47, qu48, qu49, qu50, qu51, qu52, qu53, qu54, qu55, qu56, qu57, qu58, qu59) VALUES ('" & todayDate & "','" & approved & "','" & ssn & "','" & arrayListQuery(0) & "','" & arrayListQuery(1) & "','" & arrayListQuery(2) & "','" & arrayListQuery(3) & "','" & arrayListQuery(4) & "','" & arrayListQuery(5) & "','" & arrayListQuery(6) & "','" & arrayListQuery(7) & "','" & arrayListQuery(8) & "','" & arrayListQuery(9) & "','" & arrayListQuery(10) & "','" & arrayListQuery(11) & "','" & arrayListQuery(12) & "','" & arrayListQuery(13) & "','" & arrayListQuery(14) & "','" & arrayListQuery(15) & "','" & arrayListQuery(16) & "','" & arrayListQuery(17) & "','" & arrayListQuery(18) & "','" & arrayListQuery(19) & "','" & arrayListQuery(20) & "','" & arrayListQuery(21) & "','" & arrayListQuery(22) & "','" & arrayListQuery(23) & "','" & arrayListQuery(24) & "','" & arrayListQuery(25) & "','" & arrayListQuery(26) & "','" & arrayListQuery(27) & "','" & arrayListQuery(28) & "','" & arrayListQuery(29) & "','" & arrayListQuery(30) & "','" & arrayListQuery(31) & "','" & arrayListQuery(32) & "','" & arrayListQuery(33) & "','" & arrayListQuery(34) & "','" & arrayListQuery(35) & "','" & arrayListQuery(36) & "','" & arrayListQuery(37) & "','" & arrayListQuery(38) & "','" & arrayListQuery(39) & "','" & arrayListQuery(40) & "','" & arrayListQuery(41) & "','" & arrayListQuery(42) & "','" & arrayListQuery(43) & "','" & arrayListQuery(44) & "','" & arrayListQuery(45) & "','" & arrayListQuery(46) & "','" & arrayListQuery(47) & "','" & arrayListQuery(48) & "','" & arrayListQuery(49) & "','" & arrayListQuery(50) & "','" & arrayListQuery(51) & "','" & arrayListQuery(52) & "','" & arrayListQuery(53) & "','" & arrayListQuery(54) & "','" & arrayListQuery(55) & "','" & arrayListQuery(56) & "','" & arrayListQuery(57) & "','" & arrayListQuery(58) & "')"
                 comm = New MySqlCommand(query, connection)
                 reader = comm.ExecuteReader
                 ' updateQuarantine()
-                MsgBox("Svarene dine vil nå bli behandlet, og du kan gå til helsesjekkern.")
+                MsgBox("Svarene dine vil nå bli behandlet, og du kan gå til helsesjekken.")
             Else
                 'Henter svarene fra ArraylistQuery og fyller databasen med disse svarene. 1=Ja, 0=Nei. Vi bruker tall for å bruke mindre plass i databasen.
                 Dim query As String = "INSERT INTO Answer(date, status, ss_number, qu1, qu2, qu3, qu4, qu5, qu6, qu7, qu8, qu9, qu10, qu11, qu12, qu13, qu14, qu15, qu16, qu17, qu18, qu19, qu20, qu21, qu22, qu23, qu24, qu25, qu26, qu27, qu28, qu29, qu30, qu31, qu32, qu33, qu34, qu35, qu36, qu37, qu38, qu39, qu40, qu41, qu42, qu43, qu44, qu45, qu46, qu47, qu48, qu49, qu50, qu51, qu52, qu53, qu54, qu55, qu56, qu57, qu58, qu59) VALUES ('" & todayDate & "','" & notApproved & "','" & ssn & "','" & arrayListQuery(0) & "','" & arrayListQuery(1) & "','" & arrayListQuery(2) & "','" & arrayListQuery(3) & "','" & arrayListQuery(4) & "','" & arrayListQuery(5) & "','" & arrayListQuery(6) & "','" & arrayListQuery(7) & "','" & arrayListQuery(8) & "','" & arrayListQuery(9) & "','" & arrayListQuery(10) & "','" & arrayListQuery(11) & "','" & arrayListQuery(12) & "','" & arrayListQuery(13) & "','" & arrayListQuery(14) & "','" & arrayListQuery(15) & "','" & arrayListQuery(16) & "','" & arrayListQuery(17) & "','" & arrayListQuery(18) & "','" & arrayListQuery(19) & "','" & arrayListQuery(20) & "','" & arrayListQuery(21) & "','" & arrayListQuery(22) & "','" & arrayListQuery(23) & "','" & arrayListQuery(24) & "','" & arrayListQuery(25) & "','" & arrayListQuery(26) & "','" & arrayListQuery(27) & "','" & arrayListQuery(28) & "','" & arrayListQuery(29) & "','" & arrayListQuery(30) & "','" & arrayListQuery(31) & "','" & arrayListQuery(32) & "','" & arrayListQuery(33) & "','" & arrayListQuery(34) & "','" & arrayListQuery(35) & "','" & arrayListQuery(36) & "','" & arrayListQuery(37) & "','" & arrayListQuery(38) & "','" & arrayListQuery(39) & "','" & arrayListQuery(40) & "','" & arrayListQuery(41) & "','" & arrayListQuery(42) & "','" & arrayListQuery(43) & "','" & arrayListQuery(44) & "','" & arrayListQuery(45) & "','" & arrayListQuery(46) & "','" & arrayListQuery(47) & "','" & arrayListQuery(48) & "','" & arrayListQuery(49) & "','" & arrayListQuery(50) & "','" & arrayListQuery(51) & "','" & arrayListQuery(52) & "','" & arrayListQuery(53) & "','" & arrayListQuery(54) & "','" & arrayListQuery(55) & "','" & arrayListQuery(56) & "','" & arrayListQuery(57) & "','" & arrayListQuery(58) & "')"
@@ -298,7 +348,9 @@ Public Class QuestForm
                 'updateQuarantine()
                 MsgBox("Svarene er lagret")
             End If
-
+            UserPage.Show()
+            Me.Close()
+            reader.Close()
             connection.close()
 
         Catch ex As Exception
@@ -306,13 +358,14 @@ Public Class QuestForm
         Finally
             connection.dispose()
         End Try
-#Region "Alle neste- og forrige-knapper"
     End Sub
     Private Sub btnFinish_Click(sender As Object, e As EventArgs) Handles btnFinish.Click
         SaveAnswers()
-        UserPage.Show()
+        'UserPage.Show()
         updateLastDrain()
     End Sub
+#Region "Alle neste- og forrige-knapper"
+
     Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         quarantine()
     End Sub
@@ -382,6 +435,7 @@ Public Class QuestForm
     End Sub
 
 #End Region
+
 
 
 End Class

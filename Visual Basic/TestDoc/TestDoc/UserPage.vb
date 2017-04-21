@@ -88,11 +88,9 @@ Public Class UserPage
                 txtZipcode.Text = (rad("zip_code")).ToString()
                 txtPwd.Text = (rad("password")).ToString()
             Next
-
         Catch ex As MySqlException
             MsgBox(ex.Message)         'tilfelle det oppstår en feil
             connection.Close()
-
         Finally
             connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
         End Try
@@ -151,7 +149,7 @@ Public Class UserPage
                 reader = cmd.ExecuteReader
 
                 MessageBox.Show("Data oppdatert")
-
+                reader.Close()
             Catch ex As Exception
                 MessageBox.Show(ex.Message)
                 connection.Close()
@@ -203,11 +201,7 @@ Public Class UserPage
             lblSSnumber.Text = (rad("ss_number")).ToString()
         Next
 
-
-
     End Sub
-
-
 
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -216,16 +210,11 @@ Public Class UserPage
         Me.Size = SystemInformation.PrimaryMonitorSize
         DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
-
-
-
         'Label18.Text = ssNumber
 
         showData()
         getUser()
         showBloodData()
-
-
 
         'Dim showUser As New User
         'showUser.showData(txtFirstName.Text, txtLastName.Text, txtPhone.Text, txtMail.Text, txtAddress.Text, txtZipcode.Text, txtPwd.Text)

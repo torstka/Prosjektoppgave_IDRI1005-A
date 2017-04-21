@@ -96,7 +96,7 @@ Partial Class Statistics
         Me.CG.ChartAreas.Add(ChartArea2)
         Legend2.Name = "Legend1"
         Me.CG.Legends.Add(Legend2)
-        Me.CG.Location = New System.Drawing.Point(583, 84)
+        Me.CG.Location = New System.Drawing.Point(585, 84)
         Me.CG.Name = "CG"
         Series2.BorderColor = System.Drawing.Color.Yellow
         Series2.ChartArea = "ChartArea1"
@@ -164,7 +164,7 @@ Partial Class Statistics
         '
         Me.lblCPie.AutoSize = True
         Me.lblCPie.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCPie.Location = New System.Drawing.Point(159, 84)
+        Me.lblCPie.Location = New System.Drawing.Point(167, 84)
         Me.lblCPie.Name = "lblCPie"
         Me.lblCPie.Size = New System.Drawing.Size(211, 17)
         Me.lblCPie.TabIndex = 20
@@ -195,13 +195,13 @@ Partial Class Statistics
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1182, 701)
+        Me.Controls.Add(Me.CBType)
         Me.Controls.Add(Me.lblCPie)
         Me.Controls.Add(Me.lblStatistics)
         Me.Controls.Add(Me.btnSignOut)
         Me.Controls.Add(Me.dgvGender)
         Me.Controls.Add(Me.CG)
         Me.Controls.Add(Me.dgvBloodType)
-        Me.Controls.Add(Me.CBType)
         Me.Controls.Add(Me.btnSBType)
         Me.Controls.Add(Me.btnBTPie)
         Me.Controls.Add(Me.CBlodtype)

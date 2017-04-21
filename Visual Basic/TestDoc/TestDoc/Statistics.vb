@@ -2,7 +2,7 @@
 Imports System.Windows.Forms.DataVisualization.Charting
 
 Public Class Statistics
-    Public tilkobling As New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
+    Public connection As New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
     Dim command As MySqlCommand
     Dim bSource As New BindingSource
     Dim interntab As New DataTable
@@ -10,15 +10,15 @@ Public Class Statistics
     Dim da2 As New MySqlDataAdapter
     Dim intern2 As New DataTable
     Dim bSoursce2 As New BindingSource
-    Dim sql = New MySqlCommand("SELECT blood_type, COUNT(*) FROM Blood_Data WHERE blood_type <> 'Ikke verdi' GROUP BY blood_type HAVING COUNT(*)>0", tilkobling)
-    Dim sql2 = New MySqlCommand("SELECT gender,COUNT(*) FROM User GROUP BY gender HAVING COUNT(*)>0 ", tilkobling)
+    Dim sql = New MySqlCommand("SELECT blood_type, COUNT(*) FROM Blood_Data WHERE blood_type <> 'Ikke verdi' GROUP BY blood_type HAVING COUNT(*)>0", connection)
+    Dim sql2 = New MySqlCommand("SELECT gender,COUNT(*) FROM User GROUP BY gender HAVING COUNT(*)>0 ", connection)
     Public Overrides Property AutoSize As Boolean
 
     Private Sub Statistics_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CBType.Hide()
 
         Try
-            tilkobling.Open()
+            connection.Open()
 
             da.SelectCommand = sql
             da.Fill(interntab)
@@ -33,16 +33,16 @@ Public Class Statistics
             dgvGender.DataSource = bSoursce2
             da2.Update(intern2)
 
-            tilkobling.Close()
+            connection.Close()
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
         Finally
-            tilkobling.Dispose()
+            connection.Dispose()
             interntab.Clear()
             intern2.Clear()
         End Try
         Try
-            tilkobling.Open()
+            connection.Open()
 
             Dim dr2 As MySqlDataReader
             dr2 = sql2.ExecuteReader()
@@ -54,10 +54,10 @@ Public Class Statistics
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
         Finally
-            tilkobling.Dispose()
+            connection.Dispose()
         End Try
         Try
-            tilkobling.Open()
+            connection.Open()
 
             Dim dr As MySqlDataReader
             dr = sql.ExecuteReader()
@@ -68,7 +68,7 @@ Public Class Statistics
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
         Finally
-            tilkobling.Dispose()
+            connection.Dispose()
         End Try
         CBlodtype.Series.Clear()
         CBlodtype.Titles.Clear()
@@ -81,7 +81,7 @@ Public Class Statistics
         CBlodtype.Series(0).IsValueShownAsLabel = True
 
         Try
-            tilkobling.Open()
+            connection.Open()
             Dim Query As String
             Dim BloodcountA As Int16 = 0
             Dim BloodcountB As Int16 = 0
@@ -89,19 +89,19 @@ Public Class Statistics
             Dim BloodcountO As Int16 = 0
 
             Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'A Rh+' OR blood_type = 'A Rh-'"
-            command = New MySqlCommand(Query, tilkobling)
+            command = New MySqlCommand(Query, connection)
             BloodcountA = Convert.ToInt16(command.ExecuteScalar)
 
             Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'B Rh+' OR blood_type = 'B Rh-'"
-            command = New MySqlCommand(Query, tilkobling)
+            command = New MySqlCommand(Query, connection)
             BloodcountB = Convert.ToInt16(command.ExecuteScalar)
 
             Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'AB Rh+' OR blood_type = 'AB Rh-'"
-            command = New MySqlCommand(Query, tilkobling)
+            command = New MySqlCommand(Query, connection)
             BloodcountAB = Convert.ToInt16(command.ExecuteScalar)
 
             Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'O Rh+' OR blood_type = 'O Rh-'"
-            command = New MySqlCommand(Query, tilkobling)
+            command = New MySqlCommand(Query, connection)
             BloodcountO = Convert.ToInt16(command.ExecuteScalar)
 
             If BloodcountA > (0) Then ' Sjekker om data er relevant for grafen
@@ -121,7 +121,7 @@ Public Class Statistics
                 CBlodtype.Series("Blodtyper").Points.AddXY("O", BloodcountO)
             End If
 
-            tilkobling.Close() ' Lukker tilkobling
+            connection.Close() ' Lukker tilkobling
 
         Catch ex As MySqlException ' Fanger opp feil fra MySql
         End Try
@@ -132,7 +132,7 @@ Public Class Statistics
         LogIn.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnSBType.Click
+    Private Sub btnSBType_Click(sender As Object, e As EventArgs) Handles btnSBType.Click
         CBlodtype.Hide()
         btnSBType.Hide()
         lblCPie.Hide()
@@ -147,4 +147,5 @@ Public Class Statistics
         CBlodtype.Show()
         lblCPie.Show()
     End Sub
+
 End Class

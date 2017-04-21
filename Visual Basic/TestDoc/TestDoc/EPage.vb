@@ -1,4 +1,5 @@
 ﻿Imports MySql.Data.MySqlClient
+Imports System.Windows.Forms.DataVisualization.Charting
 Public Class EPage
     Dim constring As String = "Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N"
     Dim connection As New MySqlConnection(constring)
@@ -11,14 +12,26 @@ Public Class EPage
 
     Dim todaysDate As String = Today.ToString("dd/MM/yyyy")
 
+    Dim command As MySqlCommand
+    Dim interntab As New DataTable
+    Dim da As New MySqlDataAdapter
+    Dim da2 As New MySqlDataAdapter
+    Dim intern2 As New DataTable
+    Dim bSoursce2 As New BindingSource
+    Dim sql = New MySqlCommand("SELECT blood_type, COUNT(*) FROM Blood_Data WHERE blood_type <> 'Ikke verdi' GROUP BY blood_type HAVING COUNT(*)>0", connection)
+    Dim sql2 = New MySqlCommand("SELECT gender,COUNT(*) FROM User GROUP BY gender HAVING COUNT(*)>0 ", connection)
+    Public Overrides Property AutoSize As Boolean
+
     Private Sub load_table()
-
-        DataGridView1.DefaultCellStyle.Font = New Font("Calibri", 14, FontStyle.Regular, GraphicsUnit.Point)
-        DataGridView1.ColumnHeadersDefaultCellStyle.Font = New Font("Calibri", 15, FontStyle.Bold, GraphicsUnit.Point)
-
         Me.TabPage1.Text = "Brukerinformasjon"
         Me.TabPage2.Text = "Lagerbeholdning"
         Me.TabPage3.Text = "Statistikk"
+
+    End Sub
+
+    Private Sub dgwUser()
+        dgwUsers.DefaultCellStyle.Font = New Font("Calibri", 14, FontStyle.Regular, GraphicsUnit.Point)
+        dgwUsers.ColumnHeadersDefaultCellStyle.Font = New Font("Calibri", 15, FontStyle.Bold, GraphicsUnit.Point)
 
 
         Try
@@ -28,7 +41,7 @@ Public Class EPage
             adapter.SelectCommand = cmd
             adapter.Fill(dtable)
             bSource.DataSource = dtable
-            DataGridView1.DataSource = bSource
+            dgwUsers.DataSource = bSource
             adapter.Update(dtable)
 
             connection.Close()
@@ -39,7 +52,6 @@ Public Class EPage
 
         End Try
     End Sub
-
     Private Sub EPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_table()
         txtSSN.Enabled = False
@@ -54,19 +66,134 @@ Public Class EPage
         btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
                              (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
 
-        DataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
-
+        dgwUsers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
         updateStock()
         showStock()
-
-
-
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+    Private Sub TabPage3_Enter(sender As System.Object, e As System.EventArgs) Handles TabPage3.Enter
+        Statistics()
+    End Sub
+    Private Sub TabPage1_Enter(sender As System.Object, e As System.EventArgs) Handles TabPage1.Enter
+        dgwUser()
+    End Sub
+    Private Sub Statistics()
+        CBType.Hide()
+
+        Try
+            connection.Open()
+
+            da.SelectCommand = sql
+            da.Fill(interntab)
+            bSource.DataSource = interntab
+            dgvBloodType.DataSource = bSource
+            da.Update(interntab)
+
+            da2.SelectCommand = sql2
+            da2.Fill(intern2)
+            bSoursce2.DataSource = intern2
+            dgvGender.DataSource = bSoursce2
+            da2.Update(intern2)
+
+            connection.Close()
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+            interntab.Clear()
+            intern2.Clear()
+        End Try
+        Try
+            connection.Open()
+
+            Dim dr2 As MySqlDataReader
+            dr2 = sql2.ExecuteReader()
+
+            While (dr2.Read())
+                Me.CG.Series("KJØNNSFORDELING").Points.AddXY(dr2.GetString("gender"), dr2.GetInt64("COUNT(*)"))
+
+            End While
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+        Try
+            connection.Open()
+
+            Dim dr As MySqlDataReader
+            dr = sql.ExecuteReader()
+
+            While (dr.Read())
+                Me.CBType.Series("BLODTYPER").Points.AddXY(dr.GetString("blood_type"), dr.GetInt64("COUNT(*)"))
+            End While
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        Finally
+            connection.Dispose()
+        End Try
+        CBlodtype.Series.Clear()
+        CBlodtype.Titles.Clear()
+
+        CBlodtype.Series.Add("Blodtyper")
+
+        CBlodtype.Series("Blodtyper").ChartType = SeriesChartType.Pie ' Blir deklareret som kakediagram
+
+        CBlodtype.Series(0).LabelFormat = "{#''}"
+        CBlodtype.Series(0).IsValueShownAsLabel = True
+
+        Try
+            connection.Open()
+            Dim Query As String
+            Dim BloodcountA As Int16 = 0
+            Dim BloodcountB As Int16 = 0
+            Dim BloodcountAB As Int16 = 0
+            Dim BloodcountO As Int16 = 0
+
+            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'A Rh+' OR blood_type = 'A Rh-'"
+            command = New MySqlCommand(Query, connection)
+            BloodcountA = Convert.ToInt16(command.ExecuteScalar)
+
+            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'B Rh+' OR blood_type = 'B Rh-'"
+            command = New MySqlCommand(Query, connection)
+            BloodcountB = Convert.ToInt16(command.ExecuteScalar)
+
+            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'AB Rh+' OR blood_type = 'AB Rh-'"
+            command = New MySqlCommand(Query, connection)
+            BloodcountAB = Convert.ToInt16(command.ExecuteScalar)
+
+            Query = "SELECT COUNT(*) FROM Blood_Data WHERE blood_type = 'O Rh+' OR blood_type = 'O Rh-'"
+            command = New MySqlCommand(Query, connection)
+            BloodcountO = Convert.ToInt16(command.ExecuteScalar)
+
+            If BloodcountA > (0) Then ' Sjekker om data er relevant for grafen
+                CBlodtype.Series("Blodtyper").Points.AddXY("A", BloodcountA)
+            End If
+
+            If BloodcountB > (0) Then
+                CBlodtype.Series("Blodtyper").Points.AddXY("B", BloodcountB)
+            End If
+
+
+            If BloodcountAB > (0) Then
+                CBlodtype.Series("Blodtyper").Points.AddXY("AB", BloodcountAB)
+            End If
+
+            If BloodcountO > (0) Then
+                CBlodtype.Series("Blodtyper").Points.AddXY("O", BloodcountO)
+            End If
+
+            connection.Close() ' Lukker tilkobling
+
+        Catch ex As MySqlException ' Fanger opp feil fra MySql
+        End Try
+    End Sub
+
+
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgwUsers.CellContentClick
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow
-            row = Me.DataGridView1.Rows(e.RowIndex)
+            row = Me.dgwUsers.Rows(e.RowIndex)
 
             txtFirstname.Text = row.Cells("Fornavn").Value.ToString
             txtLastname.Text = row.Cells("Etternavn").Value.ToString
@@ -79,8 +206,6 @@ Public Class EPage
 
         getUserInfo()
         getBloodData()
-
-
 
     End Sub
 
@@ -146,13 +271,11 @@ Public Class EPage
     End Sub
 
 
-    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs) Handles txtSearch.TextChanged
+    Private Sub txtSearch_TextChanged(sender As Object, e As EventArgs)
         Dim DV As New DataView(dtable)
         DV.RowFilter = String.Format("Blodtype Like '%{0}%'", txtSearch.Text)
-        DataGridView1.DataSource = DV
+        dgwUsers.DataSource = DV
     End Sub
-
-
 
     Private Sub updateBloodData()
 
@@ -744,6 +867,5 @@ Public Class EPage
         checkOrders()
         btnGetOrder.Visible = False
     End Sub
-
 
 End Class

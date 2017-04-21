@@ -24,6 +24,8 @@ Partial Class QuestForm
     Private Sub InitializeComponent()
         Me.QuestionRound = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.lbM1 = New System.Windows.Forms.Label()
+        Me.lbF1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.rbNei1 = New System.Windows.Forms.RadioButton()
         Me.rbJa1 = New System.Windows.Forms.RadioButton()
@@ -50,6 +52,8 @@ Partial Class QuestForm
         Me.qu6 = New System.Windows.Forms.Label()
         Me.btnNext1 = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.lbM2 = New System.Windows.Forms.Label()
+        Me.lbF2 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.rbNei7 = New System.Windows.Forms.RadioButton()
         Me.rbJa7 = New System.Windows.Forms.RadioButton()
@@ -73,6 +77,8 @@ Partial Class QuestForm
         Me.btnPrev2 = New System.Windows.Forms.Button()
         Me.btnNext2 = New System.Windows.Forms.Button()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.lbM3 = New System.Windows.Forms.Label()
+        Me.lbF3 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.rbNei12 = New System.Windows.Forms.RadioButton()
         Me.qu12 = New System.Windows.Forms.Label()
@@ -112,6 +118,8 @@ Partial Class QuestForm
         Me.btnPrev3 = New System.Windows.Forms.Button()
         Me.btnNext3 = New System.Windows.Forms.Button()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.lbM4 = New System.Windows.Forms.Label()
+        Me.lbF4 = New System.Windows.Forms.Label()
         Me.btnNext4 = New System.Windows.Forms.Button()
         Me.btnPrev4 = New System.Windows.Forms.Button()
         Me.Panel21 = New System.Windows.Forms.Panel()
@@ -147,6 +155,8 @@ Partial Class QuestForm
         Me.qu26 = New System.Windows.Forms.Label()
         Me.rbJa26 = New System.Windows.Forms.RadioButton()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.lbM5 = New System.Windows.Forms.Label()
+        Me.lbF5 = New System.Windows.Forms.Label()
         Me.btnNext5 = New System.Windows.Forms.Button()
         Me.btnPrev5 = New System.Windows.Forms.Button()
         Me.Panel29 = New System.Windows.Forms.Panel()
@@ -154,6 +164,8 @@ Partial Class QuestForm
         Me.rbNei29 = New System.Windows.Forms.RadioButton()
         Me.rbJa29 = New System.Windows.Forms.RadioButton()
         Me.TabPage6 = New System.Windows.Forms.TabPage()
+        Me.lbM6 = New System.Windows.Forms.Label()
+        Me.lbF6 = New System.Windows.Forms.Label()
         Me.btnPrev6 = New System.Windows.Forms.Button()
         Me.Panel30 = New System.Windows.Forms.Panel()
         Me.qu30 = New System.Windows.Forms.Label()
@@ -189,6 +201,8 @@ Partial Class QuestForm
         Me.rbNei37 = New System.Windows.Forms.RadioButton()
         Me.rbJa37 = New System.Windows.Forms.RadioButton()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.lbM7 = New System.Windows.Forms.Label()
+        Me.lbF7 = New System.Windows.Forms.Label()
         Me.btnPrev7 = New System.Windows.Forms.Button()
         Me.btnNext7 = New System.Windows.Forms.Button()
         Me.Panel38 = New System.Windows.Forms.Panel()
@@ -220,6 +234,7 @@ Partial Class QuestForm
         Me.rbNei42 = New System.Windows.Forms.RadioButton()
         Me.rbJa42 = New System.Windows.Forms.RadioButton()
         Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.lbF8 = New System.Windows.Forms.Label()
         Me.Panel45 = New System.Windows.Forms.Panel()
         Me.rbNei45 = New System.Windows.Forms.RadioButton()
         Me.rbJa45 = New System.Windows.Forms.RadioButton()
@@ -239,6 +254,7 @@ Partial Class QuestForm
         Me.btnPrev8 = New System.Windows.Forms.Button()
         Me.btnNext8 = New System.Windows.Forms.Button()
         Me.TabPage9 = New System.Windows.Forms.TabPage()
+        Me.lbM9 = New System.Windows.Forms.Label()
         Me.Panel49 = New System.Windows.Forms.Panel()
         Me.rbNei49 = New System.Windows.Forms.RadioButton()
         Me.rbJa49 = New System.Windows.Forms.RadioButton()
@@ -246,6 +262,8 @@ Partial Class QuestForm
         Me.btnPrev9 = New System.Windows.Forms.Button()
         Me.btnNext9 = New System.Windows.Forms.Button()
         Me.TabPage10 = New System.Windows.Forms.TabPage()
+        Me.lbM10 = New System.Windows.Forms.Label()
+        Me.lbF10 = New System.Windows.Forms.Label()
         Me.Panel50 = New System.Windows.Forms.Panel()
         Me.rbNei50 = New System.Windows.Forms.RadioButton()
         Me.rbJa50 = New System.Windows.Forms.RadioButton()
@@ -288,6 +306,9 @@ Partial Class QuestForm
         Me.qu59 = New System.Windows.Forms.Label()
         Me.btnPrev10 = New System.Windows.Forms.Button()
         Me.btnFinish = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbFShow = New System.Windows.Forms.Label()
+        Me.lbMShow = New System.Windows.Forms.Label()
         Me.QuestionRound.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -373,7 +394,7 @@ Partial Class QuestForm
         Me.QuestionRound.Controls.Add(Me.TabPage9)
         Me.QuestionRound.Controls.Add(Me.TabPage10)
         Me.QuestionRound.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.QuestionRound.Location = New System.Drawing.Point(11, 45)
+        Me.QuestionRound.Location = New System.Drawing.Point(105, 137)
         Me.QuestionRound.Margin = New System.Windows.Forms.Padding(2)
         Me.QuestionRound.Name = "QuestionRound"
         Me.QuestionRound.SelectedIndex = 0
@@ -382,6 +403,8 @@ Partial Class QuestForm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.lbM1)
+        Me.TabPage1.Controls.Add(Me.lbF1)
         Me.TabPage1.Controls.Add(Me.Panel1)
         Me.TabPage1.Controls.Add(Me.Panel2)
         Me.TabPage1.Controls.Add(Me.Panel3)
@@ -398,6 +421,26 @@ Partial Class QuestForm
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "TabPage1"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'lbM1
+        '
+        Me.lbM1.AutoSize = True
+        Me.lbM1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM1.Location = New System.Drawing.Point(455, 520)
+        Me.lbM1.Name = "lbM1"
+        Me.lbM1.Size = New System.Drawing.Size(158, 23)
+        Me.lbM1.TabIndex = 2
+        Me.lbM1.Text = "Spørsmål 1-6 av 55"
+        '
+        'lbF1
+        '
+        Me.lbF1.AutoSize = True
+        Me.lbF1.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF1.Location = New System.Drawing.Point(455, 520)
+        Me.lbF1.Name = "lbF1"
+        Me.lbF1.Size = New System.Drawing.Size(158, 23)
+        Me.lbF1.TabIndex = 1
+        Me.lbF1.Text = "Spørsmål 1-6 av 58"
         '
         'Panel1
         '
@@ -709,6 +752,8 @@ Partial Class QuestForm
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.lbM2)
+        Me.TabPage2.Controls.Add(Me.lbF2)
         Me.TabPage2.Controls.Add(Me.Panel7)
         Me.TabPage2.Controls.Add(Me.Panel8)
         Me.TabPage2.Controls.Add(Me.Panel9)
@@ -725,6 +770,26 @@ Partial Class QuestForm
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'lbM2
+        '
+        Me.lbM2.AutoSize = True
+        Me.lbM2.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM2.Location = New System.Drawing.Point(455, 520)
+        Me.lbM2.Name = "lbM2"
+        Me.lbM2.Size = New System.Drawing.Size(168, 23)
+        Me.lbM2.TabIndex = 4
+        Me.lbM2.Text = "Spørsmål 7-11 av 55"
+        '
+        'lbF2
+        '
+        Me.lbF2.AutoSize = True
+        Me.lbF2.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF2.Location = New System.Drawing.Point(455, 520)
+        Me.lbF2.Name = "lbF2"
+        Me.lbF2.Size = New System.Drawing.Size(168, 23)
+        Me.lbF2.TabIndex = 3
+        Me.lbF2.Text = "Spørsmål 7-11 av 58"
         '
         'Panel7
         '
@@ -1001,6 +1066,8 @@ Partial Class QuestForm
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.lbM3)
+        Me.TabPage3.Controls.Add(Me.lbF3)
         Me.TabPage3.Controls.Add(Me.Panel12)
         Me.TabPage3.Controls.Add(Me.Panel13)
         Me.TabPage3.Controls.Add(Me.Panel14)
@@ -1021,6 +1088,26 @@ Partial Class QuestForm
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "TabPage3"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'lbM3
+        '
+        Me.lbM3.AutoSize = True
+        Me.lbM3.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM3.Location = New System.Drawing.Point(455, 520)
+        Me.lbM3.Name = "lbM3"
+        Me.lbM3.Size = New System.Drawing.Size(178, 23)
+        Me.lbM3.TabIndex = 6
+        Me.lbM3.Text = "Spørsmål 12-20 av 55"
+        '
+        'lbF3
+        '
+        Me.lbF3.AutoSize = True
+        Me.lbF3.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF3.Location = New System.Drawing.Point(455, 520)
+        Me.lbF3.Name = "lbF3"
+        Me.lbF3.Size = New System.Drawing.Size(178, 23)
+        Me.lbF3.TabIndex = 5
+        Me.lbF3.Text = "Spørsmål 12-20 av 58"
         '
         'Panel12
         '
@@ -1478,6 +1565,8 @@ Partial Class QuestForm
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.lbM4)
+        Me.TabPage4.Controls.Add(Me.lbF4)
         Me.TabPage4.Controls.Add(Me.btnNext4)
         Me.TabPage4.Controls.Add(Me.btnPrev4)
         Me.TabPage4.Controls.Add(Me.Panel21)
@@ -1496,6 +1585,26 @@ Partial Class QuestForm
         Me.TabPage4.TabIndex = 8
         Me.TabPage4.Text = "TabPage4"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'lbM4
+        '
+        Me.lbM4.AutoSize = True
+        Me.lbM4.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM4.Location = New System.Drawing.Point(455, 520)
+        Me.lbM4.Name = "lbM4"
+        Me.lbM4.Size = New System.Drawing.Size(178, 23)
+        Me.lbM4.TabIndex = 127
+        Me.lbM4.Text = "Spørsmål 21-28 av 55"
+        '
+        'lbF4
+        '
+        Me.lbF4.AutoSize = True
+        Me.lbF4.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF4.Location = New System.Drawing.Point(455, 520)
+        Me.lbF4.Name = "lbF4"
+        Me.lbF4.Size = New System.Drawing.Size(178, 23)
+        Me.lbF4.TabIndex = 126
+        Me.lbF4.Text = "Spørsmål 21-28 av 58"
         '
         'btnNext4
         '
@@ -1901,6 +2010,8 @@ Partial Class QuestForm
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.lbM5)
+        Me.TabPage5.Controls.Add(Me.lbF5)
         Me.TabPage5.Controls.Add(Me.btnNext5)
         Me.TabPage5.Controls.Add(Me.btnPrev5)
         Me.TabPage5.Controls.Add(Me.Panel29)
@@ -1913,6 +2024,26 @@ Partial Class QuestForm
         Me.TabPage5.TabIndex = 3
         Me.TabPage5.Text = "TabPage5"
         Me.TabPage5.UseVisualStyleBackColor = True
+        '
+        'lbM5
+        '
+        Me.lbM5.AutoSize = True
+        Me.lbM5.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM5.Location = New System.Drawing.Point(455, 520)
+        Me.lbM5.Name = "lbM5"
+        Me.lbM5.Size = New System.Drawing.Size(152, 23)
+        Me.lbM5.TabIndex = 129
+        Me.lbM5.Text = "Spørsmål 29 av 55"
+        '
+        'lbF5
+        '
+        Me.lbF5.AutoSize = True
+        Me.lbF5.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF5.Location = New System.Drawing.Point(454, 520)
+        Me.lbF5.Name = "lbF5"
+        Me.lbF5.Size = New System.Drawing.Size(152, 23)
+        Me.lbF5.TabIndex = 128
+        Me.lbF5.Text = "Spørsmål 29 av 58"
         '
         'btnNext5
         '
@@ -1986,6 +2117,8 @@ Partial Class QuestForm
         'TabPage6
         '
         Me.TabPage6.BackColor = System.Drawing.Color.White
+        Me.TabPage6.Controls.Add(Me.lbM6)
+        Me.TabPage6.Controls.Add(Me.lbF6)
         Me.TabPage6.Controls.Add(Me.btnPrev6)
         Me.TabPage6.Controls.Add(Me.Panel30)
         Me.TabPage6.Controls.Add(Me.btnNext6)
@@ -2004,6 +2137,26 @@ Partial Class QuestForm
         Me.TabPage6.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage6.TabIndex = 4
         Me.TabPage6.Text = "TabPage6"
+        '
+        'lbM6
+        '
+        Me.lbM6.AutoSize = True
+        Me.lbM6.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM6.Location = New System.Drawing.Point(455, 520)
+        Me.lbM6.Name = "lbM6"
+        Me.lbM6.Size = New System.Drawing.Size(178, 23)
+        Me.lbM6.TabIndex = 129
+        Me.lbM6.Text = "Spørsmål 30-37 av 55"
+        '
+        'lbF6
+        '
+        Me.lbF6.AutoSize = True
+        Me.lbF6.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF6.Location = New System.Drawing.Point(455, 520)
+        Me.lbF6.Name = "lbF6"
+        Me.lbF6.Size = New System.Drawing.Size(178, 23)
+        Me.lbF6.TabIndex = 128
+        Me.lbF6.Text = "Spørsmål 30-37 av 58"
         '
         'btnPrev6
         '
@@ -2409,6 +2562,8 @@ Partial Class QuestForm
         '
         'TabPage7
         '
+        Me.TabPage7.Controls.Add(Me.lbM7)
+        Me.TabPage7.Controls.Add(Me.lbF7)
         Me.TabPage7.Controls.Add(Me.btnPrev7)
         Me.TabPage7.Controls.Add(Me.btnNext7)
         Me.TabPage7.Controls.Add(Me.Panel38)
@@ -2426,6 +2581,26 @@ Partial Class QuestForm
         Me.TabPage7.TabIndex = 9
         Me.TabPage7.Text = "TabPage7"
         Me.TabPage7.UseVisualStyleBackColor = True
+        '
+        'lbM7
+        '
+        Me.lbM7.AutoSize = True
+        Me.lbM7.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM7.Location = New System.Drawing.Point(455, 520)
+        Me.lbM7.Name = "lbM7"
+        Me.lbM7.Size = New System.Drawing.Size(178, 23)
+        Me.lbM7.TabIndex = 131
+        Me.lbM7.Text = "Spørsmål 38-44 av 55"
+        '
+        'lbF7
+        '
+        Me.lbF7.AutoSize = True
+        Me.lbF7.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF7.Location = New System.Drawing.Point(455, 520)
+        Me.lbF7.Name = "lbF7"
+        Me.lbF7.Size = New System.Drawing.Size(178, 23)
+        Me.lbF7.TabIndex = 130
+        Me.lbF7.Text = "Spørsmål 38-44 av 58"
         '
         'btnPrev7
         '
@@ -2776,6 +2951,8 @@ Partial Class QuestForm
         '
         'TabPage8
         '
+        Me.TabPage8.Controls.Add(Me.lbFShow)
+        Me.TabPage8.Controls.Add(Me.lbF8)
         Me.TabPage8.Controls.Add(Me.Panel45)
         Me.TabPage8.Controls.Add(Me.Panel46)
         Me.TabPage8.Controls.Add(Me.Panel47)
@@ -2791,6 +2968,16 @@ Partial Class QuestForm
         Me.TabPage8.TabIndex = 5
         Me.TabPage8.Text = "TabPage8"
         Me.TabPage8.UseVisualStyleBackColor = True
+        '
+        'lbF8
+        '
+        Me.lbF8.AutoSize = True
+        Me.lbF8.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF8.Location = New System.Drawing.Point(455, 520)
+        Me.lbF8.Name = "lbF8"
+        Me.lbF8.Size = New System.Drawing.Size(178, 23)
+        Me.lbF8.TabIndex = 133
+        Me.lbF8.Text = "Spørsmål 45-48 av 58"
         '
         'Panel45
         '
@@ -3006,6 +3193,8 @@ Partial Class QuestForm
         '
         'TabPage9
         '
+        Me.TabPage9.Controls.Add(Me.lbMShow)
+        Me.TabPage9.Controls.Add(Me.lbM9)
         Me.TabPage9.Controls.Add(Me.Panel49)
         Me.TabPage9.Controls.Add(Me.btnPrev9)
         Me.TabPage9.Controls.Add(Me.btnNext9)
@@ -3018,6 +3207,16 @@ Partial Class QuestForm
         Me.TabPage9.TabIndex = 6
         Me.TabPage9.Text = "TabPage9"
         Me.TabPage9.UseVisualStyleBackColor = True
+        '
+        'lbM9
+        '
+        Me.lbM9.AutoSize = True
+        Me.lbM9.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM9.Location = New System.Drawing.Point(455, 520)
+        Me.lbM9.Name = "lbM9"
+        Me.lbM9.Size = New System.Drawing.Size(152, 23)
+        Me.lbM9.TabIndex = 133
+        Me.lbM9.Text = "Spørsmål 45 av 55"
         '
         'Panel49
         '
@@ -3090,6 +3289,8 @@ Partial Class QuestForm
         '
         'TabPage10
         '
+        Me.TabPage10.Controls.Add(Me.lbM10)
+        Me.TabPage10.Controls.Add(Me.lbF10)
         Me.TabPage10.Controls.Add(Me.Panel50)
         Me.TabPage10.Controls.Add(Me.Panel51)
         Me.TabPage10.Controls.Add(Me.Panel52)
@@ -3111,6 +3312,26 @@ Partial Class QuestForm
         Me.TabPage10.TabIndex = 7
         Me.TabPage10.Text = "TabPage10"
         Me.TabPage10.UseVisualStyleBackColor = True
+        '
+        'lbM10
+        '
+        Me.lbM10.AutoSize = True
+        Me.lbM10.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbM10.Location = New System.Drawing.Point(455, 520)
+        Me.lbM10.Name = "lbM10"
+        Me.lbM10.Size = New System.Drawing.Size(178, 23)
+        Me.lbM10.TabIndex = 133
+        Me.lbM10.Text = "Spørsmål 46-55 av 55"
+        '
+        'lbF10
+        '
+        Me.lbF10.AutoSize = True
+        Me.lbF10.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbF10.Location = New System.Drawing.Point(455, 520)
+        Me.lbF10.Name = "lbF10"
+        Me.lbF10.Size = New System.Drawing.Size(178, 23)
+        Me.lbF10.TabIndex = 132
+        Me.lbF10.Text = "Spørsmål 49-58 av 58"
         '
         'Panel50
         '
@@ -3608,16 +3829,48 @@ Partial Class QuestForm
         Me.btnFinish.Text = "Ferdig"
         Me.btnFinish.UseVisualStyleBackColor = True
         '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Calibri", 27.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(510, 54)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(231, 45)
+        Me.Label1.TabIndex = 123
+        Me.Label1.Text = "Spørreskjema"
+        '
+        'lbFShow
+        '
+        Me.lbFShow.AutoSize = True
+        Me.lbFShow.Font = New System.Drawing.Font("Calibri Light", 26.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbFShow.Location = New System.Drawing.Point(285, 245)
+        Me.lbFShow.Name = "lbFShow"
+        Me.lbFShow.Size = New System.Drawing.Size(471, 42)
+        Me.lbFShow.TabIndex = 134
+        Me.lbFShow.Text = "Denne siden besvares av kvinner"
+        '
+        'lbMShow
+        '
+        Me.lbMShow.AutoSize = True
+        Me.lbMShow.Font = New System.Drawing.Font("Calibri Light", 26.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbMShow.Location = New System.Drawing.Point(285, 245)
+        Me.lbMShow.Name = "lbMShow"
+        Me.lbMShow.Size = New System.Drawing.Size(448, 42)
+        Me.lbMShow.TabIndex = 135
+        Me.lbMShow.Text = "Denne siden besvares av menn"
+        '
         'QuestForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1101, 693)
+        Me.ClientSize = New System.Drawing.Size(1297, 803)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.QuestionRound)
         Me.Name = "QuestForm"
         Me.Text = "QuestForm"
         Me.QuestionRound.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         Me.Panel2.ResumeLayout(False)
@@ -3631,6 +3884,7 @@ Partial Class QuestForm
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
+        Me.TabPage2.PerformLayout()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel8.ResumeLayout(False)
@@ -3642,6 +3896,7 @@ Partial Class QuestForm
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.Panel12.ResumeLayout(False)
         Me.Panel12.PerformLayout()
         Me.Panel13.ResumeLayout(False)
@@ -3661,6 +3916,7 @@ Partial Class QuestForm
         Me.Panel20.ResumeLayout(False)
         Me.Panel20.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
+        Me.TabPage4.PerformLayout()
         Me.Panel21.ResumeLayout(False)
         Me.Panel21.PerformLayout()
         Me.Panel22.ResumeLayout(False)
@@ -3678,9 +3934,11 @@ Partial Class QuestForm
         Me.Panel26.ResumeLayout(False)
         Me.Panel26.PerformLayout()
         Me.TabPage5.ResumeLayout(False)
+        Me.TabPage5.PerformLayout()
         Me.Panel29.ResumeLayout(False)
         Me.Panel29.PerformLayout()
         Me.TabPage6.ResumeLayout(False)
+        Me.TabPage6.PerformLayout()
         Me.Panel30.ResumeLayout(False)
         Me.Panel30.PerformLayout()
         Me.Panel31.ResumeLayout(False)
@@ -3698,6 +3956,7 @@ Partial Class QuestForm
         Me.Panel37.ResumeLayout(False)
         Me.Panel37.PerformLayout()
         Me.TabPage7.ResumeLayout(False)
+        Me.TabPage7.PerformLayout()
         Me.Panel38.ResumeLayout(False)
         Me.Panel38.PerformLayout()
         Me.Panel39.ResumeLayout(False)
@@ -3713,6 +3972,7 @@ Partial Class QuestForm
         Me.Panel42.ResumeLayout(False)
         Me.Panel42.PerformLayout()
         Me.TabPage8.ResumeLayout(False)
+        Me.TabPage8.PerformLayout()
         Me.Panel45.ResumeLayout(False)
         Me.Panel45.PerformLayout()
         Me.Panel46.ResumeLayout(False)
@@ -3722,9 +3982,11 @@ Partial Class QuestForm
         Me.Panel48.ResumeLayout(False)
         Me.Panel48.PerformLayout()
         Me.TabPage9.ResumeLayout(False)
+        Me.TabPage9.PerformLayout()
         Me.Panel49.ResumeLayout(False)
         Me.Panel49.PerformLayout()
         Me.TabPage10.ResumeLayout(False)
+        Me.TabPage10.PerformLayout()
         Me.Panel50.ResumeLayout(False)
         Me.Panel50.PerformLayout()
         Me.Panel51.ResumeLayout(False)
@@ -3746,6 +4008,7 @@ Partial Class QuestForm
         Me.Panel59.ResumeLayout(False)
         Me.Panel59.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -4015,4 +4278,25 @@ Partial Class QuestForm
     Friend WithEvents qu59 As Label
     Friend WithEvents btnPrev10 As Button
     Friend WithEvents btnFinish As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents lbF1 As Label
+    Friend WithEvents lbM1 As Label
+    Friend WithEvents lbM2 As Label
+    Friend WithEvents lbF2 As Label
+    Friend WithEvents lbM3 As Label
+    Friend WithEvents lbF3 As Label
+    Friend WithEvents lbM4 As Label
+    Friend WithEvents lbF4 As Label
+    Friend WithEvents lbM5 As Label
+    Friend WithEvents lbF5 As Label
+    Friend WithEvents lbM6 As Label
+    Friend WithEvents lbF6 As Label
+    Friend WithEvents lbM7 As Label
+    Friend WithEvents lbF7 As Label
+    Friend WithEvents lbF8 As Label
+    Friend WithEvents lbM9 As Label
+    Friend WithEvents lbM10 As Label
+    Friend WithEvents lbF10 As Label
+    Friend WithEvents lbFShow As Label
+    Friend WithEvents lbMShow As Label
 End Class
