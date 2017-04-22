@@ -25,9 +25,8 @@ Public Class UserPage
 & "Uid=g_oops_03;" _
 & "Pwd=mczmmM3N;")
     'forskjellige variabler som blir forklart her eller lengre ned i koden
-    'dags dato som må være på riktig format, TodayDForm --> TodaysDateFormat
+    'dags dato som må være på riktig format
     Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
-    Public todaysP1 As String = Date.Now.AddDays(+1)
     'dot består av Date og Time, men disse er ikke satt enda.
     Public dot As String = " "
     'newApp er 
@@ -368,21 +367,21 @@ Public Class UserPage
         'setter verifySSN lik tekstboksen hvor de ansatte har tastet inn personnummeret
         verifySSN = ssNumber
         lblLastDrain.Text = " "
-        Me.DTPOrder.MinDate = todaysP1
-        Try
-                tilkobling.Open()
-                'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
-                Dim sql As New MySqlCommand("Select last_drain From Blood_Data Where ss_number =" & ssNumber & " ", tilkobling)
-                Dim da As New MySqlDataAdapter
-                Dim interntabell As New DataTable
-                da.SelectCommand = sql
-                da.Fill(interntabell)
-                tilkobling.Close()
 
-                Dim rad As DataRow
-                'last drain lagres som datetime
-                Dim last_drain As DateTime
-                Dim LastDrainP90 As DateTime
+        Try
+            tilkobling.Open()
+            'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
+            Dim sql As New MySqlCommand("Select last_drain From Blood_Data Where ss_number =" & ssNumber & " ", tilkobling)
+            Dim da As New MySqlDataAdapter
+            Dim interntabell As New DataTable
+            da.SelectCommand = sql
+            da.Fill(interntabell)
+            tilkobling.Close()
+
+            Dim rad As DataRow
+            'last drain lagres som datetime
+            Dim last_drain As DateTime
+            Dim LastDrainP90 As DateTime
             For Each rad In interntabell.Rows
 
                 last_drain = rad("last_drain")
@@ -392,49 +391,48 @@ Public Class UserPage
                 Me.DTPOrder.MinDate = LastDrainP90
                 lblLastDrain.Text = last_drain
             Next rad
-
         Catch feilmelding As MySqlException
-                MsgBox("Feil ved uthenting av siste tapping     " &
-             feilmelding.Message)
-            Finally
-                tilkobling.Dispose()
-            End Try
+            MsgBox("Feil ved uthenting av siste tapping     " &
+         feilmelding.Message)
+        Finally
+            tilkobling.Dispose()
+        End Try
 
-            Try
-                'her tilbakestilles lblnxtApp.text i tilfellet at ansatte skifter person nummer og at deres info ikke skal være igjen.
-                lblnxtApp.Text = "Ikke satt opp"
-                tilkobling.Open()
-                'sql spørringen henter ut cal_id, time, og dag fra calenderen basert på max(cal_id) til et personnummer
-                Dim sql As New MySqlCommand("Select cal_id, day, time From Calendar Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & ssNumber & ")", tilkobling)
-                Dim da As New MySqlDataAdapter
-                Dim interntabell As New DataTable
+        Try
+            'her tilbakestilles lblnxtApp.text i tilfellet at ansatte skifter person nummer og at deres info ikke skal være igjen.
+            lblnxtApp.Text = "Ikke satt opp"
+            tilkobling.Open()
+            'sql spørringen henter ut cal_id, time, og dag fra calenderen basert på max(cal_id) til et personnummer
+            Dim sql As New MySqlCommand("Select cal_id, day, time From Calendar Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & ssNumber & ")", tilkobling)
+            Dim da As New MySqlDataAdapter
+            Dim interntabell As New DataTable
 
-                da.SelectCommand = sql
-                da.Fill(interntabell)
-                tilkobling.Close()
+            da.SelectCommand = sql
+            da.Fill(interntabell)
+            tilkobling.Close()
 
-                Dim rad As DataRow
-                Dim day, time, cal_id As String
-                For Each rad In interntabell.Rows
+            Dim rad As DataRow
+            Dim day, time, cal_id As String
+            For Each rad In interntabell.Rows
 
-                    cal_id = rad("cal_id")
-                    day = rad("day")
-                    time = rad("time")
-                    'opptaderer dot (Date og Time) slik at brukeren får feedback på neste time.
-                    dot = day + " " + time
-                    'lblnxtApp er labelen som viser neste time.
-                    lblnxtApp.Text = dot
-                    cancel = cal_id
+                cal_id = rad("cal_id")
+                day = rad("day")
+                time = rad("time")
+                'opptaderer dot (Date og Time) slik at brukeren får feedback på neste time.
+                dot = day + " " + time
+                'lblnxtApp er labelen som viser neste time.
+                lblnxtApp.Text = dot
+                cancel = cal_id
 
-                Next rad
-            Catch feilmelding As MySqlException
-                MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
-             feilmelding.Message)
-                'dot nullstilles
-                dot = " "
-            Finally
-                tilkobling.Dispose()
-            End Try
+            Next rad
+        Catch feilmelding As MySqlException
+            MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
+         feilmelding.Message)
+            'dot nullstilles
+            dot = " "
+        Finally
+            tilkobling.Dispose()
+        End Try
 
     End Sub
 #Region "pao Verify Social Security Number"

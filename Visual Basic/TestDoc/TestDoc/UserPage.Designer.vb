@@ -199,7 +199,7 @@ Partial Class UserPage
         Me.Label15.Location = New System.Drawing.Point(468, 549)
         Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(878, 42)
+        Me.Label15.Size = New System.Drawing.Size(852, 42)
         Me.Label15.TabIndex = 14
         Me.Label15.Text = resources.GetString("Label15.Text")
         '
@@ -222,7 +222,7 @@ Partial Class UserPage
         Me.Label13.Location = New System.Drawing.Point(466, 464)
         Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(950, 42)
+        Me.Label13.Size = New System.Drawing.Size(924, 42)
         Me.Label13.TabIndex = 12
         Me.Label13.Text = resources.GetString("Label13.Text")
         '
@@ -245,7 +245,7 @@ Partial Class UserPage
         Me.Label11.Location = New System.Drawing.Point(476, 381)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(917, 42)
+        Me.Label11.Size = New System.Drawing.Size(900, 42)
         Me.Label11.TabIndex = 10
         Me.Label11.Text = resources.GetString("Label11.Text")
         '
@@ -256,7 +256,7 @@ Partial Class UserPage
         Me.Label10.Location = New System.Drawing.Point(476, 323)
         Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(923, 84)
+        Me.Label10.Size = New System.Drawing.Size(906, 63)
         Me.Label10.TabIndex = 9
         Me.Label10.Text = resources.GetString("Label10.Text")
         '
@@ -267,7 +267,7 @@ Partial Class UserPage
         Me.Label9.Location = New System.Drawing.Point(477, 264)
         Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(980, 84)
+        Me.Label9.Size = New System.Drawing.Size(963, 63)
         Me.Label9.TabIndex = 8
         Me.Label9.Text = resources.GetString("Label9.Text")
         '
@@ -278,9 +278,8 @@ Partial Class UserPage
         Me.Label8.Location = New System.Drawing.Point(478, 223)
         Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(954, 42)
+        Me.Label8.Size = New System.Drawing.Size(0, 21)
         Me.Label8.TabIndex = 7
-        Me.Label8.Text = resources.GetString("Label8.Text")
         '
         'Label7
         '
@@ -289,7 +288,7 @@ Partial Class UserPage
         Me.Label7.Location = New System.Drawing.Point(479, 180)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(901, 42)
+        Me.Label7.Size = New System.Drawing.Size(884, 42)
         Me.Label7.TabIndex = 6
         Me.Label7.Text = resources.GetString("Label7.Text")
         '
@@ -661,7 +660,7 @@ Partial Class UserPage
         Me.txtbxTime.MaxDropDownItems = 12
         Me.txtbxTime.Name = "txtbxTime"
         Me.txtbxTime.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtbxTime.Size = New System.Drawing.Size(75, 34)
+        Me.txtbxTime.Size = New System.Drawing.Size(71, 34)
         Me.txtbxTime.TabIndex = 69
         Me.txtbxTime.Text = "08:00"
         '

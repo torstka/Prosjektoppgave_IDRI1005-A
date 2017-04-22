@@ -157,7 +157,7 @@ Public Class Statistics
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnBack.Click
-        Me.Hide()
+        Me.Close()
         EPage.Show()
     End Sub
 End Class

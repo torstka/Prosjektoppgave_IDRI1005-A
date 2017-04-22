@@ -22,17 +22,17 @@ Partial Class Statistics
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title1 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
-        Dim Title2 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
-        Dim ChartArea3 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend3 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series3 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea4 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend4 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series4 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title3 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea5 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend5 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series5 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim Title4 As System.Windows.Forms.DataVisualization.Charting.Title = New System.Windows.Forms.DataVisualization.Charting.Title()
+        Dim ChartArea6 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend6 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series6 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.dgvBloodType = New System.Windows.Forms.DataGridView()
         Me.CBType = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.CG = New System.Windows.Forms.DataVisualization.Charting.Chart()
@@ -69,55 +69,55 @@ Partial Class Statistics
         '
         Me.CBType.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.CBType.BackColor = System.Drawing.Color.Silver
-        ChartArea1.Name = "ChartArea1"
-        Me.CBType.ChartAreas.Add(ChartArea1)
-        Legend1.Name = "Legend1"
-        Me.CBType.Legends.Add(Legend1)
+        ChartArea4.Name = "ChartArea1"
+        Me.CBType.ChartAreas.Add(ChartArea4)
+        Legend4.Name = "Legend1"
+        Me.CBType.Legends.Add(Legend4)
         Me.CBType.Location = New System.Drawing.Point(33, 66)
         Me.CBType.Name = "CBType"
         Me.CBType.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
-        Series1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Series1.ChartArea = "ChartArea1"
-        Series1.Color = System.Drawing.Color.Crimson
-        Series1.IsVisibleInLegend = False
-        Series1.LabelAngle = 90
-        Series1.Legend = "Legend1"
-        Series1.Name = "BLODTYPER"
-        Series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
-        Me.CBType.Series.Add(Series1)
+        Series4.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Series4.ChartArea = "ChartArea1"
+        Series4.Color = System.Drawing.Color.Crimson
+        Series4.IsVisibleInLegend = False
+        Series4.LabelAngle = 90
+        Series4.Legend = "Legend1"
+        Series4.Name = "BLODTYPER"
+        Series4.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
+        Me.CBType.Series.Add(Series4)
         Me.CBType.Size = New System.Drawing.Size(543, 637)
         Me.CBType.TabIndex = 13
         Me.CBType.Text = "Chart1"
-        Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title1.Name = "Title1"
-        Title1.Text = "Blodtypene spesifisert"
-        Me.CBType.Titles.Add(Title1)
+        Title3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title3.Name = "Title1"
+        Title3.Text = "Blodtypene spesifisert"
+        Me.CBType.Titles.Add(Title3)
         '
         'CG
         '
         Me.CG.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CG.BackColor = System.Drawing.Color.Silver
-        ChartArea2.Name = "ChartArea1"
-        Me.CG.ChartAreas.Add(ChartArea2)
-        Legend2.Name = "Legend1"
-        Me.CG.Legends.Add(Legend2)
+        ChartArea5.Name = "ChartArea1"
+        Me.CG.ChartAreas.Add(ChartArea5)
+        Legend5.Name = "Legend1"
+        Me.CG.Legends.Add(Legend5)
         Me.CG.Location = New System.Drawing.Point(626, 66)
         Me.CG.Name = "CG"
-        Series2.BorderColor = System.Drawing.Color.Yellow
-        Series2.ChartArea = "ChartArea1"
-        Series2.Color = System.Drawing.Color.DarkTurquoise
-        Series2.IsVisibleInLegend = False
-        Series2.Legend = "Legend1"
-        Series2.Name = "KJØNNSFORDELING"
-        Me.CG.Series.Add(Series2)
+        Series5.BorderColor = System.Drawing.Color.Yellow
+        Series5.ChartArea = "ChartArea1"
+        Series5.Color = System.Drawing.Color.DarkTurquoise
+        Series5.IsVisibleInLegend = False
+        Series5.Legend = "Legend1"
+        Series5.Name = "KJØNNSFORDELING"
+        Me.CG.Series.Add(Series5)
         Me.CG.Size = New System.Drawing.Size(560, 637)
         Me.CG.TabIndex = 14
         Me.CG.Text = "Chart1"
-        Title2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Title2.Name = "Title1"
-        Title2.Text = "Fordelingen mellom Menn & Kvinner"
-        Me.CG.Titles.Add(Title2)
+        Title4.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Title4.Name = "Title1"
+        Title4.Text = "Fordelingen mellom Menn & Kvinner"
+        Me.CG.Titles.Add(Title4)
         '
         'dgvGender
         '
@@ -142,18 +142,18 @@ Partial Class Statistics
         '
         'CBlodtype
         '
-        Me.CBlodtype.BackColor = System.Drawing.Color.LightGray
-        ChartArea3.Name = "ChartArea1"
-        Me.CBlodtype.ChartAreas.Add(ChartArea3)
-        Legend3.Name = "Legend1"
-        Me.CBlodtype.Legends.Add(Legend3)
+        Me.CBlodtype.BackColor = System.Drawing.Color.Silver
+        ChartArea6.Name = "ChartArea1"
+        Me.CBlodtype.ChartAreas.Add(ChartArea6)
+        Legend6.Name = "Legend1"
+        Me.CBlodtype.Legends.Add(Legend6)
         Me.CBlodtype.Location = New System.Drawing.Point(33, 66)
         Me.CBlodtype.Name = "CBlodtype"
-        Series3.ChartArea = "ChartArea1"
-        Series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
-        Series3.Legend = "Legend1"
-        Series3.Name = "Blodtyper"
-        Me.CBlodtype.Series.Add(Series3)
+        Series6.ChartArea = "ChartArea1"
+        Series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie
+        Series6.Legend = "Legend1"
+        Series6.Name = "Blodtyper"
+        Me.CBlodtype.Series.Add(Series6)
         Me.CBlodtype.Size = New System.Drawing.Size(543, 637)
         Me.CBlodtype.TabIndex = 18
         Me.CBlodtype.Text = "Chart1"
@@ -243,10 +243,10 @@ Partial Class Statistics
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
         Me.AutoSize = True
         Me.ClientSize = New System.Drawing.Size(1353, 836)
+        Me.Controls.Add(Me.btnSignOut)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.btnBack)
-        Me.Controls.Add(Me.btnSignOut)
         Me.Name = "Statistics"
         Me.Text = "Statistics"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
