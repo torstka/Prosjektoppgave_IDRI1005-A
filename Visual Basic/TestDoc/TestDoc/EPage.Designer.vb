@@ -95,6 +95,7 @@ Partial Class EPage
         Me.btnOrderApp = New System.Windows.Forms.Button()
         Me.btnSignOut = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblVelgtime = New System.Windows.Forms.Label()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -162,8 +163,9 @@ Partial Class EPage
         'cbPlasmaCount
         '
         Me.cbPlasmaCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbPlasmaCount.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbPlasmaCount.FormattingEnabled = True
-        Me.cbPlasmaCount.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.cbPlasmaCount.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5"})
         Me.cbPlasmaCount.Location = New System.Drawing.Point(151, 168)
         Me.cbPlasmaCount.Name = "cbPlasmaCount"
         Me.cbPlasmaCount.Size = New System.Drawing.Size(121, 37)
@@ -172,8 +174,9 @@ Partial Class EPage
         'cbCellsCount
         '
         Me.cbCellsCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbCellsCount.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbCellsCount.FormattingEnabled = True
-        Me.cbCellsCount.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.cbCellsCount.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5"})
         Me.cbCellsCount.Location = New System.Drawing.Point(152, 121)
         Me.cbCellsCount.Name = "cbCellsCount"
         Me.cbCellsCount.Size = New System.Drawing.Size(121, 37)
@@ -182,8 +185,9 @@ Partial Class EPage
         'cbPlateletsCount
         '
         Me.cbPlateletsCount.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cbPlateletsCount.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbPlateletsCount.FormattingEnabled = True
-        Me.cbPlateletsCount.Items.AddRange(New Object() {"1", "2", "3", "4", "5"})
+        Me.cbPlateletsCount.Items.AddRange(New Object() {"0", "1", "2", "3", "4", "5"})
         Me.cbPlateletsCount.Location = New System.Drawing.Point(153, 74)
         Me.cbPlateletsCount.Name = "cbPlateletsCount"
         Me.cbPlateletsCount.Size = New System.Drawing.Size(121, 37)
@@ -428,6 +432,7 @@ Partial Class EPage
         '
         'txtLastDrain
         '
+        Me.txtLastDrain.Enabled = False
         Me.txtLastDrain.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtLastDrain.Location = New System.Drawing.Point(183, 181)
         Me.txtLastDrain.Margin = New System.Windows.Forms.Padding(1)
@@ -756,6 +761,7 @@ Partial Class EPage
         '
         'gbCalendar
         '
+        Me.gbCalendar.Controls.Add(Me.lblVelgtime)
         Me.gbCalendar.Controls.Add(Me.Label22)
         Me.gbCalendar.Controls.Add(Me.Label23)
         Me.gbCalendar.Controls.Add(Me.lblLastDrain)
@@ -769,9 +775,10 @@ Partial Class EPage
         Me.gbCalendar.Controls.Add(Me.DTPOrder)
         Me.gbCalendar.Controls.Add(Me.txtbxTime)
         Me.gbCalendar.Controls.Add(Me.btnOrderApp)
-        Me.gbCalendar.Location = New System.Drawing.Point(412, 147)
+        Me.gbCalendar.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.gbCalendar.Location = New System.Drawing.Point(413, 100)
         Me.gbCalendar.Name = "gbCalendar"
-        Me.gbCalendar.Size = New System.Drawing.Size(567, 408)
+        Me.gbCalendar.Size = New System.Drawing.Size(567, 490)
         Me.gbCalendar.TabIndex = 98
         Me.gbCalendar.TabStop = False
         Me.gbCalendar.Text = "Kalender"
@@ -779,7 +786,8 @@ Partial Class EPage
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(66, 77)
+        Me.Label22.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label22.Location = New System.Drawing.Point(101, 139)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(71, 29)
         Me.Label22.TabIndex = 101
@@ -788,7 +796,8 @@ Partial Class EPage
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(66, 144)
+        Me.Label23.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label23.Location = New System.Drawing.Point(38, 192)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(134, 29)
         Me.Label23.TabIndex = 100
@@ -797,42 +806,47 @@ Partial Class EPage
         'lblLastDrain
         '
         Me.lblLastDrain.AutoSize = True
-        Me.lblLastDrain.Location = New System.Drawing.Point(201, 135)
+        Me.lblLastDrain.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblLastDrain.Location = New System.Drawing.Point(212, 195)
         Me.lblLastDrain.Name = "lblLastDrain"
-        Me.lblLastDrain.Size = New System.Drawing.Size(20, 29)
+        Me.lblLastDrain.Size = New System.Drawing.Size(18, 26)
         Me.lblLastDrain.TabIndex = 99
         Me.lblLastDrain.Text = "-"
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(201, 77)
+        Me.lblName.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblName.Location = New System.Drawing.Point(212, 142)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(20, 29)
+        Me.lblName.Size = New System.Drawing.Size(18, 26)
         Me.lblName.TabIndex = 97
         Me.lblName.Text = "-"
         '
         'btnVSSN
         '
-        Me.btnVSSN.Location = New System.Drawing.Point(426, 34)
+        Me.btnVSSN.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnVSSN.Location = New System.Drawing.Point(428, 75)
         Me.btnVSSN.Name = "btnVSSN"
-        Me.btnVSSN.Size = New System.Drawing.Size(125, 42)
+        Me.btnVSSN.Size = New System.Drawing.Size(93, 35)
         Me.btnVSSN.TabIndex = 96
         Me.btnVSSN.Text = "Valider"
         Me.btnVSSN.UseVisualStyleBackColor = True
         '
         'txtbxSSNV
         '
-        Me.txtbxSSNV.Location = New System.Drawing.Point(202, 38)
+        Me.txtbxSSNV.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxSSNV.Location = New System.Drawing.Point(213, 77)
         Me.txtbxSSNV.MaxLength = 11
         Me.txtbxSSNV.Name = "txtbxSSNV"
-        Me.txtbxSSNV.Size = New System.Drawing.Size(209, 37)
+        Me.txtbxSSNV.Size = New System.Drawing.Size(209, 33)
         Me.txtbxSSNV.TabIndex = 95
         '
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(66, 277)
+        Me.Label24.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label24.Location = New System.Drawing.Point(47, 313)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(125, 29)
         Me.Label24.TabIndex = 94
@@ -840,9 +854,10 @@ Partial Class EPage
         '
         'btnCApp
         '
-        Me.btnCApp.Location = New System.Drawing.Point(241, 349)
+        Me.btnCApp.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCApp.Location = New System.Drawing.Point(356, 386)
         Me.btnCApp.Name = "btnCApp"
-        Me.btnCApp.Size = New System.Drawing.Size(129, 52)
+        Me.btnCApp.Size = New System.Drawing.Size(147, 52)
         Me.btnCApp.TabIndex = 73
         Me.btnCApp.Text = "Avbestill"
         Me.btnCApp.UseVisualStyleBackColor = True
@@ -850,56 +865,59 @@ Partial Class EPage
         'lblnxtApp
         '
         Me.lblnxtApp.AutoSize = True
-        Me.lblnxtApp.Location = New System.Drawing.Point(201, 277)
+        Me.lblnxtApp.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblnxtApp.Location = New System.Drawing.Point(208, 316)
         Me.lblnxtApp.Name = "lblnxtApp"
-        Me.lblnxtApp.Size = New System.Drawing.Size(137, 29)
+        Me.lblnxtApp.Size = New System.Drawing.Size(120, 26)
         Me.lblnxtApp.TabIndex = 92
         Me.lblnxtApp.Text = "Ikke satt opp"
         '
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(27, 41)
+        Me.Label25.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label25.Location = New System.Drawing.Point(2, 80)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(169, 29)
+        Me.Label25.Size = New System.Drawing.Size(170, 29)
         Me.Label25.TabIndex = 60
-        Me.Label25.Text = "Person nummer"
+        Me.Label25.Text = "Personnummer:"
         '
         'DTPOrder
         '
         Me.DTPOrder.CalendarFont = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPOrder.CustomFormat = "yyyy/MM/dd"
         Me.DTPOrder.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right
-        Me.DTPOrder.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DTPOrder.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPOrder.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DTPOrder.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DTPOrder.Location = New System.Drawing.Point(51, 210)
+        Me.DTPOrder.Location = New System.Drawing.Point(213, 249)
         Me.DTPOrder.MaxDate = New Date(3017, 12, 31, 0, 0, 0, 0)
         Me.DTPOrder.MinDate = New Date(2017, 3, 1, 0, 0, 0, 0)
         Me.DTPOrder.Name = "DTPOrder"
         Me.DTPOrder.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.DTPOrder.Size = New System.Drawing.Size(163, 31)
+        Me.DTPOrder.Size = New System.Drawing.Size(163, 33)
         Me.DTPOrder.TabIndex = 58
         Me.DTPOrder.Value = New Date(2017, 3, 24, 0, 0, 0, 0)
         '
         'txtbxTime
         '
-        Me.txtbxTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtbxTime.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxTime.FormattingEnabled = True
         Me.txtbxTime.Items.AddRange(New Object() {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"})
-        Me.txtbxTime.Location = New System.Drawing.Point(227, 213)
+        Me.txtbxTime.Location = New System.Drawing.Point(401, 248)
         Me.txtbxTime.MaxDropDownItems = 12
         Me.txtbxTime.Name = "txtbxTime"
         Me.txtbxTime.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtbxTime.Size = New System.Drawing.Size(71, 28)
+        Me.txtbxTime.Size = New System.Drawing.Size(80, 34)
         Me.txtbxTime.TabIndex = 69
         Me.txtbxTime.Text = "08:00"
         '
         'btnOrderApp
         '
-        Me.btnOrderApp.Location = New System.Drawing.Point(32, 349)
+        Me.btnOrderApp.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnOrderApp.Location = New System.Drawing.Point(127, 386)
         Me.btnOrderApp.Name = "btnOrderApp"
-        Me.btnOrderApp.Size = New System.Drawing.Size(182, 52)
+        Me.btnOrderApp.Size = New System.Drawing.Size(147, 52)
         Me.btnOrderApp.TabIndex = 62
         Me.btnOrderApp.Text = "Bestill Time"
         Me.btnOrderApp.UseVisualStyleBackColor = True
@@ -924,6 +942,16 @@ Partial Class EPage
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
+        '
+        'lblVelgtime
+        '
+        Me.lblVelgtime.AutoSize = True
+        Me.lblVelgtime.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVelgtime.Location = New System.Drawing.Point(61, 253)
+        Me.lblVelgtime.Name = "lblVelgtime"
+        Me.lblVelgtime.Size = New System.Drawing.Size(115, 29)
+        Me.lblVelgtime.TabIndex = 99
+        Me.lblVelgtime.Text = "Velg time: "
         '
         'EPage
         '
@@ -1033,4 +1061,5 @@ Partial Class EPage
     Friend WithEvents DTPOrder As DateTimePicker
     Friend WithEvents txtbxTime As ComboBox
     Friend WithEvents btnOrderApp As Button
+    Friend WithEvents lblVelgtime As Label
 End Class

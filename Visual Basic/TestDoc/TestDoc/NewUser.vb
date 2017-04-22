@@ -9,14 +9,7 @@ Public Class NewUser
                              (ClientSize.Height - Regbox.Height) \ 2)
     End Sub
 
-    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtPersonnr.KeyPress, txtPhone.KeyPress, txtPostnr.KeyPress, txtyob.KeyPress
-        'Hindrer at bruker taster inn annet enn tal i relevante tekstbokser
-        If Asc(e.KeyChar) <> 8 Then
-            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
-                e.Handled = True
-            End If
-        End If
-    End Sub
+
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles BckBtn.Click
         'Knapp som klarerer skjema og går tilbake til "form1"
@@ -26,24 +19,7 @@ Public Class NewUser
     Private Sub txtyob_TextChanged(sender As Object, e As EventArgs) Handles txtyob.Click
         txtyob.Clear()
     End Sub
-    Private Sub txtFirstname_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFirstname.TextChanged, txtLastname.TextChanged, txtAdress.TextChanged
-        'Gjør om første bokstav i relevante tekstbokser til Upper-Case
-        If txtFirstname.Text <> "" Then
-            Dim a As String = txtFirstname.Text
-            txtFirstname.Text = (StrConv(a, VbStrConv.ProperCase))
-            txtFirstname.Select(txtFirstname.Text.Length, 0)
-        End If
-        If txtLastname.Text <> "" Then
-            Dim a As String = txtLastname.Text
-            txtLastname.Text = (StrConv(a, VbStrConv.ProperCase))
-            txtLastname.Select(txtLastname.Text.Length, 0)
-        End If
-        If txtAdress.Text <> "" Then
-            Dim a As String = txtAdress.Text
-            txtAdress.Text = (StrConv(a, VbStrConv.ProperCase))
-            txtAdress.Select(txtAdress.Text.Length, 0)
-        End If
-    End Sub
+#Region "Alder validering"
     Private Sub Calculate_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RegBtn.Click
         'Denne subben kalkulerer alder basert på hva som blir fylt inn i d relevante combo-/tekstboksene
 
@@ -102,6 +78,34 @@ Public Class NewUser
         End If
 
     End Function
+#End Region
+#Region "Tekstbox Validering"
+    Private Sub txt_TextChanged(sender As Object, e As System.Windows.Forms.KeyPressEventArgs) Handles txtPersonnr.KeyPress, txtPhone.KeyPress, txtPostnr.KeyPress, txtyob.KeyPress
+        'Hindrer at bruker taster inn annet enn tal i relevante tekstbokser
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
+    Private Sub txtFirstname_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFirstname.TextChanged, txtLastname.TextChanged, txtAdress.TextChanged
+        'Gjør om første bokstav i relevante tekstbokser til Upper-Case
+        If txtFirstname.Text <> "" Then
+            Dim a As String = txtFirstname.Text
+            txtFirstname.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtFirstname.Select(txtFirstname.Text.Length, 0)
+        End If
+        If txtLastname.Text <> "" Then
+            Dim a As String = txtLastname.Text
+            txtLastname.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtLastname.Select(txtLastname.Text.Length, 0)
+        End If
+        If txtAdress.Text <> "" Then
+            Dim a As String = txtAdress.Text
+            txtAdress.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtAdress.Select(txtAdress.Text.Length, 0)
+        End If
+    End Sub
 
     Public Function ValidFornavn() As Boolean
         'Validerer at tekstboksen inneholder mer enn et tegn
@@ -260,10 +264,10 @@ Public Class NewUser
             Return True
         End If
     End Function
-
+#End Region
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles RegBtn.Click
-        'Deklarerer tekstboksene
+
         Dim firstname = txtFirstname.Text
         Dim lastname = txtLastname.Text
         Dim ssNumber = txtPersonnr.Text
@@ -279,27 +283,27 @@ Public Class NewUser
 
         'Kjører funksjonene for validering
         If Not ValidFornavn() Then
-            MsgBox(Me.RegError.GetError(txtFirstname))
+            MsgBox(Me.RegError.GetError(txtFirstname), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ValidEtternavn() Then
-            MsgBox(Me.RegError.GetError(txtLastname))
+            MsgBox(Me.RegError.GetError(txtLastname), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ValidPersnr() Then
-            MsgBox(Me.RegError.GetError(txtPersonnr))
+            MsgBox(Me.RegError.GetError(txtPersonnr), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not Totalage() Then
-            MsgBox(Me.RegError.GetError(txtyob))
+            MsgBox(Me.RegError.GetError(txtyob), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ValidAdresse() Then
-            MsgBox(Me.RegError.GetError(txtAdress))
+            MsgBox(Me.RegError.GetError(txtAdress), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ValidPostnr() Then
-            MsgBox(Me.RegError.GetError(txtPostnr))
+            MsgBox(Me.RegError.GetError(txtPostnr), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ValidEmail() Then
-            MsgBox(Me.RegError.GetError(txtEmail))
+            MsgBox(Me.RegError.GetError(txtEmail), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ValidTelefon() Then
-            MsgBox(Me.RegError.GetError(txtPhone))
+            MsgBox(Me.RegError.GetError(txtPhone), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ValidPass() Then
-            MsgBox(Me.RegError.GetError(txtPassword))
+            MsgBox(Me.RegError.GetError(txtPassword), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ConfirmPass() Then
-            MsgBox(Me.RegError.GetError(txtConfirmPassword))
+            MsgBox(Me.RegError.GetError(txtConfirmPassword), MsgBoxStyle.Critical, "Oops!")
         ElseIf Not ValidKjønn() Then
-            MsgBox(Me.RegError.GetError(rbFemale))
+            MsgBox(Me.RegError.GetError(rbFemale), MsgBoxStyle.Critical, "Oops!")
         Else
             ' om validering er godkjent kaller knappetrykket på "NewUser" klassen og registrerer data i databasen
 

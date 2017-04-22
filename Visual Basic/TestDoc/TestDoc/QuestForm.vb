@@ -212,13 +212,13 @@ Public Class QuestForm
             End While
 
             If lastDrain >= threeMounthAgo Then
-                MsgBox("Det er kortere enn tre måneder siden sist tapping, og du må derfor vente.")
+                MsgBox("Det er kortere enn tre måneder siden sist tapping, og du må derfor vente.", MsgBoxStyle.Information, "Spørreskjema")
             ElseIf lastDrain = today2 Then
-                MsgBox("Du har allerede svart på spørreskjema i dag. Vennligst vent til du blir kalt inn.")
+                MsgBox("Du har allerede svart på spørreskjema i dag. Vennligst vent til du blir kalt inn.", MsgBoxStyle.Information, "Spørreskjema")
 
             ElseIf UserPage.TextBox1.Text = "Livstid" Then
-                MsgBox("Du har karantene på Livstid og kan ikke gi blod")
-                Else
+                MsgBox("Du har karantene på Livstid og kan ikke gi blod", MsgBoxStyle.Critical, "Oops!")
+            Else
                 UserPage.Hide()
                 Me.Show()
             End If
@@ -342,14 +342,14 @@ Public Class QuestForm
                 comm = New MySqlCommand(query, connection)
                 reader = comm.ExecuteReader
                 ' updateQuarantine()
-                MsgBox("Svarene dine vil nå bli behandlet, og du kan gå til helsesjekken.")
+                MsgBox("Svarene dine vil nå bli behandlet, og du kan gå til helsesjekken.", MsgBoxStyle.Information, "Spørreskjema")
             Else
                 'Henter svarene fra ArraylistQuery og fyller databasen med disse svarene. 1=Ja, 0=Nei. Vi bruker tall for å bruke mindre plass i databasen.
                 Dim query As String = "INSERT INTO Answer(date, status, ss_number, qu1, qu2, qu3, qu4, qu5, qu6, qu7, qu8, qu9, qu10, qu11, qu12, qu13, qu14, qu15, qu16, qu17, qu18, qu19, qu20, qu21, qu22, qu23, qu24, qu25, qu26, qu27, qu28, qu29, qu30, qu31, qu32, qu33, qu34, qu35, qu36, qu37, qu38, qu39, qu40, qu41, qu42, qu43, qu44, qu45, qu46, qu47, qu48, qu49, qu50, qu51, qu52, qu53, qu54, qu55, qu56, qu57, qu58, qu59) VALUES ('" & todayDate & "','" & notApproved & "','" & ssn & "','" & arrayListQuery(0) & "','" & arrayListQuery(1) & "','" & arrayListQuery(2) & "','" & arrayListQuery(3) & "','" & arrayListQuery(4) & "','" & arrayListQuery(5) & "','" & arrayListQuery(6) & "','" & arrayListQuery(7) & "','" & arrayListQuery(8) & "','" & arrayListQuery(9) & "','" & arrayListQuery(10) & "','" & arrayListQuery(11) & "','" & arrayListQuery(12) & "','" & arrayListQuery(13) & "','" & arrayListQuery(14) & "','" & arrayListQuery(15) & "','" & arrayListQuery(16) & "','" & arrayListQuery(17) & "','" & arrayListQuery(18) & "','" & arrayListQuery(19) & "','" & arrayListQuery(20) & "','" & arrayListQuery(21) & "','" & arrayListQuery(22) & "','" & arrayListQuery(23) & "','" & arrayListQuery(24) & "','" & arrayListQuery(25) & "','" & arrayListQuery(26) & "','" & arrayListQuery(27) & "','" & arrayListQuery(28) & "','" & arrayListQuery(29) & "','" & arrayListQuery(30) & "','" & arrayListQuery(31) & "','" & arrayListQuery(32) & "','" & arrayListQuery(33) & "','" & arrayListQuery(34) & "','" & arrayListQuery(35) & "','" & arrayListQuery(36) & "','" & arrayListQuery(37) & "','" & arrayListQuery(38) & "','" & arrayListQuery(39) & "','" & arrayListQuery(40) & "','" & arrayListQuery(41) & "','" & arrayListQuery(42) & "','" & arrayListQuery(43) & "','" & arrayListQuery(44) & "','" & arrayListQuery(45) & "','" & arrayListQuery(46) & "','" & arrayListQuery(47) & "','" & arrayListQuery(48) & "','" & arrayListQuery(49) & "','" & arrayListQuery(50) & "','" & arrayListQuery(51) & "','" & arrayListQuery(52) & "','" & arrayListQuery(53) & "','" & arrayListQuery(54) & "','" & arrayListQuery(55) & "','" & arrayListQuery(56) & "','" & arrayListQuery(57) & "','" & arrayListQuery(58) & "')"
                 comm = New MySqlCommand(query, connection)
                 reader = comm.ExecuteReader
                 'updateQuarantine()
-                MsgBox("Svarene er lagret")
+                MsgBox("Svarene er lagret", MsgBoxStyle.Information, "Spørreskjema")
             End If
             UserPage.Show()
 

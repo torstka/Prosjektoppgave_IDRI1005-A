@@ -46,7 +46,6 @@ Partial Class NewUser
         Me.RegBtn = New System.Windows.Forms.Button()
         Me.RegError = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Regbox = New System.Windows.Forms.GroupBox()
-        Me.Label13 = New System.Windows.Forms.Label()
         Me.txtmob = New System.Windows.Forms.ComboBox()
         Me.txtdob = New System.Windows.Forms.ComboBox()
         Me.Age = New System.Windows.Forms.TextBox()
@@ -275,10 +274,8 @@ Partial Class NewUser
         '
         'Regbox
         '
-        Me.Regbox.Controls.Add(Me.Label13)
         Me.Regbox.Controls.Add(Me.txtmob)
         Me.Regbox.Controls.Add(Me.txtdob)
-        Me.Regbox.Controls.Add(Me.Age)
         Me.Regbox.Controls.Add(Me.PictureBox1)
         Me.Regbox.Controls.Add(Me.Label14)
         Me.Regbox.Controls.Add(Me.txtyob)
@@ -305,6 +302,7 @@ Partial Class NewUser
         Me.Regbox.Controls.Add(Me.Label8)
         Me.Regbox.Controls.Add(Me.txtPhone)
         Me.Regbox.Controls.Add(Me.Label4)
+        Me.Regbox.Controls.Add(Me.Age)
         Me.Regbox.Font = New System.Drawing.Font("Calibri", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Regbox.Location = New System.Drawing.Point(12, 9)
         Me.Regbox.Name = "Regbox"
@@ -312,16 +310,6 @@ Partial Class NewUser
         Me.Regbox.TabIndex = 47
         Me.Regbox.TabStop = False
         Me.Regbox.Text = "Registreringsskjema"
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Calibri", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(966, 153)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(190, 14)
-        Me.Label13.TabIndex = 64
-        Me.Label13.Text = "Rekner ut alder (Dinna blir skjult)"
         '
         'txtmob
         '
@@ -350,9 +338,10 @@ Partial Class NewUser
         '
         'Age
         '
-        Me.Age.Location = New System.Drawing.Point(907, 135)
+        Me.Age.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Age.Location = New System.Drawing.Point(1031, 248)
         Me.Age.Name = "Age"
-        Me.Age.Size = New System.Drawing.Size(54, 40)
+        Me.Age.Size = New System.Drawing.Size(39, 27)
         Me.Age.TabIndex = 60
         '
         'PictureBox1
@@ -474,5 +463,4 @@ Partial Class NewUser
     Friend WithEvents Age As TextBox
     Friend WithEvents txtdob As ComboBox
     Friend WithEvents txtmob As ComboBox
-    Friend WithEvents Label13 As Label
 End Class

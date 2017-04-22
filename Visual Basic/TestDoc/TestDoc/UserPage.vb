@@ -16,224 +16,10 @@ Public Class UserPage
     Dim rad As DataRow
 
     Public ssNumber = LogIn.txtPersonnr.Text
-
-
-#Region "pao public var"
-    Public tilkobling As New MySqlConnection(
-"Server=mysql.stud.iie.ntnu.no;" _
-& "Database=g_oops_03;" _
-& "Uid=g_oops_03;" _
-& "Pwd=mczmmM3N;")
-    'forskjellige variabler som blir forklart her eller lengre ned i koden
-    'dags dato som må være på riktig format
-    Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
-    'dot består av Date og Time, men disse er ikke satt enda.
-    Public dot As String = " "
-    'newApp er 
-    Public newAPP As String
-    Public txtbxSSN As String
-
-    'brukes til å hente ut OrdreID som må være 0 eller over 0 for å 
-    Public busy, cancel As Integer
-    Public DTPFormat As String
-    Public verifySSN As String
-
-
-#End Region
-
-    Private Sub TextBox1_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtFirstName.KeyDown
-        If e.KeyCode = Keys.Enter Then     'her kan man flytte med bruk av ENTER mellom textboxer, av hensyn til nedsatt bevegelighet
-            txtLastName.Focus()                 'gjelder for alle 8 følgende koder nedover
-        End If
-    End Sub
-    Private Sub TextBox2_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtLastName.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtAddress.Focus()
-        End If
-    End Sub
-    Private Sub TextBox3_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtAddress.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtZipcode.Focus()
-        End If
-    End Sub
-    Private Sub TextBox4_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtZipcode.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtPhone.Focus()
-        End If
-    End Sub
-    Private Sub TextBox5_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPhone.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtMail.Focus()
-        End If
-    End Sub
-    Private Sub TextBox6_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtMail.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtPwd.Focus()
-        End If
-    End Sub
-    Private Sub TextBox7_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtPwd.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            txtConPwd.Focus()
-            e.Handled = e.SuppressKeyPress = True
-        End If
-    End Sub
-    Private Sub TextBox8_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles txtConPwd.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            btnChangeData.Focus()
-            e.Handled = e.SuppressKeyPress = True
-        End If
-    End Sub
-    'denne suben fjerner ding-lyden som normalt kommer når man manipulerer entertasten
-    Const CARRIAGE_RETURN As Char = Chr(13)
-
-    Private Sub NoReturnTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
-
-        If e.KeyChar = CARRIAGE_RETURN Then
-            e.Handled = True
-            System.Windows.Forms.SendKeys.Send(vbTab)
-        End If
-
-    End Sub
-    Public Sub showData()
-
-        Try
-            connection.Open()
-            Dim query As String = "SELECT firstname, lastname, phone, e_mail, address, zip_code, password FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
-            cmd = New MySqlCommand(query, connection)
-            adapter = New MySqlDataAdapter
-            adapter.SelectCommand = cmd
-            adapter.Fill(dtable)
-
-            For Each rad In dtable.Rows
-                txtFirstName.Text = (rad("firstname")).ToString()
-                txtLastName.Text = (rad("lastname")).ToString()
-                txtPhone.Text = (rad("phone")).ToString()
-                txtMail.Text = (rad("e_mail")).ToString()
-                txtAddress.Text = (rad("address")).ToString()
-                txtZipcode.Text = (rad("zip_code")).ToString()
-                txtPwd.Text = (rad("password")).ToString()
-                txtConPwd.Text = txtPwd.Text
-            Next
-        Catch ex As MySqlException
-            MsgBox(ex.Message)         'tilfelle det oppstår en feil
-            connection.Close()
-        Finally
-            connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
-        End Try
-    End Sub
-
-    Public Function ConfirmPass() As Boolean
-        'Validerer at innholdet i "passord" og "bekreft passord" tekstboksene er identiske
-        If Not txtPwd.Text.Equals(txtConPwd.Text) Then
-            Me.regerror.SetError(txtConPwd, "Passordene må være like")
-            Return False
-        Else
-            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
-            Me.regerror.SetError(txtConPwd, "")
-            Return True
-        End If
-    End Function
-
-    Private Function ValidPass() As Boolean
-        'Validerer at tekstboksen inneholder mer enn et tegn
-        Dim Pass = txtPwd.Text
-        If Pass.Length = 0 Then
-            Me.regerror.SetError(txtPwd, "Vennligst fyll ut et passord")
-            Return False
-            'Validerer at tekstboksen inneholder minst 8 tegn
-        ElseIf Pass.Length < 8 Then
-            Me.regerror.SetError(txtPwd, "Passord må bestå av minst 8 Tegn")
-            Return False
-        Else
-            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
-            Me.regerror.SetError(txtPwd, "")
-            Return True
-        End If
-    End Function
-
-    Public Sub updateData()
-
-        If Not ConfirmPass() Then
-            MsgBox(Me.regerror.GetError(txtConPwd))
-        ElseIf Not ValidPass() Then
-            MsgBox(Me.regerror.GetError(txtPwd))
-        Else
-
-            Try
-                connection.Open()
-                Dim query As String = "UPDATE User SET firstname = @firstname,lastname = @lastname,phone = @phone, e_mail = @email, address = @address, zip_code = @zipcode, password = @password where ss_number = '" & ssNumber & "'"
-                cmd = New MySqlCommand(query, connection)
-
-                cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
-                cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
-                cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
-                cmd.Parameters.AddWithValue("@email", txtMail.Text)
-                cmd.Parameters.AddWithValue("@address", txtAddress.Text)
-                cmd.Parameters.AddWithValue("@zipcode", txtZipcode.Text)
-                cmd.Parameters.AddWithValue("@password", txtPwd.Text)
-
-                reader = cmd.ExecuteReader
-                confirmPwd.Hide()
-                txtConPwd.Hide()
-                MessageBox.Show("Data oppdatert")
-                reader.Close()
-            Catch ex As Exception
-                MessageBox.Show(ex.Message)
-                connection.Close()
-            Finally
-                connection.Dispose()
-            End Try
-        End If
-
-    End Sub
-
-
-    Public Sub showBloodData()
-        Try
-            '  connection.Open()
-            Dim query As String = "SELECT blood_type, hb, iron_value, last_drain FROM Blood_Data WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
-            cmd = New MySqlCommand(query, connection)
-            adapter = New MySqlDataAdapter
-            adapter.SelectCommand = cmd
-            adapter.Fill(dtable)
-
-            For Each rad In dtable.Rows
-                txtBtype.Text = (rad("blood_type")).ToString()
-                txtHb.Text = (rad("hb")).ToString()
-                txtIronValue.Text = (rad("iron_value")).ToString()
-                txtDrain.Text = (rad("last_drain")).ToString()
-            Next
-
-        Catch ex As MySqlException
-            MsgBox(ex.Message)         'tilfelle det oppstår en feil
-            connection.Close()
-
-        Finally
-            connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
-        End Try
-
-    End Sub
-
-    'Public Sub getUser()
-
-    '    connection.Open()
-    '    Dim query As String = "SELECT ss_number, firstname, lastname, quarantine FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
-    '    cmd = New MySqlCommand(query, connection)
-    '    adapter = New MySqlDataAdapter
-    '    adapter.SelectCommand = cmd
-    '    adapter.Fill(dtable)
-
-    '    For Each rad In dtable.Rows
-    '        lblFullName.Text = (rad("firstname") & " " & rad("lastname"))
-    '        lblSSnumber.Text = (rad("ss_number")).ToString()
-    '        TextBox1.Text = (rad("quarantine")).ToString()
-    '    Next
-
-    'End Sub
-
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         verifySSNumber()
+
 
 
 
@@ -259,6 +45,8 @@ Public Class UserPage
         Dim user As New User
         user.getUser()
         showBloodData()
+
+
 
         'Dim showUser As New User
         'showUser.showData(txtFirstName.Text, txtLastName.Text, txtPhone.Text, txtMail.Text, txtAddress.Text, txtZipcode.Text, txtPwd.Text)
@@ -332,6 +120,114 @@ Public Class UserPage
 
 
     End Sub
+
+#Region "pao public var"
+    Public tilkobling As New MySqlConnection(
+"Server=mysql.stud.iie.ntnu.no;" _
+& "Database=g_oops_03;" _
+& "Uid=g_oops_03;" _
+& "Pwd=mczmmM3N;")
+    'forskjellige variabler som blir forklart her eller lengre ned i koden
+    'dags dato som må være på riktig format
+    Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
+    'dot består av Date og Time, men disse er ikke satt enda.
+    Public dot As String = " "
+    'newApp er 
+    Public newAPP As String
+    Public txtbxSSN As String
+
+    'brukes til å hente ut OrdreID som må være 0 eller over 0 for å 
+    Public busy, cancel As Integer
+    Public DTPFormat As String
+    Public verifySSN As String
+
+
+#End Region
+
+    'denne suben fjerner ding-lyden som normalt kommer når man manipulerer entertasten
+    Const CARRIAGE_RETURN As Char = Chr(13)
+
+    Private Sub NoReturnTextBox_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles Me.KeyPress
+
+        If e.KeyChar = CARRIAGE_RETURN Then
+            e.Handled = True
+            System.Windows.Forms.SendKeys.Send(vbTab)
+        End If
+
+    End Sub
+    Public Sub showData()
+
+        Try
+            connection.Open()
+            Dim query As String = "SELECT firstname, lastname, phone, e_mail, address, zip_code, password FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
+            cmd = New MySqlCommand(query, connection)
+            adapter = New MySqlDataAdapter
+            adapter.SelectCommand = cmd
+            adapter.Fill(dtable)
+
+            For Each rad In dtable.Rows
+                txtFirstName.Text = (rad("firstname")).ToString()
+                txtLastName.Text = (rad("lastname")).ToString()
+                txtPhone.Text = (rad("phone")).ToString()
+                txtMail.Text = (rad("e_mail")).ToString()
+                txtAddress.Text = (rad("address")).ToString()
+                txtZipcode.Text = (rad("zip_code")).ToString()
+                txtPwd.Text = (rad("password")).ToString()
+                txtConPwd.Text = txtPwd.Text
+            Next
+        Catch ex As MySqlException
+            MsgBox(ex.Message)         'tilfelle det oppstår en feil
+            connection.Close()
+        Finally
+            connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
+        End Try
+    End Sub
+
+
+    Public Sub showBloodData()
+        Try
+            '  connection.Open()
+            Dim query As String = "SELECT blood_type, hb, iron_value, last_drain FROM Blood_Data WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
+            cmd = New MySqlCommand(query, connection)
+            adapter = New MySqlDataAdapter
+            adapter.SelectCommand = cmd
+            adapter.Fill(dtable)
+
+            For Each rad In dtable.Rows
+                txtBtype.Text = (rad("blood_type")).ToString()
+                txtHb.Text = (rad("hb")).ToString()
+                txtIronValue.Text = (rad("iron_value")).ToString()
+                txtDrain.Text = (rad("last_drain")).ToString()
+            Next
+
+        Catch ex As MySqlException
+            MsgBox(ex.Message)         'tilfelle det oppstår en feil
+            connection.Close()
+
+        Finally
+            connection.Dispose()  'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
+        End Try
+
+    End Sub
+
+    'Public Sub getUser()
+
+    '    connection.Open()
+    '    Dim query As String = "SELECT ss_number, firstname, lastname, quarantine FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
+    '    cmd = New MySqlCommand(query, connection)
+    '    adapter = New MySqlDataAdapter
+    '    adapter.SelectCommand = cmd
+    '    adapter.Fill(dtable)
+
+    '    For Each rad In dtable.Rows
+    '        lblFullName.Text = (rad("firstname") & " " & rad("lastname"))
+    '        lblSSnumber.Text = (rad("ss_number")).ToString()
+    '        TextBox1.Text = (rad("quarantine")).ToString()
+    '    Next
+
+    'End Sub
+
+
     Private Sub btnChangeData_Click(sender As Object, e As EventArgs) Handles btnChangeData.Click
 
         'Dim updateUser As New User
@@ -355,6 +251,7 @@ Public Class UserPage
     End Sub
 
     Private Sub txtPwd_TextChanged(sender As Object, e As EventArgs) Handles txtPwd.Click
+
         confirmPwd.Show()
         txtConPwd.Show()
     End Sub
@@ -371,71 +268,71 @@ Public Class UserPage
         verifySSN = ssNumber
         lblLastDrain.Text = " "
 
-            Try
-                tilkobling.Open()
-                'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
-                Dim sql As New MySqlCommand("Select last_drain From Blood_Data Where ss_number =" & ssNumber & " ", tilkobling)
-                Dim da As New MySqlDataAdapter
-                Dim interntabell As New DataTable
-                da.SelectCommand = sql
-                da.Fill(interntabell)
-                tilkobling.Close()
+        Try
+            tilkobling.Open()
+            'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
+            Dim sql As New MySqlCommand("Select last_drain From Blood_Data Where ss_number =" & ssNumber & " ", tilkobling)
+            Dim da As New MySqlDataAdapter
+            Dim interntabell As New DataTable
+            da.SelectCommand = sql
+            da.Fill(interntabell)
+            tilkobling.Close()
 
-                Dim rad As DataRow
-                'last drain lagres som datetime
-                Dim last_drain As DateTime
-                Dim LastDrainP90 As DateTime
-                For Each rad In interntabell.Rows
+            Dim rad As DataRow
+            'last drain lagres som datetime
+            Dim last_drain As DateTime
+            Dim LastDrainP90 As DateTime
+            For Each rad In interntabell.Rows
 
-                    last_drain = rad("last_drain")
-                    'vi plusser på 91 dager på last drain, og gjør minimumsverdien til DateTimePicker (DTPOrder) til denne variabelen
-                    'slik ungår vi at det vil være mindre enn 3 måneder mellom tappinger.
-                    LastDrainP90 = last_drain.AddDays(+91)
-                    Me.DTPOrder.MinDate = LastDrainP90
-                    lblLastDrain.Text = last_drain
-                Next rad
-            Catch feilmelding As MySqlException
-                MsgBox("Feil ved uthenting av siste tapping     " &
+                last_drain = rad("last_drain")
+                'vi plusser på 91 dager på last drain, og gjør minimumsverdien til DateTimePicker (DTPOrder) til denne variabelen
+                'slik ungår vi at det vil være mindre enn 3 måneder mellom tappinger.
+                LastDrainP90 = last_drain.AddDays(+91)
+                Me.DTPOrder.MinDate = LastDrainP90
+                lblLastDrain.Text = last_drain
+            Next rad
+        Catch feilmelding As MySqlException
+            MsgBox("Feil ved uthenting av siste tapping     " &
              feilmelding.Message)
-            Finally
-                tilkobling.Dispose()
-            End Try
+        Finally
+            tilkobling.Dispose()
+        End Try
 
-            Try
-                'her tilbakestilles lblnxtApp.text i tilfellet at ansatte skifter person nummer og at deres info ikke skal være igjen.
-                lblnxtApp.Text = "Ikke satt opp"
-                tilkobling.Open()
-                'sql spørringen henter ut cal_id, time, og dag fra calenderen basert på max(cal_id) til et personnummer
-                Dim sql As New MySqlCommand("Select cal_id, day, time From Calendar Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & ssNumber & ")", tilkobling)
-                Dim da As New MySqlDataAdapter
-                Dim interntabell As New DataTable
+        Try
+            'her tilbakestilles lblnxtApp.text i tilfellet at ansatte skifter person nummer og at deres info ikke skal være igjen.
+            lblnxtApp.Text = "Ikke satt opp"
+            tilkobling.Open()
+            'sql spørringen henter ut cal_id, time, og dag fra calenderen basert på max(cal_id) til et personnummer
+            Dim sql As New MySqlCommand("Select cal_id, day, time From Calendar Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & ssNumber & ")", tilkobling)
+            Dim da As New MySqlDataAdapter
+            Dim interntabell As New DataTable
 
-                da.SelectCommand = sql
-                da.Fill(interntabell)
-                tilkobling.Close()
+            da.SelectCommand = sql
+            da.Fill(interntabell)
+            tilkobling.Close()
 
-                Dim rad As DataRow
-                Dim day, time, cal_id As String
-                For Each rad In interntabell.Rows
+            Dim rad As DataRow
+            Dim day, time, cal_id As String
+            For Each rad In interntabell.Rows
 
-                    cal_id = rad("cal_id")
-                    day = rad("day")
-                    time = rad("time")
-                    'opptaderer dot (Date og Time) slik at brukeren får feedback på neste time.
-                    dot = day + " " + time
-                    'lblnxtApp er labelen som viser neste time.
-                    lblnxtApp.Text = dot
-                    cancel = cal_id
+                cal_id = rad("cal_id")
+                day = rad("day")
+                time = rad("time")
+                'opptaderer dot (Date og Time) slik at brukeren får feedback på neste time.
+                dot = day + " " + time
+                'lblnxtApp er labelen som viser neste time.
+                lblnxtApp.Text = dot
+                cancel = cal_id
 
-                Next rad
-            Catch feilmelding As MySqlException
-                MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
+            Next rad
+        Catch feilmelding As MySqlException
+            MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
              feilmelding.Message)
-                'dot nullstilles
-                dot = " "
-            Finally
-                tilkobling.Dispose()
-            End Try
+            'dot nullstilles
+            dot = " "
+        Finally
+            tilkobling.Dispose()
+        End Try
 
     End Sub
 #Region "pao Verify Social Security Number"
@@ -478,13 +375,13 @@ Public Class UserPage
         'denne if setningen er omformet slik at de som jobber her kan sette opp time før det er godt tre måneder, i tilfellet at noen ringer inn for ny time.
         If dot = newAPP Then
             'her sjekkes det om man har trykket på bestillingsknappen 2 ganger og kort sagt forsøkt å sette opp samme time 2 ganger.
-            MsgBox("du har allerede denne timen satt opp")
+            MsgBox("Du har allerede denne timen satt opp!", MsgBoxStyle.Information, "Timebestilling")
         ElseIf testCheck1 = False And testcheck2 = False Then
             'her sjekkes det om lblnxtApp IKKE er "Avbestilt" og "Ikke satt opp", om en av de er satt opp er det en time satt opp.
-            MsgBox("time er allerede satt opp")
+            MsgBox("Time er allerede satt opp!", MsgBoxStyle.Information, "Timebestilling")
         ElseIf testCheck1 = True And testcheck2 = True Then
             'her sjekkes det om lblnxtApp ligner på både "avbestilt" OG "Ikke satt opp", dette skal i utgangspunktet ikke være mulig.
-            MsgBox("noe gikk galt med sjekk etter tidligere oppsatt time")
+            MsgBox("Noe gikk galt med sjekk etter tidligere oppsatt time", MsgBoxStyle.Information, "Timebestilling")
 
         ElseIf nxtTapp < newDTPValue Then
             'her sjekkes det at den nye timen er større enn dags dato, som betyr at timen ikke har passert.
@@ -517,7 +414,7 @@ feilmelding.Message)
             End Try
             'her sjekkes det om busy er over 0 og siden busy er en cal_id vil if setningen ikke sette opp timene som er tatt.
             If busy > 1 Then
-                MsgBox("timen er opptatt")
+                MsgBox("Timen er opptatt! Velg en annen dato eller klokkeslett.", MsgBoxStyle.Information, "Timebestilling")
             ElseIf busy = 0 Then
                 Try
                     tilkobling.Open()
@@ -537,6 +434,7 @@ feilmelding.Message)
                     ' lblODate.Text = DTPOrder.Text
                     ' lblOTime.Text = txtbxTime.Text
                     lblnxtApp.Text = DTPOrder.Text + " " + txtbxTime.Text
+                    MsgBox("Time bestilt for dato: " & DTPOrder.Text & vbNewLine & "Klokken: " & txtbxTime.Text & "!", MsgBoxStyle.Information, "Timebestilling")
                 Catch feilmelding As MySqlException
                     MsgBox("Feil ved tilkobling til databasen: bestilling " & feilmelding.Message)
                 Finally
@@ -612,21 +510,233 @@ feilmelding.Message)
                     'lblnxtApp brukes som feedback til brukeren om at timen er avbestilt. 
                     'ved neste innlogging vil det stå "Ikke satt opp" om det ikke er noen time satt opp.
                     lblnxtApp.Text = "Avbestilt"
-
+                    MsgBox("Timen er avbestilt!", MsgBoxStyle.Information, "Timebestilling")
                 Catch feilmelding As MySqlException
                     MsgBox(" kunne ikke slette time fra kalender: " &
-                 feilmelding.Message)
+                 feilmelding.Message, MsgBoxStyle.Information, "Timebestilling")
                 Finally
                     tilkobling.Dispose()
                 End Try
             Else
-                MsgBox("Ingen time å avbestille")
+                MsgBox("Ingen time å avbestille", MsgBoxStyle.Information, "Timebestilling")
             End If
 
         End If
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Dim url As String = “https://giblod.no/default.aspx“
+
+        Process.Start(url)
+    End Sub
+
     Private Sub btnCApp_Click(sender As Object, e As EventArgs) Handles btnCApp.Click
         deleteApp()
     End Sub
 #End Region
+
+#Region "Endre Personinfo tekstbox validering"
+
+    Private Sub txtFirstname_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtFirstName.TextChanged, txtLastName.TextChanged, txtAddress.TextChanged
+        'Gjør om første bokstav i relevante tekstbokser til Upper-Case
+        If txtFirstName.Text <> "" Then
+            Dim a As String = txtFirstName.Text
+            txtFirstName.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtFirstName.Select(txtFirstName.Text.Length, 0)
+        End If
+        If txtLastName.Text <> "" Then
+            Dim a As String = txtLastName.Text
+            txtLastName.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtLastName.Select(txtLastName.Text.Length, 0)
+        End If
+        If txtAddress.Text <> "" Then
+            Dim a As String = txtAddress.Text
+            txtAddress.Text = (StrConv(a, VbStrConv.ProperCase))
+            txtAddress.Select(txtAddress.Text.Length, 0)
+        End If
+    End Sub
+
+    Public Function ValidFornavn() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
+        Dim Fornavn = txtFirstName.Text
+        If Fornavn.Length = 0 Then
+            Me.regerror.SetError(txtFirstName, "Vennligst fyll ut fornavn")
+            Return False
+            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (kun bokstaver)
+        ElseIf Not Regex.IsMatch(Fornavn, "^[\p{L} ]+$") Then
+            Me.regerror.SetError(txtFirstName, "Fornavn kan bare inneholde bokstaver")
+            Return False
+        Else
+            'Om betingelser er møtt, gå videre
+            Me.regerror.SetError(txtFirstName, "")
+            Return True
+        End If
+    End Function
+    Private Function ValidEtternavn() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
+        Dim Etternavn = txtLastName.Text
+        If Etternavn.Length = 0 Then
+            Me.regerror.SetError(txtLastName, "Vennligst fyll ut etternavn")
+            Return False
+            'Validerer at tekstboksen kun inneholder et bestemt sett av tegn (bokstaver)
+        ElseIf Not Regex.IsMatch(Etternavn, "^[\p{L} ]+$") Then
+            Me.regerror.SetError(txtLastName, "Etternavn kan bare inneholde bokstaver")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.regerror.SetError(txtLastName, "")
+            Return True
+        End If
+    End Function
+
+    Private Function ValidAdresse() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
+        Dim Adresse = txtAddress.Text
+        If Adresse.Length = 0 Then
+            Me.regerror.SetError(txtAddress, "Vennligst fyll ut adresse")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.regerror.SetError(txtAddress, "")
+            Return True
+        End If
+    End Function
+    Private Function ValidTelefon() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
+        Dim telefonnr = txtPhone.Text
+        If telefonnr.Length = 0 Then
+            Me.regerror.SetError(txtPhone, "Vennligst fyll ut telefonnummer")
+            Return False
+            'Validerer at tekstboksen inneholder ett bestemt antall tegn (8 tegn)
+        ElseIf Not telefonnr.Length = 8 Then
+            Me.regerror.SetError(txtPhone, "Telefonnummer må bestå av 8 Tall")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.regerror.SetError(txtPhone, "")
+            Return True
+        End If
+    End Function
+    Private Function ValidPostnr() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
+        Dim Postnr = txtZipcode.Text
+        If Postnr.Length = 0 Then
+            Me.regerror.SetError(txtZipcode, "Vennligst fyll ut postnummer")
+            Return False
+            'Validerer at tekstboksen inneholder ett bestemt antall tegn (4 tegn)
+        ElseIf Not Postnr.Length = 4 Then
+            Me.regerror.SetError(txtZipcode, "Postnummer må bestå av 4 tall")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.regerror.SetError(txtZipcode, "")
+            Return True
+        End If
+    End Function
+
+    Private Function ValidEmail() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
+        Dim epost = txtMail.Text
+        If epost.Length = 0 Then
+            Me.regerror.SetError(txtMail, "Vennligst fyll ut E-Post")
+            Return False
+        End If
+        'Validerer at tekstboksen inneholder riktige tegn ("@" og "." i riktig rekkefølge og riktig antall tegn(Ikke mer enn et "@" og "."))
+        Dim errorMessage = "E-Post adresse må være av gyldig format" + ControlChars.Cr +
+            "Eksempel 'olanordmann@eksempel.no' "
+        Me.regerror.SetError(txtMail, errorMessage)
+        Dim indexAt1 = epost.IndexOf("@")
+        Dim indexAt2 = epost.LastIndexOf("@")
+        If indexAt1 < 1 Or Not indexAt1 = indexAt2 Then
+            Return False
+        End If
+        Dim indexDot1 = epost.IndexOf(".", indexAt1)
+        Dim indexDot2 = epost.LastIndexOf(".")
+        If indexDot1 <= indexAt1 + 1 Or Not indexDot2 = indexDot1 Or indexDot1 = epost.Length - 1 Then
+            Return False
+        End If
+        'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+        Me.regerror.SetError(txtMail, "")
+        Return True
+    End Function
+    Public Function ConfirmPass() As Boolean
+        'Validerer at innholdet i "passord" og "bekreft passord" tekstboksene er identiske
+        If Not txtPwd.Text.Equals(txtConPwd.Text) Then
+            Me.regerror.SetError(txtConPwd, "Passordene må være like")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.regerror.SetError(txtConPwd, "")
+            Return True
+        End If
+    End Function
+
+    Private Function ValidPass() As Boolean
+        'Validerer at tekstboksen inneholder mer enn et tegn
+        Dim Pass = txtPwd.Text
+        If Pass.Length = 0 Then
+            Me.regerror.SetError(txtPwd, "Vennligst fyll ut et passord")
+            Return False
+            'Validerer at tekstboksen inneholder minst 8 tegn
+        ElseIf Pass.Length < 8 Then
+            Me.regerror.SetError(txtPwd, "Passord må bestå av minst 8 Tegn")
+            Return False
+        Else
+            'Om betingelser er møtt, fjern "error" og return true (godkjent) verdi
+            Me.regerror.SetError(txtPwd, "")
+            Return True
+        End If
+    End Function
+#End Region
+
+    Public Sub updateData()
+
+        If Not ValidFornavn() Then
+            MsgBox(Me.regerror.GetError(txtFirstName), MsgBoxStyle.Critical, "Oops!")
+        ElseIf Not ValidEtternavn() Then
+            MsgBox(Me.regerror.GetError(txtLastName), MsgBoxStyle.Critical, "Oops!")
+
+        ElseIf Not ValidAdresse() Then
+            MsgBox(Me.regerror.GetError(txtAddress), MsgBoxStyle.Critical, "Oops!")
+        ElseIf Not ValidPostnr() Then
+            MsgBox(Me.regerror.GetError(txtZipcode), MsgBoxStyle.Critical, "Oops!")
+        ElseIf Not ValidEmail() Then
+            MsgBox(Me.regerror.GetError(txtMail), MsgBoxStyle.Critical, "Oops!")
+        ElseIf Not ValidTelefon() Then
+            MsgBox(Me.regerror.GetError(txtPhone), MsgBoxStyle.Critical, "Oops!")
+        ElseIf Not ValidPass() Then
+            MsgBox(Me.regerror.GetError(txtPwd), MsgBoxStyle.Critical, "Oops!")
+        ElseIf Not ConfirmPass() Then
+            MsgBox(Me.regerror.GetError(txtConPwd), MsgBoxStyle.Critical, "Oops!")
+
+        Else
+
+            Try
+                connection.Open()
+                Dim query As String = "UPDATE User SET firstname = @firstname,lastname = @lastname,phone = @phone, e_mail = @email, address = @address, zip_code = @zipcode, password = @password where ss_number = '" & ssNumber & "'"
+                cmd = New MySqlCommand(query, connection)
+
+                cmd.Parameters.AddWithValue("@firstname", txtFirstName.Text)
+                cmd.Parameters.AddWithValue("@lastname", txtLastName.Text)
+                cmd.Parameters.AddWithValue("@phone", txtPhone.Text)
+                cmd.Parameters.AddWithValue("@email", txtMail.Text)
+                cmd.Parameters.AddWithValue("@address", txtAddress.Text)
+                cmd.Parameters.AddWithValue("@zipcode", txtZipcode.Text)
+                cmd.Parameters.AddWithValue("@password", txtPwd.Text)
+
+                reader = cmd.ExecuteReader
+                confirmPwd.Hide()
+                txtConPwd.Hide()
+                MsgBox("Data oppdatert!", MsgBoxStyle.Information, "Vellykket!")
+                reader.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message)
+                connection.Close()
+            Finally
+                connection.Dispose()
+            End Try
+        End If
+
+    End Sub
+
 End Class

@@ -23,6 +23,31 @@ Public Class EPage
     Dim sql2 = New MySqlCommand("SELECT gender,COUNT(*) FROM User GROUP BY gender HAVING COUNT(*)>0 ", connection)
     Public Overrides Property AutoSize As Boolean
 
+    Private Sub EPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        load_table()
+
+        cbPlateletsCount.SelectedIndex = 0
+        cbCellsCount.SelectedIndex = 0
+        cbPlasmaCount.SelectedIndex = 0
+
+        Userinformation.Size = New Size(1550, 750)
+
+        Me.Size = SystemInformation.PrimaryMonitorSize
+        Userinformation.Location = New Point((ClientSize.Width - Userinformation.Width) \ 2,
+                             (ClientSize.Height - Userinformation.Height) \ 2)
+
+        btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
+                             (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
+        gbCalendar.Location = New Point((TabPage3.Width - gbCalendar.Width) \ 2,
+                             (TabPage3.Height - gbCalendar.Height) \ 2)
+
+        dgwUsers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
+        updateStock()
+        showStock()
+
+
+
+    End Sub
 
 #Region "pao public var"
     Public tilkobling As New MySqlConnection(
@@ -73,29 +98,10 @@ Public Class EPage
             connection.Dispose()
 
         End Try
-    End Sub
-    Private Sub EPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        load_table()
-
-        Userinformation.Size = New Size(1550, 750)
-
-        Me.Size = SystemInformation.PrimaryMonitorSize
-        Userinformation.Location = New Point((ClientSize.Width - Userinformation.Width) \ 2,
-                             (ClientSize.Height - Userinformation.Height) \ 2)
-
-        btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
-                             (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
-        gbCalendar.Location = New Point((TabPage3.Width - gbCalendar.Width) \ 2,
-                             (TabPage3.Height - gbCalendar.Height) \ 2)
-        dgwUsers.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells)
-        updateStock()
-        showStock()
-    End Sub
-
-    Private Sub TabPage3_Enter(sender As System.Object, e As System.EventArgs) Handles TabPage3.Enter
-
 
     End Sub
+
+
     Private Sub TabPage1_Enter(sender As System.Object, e As System.EventArgs) Handles TabPage1.Enter
         dtable.Clear()
         interntab.Clear()
@@ -260,13 +266,15 @@ Public Class EPage
         Dim sum = cbPlateletsCount.Text + +cbPlasmaCount.Text + +cbCellsCount.Text
 
         If sum <> 5 Then
-            MsgBox("Donasjonen må tilsammen tilsvare 5 poser")
+            MsgBox("Donasjonen må tilsammen tilsvare 5 poser!", MsgBoxStyle.Critical, "Feil")
 
         ElseIf cbBloodType.Text = "" And txtSSN.Text = "" Then
             MsgBox("Vær vennlig å velg donor", MsgBoxStyle.Critical, "Velg donor")
 
         ElseIf count = 0 Or count2 = 0 Or count3 = 0 Then
             MsgBox("Du må fylle inn alle vediene!", MsgBoxStyle.Critical, "Verdier mangler!")
+        ElseIf Not txtQuarantine.Text = "Godkjent " Then
+            MsgBox("Denne brukeren er i karantene eller har ikke fullført spørreskjema!", MsgBoxStyle.Critical, "Feil")
         Else
 
             Try
@@ -431,13 +439,13 @@ Public Class EPage
                     reader = cmd.ExecuteReader
                     reader.Close()
                 Next
-                MsgBox("Hentet fra lager:" & vbCrLf & vbCrLf & "Blodinfo: " & txtGetBloodInfo.Text & vbCrLf & "Blodtype: " & txtGetBloodType.Text & vbCrLf & "Mengde: " & int & " ml")
+                MsgBox("Hentet fra lager:" & vbCrLf & vbCrLf & "Blodinfo: " & txtGetBloodInfo.Text & vbCrLf & "Blodtype: " & txtGetBloodType.Text & vbCrLf & "Mengde: " & int & " ml", MsgBoxStyle.Information, "Lager")
                 btnGetBlood.Visible = False
                 btnGetOrder.Visible = True
                 clear()
 
             Else
-                MsgBox("Ikke nok på lager")
+                MsgBox("Ikke nok på lager", MsgBoxStyle.Information, "Oops!")
 
             End If
             connection.Close()
@@ -688,7 +696,7 @@ Public Class EPage
             Dim query As String = "DELETE FROM Blood_Data where ss_number = '" & txtSSN.Text & "'"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
-            MsgBox("Slettet bruker:" & vbCrLf & "Fornavn: " & txtFirstname.Text & vbCrLf & "Etternavn: " & txtLastname.Text & vbCrLf & "Personnummer: " & txtSSN.Text)
+            MsgBox("Slettet bruker:" & vbCrLf & "Fornavn: " & txtFirstname.Text & vbCrLf & "Etternavn: " & txtLastname.Text & vbCrLf & "Personnummer: " & txtSSN.Text, MsgBoxStyle.Information, "Bruker slettet")
             connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -703,7 +711,7 @@ Public Class EPage
 
 
         If txtQuarantine.Text = "Livstid " Then
-            MsgBox("Denne brukeren har en karantene på 'Livstid'")
+            MsgBox("Denne brukeren har en karantene på 'Livstid'", MsgBoxStyle.Critical, "Feil")
 
 
         ElseIf txtSSN.Text = "" Then
@@ -722,7 +730,7 @@ Public Class EPage
         Else
             updateBloodData()
             dtable.Clear()
-            load_table()
+            load_dgwUser()
         End If
 
     End Sub
@@ -734,7 +742,8 @@ Public Class EPage
         Else
             deleteUser()
             dtable.Clear()
-            load_table()
+            'load_table()
+            load_dgwUser()
         End If
 
     End Sub
@@ -828,7 +837,7 @@ Public Class EPage
                 Next rad
             Catch feilmelding As MySqlException
                 MsgBox("Feil ved uthenting av siste tapping     " &
-             feilmelding.Message)
+             feilmelding.Message, MsgBoxStyle.Critical, "feil")
             Finally
                 tilkobling.Dispose()
             End Try
@@ -901,7 +910,7 @@ Public Class EPage
             End Try
 
         Else
-            MsgBox("Ugyldig personnummer")
+            MsgBox("Ugyldig personnummer", MsgBoxStyle.Critical, "feil")
         End If
     End Sub
 #Region "pao Verify Social Security Number"
@@ -948,13 +957,13 @@ Public Class EPage
         'denne if setningen er omformet slik at de som jobber her kan sette opp time før det er godt tre måneder, i tilfellet at noen ringer inn for ny time.
         If dot = newAPP Then
             'her sjekkes det om man har trykket på bestillingsknappen 2 ganger og kort sagt forsøkt å sette opp samme time 2 ganger.
-            MsgBox("du har allerede denne timen satt opp")
+            MsgBox("du har allerede denne timen satt opp", MsgBoxStyle.Information, "Kalender")
         ElseIf testCheck1 = False And testcheck2 = False Then
             'her sjekkes det om lblnxtApp IKKE er "Avbestilt" og "Ikke satt opp", om en av de er satt opp er det en time satt opp.
-            MsgBox("time er allerede satt opp")
+            MsgBox("time er allerede satt opp", MsgBoxStyle.Information, "Kalender")
         ElseIf testCheck1 = True And testcheck2 = True Then
             'her sjekkes det om lblnxtApp ligner på både "avbestilt" OG "Ikke satt opp", dette skal i utgangspunktet ikke være mulig.
-            MsgBox("noe gikk galt med sjekk etter tidligere oppsatt time")
+            MsgBox("noe gikk galt med sjekk etter tidligere oppsatt time", MsgBoxStyle.Information, "Kalender")
 
         ElseIf nxtTapp < newDTPValue Then
             'her sjekkes det at den nye timen er større enn dags dato, som betyr at timen ikke har passert.
@@ -987,7 +996,7 @@ feilmelding.Message)
             End Try
             'her sjekkes det om busy er over 0 og siden busy er en cal_id vil if setningen ikke sette opp timene som er tatt.
             If busy > 1 Then
-                MsgBox("timen er opptatt")
+                MsgBox("timen er opptatt", MsgBoxStyle.Information, "Kalender")
             ElseIf busy = 0 Then
                 Try
                     tilkobling.Open()
@@ -1007,6 +1016,7 @@ feilmelding.Message)
                     ' lblODate.Text = DTPOrder.Text
                     ' lblOTime.Text = txtbxTime.Text
                     lblnxtApp.Text = DTPOrder.Text + " " + txtbxTime.Text
+                    MsgBox("Time bestilt for dato: " & DTPOrder.Text & vbNewLine & "Klokken: " & txtbxTime.Text & "!", MsgBoxStyle.Information, "Timebestilling")
                 Catch feilmelding As MySqlException
                     MsgBox("Feil ved tilkobling til databasen: bestilling " & feilmelding.Message)
                 Finally
@@ -1090,11 +1100,13 @@ feilmelding.Message)
                     tilkobling.Dispose()
                 End Try
             Else
-                MsgBox("Ingen time å avbestille")
+                MsgBox("Ingen time å avbestille", MsgBoxStyle.Information, "Feil")
             End If
 
         End If
     End Sub
+
+   
     Private Sub btnCApp_Click(sender As Object, e As EventArgs) Handles btnCApp.Click
         deleteApp()
     End Sub
