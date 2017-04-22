@@ -153,7 +153,7 @@ Partial Class UserPage
         Me.InfoPage.Margin = New System.Windows.Forms.Padding(2)
         Me.InfoPage.Name = "InfoPage"
         Me.InfoPage.Padding = New System.Windows.Forms.Padding(2)
-        Me.InfoPage.Size = New System.Drawing.Size(1954, 717)
+        Me.InfoPage.Size = New System.Drawing.Size(1542, 564)
         Me.InfoPage.TabIndex = 3
         Me.InfoPage.Text = "Kriterier for blodgivning"
         Me.InfoPage.UseVisualStyleBackColor = True
@@ -359,7 +359,7 @@ Partial Class UserPage
         Me.ChangeData.Margin = New System.Windows.Forms.Padding(2)
         Me.ChangeData.Name = "ChangeData"
         Me.ChangeData.Padding = New System.Windows.Forms.Padding(2)
-        Me.ChangeData.Size = New System.Drawing.Size(1954, 717)
+        Me.ChangeData.Size = New System.Drawing.Size(1542, 564)
         Me.ChangeData.TabIndex = 2
         Me.ChangeData.Text = "Endre personopplysninger"
         Me.ChangeData.UseVisualStyleBackColor = True
@@ -661,7 +661,7 @@ Partial Class UserPage
         Me.txtbxTime.MaxDropDownItems = 12
         Me.txtbxTime.Name = "txtbxTime"
         Me.txtbxTime.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txtbxTime.Size = New System.Drawing.Size(71, 34)
+        Me.txtbxTime.Size = New System.Drawing.Size(75, 34)
         Me.txtbxTime.TabIndex = 69
         Me.txtbxTime.Text = "08:00"
         '
@@ -880,7 +880,7 @@ Partial Class UserPage
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.RowHeader
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1671, 953)
+        Me.ClientSize = New System.Drawing.Size(1362, 742)
         Me.Controls.Add(Me.btnSignOut)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLogOut)

@@ -33,6 +33,7 @@ Public Class EPage
     'forskjellige variabler som blir forklart her eller lengre ned i koden
     'dags dato som må være på riktig format
     Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
+    Public todaysP1 As String = Date.Now.AddDays(+1)
     'dot består av Date og Time, men disse er ikke satt enda.
     Public dot As String = " "
     'newApp er 
@@ -801,8 +802,14 @@ Public Class EPage
         If Regex.IsMatch(verifySSN, "^[0-9 ]+$") And verifySSN.Length = 11 Then
             'om personnummeret består av tall og er 11 karakterer langt blir det godkjent
             txtbxSSN = verifySSN
+            'her blir labelen til siste tapping tilbakestilt for vær validering, som er nødvendig for å kunne skifte blodgivere
             lblLastDrain.Text = " "
+            'her blir DateTimePicker satt til dagsdato
 
+            Me.DTPOrder.MinDate = todaysP1
+            'for at ansatte skal få feedback på at kalenderen har en ny minste verdi i 
+            'forhold til personer med relevant last_drain så skiftes den vanlige DTP verdien også.
+            Me.DTPOrder.Value = todaysP1
             Try
                 tilkobling.Open()
                 'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
@@ -814,7 +821,7 @@ Public Class EPage
                 tilkobling.Close()
 
                 Dim rad As DataRow
-                'last drain lagres som datetime
+                'last drain lagres som datetime, og en ny last drain
                 Dim last_drain As DateTime
                 Dim LastDrainP90 As DateTime
                 For Each rad In interntabell.Rows
@@ -825,7 +832,10 @@ Public Class EPage
                     LastDrainP90 = last_drain.AddDays(+91)
                     Me.DTPOrder.MinDate = LastDrainP90
                     lblLastDrain.Text = last_drain
+
+
                 Next rad
+
             Catch feilmelding As MySqlException
                 MsgBox("Feil ved uthenting av siste tapping     " &
              feilmelding.Message)
@@ -917,7 +927,7 @@ Public Class EPage
     'Passord.... : mczmmM3N
     'txt = short for Text
     'LB = short for ListBox
-    'App = short for appointment in regards of naming, buttons, labels in the Cal.vb
+    'App = short for appointment
     'hist = short for history
     'Nxt = short for next
 
@@ -1003,9 +1013,7 @@ feilmelding.Message)
                     da.Fill(interntabell)
                     tilkobling.Close()
 
-                    'lblOdate og lblOtime
-                    ' lblODate.Text = DTPOrder.Text
-                    ' lblOTime.Text = txtbxTime.Text
+
                     lblnxtApp.Text = DTPOrder.Text + " " + txtbxTime.Text
                 Catch feilmelding As MySqlException
                     MsgBox("Feil ved tilkobling til databasen: bestilling " & feilmelding.Message)

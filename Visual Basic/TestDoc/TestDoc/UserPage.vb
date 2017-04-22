@@ -25,8 +25,9 @@ Public Class UserPage
 & "Uid=g_oops_03;" _
 & "Pwd=mczmmM3N;")
     'forskjellige variabler som blir forklart her eller lengre ned i koden
-    'dags dato som må være på riktig format
+    'dags dato som må være på riktig format, TodayDForm --> TodaysDateFormat
     Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
+    Public todaysP1 As String = Date.Now.AddDays(+1)
     'dot består av Date og Time, men disse er ikke satt enda.
     Public dot As String = " "
     'newApp er 
@@ -367,8 +368,8 @@ Public Class UserPage
         'setter verifySSN lik tekstboksen hvor de ansatte har tastet inn personnummeret
         verifySSN = ssNumber
         lblLastDrain.Text = " "
-
-            Try
+        Me.DTPOrder.MinDate = todaysP1
+        Try
                 tilkobling.Open()
                 'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
                 Dim sql As New MySqlCommand("Select last_drain From Blood_Data Where ss_number =" & ssNumber & " ", tilkobling)
@@ -382,16 +383,17 @@ Public Class UserPage
                 'last drain lagres som datetime
                 Dim last_drain As DateTime
                 Dim LastDrainP90 As DateTime
-                For Each rad In interntabell.Rows
+            For Each rad In interntabell.Rows
 
-                    last_drain = rad("last_drain")
-                    'vi plusser på 91 dager på last drain, og gjør minimumsverdien til DateTimePicker (DTPOrder) til denne variabelen
-                    'slik ungår vi at det vil være mindre enn 3 måneder mellom tappinger.
-                    LastDrainP90 = last_drain.AddDays(+91)
-                    Me.DTPOrder.MinDate = LastDrainP90
-                    lblLastDrain.Text = last_drain
-                Next rad
-            Catch feilmelding As MySqlException
+                last_drain = rad("last_drain")
+                'vi plusser på 91 dager på last drain, og gjør minimumsverdien til DateTimePicker (DTPOrder) til denne variabelen
+                'slik ungår vi at det vil være mindre enn 3 måneder mellom tappinger.
+                LastDrainP90 = last_drain.AddDays(+91)
+                Me.DTPOrder.MinDate = LastDrainP90
+                lblLastDrain.Text = last_drain
+            Next rad
+
+        Catch feilmelding As MySqlException
                 MsgBox("Feil ved uthenting av siste tapping     " &
              feilmelding.Message)
             Finally
