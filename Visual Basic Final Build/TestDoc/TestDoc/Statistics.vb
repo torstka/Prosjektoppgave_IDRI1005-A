@@ -19,11 +19,16 @@ Public Class Statistics
         Me.Size = SystemInformation.PrimaryMonitorSize
         GroupBox1.Location = New Point((Me.Width - GroupBox1.Width) \ 2, (Me.Height - GroupBox1.Height) \ 2)
 
-        btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
-                             (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
+        'btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
+        '                     (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
 
-        btnBack.Location = New Point((ClientSize.Width - btnBack.Width) \ 2 + 800,
-                             (ClientSize.Height - btnBack.Height) \ 2 - 450)
+        'btnBack.Location = New Point((ClientSize.Width - btnBack.Width) \ 2 + 800,
+        '                     (ClientSize.Height - btnBack.Height) \ 2 - 450)
+        btnSignOut.Location = New Point((Me.Width - btnSignOut.Width) \ 2 + 525,
+                             (Me.Height - btnSignOut.Height) \ 2 - 415)
+
+        btnBack.Location = New Point((ClientSize.Width - btnBack.Width) \ 2 + 532,
+                           (ClientSize.Height - btnBack.Height) \ 2 - 400)
 
         Try
             connection.Open()

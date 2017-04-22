@@ -28,8 +28,8 @@ Public Class UserPage
         Me.Size = SystemInformation.PrimaryMonitorSize
         DonorPage.Location = New Point((Me.Width - DonorPage.Width) \ 2, (Me.Height - DonorPage.Height) \ 2)
 
-        btnSignOut.Location = New Point((Me.Width - btnSignOut.Width) \ 2 + 800,
-                             (Me.Height - btnSignOut.Height) \ 2 - 450)
+        btnSignOut.Location = New Point((Me.Width - btnSignOut.Width) \ 2 + 680,
+                             (Me.Height - btnSignOut.Height) \ 2 - 330)
 
         'Changeuserinfo.Location = New Point((ChangeData.Width - Changeuserinfo.Width) \ 2,
         '                     (ChangeData.Height - Changeuserinfo.Height) \ 2 + 50)

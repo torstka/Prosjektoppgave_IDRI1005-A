@@ -36,8 +36,8 @@ Public Class EPage
         Userinformation.Location = New Point((ClientSize.Width - Userinformation.Width) \ 2,
                              (ClientSize.Height - Userinformation.Height) \ 2)
 
-        btnSignOut.Location = New Point((ClientSize.Width - btnSignOut.Width) \ 2 + 800,
-                             (ClientSize.Height - btnSignOut.Height) \ 2 - 450)
+        btnSignOut.Location = New Point((Me.Width - btnSignOut.Width) \ 2 + 675,
+                             (Me.Height - btnSignOut.Height) \ 2 - 350)
         gbCalendar.Location = New Point((TabPage3.Width - gbCalendar.Width) \ 2,
                              (TabPage3.Height - gbCalendar.Height) \ 2)
 

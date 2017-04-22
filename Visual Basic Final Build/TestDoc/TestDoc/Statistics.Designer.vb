@@ -231,7 +231,7 @@ Partial Class Statistics
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.TestDoc.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(38, 29)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(345, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage

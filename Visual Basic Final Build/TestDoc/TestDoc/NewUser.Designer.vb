@@ -48,13 +48,13 @@ Partial Class NewUser
         Me.Regbox = New System.Windows.Forms.GroupBox()
         Me.txtmob = New System.Windows.Forms.ComboBox()
         Me.txtdob = New System.Windows.Forms.ComboBox()
-        Me.Age = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtyob = New System.Windows.Forms.TextBox()
         Me.rbFemale = New System.Windows.Forms.RadioButton()
         Me.rbMale = New System.Windows.Forms.RadioButton()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Age = New System.Windows.Forms.TextBox()
         CType(Me.RegError, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Regbox.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -276,7 +276,6 @@ Partial Class NewUser
         '
         Me.Regbox.Controls.Add(Me.txtmob)
         Me.Regbox.Controls.Add(Me.txtdob)
-        Me.Regbox.Controls.Add(Me.PictureBox1)
         Me.Regbox.Controls.Add(Me.Label14)
         Me.Regbox.Controls.Add(Me.txtyob)
         Me.Regbox.Controls.Add(Me.rbFemale)
@@ -304,7 +303,7 @@ Partial Class NewUser
         Me.Regbox.Controls.Add(Me.Label4)
         Me.Regbox.Controls.Add(Me.Age)
         Me.Regbox.Font = New System.Drawing.Font("Calibri", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Regbox.Location = New System.Drawing.Point(12, 9)
+        Me.Regbox.Location = New System.Drawing.Point(128, 85)
         Me.Regbox.Name = "Regbox"
         Me.Regbox.Size = New System.Drawing.Size(1300, 750)
         Me.Regbox.TabIndex = 47
@@ -336,18 +335,10 @@ Partial Class NewUser
         Me.txtdob.Size = New System.Drawing.Size(56, 37)
         Me.txtdob.TabIndex = 4
         '
-        'Age
-        '
-        Me.Age.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Age.Location = New System.Drawing.Point(1031, 248)
-        Me.Age.Name = "Age"
-        Me.Age.Size = New System.Drawing.Size(39, 27)
-        Me.Age.TabIndex = 60
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.TestDoc.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 39)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(345, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -412,6 +403,14 @@ Partial Class NewUser
         Me.Label11.TabIndex = 45
         Me.Label11.Text = "Kjønn:"
         '
+        'Age
+        '
+        Me.Age.Font = New System.Drawing.Font("Calibri", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Age.Location = New System.Drawing.Point(1031, 248)
+        Me.Age.Name = "Age"
+        Me.Age.Size = New System.Drawing.Size(39, 27)
+        Me.Age.TabIndex = 60
+        '
         'NewUser
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -419,6 +418,7 @@ Partial Class NewUser
         Me.ClientSize = New System.Drawing.Size(1354, 733)
         Me.Controls.Add(Me.Regbox)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.PictureBox1)
         Me.Name = "NewUser"
         Me.Text = "NewUser"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

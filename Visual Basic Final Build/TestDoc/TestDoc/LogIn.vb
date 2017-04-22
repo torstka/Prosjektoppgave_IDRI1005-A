@@ -23,7 +23,7 @@ Public Class LogIn
             Return False
 
         ElseIf loginput.Length <> 4 And loginput.Length <> 11 Then
-            Me.loginerror.SetError(txtPersonnr, "Ugyldig antall tegn")
+            Me.loginerror.SetError(txtPersonnr, "Feil brukernavn eller passord")
             Return False
         Else
             loginerror.Clear()
@@ -147,9 +147,9 @@ Public Class LogIn
 
 
         If Not validloginput() Then
-            MsgBox(Me.loginerror.GetError(txtPersonnr))
+            MsgBox(Me.loginerror.GetError(txtPersonnr), MsgBoxStyle.Critical, "Innlogging misslykket")
         ElseIf Not Validpassinput() Then
-            MsgBox(Me.loginerror.GetError(txtPassword))
+            MsgBox(Me.loginerror.GetError(txtPassword), MsgBoxStyle.Critical, "Innlogging misslykket")
         ElseIf txtPersonnr.TextLength = 11 Then
             Userlogin()
         ElseIf txtPersonnr.TextLength = 4 Then

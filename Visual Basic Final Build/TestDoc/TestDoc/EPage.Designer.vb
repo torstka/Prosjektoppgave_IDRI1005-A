@@ -59,6 +59,7 @@ Partial Class EPage
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txtSearch = New System.Windows.Forms.TextBox()
         Me.dgwUsers = New System.Windows.Forms.DataGridView()
@@ -96,7 +97,6 @@ Partial Class EPage
         Me.btnOrderApp = New System.Windows.Forms.Button()
         Me.btnSignOut = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label26 = New System.Windows.Forms.Label()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -548,6 +548,16 @@ Partial Class EPage
         Me.GroupBox5.TabStop = False
         Me.GroupBox5.Text = "Donorinformasjon"
         '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(29, 35)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(249, 23)
+        Me.Label26.TabIndex = 66
+        Me.Label26.Text = "Trykk på en bruker for mer info"
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -948,31 +958,21 @@ Partial Class EPage
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.TestDoc.My.Resources.Resources.logo
-        Me.PictureBox1.Location = New System.Drawing.Point(12, 22)
+        Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(345, 90)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
         '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.Location = New System.Drawing.Point(29, 35)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(249, 23)
-        Me.Label26.TabIndex = 66
-        Me.Label26.Text = "Trykk på en bruker for mer info"
-        '
         'EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1362, 742)
+        Me.Controls.Add(Me.btnSignOut)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Userinformation)
-        Me.Controls.Add(Me.btnSignOut)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "EPage"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
