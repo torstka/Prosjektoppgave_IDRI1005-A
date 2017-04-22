@@ -130,6 +130,7 @@ Public Class UserPage
     'forskjellige variabler som blir forklart her eller lengre ned i koden
     'dags dato som må være på riktig format
     Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
+    Public todayP1 As String = Date.Now.AddDays(+1)
     'dot består av Date og Time, men disse er ikke satt enda.
     Public dot As String = " "
     'newApp er 
@@ -262,16 +263,20 @@ Public Class UserPage
     End Sub
 
     '#End Region
-
+    Private Sub verifyLastDrain()
+        Dim sql As New MySqlCommand("Select last_drain From Blood_Data WHERE ss_number =" & ssNumber & " ", tilkobling)
+    End Sub
     Private Sub verifySSNumber()
         'setter verifySSN lik tekstboksen hvor de ansatte har tastet inn personnummeret
         verifySSN = ssNumber
         lblLastDrain.Text = " "
 
+        Me.DTPOrder.MinDate = todayP1
+        Me.DTPOrder.Value = todayP1
         Try
             tilkobling.Open()
             'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
-            Dim sql As New MySqlCommand("Select last_drain From Blood_Data Where ss_number =" & ssNumber & " ", tilkobling)
+            Dim sql As New MySqlCommand("Select last_drain From Blood_Data WHERE ss_number =" & ssNumber & " ", tilkobling)
             Dim da As New MySqlDataAdapter
             Dim interntabell As New DataTable
             da.SelectCommand = sql
@@ -434,7 +439,7 @@ feilmelding.Message)
                     ' lblODate.Text = DTPOrder.Text
                     ' lblOTime.Text = txtbxTime.Text
                     lblnxtApp.Text = DTPOrder.Text + " " + txtbxTime.Text
-                    MsgBox("Time bestilt for dato: " & DTPOrder.Text & vbNewLine & "Klokken: " & txtbxTime.Text & "!", MsgBoxStyle.Information, "Timebestilling")
+                    MsgBox("Time bestilt for dato: " & DTPOrder.Text & vbNewLine & "Klokken: " & txtbxTime.Text & "", MsgBoxStyle.Information, "Timebestilling")
                 Catch feilmelding As MySqlException
                     MsgBox("Feil ved tilkobling til databasen: bestilling " & feilmelding.Message)
                 Finally
@@ -443,8 +448,21 @@ feilmelding.Message)
             End If
         End If
     End Sub
+
+
     Private Sub BtnOrderApp_Click(sender As Object, e As EventArgs) Handles btnOrderApp.Click
-        OrderApp()
+        If txtQuarantine.Text = "Livstid" Then
+            MsgBox("Du er i karantene og kan desverre ikke gi blod", MsgBoxStyle.Critical, "Oops!")
+        ElseIf txtQuarantine.Text = "Helsesjekk" Then
+            MsgBox("Snakk med sykepleier før du kan bestille time.", MsgBoxStyle.Information, "Obs!")
+        ElseIf txtQuarantine.Text = "" Then
+            MsgBox("Ingen karantene status funnet. Fullfør spørreskjemaet og trykk på 'Oppdater' på 'Min Side' for å kunne bestille time.", MsgBoxStyle.Information, "Obs!")
+        ElseIf Not txtQuarantine.Text = "Godkjent" Then
+            MsgBox("Du har karantene til " & txtQuarantine.Text & vbNewLine & "Vennligst vent til karantenen er utløpt før du bestiller time.", MsgBoxStyle.Information, "obs!")
+        Else
+            OrderApp()
+        End If
+
     End Sub
 #End Region
 
@@ -687,6 +705,23 @@ feilmelding.Message)
             Return True
         End If
     End Function
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnUpdateQuarantine.Click
+        connection.Open()
+        Dim query As String = "SELECT quarantine FROM User WHERE ss_number='" & lblSSnumber.Text & "'"
+        cmd = New MySqlCommand(query, connection)
+        adapter = New MySqlDataAdapter
+        adapter.SelectCommand = cmd
+        adapter.Fill(dtable)
+
+        For Each rad In dtable.Rows
+            txtQuarantine.Text = (rad("quarantine")).ToString()
+        Next
+        connection.Close()
+
+    End Sub
+
+
 #End Region
 
     Public Sub updateData()

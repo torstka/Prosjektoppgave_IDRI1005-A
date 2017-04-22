@@ -216,7 +216,7 @@ Public Class QuestForm
             ElseIf lastDrain = today2 Then
                 MsgBox("Du har allerede svart på spørreskjema i dag. Vennligst vent til du blir kalt inn.", MsgBoxStyle.Information, "Spørreskjema")
 
-            ElseIf UserPage.TextBox1.Text = "Livstid" Then
+            ElseIf UserPage.txtQuarantine.Text = "Livstid" Then
                 MsgBox("Du har karantene på Livstid og kan ikke gi blod", MsgBoxStyle.Critical, "Oops!")
             Else
                 UserPage.Hide()

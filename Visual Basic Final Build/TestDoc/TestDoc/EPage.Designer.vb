@@ -80,6 +80,7 @@ Partial Class EPage
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.gbCalendar = New System.Windows.Forms.GroupBox()
+        Me.lblVelgtime = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.lblLastDrain = New System.Windows.Forms.Label()
@@ -95,7 +96,7 @@ Partial Class EPage
         Me.btnOrderApp = New System.Windows.Forms.Button()
         Me.btnSignOut = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.lblVelgtime = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -535,6 +536,7 @@ Partial Class EPage
         '
         'GroupBox5
         '
+        Me.GroupBox5.Controls.Add(Me.Label26)
         Me.GroupBox5.Controls.Add(Me.Label5)
         Me.GroupBox5.Controls.Add(Me.txtSearch)
         Me.GroupBox5.Controls.Add(Me.dgwUsers)
@@ -615,9 +617,9 @@ Partial Class EPage
         'btnStatistics
         '
         Me.btnStatistics.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStatistics.Location = New System.Drawing.Point(356, 401)
+        Me.btnStatistics.Location = New System.Drawing.Point(157, 281)
         Me.btnStatistics.Name = "btnStatistics"
-        Me.btnStatistics.Size = New System.Drawing.Size(157, 42)
+        Me.btnStatistics.Size = New System.Drawing.Size(157, 46)
         Me.btnStatistics.TabIndex = 13
         Me.btnStatistics.Text = "Vis statistikk"
         Me.btnStatistics.UseVisualStyleBackColor = True
@@ -662,7 +664,7 @@ Partial Class EPage
         'btnGetOrder
         '
         Me.btnGetOrder.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGetOrder.Location = New System.Drawing.Point(356, 281)
+        Me.btnGetOrder.Location = New System.Drawing.Point(356, 280)
         Me.btnGetOrder.Name = "btnGetOrder"
         Me.btnGetOrder.Size = New System.Drawing.Size(157, 46)
         Me.btnGetOrder.TabIndex = 8
@@ -782,6 +784,16 @@ Partial Class EPage
         Me.gbCalendar.TabIndex = 98
         Me.gbCalendar.TabStop = False
         Me.gbCalendar.Text = "Kalender"
+        '
+        'lblVelgtime
+        '
+        Me.lblVelgtime.AutoSize = True
+        Me.lblVelgtime.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVelgtime.Location = New System.Drawing.Point(61, 253)
+        Me.lblVelgtime.Name = "lblVelgtime"
+        Me.lblVelgtime.Size = New System.Drawing.Size(115, 29)
+        Me.lblVelgtime.TabIndex = 99
+        Me.lblVelgtime.Text = "Velg time: "
         '
         'Label22
         '
@@ -943,15 +955,15 @@ Partial Class EPage
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
         '
-        'lblVelgtime
+        'Label26
         '
-        Me.lblVelgtime.AutoSize = True
-        Me.lblVelgtime.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVelgtime.Location = New System.Drawing.Point(61, 253)
-        Me.lblVelgtime.Name = "lblVelgtime"
-        Me.lblVelgtime.Size = New System.Drawing.Size(115, 29)
-        Me.lblVelgtime.TabIndex = 99
-        Me.lblVelgtime.Text = "Velg time: "
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.Location = New System.Drawing.Point(29, 35)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(249, 23)
+        Me.Label26.TabIndex = 66
+        Me.Label26.Text = "Trykk på en bruker for mer info"
         '
         'EPage
         '
@@ -1062,4 +1074,5 @@ Partial Class EPage
     Friend WithEvents txtbxTime As ComboBox
     Friend WithEvents btnOrderApp As Button
     Friend WithEvents lblVelgtime As Label
+    Friend WithEvents Label26 As Label
 End Class

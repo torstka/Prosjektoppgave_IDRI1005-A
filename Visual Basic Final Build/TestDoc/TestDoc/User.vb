@@ -164,7 +164,7 @@ Public Class User
         For Each rad In dtable.Rows
             UserPage.lblFullName.Text = (rad("firstname") & " " & rad("lastname"))
             UserPage.lblSSnumber.Text = (rad("ss_number")).ToString()
-            UserPage.TextBox1.Text = (rad("quarantine")).ToString()
+            UserPage.txtQuarantine.Text = (rad("quarantine")).ToString()
         Next
 
     End Sub

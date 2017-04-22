@@ -58,6 +58,7 @@ Public Class EPage
     'forskjellige variabler som blir forklart her eller lengre ned i koden
     'dags dato som må være på riktig format
     Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
+    Public todayP1 As String = Date.Now.AddDays(+1)
     'dot består av Date og Time, men disse er ikke satt enda.
     Public dot As String = " "
     'newApp er 
@@ -806,6 +807,9 @@ Public Class EPage
     Private Sub verifySSNumber()
         'setter verifySSN lik tekstboksen hvor de ansatte har tastet inn personnummeret
         verifySSN = txtbxSSNV.Text
+        lblLastDrain.Text = " "
+        Me.DTPOrder.MinDate = todayP1
+        Me.DTPOrder.Value = todayP1
 
         If Regex.IsMatch(verifySSN, "^[0-9 ]+$") And verifySSN.Length = 11 Then
             'om personnummeret består av tall og er 11 karakterer langt blir det godkjent

@@ -66,6 +66,7 @@ Partial Class UserPage
         Me.phone = New System.Windows.Forms.Label()
         Me.MyPage = New System.Windows.Forms.TabPage()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.lblVelgTime = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.lblLastDrain = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -76,8 +77,9 @@ Partial Class UserPage
         Me.btnOrderApp = New System.Windows.Forms.Button()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.gbBlood = New System.Windows.Forms.GroupBox()
+        Me.btnUpdateQuarantine = New System.Windows.Forms.Button()
         Me.lblquarantine = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtQuarantine = New System.Windows.Forms.TextBox()
         Me.txtBtype = New System.Windows.Forms.TextBox()
         Me.ironValue = New System.Windows.Forms.Label()
         Me.txtIronValue = New System.Windows.Forms.TextBox()
@@ -91,7 +93,6 @@ Partial Class UserPage
         Me.lblFullName = New System.Windows.Forms.Label()
         Me.DonorPage = New System.Windows.Forms.TabControl()
         Me.btnSignOut = New System.Windows.Forms.Button()
-        Me.lblVelgTime = New System.Windows.Forms.Label()
         CType(Me.regerror, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.InfoPage.SuspendLayout()
@@ -612,6 +613,16 @@ Partial Class UserPage
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "Timebestilling"
         '
+        'lblVelgTime
+        '
+        Me.lblVelgTime.AutoSize = True
+        Me.lblVelgTime.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblVelgTime.Location = New System.Drawing.Point(33, 142)
+        Me.lblVelgTime.Name = "lblVelgTime"
+        Me.lblVelgTime.Size = New System.Drawing.Size(103, 26)
+        Me.lblVelgTime.TabIndex = 101
+        Me.lblVelgTime.Text = "Velg time: "
+        '
         'Label23
         '
         Me.Label23.AutoSize = True
@@ -718,8 +729,9 @@ Partial Class UserPage
         '
         'gbBlood
         '
+        Me.gbBlood.Controls.Add(Me.btnUpdateQuarantine)
         Me.gbBlood.Controls.Add(Me.lblquarantine)
-        Me.gbBlood.Controls.Add(Me.TextBox1)
+        Me.gbBlood.Controls.Add(Me.txtQuarantine)
         Me.gbBlood.Controls.Add(Me.txtBtype)
         Me.gbBlood.Controls.Add(Me.ironValue)
         Me.gbBlood.Controls.Add(Me.txtIronValue)
@@ -738,31 +750,41 @@ Partial Class UserPage
         Me.gbBlood.TabStop = False
         Me.gbBlood.Text = "Mine bloddata"
         '
+        'btnUpdateQuarantine
+        '
+        Me.btnUpdateQuarantine.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnUpdateQuarantine.Location = New System.Drawing.Point(147, 320)
+        Me.btnUpdateQuarantine.Name = "btnUpdateQuarantine"
+        Me.btnUpdateQuarantine.Size = New System.Drawing.Size(142, 37)
+        Me.btnUpdateQuarantine.TabIndex = 15
+        Me.btnUpdateQuarantine.Text = "Oppdater"
+        Me.btnUpdateQuarantine.UseVisualStyleBackColor = True
+        '
         'lblquarantine
         '
         Me.lblquarantine.AutoSize = True
         Me.lblquarantine.Font = New System.Drawing.Font("Calibri", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblquarantine.Location = New System.Drawing.Point(21, 309)
+        Me.lblquarantine.Location = New System.Drawing.Point(39, 278)
         Me.lblquarantine.Name = "lblquarantine"
         Me.lblquarantine.Size = New System.Drawing.Size(101, 24)
         Me.lblquarantine.TabIndex = 14
         Me.lblquarantine.Text = "Karantene:"
         '
-        'TextBox1
+        'txtQuarantine
         '
-        Me.TextBox1.Enabled = False
-        Me.TextBox1.Font = New System.Drawing.Font("Calibri", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(202, 299)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(176, 32)
-        Me.TextBox1.TabIndex = 13
+        Me.txtQuarantine.Enabled = False
+        Me.txtQuarantine.Font = New System.Drawing.Font("Calibri", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuarantine.Location = New System.Drawing.Point(220, 268)
+        Me.txtQuarantine.Margin = New System.Windows.Forms.Padding(2)
+        Me.txtQuarantine.Name = "txtQuarantine"
+        Me.txtQuarantine.Size = New System.Drawing.Size(176, 32)
+        Me.txtQuarantine.TabIndex = 13
         '
         'txtBtype
         '
         Me.txtBtype.Enabled = False
         Me.txtBtype.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtBtype.Location = New System.Drawing.Point(202, 76)
+        Me.txtBtype.Location = New System.Drawing.Point(220, 45)
         Me.txtBtype.Margin = New System.Windows.Forms.Padding(2)
         Me.txtBtype.Name = "txtBtype"
         Me.txtBtype.Size = New System.Drawing.Size(176, 33)
@@ -772,7 +794,7 @@ Partial Class UserPage
         '
         Me.ironValue.AutoSize = True
         Me.ironValue.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ironValue.Location = New System.Drawing.Point(20, 253)
+        Me.ironValue.Location = New System.Drawing.Point(38, 222)
         Me.ironValue.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.ironValue.Name = "ironValue"
         Me.ironValue.Size = New System.Drawing.Size(95, 26)
@@ -783,7 +805,7 @@ Partial Class UserPage
         '
         Me.txtIronValue.Enabled = False
         Me.txtIronValue.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtIronValue.Location = New System.Drawing.Point(202, 248)
+        Me.txtIronValue.Location = New System.Drawing.Point(220, 217)
         Me.txtIronValue.Margin = New System.Windows.Forms.Padding(2)
         Me.txtIronValue.Name = "txtIronValue"
         Me.txtIronValue.Size = New System.Drawing.Size(176, 33)
@@ -793,7 +815,7 @@ Partial Class UserPage
         '
         Me.hb.AutoSize = True
         Me.hb.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.hb.Location = New System.Drawing.Point(20, 195)
+        Me.hb.Location = New System.Drawing.Point(38, 164)
         Me.hb.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.hb.Name = "hb"
         Me.hb.Size = New System.Drawing.Size(122, 26)
@@ -804,7 +826,7 @@ Partial Class UserPage
         '
         Me.txtDrain.Enabled = False
         Me.txtDrain.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDrain.Location = New System.Drawing.Point(202, 133)
+        Me.txtDrain.Location = New System.Drawing.Point(220, 102)
         Me.txtDrain.Margin = New System.Windows.Forms.Padding(2)
         Me.txtDrain.Name = "txtDrain"
         Me.txtDrain.Size = New System.Drawing.Size(176, 33)
@@ -814,7 +836,7 @@ Partial Class UserPage
         '
         Me.lastDrain.AutoSize = True
         Me.lastDrain.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lastDrain.Location = New System.Drawing.Point(20, 138)
+        Me.lastDrain.Location = New System.Drawing.Point(38, 107)
         Me.lastDrain.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.lastDrain.Name = "lastDrain"
         Me.lastDrain.Size = New System.Drawing.Size(128, 26)
@@ -825,7 +847,7 @@ Partial Class UserPage
         '
         Me.txtHb.Enabled = False
         Me.txtHb.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtHb.Location = New System.Drawing.Point(202, 190)
+        Me.txtHb.Location = New System.Drawing.Point(220, 159)
         Me.txtHb.Margin = New System.Windows.Forms.Padding(2)
         Me.txtHb.Name = "txtHb"
         Me.txtHb.Size = New System.Drawing.Size(176, 33)
@@ -835,7 +857,7 @@ Partial Class UserPage
         '
         Me.bloodType.AutoSize = True
         Me.bloodType.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.bloodType.Location = New System.Drawing.Point(20, 81)
+        Me.bloodType.Location = New System.Drawing.Point(38, 50)
         Me.bloodType.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.bloodType.Name = "bloodType"
         Me.bloodType.Size = New System.Drawing.Size(150, 26)
@@ -901,16 +923,6 @@ Partial Class UserPage
         Me.btnSignOut.TabIndex = 10
         Me.btnSignOut.Text = "Logg ut"
         Me.btnSignOut.UseVisualStyleBackColor = True
-        '
-        'lblVelgTime
-        '
-        Me.lblVelgTime.AutoSize = True
-        Me.lblVelgTime.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVelgTime.Location = New System.Drawing.Point(33, 142)
-        Me.lblVelgTime.Name = "lblVelgTime"
-        Me.lblVelgTime.Size = New System.Drawing.Size(103, 26)
-        Me.lblVelgTime.TabIndex = 101
-        Me.lblVelgTime.Text = "Velg time: "
         '
         'UserPage
         '
@@ -999,7 +1011,7 @@ Partial Class UserPage
     Friend WithEvents Label4 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtQuarantine As TextBox
     Friend WithEvents lblquarantine As Label
     Friend WithEvents btnSignOut As Button
     Friend WithEvents GroupBox6 As GroupBox
@@ -1012,4 +1024,5 @@ Partial Class UserPage
     Friend WithEvents txtbxTime As ComboBox
     Friend WithEvents btnOrderApp As Button
     Friend WithEvents lblVelgTime As Label
+    Friend WithEvents btnUpdateQuarantine As Button
 End Class
