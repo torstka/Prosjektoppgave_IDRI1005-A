@@ -5,35 +5,23 @@ Public Class QuestForm
     Private comm As MySqlCommand
     Dim arrayListQuery As New ArrayList
     Dim totalQT As String
-    Dim adapter As New MySqlDataAdapter
     Dim reader As MySqlDataReader
     Dim ssn As String = UserPage.lblSSnumber.Text
     Private Sub QuestForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        'Setter vinduet maksimert, og innholdet i midten.  
         Me.Size = SystemInformation.PrimaryMonitorSize
-        QuestionRound.Location = New Point((ClientSize.Width - QuestionRound.Width) \ 2,
-                             (ClientSize.Height - QuestionRound.Height) \ 2)
+        QuestionRound.Location = New Point((ClientSize.Width - QuestionRound.Width) \ 2, (ClientSize.Height - QuestionRound.Height) \ 2)
 
-        Me.TabPage1.Text = "Side 1"
-        Me.TabPage2.Text = "Side 2"
-        Me.TabPage3.Text = "Side 3"
-        Me.TabPage4.Text = "Side 4"
-        Me.TabPage5.Text = "Side 5"
-        Me.TabPage6.Text = "Side 6"
-        Me.TabPage7.Text = "Side 7"
-        Me.TabPage8.Text = "Side 8 - Kvinner"
-        Me.TabPage9.Text = "Side 9 - Menn"
-        Me.TabPage10.Text = "Side 10"
-
-        checkIfApproved()
+        checkIfApproved() 'Henter metoden som sjekker om personen er godkjent for å kunne ta spørreskjemaet. Altså om det har gått tre måneder sisten sist tapping. 
         checkGender() 'Henter ut hvilken kjønn-side som skal være aktiv/inaktiv.
-        'connection.Open()
+
+        'Her henter vi alle spørsmålene som skal settes i labelene på de forskjellige sidene
         Dim command As New MySqlCommand("SELECT * FROM QuestForm ", connection)
         Dim adapter As New MySqlDataAdapter(command)
         Dim tabell As New DataTable()
-        adapter.Fill(tabell)
-
-#Region "Alle spm"
+        adapter.Fill(tabell) 'Fyller en tabell med alle spørsmålene.
+#Region "Hvert spørsmål inn i hver sin label. Spm 1-44"
+        'Her fyller vi hver label med riktig spørsmål fra riktig rad og kolonne fra databasen, og setter at dette skal være en tekst. 
         qu1.Text = tabell.Rows(0)(0).ToString() & " " & tabell.Rows(0)(1).ToString()
         qu2.Text = tabell.Rows(1)(0).ToString() & " " & tabell.Rows(1)(1).ToString()
         qu3.Text = tabell.Rows(2)(0).ToString() & " " & tabell.Rows(2)(1).ToString()
@@ -78,44 +66,33 @@ Public Class QuestForm
         qu42.Text = tabell.Rows(41)(0).ToString() & " " & tabell.Rows(41)(1).ToString()
         qu43.Text = tabell.Rows(42)(0).ToString() & " " & tabell.Rows(42)(1).ToString()
         qu44.Text = tabell.Rows(43)(0).ToString() & " " & tabell.Rows(43)(1).ToString()
-        'qu45.Text = tabell.Rows(44)(0).ToString() & " " & tabell.Rows(44)(1).ToString()
-        'qu46.Text = tabell.Rows(45)(0).ToString() & " " & tabell.Rows(45)(1).ToString()
-        'qu47.Text = tabell.Rows(46)(0).ToString() & " " & tabell.Rows(46)(1).ToString()
-        'qu48.Text = tabell.Rows(47)(0).ToString() & " " & tabell.Rows(47)(1).ToString()
-        'qu49.Text = tabell.Rows(48)(0).ToString() & " " & tabell.Rows(48)(1).ToString()
-        'qu50.Text = tabell.Rows(49)(0).ToString() & " " & tabell.Rows(49)(1).ToString()
-        'qu51.Text = tabell.Rows(50)(0).ToString() & " " & tabell.Rows(50)(1).ToString()
-        'qu52.Text = tabell.Rows(51)(0).ToString() & " " & tabell.Rows(51)(1).ToString()
-        'qu53.Text = tabell.Rows(52)(0).ToString() & " " & tabell.Rows(52)(1).ToString()
-        'qu54.Text = tabell.Rows(53)(0).ToString() & " " & tabell.Rows(53)(1).ToString()
-        'qu55.Text = tabell.Rows(54)(0).ToString() & " " & tabell.Rows(54)(1).ToString()
-        'qu56.Text = tabell.Rows(55)(0).ToString() & " " & tabell.Rows(55)(1).ToString()
-        'qu57.Text = tabell.Rows(56)(0).ToString() & " " & tabell.Rows(56)(1).ToString()
-        'qu58.Text = tabell.Rows(57)(0).ToString() & " " & tabell.Rows(57)(1).ToString()
-        'qu59.Text = tabell.Rows(58)(0).ToString() & " " & tabell.Rows(58)(1).ToString()
+
 #End Region
         connection.close()
     End Sub
 
-
-    Private Sub checkGender()
+    Private Sub checkGender() 'Sjekker kjønnet for å gjøre riktig side aktiv. 
+        'Siden det er forskjellige kjønn, henter vi resten av spørsmålene her, og setter de inn med riktig tall fremfor. 
+        'Menn har 55 spm mens kvinner 58, derfor blir det en forksjell i de siste sidene(8,9,10).
         Dim command As New MySqlCommand("SELECT * FROM QuestForm ", connection)
         Dim adapter As New MySqlDataAdapter(command)
         Dim tabell As New DataTable()
         adapter.Fill(tabell)
         Try
             connection.Open()
+            'Her sjekker om det er "Female" som er innlogget.
             Dim table As New DataTable
             Dim female As String = "Female"
             Dim query As String = "SELECT gender FROM User WHERE ss_number = '" & ssn & "'AND gender = '" & female & "'"
             comm = New MySqlCommand(query, connection)
             reader = comm.ExecuteReader
 #Region "Sjekker Mann/Kvinne"
-            If reader.HasRows Then
-                rbNei49.Checked = True
-                rbNei49.Enabled = False
+            If reader.HasRows Then 'Hvis reader'eren finner ut at det er "Female" som er innlogget vil de riktige elementene bli vist
+                rbNei49.Checked = True 'Spm nr. 49 tilhører "Male", og vil derfor være ferdigutfylt på "Nei", slik at kvinnene ikke skal få karantene for dette. 
+                rbNei49.Enabled = False 'Setter at radioknappene ikke er mulig å trykke på. 
                 rbJa49.Enabled = False
-                lbM1.Visible = False
+                qu49.Enabled = False
+                lbM1.Visible = False 'lbM1, lbM2, osv. tilhører labelene nede i vinduet der det står hvor mange spm som er besvart.
                 lbM2.Visible = False
                 lbM3.Visible = False
                 lbM4.Visible = False
@@ -125,7 +102,7 @@ Public Class QuestForm
                 lbM9.Visible = False
                 lbM10.Visible = False
                 lbFShow.Visible = False
-                qu49.Enabled = False
+                'Her hentes spm ut med riktig nummer fremst.
                 qu45.Text = tabell.Rows(44)(0).ToString() & " " & tabell.Rows(44)(1).ToString()
                 qu46.Text = tabell.Rows(45)(0).ToString() & " " & tabell.Rows(45)(1).ToString()
                 qu47.Text = tabell.Rows(46)(0).ToString() & " " & tabell.Rows(46)(1).ToString()
@@ -141,7 +118,8 @@ Public Class QuestForm
                 qu57.Text = "56" & " " & tabell.Rows(56)(1).ToString()
                 qu58.Text = "57" & " " & tabell.Rows(57)(1).ToString()
                 qu59.Text = "58" & " " & tabell.Rows(58)(1).ToString()
-            Else
+            Else '(reader'eren IKKE finner "Female", altså "Male")
+                'Her skjer tilsvarende som overfor bare med elementene som tilhører kvinner. 
                 rbNei45.Checked = True
                 rbNei46.Checked = True
                 rbNei47.Checked = True
@@ -188,65 +166,66 @@ Public Class QuestForm
 
             reader.Close()
             connection.close()
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch error_ex As Exception
+            MsgBox(error_ex.Message)
         End Try
     End Sub
 
-    Public Sub checkIfApproved()
+    Public Sub checkIfApproved() 'Sjekker at det har gått minst tre måneder siden sist tapping
         connection.close()
-        Dim todaysDate90 As String = Today.AddDays(-90).ToString("dd/MM/yyyy")
-        Dim threeMounthAgo = Today.AddDays(-90).ToString("dd/MM/yyyy")
-        Dim today2 = Today.ToString("dd/MM/yyyy")
+        Dim threeMounthAgo = Today.AddDays(-90) '90 dager / tre måneder bak i tid fra dagens dato
+        Dim todaysDate = Today.ToString("dd/MM/yyyy") 'Dagens dato
 
         Try
             connection.open()
+            'Henter riktig "Sist tapping" ut personnummeret som er innlogget
             Dim query As String = "SELECT last_drain FROM Blood_Data WHERE ss_number='" & ssn & "'"
             Dim comm As New MySqlCommand(query, connection)
-            Dim reader As MySqlDataReader
             reader = comm.ExecuteReader
 
+            'Leser ut datoen for siste tapping
             Dim lastDrain As String = ""
             While reader.Read()
-                lastDrain &= reader("last_drain") & " "
+                lastDrain &= reader("last_drain")  '& " "
             End While
 
-            If lastDrain >= threeMounthAgo Then
-                MsgBox("Det er kortere enn tre måneder siden sist tapping, og du må derfor vente.", MsgBoxStyle.Information, "Spørreskjema")
-            ElseIf lastDrain = today2 Then
-                MsgBox("Du har allerede svart på spørreskjema i dag. Vennligst vent til du blir kalt inn.", MsgBoxStyle.Information, "Spørreskjema")
 
-            ElseIf UserPage.txtQuarantine.Text = "Livstid" Then
+            If lastDrain >= threeMounthAgo Then 'Hvis "siste tapping" er eldre eller lik 90 dager bak i tid så kommer denne msgboxen opp
+                MsgBox("Det er kortere enn tre måneder siden sist tapping, og du må derfor vente.", MsgBoxStyle.Information, "Spørreskjema")
+            ElseIf lastDrain = todaysDate Then 'Hvis "siste tapping" er lik dagens dato, vil brukeren ikke kunne ta spørreskjemaet igjen
+                MsgBox("Du har allerede svart på spørreskjema i dag. Vennligst vent til du blir kalt inn.", MsgBoxStyle.Information, "Spørreskjema")
+            ElseIf UserPage.txtquarantine.Text = "Livstid" Then 'Hvis brukeren tidligere har svart på spørreskjemaet og fått en karantene på "livstid" vil ikke hun/han kunne ta spørreskjemaet
                 MsgBox("Du har karantene på Livstid og kan ikke gi blod", MsgBoxStyle.Critical, "Oops!")
             Else
-                UserPage.Hide()
+                UserPage.Hide() 'Hvis ingen av de andre hendelsene slår inn, vil spørreskjemaet dukke opp, og brukeren kan begynne å svare
                 Me.Show()
             End If
+            reader.Close()
             connection.close()
-        Catch ex As Exception
-            MsgBox(ex.Message)
+        Catch ex_checkifapproved As Exception
+            MsgBox(ex_checkifapproved.Message)
         Finally
             connection.dispose()
         End Try
 
     End Sub
-    Private Sub CheckAllAnswers(ByVal tabControl As TabControl)
+    Private Sub CheckAllAnswers(ByVal tabControl As TabControl) 'Sjekker om alle radioknappenen(Ja/Nei) er besvart inni hver enkelt panel(label med spm og to stk radioknapper)
 
         Dim rbtn As RadioButton
         Dim rbtnTag As String = String.Empty
-        'På dette punktet vil Subben begynne å lete etter alle de forskjellige TabPageX i TabControl
+        'Her vil programmet begynne å lete etter alle de forskjellge TabPageX i QuestionRound(TabControl)
         For Each tabPage In QuestionRound.Controls
-            'På dette punktet vil den lete etter alle de forskjellige panelene i TabPageX. I et panel har jeg lagt en label + 2 radiobuttons, disse har hver sin .Tag verdi.
-            '.Tag er en verdi som vi som kodere kan angi til en radiobutton, og i vårt tilfelle er det gunstig at vi legger inn 0 og 1 på de respektive radiobuttonene. 
-            For Each panel In tabPage.Controls 'Her tester den hvert panel i TabPageX.Controls, og finner de to radiobuttonene (If TypeOf ctl Is RadioButton). 
+            'Deretter lete etter de forskjellige panelene i TabPageX. Hver radioknapp har hver sin .Tag verdi der Ja = 1 og Nei = 0
+            'Disse tagene vil vil bli lagret i databasen for ikke å ta opp unødvendig plass (istedenfor Ja og Nei 
+            For Each panel In tabPage.Controls 'Her sjekker den hvert panel i TabPageX.Controls, og finner de to radiobuttonene (If TypeOf ctl Is RadioButton)
                 Try
                     Dim ctl As Control
-                    For Each ctl In panel.Controls
-                        If TypeOf ctl Is RadioButton Then
+                    For Each ctl In panel.Controls 'Leter etter alle controller(element) i vinduet.
+                        If TypeOf ctl Is RadioButton Then 'Her stopper programmet hvis controllen er en radioknapp 
                             rbtn = DirectCast(ctl, RadioButton)
-                            If rbtn.Checked Then
+                            If rbtn.Checked Then 'Hvis en rb er huket av, vil koden under starte
                                 rbtnTag = rbtn.Tag 'Midlertidig tag som nå inneholder verdien i radiobuttonX sin .Tag
-                                arrayListQuery.Add(rbtnTag) 'Sender .Tag inn i ArrayList
+                                arrayListQuery.Add(rbtnTag) 'Sender .Tag (0 eller 1) inn i ArrayList
                                 Exit For
                             End If
                         End If
@@ -257,18 +236,16 @@ Public Class QuestForm
             Next
         Next
     End Sub
-    Private Sub quarantine() 'As Boolean
-        'Setter de forskjellige mulige karantenene med riktig dato fra dagens dato. 
+    Private Sub quarantine() 'Denne metoden vil sjekke hvilken karantene brukeren får basert på hvilke rb som blir valgt
+        'Setter de forskjellige mulige karantenene med riktig dato fra dagens dato
         Dim todayDate As System.DateTime
-        'Setter de forskjellige typene karantener  
-        Dim qt24t As String ' = Today.ToString("dd/MM/yyyy")
-        Dim qt14d As String ' = Today.ToString("dd/MM/yyyy")
-        Dim qt31d As String '  = Today.ToString("dd/MM/yyyy")
-        Dim qt90d As String '= Today.ToString("dd/MM/yyyy")
-        Dim qt120d As String '= Today.ToString("dd/MM/yyyy")
-        Dim qt365d As String '= Today.ToString("dd/MM/yyyy")
+        Dim qt24t As String
+        Dim qt14d As String
+        Dim qt31d As String
+        Dim qt90d As String
+        Dim qt120d As String
+        Dim qt365d As String
         Dim lifeTimequarantine As String = "Livstid"
-        Dim listQuarantine As New List(Of Object)()
 
         'Fyller karantenene fra dagens dato til karantene-datoen
         todayDate = Today.ToString("dd/MM/yyyy")
@@ -278,40 +255,37 @@ Public Class QuestForm
         qt90d = todayDate.AddDays(90)
         qt120d = todayDate.AddDays(120)
         qt365d = todayDate.AddDays(365)
-        'Sjekker hvert spmørsmål for hvilken karantene som tilhører hva
+        'Sjekker hvert spørsmål for hvilken karantene brukeren får basert på rb-klikk, deretter vil den totale karantene bli satt til totalQT
         If rbJa32.Checked Or rbJa42.Checked Or rbJa43.Checked Or rbJa44.Checked Or rbJa34.Checked Or rbJa35.Checked Or rbJa36.Checked Or rbJa49.Checked Or rbJa51.Checked Or rbJa52.Checked Or rbJa54.Checked Or rbJa55.Checked Then
             totalQT = lifeTimequarantine
         ElseIf rbJa15.Checked Or rbJa16.Checked Or rbJa17.Checked Or rbJa18.Checked Or rbJa19.Checked Or rbJa26.Checked Or rbJa27.Checked Or rbJa28.Checked Then
             totalQT = qt120d
-        ElseIf rbJa6.Checked Or rbJa23.Checked Then
+        ElseIf rbJa6.Checked Or rbJa23.Checked Or rbJa47.Checked Or rbJa48.Checked Then
             totalQT = qt31d
-        ElseIf rbJa5.Checked Or rbJa8.Checked Or rbJa9.Checked Or rbJa10.Checked Or rbJa20.Checked Then
+        ElseIf rbJa5.Checked Or rbJa8.Checked Or rbJa9.Checked Or rbJa10.Checked Or rbJa20.Checked Or rbNei4.Checked Or rbJa7.Checked Or rbJa12.Checked Or rbJa13.Checked Or rbJa14.Checked Or rbJa40.Checked Or rbJa41.Checked Or rbJa50.Checked Or rbJa53.Checked Or rbJa56.Checked Then
             totalQT = qt14d
-        ElseIf rbJa11.Checked Then
+        ElseIf rbJa11.Checked Or rbNei2.Checked Or rbNei3.Checked Or rbJa21.Checked Or rbJa22.Checked Or rbJa24.Checked Or rbJa25.Checked Then
             totalQT = qt24t
-        ElseIf rbNei2.Checked Or rbNei3.Checked Or rbNei4.Checked Or rbJa7.Checked Or rbJa12.Checked Or rbJa13.Checked Or rbJa14.Checked Or rbJa21.Checked Or rbJa22.Checked Or rbJa24.Checked Or rbJa25.Checked Or rbJa33.Checked Or rbJa37.Checked Or rbJa38.Checked Or rbJa39.Checked Or rbJa40.Checked Or rbJa41.Checked Or rbJa47.Checked Or rbJa48.Checked Or rbJa50.Checked Or rbJa53.Checked Or rbJa56.Checked Then
-            totalQT = "Helsesjekk"
         Else
             totalQT = "Godkjent"
         End If
         updateQuarantine()
     End Sub
-    Private Sub updateQuarantine()
+    Private Sub updateQuarantine() 'Her settes den totaleQT inn i User tabellen i databasen
         Try
             connection.open()
             Dim query As String = "UPDATE User SET quarantine='" & totalQT & "' WHERE ss_number='" & ssn & "'"
             Dim comm = New MySqlCommand(query, connection)
-            Dim reader As MySqlDataReader
             reader = comm.ExecuteReader
-            MsgBox("Karantenen er oppdatert TAS BORT ")
+            ' MsgBox("Karantenen er oppdatert TAS BORT ")
+            reader.Close()
             connection.close()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Private Sub updateLastDrain()
-
+    Private Sub updateLastDrain() 'Her oppdateres "siste tapping"-datoen til dagens dato inni databasen.
         Dim todaysDate = Today.Date
         Try
             connection.Open()
@@ -327,31 +301,29 @@ Public Class QuestForm
 
     End Sub
     Private Sub SaveAnswers()
-        CheckAllAnswers(QuestionRound)  'Henter alle tag'ene/svarene fra CheckAllAnswers fra tabControl. 
-        quarantine()
+        CheckAllAnswers(QuestionRound)  'Henter alle tag'ene/svarene fra CheckAllAnswers  
+        quarantine() 'Deretter hentes karanten til brukeren fra subben "querantine"
 
-        Dim todayDate As String = Today.ToString("yyyy/MM/dd") 'Setter datoen for spørreskjemaet til dagens dato.
+        Dim todayDate As String = Today.ToString("yyyy/MM/dd") 'Setter datoen for spørreskjemaet til dagens dato
         Dim approved As String = "Approved"
         Dim notApproved As String = "Not approved"
 
         Try
             connection.Open()
-            If totalQT = "Godkjent" Then
-                'Henter svarene fra ArraylistQuery og fyller databasen med disse svarene. 1=Ja, 0=Nei. Vi bruker tall for å bruke mindre plass i databasen.
+            If totalQT = "Godkjent" Then 'Hvis brukeren har fullført spørreskjemaet ved å trykke på riktige svar slik at han/hun ikke har fått karantene
+                'Henter svarene fra ArraylistQuery og fyller databasen med disse svarene. 1=Ja, 0=Nei. Vi bruker tall for å bruke mindre plass i databasen
                 Dim query As String = "INSERT INTO Answer(date, status, ss_number, qu1, qu2, qu3, qu4, qu5, qu6, qu7, qu8, qu9, qu10, qu11, qu12, qu13, qu14, qu15, qu16, qu17, qu18, qu19, qu20, qu21, qu22, qu23, qu24, qu25, qu26, qu27, qu28, qu29, qu30, qu31, qu32, qu33, qu34, qu35, qu36, qu37, qu38, qu39, qu40, qu41, qu42, qu43, qu44, qu45, qu46, qu47, qu48, qu49, qu50, qu51, qu52, qu53, qu54, qu55, qu56, qu57, qu58, qu59) VALUES ('" & todayDate & "','" & approved & "','" & ssn & "','" & arrayListQuery(0) & "','" & arrayListQuery(1) & "','" & arrayListQuery(2) & "','" & arrayListQuery(3) & "','" & arrayListQuery(4) & "','" & arrayListQuery(5) & "','" & arrayListQuery(6) & "','" & arrayListQuery(7) & "','" & arrayListQuery(8) & "','" & arrayListQuery(9) & "','" & arrayListQuery(10) & "','" & arrayListQuery(11) & "','" & arrayListQuery(12) & "','" & arrayListQuery(13) & "','" & arrayListQuery(14) & "','" & arrayListQuery(15) & "','" & arrayListQuery(16) & "','" & arrayListQuery(17) & "','" & arrayListQuery(18) & "','" & arrayListQuery(19) & "','" & arrayListQuery(20) & "','" & arrayListQuery(21) & "','" & arrayListQuery(22) & "','" & arrayListQuery(23) & "','" & arrayListQuery(24) & "','" & arrayListQuery(25) & "','" & arrayListQuery(26) & "','" & arrayListQuery(27) & "','" & arrayListQuery(28) & "','" & arrayListQuery(29) & "','" & arrayListQuery(30) & "','" & arrayListQuery(31) & "','" & arrayListQuery(32) & "','" & arrayListQuery(33) & "','" & arrayListQuery(34) & "','" & arrayListQuery(35) & "','" & arrayListQuery(36) & "','" & arrayListQuery(37) & "','" & arrayListQuery(38) & "','" & arrayListQuery(39) & "','" & arrayListQuery(40) & "','" & arrayListQuery(41) & "','" & arrayListQuery(42) & "','" & arrayListQuery(43) & "','" & arrayListQuery(44) & "','" & arrayListQuery(45) & "','" & arrayListQuery(46) & "','" & arrayListQuery(47) & "','" & arrayListQuery(48) & "','" & arrayListQuery(49) & "','" & arrayListQuery(50) & "','" & arrayListQuery(51) & "','" & arrayListQuery(52) & "','" & arrayListQuery(53) & "','" & arrayListQuery(54) & "','" & arrayListQuery(55) & "','" & arrayListQuery(56) & "','" & arrayListQuery(57) & "','" & arrayListQuery(58) & "')"
                 comm = New MySqlCommand(query, connection)
                 reader = comm.ExecuteReader
-                ' updateQuarantine()
                 MsgBox("Svarene dine vil nå bli behandlet, og du kan gå til helsesjekken.", MsgBoxStyle.Information, "Spørreskjema")
             Else
-                'Henter svarene fra ArraylistQuery og fyller databasen med disse svarene. 1=Ja, 0=Nei. Vi bruker tall for å bruke mindre plass i databasen.
+                'Henter svarene fra ArraylistQuery og fyller databasen med disse svarene. 1=Ja, 0=Nei. Vi bruker tall for å bruke mindre plass i databasen
                 Dim query As String = "INSERT INTO Answer(date, status, ss_number, qu1, qu2, qu3, qu4, qu5, qu6, qu7, qu8, qu9, qu10, qu11, qu12, qu13, qu14, qu15, qu16, qu17, qu18, qu19, qu20, qu21, qu22, qu23, qu24, qu25, qu26, qu27, qu28, qu29, qu30, qu31, qu32, qu33, qu34, qu35, qu36, qu37, qu38, qu39, qu40, qu41, qu42, qu43, qu44, qu45, qu46, qu47, qu48, qu49, qu50, qu51, qu52, qu53, qu54, qu55, qu56, qu57, qu58, qu59) VALUES ('" & todayDate & "','" & notApproved & "','" & ssn & "','" & arrayListQuery(0) & "','" & arrayListQuery(1) & "','" & arrayListQuery(2) & "','" & arrayListQuery(3) & "','" & arrayListQuery(4) & "','" & arrayListQuery(5) & "','" & arrayListQuery(6) & "','" & arrayListQuery(7) & "','" & arrayListQuery(8) & "','" & arrayListQuery(9) & "','" & arrayListQuery(10) & "','" & arrayListQuery(11) & "','" & arrayListQuery(12) & "','" & arrayListQuery(13) & "','" & arrayListQuery(14) & "','" & arrayListQuery(15) & "','" & arrayListQuery(16) & "','" & arrayListQuery(17) & "','" & arrayListQuery(18) & "','" & arrayListQuery(19) & "','" & arrayListQuery(20) & "','" & arrayListQuery(21) & "','" & arrayListQuery(22) & "','" & arrayListQuery(23) & "','" & arrayListQuery(24) & "','" & arrayListQuery(25) & "','" & arrayListQuery(26) & "','" & arrayListQuery(27) & "','" & arrayListQuery(28) & "','" & arrayListQuery(29) & "','" & arrayListQuery(30) & "','" & arrayListQuery(31) & "','" & arrayListQuery(32) & "','" & arrayListQuery(33) & "','" & arrayListQuery(34) & "','" & arrayListQuery(35) & "','" & arrayListQuery(36) & "','" & arrayListQuery(37) & "','" & arrayListQuery(38) & "','" & arrayListQuery(39) & "','" & arrayListQuery(40) & "','" & arrayListQuery(41) & "','" & arrayListQuery(42) & "','" & arrayListQuery(43) & "','" & arrayListQuery(44) & "','" & arrayListQuery(45) & "','" & arrayListQuery(46) & "','" & arrayListQuery(47) & "','" & arrayListQuery(48) & "','" & arrayListQuery(49) & "','" & arrayListQuery(50) & "','" & arrayListQuery(51) & "','" & arrayListQuery(52) & "','" & arrayListQuery(53) & "','" & arrayListQuery(54) & "','" & arrayListQuery(55) & "','" & arrayListQuery(56) & "','" & arrayListQuery(57) & "','" & arrayListQuery(58) & "')"
                 comm = New MySqlCommand(query, connection)
                 reader = comm.ExecuteReader
-                'updateQuarantine()
                 MsgBox("Svarene er lagret", MsgBoxStyle.Information, "Spørreskjema")
             End If
-            UserPage.Show()
+            UserPage.Show() 'Når spørreskjemaet er fullført vil brukeren bli ført tilbake til "Min side"
 
             Me.Close()
             reader.Close()
@@ -365,12 +337,9 @@ Public Class QuestForm
     End Sub
     Private Sub btnFinish_Click(sender As Object, e As EventArgs) Handles btnFinish.Click
         Dim user As New User
-        user.getUser()
-        SaveAnswers()
-        'UserPage.Show()
+        user.getUser() 'Kjører subben inni klassen getUser(). Dette for å oppdatere karanten til brukeren basert på svarene som han/hun nettopp fylte ut
+        SaveAnswers() ' Programmet kjører nå metoden SaveAnswers(), og deretter updateLastDrain()
         updateLastDrain()
-
-
     End Sub
 #Region "Alle neste- og forrige-knapper"
 
@@ -442,8 +411,11 @@ Public Class QuestForm
         QuestionRound.SelectTab(8)
     End Sub
 
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
+        Me.Close()
+        UserPage.Show()
+    End Sub
+
 #End Region
-
-
 
 End Class

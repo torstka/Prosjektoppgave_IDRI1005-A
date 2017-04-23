@@ -66,6 +66,7 @@ Public Class NewUser
         'Denne subben validerer at alder er innenfor 18-65 år
         If Age.Text = "" Then
             Me.RegError.SetError(txtyob, "Fødselsdato må være av format: DD/MM/ÅÅÅÅ")
+            Return False
         ElseIf Age.Text < 18 Then
             Me.RegError.SetError(txtyob, "Du er for ung til å donere blod")
             Return False
@@ -330,7 +331,6 @@ Public Class NewUser
             SmtpServer.Port = 587
             SmtpServer.Host = "smtp.gmail.com"
             SmtpServer.EnableSsl = True
-            '  SmtpServer.EnableSsl = True
             mail.To.Add(txtEmail.Text)
             mail.From = New MailAddress("tappernas@gmail.com")
             mail.Subject = "Registrering godkjent"

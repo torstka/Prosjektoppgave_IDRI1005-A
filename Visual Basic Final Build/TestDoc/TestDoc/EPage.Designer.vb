@@ -22,8 +22,10 @@ Partial Class EPage
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Userinformation = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnStatistics = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.cbPlasmaCount = New System.Windows.Forms.ComboBox()
         Me.cbCellsCount = New System.Windows.Forms.ComboBox()
@@ -47,9 +49,9 @@ Partial Class EPage
         Me.txtSSN = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txtQuarantine = New System.Windows.Forms.TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.txtLastDrain = New System.Windows.Forms.TextBox()
-        Me.txtQuarantine = New System.Windows.Forms.TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.cbBloodType = New System.Windows.Forms.ComboBox()
         Me.btnUpdate = New System.Windows.Forms.Button()
@@ -65,7 +67,6 @@ Partial Class EPage
         Me.dgwUsers = New System.Windows.Forms.DataGridView()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.btnStatistics = New System.Windows.Forms.Button()
         Me.txtDepartment = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txtGetBloodInfo = New System.Windows.Forms.TextBox()
@@ -81,6 +82,8 @@ Partial Class EPage
         Me.Label12 = New System.Windows.Forms.Label()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.gbCalendar = New System.Windows.Forms.GroupBox()
+        Me.lblQuarantine = New System.Windows.Forms.Label()
+        Me.Label27 = New System.Windows.Forms.Label()
         Me.lblVelgtime = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label23 = New System.Windows.Forms.Label()
@@ -97,6 +100,7 @@ Partial Class EPage
         Me.btnOrderApp = New System.Windows.Forms.Button()
         Me.btnSignOut = New System.Windows.Forms.Button()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
         Me.Userinformation.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -109,6 +113,7 @@ Partial Class EPage
         Me.TabPage3.SuspendLayout()
         Me.gbCalendar.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Userinformation
@@ -119,7 +124,7 @@ Partial Class EPage
         Me.Userinformation.Controls.Add(Me.TabPage3)
         Me.Userinformation.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Userinformation.ItemSize = New System.Drawing.Size(205, 75)
-        Me.Userinformation.Location = New System.Drawing.Point(77, 61)
+        Me.Userinformation.Location = New System.Drawing.Point(77, 74)
         Me.Userinformation.Margin = New System.Windows.Forms.Padding(2)
         Me.Userinformation.Name = "Userinformation"
         Me.Userinformation.Padding = New System.Drawing.Point(48, 12)
@@ -130,6 +135,7 @@ Partial Class EPage
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btnStatistics)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -142,6 +148,17 @@ Partial Class EPage
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Brukerinformasjon"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'btnStatistics
+        '
+        Me.btnStatistics.BackColor = System.Drawing.Color.LightBlue
+        Me.btnStatistics.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStatistics.Location = New System.Drawing.Point(591, 579)
+        Me.btnStatistics.Name = "btnStatistics"
+        Me.btnStatistics.Size = New System.Drawing.Size(140, 59)
+        Me.btnStatistics.TabIndex = 13
+        Me.btnStatistics.Text = "Vis statistikk"
+        Me.btnStatistics.UseVisualStyleBackColor = False
         '
         'GroupBox3
         '
@@ -399,9 +416,9 @@ Partial Class EPage
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.txtQuarantine)
         Me.GroupBox1.Controls.Add(Me.Label21)
         Me.GroupBox1.Controls.Add(Me.txtLastDrain)
-        Me.GroupBox1.Controls.Add(Me.txtQuarantine)
         Me.GroupBox1.Controls.Add(Me.Label20)
         Me.GroupBox1.Controls.Add(Me.cbBloodType)
         Me.GroupBox1.Controls.Add(Me.btnUpdate)
@@ -419,6 +436,16 @@ Partial Class EPage
         Me.GroupBox1.TabIndex = 56
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Bloddata"
+        '
+        'txtQuarantine
+        '
+        Me.txtQuarantine.Enabled = False
+        Me.txtQuarantine.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuarantine.Location = New System.Drawing.Point(183, 232)
+        Me.txtQuarantine.Margin = New System.Windows.Forms.Padding(1)
+        Me.txtQuarantine.Name = "txtQuarantine"
+        Me.txtQuarantine.Size = New System.Drawing.Size(150, 33)
+        Me.txtQuarantine.TabIndex = 72
         '
         'Label21
         '
@@ -440,16 +467,6 @@ Partial Class EPage
         Me.txtLastDrain.Name = "txtLastDrain"
         Me.txtLastDrain.Size = New System.Drawing.Size(150, 33)
         Me.txtLastDrain.TabIndex = 70
-        '
-        'txtQuarantine
-        '
-        Me.txtQuarantine.Enabled = False
-        Me.txtQuarantine.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtQuarantine.Location = New System.Drawing.Point(183, 229)
-        Me.txtQuarantine.Margin = New System.Windows.Forms.Padding(1)
-        Me.txtQuarantine.Name = "txtQuarantine"
-        Me.txtQuarantine.Size = New System.Drawing.Size(150, 33)
-        Me.txtQuarantine.TabIndex = 68
         '
         'Label20
         '
@@ -475,7 +492,7 @@ Partial Class EPage
         'btnUpdate
         '
         Me.btnUpdate.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdate.Location = New System.Drawing.Point(18, 298)
+        Me.btnUpdate.Location = New System.Drawing.Point(38, 298)
         Me.btnUpdate.Margin = New System.Windows.Forms.Padding(1)
         Me.btnUpdate.Name = "btnUpdate"
         Me.btnUpdate.Size = New System.Drawing.Size(264, 46)
@@ -603,7 +620,6 @@ Partial Class EPage
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.btnStatistics)
         Me.GroupBox4.Controls.Add(Me.txtDepartment)
         Me.GroupBox4.Controls.Add(Me.Label19)
         Me.GroupBox4.Controls.Add(Me.txtGetBloodInfo)
@@ -623,16 +639,6 @@ Partial Class EPage
         Me.GroupBox4.Size = New System.Drawing.Size(1125, 589)
         Me.GroupBox4.TabIndex = 2
         Me.GroupBox4.TabStop = False
-        '
-        'btnStatistics
-        '
-        Me.btnStatistics.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStatistics.Location = New System.Drawing.Point(157, 281)
-        Me.btnStatistics.Name = "btnStatistics"
-        Me.btnStatistics.Size = New System.Drawing.Size(157, 46)
-        Me.btnStatistics.TabIndex = 13
-        Me.btnStatistics.Text = "Vis statistikk"
-        Me.btnStatistics.UseVisualStyleBackColor = True
         '
         'txtDepartment
         '
@@ -674,7 +680,7 @@ Partial Class EPage
         'btnGetOrder
         '
         Me.btnGetOrder.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGetOrder.Location = New System.Drawing.Point(356, 280)
+        Me.btnGetOrder.Location = New System.Drawing.Point(124, 302)
         Me.btnGetOrder.Name = "btnGetOrder"
         Me.btnGetOrder.Size = New System.Drawing.Size(157, 46)
         Me.btnGetOrder.TabIndex = 8
@@ -723,7 +729,7 @@ Partial Class EPage
         'btnGetBlood
         '
         Me.btnGetBlood.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGetBlood.Location = New System.Drawing.Point(356, 281)
+        Me.btnGetBlood.Location = New System.Drawing.Point(356, 303)
         Me.btnGetBlood.Name = "btnGetBlood"
         Me.btnGetBlood.Size = New System.Drawing.Size(157, 45)
         Me.btnGetBlood.TabIndex = 3
@@ -773,6 +779,8 @@ Partial Class EPage
         '
         'gbCalendar
         '
+        Me.gbCalendar.Controls.Add(Me.lblQuarantine)
+        Me.gbCalendar.Controls.Add(Me.Label27)
         Me.gbCalendar.Controls.Add(Me.lblVelgtime)
         Me.gbCalendar.Controls.Add(Me.Label22)
         Me.gbCalendar.Controls.Add(Me.Label23)
@@ -795,11 +803,31 @@ Partial Class EPage
         Me.gbCalendar.TabStop = False
         Me.gbCalendar.Text = "Kalender"
         '
+        'lblQuarantine
+        '
+        Me.lblQuarantine.AutoSize = True
+        Me.lblQuarantine.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblQuarantine.Location = New System.Drawing.Point(212, 192)
+        Me.lblQuarantine.Name = "lblQuarantine"
+        Me.lblQuarantine.Size = New System.Drawing.Size(18, 26)
+        Me.lblQuarantine.TabIndex = 103
+        Me.lblQuarantine.Text = "-"
+        '
+        'Label27
+        '
+        Me.Label27.AutoSize = True
+        Me.Label27.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label27.Location = New System.Drawing.Point(50, 189)
+        Me.Label27.Name = "Label27"
+        Me.Label27.Size = New System.Drawing.Size(121, 29)
+        Me.Label27.TabIndex = 102
+        Me.Label27.Text = "Karantene:"
+        '
         'lblVelgtime
         '
         Me.lblVelgtime.AutoSize = True
         Me.lblVelgtime.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVelgtime.Location = New System.Drawing.Point(61, 253)
+        Me.lblVelgtime.Location = New System.Drawing.Point(61, 302)
         Me.lblVelgtime.Name = "lblVelgtime"
         Me.lblVelgtime.Size = New System.Drawing.Size(115, 29)
         Me.lblVelgtime.TabIndex = 99
@@ -819,7 +847,7 @@ Partial Class EPage
         '
         Me.Label23.AutoSize = True
         Me.Label23.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label23.Location = New System.Drawing.Point(38, 192)
+        Me.Label23.Location = New System.Drawing.Point(38, 241)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(134, 29)
         Me.Label23.TabIndex = 100
@@ -829,7 +857,7 @@ Partial Class EPage
         '
         Me.lblLastDrain.AutoSize = True
         Me.lblLastDrain.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLastDrain.Location = New System.Drawing.Point(212, 195)
+        Me.lblLastDrain.Location = New System.Drawing.Point(212, 244)
         Me.lblLastDrain.Name = "lblLastDrain"
         Me.lblLastDrain.Size = New System.Drawing.Size(18, 26)
         Me.lblLastDrain.TabIndex = 99
@@ -850,9 +878,9 @@ Partial Class EPage
         Me.btnVSSN.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnVSSN.Location = New System.Drawing.Point(428, 75)
         Me.btnVSSN.Name = "btnVSSN"
-        Me.btnVSSN.Size = New System.Drawing.Size(93, 35)
+        Me.btnVSSN.Size = New System.Drawing.Size(110, 35)
         Me.btnVSSN.TabIndex = 96
-        Me.btnVSSN.Text = "Valider"
+        Me.btnVSSN.Text = "Se bruker"
         Me.btnVSSN.UseVisualStyleBackColor = True
         '
         'txtbxSSNV
@@ -868,7 +896,7 @@ Partial Class EPage
         '
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label24.Location = New System.Drawing.Point(47, 313)
+        Me.Label24.Location = New System.Drawing.Point(47, 362)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(125, 29)
         Me.Label24.TabIndex = 94
@@ -877,9 +905,9 @@ Partial Class EPage
         'btnCApp
         '
         Me.btnCApp.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCApp.Location = New System.Drawing.Point(356, 386)
+        Me.btnCApp.Location = New System.Drawing.Point(331, 419)
         Me.btnCApp.Name = "btnCApp"
-        Me.btnCApp.Size = New System.Drawing.Size(147, 52)
+        Me.btnCApp.Size = New System.Drawing.Size(176, 52)
         Me.btnCApp.TabIndex = 73
         Me.btnCApp.Text = "Avbestill"
         Me.btnCApp.UseVisualStyleBackColor = True
@@ -888,7 +916,7 @@ Partial Class EPage
         '
         Me.lblnxtApp.AutoSize = True
         Me.lblnxtApp.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblnxtApp.Location = New System.Drawing.Point(208, 316)
+        Me.lblnxtApp.Location = New System.Drawing.Point(208, 365)
         Me.lblnxtApp.Name = "lblnxtApp"
         Me.lblnxtApp.Size = New System.Drawing.Size(120, 26)
         Me.lblnxtApp.TabIndex = 92
@@ -912,7 +940,7 @@ Partial Class EPage
         Me.DTPOrder.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DTPOrder.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DTPOrder.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.DTPOrder.Location = New System.Drawing.Point(213, 249)
+        Me.DTPOrder.Location = New System.Drawing.Point(213, 298)
         Me.DTPOrder.MaxDate = New Date(3017, 12, 31, 0, 0, 0, 0)
         Me.DTPOrder.MinDate = New Date(2017, 3, 1, 0, 0, 0, 0)
         Me.DTPOrder.Name = "DTPOrder"
@@ -926,7 +954,7 @@ Partial Class EPage
         Me.txtbxTime.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtbxTime.FormattingEnabled = True
         Me.txtbxTime.Items.AddRange(New Object() {"07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:30"})
-        Me.txtbxTime.Location = New System.Drawing.Point(401, 248)
+        Me.txtbxTime.Location = New System.Drawing.Point(401, 297)
         Me.txtbxTime.MaxDropDownItems = 12
         Me.txtbxTime.Name = "txtbxTime"
         Me.txtbxTime.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -937,11 +965,11 @@ Partial Class EPage
         'btnOrderApp
         '
         Me.btnOrderApp.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOrderApp.Location = New System.Drawing.Point(127, 386)
+        Me.btnOrderApp.Location = New System.Drawing.Point(43, 419)
         Me.btnOrderApp.Name = "btnOrderApp"
-        Me.btnOrderApp.Size = New System.Drawing.Size(147, 52)
+        Me.btnOrderApp.Size = New System.Drawing.Size(176, 52)
         Me.btnOrderApp.TabIndex = 62
-        Me.btnOrderApp.Text = "Bestill Time"
+        Me.btnOrderApp.Text = "Sett opp time"
         Me.btnOrderApp.UseVisualStyleBackColor = True
         '
         'btnSignOut
@@ -965,11 +993,15 @@ Partial Class EPage
         Me.PictureBox1.TabIndex = 55
         Me.PictureBox1.TabStop = False
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
         'EPage
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1362, 742)
+        Me.ClientSize = New System.Drawing.Size(1362, 768)
         Me.Controls.Add(Me.btnSignOut)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Userinformation)
@@ -996,6 +1028,7 @@ Partial Class EPage
         Me.gbCalendar.ResumeLayout(False)
         Me.gbCalendar.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1052,7 +1085,6 @@ Partial Class EPage
     Friend WithEvents txtDepartment As TextBox
     Friend WithEvents Label19 As Label
     Friend WithEvents Label20 As Label
-    Friend WithEvents txtQuarantine As TextBox
     Friend WithEvents GroupBox5 As GroupBox
     Friend WithEvents Label5 As Label
     Friend WithEvents txtSearch As TextBox
@@ -1075,4 +1107,8 @@ Partial Class EPage
     Friend WithEvents btnOrderApp As Button
     Friend WithEvents lblVelgtime As Label
     Friend WithEvents Label26 As Label
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents lblQuarantine As Label
+    Friend WithEvents Label27 As Label
+    Friend WithEvents txtQuarantine As TextBox
 End Class

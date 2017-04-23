@@ -97,7 +97,6 @@ Public Class LogIn
         If reader.HasRows Then
             Me.Hide()
             UserPage.Show()
-            MyPage.Label3.Text = ssn
             txtPassword.Clear()
             txtPersonnr.Clear()
         Else
@@ -189,11 +188,7 @@ Public Class LogIn
         End If
     End Sub
 
-    Private Sub btnLogin_KeyDown(sender As Object, e As KeyEventArgs) Handles btnLogin.KeyDown
-        If e.KeyData = Keys.Enter Then
-            MyPage.Focus()  ' The Next textbox to select
-        End If
-    End Sub
+
 
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
 

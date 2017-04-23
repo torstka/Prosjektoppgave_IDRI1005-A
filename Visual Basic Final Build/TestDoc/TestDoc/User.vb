@@ -106,38 +106,12 @@ Public Class User
 
     End Sub
 
-
-    '  Public Sub load_table()
-    '    connection = New MySqlConnection("Server=mysql.stud.iie.ntnu.no;Database=g_oops_03;Uid=g_oops_03;Pwd=mczmmM3N")
-    'Dim SDA As New MySqlDataAdapter
-
-    'Dim bSource As New BindingSource
-
-    'Try
-    '       connection.Open()
-    'Dim query As String = "SELECT ss_number as 'Personnummer',lastname as 'Etternavn',firstname as 'Fornavn',blood_type as'Blodtype' FROM User"
-    '        cmd = New MySqlCommand(query, connection)
-    '        SDA.SelectCommand = cmd()
-    '       SDA.Fill(dtable)
-    '      bSource.DataSource = dtable
-    '     DataGridView1.DataSource = bSource
-    '    SDA.Update(dtable)
-
-    '   connection.Close()
-    'Catch ex As Exception
-    '       MessageBox.Show(ex.Message)
-    'Finally
-    '       connection.Dispose()
-
-    'End Try
-    'End Sub
-
     Public Sub addBloodData(ByVal SSNumber As String)
 
 
         Try
             connection.Open()
-            Dim query As String = "INSERT INTO Blood_Data (ss_number, blood_type) VALUES ('" & SSNumber & "', 'Ikke verdi')"
+            Dim query As String = "INSERT INTO Blood_Data (ss_number, blood_type, last_drain) VALUES ('" & SSNumber & "','Ikke verdi','01/01/1900')"
             cmd = New MySqlCommand(query, connection)
             reader = cmd.ExecuteReader
 
@@ -168,7 +142,5 @@ Public Class User
         Next
 
     End Sub
-
-
 
 End Class

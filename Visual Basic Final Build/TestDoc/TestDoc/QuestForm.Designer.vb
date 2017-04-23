@@ -24,6 +24,7 @@ Partial Class QuestForm
     Private Sub InitializeComponent()
         Me.QuestionRound = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.btnCancel = New System.Windows.Forms.Button()
         Me.lbM1 = New System.Windows.Forms.Label()
         Me.lbF1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -403,6 +404,7 @@ Partial Class QuestForm
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.btnCancel)
         Me.TabPage1.Controls.Add(Me.lbM1)
         Me.TabPage1.Controls.Add(Me.lbF1)
         Me.TabPage1.Controls.Add(Me.Panel1)
@@ -419,8 +421,19 @@ Partial Class QuestForm
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage1.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.Text = "Side 1"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'btnCancel
+        '
+        Me.btnCancel.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Location = New System.Drawing.Point(10, 494)
+        Me.btnCancel.Margin = New System.Windows.Forms.Padding(2)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(153, 49)
+        Me.btnCancel.TabIndex = 3
+        Me.btnCancel.Text = "Avbryt"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
         'lbM1
         '
@@ -769,7 +782,7 @@ Partial Class QuestForm
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage2.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
+        Me.TabPage2.Text = "Side 2"
         Me.TabPage2.UseVisualStyleBackColor = True
         '
         'lbM2
@@ -1087,7 +1100,7 @@ Partial Class QuestForm
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage3.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage3.TabIndex = 2
-        Me.TabPage3.Text = "TabPage3"
+        Me.TabPage3.Text = "Side 3"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
         'lbM3
@@ -1584,7 +1597,7 @@ Partial Class QuestForm
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage4.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage4.TabIndex = 8
-        Me.TabPage4.Text = "TabPage4"
+        Me.TabPage4.Text = "Side 4"
         Me.TabPage4.UseVisualStyleBackColor = True
         '
         'lbM4
@@ -2023,7 +2036,7 @@ Partial Class QuestForm
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage5.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage5.TabIndex = 3
-        Me.TabPage5.Text = "TabPage5"
+        Me.TabPage5.Text = "Side 5"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
         'lbM5
@@ -2137,7 +2150,7 @@ Partial Class QuestForm
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage6.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage6.TabIndex = 4
-        Me.TabPage6.Text = "TabPage6"
+        Me.TabPage6.Text = "Side 6"
         '
         'lbM6
         '
@@ -2580,7 +2593,7 @@ Partial Class QuestForm
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage7.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage7.TabIndex = 9
-        Me.TabPage7.Text = "TabPage7"
+        Me.TabPage7.Text = "Side 7"
         Me.TabPage7.UseVisualStyleBackColor = True
         '
         'lbM7
@@ -2967,7 +2980,7 @@ Partial Class QuestForm
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage8.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage8.TabIndex = 5
-        Me.TabPage8.Text = "TabPage8"
+        Me.TabPage8.Text = "Side 8 - Kvinner"
         Me.TabPage8.UseVisualStyleBackColor = True
         '
         'lbFShow
@@ -3216,7 +3229,7 @@ Partial Class QuestForm
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage9.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage9.TabIndex = 6
-        Me.TabPage9.Text = "TabPage9"
+        Me.TabPage9.Text = "Side 9 - Menn"
         Me.TabPage9.UseVisualStyleBackColor = True
         '
         'lbMShow
@@ -3331,7 +3344,7 @@ Partial Class QuestForm
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(2)
         Me.TabPage10.Size = New System.Drawing.Size(1059, 549)
         Me.TabPage10.TabIndex = 7
-        Me.TabPage10.Text = "TabPage10"
+        Me.TabPage10.Text = "Side 10"
         Me.TabPage10.UseVisualStyleBackColor = True
         '
         'lbM10
@@ -4301,4 +4314,5 @@ Partial Class QuestForm
     Friend WithEvents lbF10 As Label
     Friend WithEvents lbFShow As Label
     Friend WithEvents lbMShow As Label
+    Friend WithEvents btnCancel As Button
 End Class

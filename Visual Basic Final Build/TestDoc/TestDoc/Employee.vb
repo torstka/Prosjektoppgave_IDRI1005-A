@@ -9,9 +9,9 @@ Public Class Employee
     Dim reader As MySqlDataReader
     Dim rad As DataRow
 
-    Dim ssn As String = EPage.txtSSN.Text
+    Dim ssn As String = EPage.txtSSN.Text 'Henter ss_number fra Epage
 
-
+    'Her hentes verdiene om bloddata fra databasen
     Public Sub showBloodData(ByVal hemoB As String, ByVal iron As String, ByVal typeBlood As String)
         Try
             connection.Open()
@@ -27,20 +27,17 @@ Public Class Employee
                 hb &= reader("hb") & " "
                 ironValue = reader("iron_value") & " "
                 bloodType = reader("blood_type") & " "
-
             End While
 
+            'Her settes de forskjellige verdiene til det som står i databasen
             hemoB = hb
             iron = ironValue
             typeBlood = bloodType
-
-
             connection.Close()
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         Finally
             connection.Dispose()
         End Try
-
     End Sub
 End Class

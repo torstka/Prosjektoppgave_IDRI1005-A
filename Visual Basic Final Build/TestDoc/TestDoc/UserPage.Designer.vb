@@ -359,9 +359,9 @@ Partial Class UserPage
         Me.Label2.Location = New System.Drawing.Point(574, 10)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(416, 29)
+        Me.Label2.Size = New System.Drawing.Size(360, 29)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "I dag kan ikke følgende personer gi blod:"
+        Me.Label2.Text = "Følgende personer kan ikke gi blod"
         '
         'ChangeData
         '
@@ -605,7 +605,7 @@ Partial Class UserPage
         Me.GroupBox6.Controls.Add(Me.DTPOrder)
         Me.GroupBox6.Controls.Add(Me.txtbxTime)
         Me.GroupBox6.Controls.Add(Me.btnOrderApp)
-        Me.GroupBox6.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox6.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(989, 146)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(443, 374)
@@ -719,7 +719,7 @@ Partial Class UserPage
         Me.Label20.BackColor = System.Drawing.SystemColors.Control
         Me.Label20.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Label20.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(576, 159)
+        Me.Label20.Location = New System.Drawing.Point(590, 159)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(340, 109)
         Me.Label20.TabIndex = 14
@@ -753,9 +753,9 @@ Partial Class UserPage
         'btnUpdateQuarantine
         '
         Me.btnUpdateQuarantine.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnUpdateQuarantine.Location = New System.Drawing.Point(147, 320)
+        Me.btnUpdateQuarantine.Location = New System.Drawing.Point(151, 333)
         Me.btnUpdateQuarantine.Name = "btnUpdateQuarantine"
-        Me.btnUpdateQuarantine.Size = New System.Drawing.Size(142, 37)
+        Me.btnUpdateQuarantine.Size = New System.Drawing.Size(126, 40)
         Me.btnUpdateQuarantine.TabIndex = 15
         Me.btnUpdateQuarantine.Text = "Oppdater"
         Me.btnUpdateQuarantine.UseVisualStyleBackColor = True
@@ -879,7 +879,7 @@ Partial Class UserPage
         Me.btnQuest.AllowDrop = True
         Me.btnQuest.BackColor = System.Drawing.Color.LightBlue
         Me.btnQuest.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnQuest.Location = New System.Drawing.Point(576, 349)
+        Me.btnQuest.Location = New System.Drawing.Point(590, 349)
         Me.btnQuest.Margin = New System.Windows.Forms.Padding(2)
         Me.btnQuest.Name = "btnQuest"
         Me.btnQuest.Size = New System.Drawing.Size(340, 171)
@@ -929,7 +929,7 @@ Partial Class UserPage
         Me.AccessibleRole = System.Windows.Forms.AccessibleRole.RowHeader
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1671, 953)
+        Me.ClientSize = New System.Drawing.Size(1362, 741)
         Me.Controls.Add(Me.btnSignOut)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.btnLogOut)

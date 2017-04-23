@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -74,20 +77,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BloodStock.vb" />
-    <Compile Include="Cal.Designer.vb">
-      <DependentUpon>Cal.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Cal.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Employee.vb" />
-    <Compile Include="EmployeePage.Designer.vb">
-      <DependentUpon>EmployeePage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="EmployeePage.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="EPage.Designer.vb">
       <DependentUpon>EPage.vb</DependentUpon>
     </Compile>
@@ -122,12 +112,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="My Project\Validate.vb" />
-    <Compile Include="MyPage.Designer.vb">
-      <DependentUpon>MyPage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="MyPage.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="NewUser.Designer.vb">
       <DependentUpon>NewUser.vb</DependentUpon>
     </Compile>
@@ -146,35 +130,15 @@
     <Compile Include="Statistics.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Stock.vb" />
-    <Compile Include="Storage.Designer.vb">
-      <DependentUpon>Storage.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Storage.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="User.vb" />
-    <Compile Include="UserInformation.Designer.vb">
-      <DependentUpon>UserInformation.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UserInformation.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="UserPage.Designer.vb">
       <DependentUpon>UserPage.vb</DependentUpon>
     </Compile>
     <Compile Include="UserPage.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Validation.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Cal.resx">
-      <DependentUpon>Cal.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="EmployeePage.resx">
-      <DependentUpon>EmployeePage.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="EPage.resx">
       <DependentUpon>EPage.vb</DependentUpon>
     </EmbeddedResource>
@@ -190,9 +154,6 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="MyPage.resx">
-      <DependentUpon>MyPage.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NewUser.resx">
       <DependentUpon>NewUser.vb</DependentUpon>
     </EmbeddedResource>
@@ -201,12 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Storage.resx">
-      <DependentUpon>Storage.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserInformation.resx">
-      <DependentUpon>UserInformation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserPage.resx">
       <DependentUpon>UserPage.vb</DependentUpon>
@@ -238,6 +193,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

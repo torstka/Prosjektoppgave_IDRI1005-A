@@ -17,12 +17,7 @@ Public Class UserPage
 
     Public ssNumber = LogIn.txtPersonnr.Text
     Private Sub UserPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-        verifySSNumber()
-
-
-
-
+        Dim user As New User
         DonorPage.Size = New Size(1550, 750)
 
         Me.Size = SystemInformation.PrimaryMonitorSize
@@ -31,102 +26,19 @@ Public Class UserPage
         btnSignOut.Location = New Point((Me.Width - btnSignOut.Width) \ 2 + 680,
                              (Me.Height - btnSignOut.Height) \ 2 - 330)
 
-        'Changeuserinfo.Location = New Point((ChangeData.Width - Changeuserinfo.Width) \ 2,
-        '                     (ChangeData.Height - Changeuserinfo.Height) \ 2 + 50)
-
+        verifySSNumber()
+        getAppointmentTime()
         txtConPwd.Hide()
         confirmPwd.Hide()
-
-
-
-        'Label18.Text = ssNumber
-
         showData()
-        Dim user As New User
         user.getUser()
         showBloodData()
 
 
 
-        'Dim showUser As New User
-        'showUser.showData(txtFirstName.Text, txtLastName.Text, txtPhone.Text, txtMail.Text, txtAddress.Text, txtZipcode.Text, txtPwd.Text)
-
-
-        'Dim da As New MySqlDataAdapter
-        'Dim interntabel As New DataTable
-        'Dim da2 As New MySqlDataAdapter      'de 3 neste her er for å få med seg blodtypen, statisk verdi og skal linkes opp mot txtpersonnr fra form1
-
-
-        'Dim intern2 As New DataTable
-
-
-        '        Dim rad As DataRow   'det vil være mange forskjellige variabler i hver rad i den interne tabellen
-
-
-        'Dim da3 As New MySqlDataAdapter
-
-
-        'Dim intern3 As New DataTable
-
-        'Dim da4 As New MySqlDataAdapter
-
-        'Dim intern4 As New DataTable
-
-        'Try
-        'connection.Open()
-        'Dim sqlBloodInfo As New MySqlCommand("SELECT last_Drain, hb, iron_Value FROM Blood_Data WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", connection)   'kommando med variabel til å ta imot fra DB, og connectionen
-        'da.SelectCommand = sqlBloodInfo   'da(data_adapter) velger hvilken kommando som skal kjøres og "Kommanderer" de over til interntabellen med en sqlspørring hvor alt legges i variabelen fra linja over
-        'da.Fill(interntabel)          'når kommandolinje er valgt og utføres, legges data inn i den internetabellen, som igjen laster rad for rad inn i textboxene
-
-        'Dim sqltype As New MySqlCommand("SELECT blood_type FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", connection)
-        'Dim sqlname As New MySqlCommand("SELECT firstname, lastname FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", connection)
-
-        'da2.SelectCommand = sqlname
-        'da2.Fill(intern2)
-        'da3.SelectCommand = sqltype
-        'da3.Fill(intern3)
-
-        'Dim sqlEditInfo As New MySqlCommand("SELECT e_mail, phone, address, password, firstname, lastname FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'", connection)
-        'da4.SelectCommand = sqlEditInfo
-        'da4.Fill(intern4)
-
-        'For Each rad In interntabel.Rows
-        'txtDrain.Text = (rad("last_Drain"))
-        'txtHb.Text = (rad("hb"))
-        'txtIronValue.Text = (rad("iron_Value"))
-        'Next
-
-
-        'For Each rad In intern3.Rows
-        'txtBtype.Text = (rad("blood_type"))
-        'Next
-
-        'For Each rad In intern4.Rows
-        'txtFirstName.Text = (rad("firstname"))
-        'txtLastName.Text = (rad("lastname"))
-        'txtMail.Text = (rad("e_mail"))
-        'txtPhone.Text = (rad("phone"))
-        'txtAddress.Text = (rad("address"))
-        'txtPwd.Text = (rad("password"))
-        'txtConPwd.Text = txtPwd.Text
-        'Next
-
-        'Catch ex As MySqlException
-        'MsgBox(ex.Message)        'tilfelle det oppstår en feil
-        'Finally
-        'connection.Dispose()      'lukke connectionen og forkaster den internedata som er blitt brukt under kjøringen av denne forma
-        'End Try
-
-
-
     End Sub
 
-#Region "pao public var"
-    Public tilkobling As New MySqlConnection(
-"Server=mysql.stud.iie.ntnu.no;" _
-& "Database=g_oops_03;" _
-& "Uid=g_oops_03;" _
-& "Pwd=mczmmM3N;")
+
     'forskjellige variabler som blir forklart her eller lengre ned i koden
     'dags dato som må være på riktig format
     Public TodayDForm As String = Date.Now.ToString("yyyy.MM.dd")
@@ -142,8 +54,6 @@ Public Class UserPage
     Public DTPFormat As String
     Public verifySSN As String
 
-
-#End Region
 
     'denne suben fjerner ding-lyden som normalt kommer når man manipulerer entertasten
     Const CARRIAGE_RETURN As Char = Chr(13)
@@ -199,8 +109,11 @@ Public Class UserPage
                 txtHb.Text = (rad("hb")).ToString()
                 txtIronValue.Text = (rad("iron_value")).ToString()
                 txtDrain.Text = (rad("last_drain")).ToString()
-            Next
 
+            Next
+            If txtDrain.Text = "01/01/1900" Then
+                txtDrain.Text = "Ikke Tappet"
+            End If
         Catch ex As MySqlException
             MsgBox(ex.Message)         'tilfelle det oppstår en feil
             connection.Close()
@@ -211,48 +124,23 @@ Public Class UserPage
 
     End Sub
 
-    'Public Sub getUser()
 
-    '    connection.Open()
-    '    Dim query As String = "SELECT ss_number, firstname, lastname, quarantine FROM User WHERE ss_number='" & LogIn.txtPersonnr.Text & "'"
-    '    cmd = New MySqlCommand(query, connection)
-    '    adapter = New MySqlDataAdapter
-    '    adapter.SelectCommand = cmd
-    '    adapter.Fill(dtable)
-
-    '    For Each rad In dtable.Rows
-    '        lblFullName.Text = (rad("firstname") & " " & rad("lastname"))
-    '        lblSSnumber.Text = (rad("ss_number")).ToString()
-    '        TextBox1.Text = (rad("quarantine")).ToString()
-    '    Next
-
-    'End Sub
 
 
     Private Sub btnChangeData_Click(sender As Object, e As EventArgs) Handles btnChangeData.Click
-
-        'Dim updateUser As New User
-        'updateUser.update(txtFirstName.Text, txtLastName.Text, txtAddress.Text, txtZipcode.Text, txtPhone.Text, txtMail.Text, txtPwd.Text)
-
         updateData()
-
     End Sub
 
     Private Sub btnLogOut_Click(sender As Object, e As EventArgs) Handles btnLogOut.Click
-
         Me.Hide()
         LogIn.Show()
-
     End Sub
 
     Private Sub btnQuest_Click(sender As Object, e As EventArgs) Handles btnQuest.Click
-
         QuestForm.checkIfApproved()
-
     End Sub
 
     Private Sub txtPwd_TextChanged(sender As Object, e As EventArgs) Handles txtPwd.Click
-
         confirmPwd.Show()
         txtConPwd.Show()
     End Sub
@@ -262,98 +150,52 @@ Public Class UserPage
         LogIn.Show()
     End Sub
 
-    '#End Region
     Private Sub verifyLastDrain()
-        Dim sql As New MySqlCommand("Select last_drain From Blood_Data WHERE ss_number =" & ssNumber & " ", tilkobling)
+        Dim sql As New MySqlCommand("Select last_drain From Blood_Data WHERE ss_number =" & ssNumber & " ", connection)
     End Sub
     Private Sub verifySSNumber()
         'setter verifySSN lik tekstboksen hvor de ansatte har tastet inn personnummeret
         verifySSN = ssNumber
         lblLastDrain.Text = " "
 
-        Me.DTPOrder.MinDate = todayP1
-        Me.DTPOrder.Value = todayP1
         Try
-            tilkobling.Open()
+            connection.Open()
             'sql spørringen henter ut last_drain som er siste tapping koblet til et person nummer
-            Dim sql As New MySqlCommand("Select last_drain From Blood_Data WHERE ss_number =" & ssNumber & " ", tilkobling)
+            Dim query As String = "Select last_drain From Blood_Data Where ss_number = '" & ssNumber & "' "
             Dim da As New MySqlDataAdapter
             Dim interntabell As New DataTable
-            da.SelectCommand = sql
+            cmd = New MySqlCommand(query, connection)
+            da.SelectCommand = cmd
             da.Fill(interntabell)
-            tilkobling.Close()
+            connection.Close()
 
-            Dim rad As DataRow
+
             'last drain lagres som datetime
             Dim last_drain As DateTime
             Dim LastDrainP90 As DateTime
             For Each rad In interntabell.Rows
-
                 last_drain = rad("last_drain")
-                'vi plusser på 91 dager på last drain, og gjør minimumsverdien til DateTimePicker (DTPOrder) til denne variabelen
-                'slik ungår vi at det vil være mindre enn 3 måneder mellom tappinger.
-                LastDrainP90 = last_drain.AddDays(+91)
-                Me.DTPOrder.MinDate = LastDrainP90
-                lblLastDrain.Text = last_drain
+                'Dersom last_drain viser "01.01.1900", vil minimunsverdien til datetimepicker være dagens dato (today)
+                If last_drain = "01.01.1900" Then
+                    Me.DTPOrder.MinDate = Today
+                    'Labelen lastDrain vil vise "Ikke tappet"
+                    lblLastDrain.Text = "Ikke tappet"
+                Else
+                    'vi plusser på 90 dager på last drain, og gjør minimumsverdien til DateTimePicker (DTPOrder) til denne variabelen
+                    'slik ungår vi at det vil være mindre enn 3 måneder mellom tappinger.
+                    LastDrainP90 = last_drain.AddDays(+90)
+                    Me.DTPOrder.MinDate = LastDrainP90
+                    lblLastDrain.Text = last_drain
+                End If
             Next rad
         Catch feilmelding As MySqlException
             MsgBox("Feil ved uthenting av siste tapping     " &
-             feilmelding.Message)
+             feilmelding.Message, MsgBoxStyle.Critical, "feil")
         Finally
-            tilkobling.Dispose()
+            connection.Dispose()
         End Try
-
-        Try
-            'her tilbakestilles lblnxtApp.text i tilfellet at ansatte skifter person nummer og at deres info ikke skal være igjen.
-            lblnxtApp.Text = "Ikke satt opp"
-            tilkobling.Open()
-            'sql spørringen henter ut cal_id, time, og dag fra calenderen basert på max(cal_id) til et personnummer
-            Dim sql As New MySqlCommand("Select cal_id, day, time From Calendar Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Calendar Where ss_number =" & ssNumber & ")", tilkobling)
-            Dim da As New MySqlDataAdapter
-            Dim interntabell As New DataTable
-
-            da.SelectCommand = sql
-            da.Fill(interntabell)
-            tilkobling.Close()
-
-            Dim rad As DataRow
-            Dim day, time, cal_id As String
-            For Each rad In interntabell.Rows
-
-                cal_id = rad("cal_id")
-                day = rad("day")
-                time = rad("time")
-                'opptaderer dot (Date og Time) slik at brukeren får feedback på neste time.
-                dot = day + " " + time
-                'lblnxtApp er labelen som viser neste time.
-                lblnxtApp.Text = dot
-                cancel = cal_id
-
-            Next rad
-        Catch feilmelding As MySqlException
-            MsgBox("Feil ved tilkobling til databasen fra form Cal_load:     " &
-             feilmelding.Message)
-            'dot nullstilles
-            dot = " "
-        Finally
-            tilkobling.Dispose()
-        End Try
-
     End Sub
-#Region "pao Verify Social Security Number"
 
-#End Region
-    'innlogging:   g_oops_03
-    'lbl = short for Label
-    'bx = short for Box
-    'Passord.... : mczmmM3N
-    'txt = short for Text
-    'LB = short for ListBox
-    'App = short for appointment in regards of naming, buttons, labels in the Cal.vb
-    'hist = short for history
-    'Nxt = short for next
-
-#Region "pao Order button and sql"
     Private Sub OrderApp()
         Dim newDTPValue As String
         Dim DTPValue As Date
@@ -380,93 +222,112 @@ Public Class UserPage
         'denne if setningen er omformet slik at de som jobber her kan sette opp time før det er godt tre måneder, i tilfellet at noen ringer inn for ny time.
         If dot = newAPP Then
             'her sjekkes det om man har trykket på bestillingsknappen 2 ganger og kort sagt forsøkt å sette opp samme time 2 ganger.
-            MsgBox("Du har allerede denne timen satt opp!", MsgBoxStyle.Information, "Timebestilling")
+            MsgBox("Du har allerede denne timen satt opp", MsgBoxStyle.Information, "Kalender")
         ElseIf testCheck1 = False And testcheck2 = False Then
             'her sjekkes det om lblnxtApp IKKE er "Avbestilt" og "Ikke satt opp", om en av de er satt opp er det en time satt opp.
-            MsgBox("Time er allerede satt opp!", MsgBoxStyle.Information, "Timebestilling")
+            MsgBox("Time er allerede satt opp", MsgBoxStyle.Information, "Kalender")
         ElseIf testCheck1 = True And testcheck2 = True Then
             'her sjekkes det om lblnxtApp ligner på både "avbestilt" OG "Ikke satt opp", dette skal i utgangspunktet ikke være mulig.
-            MsgBox("Noe gikk galt med sjekk etter tidligere oppsatt time", MsgBoxStyle.Information, "Timebestilling")
+            MsgBox("Noe gikk galt med sjekk etter tidligere oppsatt time", MsgBoxStyle.Information, "Kalender")
 
         ElseIf nxtTapp < newDTPValue Then
             'her sjekkes det at den nye timen er større enn dags dato, som betyr at timen ikke har passert.
             'busy variabelen tilbakestilles til 0 før hver spørring
             busy = 0
 
+            'sjekker om timen er opptatt
             Try
-
-                tilkobling.Open()
+                connection.Open()
                 'en SQL spørring som henter ut cal_id fra calenderen basert på dato og tid som er satt inn i DateTimePicker og Comboboxen
-                Dim sql As New MySqlCommand("SELECT Cal_id FROM Calendar Where Day= '" & DTPOrder.Text & "' And time= '" & txtbxTime.Text & "' ", tilkobling)
+                Dim sql As New MySqlCommand("SELECT cal_id FROM Order_Appointment Where date= '" & DTPOrder.Text & "' And time= '" & txtbxTime.Text & "' ", connection)
                 Dim da As New MySqlDataAdapter
                 Dim interntabell As New DataTable
 
                 da.SelectCommand = sql
                 da.Fill(interntabell)
-                tilkobling.Close()
+                connection.Close()
 
                 Dim rad As DataRow
                 For Each rad In interntabell.Rows
                     'her blir busy raden opptadert til cal_id som blir hentet ut, om det ikke er noen calender id og hente ut så forblir busy = 0
                     busy = rad("Cal_id")
-
                 Next rad
-            Catch feilmelding As MySqlException
-                MsgBox("Feil med variabel busy   " &
-feilmelding.Message)
+
+            Catch ex As MySqlException
+                MsgBox(ex.Message)
             Finally
-                tilkobling.Dispose()
+                connection.Dispose()
             End Try
             'her sjekkes det om busy er over 0 og siden busy er en cal_id vil if setningen ikke sette opp timene som er tatt.
             If busy > 1 Then
-                MsgBox("Timen er opptatt! Velg en annen dato eller klokkeslett.", MsgBoxStyle.Information, "Timebestilling")
+                MsgBox("timen er opptatt", MsgBoxStyle.Information, "Kalender")
             ElseIf busy = 0 Then
+
                 Try
-                    tilkobling.Open()
+                    connection.Open()
                     Dim sporring As String
                     'Insert spørring hvor cal_id er autoincrement og ikke trengs og settes inn, etterfulgt av SSN, dato og tid
-                    sporring = "Insert Into Calendar VALUES (' ', '" & ssNumber & "', '" & DTPOrder.Text & "', '" & txtbxTime.Text & "')"
+                    sporring = "Insert Into Order_Appointment (date, time, ss_number) VALUES ('" & DTPOrder.Text & "', '" & txtbxTime.Text & "', '" & ssNumber & "')"
 
-                    Dim insertsql As New MySqlCommand(sporring, tilkobling)
+                    Dim insertsql As New MySqlCommand(sporring, connection)
                     Dim da As New MySqlDataAdapter
                     Dim interntabell As New DataTable
 
                     da.SelectCommand = insertsql
                     da.Fill(interntabell)
-                    tilkobling.Close()
+                    connection.Close()
 
-                    'lblOdate og lblOtime
-                    ' lblODate.Text = DTPOrder.Text
-                    ' lblOTime.Text = txtbxTime.Text
-                    lblnxtApp.Text = DTPOrder.Text + " " + txtbxTime.Text
-                    MsgBox("Time bestilt for dato: " & DTPOrder.Text & vbNewLine & "Klokken: " & txtbxTime.Text & "", MsgBoxStyle.Information, "Timebestilling")
+                    lblnxtApp.Text = DTPOrder.Value.ToString("dd/MM/yyyy") + " " + txtbxTime.Text
+                    MsgBox("Time bestilt for dato: " & DTPOrder.Value.ToString("dd/MM/yyyy") & vbNewLine & "Klokken: " & txtbxTime.Text, MsgBoxStyle.Information, "Timebestilling")
                 Catch feilmelding As MySqlException
-                    MsgBox("Feil ved tilkobling til databasen: bestilling " & feilmelding.Message)
+                    MsgBox("Feil ved connection til databasen: bestilling " & feilmelding.Message)
                 Finally
-                    tilkobling.Dispose()
+                    connection.Dispose()
                 End Try
             End If
         End If
     End Sub
 
+    Private Sub getAppointmentTime()
+        Try
+            'her tilbakestilles lblnxtApp.text i tilfellet at ansatte skifter person nummer og at deres info ikke skal være igjen.
+            lblnxtApp.Text = "Ikke satt opp"
+            connection.Open()
+            'sql spørringen henter ut cal_id, time, og dag fra calenderen basert på max(cal_id) til et personnummer
+            Dim query As String = "Select cal_id, date, time From Order_Appointment Where ss_number =" & ssNumber & " And cal_id = (Select MAX(cal_id) From Order_Appointment Where ss_number = '" & ssNumber & "')"
+            cmd = New MySqlCommand(query, connection)
+            Dim da As New MySqlDataAdapter
+            Dim interntabell As New DataTable
 
-    Private Sub BtnOrderApp_Click(sender As Object, e As EventArgs) Handles btnOrderApp.Click
-        If txtQuarantine.Text = "Livstid" Then
-            MsgBox("Du er i karantene og kan desverre ikke gi blod", MsgBoxStyle.Critical, "Oops!")
-        ElseIf txtQuarantine.Text = "Helsesjekk" Then
-            MsgBox("Snakk med sykepleier før du kan bestille time.", MsgBoxStyle.Information, "Obs!")
-        ElseIf txtQuarantine.Text = "" Then
-            MsgBox("Ingen karantene status funnet. Fullfør spørreskjemaet og trykk på 'Oppdater' på 'Min Side' for å kunne bestille time.", MsgBoxStyle.Information, "Obs!")
-        ElseIf Not txtQuarantine.Text = "Godkjent" Then
-            MsgBox("Du har karantene til " & txtQuarantine.Text & vbNewLine & "Vennligst vent til karantenen er utløpt før du bestiller time.", MsgBoxStyle.Information, "obs!")
-        Else
-            OrderApp()
-        End If
+            da.SelectCommand = cmd
+            da.Fill(interntabell)
+            connection.Close()
 
+            Dim rad As DataRow
+            Dim time, cal_id As String
+            Dim appDate As Date
+            For Each rad In interntabell.Rows
+                cal_id = rad("cal_id")
+                appDate = rad("date")
+                time = rad("time")
+                'opptaderer dot (Date og Time) slik at brukeren får feedback på neste time.
+                dot = appDate.ToString("dd/MM/yyyy") + " " + time
+                'lblnxtApp er labelen som viser neste time.
+                lblnxtApp.Text = dot
+                cancel = cal_id
+
+            Next rad
+        Catch feilmelding As MySqlException
+            MsgBox("Feil ved connection til databasen fra form Cal_load:     " &
+         feilmelding.Message)
+            'dot nullstilles
+            dot = " "
+        Finally
+            connection.Dispose()
+        End Try
     End Sub
-#End Region
 
-#Region "pao Delete Order button and sql"
+
     Private Sub deleteApp()
         'cancel blir satt tilbakestilt før hver spørring
         'cancel er en variabel som blir opptadert til max(cal_id) til en person sitt person nummer
@@ -474,19 +335,18 @@ feilmelding.Message)
         cancel = 0
 
         '= txtpaoSSN.Text
-        If verifySSN = ssNumber Then
-            txtbxSSN = verifySSN
 
-            Try
-                tilkobling.Open()
+
+        Try
+                connection.Open()
                 'select spørring som henter ut den max(cal_id) til et person nummer
-                Dim sql As New MySqlCommand("Select Cal_id From Calendar Where Cal_id = (Select MAX(Cal_id) From Calendar Where ss_number =" & ssNumber & ") ", tilkobling)
+                Dim sql As New MySqlCommand("Select Cal_id From Order_Appointment Where Cal_id = (Select MAX(Cal_id) From Order_Appointment Where ss_number =" & ssNumber & ") ", connection)
                 Dim da As New MySqlDataAdapter
                 Dim interntabell As New DataTable
 
                 da.SelectCommand = sql
                 da.Fill(interntabell)
-                tilkobling.Close()
+                connection.Close()
 
                 Dim rad As DataRow
                 Dim Cal_id As String
@@ -497,28 +357,26 @@ feilmelding.Message)
                     cancel = Cal_id
 
                 Next rad
-            Catch feilmelding As MySqlException
-                MsgBox("Feil ved spørring, avbestilling kanseleres: " &
-         feilmelding.Message)
+            Catch ex As MySqlException
+                MsgBox("Mangler personnummer", MsgBoxStyle.Critical, "Feil")
                 'ved feil i spørringen så stopper vi slettingen av spørringen
                 cancel = 0
             Finally
-                tilkobling.Dispose()
+                connection.Dispose()
             End Try
             'avbestilingen går bare igjennom sålenge personnummmeret har et
             If cancel > 0 Then
 
                 Try
-                    tilkobling.Open()
-
-                    'spørringen sletter alle timebestillinger til et personnummer, men i praksis skal det bare være en bestilling pr. person nummer.
-                    Dim sql As New MySqlCommand("Delete From `Calendar` Where `ss_number`=" & ssNumber & " ", tilkobling)
-                    Dim da As New MySqlDataAdapter
+                    connection.Open()
+                'spørringen sletter alle timebestillinger til et personnummer, men i praksis skal det bare være en bestilling pr. person nummer.
+                Dim sql As New MySqlCommand("Delete From `Order_Appointment` Where `ss_number`=" & ssNumber & " ", connection)
+                Dim da As New MySqlDataAdapter
                     Dim interntabell As New DataTable
 
                     da.SelectCommand = sql
                     da.Fill(interntabell)
-                    tilkobling.Close()
+                    connection.Close()
 
                     Dim rad As DataRow
                     Dim Cal_id As String
@@ -528,30 +386,46 @@ feilmelding.Message)
                     'lblnxtApp brukes som feedback til brukeren om at timen er avbestilt. 
                     'ved neste innlogging vil det stå "Ikke satt opp" om det ikke er noen time satt opp.
                     lblnxtApp.Text = "Avbestilt"
-                    MsgBox("Timen er avbestilt!", MsgBoxStyle.Information, "Timebestilling")
+                    MsgBox("Time avbestilt", MsgBoxStyle.Information, "Avbestilt")
                 Catch feilmelding As MySqlException
                     MsgBox(" kunne ikke slette time fra kalender: " &
-                 feilmelding.Message, MsgBoxStyle.Information, "Timebestilling")
+                 feilmelding.Message)
                 Finally
-                    tilkobling.Dispose()
+                    connection.Dispose()
                 End Try
             Else
-                MsgBox("Ingen time å avbestille", MsgBoxStyle.Information, "Timebestilling")
+                MsgBox("Ingen time å avbestille", MsgBoxStyle.Information, "Feil")
             End If
 
-        End If
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Dim url As String = “https://giblod.no/default.aspx“
+    Private Sub BtnOrderApp_Click(sender As Object, e As EventArgs) Handles btnOrderApp.Click
 
+        If txtQuarantine.Text = "Livstid" Then
+            MsgBox("Du er i karantene og kan desverre ikke gi blod", MsgBoxStyle.Critical, "Oops!")
+        ElseIf txtQuarantine.Text = "" Then
+            OrderApp()
+        ElseIf Not txtQuarantine.Text = "Godkjent" Then
+            MsgBox("Du har karantene til " & txtQuarantine.Text & vbNewLine & "Vennligst vent til karantenen er utløpt før du bestiller time.", MsgBoxStyle.Information, "obs!")
+        Else
+            OrderApp()
+        End If
+
+    End Sub
+
+
+
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        'Åpner link til nettside
+        Dim url As String = “https://giblod.no/default.aspx“
         Process.Start(url)
     End Sub
 
     Private Sub btnCApp_Click(sender As Object, e As EventArgs) Handles btnCApp.Click
         deleteApp()
     End Sub
-#End Region
+
 
 #Region "Endre Personinfo tekstbox validering"
 
@@ -705,19 +579,26 @@ feilmelding.Message)
             Return True
         End If
     End Function
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnUpdateQuarantine.Click
+    'Oppdatere karantene og siste tappe status
+    Private Sub UpdateDrainandquarantine()
         connection.Open()
-        Dim query As String = "SELECT quarantine FROM User WHERE ss_number='" & lblSSnumber.Text & "'"
+        Dim query As String = "SELECT TableUser.quarantine, TableBlood.last_drain FROM User TableUser INNER JOIN Blood_Data TableBlood on TableUser.ss_number=TableBlood.ss_number WHERE TableUser.ss_number='" & lblSSnumber.Text & "'"
         cmd = New MySqlCommand(query, connection)
         adapter = New MySqlDataAdapter
         adapter.SelectCommand = cmd
         adapter.Fill(dtable)
 
         For Each rad In dtable.Rows
+            txtDrain.Text = (rad("last_drain")).ToString()
             txtQuarantine.Text = (rad("quarantine")).ToString()
         Next
+        If txtDrain.Text = "01/01/1900" Then
+            txtDrain.Text = "Ikke Tappet"
+        End If
         connection.Close()
+    End Sub
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnUpdateQuarantine.Click
+        UpdateDrainandquarantine()
 
     End Sub
 

@@ -75,10 +75,11 @@ Partial Class Statistics
         Me.CBType.Legends.Add(Legend1)
         Me.CBType.Location = New System.Drawing.Point(33, 66)
         Me.CBType.Name = "CBType"
-        Me.CBType.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones
+        Me.CBType.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Excel
         Series1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Series1.ChartArea = "ChartArea1"
         Series1.Color = System.Drawing.Color.Crimson
+        Series1.IsValueShownAsLabel = True
         Series1.IsVisibleInLegend = False
         Series1.LabelAngle = 90
         Series1.Legend = "Legend1"
@@ -107,6 +108,7 @@ Partial Class Statistics
         Series2.BorderColor = System.Drawing.Color.Yellow
         Series2.ChartArea = "ChartArea1"
         Series2.Color = System.Drawing.Color.DarkTurquoise
+        Series2.IsValueShownAsLabel = True
         Series2.IsVisibleInLegend = False
         Series2.Legend = "Legend1"
         Series2.Name = "KJØNNSFORDELING"
@@ -162,22 +164,22 @@ Partial Class Statistics
         '
         Me.lblStatistics.AutoSize = True
         Me.lblStatistics.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblStatistics.Location = New System.Drawing.Point(364, 16)
+        Me.lblStatistics.Location = New System.Drawing.Point(528, 16)
         Me.lblStatistics.Name = "lblStatistics"
-        Me.lblStatistics.Size = New System.Drawing.Size(486, 39)
+        Me.lblStatistics.Size = New System.Drawing.Size(140, 39)
         Me.lblStatistics.TabIndex = 19
-        Me.lblStatistics.Text = "Ulik Statistikk hentet fra Databasen"
+        Me.lblStatistics.Text = "Statistikk"
         '
         'lblCPie
         '
         Me.lblCPie.AutoSize = True
         Me.lblCPie.BackColor = System.Drawing.Color.White
         Me.lblCPie.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCPie.Location = New System.Drawing.Point(128, 86)
+        Me.lblCPie.Location = New System.Drawing.Point(146, 86)
         Me.lblCPie.Name = "lblCPie"
-        Me.lblCPie.Size = New System.Drawing.Size(308, 17)
+        Me.lblCPie.Size = New System.Drawing.Size(265, 17)
         Me.lblCPie.TabIndex = 20
-        Me.lblCPie.Text = "Fordelingen av de forskjellige blodtypene"
+        Me.lblCPie.Text = "Registrerte blodtyper av blodgivere"
         '
         'btnSBType
         '
@@ -186,7 +188,7 @@ Partial Class Statistics
         Me.btnSBType.Name = "btnSBType"
         Me.btnSBType.Size = New System.Drawing.Size(362, 47)
         Me.btnSBType.TabIndex = 21
-        Me.btnSBType.Text = "Vis blodtyper i detalj"
+        Me.btnSBType.Text = "Se flere detaljer"
         Me.btnSBType.UseVisualStyleBackColor = True
         '
         'btnBTPie
@@ -196,7 +198,7 @@ Partial Class Statistics
         Me.btnBTPie.Name = "btnBTPie"
         Me.btnBTPie.Size = New System.Drawing.Size(358, 47)
         Me.btnBTPie.TabIndex = 22
-        Me.btnBTPie.Text = "Vis de fire blodtypene"
+        Me.btnBTPie.Text = "Se mindre detaljer"
         Me.btnBTPie.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -206,10 +208,10 @@ Partial Class Statistics
         Me.GroupBox1.Controls.Add(Me.CG)
         Me.GroupBox1.Controls.Add(Me.dgvBloodType)
         Me.GroupBox1.Controls.Add(Me.dgvGender)
-        Me.GroupBox1.Controls.Add(Me.CBlodtype)
-        Me.GroupBox1.Controls.Add(Me.CBType)
         Me.GroupBox1.Controls.Add(Me.btnSBType)
         Me.GroupBox1.Controls.Add(Me.btnBTPie)
+        Me.GroupBox1.Controls.Add(Me.CBlodtype)
+        Me.GroupBox1.Controls.Add(Me.CBType)
         Me.GroupBox1.Location = New System.Drawing.Point(38, 99)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(1230, 776)
