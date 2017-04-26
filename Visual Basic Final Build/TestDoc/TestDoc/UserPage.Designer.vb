@@ -122,7 +122,7 @@ Partial Class UserPage
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.TestDoc.My.Resources.Resources.logo
+        Me.PictureBox1.Image = Global.Tappern.My.Resources.Resources.logo
         Me.PictureBox1.Location = New System.Drawing.Point(12, 12)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(345, 90)

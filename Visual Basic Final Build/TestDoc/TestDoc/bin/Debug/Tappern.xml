@@ -2,47 +2,47 @@
 <doc>
 <assembly>
 <name>
-TestDoc
+Tappern
 </name>
 </assembly>
 <members>
-<member name="T:TestDoc.My.Resources.Resources">
+<member name="T:Tappern.My.Resources.Resources">
 <summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
 </member>
-<member name="P:TestDoc.My.Resources.Resources.ResourceManager">
+<member name="P:Tappern.My.Resources.Resources.ResourceManager">
 <summary>
   Returns the cached ResourceManager instance used by this class.
 </summary>
 </member>
-<member name="P:TestDoc.My.Resources.Resources.Culture">
+<member name="P:Tappern.My.Resources.Resources.Culture">
 <summary>
   Overrides the current thread's CurrentUICulture property for all
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
-<member name="P:TestDoc.My.Resources.Resources.bloddrape">
+<member name="P:Tappern.My.Resources.Resources.bloddrape">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:TestDoc.My.Resources.Resources.LogIn">
+<member name="P:Tappern.My.Resources.Resources.LogIn">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:TestDoc.My.Resources.Resources.LogIn2">
+<member name="P:Tappern.My.Resources.Resources.LogIn2">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:TestDoc.My.Resources.Resources.logo">
+<member name="P:Tappern.My.Resources.Resources.logo">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member>
-<member name="P:TestDoc.My.Resources.Resources.logo_login">
+<member name="P:Tappern.My.Resources.Resources.logo_login">
 <summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
